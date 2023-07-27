@@ -1,0 +1,11 @@
+# GetAppEntitlementResponse
+
+The get app entitlement response returns an entitlement view containing paths in the expanded array for the objects expanded as indicated by the expand mask in the request.
+
+
+## Fields
+
+| Field                                                                                                                    | Type                                                                                                                     | Required                                                                                                                 | Description                                                                                                              |
+| ------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ |
+| `app_entitlement_view`                                                                                                   | [Optional[AppEntitlementView]](../../models/shared/appentitlementview.md)                                                | :heavy_minus_sign:                                                                                                       | The app entitlement view contains the serialized app entitlement and paths to objects referenced by the app entitlement. |
+| `expanded`                                                                                                               | list[dict[str, *Any*]]                                                                                                   | :heavy_minus_sign:                                                                                                       | List of serialized related objects.                                                                                      |

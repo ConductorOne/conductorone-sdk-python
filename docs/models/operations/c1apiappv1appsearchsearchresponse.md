@@ -1,0 +1,11 @@
+# C1APIAppV1AppSearchSearchResponse
+
+
+## Fields
+
+| Field                                                                                        | Type                                                                                         | Required                                                                                     | Description                                                                                  |
+| -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
+| `content_type`                                                                               | *str*                                                                                        | :heavy_check_mark:                                                                           | N/A                                                                                          |
+| `search_apps_response`                                                                       | [Optional[shared.SearchAppsResponse]](../../models/shared/searchappsresponse.md)             | :heavy_minus_sign:                                                                           | The SearchAppsResponse message contains a list of results and a nextPageToken if applicable. |
+| `status_code`                                                                                | *int*                                                                                        | :heavy_check_mark:                                                                           | N/A                                                                                          |
+| `raw_response`                                                                               | [requests.Response](https://requests.readthedocs.io/en/latest/api/#requests.Response)        | :heavy_minus_sign:                                                                           | N/A                                                                                          |

@@ -1,0 +1,11 @@
+# C1APITaskV1TaskSearchServiceSearchResponse
+
+
+## Fields
+
+| Field                                                                                        | Type                                                                                         | Required                                                                                     | Description                                                                                  |
+| -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
+| `content_type`                                                                               | *str*                                                                                        | :heavy_check_mark:                                                                           | N/A                                                                                          |
+| `status_code`                                                                                | *int*                                                                                        | :heavy_check_mark:                                                                           | N/A                                                                                          |
+| `raw_response`                                                                               | [requests.Response](https://requests.readthedocs.io/en/latest/api/#requests.Response)        | :heavy_minus_sign:                                                                           | N/A                                                                                          |
+| `task_search_response`                                                                       | [Optional[shared.TaskSearchResponse]](../../models/shared/tasksearchresponse.md)             | :heavy_minus_sign:                                                                           | The TaskSearchResponse message contains a list of results and a nextPageToken if applicable. |
