@@ -1,0 +1,10 @@
+# C1APIAppV1ConnectorServiceDeleteRequest
+
+
+## Fields
+
+| Field                                                                                                  | Type                                                                                                   | Required                                                                                               | Description                                                                                            |
+| ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ |
+| `connector_service_delete_request`                                                                     | [Optional[shared.ConnectorServiceDeleteRequest]](../../models/shared/connectorservicedeleterequest.md) | :heavy_minus_sign:                                                                                     | N/A                                                                                                    |
+| `app_id`                                                                                               | *str*                                                                                                  | :heavy_check_mark:                                                                                     | N/A                                                                                                    |
+| `id`                                                                                                   | *str*                                                                                                  | :heavy_check_mark:                                                                                     | N/A                                                                                                    |

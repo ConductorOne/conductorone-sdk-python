@@ -1,0 +1,18 @@
+# Role
+
+Role is a role that can be assigned to a user in ConductorOne.
+
+
+## Fields
+
+| Field                                                                     | Type                                                                      | Required                                                                  | Description                                                               |
+| ------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- |
+| `created_at`                                                              | [date](https://docs.python.org/3/library/datetime.html#date-objects)      | :heavy_minus_sign:                                                        | N/A                                                                       |
+| `deleted_at`                                                              | [date](https://docs.python.org/3/library/datetime.html#date-objects)      | :heavy_minus_sign:                                                        | N/A                                                                       |
+| `display_name`                                                            | *Optional[str]*                                                           | :heavy_minus_sign:                                                        | The display name of the role.                                             |
+| `id`                                                                      | *Optional[str]*                                                           | :heavy_minus_sign:                                                        | The id of the role.                                                       |
+| `name`                                                                    | *Optional[str]*                                                           | :heavy_minus_sign:                                                        | The internal name of the role.                                            |
+| `permissions`                                                             | list[*str*]                                                               | :heavy_minus_sign:                                                        | The list of permissions this role has.                                    |
+| `service_roles`                                                           | list[*str*]                                                               | :heavy_minus_sign:                                                        | The list of serviceRoles that this role has.                              |
+| `system_builtin`                                                          | *Optional[bool]*                                                          | :heavy_minus_sign:                                                        | The system builtin field. If this field is set, the role is not editable. |
+| `updated_at`                                                              | [date](https://docs.python.org/3/library/datetime.html#date-objects)      | :heavy_minus_sign:                                                        | N/A                                                                       |

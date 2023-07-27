@@ -1,0 +1,11 @@
+# C1APIIamV1RolesListResponse
+
+
+## Fields
+
+| Field                                                                                       | Type                                                                                        | Required                                                                                    | Description                                                                                 |
+| ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
+| `content_type`                                                                              | *str*                                                                                       | :heavy_check_mark:                                                                          | N/A                                                                                         |
+| `list_roles_response`                                                                       | [Optional[shared.ListRolesResponse]](../../models/shared/listrolesresponse.md)              | :heavy_minus_sign:                                                                          | The ListRolesResponse message contains a list of results and a nextPageToken if applicable. |
+| `status_code`                                                                               | *int*                                                                                       | :heavy_check_mark:                                                                          | N/A                                                                                         |
+| `raw_response`                                                                              | [requests.Response](https://requests.readthedocs.io/en/latest/api/#requests.Response)       | :heavy_minus_sign:                                                                          | N/A                                                                                         |

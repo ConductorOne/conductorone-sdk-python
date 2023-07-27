@@ -1,0 +1,11 @@
+# C1APIAppV1AppOwnersRemoveResponse
+
+
+## Fields
+
+| Field                                                                                    | Type                                                                                     | Required                                                                                 | Description                                                                              |
+| ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
+| `content_type`                                                                           | *str*                                                                                    | :heavy_check_mark:                                                                       | N/A                                                                                      |
+| `remove_app_owner_response`                                                              | [Optional[shared.RemoveAppOwnerResponse]](../../models/shared/removeappownerresponse.md) | :heavy_minus_sign:                                                                       | Empty response with a status code indicating success.                                    |
+| `status_code`                                                                            | *int*                                                                                    | :heavy_check_mark:                                                                       | N/A                                                                                      |
+| `raw_response`                                                                           | [requests.Response](https://requests.readthedocs.io/en/latest/api/#requests.Response)    | :heavy_minus_sign:                                                                       | N/A                                                                                      |

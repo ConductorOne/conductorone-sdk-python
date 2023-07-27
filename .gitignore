@@ -1,0 +1,6 @@
+.python-version
+.vscode
+__pycache__/
+/build/
+/dist/
+openapi.egg-info/
