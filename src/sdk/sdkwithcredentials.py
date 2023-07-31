@@ -32,7 +32,7 @@ def SDKWithCredentials(token_url: str, client_id: str, client_secret: str, **kwa
     # Instantiate the custom Transport Adapter
     auth = TokenAuth(token)
 
-    # Mount it for both http and https usage
+    # Mount it for https usage
     client.mount('https://', auth)
 
     return SDK(**kwargs, client=client)
