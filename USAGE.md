@@ -5,11 +5,7 @@
 import sdk
 from sdk.models import shared
 
-s = sdk.SDK(
-    security=shared.Security(
-        oauth="",
-    ),
-)
+s = sdk.SDKWithCredentials("CLIENT_ID", "CLIENT_SECRET")
 
 req = shared.AppEntitlementSearchServiceSearchRequest(
     app_entitlement_expand_mask=shared.AppEntitlementExpandMask(

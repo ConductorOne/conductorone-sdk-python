@@ -31,9 +31,13 @@ def SDKWithCredentials(client_id: str, client_secret: str, token_url: str = '', 
     """
     client = requests.Session()
 
+    url = client_id.split('@')[1].split('/')[0]
+    if 'tenant_domain' not in kwargs:
+        kwargs['tenant_domain'] = url[:len(url)-len('.com')]
     if not token_url:
         # If no token_url is provided, use the url in the client_id
-        token_url = 'https://' + client_id.split('@')[1].split('/')[0]
+        token_url = 'https://' + url
+
     token_instance = Token(client, token_url, client_id, client_secret)
     token = token_instance.get_token()
 
@@ -43,4 +47,4 @@ def SDKWithCredentials(client_id: str, client_secret: str, token_url: str = '', 
     # Mount it for https usage
     client.mount('https://', auth)
 
-    return SDK(**kwargs, client=client)
+    return SDK(client=client, **kwargs)
