@@ -20,7 +20,7 @@ class Token:
         self.client_id = client_id
         self.client_secret = client_secret
 
-    def _parse_secret(secret: str):
+    def _parse_secret(secret: str) -> Ed25519PrivateKey:
         jwk_b64 = secret
         jwk_json = base64.urlsafe_b64decode(jwk_b64 + '==').decode('utf-8')
         jwk = json.loads(jwk_json)
@@ -43,7 +43,7 @@ class Token:
 
         return private_key
 
-    def get_token(self):
+    def get_token(self) -> str:
         name, domain, version, secret = self.client_secret.split(':')
         if name != "secret-token":
             raise Exception("not a secret token")

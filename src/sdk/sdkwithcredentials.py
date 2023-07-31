@@ -17,7 +17,14 @@ class TokenAuth(HTTPAdapter):
 
 
 
-def SDKWithCredentials(token_url: str, client_id: str, client_secret: str):
+def SDKWithCredentials(token_url: str, client_id: str, client_secret: str, **kwargs) -> SDK:
+    """Instantiates the SDK configuring it with the provided kwargs and an authed client.
+    
+    Accepts the same kwargs as SDK, but also requires the following:
+    token_url: The URL to use to get a token
+    client_id: The client ID to use to get a token
+    client_secret: The client secret to use to get a token
+    """
     client = requests.Session()
     token_instance = Token(client, token_url, client_id, client_secret)
     token = token_instance.get_token()
@@ -29,4 +36,4 @@ def SDKWithCredentials(token_url: str, client_id: str, client_secret: str):
     client.mount('http://', auth)
     client.mount('https://', auth)
 
-    return SDK(client=client)
+    return SDK(**kwargs, client=client)
