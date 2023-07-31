@@ -79,7 +79,7 @@ class Token:
             "client_assertion_type": Token.assertion_type,
             "client_assertion": token
         }
-        resp = self.client.post(f"{self.token_url}auth/v1/token", data=body)
+        resp = self.client.post(f"{self.token_url}/auth/v1/token", data=body)
 
         if resp.status_code != 200:
             raise Exception(f"Failed to get token: {resp.status_code}")
