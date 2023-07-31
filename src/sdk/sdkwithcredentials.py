@@ -20,10 +20,14 @@ class TokenAuth(HTTPAdapter):
 def SDKWithCredentials(client_id: str, client_secret: str, token_url: str = '', **kwargs) -> SDK:
     """Instantiates the SDK configuring it with the provided kwargs and an authed client.
     
-    Accepts the same kwargs as SDK, but also requires the following:
-    token_url: The URL to use to get a token
-    client_id: The client ID to use to get a token
-    client_secret: The client secret to use to get a token
+    :param client_id: The client ID to use to get a token
+    :type client_id: str
+    :param client_secret: The client secret to use to get a token
+    :type client_secret: str
+    :param token_url: The URL to use to get a token (if not provided, will be derived from client_id)
+    :type token_url: str
+    :param kwargs: Additional arguments to pass to the SDK constructor
+    :type kwargs: dict[str, any]
     """
     client = requests.Session()
 
