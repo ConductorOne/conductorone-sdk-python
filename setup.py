@@ -33,6 +33,7 @@ setuptools.setup(
         "typing-inspect>=0.8.0",
         "typing_extensions>=4.3.0",
         "urllib3>=1.26.12",
+        "jose-python>=3.3.0",
     ],
     extras_require={
         "dev":["pylint==2.16.2"]

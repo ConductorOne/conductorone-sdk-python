@@ -1,4 +1,4 @@
-from requests import Session
+import requests
 import base64
 import json
 import time
@@ -10,7 +10,7 @@ import secrets
 class Token:
     assertion_type: str= 'urn:ietf:params:oauth:client-assertion-type:jwt-bearer'
 
-    def __init__(self, client: Session, token_url: str, client_id: str, client_secret: str):
+    def __init__(self, client: requests.Session, token_url: str, client_id: str, client_secret: str):
         self.client = client
         self.token_url = token_url
         self.client_id = client_id
