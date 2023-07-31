@@ -33,7 +33,6 @@ def SDKWithCredentials(token_url: str, client_id: str, client_secret: str, **kwa
     auth = TokenAuth(token)
 
     # Mount it for both http and https usage
-    client.mount('http://', auth)
     client.mount('https://', auth)
 
     return SDK(**kwargs, client=client)

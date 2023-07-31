@@ -22,7 +22,7 @@ class Token:
 
     def _parse_secret(secret: str) -> Ed25519PrivateKey:
         jwk_b64 = secret
-        jwk_json = base64.urlsafe_b64decode(jwk_b64 + '==').decode('utf-8')
+        jwk_json = base64.urlsafe_b64decode(jwk_b64).decode('utf-8')
         jwk = json.loads(jwk_json)
 
         if 'd' not in jwk:
