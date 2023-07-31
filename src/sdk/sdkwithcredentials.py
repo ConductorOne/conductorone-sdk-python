@@ -20,7 +20,7 @@ class TokenAuth(HTTPAdapter):
 def SDKWithCredentials(token_url: str, client_id: str, client_secret: str):
     client = requests.Session()
     token_instance = Token(client, token_url, client_id, client_secret)
-    token = token_instance.getToken()
+    token = token_instance.get_token()
 
     # Instantiate the custom Transport Adapter
     auth = TokenAuth(token)

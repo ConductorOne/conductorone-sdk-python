@@ -43,7 +43,7 @@ class Token:
 
         return private_key
 
-    def getToken(self):
+    def get_token(self):
         name, domain, version, secret = self.client_secret.split(':')
         if name != "secret-token":
             raise Exception("not a secret token")
