@@ -52,6 +52,7 @@ class Token:
         if version != "v1":
             raise Exception("incorrect client-secret version")
 
+        # Remove any port number from the audience
         aud = self.token_url
         hostname = urlparse(aud).hostname
         if hostname:
