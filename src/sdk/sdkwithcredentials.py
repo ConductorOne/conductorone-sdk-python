@@ -19,10 +19,13 @@ class TokenAuth(HTTPAdapter):
 
 def SDKWithCredentials(client_id: str, client_secret: str, token_url: str = '', **kwargs) -> SDK:
     """Instantiates the SDK configuring it with the provided kwargs and an authed client.
-    It will use the url in the client_id to get the token URL and tenant domain, if not provided.
-    Example:
-    foo-bar-123@foobar.conductor.one/pcc -> token_url: https://foobar.conductor.one, tenant_domain: foobar
+    It will use the url in the client_id to get the token URL and tenant domain, if not provided. 
     
+    For example:
+    >>> foo-bar-123@foobar.conductor.one/pcc -> token_url: https://foobar.conductor.one, tenant_domain: foobar
+    If this is not the case, you can provide the token_url and tenant_domain/server_url* in the kwargs.
+    *The tenant domain is used to generate a server_url, `https://{tenantDomain}.conductor.one`, so you can provide either.
+
     :param client_id: The client ID to use to get a token
     :type client_id: str
     :param client_secret: The client secret to use to get a token
