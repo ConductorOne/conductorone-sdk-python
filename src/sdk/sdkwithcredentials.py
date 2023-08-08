@@ -22,9 +22,9 @@ def SDKWithCredentials(client_id: str, client_secret: str, token_url: str = '', 
     It will use the url in the client_id to get the token URL and tenant domain, if not provided. 
     
     For example a client_id of `foo-bar-123@foobar.conductor.one/pcc` would result in:
-        token_url: `https://foobar.conductor.one `
-        tenant_domain: foobar 
-        server_url: `https://foobar.conductor.one` [`https://{tenantDomain}.conductor.one`]
+        token_url: `https://foobar.conductor.one ` derived from client_id
+        tenant_domain: foobar derived from client_id
+        server_url: `https://foobar.conductor.one` derived from `https://{tenantDomain}.conductor.one`
     If this is not the case, you can provide the token_url and tenant_domain/server_url in the kwargs.
 
     :param client_id: The client ID to use to get a token
