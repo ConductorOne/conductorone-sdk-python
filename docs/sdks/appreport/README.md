@@ -16,14 +16,15 @@ from sdk.models import operations, shared
 
 s = sdk.SDK(
     security=shared.Security(
+        bearer_auth="",
         oauth="",
     ),
 )
 
 req = operations.C1APIAppV1AppReportServiceListRequest(
-    app_id='aliquid',
-    page_size=5865.13,
-    page_token='quos',
+    app_id='quasi',
+    page_size=9719.45,
+    page_token='voluptatibus',
 )
 
 res = s.app_report.list(req)

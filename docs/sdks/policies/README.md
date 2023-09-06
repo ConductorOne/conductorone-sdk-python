@@ -20,126 +20,45 @@ from sdk.models import shared
 
 s = sdk.SDK(
     security=shared.Security(
+        bearer_auth="",
         oauth="",
     ),
 )
 
 req = shared.CreatePolicyRequestInput(
-    description='consequatur',
-    display_name='minus',
+    description='nisi',
+    display_name='fugit',
     policy_steps={
         "sapiente": shared.PolicyStepsInput(
             steps=[
                 shared.PolicyStepInput(
                     approval=shared.ApprovalInput(
-                        app_group_approval=shared.AppGroupApproval1(),
-                        app_owner_approval=shared.AppOwnerApproval1(),
-                        entitlement_owner_approval=shared.EntitlementOwnerApproval1(),
-                        manager_approval=shared.ManagerApproval1(),
-                        self_approval=shared.SelfApproval1(),
-                        user_approval=shared.UserApproval1(),
+                        app_group_approval=shared.AppGroupApprovalInput(),
+                        app_owner_approval=shared.AppOwnerApprovalInput(),
+                        entitlement_owner_approval=shared.EntitlementOwnerApprovalInput(),
+                        manager_approval=shared.ManagerApprovalInput(),
+                        self_approval=shared.SelfApprovalInput(),
+                        user_approval=shared.UserApprovalInput(),
                     ),
                     provision=shared.Provision(
                         provision_policy=shared.ProvisionPolicy(
                             connector_provision=shared.ConnectorProvision(),
                             delegated_provision=shared.DelegatedProvision(
-                                app_id='esse',
-                                entitlement_id='blanditiis',
+                                app_id='consequuntur',
+                                entitlement_id='ratione',
                             ),
                             manual_provision=shared.ManualProvision(
-                                instructions='provident',
+                                instructions='explicabo',
                                 user_ids=[
-                                    'nulla',
-                                    'quas',
-                                    'esse',
-                                    'quasi',
+                                    'saepe',
                                 ],
                             ),
                         ),
-                        assigned=False,
-                    ),
-                ),
-            ],
-        ),
-        "a": shared.PolicyStepsInput(
-            steps=[
-                shared.PolicyStepInput(
-                    approval=shared.ApprovalInput(
-                        app_group_approval=shared.AppGroupApproval1(),
-                        app_owner_approval=shared.AppOwnerApproval1(),
-                        entitlement_owner_approval=shared.EntitlementOwnerApproval1(),
-                        manager_approval=shared.ManagerApproval1(),
-                        self_approval=shared.SelfApproval1(),
-                        user_approval=shared.UserApproval1(),
-                    ),
-                    provision=shared.Provision(
-                        provision_policy=shared.ProvisionPolicy(
-                            connector_provision=shared.ConnectorProvision(),
-                            delegated_provision=shared.DelegatedProvision(
-                                app_id='sint',
-                                entitlement_id='pariatur',
-                            ),
-                            manual_provision=shared.ManualProvision(
-                                instructions='possimus',
-                                user_ids=[
-                                    'eveniet',
-                                ],
-                            ),
-                        ),
-                        assigned=False,
-                    ),
-                ),
-                shared.PolicyStepInput(
-                    approval=shared.ApprovalInput(
-                        app_group_approval=shared.AppGroupApproval1(),
-                        app_owner_approval=shared.AppOwnerApproval1(),
-                        entitlement_owner_approval=shared.EntitlementOwnerApproval1(),
-                        manager_approval=shared.ManagerApproval1(),
-                        self_approval=shared.SelfApproval1(),
-                        user_approval=shared.UserApproval1(),
-                    ),
-                    provision=shared.Provision(
-                        provision_policy=shared.ProvisionPolicy(
-                            connector_provision=shared.ConnectorProvision(),
-                            delegated_provision=shared.DelegatedProvision(
-                                app_id='asperiores',
-                                entitlement_id='facere',
-                            ),
-                            manual_provision=shared.ManualProvision(
-                                instructions='veritatis',
-                                user_ids=[
-                                    'quasi',
-                                ],
-                            ),
-                        ),
-                        assigned=False,
-                    ),
-                ),
-                shared.PolicyStepInput(
-                    approval=shared.ApprovalInput(
-                        app_group_approval=shared.AppGroupApproval1(),
-                        app_owner_approval=shared.AppOwnerApproval1(),
-                        entitlement_owner_approval=shared.EntitlementOwnerApproval1(),
-                        manager_approval=shared.ManagerApproval1(),
-                        self_approval=shared.SelfApproval1(),
-                        user_approval=shared.UserApproval1(),
-                    ),
-                    provision=shared.Provision(
-                        provision_policy=shared.ProvisionPolicy(
-                            connector_provision=shared.ConnectorProvision(),
-                            delegated_provision=shared.DelegatedProvision(
-                                app_id='similique',
-                                entitlement_id='culpa',
-                            ),
-                            manual_provision=shared.ManualProvision(
-                                instructions='aliquid',
-                                user_ids=[
-                                    'quae',
-                                    'earum',
-                                    'vel',
-                                    'in',
-                                ],
-                            ),
+                        provision_target=shared.ProvisionTarget(
+                            app_entitlement_id='occaecati',
+                            app_id='atque',
+                            app_user_id='et',
+                            grant_duration='esse',
                         ),
                         assigned=False,
                     ),
@@ -147,14 +66,8 @@ req = shared.CreatePolicyRequestInput(
             ],
         ),
     },
-    policy_type=shared.CreatePolicyRequestPolicyType.POLICY_TYPE_GRANT,
+    policy_type=shared.CreatePolicyRequestPolicyType.POLICY_TYPE_PROVISION,
     post_actions=[
-        shared.PolicyPostActions(
-            certify_remediate_immediately=False,
-        ),
-        shared.PolicyPostActions(
-            certify_remediate_immediately=False,
-        ),
         shared.PolicyPostActions(
             certify_remediate_immediately=False,
         ),
@@ -192,13 +105,14 @@ from sdk.models import operations, shared
 
 s = sdk.SDK(
     security=shared.Security(
+        bearer_auth="",
         oauth="",
     ),
 )
 
 req = operations.C1APIPolicyV1PoliciesDeleteRequest(
     delete_policy_request=shared.DeletePolicyRequest(),
-    id='db04f157-5608-42d6-8ea1-9f1d17051339',
+    id='e17cbe61-e6b7-4b95-bc0a-b3c20c4f3789',
 )
 
 res = s.policies.delete(req)
@@ -231,12 +145,13 @@ from sdk.models import operations, shared
 
 s = sdk.SDK(
     security=shared.Security(
+        bearer_auth="",
         oauth="",
     ),
 )
 
 req = operations.C1APIPolicyV1PoliciesGetRequest(
-    id='d08086a1-8403-494c-a607-1f93f5f0642d',
+    id='fd871f99-dd2e-4fd1-a1aa-6f1e674bdb04',
 )
 
 res = s.policies.get(req)
@@ -269,13 +184,14 @@ from sdk.models import operations, shared
 
 s = sdk.SDK(
     security=shared.Security(
+        bearer_auth="",
         oauth="",
     ),
 )
 
 req = operations.C1APIPolicyV1PoliciesListRequest(
-    page_size=6387.62,
-    page_token='maxime',
+    page_size=9589.83,
+    page_token='dicta',
 )
 
 res = s.policies.list(req)
@@ -308,6 +224,7 @@ from sdk.models import operations, shared
 
 s = sdk.SDK(
     security=shared.Security(
+        bearer_auth="",
         oauth="",
     ),
 )
@@ -315,240 +232,39 @@ s = sdk.SDK(
 req = operations.C1APIPolicyV1PoliciesUpdateRequest(
     update_policy_request_input=shared.UpdatePolicyRequestInput(
         policy=shared.PolicyInput(
-            description='dignissimos',
-            display_name='officia',
+            description='ullam',
+            display_name='reprehenderit',
             policy_steps={
-                "nemo": shared.PolicyStepsInput(
+                "ullam": shared.PolicyStepsInput(
                     steps=[
                         shared.PolicyStepInput(
                             approval=shared.ApprovalInput(
-                                app_group_approval=shared.AppGroupApproval1(),
-                                app_owner_approval=shared.AppOwnerApproval1(),
-                                entitlement_owner_approval=shared.EntitlementOwnerApproval1(),
-                                manager_approval=shared.ManagerApproval1(),
-                                self_approval=shared.SelfApproval1(),
-                                user_approval=shared.UserApproval1(),
+                                app_group_approval=shared.AppGroupApprovalInput(),
+                                app_owner_approval=shared.AppOwnerApprovalInput(),
+                                entitlement_owner_approval=shared.EntitlementOwnerApprovalInput(),
+                                manager_approval=shared.ManagerApprovalInput(),
+                                self_approval=shared.SelfApprovalInput(),
+                                user_approval=shared.UserApprovalInput(),
                             ),
                             provision=shared.Provision(
                                 provision_policy=shared.ProvisionPolicy(
                                     connector_provision=shared.ConnectorProvision(),
                                     delegated_provision=shared.DelegatedProvision(
-                                        app_id='quaerat',
-                                        entitlement_id='porro',
+                                        app_id='nisi',
+                                        entitlement_id='aut',
                                     ),
                                     manual_provision=shared.ManualProvision(
-                                        instructions='quod',
+                                        instructions='voluptatum',
                                         user_ids=[
-                                            'ab',
-                                            'adipisci',
+                                            'qui',
                                         ],
                                     ),
                                 ),
-                                assigned=False,
-                            ),
-                        ),
-                    ],
-                ),
-                "fuga": shared.PolicyStepsInput(
-                    steps=[
-                        shared.PolicyStepInput(
-                            approval=shared.ApprovalInput(
-                                app_group_approval=shared.AppGroupApproval1(),
-                                app_owner_approval=shared.AppOwnerApproval1(),
-                                entitlement_owner_approval=shared.EntitlementOwnerApproval1(),
-                                manager_approval=shared.ManagerApproval1(),
-                                self_approval=shared.SelfApproval1(),
-                                user_approval=shared.UserApproval1(),
-                            ),
-                            provision=shared.Provision(
-                                provision_policy=shared.ProvisionPolicy(
-                                    connector_provision=shared.ConnectorProvision(),
-                                    delegated_provision=shared.DelegatedProvision(
-                                        app_id='suscipit',
-                                        entitlement_id='velit',
-                                    ),
-                                    manual_provision=shared.ManualProvision(
-                                        instructions='culpa',
-                                        user_ids=[
-                                            'recusandae',
-                                            'totam',
-                                            'fugiat',
-                                        ],
-                                    ),
-                                ),
-                                assigned=False,
-                            ),
-                        ),
-                        shared.PolicyStepInput(
-                            approval=shared.ApprovalInput(
-                                app_group_approval=shared.AppGroupApproval1(),
-                                app_owner_approval=shared.AppOwnerApproval1(),
-                                entitlement_owner_approval=shared.EntitlementOwnerApproval1(),
-                                manager_approval=shared.ManagerApproval1(),
-                                self_approval=shared.SelfApproval1(),
-                                user_approval=shared.UserApproval1(),
-                            ),
-                            provision=shared.Provision(
-                                provision_policy=shared.ProvisionPolicy(
-                                    connector_provision=shared.ConnectorProvision(),
-                                    delegated_provision=shared.DelegatedProvision(
-                                        app_id='vel',
-                                        entitlement_id='ducimus',
-                                    ),
-                                    manual_provision=shared.ManualProvision(
-                                        instructions='quos',
-                                        user_ids=[
-                                            'labore',
-                                            'possimus',
-                                        ],
-                                    ),
-                                ),
-                                assigned=False,
-                            ),
-                        ),
-                        shared.PolicyStepInput(
-                            approval=shared.ApprovalInput(
-                                app_group_approval=shared.AppGroupApproval1(),
-                                app_owner_approval=shared.AppOwnerApproval1(),
-                                entitlement_owner_approval=shared.EntitlementOwnerApproval1(),
-                                manager_approval=shared.ManagerApproval1(),
-                                self_approval=shared.SelfApproval1(),
-                                user_approval=shared.UserApproval1(),
-                            ),
-                            provision=shared.Provision(
-                                provision_policy=shared.ProvisionPolicy(
-                                    connector_provision=shared.ConnectorProvision(),
-                                    delegated_provision=shared.DelegatedProvision(
-                                        app_id='facilis',
-                                        entitlement_id='cum',
-                                    ),
-                                    manual_provision=shared.ManualProvision(
-                                        instructions='commodi',
-                                        user_ids=[
-                                            'corporis',
-                                            'reiciendis',
-                                        ],
-                                    ),
-                                ),
-                                assigned=False,
-                            ),
-                        ),
-                    ],
-                ),
-                "assumenda": shared.PolicyStepsInput(
-                    steps=[
-                        shared.PolicyStepInput(
-                            approval=shared.ApprovalInput(
-                                app_group_approval=shared.AppGroupApproval1(),
-                                app_owner_approval=shared.AppOwnerApproval1(),
-                                entitlement_owner_approval=shared.EntitlementOwnerApproval1(),
-                                manager_approval=shared.ManagerApproval1(),
-                                self_approval=shared.SelfApproval1(),
-                                user_approval=shared.UserApproval1(),
-                            ),
-                            provision=shared.Provision(
-                                provision_policy=shared.ProvisionPolicy(
-                                    connector_provision=shared.ConnectorProvision(),
-                                    delegated_provision=shared.DelegatedProvision(
-                                        app_id='recusandae',
-                                        entitlement_id='aliquid',
-                                    ),
-                                    manual_provision=shared.ManualProvision(
-                                        instructions='aperiam',
-                                        user_ids=[
-                                            'consectetur',
-                                            'in',
-                                            'exercitationem',
-                                        ],
-                                    ),
-                                ),
-                                assigned=False,
-                            ),
-                        ),
-                        shared.PolicyStepInput(
-                            approval=shared.ApprovalInput(
-                                app_group_approval=shared.AppGroupApproval1(),
-                                app_owner_approval=shared.AppOwnerApproval1(),
-                                entitlement_owner_approval=shared.EntitlementOwnerApproval1(),
-                                manager_approval=shared.ManagerApproval1(),
-                                self_approval=shared.SelfApproval1(),
-                                user_approval=shared.UserApproval1(),
-                            ),
-                            provision=shared.Provision(
-                                provision_policy=shared.ProvisionPolicy(
-                                    connector_provision=shared.ConnectorProvision(),
-                                    delegated_provision=shared.DelegatedProvision(
-                                        app_id='earum',
-                                        entitlement_id='facere',
-                                    ),
-                                    manual_provision=shared.ManualProvision(
-                                        instructions='numquam',
-                                        user_ids=[
-                                            'suscipit',
-                                            'reiciendis',
-                                            'quidem',
-                                            'saepe',
-                                        ],
-                                    ),
-                                ),
-                                assigned=False,
-                            ),
-                        ),
-                    ],
-                ),
-                "necessitatibus": shared.PolicyStepsInput(
-                    steps=[
-                        shared.PolicyStepInput(
-                            approval=shared.ApprovalInput(
-                                app_group_approval=shared.AppGroupApproval1(),
-                                app_owner_approval=shared.AppOwnerApproval1(),
-                                entitlement_owner_approval=shared.EntitlementOwnerApproval1(),
-                                manager_approval=shared.ManagerApproval1(),
-                                self_approval=shared.SelfApproval1(),
-                                user_approval=shared.UserApproval1(),
-                            ),
-                            provision=shared.Provision(
-                                provision_policy=shared.ProvisionPolicy(
-                                    connector_provision=shared.ConnectorProvision(),
-                                    delegated_provision=shared.DelegatedProvision(
-                                        app_id='sunt',
-                                        entitlement_id='asperiores',
-                                    ),
-                                    manual_provision=shared.ManualProvision(
-                                        instructions='adipisci',
-                                        user_ids=[
-                                            'amet',
-                                        ],
-                                    ),
-                                ),
-                                assigned=False,
-                            ),
-                        ),
-                        shared.PolicyStepInput(
-                            approval=shared.ApprovalInput(
-                                app_group_approval=shared.AppGroupApproval1(),
-                                app_owner_approval=shared.AppOwnerApproval1(),
-                                entitlement_owner_approval=shared.EntitlementOwnerApproval1(),
-                                manager_approval=shared.ManagerApproval1(),
-                                self_approval=shared.SelfApproval1(),
-                                user_approval=shared.UserApproval1(),
-                            ),
-                            provision=shared.Provision(
-                                provision_policy=shared.ProvisionPolicy(
-                                    connector_provision=shared.ConnectorProvision(),
-                                    delegated_provision=shared.DelegatedProvision(
-                                        app_id='beatae',
-                                        entitlement_id='dignissimos',
-                                    ),
-                                    manual_provision=shared.ManualProvision(
-                                        instructions='a',
-                                        user_ids=[
-                                            'consectetur',
-                                            'corporis',
-                                            'harum',
-                                            'laboriosam',
-                                        ],
-                                    ),
+                                provision_target=shared.ProvisionTarget(
+                                    app_entitlement_id='quibusdam',
+                                    app_id='ex',
+                                    app_user_id='deleniti',
+                                    grant_duration='itaque',
                                 ),
                                 assigned=False,
                             ),
@@ -556,26 +272,17 @@ req = operations.C1APIPolicyV1PoliciesUpdateRequest(
                     ],
                 ),
             },
-            policy_type=shared.PolicyPolicyType.POLICY_TYPE_UNSPECIFIED,
+            policy_type=shared.PolicyPolicyType.POLICY_TYPE_ACCESS_REQUEST,
             post_actions=[
-                shared.PolicyPostActions(
-                    certify_remediate_immediately=False,
-                ),
-                shared.PolicyPostActions(
-                    certify_remediate_immediately=False,
-                ),
-                shared.PolicyPostActions(
-                    certify_remediate_immediately=False,
-                ),
                 shared.PolicyPostActions(
                     certify_remediate_immediately=False,
                 ),
             ],
             reassign_tasks_to_delegates=False,
         ),
-        update_mask='libero',
+        update_mask='architecto',
     ),
-    id='1ea42655-5ba3-4c28-b44e-d53b88f3a8d8',
+    id='9f1d1705-1339-4d08-886a-1840394c2607',
 )
 
 res = s.policies.update(req)

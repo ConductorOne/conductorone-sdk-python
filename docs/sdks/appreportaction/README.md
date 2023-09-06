@@ -16,13 +16,14 @@ from sdk.models import operations, shared
 
 s = sdk.SDK(
     security=shared.Security(
+        bearer_auth="",
         oauth="",
     ),
 )
 
 req = operations.C1APIAppV1AppReportActionServiceGenerateReportRequest(
     app_actions_service_generate_report_request=shared.AppActionsServiceGenerateReportRequest(),
-    app_id='perferendis',
+    app_id='vero',
 )
 
 res = s.app_report_action.generate_report(req)

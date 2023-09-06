@@ -22,6 +22,19 @@ class AppUserAppUserType(str, Enum):
 @dataclass_json(undefined=Undefined.EXCLUDE)
 
 @dataclasses.dataclass
+class AppUserInput:
+    r"""Application User that represents an account in the application."""
+    app_user_status: Optional[shared_appuserstatus.AppUserStatusInput] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status'), 'exclude': lambda f: f is None }})
+    r"""The satus of the applicaiton user."""
+    app_user_type: Optional[AppUserAppUserType] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('appUserType'), 'exclude': lambda f: f is None }})
+    r"""The appplication user type. Type can be user, system or service."""
+    
+
+
+
+@dataclass_json(undefined=Undefined.EXCLUDE)
+
+@dataclasses.dataclass
 class AppUser:
     r"""Application User that represents an account in the application."""
     app_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('appId'), 'exclude': lambda f: f is None }})

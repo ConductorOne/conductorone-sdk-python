@@ -24,3 +24,11 @@ class AppGroupApproval:
     r"""Configuration to specific which users to fallback to if fallback is enabled and the group is empty."""
     
 
+
+
+
+@dataclasses.dataclass
+class AppGroupApprovalInput:
+    r"""The AppGroupApproval object provides the configuration for setting a group as the approvers of an approval policy step."""
+    
+

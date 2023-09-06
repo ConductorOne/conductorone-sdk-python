@@ -135,37 +135,6 @@ class AppEntitlements:
         return res
 
     
-    def list_groups(self, request: operations.C1APIAppV1AppEntitlementsListGroupsRequest) -> operations.C1APIAppV1AppEntitlementsListGroupsResponse:
-        r"""List Groups
-        List app groups associated with an app entitlement.
-        """
-        base_url = utils.template_url(*self.sdk_configuration.get_server_details())
-        
-        url = utils.generate_url(operations.C1APIAppV1AppEntitlementsListGroupsRequest, base_url, '/api/v1/apps/{app_id}/entitlements/{app_entitlement_id}/groups', request)
-        headers = {}
-        query_params = utils.get_query_params(operations.C1APIAppV1AppEntitlementsListGroupsRequest, request)
-        headers['Accept'] = 'application/json'
-        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
-        
-        client = self.sdk_configuration.security_client
-        
-        http_res = client.request('GET', url, params=query_params, headers=headers)
-        content_type = http_res.headers.get('Content-Type')
-
-        res = operations.C1APIAppV1AppEntitlementsListGroupsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
-        
-        if http_res.status_code == 200:
-            if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[shared.ListAppEntitlementGroupsResponse])
-                res.list_app_entitlement_groups_response = out
-            else:
-                raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
-        elif http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
-            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
-
-        return res
-
-    
     def list_users(self, request: operations.C1APIAppV1AppEntitlementsListUsersRequest) -> operations.C1APIAppV1AppEntitlementsListUsersResponse:
         r"""List Users
         List the users, as AppEntitlementUsers objects, of an app entitlement.

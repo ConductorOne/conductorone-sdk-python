@@ -17,12 +17,13 @@ from sdk.models import operations, shared
 
 s = sdk.SDK(
     security=shared.Security(
+        bearer_auth="",
         oauth="",
     ),
 )
 
 req = operations.C1APIUserV1UserServiceGetRequest(
-    id='7ce52b89-5c53-47c6-854e-fb0b34896c3c',
+    id='12fde047-7177-48ff-a1d0-17476360a15d',
 )
 
 res = s.user.get(req)
@@ -55,13 +56,14 @@ from sdk.models import operations, shared
 
 s = sdk.SDK(
     security=shared.Security(
+        bearer_auth="",
         oauth="",
     ),
 )
 
 req = operations.C1APIUserV1UserServiceListRequest(
-    page_size=6845.53,
-    page_token='nostrum',
+    page_size=7137.67,
+    page_token='aliquid',
 )
 
 res = s.user.list(req)

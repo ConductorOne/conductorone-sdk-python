@@ -18,6 +18,7 @@ from sdk.models import shared
 
 s = sdk.SDK(
     security=shared.Security(
+        bearer_auth="",
         oauth="",
     ),
 )
@@ -25,16 +26,20 @@ s = sdk.SDK(
 req = shared.TaskServiceCreateGrantRequest(
     task_expand_mask=shared.TaskExpandMask(
         paths=[
-            'soluta',
+            'totam',
         ],
     ),
-    app_entitlement_id='repudiandae',
-    app_id='nam',
-    app_user_id='dolore',
-    description='iusto',
+    task_grant_source=shared.TaskGrantSource(
+        external_url='quae',
+        integration_id='molestiae',
+    ),
+    app_entitlement_id='eveniet',
+    app_id='qui',
+    app_user_id='cum',
+    description='iure',
     emergency_access=False,
-    grant_duration='voluptate',
-    identity_user_id='sequi',
+    grant_duration='necessitatibus',
+    identity_user_id='ratione',
 )
 
 res = s.task.create_grant_task(req)
@@ -67,6 +72,7 @@ from sdk.models import shared
 
 s = sdk.SDK(
     security=shared.Security(
+        bearer_auth="",
         oauth="",
     ),
 )
@@ -74,15 +80,14 @@ s = sdk.SDK(
 req = shared.TaskServiceCreateRevokeRequest(
     task_expand_mask=shared.TaskExpandMask(
         paths=[
-            'neque',
-            'quo',
+            'laborum',
         ],
     ),
-    app_entitlement_id='deleniti',
-    app_id='quibusdam',
-    app_user_id='iure',
-    description='odit',
-    identity_user_id='voluptatibus',
+    app_entitlement_id='distinctio',
+    app_id='voluptatum',
+    app_user_id='rem',
+    description='aliquam',
+    identity_user_id='ad',
 )
 
 res = s.task.create_revoke_task(req)
@@ -115,12 +120,13 @@ from sdk.models import operations, shared
 
 s = sdk.SDK(
     security=shared.Security(
+        bearer_auth="",
         oauth="",
     ),
 )
 
 req = operations.C1APITaskV1TaskServiceGetRequest(
-    id='64d1db1f-2c43-4106-a1e9-6349e1cf9e06',
+    id='f0597a60-ff2a-454a-b1e9-4764a3e865e7',
 )
 
 res = s.task.get(req)

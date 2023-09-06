@@ -6,7 +6,6 @@
 * [list](#list) - List
 * [list_for_app_resource](#list_for_app_resource) - List For App Resource
 * [list_for_app_user](#list_for_app_user) - List For App User
-* [list_groups](#list_groups) - List Groups
 * [list_users](#list_users) - List Users
 * [update](#update) - Update
 
@@ -22,13 +21,14 @@ from sdk.models import operations, shared
 
 s = sdk.SDK(
     security=shared.Security(
+        bearer_auth="",
         oauth="",
     ),
 )
 
 req = operations.C1APIAppV1AppEntitlementsGetRequest(
-    app_id='iste',
-    id='396fea75-96eb-410f-aaa2-352c5955907a',
+    app_id='perferendis',
+    id='5dfc2ddf-7cc7-48ca-9ba9-28fc816742cb',
 )
 
 res = s.app_entitlements.get(req)
@@ -61,14 +61,15 @@ from sdk.models import operations, shared
 
 s = sdk.SDK(
     security=shared.Security(
+        bearer_auth="",
         oauth="",
     ),
 )
 
 req = operations.C1APIAppV1AppEntitlementsListRequest(
-    app_id='doloribus',
-    page_size=9589.5,
-    page_token='architecto',
+    app_id='esse',
+    page_size=2165.5,
+    page_token='excepturi',
 )
 
 res = s.app_entitlements.list(req)
@@ -101,16 +102,17 @@ from sdk.models import operations, shared
 
 s = sdk.SDK(
     security=shared.Security(
+        bearer_auth="",
         oauth="",
     ),
 )
 
 req = operations.C1APIAppV1AppEntitlementsListForAppResourceRequest(
-    app_id='mollitia',
-    app_resource_id='dolorem',
-    app_resource_type_id='culpa',
-    page_size=1613.09,
-    page_token='repellat',
+    app_id='aspernatur',
+    app_resource_id='perferendis',
+    app_resource_type_id='ad',
+    page_size=6176.36,
+    page_token='sed',
 )
 
 res = s.app_entitlements.list_for_app_resource(req)
@@ -143,15 +145,16 @@ from sdk.models import operations, shared
 
 s = sdk.SDK(
     security=shared.Security(
+        bearer_auth="",
         oauth="",
     ),
 )
 
 req = operations.C1APIAppV1AppEntitlementsListForAppUserRequest(
-    app_id='mollitia',
-    app_user_id='occaecati',
-    page_size=2532.91,
-    page_token='commodi',
+    app_id='iste',
+    app_user_id='dolor',
+    page_size=6169.34,
+    page_token='laboriosam',
 )
 
 res = s.app_entitlements.list_for_app_user(req)
@@ -172,47 +175,6 @@ if res.list_app_entitlements_response is not None:
 **[operations.C1APIAppV1AppEntitlementsListForAppUserResponse](../../models/operations/c1apiappv1appentitlementslistforappuserresponse.md)**
 
 
-## list_groups
-
-List app groups associated with an app entitlement.
-
-### Example Usage
-
-```python
-import sdk
-from sdk.models import operations, shared
-
-s = sdk.SDK(
-    security=shared.Security(
-        oauth="",
-    ),
-)
-
-req = operations.C1APIAppV1AppEntitlementsListGroupsRequest(
-    app_entitlement_id='quam',
-    app_id='molestiae',
-    page_size=2444.25,
-    page_token='error',
-)
-
-res = s.app_entitlements.list_groups(req)
-
-if res.list_app_entitlement_groups_response is not None:
-    # handle response
-```
-
-### Parameters
-
-| Parameter                                                                                                                      | Type                                                                                                                           | Required                                                                                                                       | Description                                                                                                                    |
-| ------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                      | [operations.C1APIAppV1AppEntitlementsListGroupsRequest](../../models/operations/c1apiappv1appentitlementslistgroupsrequest.md) | :heavy_check_mark:                                                                                                             | The request object to use for the request.                                                                                     |
-
-
-### Response
-
-**[operations.C1APIAppV1AppEntitlementsListGroupsResponse](../../models/operations/c1apiappv1appentitlementslistgroupsresponse.md)**
-
-
 ## list_users
 
 List the users, as AppEntitlementUsers objects, of an app entitlement.
@@ -225,15 +187,16 @@ from sdk.models import operations, shared
 
 s = sdk.SDK(
     security=shared.Security(
+        bearer_auth="",
         oauth="",
     ),
 )
 
 req = operations.C1APIAppV1AppEntitlementsListUsersRequest(
-    app_entitlement_id='quia',
-    app_id='quis',
-    page_size=1103.75,
-    page_token='laborum',
+    app_entitlement_id='hic',
+    app_id='saepe',
+    page_size=6818.2,
+    page_token='in',
 )
 
 res = s.app_entitlements.list_users(req)
@@ -266,6 +229,7 @@ from sdk.models import operations, shared
 
 s = sdk.SDK(
     security=shared.Security(
+        bearer_auth="",
         oauth="",
     ),
 )
@@ -276,49 +240,43 @@ req = operations.C1APIAppV1AppEntitlementsUpdateRequest(
             provision_policy=shared.ProvisionPolicy(
                 connector_provision=shared.ConnectorProvision(),
                 delegated_provision=shared.DelegatedProvision(
-                    app_id='animi',
-                    entitlement_id='enim',
+                    app_id='corporis',
+                    entitlement_id='iste',
                 ),
                 manual_provision=shared.ManualProvision(
-                    instructions='odit',
+                    instructions='iure',
                     user_ids=[
-                        'sequi',
-                        'tenetur',
-                        'ipsam',
-                        'id',
+                        'saepe',
                     ],
                 ),
             ),
-            app_id='possimus',
-            app_resource_id='aut',
-            app_resource_type_id='quasi',
-            certify_policy_id='error',
+            app_id='quidem',
+            app_resource_id='architecto',
+            app_resource_type_id='ipsa',
+            certify_policy_id='reiciendis',
             compliance_framework_value_ids=[
-                'laborum',
-                'quasi',
-                'reiciendis',
-                'voluptatibus',
+                'est',
             ],
-            description='vero',
-            display_name='nihil',
-            duration_grant='praesentium',
+            description='mollitia',
+            display_name='laborum',
+            duration_grant='dolores',
             duration_unset=shared.AppEntitlementDurationUnset(),
             emergency_grant_enabled=False,
-            emergency_grant_policy_id='voluptatibus',
-            grant_policy_id='ipsa',
-            revoke_policy_id='omnis',
-            risk_level_value_id='voluptate',
-            slug='cum',
+            emergency_grant_policy_id='dolorem',
+            grant_policy_id='corporis',
+            revoke_policy_id='explicabo',
+            risk_level_value_id='nobis',
+            slug='enim',
         ),
         app_entitlement_expand_mask=shared.AppEntitlementExpandMask(
             paths=[
-                'doloremque',
+                'omnis',
             ],
         ),
-        update_mask='reprehenderit',
+        update_mask='nemo',
     ),
-    app_id='ut',
-    id='f15471b5-e6e1-43b9-9d48-8e1e91e450ad',
+    app_id='minima',
+    id='907aff1a-3a2f-4a94-a773-9251aa52c3f5',
 )
 
 res = s.app_entitlements.update(req)

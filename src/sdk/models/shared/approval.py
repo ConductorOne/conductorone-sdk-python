@@ -3,17 +3,11 @@
 from __future__ import annotations
 import dataclasses
 from ..shared import appgroupapproval as shared_appgroupapproval
-from ..shared import appgroupapproval1 as shared_appgroupapproval1
 from ..shared import appownerapproval as shared_appownerapproval
-from ..shared import appownerapproval1 as shared_appownerapproval1
 from ..shared import entitlementownerapproval as shared_entitlementownerapproval
-from ..shared import entitlementownerapproval1 as shared_entitlementownerapproval1
 from ..shared import managerapproval as shared_managerapproval
-from ..shared import managerapproval1 as shared_managerapproval1
 from ..shared import selfapproval as shared_selfapproval
-from ..shared import selfapproval1 as shared_selfapproval1
 from ..shared import userapproval as shared_userapproval
-from ..shared import userapproval1 as shared_userapproval1
 from dataclasses_json import Undefined, dataclass_json
 from sdk import utils
 from typing import Optional
@@ -71,17 +65,17 @@ class ApprovalInput:
       - self
       - entitlementOwners
     """
-    app_group_approval: Optional[shared_appgroupapproval1.AppGroupApproval1] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('group'), 'exclude': lambda f: f is None }})
+    app_group_approval: Optional[shared_appgroupapproval.AppGroupApprovalInput] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('group'), 'exclude': lambda f: f is None }})
     r"""The AppGroupApproval object provides the configuration for setting a group as the approvers of an approval policy step."""
-    app_owner_approval: Optional[shared_appownerapproval1.AppOwnerApproval1] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('appOwners'), 'exclude': lambda f: f is None }})
+    app_owner_approval: Optional[shared_appownerapproval.AppOwnerApprovalInput] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('appOwners'), 'exclude': lambda f: f is None }})
     r"""App owner approval provides the configuration for an approval step when the app owner is the target."""
-    entitlement_owner_approval: Optional[shared_entitlementownerapproval1.EntitlementOwnerApproval1] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('entitlementOwners'), 'exclude': lambda f: f is None }})
+    entitlement_owner_approval: Optional[shared_entitlementownerapproval.EntitlementOwnerApprovalInput] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('entitlementOwners'), 'exclude': lambda f: f is None }})
     r"""The entitlement owner approval allows configuration of the approval step when the target approvers are the entitlement owners."""
-    manager_approval: Optional[shared_managerapproval1.ManagerApproval1] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('manager'), 'exclude': lambda f: f is None }})
+    manager_approval: Optional[shared_managerapproval.ManagerApprovalInput] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('manager'), 'exclude': lambda f: f is None }})
     r"""The manager approval object provides configuration options for approval when the target of the approval is the manager of the user in the task."""
-    self_approval: Optional[shared_selfapproval1.SelfApproval1] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('self'), 'exclude': lambda f: f is None }})
+    self_approval: Optional[shared_selfapproval.SelfApprovalInput] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('self'), 'exclude': lambda f: f is None }})
     r"""The self approval object describes the configuration of a policy step that needs to be approved by the target of the request."""
-    user_approval: Optional[shared_userapproval1.UserApproval1] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('users'), 'exclude': lambda f: f is None }})
+    user_approval: Optional[shared_userapproval.UserApprovalInput] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('users'), 'exclude': lambda f: f is None }})
     r"""The user approval object describes the approval configuration of a policy step that needs to be approved by a specific list of users."""
     
 

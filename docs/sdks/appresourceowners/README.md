@@ -16,16 +16,17 @@ from sdk.models import operations, shared
 
 s = sdk.SDK(
     security=shared.Security(
+        bearer_auth="",
         oauth="",
     ),
 )
 
 req = operations.C1APIAppV1AppResourceOwnersListRequest(
-    app_id='accusamus',
-    page_size=2497.96,
-    page_token='occaecati',
-    resource_id='enim',
-    resource_type_id='accusamus',
+    app_id='incidunt',
+    page_size=3185.69,
+    page_token='consequatur',
+    resource_id='est',
+    resource_type_id='quibusdam',
 )
 
 res = s.app_resource_owners.list(req)

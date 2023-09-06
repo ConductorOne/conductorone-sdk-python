@@ -15,7 +15,7 @@ class SearchAppsRequest:
     app_ids: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('appIds'), 'exclude': lambda f: f is None }})
     r"""A list of app IDs to restrict the search to."""
     display_name: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('displayName'), 'exclude': lambda f: f is None }})
-    r"""Search for apps with an exact match on the display name."""
+    r"""Search for apps with a case insensitive match on the display name."""
     exclude_app_ids: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('excludeAppIds'), 'exclude': lambda f: f is None }})
     r"""A list of app IDs to remove from the results."""
     page_size: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('pageSize'), 'exclude': lambda f: f is None }})

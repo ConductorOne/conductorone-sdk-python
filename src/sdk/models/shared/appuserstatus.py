@@ -7,6 +7,14 @@ from enum import Enum
 from sdk import utils
 from typing import Optional
 
+
+
+@dataclasses.dataclass
+class AppUserStatusInput:
+    r"""The satus of the applicaiton user."""
+    
+
+
 class AppUserStatusStatus(str, Enum):
     r"""The application user status field."""
     STATUS_UNSPECIFIED = 'STATUS_UNSPECIFIED'

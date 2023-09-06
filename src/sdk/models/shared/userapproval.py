@@ -18,3 +18,11 @@ class UserApproval:
     r"""Array of users configured for approval."""
     
 
+
+
+
+@dataclasses.dataclass
+class UserApprovalInput:
+    r"""The user approval object describes the approval configuration of a policy step that needs to be approved by a specific list of users."""
+    
+

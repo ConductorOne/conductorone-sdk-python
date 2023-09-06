@@ -17,13 +17,14 @@ from sdk.models import operations, shared
 
 s = sdk.SDK(
     security=shared.Security(
+        bearer_auth="",
         oauth="",
     ),
 )
 
 req = operations.C1APIAppV1AppResourceTypeServiceGetRequest(
-    app_id='natus',
-    id='b6e21419-5989-40af-a563-e2516fe4c8b7',
+    app_id='cupiditate',
+    id='802d502a-94bb-44f6-bc96-9e9a3efa77df',
 )
 
 res = s.app_resource_type.get(req)
@@ -56,14 +57,15 @@ from sdk.models import operations, shared
 
 s = sdk.SDK(
     security=shared.Security(
+        bearer_auth="",
         oauth="",
     ),
 )
 
 req = operations.C1APIAppV1AppResourceTypeServiceListRequest(
-    app_id='architecto',
-    page_size=995.69,
-    page_token='repudiandae',
+    app_id='rerum',
+    page_size=1162.02,
+    page_token='magnam',
 )
 
 res = s.app_resource_type.list(req)
