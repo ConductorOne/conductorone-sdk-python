@@ -16,6 +16,7 @@ from sdk.models import shared
 
 s = sdk.SDK(
     security=shared.Security(
+        bearer_auth="",
         oauth="",
     ),
 )

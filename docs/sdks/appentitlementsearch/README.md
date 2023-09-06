@@ -16,6 +16,7 @@ from sdk.models import shared
 
 s = sdk.SDK(
     security=shared.Security(
+        bearer_auth="",
         oauth="",
     ),
 )
@@ -23,49 +24,35 @@ s = sdk.SDK(
 req = shared.AppEntitlementSearchServiceSearchRequest(
     app_entitlement_expand_mask=shared.AppEntitlementExpandMask(
         paths=[
-            'sapiente',
-            'quo',
-            'odit',
-            'at',
+            'delectus',
         ],
     ),
-    access_review_id='at',
-    alias='maiores',
+    access_review_id='tempora',
+    alias='suscipit',
     app_ids=[
-        'quod',
-        'quod',
-    ],
-    app_user_ids=[
-        'totam',
-        'porro',
-    ],
-    compliance_framework_ids=[
-        'dicta',
-        'nam',
-        'officia',
-    ],
-    exclude_app_ids=[
-        'fugit',
-        'deleniti',
-        'hic',
-    ],
-    exclude_app_user_ids=[
-        'totam',
-        'beatae',
-        'commodi',
         'molestiae',
     ],
+    app_user_ids=[
+        'minus',
+    ],
+    compliance_framework_ids=[
+        'placeat',
+    ],
+    exclude_app_ids=[
+        'voluptatum',
+    ],
+    exclude_app_user_ids=[
+        'iusto',
+    ],
     only_get_expiring=False,
-    page_size=2645.55,
-    page_token='qui',
-    query='impedit',
+    page_size=5680.45,
+    page_token='nisi',
+    query='recusandae',
     resource_type_ids=[
-        'esse',
-        'ipsum',
-        'excepturi',
+        'temporibus',
     ],
     risk_level_ids=[
-        'perferendis',
+        'ab',
     ],
 )
 

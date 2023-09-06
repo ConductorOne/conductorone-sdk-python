@@ -5,7 +5,6 @@ import dataclasses
 import dateutil.parser
 from ..shared import connectorstatus as shared_connectorstatus
 from ..shared import oauth2authorizedas as shared_oauth2authorizedas
-from ..shared import oauth2authorizedas1 as shared_oauth2authorizedas1
 from dataclasses_json import Undefined, dataclass_json
 from datetime import datetime
 from marshmallow import fields
@@ -30,7 +29,7 @@ class ConnectorInput:
     r"""The display name of the connector."""
     id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id'), 'exclude': lambda f: f is None }})
     r"""The id of the connector."""
-    o_auth2_authorized_as: Optional[shared_oauth2authorizedas1.OAuth2AuthorizedAs1] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('oauthAuthorizedAs'), 'exclude': lambda f: f is None }})
+    o_auth2_authorized_as: Optional[shared_oauth2authorizedas.OAuth2AuthorizedAsInput] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('oauthAuthorizedAs'), 'exclude': lambda f: f is None }})
     r"""OAuth2AuthorizedAs tracks the user that OAuthed with the connector."""
     user_ids: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('userIds'), 'exclude': lambda f: f is None }})
     r"""The userIds field is used to define the integration owners of the connector."""

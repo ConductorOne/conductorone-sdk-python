@@ -19,6 +19,7 @@ from sdk.models import shared
 
 s = sdk.SDK(
     security=shared.Security(
+        bearer_auth="",
         oauth="",
     ),
 )
@@ -26,10 +27,10 @@ s = sdk.SDK(
 req = shared.DirectoryServiceCreateRequest(
     directory_expand_mask=shared.DirectoryExpandMask(
         paths=[
-            'saepe',
+            'praesentium',
         ],
     ),
-    app_id='vel',
+    app_id='consequuntur',
 )
 
 res = s.directory.create(req)
@@ -62,13 +63,14 @@ from sdk.models import operations, shared
 
 s = sdk.SDK(
     security=shared.Security(
+        bearer_auth="",
         oauth="",
     ),
 )
 
 req = operations.C1APIDirectoryV1DirectoryServiceDeleteRequest(
     directory_service_delete_request=shared.DirectoryServiceDeleteRequest(),
-    app_id='harum',
+    app_id='deleniti',
 )
 
 res = s.directory.delete(req)
@@ -101,12 +103,13 @@ from sdk.models import operations, shared
 
 s = sdk.SDK(
     security=shared.Security(
+        bearer_auth="",
         oauth="",
     ),
 )
 
 req = operations.C1APIDirectoryV1DirectoryServiceGetRequest(
-    app_id='molestiae',
+    app_id='fugit',
 )
 
 res = s.directory.get(req)
@@ -139,13 +142,14 @@ from sdk.models import operations, shared
 
 s = sdk.SDK(
     security=shared.Security(
+        bearer_auth="",
         oauth="",
     ),
 )
 
 req = operations.C1APIDirectoryV1DirectoryServiceListRequest(
-    page_size=6996.22,
-    page_token='occaecati',
+    page_size=6813.93,
+    page_token='mollitia',
 )
 
 res = s.directory.list(req)

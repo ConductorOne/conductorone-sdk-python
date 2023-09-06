@@ -3,18 +3,26 @@
 
 ```python
 import sdk
-from sdk.models import shared
+from sdk.models import operations, shared
 
-s = sdk.SdkWithCredentials("CLIENT_ID", "CLIENT_SECRET")
-
-req = shared.AppEntitlementSearchServiceSearchRequest(
-    page_size=100,
+s = sdk.SDK(
+    security=shared.Security(
+        bearer_auth="",
+        oauth="",
+    ),
 )
 
-res = s.app_entitlement_search.search(req)
+req = operations.C1APIAppV1AppEntitlementOwnersAddRequest(
+    add_app_entitlement_owner_request=shared.AddAppEntitlementOwnerRequest(
+        user_id='corrupti',
+    ),
+    app_id='provident',
+    entitlement_id='distinctio',
+)
 
-if res.app_entitlement_search_service_search_response is not None:
-    # For more decoding options, see `https://pypi.org/project/dataclasses-json/`
-    res = res.app_entitlement_search_service_search_response.to_dict()
+res = s.app_entitlement_owners.add(req)
+
+if res.add_app_entitlement_owner_response is not None:
+    # handle response
 ```
 <!-- End SDK Example Usage -->

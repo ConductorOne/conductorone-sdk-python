@@ -3,6 +3,7 @@
 from __future__ import annotations
 import dataclasses
 from ..shared import provisionpolicy as shared_provisionpolicy
+from ..shared import provisiontarget as shared_provisiontarget
 from dataclasses_json import Undefined, dataclass_json
 from sdk import utils
 from typing import Optional
@@ -23,5 +24,7 @@ class Provision:
       - manual
       - delegated
     """
+    provision_target: Optional[shared_provisiontarget.ProvisionTarget] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('provisionTarget'), 'exclude': lambda f: f is None }})
+    r"""ProvisionTarget indicates the specific app, app entitlement, and if known, the app user and grant duration of this provision step"""
     
 

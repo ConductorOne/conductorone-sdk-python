@@ -16,38 +16,29 @@ from sdk.models import shared
 
 s = sdk.SDK(
     security=shared.Security(
+        bearer_auth="",
         oauth="",
     ),
 )
 
 req = shared.SearchAppResourceTypesRequest(
     app_ids=[
-        'quidem',
-        'provident',
-        'nam',
-        'id',
+        'explicabo',
     ],
     exclude_resource_type_ids=[
-        'deleniti',
-        'sapiente',
-        'amet',
+        'deserunt',
     ],
     exclude_resource_type_trait_ids=[
-        'nisi',
-        'vel',
-        'natus',
-    ],
-    page_size=6063.93,
-    page_token='molestiae',
-    query='perferendis',
-    resource_type_ids=[
-        'magnam',
         'distinctio',
     ],
+    page_size=8413.86,
+    page_token='labore',
+    query='modi',
+    resource_type_ids=[
+        'qui',
+    ],
     resource_type_trait_ids=[
-        'labore',
-        'labore',
-        'suscipit',
+        'aliquid',
     ],
 )
 

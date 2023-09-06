@@ -16,14 +16,15 @@ from sdk.models import operations, shared
 
 s = sdk.SDK(
     security=shared.Security(
+        bearer_auth="",
         oauth="",
     ),
 )
 
 req = operations.C1APIAppV1AppEntitlementUserBindingServiceListAppUsersForIdentityWithGrantRequest(
-    app_entitlement_id='ad',
-    app_id='natus',
-    identity_user_id='sed',
+    app_entitlement_id='quis',
+    app_id='veritatis',
+    identity_user_id='deserunt',
 )
 
 res = s.app_entitlement_user_binding.list_app_users_for_identity_with_grant(req)

@@ -17,12 +17,13 @@ from sdk.models import operations, shared
 
 s = sdk.SDK(
     security=shared.Security(
+        bearer_auth="",
         oauth="",
     ),
 )
 
 req = operations.C1APIAppV1AppUsageControlsServiceGetRequest(
-    app_id='magni',
+    app_id='non',
 )
 
 res = s.app_usage_controls.get(req)
@@ -55,6 +56,7 @@ from sdk.models import operations, shared
 
 s = sdk.SDK(
     security=shared.Security(
+        bearer_auth="",
         oauth="",
     ),
 )
@@ -62,15 +64,15 @@ s = sdk.SDK(
 req = operations.C1APIAppV1AppUsageControlsServiceUpdateRequest(
     update_app_usage_controls_request=shared.UpdateAppUsageControlsRequest(
         app_usage_controls=shared.AppUsageControls(
-            app_id='sunt',
+            app_id='occaecati',
             notify=False,
-            notify_after_days=7790.51,
+            notify_after_days=3132.18,
             revoke=False,
-            revoke_after_days=8480.09,
+            revoke_after_days=8817.36,
         ),
-        update_mask='pariatur',
+        update_mask='delectus',
     ),
-    app_id='maxime',
+    app_id='quidem',
 )
 
 res = s.app_usage_controls.update(req)

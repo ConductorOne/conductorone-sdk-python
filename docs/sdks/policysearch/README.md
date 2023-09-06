@@ -16,18 +16,24 @@ from sdk.models import shared
 
 s = sdk.SDK(
     security=shared.Security(
+        bearer_auth="",
         oauth="",
     ),
 )
 
 req = shared.SearchPoliciesRequest(
-    display_name='hic',
-    page_size=3487.83,
-    page_token='nobis',
+    display_name='dicta',
+    page_size=9816.4,
+    page_token='natus',
     policy_types=[
-        shared.SearchPoliciesRequestPolicyTypes.POLICY_TYPE_ACCESS_REQUEST,
+        shared.SearchPoliciesRequestPolicyTypes.POLICY_TYPE_GRANT,
     ],
-    query='sed',
+    query='voluptatibus',
+    refs=[
+        shared.PolicyRef(
+            id='5f0642da-c7af-4515-8c41-3aa63aae8d67',
+        ),
+    ],
 )
 
 res = s.policy_search.search(req)

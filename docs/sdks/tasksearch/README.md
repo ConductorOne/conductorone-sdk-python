@@ -17,6 +17,7 @@ from sdk.models import shared
 
 s = sdk.SDK(
     security=shared.Security(
+        bearer_auth="",
         oauth="",
     ),
 )
@@ -24,147 +25,93 @@ s = sdk.SDK(
 req = shared.TaskSearchRequestInput(
     task_expand_mask=shared.TaskExpandMask(
         paths=[
-            'est',
-            'error',
+            'aliquid',
         ],
     ),
     access_review_ids=[
-        'labore',
-        'veritatis',
+        'accusantium',
     ],
     account_owner_ids=[
-        'consectetur',
-        'vitae',
-        'inventore',
-        'dolorem',
+        'repellat',
     ],
-    actor_id='ad',
+    actor_id='doloribus',
     app_entitlement_ids=[
-        'iste',
+        'ullam',
     ],
     app_resource_ids=[
-        'nemo',
-        'soluta',
+        'in',
     ],
     app_resource_type_ids=[
-        'rem',
-        'dolorum',
-        'odio',
+        'nam',
     ],
     app_user_subject_ids=[
-        'alias',
+        'earum',
     ],
     application_ids=[
-        'vel',
+        'officia',
     ],
     assignees_in_ids=[
-        'quae',
+        'laborum',
     ],
-    created_after=dateutil.parser.isoparse('2022-10-16T23:42:04.526Z'),
-    created_before=dateutil.parser.isoparse('2022-01-25T16:13:44.576Z'),
-    current_step=shared.TaskSearchRequestCurrentStep.TASK_SEARCH_CURRENT_STEP_UNSPECIFIED,
-    emergency_status=shared.TaskSearchRequestEmergencyStatus.UNSPECIFIED,
+    created_after=dateutil.parser.isoparse('2022-03-14T23:12:21.252Z'),
+    created_before=dateutil.parser.isoparse('2021-04-23T08:23:19.189Z'),
+    current_step=shared.TaskSearchRequestCurrentStep.TASK_SEARCH_CURRENT_STEP_PROVISION,
+    emergency_status=shared.TaskSearchRequestEmergencyStatus.EMERGENCY,
     exclude_app_entitlement_ids=[
-        'nulla',
-        'distinctio',
-        'maxime',
+        'cumque',
     ],
     exclude_ids=[
-        'quia',
+        'vitae',
     ],
     include_deleted=False,
     my_work_user_ids=[
-        'omnis',
-        'libero',
+        'rerum',
     ],
     opener_ids=[
-        'id',
+        'tempora',
     ],
-    page_size=7278.88,
-    page_token='fugiat',
+    page_size=3354.98,
+    page_token='inventore',
     previously_acted_on_ids=[
-        'quos',
-        'placeat',
-        'sit',
+        'fugit',
     ],
-    query='iusto',
+    query='cumque',
     refs=[
         shared.TaskRef(
-            id='e1084cb0-672d-41ad-879e-eb9665b85efb',
+            id='1032648d-c2f6-4151-99eb-fd0e9fe6c632',
         ),
     ],
-    sort_by=shared.TaskSearchRequestSortBy.TASK_SEARCH_SORT_BY_REVERSE_TICKET_ID,
+    sort_by=shared.TaskSearchRequestSortBy.TASK_SEARCH_SORT_BY_ACCOUNT_OWNER,
     subject_ids=[
-        'quia',
+        'fuga',
     ],
     task_states=[
-        shared.TaskSearchRequestTaskStates.TASK_STATE_CLOSED,
-        shared.TaskSearchRequestTaskStates.TASK_STATE_CLOSED,
         shared.TaskSearchRequestTaskStates.TASK_STATE_UNSPECIFIED,
     ],
     task_types=[
         shared.TaskTypeInput(
-            task_type_certify=shared.TaskTypeCertify(),
-            task_type_grant=shared.TaskTypeGrant(),
-            task_type_revoke=shared.TaskTypeRevokeInput(
-                task_revoke_source=shared.TaskRevokeSource(
-                    task_revoke_source_expired=shared.TaskRevokeSourceExpired(
-                        expired_at=dateutil.parser.isoparse('2022-06-21T04:17:16.724Z'),
-                    ),
-                    task_revoke_source_non_usage=shared.TaskRevokeSourceNonUsage(
-                        expires_at=dateutil.parser.isoparse('2021-07-20T13:08:36.205Z'),
-                        last_login=dateutil.parser.isoparse('2022-09-20T13:39:46.907Z'),
-                    ),
-                    task_revoke_source_request=shared.TaskRevokeSourceRequest(
-                        request_user_id='explicabo',
-                    ),
-                    task_revoke_source_review=shared.TaskRevokeSourceReview(
-                        access_review_id='corporis',
-                        cert_ticket_id='error',
-                    ),
+            task_type_certify=shared.TaskTypeCertifyInput(),
+            task_type_grant=shared.TaskTypeGrantInput(
+                task_grant_source=shared.TaskGrantSource(
+                    external_url='animi',
+                    integration_id='necessitatibus',
                 ),
             ),
-        ),
-        shared.TaskTypeInput(
-            task_type_certify=shared.TaskTypeCertify(),
-            task_type_grant=shared.TaskTypeGrant(),
             task_type_revoke=shared.TaskTypeRevokeInput(
                 task_revoke_source=shared.TaskRevokeSource(
                     task_revoke_source_expired=shared.TaskRevokeSourceExpired(
-                        expired_at=dateutil.parser.isoparse('2022-04-13T22:13:24.007Z'),
+                        expired_at=dateutil.parser.isoparse('2022-12-22T05:17:09.936Z'),
                     ),
                     task_revoke_source_non_usage=shared.TaskRevokeSourceNonUsage(
-                        expires_at=dateutil.parser.isoparse('2021-02-09T04:42:29.895Z'),
-                        last_login=dateutil.parser.isoparse('2022-04-22T18:47:14.845Z'),
+                        expires_at=dateutil.parser.isoparse('2022-11-29T01:33:31.768Z'),
+                        last_login=dateutil.parser.isoparse('2022-05-19T23:57:30.950Z'),
                     ),
                     task_revoke_source_request=shared.TaskRevokeSourceRequest(
-                        request_user_id='quis',
+                        request_user_id='occaecati',
                     ),
                     task_revoke_source_review=shared.TaskRevokeSourceReview(
-                        access_review_id='beatae',
-                        cert_ticket_id='unde',
-                    ),
-                ),
-            ),
-        ),
-        shared.TaskTypeInput(
-            task_type_certify=shared.TaskTypeCertify(),
-            task_type_grant=shared.TaskTypeGrant(),
-            task_type_revoke=shared.TaskTypeRevokeInput(
-                task_revoke_source=shared.TaskRevokeSource(
-                    task_revoke_source_expired=shared.TaskRevokeSourceExpired(
-                        expired_at=dateutil.parser.isoparse('2022-01-14T10:23:30.043Z'),
-                    ),
-                    task_revoke_source_non_usage=shared.TaskRevokeSourceNonUsage(
-                        expires_at=dateutil.parser.isoparse('2022-09-15T02:31:13.378Z'),
-                        last_login=dateutil.parser.isoparse('2022-09-29T05:24:35.816Z'),
-                    ),
-                    task_revoke_source_request=shared.TaskRevokeSourceRequest(
-                        request_user_id='nesciunt',
-                    ),
-                    task_revoke_source_review=shared.TaskRevokeSourceReview(
-                        access_review_id='at',
-                        cert_ticket_id='officia',
+                        access_review_id='suscipit',
+                        cert_ticket_id='adipisci',
                     ),
                 ),
             ),
