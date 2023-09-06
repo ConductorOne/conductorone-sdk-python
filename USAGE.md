@@ -5,7 +5,7 @@
 import sdk
 from sdk.models import shared
 
-s = sdk.SDKWithCredentials("CLIENT_ID", "CLIENT_SECRET")
+s = sdk.SdkWithCredentials("CLIENT_ID", "CLIENT_SECRET")
 
 req = shared.AppEntitlementSearchServiceSearchRequest(
     page_size=100,

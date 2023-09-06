@@ -10,7 +10,25 @@ from cryptography.hazmat.primitives.asymmetric.ed25519 import Ed25519PrivateKey
 from cryptography.exceptions import *
 
 
+def parse_secret(secret: str) -> Ed25519PrivateKey:
+    jwk_b64 = secret
+    jwk_json = base64.urlsafe_b64decode(jwk_b64).decode('utf-8')
+    jwk = json.loads(jwk_json)
 
+    if 'd' not in jwk:
+        raise ValueError("Invalid client secret: not a private key")
+        
+    if not jwk['kty'] == 'OKP' or not jwk['crv'] == 'Ed25519':
+        raise ValueError("Invalid client secret: not an Ed25519 key")
+
+    private_bytes = base64.urlsafe_b64decode(jwk['d'] + '==')
+    try:
+        private_key = Ed25519PrivateKey.from_private_bytes(private_bytes)
+    except ValueError:
+        print("Invalid key bytes. Make sure that the key bytes are correct.")
+        raise
+
+    return private_key
 class Token:
     assertion_type: str= 'urn:ietf:params:oauth:client-assertion-type:jwt-bearer'
 
@@ -19,29 +37,6 @@ class Token:
         self.token_url = token_url
         self.client_id = client_id
         self.client_secret = client_secret
-
-    def _parse_secret(secret: str) -> Ed25519PrivateKey:
-        jwk_b64 = secret
-        jwk_json = base64.urlsafe_b64decode(jwk_b64).decode('utf-8')
-        jwk = json.loads(jwk_json)
-
-        if 'd' not in jwk:
-            raise ValueError("Invalid client secret: not a private key")
-            
-        if not jwk['kty'] == 'OKP' or not jwk['crv'] == 'Ed25519':
-            raise ValueError("Invalid client secret: not an Ed25519 key")
-
-        private_bytes = base64.urlsafe_b64decode(jwk['d'] + '==')
-        try:
-            private_key = Ed25519PrivateKey.from_private_bytes(private_bytes)
-        except UnsupportedAlgorithm:
-            print("Unsupported algorithm. Make sure that the key type and curve are correct.")
-            raise
-        except ValueError:
-            print("Invalid key bytes. Make sure that the key bytes are correct.")
-            raise
-
-        return private_key
 
     def get_token(self) -> str:
         name, domain, version, secret = self.client_secret.split(':')
@@ -70,9 +65,9 @@ class Token:
             "iat": now,
             "nbf": now - 120
         }
-        pk = Token._parse_secret(secret)
+        private_key = parse_secret(secret)
         alg = "EdDSA"
-        token = jwt.encode(payload, pk, alg)
+        token = jwt.encode(payload, private_key, alg)
 
         body = {
             "client_id": self.client_id,
@@ -85,3 +80,4 @@ class Token:
         if resp.status_code != 200:
             raise Exception(f"Failed to get token: {resp.status_code}")
         return resp.json().get("access_token")
+    
