@@ -1,29 +1,27 @@
 name: Generate
-permissions:
-  checks: write
-  contents: write
-  pull-requests: write
-  statuses: write
-"on":
+
+on:
   workflow_dispatch:
     inputs:
       force:
-        description: Force generation of SDKs
+        description: "Force the generation of the SDKs"
         type: boolean
         default: false
   schedule:
     - cron: 0 0 * * *
+
 jobs:
   generate:
     uses: speakeasy-api/sdk-generation-action/.github/workflows/sdk-generation.yaml@v14
     with:
-      force: ${{ github.event.inputs.force }}
-      languages: |
-        - go
-      mode: pr
+      speakeasy_version: latest
       openapi_docs: |
         - https://insulator.conductor.one/api/v1/openapi.yaml
-      speakeasy_version: latest
+      languages: |-
+        - python
+      publish_python: true
+      force: ${{ github.event.inputs.force }}
     secrets:
       github_access_token: ${{ secrets.GITHUB_TOKEN }}
       speakeasy_api_key: ${{ secrets.SPEAKEASY_API_KEY }}
+  
