@@ -19,6 +19,7 @@ from sdk.models import operations, shared
 
 s = sdk.SDK(
     security=shared.Security(
+        bearer_auth="",
         oauth="",
     ),
 )
@@ -27,16 +28,13 @@ req = operations.C1APITaskV1TaskActionsServiceApproveRequest(
     task_actions_service_approve_request=shared.TaskActionsServiceApproveRequest(
         task_expand_mask=shared.TaskExpandMask(
             paths=[
-                'velit',
-                'laborum',
-                'non',
-                'dolor',
+                'provident',
             ],
         ),
-        comment='iusto',
-        policy_step_id='sit',
+        comment='quis',
+        policy_step_id='eum',
     ),
-    task_id='doloremque',
+    task_id='reiciendis',
 )
 
 res = s.task_actions.approve(req)
@@ -69,6 +67,7 @@ from sdk.models import operations, shared
 
 s = sdk.SDK(
     security=shared.Security(
+        bearer_auth="",
         oauth="",
     ),
 )
@@ -77,12 +76,12 @@ req = operations.C1APITaskV1TaskActionsServiceCommentRequest(
     task_actions_service_comment_request=shared.TaskActionsServiceCommentRequest(
         task_expand_mask=shared.TaskExpandMask(
             paths=[
-                'officia',
+                'provident',
             ],
         ),
-        comment='recusandae',
+        comment='aspernatur',
     ),
-    task_id='ea',
+    task_id='ullam',
 )
 
 res = s.task_actions.comment(req)
@@ -115,6 +114,7 @@ from sdk.models import operations, shared
 
 s = sdk.SDK(
     security=shared.Security(
+        bearer_auth="",
         oauth="",
     ),
 )
@@ -123,15 +123,13 @@ req = operations.C1APITaskV1TaskActionsServiceDenyRequest(
     task_actions_service_deny_request=shared.TaskActionsServiceDenyRequest(
         task_expand_mask=shared.TaskExpandMask(
             paths=[
-                'voluptas',
-                'facilis',
-                'placeat',
+                'quasi',
             ],
         ),
-        comment='perspiciatis',
-        policy_step_id='expedita',
+        comment='animi',
+        policy_step_id='nostrum',
     ),
-    task_id='deleniti',
+    task_id='mollitia',
 )
 
 res = s.task_actions.deny(req)
@@ -164,6 +162,7 @@ from sdk.models import operations, shared
 
 s = sdk.SDK(
     security=shared.Security(
+        bearer_auth="",
         oauth="",
     ),
 )
@@ -172,16 +171,13 @@ req = operations.C1APITaskV1TaskActionsServiceEscalateToEmergencyAccessRequest(
     task_actions_service_escalate_to_emergency_access_request=shared.TaskActionsServiceEscalateToEmergencyAccessRequest(
         task_expand_mask=shared.TaskExpandMask(
             paths=[
-                'voluptate',
-                'ullam',
-                'unde',
-                'necessitatibus',
+                'provident',
             ],
         ),
-        comment='animi',
-        policy_step_id='impedit',
+        comment='possimus',
+        policy_step_id='animi',
     ),
-    task_id='ipsam',
+    task_id='ex',
 )
 
 res = s.task_actions.escalate_to_emergency_access(req)

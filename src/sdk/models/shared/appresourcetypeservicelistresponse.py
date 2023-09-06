@@ -22,7 +22,5 @@ class AppResourceTypeServiceListResponse:
      The server returns one page of results and the nextPageToken until all results are retreived.
      To retrieve the next page, use the same request and append a pageToken field with the value of nextPageToken shown on the previous page.
     """
-    notification_token: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('notificationToken'), 'exclude': lambda f: f is None }})
-    r"""Deprecated"""
     
 

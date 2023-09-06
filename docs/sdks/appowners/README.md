@@ -18,14 +18,15 @@ from sdk.models import operations, shared
 
 s = sdk.SDK(
     security=shared.Security(
+        bearer_auth="",
         oauth="",
     ),
 )
 
 req = operations.C1APIAppV1AppOwnersAddRequest(
     add_app_owner_request=shared.AddAppOwnerRequest(),
-    app_id='explicabo',
-    user_id='deserunt',
+    app_id='id',
+    user_id='possimus',
 )
 
 res = s.app_owners.add(req)
@@ -58,14 +59,15 @@ from sdk.models import operations, shared
 
 s = sdk.SDK(
     security=shared.Security(
+        bearer_auth="",
         oauth="",
     ),
 )
 
 req = operations.C1APIAppV1AppOwnersListRequest(
-    app_id='distinctio',
-    page_size=8413.86,
-    page_token='labore',
+    app_id='aut',
+    page_size=971.01,
+    page_token='error',
 )
 
 res = s.app_owners.list(req)
@@ -98,14 +100,15 @@ from sdk.models import operations, shared
 
 s = sdk.SDK(
     security=shared.Security(
+        bearer_auth="",
         oauth="",
     ),
 )
 
 req = operations.C1APIAppV1AppOwnersRemoveRequest(
     remove_app_owner_request=shared.RemoveAppOwnerRequest(),
-    app_id='modi',
-    user_id='qui',
+    app_id='temporibus',
+    user_id='laborum',
 )
 
 res = s.app_owners.remove(req)

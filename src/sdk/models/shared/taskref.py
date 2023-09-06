@@ -13,6 +13,6 @@ from typing import Optional
 class TaskRef:
     r"""This object references a task by ID."""
     id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id'), 'exclude': lambda f: f is None }})
-    r"""The ID of the TaskRef"""
+    r"""The ID of the referenced Task"""
     
 

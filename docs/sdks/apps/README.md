@@ -20,20 +20,21 @@ from sdk.models import shared
 
 s = sdk.SDK(
     security=shared.Security(
+        bearer_auth="",
         oauth="",
     ),
 )
 
 req = shared.CreateAppRequest(
-    certify_policy_id='ea',
-    description='excepturi',
-    display_name='odit',
-    grant_policy_id='ea',
-    monthly_cost_usd=332.22,
+    certify_policy_id='sapiente',
+    description='amet',
+    display_name='deserunt',
+    grant_policy_id='nisi',
+    monthly_cost_usd=4238.55,
     owners=[
-        'maiores',
+        'natus',
     ],
-    revoke_policy_id='quidem',
+    revoke_policy_id='omnis',
 )
 
 res = s.apps.create(req)
@@ -66,13 +67,14 @@ from sdk.models import operations, shared
 
 s = sdk.SDK(
     security=shared.Security(
+        bearer_auth="",
         oauth="",
     ),
 )
 
 req = operations.C1APIAppV1AppsDeleteRequest(
     delete_app_request=shared.DeleteAppRequest(),
-    id='576b0d5f-0d30-4c5f-bb25-87053202c73d',
+    id='7074ba44-69b6-4e21-8195-9890afa563e2',
 )
 
 res = s.apps.delete(req)
@@ -105,12 +107,13 @@ from sdk.models import operations, shared
 
 s = sdk.SDK(
     security=shared.Security(
+        bearer_auth="",
         oauth="",
     ),
 )
 
 req = operations.C1APIAppV1AppsGetRequest(
-    id='5fe9b90c-2890-49b3-be49-a8d9cbf48633',
+    id='516fe4c8-b711-4e5b-bfd2-ed028921cddc',
 )
 
 res = s.apps.get(req)
@@ -143,13 +146,14 @@ from sdk.models import operations, shared
 
 s = sdk.SDK(
     security=shared.Security(
+        bearer_auth="",
         oauth="",
     ),
 )
 
 req = operations.C1APIAppV1AppsListRequest(
-    page_size=2224.43,
-    page_token='qui',
+    page_size=4113.97,
+    page_token='excepturi',
 )
 
 res = s.apps.list(req)
@@ -182,6 +186,7 @@ from sdk.models import operations, shared
 
 s = sdk.SDK(
     security=shared.Security(
+        bearer_auth="",
         oauth="",
     ),
 )
@@ -189,17 +194,17 @@ s = sdk.SDK(
 req = operations.C1APIAppV1AppsUpdateRequest(
     update_app_request_input=shared.UpdateAppRequestInput(
         app=shared.AppInput(
-            certify_policy_id='ipsum',
-            description='hic',
-            display_name='excepturi',
-            grant_policy_id='cum',
-            icon_url='voluptate',
-            monthly_cost_usd=4904.59,
-            revoke_policy_id='reiciendis',
+            certify_policy_id='odit',
+            description='ea',
+            display_name='accusantium',
+            grant_policy_id='ab',
+            icon_url='maiores',
+            monthly_cost_usd=6974.29,
+            revoke_policy_id='ipsam',
         ),
-        update_mask='amet',
+        update_mask='voluptate',
     ),
-    id='a4100674-ebf6-4928-8d1b-a77a89ebf737',
+    id='6b0d5f0d-30c5-4fbb-a587-053202c73d5f',
 )
 
 res = s.apps.update(req)

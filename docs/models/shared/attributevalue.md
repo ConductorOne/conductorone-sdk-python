@@ -1,0 +1,15 @@
+# AttributeValue
+
+AttributeValue is the value of an attribute of a defined type.
+
+
+## Fields
+
+| Field                                                                                   | Type                                                                                    | Required                                                                                | Description                                                                             |
+| --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
+| `attribute_type_id`                                                                     | *Optional[str]*                                                                         | :heavy_minus_sign:                                                                      | The ID of the AttributeType that this AttributeValue belongs to.                        |
+| `created_at`                                                                            | [date](https://docs.python.org/3/library/datetime.html#date-objects)                    | :heavy_minus_sign:                                                                      | N/A                                                                                     |
+| `deleted_at`                                                                            | [date](https://docs.python.org/3/library/datetime.html#date-objects)                    | :heavy_minus_sign:                                                                      | N/A                                                                                     |
+| `id`                                                                                    | *Optional[str]*                                                                         | :heavy_minus_sign:                                                                      | The ID of the AttributeValue.                                                           |
+| `updated_at`                                                                            | [date](https://docs.python.org/3/library/datetime.html#date-objects)                    | :heavy_minus_sign:                                                                      | N/A                                                                                     |
+| `value`                                                                                 | *Optional[str]*                                                                         | :heavy_minus_sign:                                                                      | The value of the AttributeValue. This is the string that will be displayed to the user. |

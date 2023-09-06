@@ -20,3 +20,11 @@ class SelfApproval:
     r"""Configuration to specific which users to fallback to if fallback is enabled and the identity user of the target app user cannot be determined."""
     
 
+
+
+
+@dataclasses.dataclass
+class SelfApprovalInput:
+    r"""The self approval object describes the configuration of a policy step that needs to be approved by the target of the request."""
+    
+

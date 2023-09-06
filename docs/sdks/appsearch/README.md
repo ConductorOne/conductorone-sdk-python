@@ -16,25 +16,22 @@ from sdk.models import shared
 
 s = sdk.SDK(
     security=shared.Security(
+        bearer_auth="",
         oauth="",
     ),
 )
 
 req = shared.SearchAppsRequest(
     app_ids=[
-        'expedita',
-        'nihil',
+        'cumque',
     ],
-    display_name='repellat',
+    display_name='facere',
     exclude_app_ids=[
-        'sed',
-        'saepe',
-        'pariatur',
-        'accusantium',
+        'ea',
     ],
-    page_size=1624.93,
-    page_token='praesentium',
-    query='natus',
+    page_size=3965.06,
+    page_token='laborum',
+    query='accusamus',
 )
 
 res = s.app_search.search(req)

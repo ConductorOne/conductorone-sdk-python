@@ -25,6 +25,7 @@ from sdk.models import operations, shared
 
 s = sdk.SDK(
     security=shared.Security(
+        bearer_auth="",
         oauth="",
     ),
 )
@@ -33,24 +34,19 @@ req = operations.C1APIAppV1ConnectorServiceCreateRequest(
     connector_service_create_request=shared.ConnectorServiceCreateRequest(
         connector_expand_mask=shared.ConnectorExpandMask(
             paths=[
-                'saepe',
-                'eius',
-                'aspernatur',
+                'optio',
             ],
         ),
-        catalog_id='perferendis',
+        catalog_id='accusamus',
         config={
-            "optio": 'accusamus',
+            "ad": 'saepe',
         },
-        description='ad',
+        description='suscipit',
         user_ids=[
-            'suscipit',
             'deserunt',
-            'provident',
-            'minima',
         ],
     ),
-    app_id='repellendus',
+    app_id='provident',
 )
 
 res = s.connector.create(req)
@@ -83,6 +79,7 @@ from sdk.models import operations, shared
 
 s = sdk.SDK(
     security=shared.Security(
+        bearer_auth="",
         oauth="",
     ),
 )
@@ -91,22 +88,17 @@ req = operations.C1APIAppV1ConnectorServiceCreateDelegatedRequest(
     connector_service_create_delegated_request=shared.ConnectorServiceCreateDelegatedRequest(
         connector_expand_mask=shared.ConnectorExpandMask(
             paths=[
-                'similique',
-                'alias',
-                'at',
+                'minima',
             ],
         ),
-        catalog_id='quaerat',
-        description='tempora',
-        display_name='vel',
+        catalog_id='repellendus',
+        description='totam',
+        display_name='similique',
         user_ids=[
-            'officiis',
-            'qui',
-            'dolorum',
-            'a',
+            'alias',
         ],
     ),
-    app_id='esse',
+    app_id='at',
 )
 
 res = s.connector.create_delegated(req)
@@ -139,14 +131,15 @@ from sdk.models import operations, shared
 
 s = sdk.SDK(
     security=shared.Security(
+        bearer_auth="",
         oauth="",
     ),
 )
 
 req = operations.C1APIAppV1ConnectorServiceDeleteRequest(
     connector_service_delete_request=shared.ConnectorServiceDeleteRequest(),
-    app_id='harum',
-    id='73cf3be4-53f8-470b-b26b-5a73429cdb1a',
+    app_id='quaerat',
+    id='46ce2af7-a73c-4f3b-a453-f870b326b5a7',
 )
 
 res = s.connector.delete(req)
@@ -179,13 +172,14 @@ from sdk.models import operations, shared
 
 s = sdk.SDK(
     security=shared.Security(
+        bearer_auth="",
         oauth="",
     ),
 )
 
 req = operations.C1APIAppV1ConnectorServiceGetRequest(
-    app_id='totam',
-    id='422bb679-d232-4271-9bf0-cbb1e31b8b90',
+    app_id='ipsum',
+    id='429cdb1a-8422-4bb6-b9d2-322715bf0cbb',
 )
 
 res = s.connector.get(req)
@@ -218,14 +212,15 @@ from sdk.models import operations, shared
 
 s = sdk.SDK(
     security=shared.Security(
+        bearer_auth="",
         oauth="",
     ),
 )
 
 req = operations.C1APIAppV1ConnectorServiceGetCredentialsRequest(
-    app_id='delectus',
-    connector_id='dolorem',
-    id='443a1108-e0ad-4cf4-b921-879fce953f73',
+    app_id='et',
+    connector_id='saepe',
+    id='31b8b90f-3443-4a11-88e0-adcf4b921879',
 )
 
 res = s.connector.get_credentials(req)
@@ -258,14 +253,15 @@ from sdk.models import operations, shared
 
 s = sdk.SDK(
     security=shared.Security(
+        bearer_auth="",
         oauth="",
     ),
 )
 
 req = operations.C1APIAppV1ConnectorServiceListRequest(
-    app_id='vero',
-    page_size=9493.19,
-    page_token='dignissimos',
+    app_id='voluptatibus',
+    page_size=7875.42,
+    page_token='vero',
 )
 
 res = s.connector.list(req)
@@ -298,15 +294,16 @@ from sdk.models import operations, shared
 
 s = sdk.SDK(
     security=shared.Security(
+        bearer_auth="",
         oauth="",
     ),
 )
 
 req = operations.C1APIAppV1ConnectorServiceRevokeCredentialRequest(
     connector_service_revoke_credential_request=shared.ConnectorServiceRevokeCredentialRequest(),
-    app_id='hic',
-    connector_id='distinctio',
-    id='c7abd74d-d39c-40f5-92cf-f7c70a45626d',
+    app_id='omnis',
+    connector_id='quis',
+    id='3f73ef7f-bc7a-4bd7-8dd3-9c0f5d2cff7c',
 )
 
 res = s.connector.revoke_credential(req)
@@ -339,14 +336,15 @@ from sdk.models import operations, shared
 
 s = sdk.SDK(
     security=shared.Security(
+        bearer_auth="",
         oauth="",
     ),
 )
 
 req = operations.C1APIAppV1ConnectorServiceRotateCredentialRequest(
     connector_service_rotate_credential_request=shared.ConnectorServiceRotateCredentialRequest(),
-    app_id='magnam',
-    connector_id='ratione',
+    app_id='ducimus',
+    connector_id='alias',
 )
 
 res = s.connector.rotate_credential(req)
@@ -380,6 +378,7 @@ from sdk.models import operations, shared
 
 s = sdk.SDK(
     security=shared.Security(
+        bearer_auth="",
         oauth="",
     ),
 )
@@ -388,38 +387,33 @@ req = operations.C1APIAppV1ConnectorServiceUpdateRequest(
     connector_service_update_request_input=shared.ConnectorServiceUpdateRequestInput(
         connector=shared.ConnectorInput(
             connector_status=shared.ConnectorStatus(
-                completed_at=dateutil.parser.isoparse('2022-06-28T08:50:44.084Z'),
-                last_error='dicta',
-                started_at=dateutil.parser.isoparse('2022-01-08T01:04:15.076Z'),
-                status=shared.ConnectorStatusStatus.SYNC_STATUS_UNSPECIFIED,
-                updated_at=dateutil.parser.isoparse('2022-02-20T07:12:08.273Z'),
+                completed_at=dateutil.parser.isoparse('2022-06-18T06:43:12.261Z'),
+                last_error='ipsam',
+                started_at=dateutil.parser.isoparse('2022-11-12T00:45:12.094Z'),
+                status=shared.ConnectorStatusStatus.SYNC_STATUS_RUNNING,
+                updated_at=dateutil.parser.isoparse('2022-02-08T20:43:00.221Z'),
             ),
-            o_auth2_authorized_as=shared.OAuth2AuthorizedAs1(),
-            app_id='excepturi',
+            o_auth2_authorized_as=shared.OAuth2AuthorizedAsInput(),
+            app_id='ratione',
             config={
-                "nostrum": 'sapiente',
-                "quisquam": 'saepe',
-                "ea": 'impedit',
-                "corporis": 'veniam',
+                "ex": 'laudantium',
             },
-            description='aliquid',
-            display_name='inventore',
-            id='46c3e250-fb00-48c4-ae14-1aac366c8dd6',
+            description='dicta',
+            display_name='dolor',
+            id='f16d9f5f-ce6c-4556-946c-3e250fb008c4',
             user_ids=[
-                'quasi',
-                'tempora',
-                'numquam',
+                'fugit',
             ],
         ),
         connector_expand_mask=shared.ConnectorExpandMask(
             paths=[
-                'provident',
+                'accusamus',
             ],
         ),
-        update_mask='ipsa',
+        update_mask='inventore',
     ),
-    app_id='molestiae',
-    id='474778a7-bd46-46d2-8c10-ab3cdca42519',
+    app_id='non',
+    id='1aac366c-8dd6-4b14-8290-7474778a7bd4',
 )
 
 res = s.connector.update(req)
@@ -453,6 +447,7 @@ from sdk.models import operations, shared
 
 s = sdk.SDK(
     security=shared.Security(
+        bearer_auth="",
         oauth="",
     ),
 )
@@ -461,39 +456,33 @@ req = operations.C1APIAppV1ConnectorServiceUpdateDelegatedRequest(
     connector_service_update_delegated_request_input=shared.ConnectorServiceUpdateDelegatedRequestInput(
         connector=shared.ConnectorInput(
             connector_status=shared.ConnectorStatus(
-                completed_at=dateutil.parser.isoparse('2022-09-23T10:04:47.931Z'),
-                last_error='debitis',
-                started_at=dateutil.parser.isoparse('2022-11-13T06:50:40.250Z'),
-                status=shared.ConnectorStatusStatus.SYNC_STATUS_UNSPECIFIED,
-                updated_at=dateutil.parser.isoparse('2021-08-15T10:59:14.485Z'),
+                completed_at=dateutil.parser.isoparse('2022-08-15T07:50:23.042Z'),
+                last_error='assumenda',
+                started_at=dateutil.parser.isoparse('2022-06-29T02:09:48.123Z'),
+                status=shared.ConnectorStatusStatus.SYNC_STATUS_ERROR,
+                updated_at=dateutil.parser.isoparse('2022-12-11T06:00:38.230Z'),
             ),
-            o_auth2_authorized_as=shared.OAuth2AuthorizedAs1(),
-            app_id='recusandae',
+            o_auth2_authorized_as=shared.OAuth2AuthorizedAsInput(),
+            app_id='id',
             config={
-                "distinctio": 'quod',
+                "quidem": 'neque',
             },
-            description='dignissimos',
-            display_name='inventore',
-            id='78e4796f-2a70-4c68-8282-aa482562f222',
+            description='quo',
+            display_name='illum',
+            id='ca425190-4e52-43c7-a0bc-7178e4796f2a',
             user_ids=[
-                'occaecati',
-                'atque',
-                'et',
-                'esse',
+                'molestiae',
             ],
         ),
         connector_expand_mask=shared.ConnectorExpandMask(
             paths=[
-                'accusamus',
-                'veritatis',
-                'esse',
-                'quod',
+                'accusantium',
             ],
         ),
-        update_mask='nam',
+        update_mask='porro',
     ),
-    connector_app_id='vero',
-    connector_id='aliquid',
+    connector_app_id='eum',
+    connector_id='quas',
 )
 
 res = s.connector.update_delegated(req)

@@ -16,6 +16,7 @@ from sdk.models import shared
 
 s = sdk.SDK(
     security=shared.Security(
+        bearer_auth="",
         oauth="",
     ),
 )
@@ -23,34 +24,29 @@ s = sdk.SDK(
 req = shared.SearchUsersRequest(
     user_expand_mask=shared.UserExpandMask(
         paths=[
-            'impedit',
-            'delectus',
-            'tempore',
+            'officia',
         ],
     ),
-    email='Bruce.Zieme44@hotmail.com',
+    email='Green.Bahringer@yahoo.com',
     exclude_ids=[
-        'odio',
+        'iste',
     ],
     ids=[
-        'in',
-        'ducimus',
+        'id',
     ],
-    page_size=5678.46,
-    page_token='dolores',
-    query='error',
+    page_size=700.42,
+    page_token='error',
+    query='possimus',
     refs=[
         shared.UserRef(
-            id='77deac64-6ecb-4573-809e-3eb1e5a2b12e',
+            id='eaab5851-d6c6-445b-88b6-1891baa0fe1a',
         ),
     ],
     role_ids=[
-        'ipsa',
-        'ducimus',
-        'maiores',
+        'pariatur',
     ],
     user_statuses=[
-        shared.SearchUsersRequestUserStatuses.UNKNOWN,
+        shared.SearchUsersRequestUserStatuses.DELETED,
     ],
 )
 

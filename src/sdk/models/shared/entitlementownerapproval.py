@@ -20,3 +20,11 @@ class EntitlementOwnerApproval:
     r"""Configuration to specific which users to fallback to if fallback is enabled and the entitlement owner cannot be identified."""
     
 
+
+
+
+@dataclasses.dataclass
+class EntitlementOwnerApprovalInput:
+    r"""The entitlement owner approval allows configuration of the approval step when the target approvers are the entitlement owners."""
+    
+

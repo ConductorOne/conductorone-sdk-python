@@ -9,7 +9,7 @@ from enum import Enum
 from sdk import utils
 from typing import Optional
 
-class C1APIPolicyV1CreatePolicyRequestPolicyType(str, Enum):
+class CreatePolicyRequestPolicyType(str, Enum):
     r"""The enum of the policy type."""
     POLICY_TYPE_UNSPECIFIED = 'POLICY_TYPE_UNSPECIFIED'
     POLICY_TYPE_GRANT = 'POLICY_TYPE_GRANT'
@@ -30,7 +30,7 @@ class CreatePolicyRequest:
     r"""The display name of the new policy."""
     policy_steps: Optional[dict[str, shared_policysteps.PolicySteps]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('policySteps'), 'exclude': lambda f: f is None }})
     r"""The map of policy type to policy steps. The key is the stringified version of the enum. See other policies for examples."""
-    policy_type: Optional[C1APIPolicyV1CreatePolicyRequestPolicyType] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('policyType'), 'exclude': lambda f: f is None }})
+    policy_type: Optional[CreatePolicyRequestPolicyType] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('policyType'), 'exclude': lambda f: f is None }})
     r"""The enum of the policy type."""
     post_actions: Optional[list[shared_policypostactions.PolicyPostActions]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('postActions'), 'exclude': lambda f: f is None }})
     r"""Actions to occur after a policy finishes. As of now this is only valid on a certify policy to remediate a denied certification immediately."""
@@ -38,15 +38,6 @@ class CreatePolicyRequest:
     r"""Allows reassigning tasks to delegates."""
     
 
-
-class CreatePolicyRequestPolicyType(str, Enum):
-    r"""The enum of the policy type."""
-    POLICY_TYPE_UNSPECIFIED = 'POLICY_TYPE_UNSPECIFIED'
-    POLICY_TYPE_GRANT = 'POLICY_TYPE_GRANT'
-    POLICY_TYPE_REVOKE = 'POLICY_TYPE_REVOKE'
-    POLICY_TYPE_CERTIFY = 'POLICY_TYPE_CERTIFY'
-    POLICY_TYPE_ACCESS_REQUEST = 'POLICY_TYPE_ACCESS_REQUEST'
-    POLICY_TYPE_PROVISION = 'POLICY_TYPE_PROVISION'
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)

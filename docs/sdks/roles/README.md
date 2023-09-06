@@ -18,12 +18,13 @@ from sdk.models import operations, shared
 
 s = sdk.SDK(
     security=shared.Security(
+        bearer_auth="",
         oauth="",
     ),
 )
 
 req = operations.C1APIIamV1RolesGetRequest(
-    role_id='necessitatibus',
+    role_id='corporis',
 )
 
 res = s.roles.get(req)
@@ -56,13 +57,14 @@ from sdk.models import operations, shared
 
 s = sdk.SDK(
     security=shared.Security(
+        bearer_auth="",
         oauth="",
     ),
 )
 
 req = operations.C1APIIamV1RolesListRequest(
-    page_size=9918.91,
-    page_token='ex',
+    page_size=6964.63,
+    page_token='eveniet',
 )
 
 res = s.roles.list(req)
@@ -95,6 +97,7 @@ from sdk.models import operations, shared
 
 s = sdk.SDK(
     security=shared.Security(
+        bearer_auth="",
         oauth="",
     ),
 )
@@ -102,22 +105,17 @@ s = sdk.SDK(
 req = operations.C1APIIamV1RolesUpdateRequest(
     update_role_request_input=shared.UpdateRoleRequestInput(
         role=shared.RoleInput(
-            display_name='voluptas',
+            display_name='non',
             permissions=[
-                'delectus',
-                'quae',
-                'minus',
-                'fuga',
+                'vero',
             ],
             service_roles=[
-                'consectetur',
-                'velit',
-                'atque',
+                'doloremque',
             ],
         ),
-        update_mask='ipsum',
+        update_mask='iure',
     ),
-    role_id='impedit',
+    role_id='ipsa',
 )
 
 res = s.roles.update(req)

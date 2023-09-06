@@ -4,7 +4,7 @@
 ## SDK Installation
 
 ```bash
-pip install git+https://github.com/ConductorOne/conductorone-sdk-python.git
+pip install openapi
 ```
 <!-- End SDK Installation -->
 
@@ -31,6 +31,13 @@ if res.app_entitlement_search_service_search_response is not None:
 ## Available Resources and Operations
 
 
+### [app_entitlement_owners](docs/sdks/appentitlementowners/README.md)
+
+* [add](docs/sdks/appentitlementowners/README.md#add) - Add
+* [list](docs/sdks/appentitlementowners/README.md#list) - List
+* [remove](docs/sdks/appentitlementowners/README.md#remove) - Remove
+* [set](docs/sdks/appentitlementowners/README.md#set) - Set
+
 ### [app_entitlement_search](docs/sdks/appentitlementsearch/README.md)
 
 * [search](docs/sdks/appentitlementsearch/README.md#search) - Search
@@ -45,7 +52,6 @@ if res.app_entitlement_search_service_search_response is not None:
 * [list](docs/sdks/appentitlements/README.md#list) - List
 * [list_for_app_resource](docs/sdks/appentitlements/README.md#list_for_app_resource) - List For App Resource
 * [list_for_app_user](docs/sdks/appentitlements/README.md#list_for_app_user) - List For App User
-* [list_groups](docs/sdks/appentitlements/README.md#list_groups) - List Groups
 * [list_users](docs/sdks/appentitlements/README.md#list_users) - List Users
 * [update](docs/sdks/appentitlements/README.md#update) - Update
 
@@ -90,6 +96,10 @@ if res.app_entitlement_search_service_search_response is not None:
 * [get](docs/sdks/appusagecontrols/README.md#get) - Get
 * [update](docs/sdks/appusagecontrols/README.md#update) - Update
 
+### [app_user](docs/sdks/appuser/README.md)
+
+* [update](docs/sdks/appuser/README.md#update) - Update
+
 ### [apps](docs/sdks/apps/README.md)
 
 * [create](docs/sdks/apps/README.md#create) - Create
@@ -97,6 +107,18 @@ if res.app_entitlement_search_service_search_response is not None:
 * [get](docs/sdks/apps/README.md#get) - Get
 * [list](docs/sdks/apps/README.md#list) - List
 * [update](docs/sdks/apps/README.md#update) - Update
+
+### [attribute_search](docs/sdks/attributesearch/README.md)
+
+* [search_attribute_values](docs/sdks/attributesearch/README.md#search_attribute_values) - Search Attribute Values
+
+### [attributes](docs/sdks/attributes/README.md)
+
+* [create_attribute_value](docs/sdks/attributes/README.md#create_attribute_value) - Create Attribute Value
+* [delete_attribute_value](docs/sdks/attributes/README.md#delete_attribute_value) - Delete Attribute Value
+* [get_attribute_value](docs/sdks/attributes/README.md#get_attribute_value) - Get Attribute Value
+* [list_attribute_types](docs/sdks/attributes/README.md#list_attribute_types) - List Attribute Types
+* [list_attribute_values](docs/sdks/attributes/README.md#list_attribute_values) - List Attribute Values
 
 ### [auth](docs/sdks/auth/README.md)
 

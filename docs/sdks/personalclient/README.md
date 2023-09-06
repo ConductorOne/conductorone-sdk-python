@@ -16,21 +16,19 @@ from sdk.models import shared
 
 s = sdk.SDK(
     security=shared.Security(
+        bearer_auth="",
         oauth="",
     ),
 )
 
 req = shared.PersonalClientServiceCreateRequest(
     allow_source_cidr=[
-        'distinctio',
-        'eligendi',
+        'incidunt',
     ],
-    display_name='sit',
-    expires='culpa',
+    display_name='atque',
+    expires='explicabo',
     scoped_roles=[
-        'adipisci',
-        'cumque',
-        'consequuntur',
+        'minima',
     ],
 )
 
