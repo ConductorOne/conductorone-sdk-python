@@ -7,7 +7,7 @@ import jwt
 import secrets
 from jose.utils import base64url_encode
 from cryptography.hazmat.primitives.asymmetric.ed25519 import Ed25519PrivateKey
-from cryptography.exceptions import *
+from cryptography.exceptions import UnsupportedAlgorithm
 
 
 def parse_secret(secret: str) -> Ed25519PrivateKey:
@@ -24,6 +24,9 @@ def parse_secret(secret: str) -> Ed25519PrivateKey:
     private_bytes = base64.urlsafe_b64decode(jwk['d'] + '==')
     try:
         private_key = Ed25519PrivateKey.from_private_bytes(private_bytes)
+    except UnsupportedAlgorithm:
+        print("Invalid key algorithm. Make sure that the key algorithm is correct.")
+        raise
     except ValueError:
         print("Invalid key bytes. Make sure that the key bytes are correct.")
         raise

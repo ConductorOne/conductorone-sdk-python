@@ -17,7 +17,7 @@ class TokenAuth(HTTPAdapter):
 
 
 
-def SdkWithCredentials(client_id: str, client_secret: str, token_url: str = '', **kwargs) -> SDK:
+def sdk_with_credentials(client_id: str, client_secret: str, token_url: str = '', **kwargs) -> SDK:
     """Instantiates the SDK configuring it with the provided kwargs and an authed client.
     It will use the url in the client_id to get the token URL and tenant domain, if not provided. 
     

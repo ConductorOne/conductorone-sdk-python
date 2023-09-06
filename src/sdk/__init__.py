@@ -7,7 +7,7 @@ How to authenticate requests
 You need to obtain an API key from ConductorOne `<https://conductor-one.stoplight.io/docs/conductorone-api/a76uioi122862-how-to-authenticate-requests>`.
 Then, you can use the following code snippet to instantiate the SDK with your credentials:
   >>> import sdk
-  >>> s = sdk.SdkWithCredentials(client_id, client_secret)
+  >>> s = sdk.sdk_with_credentials(client_id, client_secret)
 
 API Documentation
 ----------------------------
