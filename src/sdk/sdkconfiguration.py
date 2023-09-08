@@ -23,8 +23,8 @@ class SDKConfiguration:
     server_defaults: list[dict[str, str]] = field(default_factory=list)
     language: str = 'python'
     openapi_doc_version: str = '0.1.0-alpha'
-    sdk_version: str = '0.1.1'
-    gen_version: str = '2.107.0'
+    sdk_version: str = '0.1.2'
+    gen_version: str = '2.107.3'
     retry_config: RetryConfig = None
 
     def get_server_details(self) -> tuple[str, dict[str, str]]:
