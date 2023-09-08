@@ -19,7 +19,7 @@ jobs:
         - https://insulator.conductor.one/api/v1/openapi.yaml
       languages: |-
         - python
-      publish_python: true
+      publish_python: false
       force: ${{ github.event.inputs.force }}
     secrets:
       github_access_token: ${{ secrets.GITHUB_TOKEN }}
