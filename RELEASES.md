@@ -19,3 +19,11 @@ Based on:
 - [python v0.1.1] .
 ### Releases
 - [PyPI v0.1.1] https://pypi.org/project/openapi/0.1.1 - .
+
+## 2023-09-08 14:40:57
+### Changes
+Based on:
+- OpenAPI Doc 0.1.0-alpha 
+- Speakeasy CLI 1.82.2 (2.107.3) https://github.com/speakeasy-api/speakeasy
+### Generated
+- [python v0.1.2] .
