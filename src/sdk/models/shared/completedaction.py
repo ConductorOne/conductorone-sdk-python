@@ -6,7 +6,6 @@ import dateutil.parser
 from ..shared import appentitlementreference as shared_appentitlementreference
 from dataclasses_json import Undefined, dataclass_json
 from datetime import datetime
-from marshmallow import fields
 from sdk import utils
 from typing import Optional
 
@@ -16,7 +15,7 @@ from typing import Optional
 @dataclasses.dataclass
 class CompletedAction:
     r"""The outcome of a provision instance that has been completed succesfully."""
-    completed_at: Optional[datetime] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('completedAt'), 'encoder': utils.datetimeisoformat(True), 'decoder': dateutil.parser.isoparse, 'mm_field': fields.DateTime(format='iso'), 'exclude': lambda f: f is None }})
+    completed_at: Optional[datetime] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('completedAt'), 'encoder': utils.datetimeisoformat(True), 'decoder': dateutil.parser.isoparse, 'exclude': lambda f: f is None }})
     entitlements: Optional[list[shared_appentitlementreference.AppEntitlementReference]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('entitlements'), 'exclude': lambda f: f is None }})
     r"""The list of entitlements that were provisioned. This is leftover from an older design, and is only ever going to be a single entitlement."""
     user_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('userId'), 'exclude': lambda f: f is None }})

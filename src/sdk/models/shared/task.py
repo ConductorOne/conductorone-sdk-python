@@ -9,7 +9,6 @@ from ..shared import tasktype as shared_tasktype
 from dataclasses_json import Undefined, dataclass_json
 from datetime import datetime
 from enum import Enum
-from marshmallow import fields
 from sdk import utils
 from typing import Any, Optional
 
@@ -30,6 +29,7 @@ class TaskActions(str, Enum):
     TASK_ACTION_TYPE_ROLLBACK_SKIPPED = 'TASK_ACTION_TYPE_ROLLBACK_SKIPPED'
     TASK_ACTION_TYPE_HARD_RESET = 'TASK_ACTION_TYPE_HARD_RESET'
     TASK_ACTION_TYPE_ESCALATE_TO_EMERGENCY_ACCESS = 'TASK_ACTION_TYPE_ESCALATE_TO_EMERGENCY_ACCESS'
+    TASK_ACTION_TYPE_CHANGE_POLICY = 'TASK_ACTION_TYPE_CHANGE_POLICY'
 
 class TaskProcessing(str, Enum):
     r"""The processing state of a task as defined by the `processing_enum`"""
@@ -58,10 +58,10 @@ class Task:
     r"""An array of `google.protobuf.Any` annotations with various base64-encoded data."""
     comment_count: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('commentCount'), 'exclude': lambda f: f is None }})
     r"""The count of comments."""
-    created_at: Optional[datetime] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('createdAt'), 'encoder': utils.datetimeisoformat(True), 'decoder': dateutil.parser.isoparse, 'mm_field': fields.DateTime(format='iso'), 'exclude': lambda f: f is None }})
+    created_at: Optional[datetime] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('createdAt'), 'encoder': utils.datetimeisoformat(True), 'decoder': dateutil.parser.isoparse, 'exclude': lambda f: f is None }})
     created_by_user_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('createdByUserId'), 'exclude': lambda f: f is None }})
     r"""The ID of the user that is the creator of this task. This may not always match the userId field."""
-    deleted_at: Optional[datetime] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('deletedAt'), 'encoder': utils.datetimeisoformat(True), 'decoder': dateutil.parser.isoparse, 'mm_field': fields.DateTime(format='iso'), 'exclude': lambda f: f is None }})
+    deleted_at: Optional[datetime] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('deletedAt'), 'encoder': utils.datetimeisoformat(True), 'decoder': dateutil.parser.isoparse, 'exclude': lambda f: f is None }})
     description: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('description'), 'exclude': lambda f: f is None }})
     r"""The description of the task. This is also known as justification."""
     display_name: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('displayName'), 'exclude': lambda f: f is None }})
@@ -74,6 +74,8 @@ class Task:
     r"""The ID of the task."""
     numeric_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('numericId'), 'exclude': lambda f: f is None }})
     r"""A human-usable numeric ID of a task which can be included in place of the fully qualified task id in path parmeters (but not search queries)."""
+    policy_generation_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('policyGenerationId'), 'exclude': lambda f: f is None }})
+    r"""The policy generation id refers to the current policy's generation ID. This is changed when the policy is changed on a task."""
     policy_instance: Optional[shared_policyinstance.PolicyInstance] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('policy'), 'exclude': lambda f: f is None }})
     r"""A policy instance is an object that contains a reference to the policy it was created from, the currently executing step, the next steps, and the history of previously completed steps."""
     processing: Optional[TaskProcessing] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('processing'), 'exclude': lambda f: f is None }})
@@ -90,7 +92,7 @@ class Task:
       - revoke
       - certify
     """
-    updated_at: Optional[datetime] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('updatedAt'), 'encoder': utils.datetimeisoformat(True), 'decoder': dateutil.parser.isoparse, 'mm_field': fields.DateTime(format='iso'), 'exclude': lambda f: f is None }})
+    updated_at: Optional[datetime] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('updatedAt'), 'encoder': utils.datetimeisoformat(True), 'decoder': dateutil.parser.isoparse, 'exclude': lambda f: f is None }})
     user_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('userId'), 'exclude': lambda f: f is None }})
     r"""The ID of the user that is the target of this task. This may be empty if we're targeting a specific app user that has no known identity user."""
     

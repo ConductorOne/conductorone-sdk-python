@@ -3,6 +3,8 @@
 import requests
 from dataclasses import dataclass, field
 
+from .utils.retries import RetryConfig
+
 
 SERVERS = [
     'https://{tenantDomain}.conductor.one',
@@ -21,8 +23,9 @@ class SDKConfiguration:
     server_defaults: list[dict[str, str]] = field(default_factory=list)
     language: str = 'python'
     openapi_doc_version: str = '0.1.0-alpha'
-    sdk_version: str = '0.1.0'
-    gen_version: str = '2.96.9'
+    sdk_version: str = '0.1.1'
+    gen_version: str = '2.107.0'
+    retry_config: RetryConfig = None
 
     def get_server_details(self) -> tuple[str, dict[str, str]]:
         if self.server_url:
