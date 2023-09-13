@@ -44,6 +44,7 @@ req = shared.AppEntitlementSearchServiceSearchRequest(
     exclude_app_user_ids=[
         'iusto',
     ],
+    include_deleted=False,
     only_get_expiring=False,
     page_size=5680.45,
     page_token='nisi',

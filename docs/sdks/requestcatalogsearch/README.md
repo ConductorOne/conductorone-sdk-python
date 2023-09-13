@@ -30,6 +30,7 @@ req = shared.RequestCatalogSearchServiceSearchEntitlementsRequest(
     app_display_name='fugit',
     entitlement_alias='id',
     granted_status=shared.RequestCatalogSearchServiceSearchEntitlementsRequestGrantedStatus.ALL,
+    include_deleted=False,
     page_size=4402.64,
     page_token='error',
     query='illo',

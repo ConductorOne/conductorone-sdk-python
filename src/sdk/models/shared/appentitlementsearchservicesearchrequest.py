@@ -29,6 +29,8 @@ class AppEntitlementSearchServiceSearchRequest:
     r"""Exclude app entitlements from the results that are in these app IDs."""
     exclude_app_user_ids: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('excludeAppUserIds'), 'exclude': lambda f: f is None }})
     r"""Exclude app entitlements from the results that these app users have granted."""
+    include_deleted: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('includeDeleted'), 'exclude': lambda f: f is None }})
+    r"""Include deleted app entitlements, this includes app entitlements that have a deleted parent object (app, app resource, app resource type)"""
     only_get_expiring: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('onlyGetExpiring'), 'exclude': lambda f: f is None }})
     r"""Restrict results to only those who have expiring app entitlement user bindings."""
     page_size: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('pageSize'), 'exclude': lambda f: f is None }})
