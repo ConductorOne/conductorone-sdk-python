@@ -5,6 +5,7 @@ import dataclasses
 from ..shared import appgroupapproval as shared_appgroupapproval
 from ..shared import appownerapproval as shared_appownerapproval
 from ..shared import entitlementownerapproval as shared_entitlementownerapproval
+from ..shared import expressionapproval as shared_expressionapproval
 from ..shared import managerapproval as shared_managerapproval
 from ..shared import selfapproval as shared_selfapproval
 from ..shared import userapproval as shared_userapproval
@@ -26,6 +27,7 @@ class Approval:
       - group
       - self
       - entitlementOwners
+      - expression
     """
     allow_reassignment: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('allowReassignment'), 'exclude': lambda f: f is None }})
     r"""Configuration to allow reassignment by reviewers during this step."""
@@ -37,6 +39,8 @@ class Approval:
     r"""A field indicating whether this step is assigned."""
     entitlement_owner_approval: Optional[shared_entitlementownerapproval.EntitlementOwnerApproval] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('entitlementOwners'), 'exclude': lambda f: f is None }})
     r"""The entitlement owner approval allows configuration of the approval step when the target approvers are the entitlement owners."""
+    expression_approval: Optional[shared_expressionapproval.ExpressionApproval] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('expression'), 'exclude': lambda f: f is None }})
+    r"""The ExpressionApproval message."""
     manager_approval: Optional[shared_managerapproval.ManagerApproval] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('manager'), 'exclude': lambda f: f is None }})
     r"""The manager approval object provides configuration options for approval when the target of the approval is the manager of the user in the task."""
     require_approval_reason: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('requireApprovalReason'), 'exclude': lambda f: f is None }})
@@ -64,6 +68,7 @@ class ApprovalInput:
       - group
       - self
       - entitlementOwners
+      - expression
     """
     app_group_approval: Optional[shared_appgroupapproval.AppGroupApprovalInput] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('group'), 'exclude': lambda f: f is None }})
     r"""The AppGroupApproval object provides the configuration for setting a group as the approvers of an approval policy step."""
@@ -71,6 +76,8 @@ class ApprovalInput:
     r"""App owner approval provides the configuration for an approval step when the app owner is the target."""
     entitlement_owner_approval: Optional[shared_entitlementownerapproval.EntitlementOwnerApprovalInput] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('entitlementOwners'), 'exclude': lambda f: f is None }})
     r"""The entitlement owner approval allows configuration of the approval step when the target approvers are the entitlement owners."""
+    expression_approval: Optional[shared_expressionapproval.ExpressionApprovalInput] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('expression'), 'exclude': lambda f: f is None }})
+    r"""The ExpressionApproval message."""
     manager_approval: Optional[shared_managerapproval.ManagerApprovalInput] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('manager'), 'exclude': lambda f: f is None }})
     r"""The manager approval object provides configuration options for approval when the target of the approval is the manager of the user in the task."""
     self_approval: Optional[shared_selfapproval.SelfApprovalInput] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('self'), 'exclude': lambda f: f is None }})

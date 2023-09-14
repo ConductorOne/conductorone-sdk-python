@@ -252,6 +252,7 @@ src/sdk/models/shared/approval.py
 src/sdk/models/shared/userapproval.py
 src/sdk/models/shared/selfapproval.py
 src/sdk/models/shared/managerapproval.py
+src/sdk/models/shared/expressionapproval.py
 src/sdk/models/shared/entitlementownerapproval.py
 src/sdk/models/shared/appownerapproval.py
 src/sdk/models/shared/appgroupapproval.py
@@ -680,6 +681,8 @@ docs/models/shared/selfapproval.md
 docs/models/shared/selfapprovalinput.md
 docs/models/shared/managerapproval.md
 docs/models/shared/managerapprovalinput.md
+docs/models/shared/expressionapproval.md
+docs/models/shared/expressionapprovalinput.md
 docs/models/shared/entitlementownerapproval.md
 docs/models/shared/entitlementownerapprovalinput.md
 docs/models/shared/appownerapproval.md

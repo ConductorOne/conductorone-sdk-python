@@ -45,6 +45,7 @@ class ApprovalInstance:
       - group
       - self
       - entitlementOwners
+      - expression
     """
     approved_action: Optional[shared_approvedaction.ApprovedAction] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('approved'), 'exclude': lambda f: f is None }})
     r"""The approved action indicates that the approvalinstance had an outcome of approved."""
