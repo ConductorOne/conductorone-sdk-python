@@ -1,4 +1,4 @@
-# app_search
+# AppSearch
 
 ### Available Operations
 

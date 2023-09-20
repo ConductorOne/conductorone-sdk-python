@@ -1,4 +1,4 @@
-# app_resource
+# AppResource
 
 ### Available Operations
 

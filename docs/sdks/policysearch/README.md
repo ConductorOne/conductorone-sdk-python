@@ -1,4 +1,4 @@
-# policy_search
+# PolicySearch
 
 ### Available Operations
 
@@ -22,16 +22,16 @@ s = sdk.SDK(
 )
 
 req = shared.SearchPoliciesRequest(
-    display_name='dicta',
-    page_size=9816.4,
-    page_token='natus',
+    display_name='natus',
+    page_size=2446.51,
+    page_token='voluptatibus',
     policy_types=[
-        shared.SearchPoliciesRequestPolicyTypes.POLICY_TYPE_GRANT,
+        shared.SearchPoliciesRequestPolicyTypes.POLICY_TYPE_REVOKE,
     ],
-    query='voluptatibus',
+    query='asperiores',
     refs=[
         shared.PolicyRef(
-            id='5f0642da-c7af-4515-8c41-3aa63aae8d67',
+            id='0642dac7-af51-45cc-813a-a63aae8d6786',
         ),
     ],
 )

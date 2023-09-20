@@ -1,4 +1,4 @@
-# user_search
+# UserSearch
 
 ### Available Operations
 
@@ -24,29 +24,29 @@ s = sdk.SDK(
 req = shared.SearchUsersRequest(
     user_expand_mask=shared.UserExpandMask(
         paths=[
-            'officia',
+            'aliquid',
         ],
     ),
-    email='Green.Bahringer@yahoo.com',
+    email='Hollie_Hirthe@gmail.com',
     exclude_ids=[
-        'iste',
+        'ab',
     ],
     ids=[
-        'id',
+        'error',
     ],
-    page_size=700.42,
-    page_token='error',
-    query='possimus',
+    page_size=8224.07,
+    page_token='voluptates',
+    query='mollitia',
     refs=[
         shared.UserRef(
-            id='eaab5851-d6c6-445b-88b6-1891baa0fe1a',
+            id='ab5851d6-c645-4b08-b618-91baa0fe1ade',
         ),
     ],
     role_ids=[
-        'pariatur',
+        'voluptatem',
     ],
     user_statuses=[
-        shared.SearchUsersRequestUserStatuses.DELETED,
+        shared.SearchUsersRequestUserStatuses.UNKNOWN,
     ],
 )
 

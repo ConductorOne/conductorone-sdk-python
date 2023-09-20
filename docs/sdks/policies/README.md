@@ -1,4 +1,4 @@
-# policies
+# Policies
 
 ### Available Operations
 
@@ -36,6 +36,7 @@ req = shared.CreatePolicyRequestInput(
                         app_group_approval=shared.AppGroupApprovalInput(),
                         app_owner_approval=shared.AppOwnerApprovalInput(),
                         entitlement_owner_approval=shared.EntitlementOwnerApprovalInput(),
+                        expression_approval=shared.ExpressionApprovalInput(),
                         manager_approval=shared.ManagerApprovalInput(),
                         self_approval=shared.SelfApprovalInput(),
                         user_approval=shared.UserApprovalInput(),
@@ -242,6 +243,7 @@ req = operations.C1APIPolicyV1PoliciesUpdateRequest(
                                 app_group_approval=shared.AppGroupApprovalInput(),
                                 app_owner_approval=shared.AppOwnerApprovalInput(),
                                 entitlement_owner_approval=shared.EntitlementOwnerApprovalInput(),
+                                expression_approval=shared.ExpressionApprovalInput(),
                                 manager_approval=shared.ManagerApprovalInput(),
                                 self_approval=shared.SelfApprovalInput(),
                                 user_approval=shared.UserApprovalInput(),
@@ -279,10 +281,16 @@ req = operations.C1APIPolicyV1PoliciesUpdateRequest(
                 ),
             ],
             reassign_tasks_to_delegates=False,
+            rules=[
+                shared.Rule(
+                    condition='architecto',
+                    policy_key='omnis',
+                ),
+            ],
         ),
-        update_mask='architecto',
+        update_mask='tenetur',
     ),
-    id='9f1d1705-1339-4d08-886a-1840394c2607',
+    id='1d170513-39d0-4808-aa18-40394c26071f',
 )
 
 res = s.policies.update(req)

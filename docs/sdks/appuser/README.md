@@ -1,4 +1,4 @@
-# app_user
+# AppUser
 
 ### Available Operations
 

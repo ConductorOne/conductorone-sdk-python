@@ -1,4 +1,4 @@
-# app_usage_controls
+# AppUsageControls
 
 ### Available Operations
 

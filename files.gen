@@ -102,6 +102,7 @@ src/sdk/models/operations/c1_api_requestcatalog_v1_requestcatalogmanagementservi
 src/sdk/models/operations/c1_api_requestcatalog_v1_requestcatalogmanagementservice_create.py
 src/sdk/models/operations/c1_api_requestcatalog_v1_requestcatalogmanagementservice_delete.py
 src/sdk/models/operations/c1_api_requestcatalog_v1_requestcatalogmanagementservice_get.py
+src/sdk/models/operations/c1_api_requestcatalog_v1_requestcatalogmanagementservice_list.py
 src/sdk/models/operations/c1_api_requestcatalog_v1_requestcatalogmanagementservice_listentitlementsforaccess.py
 src/sdk/models/operations/c1_api_requestcatalog_v1_requestcatalogmanagementservice_listentitlementspercatalog.py
 src/sdk/models/operations/c1_api_requestcatalog_v1_requestcatalogmanagementservice_removeaccessentitlements.py
@@ -243,6 +244,7 @@ src/sdk/models/shared/personalclient.py
 src/sdk/models/shared/personalclientservicecreaterequest.py
 src/sdk/models/shared/createpolicyresponse.py
 src/sdk/models/shared/policy.py
+src/sdk/models/shared/rule.py
 src/sdk/models/shared/policypostactions.py
 src/sdk/models/shared/policysteps.py
 src/sdk/models/shared/policystep.py
@@ -252,6 +254,7 @@ src/sdk/models/shared/approval.py
 src/sdk/models/shared/userapproval.py
 src/sdk/models/shared/selfapproval.py
 src/sdk/models/shared/managerapproval.py
+src/sdk/models/shared/expressionapproval.py
 src/sdk/models/shared/entitlementownerapproval.py
 src/sdk/models/shared/appownerapproval.py
 src/sdk/models/shared/appgroupapproval.py
@@ -276,6 +279,7 @@ src/sdk/models/shared/requestcatalogmanagementservicecreaterequest.py
 src/sdk/models/shared/requestcatalogexpandmask.py
 src/sdk/models/shared/requestcatalogmanagementservicedeleteresponse.py
 src/sdk/models/shared/requestcatalogmanagementservicedeleterequest.py
+src/sdk/models/shared/requestcatalogmanagementservicelistresponse.py
 src/sdk/models/shared/requestcatalogmanagementservicelistentitlementsforaccessresponse.py
 src/sdk/models/shared/requestcatalogmanagementservicelistentitlementspercatalogresponse.py
 src/sdk/models/shared/requestcatalogmanagementserviceremoveaccessentitlementsresponse.py
@@ -495,6 +499,7 @@ docs/models/operations/c1apirequestcatalogv1requestcatalogmanagementservicedelet
 docs/models/operations/c1apirequestcatalogv1requestcatalogmanagementservicedeleteresponse.md
 docs/models/operations/c1apirequestcatalogv1requestcatalogmanagementservicegetrequest.md
 docs/models/operations/c1apirequestcatalogv1requestcatalogmanagementservicegetresponse.md
+docs/models/operations/c1apirequestcatalogv1requestcatalogmanagementservicelistresponse.md
 docs/models/operations/c1apirequestcatalogv1requestcatalogmanagementservicelistentitlementsforaccessrequest.md
 docs/models/operations/c1apirequestcatalogv1requestcatalogmanagementservicelistentitlementsforaccessresponse.md
 docs/models/operations/c1apirequestcatalogv1requestcatalogmanagementservicelistentitlementspercatalogrequest.md
@@ -665,6 +670,7 @@ docs/models/shared/createpolicyresponse.md
 docs/models/shared/policypolicytype.md
 docs/models/shared/policy.md
 docs/models/shared/policyinput.md
+docs/models/shared/rule.md
 docs/models/shared/policypostactions.md
 docs/models/shared/policysteps.md
 docs/models/shared/policystepsinput.md
@@ -680,6 +686,8 @@ docs/models/shared/selfapproval.md
 docs/models/shared/selfapprovalinput.md
 docs/models/shared/managerapproval.md
 docs/models/shared/managerapprovalinput.md
+docs/models/shared/expressionapproval.md
+docs/models/shared/expressionapprovalinput.md
 docs/models/shared/entitlementownerapproval.md
 docs/models/shared/entitlementownerapprovalinput.md
 docs/models/shared/appownerapproval.md
@@ -711,6 +719,7 @@ docs/models/shared/requestcatalogmanagementservicecreaterequest.md
 docs/models/shared/requestcatalogexpandmask.md
 docs/models/shared/requestcatalogmanagementservicedeleteresponse.md
 docs/models/shared/requestcatalogmanagementservicedeleterequest.md
+docs/models/shared/requestcatalogmanagementservicelistresponse.md
 docs/models/shared/requestcatalogmanagementservicelistentitlementsforaccessresponse.md
 docs/models/shared/requestcatalogmanagementservicelistentitlementspercatalogresponse.md
 docs/models/shared/requestcatalogmanagementserviceremoveaccessentitlementsresponse.md

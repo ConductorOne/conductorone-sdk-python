@@ -5,6 +5,7 @@ import dataclasses
 import dateutil.parser
 from ..shared import policypostactions as shared_policypostactions
 from ..shared import policysteps as shared_policysteps
+from ..shared import rule as shared_rule
 from dataclasses_json import Undefined, dataclass_json
 from datetime import datetime
 from enum import Enum
@@ -42,6 +43,8 @@ class Policy:
     r"""An array of actions (ordered) to take place after a policy completes processing."""
     reassign_tasks_to_delegates: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('reassignTasksToDelegates'), 'exclude': lambda f: f is None }})
     r"""A policy configuration option that allows for reassinging tasks to delgated users. This level of delegation referrs to the individual delegates users set on their account."""
+    rules: Optional[list[shared_rule.Rule]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('rules'), 'exclude': lambda f: f is None }})
+    r"""The rules field."""
     system_builtin: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('systemBuiltin'), 'exclude': lambda f: f is None }})
     r"""Whether this policy is a builtin system policy. Builtin system policies cannot be edited."""
     updated_at: Optional[datetime] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('updatedAt'), 'encoder': utils.datetimeisoformat(True), 'decoder': dateutil.parser.isoparse, 'exclude': lambda f: f is None }})
@@ -66,5 +69,7 @@ class PolicyInput:
     r"""An array of actions (ordered) to take place after a policy completes processing."""
     reassign_tasks_to_delegates: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('reassignTasksToDelegates'), 'exclude': lambda f: f is None }})
     r"""A policy configuration option that allows for reassinging tasks to delgated users. This level of delegation referrs to the individual delegates users set on their account."""
+    rules: Optional[list[shared_rule.Rule]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('rules'), 'exclude': lambda f: f is None }})
+    r"""The rules field."""
     
 

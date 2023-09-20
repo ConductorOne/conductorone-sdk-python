@@ -1,4 +1,4 @@
-# app_entitlement_user_binding
+# AppEntitlementUserBinding
 
 ### Available Operations
 

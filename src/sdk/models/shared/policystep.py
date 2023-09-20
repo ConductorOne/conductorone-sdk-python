@@ -29,6 +29,7 @@ class PolicyStep:
       - group
       - self
       - entitlementOwners
+      - expression
     """
     provision: Optional[shared_provision.Provision] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('provision'), 'exclude': lambda f: f is None }})
     r"""The provision step references a provision policy for this step."""
@@ -56,6 +57,7 @@ class PolicyStepInput:
       - group
       - self
       - entitlementOwners
+      - expression
     """
     provision: Optional[shared_provision.Provision] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('provision'), 'exclude': lambda f: f is None }})
     r"""The provision step references a provision policy for this step."""

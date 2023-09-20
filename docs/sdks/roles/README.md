@@ -1,4 +1,4 @@
-# roles
+# Roles
 
 ### Available Operations
 
@@ -24,7 +24,7 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIIamV1RolesGetRequest(
-    role_id='corporis',
+    role_id='eveniet',
 )
 
 res = s.roles.get(req)
@@ -63,8 +63,8 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIIamV1RolesListRequest(
-    page_size=6964.63,
-    page_token='eveniet',
+    page_size=2473.99,
+    page_token='vero',
 )
 
 res = s.roles.list(req)
@@ -105,17 +105,17 @@ s = sdk.SDK(
 req = operations.C1APIIamV1RolesUpdateRequest(
     update_role_request_input=shared.UpdateRoleRequestInput(
         role=shared.RoleInput(
-            display_name='non',
+            display_name='doloremque',
             permissions=[
-                'vero',
+                'iure',
             ],
             service_roles=[
-                'doloremque',
+                'ipsa',
             ],
         ),
-        update_mask='iure',
+        update_mask='totam',
     ),
-    role_id='ipsa',
+    role_id='quae',
 )
 
 res = s.roles.update(req)

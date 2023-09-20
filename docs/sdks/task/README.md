@@ -1,4 +1,4 @@
-# task
+# Task
 
 ### Available Operations
 
@@ -26,20 +26,20 @@ s = sdk.SDK(
 req = shared.TaskServiceCreateGrantRequest(
     task_expand_mask=shared.TaskExpandMask(
         paths=[
-            'totam',
+            'molestiae',
         ],
     ),
     task_grant_source=shared.TaskGrantSource(
-        external_url='quae',
-        integration_id='molestiae',
+        external_url='eveniet',
+        integration_id='qui',
     ),
-    app_entitlement_id='eveniet',
-    app_id='qui',
-    app_user_id='cum',
-    description='iure',
+    app_entitlement_id='cum',
+    app_id='iure',
+    app_user_id='necessitatibus',
+    description='ratione',
     emergency_access=False,
-    grant_duration='necessitatibus',
-    identity_user_id='ratione',
+    grant_duration='laborum',
+    identity_user_id='distinctio',
 )
 
 res = s.task.create_grant_task(req)
@@ -80,14 +80,14 @@ s = sdk.SDK(
 req = shared.TaskServiceCreateRevokeRequest(
     task_expand_mask=shared.TaskExpandMask(
         paths=[
-            'laborum',
+            'voluptatum',
         ],
     ),
-    app_entitlement_id='distinctio',
-    app_id='voluptatum',
-    app_user_id='rem',
-    description='aliquam',
-    identity_user_id='ad',
+    app_entitlement_id='rem',
+    app_id='aliquam',
+    app_user_id='ad',
+    description='repellat',
+    identity_user_id='alias',
 )
 
 res = s.task.create_revoke_task(req)
@@ -126,7 +126,7 @@ s = sdk.SDK(
 )
 
 req = operations.C1APITaskV1TaskServiceGetRequest(
-    id='f0597a60-ff2a-454a-b1e9-4764a3e865e7',
+    id='597a60ff-2a54-4a31-a947-64a3e865e795',
 )
 
 res = s.task.get(req)

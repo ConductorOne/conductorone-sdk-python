@@ -1,4 +1,4 @@
-# app_report_action
+# AppReportAction
 
 ### Available Operations
 

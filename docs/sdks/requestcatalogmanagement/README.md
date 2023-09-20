@@ -1,4 +1,4 @@
-# request_catalog_management
+# RequestCatalogManagement
 
 ### Available Operations
 
@@ -7,6 +7,7 @@
 * [create](#create) - Create
 * [delete](#delete) - Delete
 * [get](#get) - Get
+* [list](#list) - List
 * [list_entitlements_for_access](#list_entitlements_for_access) - List Entitlements For Access
 * [list_entitlements_per_catalog](#list_entitlements_per_catalog) - List Entitlements Per Catalog
 * [remove_access_entitlements](#remove_access_entitlements) - Remove Access Entitlements
@@ -34,12 +35,12 @@ req = operations.C1APIRequestcatalogV1RequestCatalogManagementServiceAddAccessEn
     request_catalog_management_service_add_access_entitlements_request=shared.RequestCatalogManagementServiceAddAccessEntitlementsRequest(
         access_entitlements=[
             shared.AppEntitlementRef(
-                app_id='quos',
-                id='64dbb675-fd5e-460b-b75e-d4f6fbee41f3',
+                app_id='labore',
+                id='dbb675fd-5e60-4b37-9ed4-f6fbee41f333',
             ),
         ],
     ),
-    catalog_id='non',
+    catalog_id='beatae',
 )
 
 res = s.request_catalog_management.add_access_entitlements(req)
@@ -81,12 +82,12 @@ req = operations.C1APIRequestcatalogV1RequestCatalogManagementServiceAddAppEntit
     request_catalog_management_service_add_app_entitlements_request=shared.RequestCatalogManagementServiceAddAppEntitlementsRequest(
         app_entitlements=[
             shared.AppEntitlementRef(
-                app_id='amet',
-                id='17fe35b6-0eb1-4ea4-a655-5ba3c28744ed',
+                app_id='dignissimos',
+                id='fe35b60e-b1ea-4426-955b-a3c28744ed53',
             ),
         ],
     ),
-    catalog_id='ullam',
+    catalog_id='cum',
 )
 
 res = s.request_catalog_management.add_app_entitlements(req)
@@ -127,11 +128,11 @@ s = sdk.SDK(
 req = shared.RequestCatalogManagementServiceCreateRequest(
     request_catalog_expand_mask=shared.RequestCatalogExpandMask(
         paths=[
-            'adipisci',
+            'blanditiis',
         ],
     ),
-    description='cum',
-    display_name='blanditiis',
+    description='quas',
+    display_name='hic',
     published=False,
     visible_to_everyone=False,
 )
@@ -173,7 +174,7 @@ s = sdk.SDK(
 
 req = operations.C1APIRequestcatalogV1RequestCatalogManagementServiceDeleteRequest(
     request_catalog_management_service_delete_request=shared.RequestCatalogManagementServiceDeleteRequest(),
-    id='8f3a8d8f-5c0b-42f2-bb7b-194a276b2691',
+    id='3a8d8f5c-0b2f-42fb-bb19-4a276b26916f',
 )
 
 res = s.request_catalog_management.delete(req)
@@ -212,7 +213,7 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIRequestcatalogV1RequestCatalogManagementServiceGetRequest(
-    id='6fe1f08f-4294-4e36-98f4-47f603e8b445',
+    id='e1f08f42-94e3-4698-b447-f603e8b445e8',
 )
 
 res = s.request_catalog_management.get(req)
@@ -233,6 +234,36 @@ if res.request_catalog_management_service_get_response is not None:
 **[operations.C1APIRequestcatalogV1RequestCatalogManagementServiceGetResponse](../../models/operations/c1apirequestcatalogv1requestcatalogmanagementservicegetresponse.md)**
 
 
+## list
+
+Get a list of request catalogs.
+
+### Example Usage
+
+```python
+import sdk
+from sdk.models import shared
+
+s = sdk.SDK(
+    security=shared.Security(
+        bearer_auth="",
+        oauth="",
+    ),
+)
+
+
+res = s.request_catalog_management.list()
+
+if res.request_catalog_management_service_list_response is not None:
+    # handle response
+```
+
+
+### Response
+
+**[operations.C1APIRequestcatalogV1RequestCatalogManagementServiceListResponse](../../models/operations/c1apirequestcatalogv1requestcatalogmanagementservicelistresponse.md)**
+
+
 ## list_entitlements_for_access
 
 List visibility bindings (access entitlements) for a catalog.
@@ -251,9 +282,9 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIRequestcatalogV1RequestCatalogManagementServiceListEntitlementsForAccessRequest(
-    catalog_id='debitis',
-    page_size=5249.7,
-    page_token='sit',
+    catalog_id='sit',
+    page_size=7505.95,
+    page_token='error',
 )
 
 res = s.request_catalog_management.list_entitlements_for_access(req)
@@ -292,9 +323,9 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIRequestcatalogV1RequestCatalogManagementServiceListEntitlementsPerCatalogRequest(
-    catalog_id='nobis',
-    page_size=6256.37,
-    page_token='veniam',
+    catalog_id='veniam',
+    page_size=3295.43,
+    page_token='recusandae',
 )
 
 res = s.request_catalog_management.list_entitlements_per_catalog(req)
@@ -336,12 +367,12 @@ req = operations.C1APIRequestcatalogV1RequestCatalogManagementServiceRemoveAcces
     request_catalog_management_service_remove_access_entitlements_request=shared.RequestCatalogManagementServiceRemoveAccessEntitlementsRequest(
         access_entitlements=[
             shared.AppEntitlementRef(
-                app_id='minima',
-                id='efd20e45-7e18-458b-aa89-fbe3a5aa8e48',
+                app_id='reiciendis',
+                id='d20e457e-1858-4b6a-89fb-e3a5aa8e4824',
             ),
         ],
     ),
-    catalog_id='fugit',
+    catalog_id='fugiat',
 )
 
 res = s.request_catalog_management.remove_access_entitlements(req)
@@ -383,12 +414,12 @@ req = operations.C1APIRequestcatalogV1RequestCatalogManagementServiceRemoveAppEn
     request_catalog_management_service_remove_app_entitlements_request=shared.RequestCatalogManagementServiceRemoveAppEntitlementsRequest(
         app_entitlements=[
             shared.AppEntitlementRef(
-                app_id='ut',
-                id='d0ab4075-088e-4518-a206-5e904f3b1194',
+                app_id='voluptatem',
+                id='ab407508-8e51-4862-865e-904f3b1194b8',
             ),
         ],
     ),
-    catalog_id='quidem',
+    catalog_id='laborum',
 )
 
 res = s.request_catalog_management.remove_app_entitlements(req)
@@ -434,53 +465,53 @@ req = operations.C1APIRequestcatalogV1RequestCatalogManagementServiceUpdateReque
                     provision_policy=shared.ProvisionPolicy(
                         connector_provision=shared.ConnectorProvision(),
                         delegated_provision=shared.DelegatedProvision(
-                            app_id='atque',
-                            entitlement_id='laborum',
+                            app_id='nam',
+                            entitlement_id='tenetur',
                         ),
                         manual_provision=shared.ManualProvision(
-                            instructions='nam',
+                            instructions='laboriosam',
                             user_ids=[
-                                'tenetur',
+                                'alias',
                             ],
                         ),
                     ),
-                    app_id='laboriosam',
-                    app_resource_id='alias',
-                    app_resource_type_id='amet',
-                    certify_policy_id='deserunt',
+                    app_id='amet',
+                    app_resource_id='deserunt',
+                    app_resource_type_id='voluptate',
+                    certify_policy_id='unde',
                     compliance_framework_value_ids=[
-                        'voluptate',
+                        'reiciendis',
                     ],
-                    description='unde',
-                    display_name='reiciendis',
-                    duration_grant='provident',
+                    description='provident',
+                    display_name='repellendus',
+                    duration_grant='delectus',
                     duration_unset=shared.AppEntitlementDurationUnset(),
                     emergency_grant_enabled=False,
-                    emergency_grant_policy_id='repellendus',
-                    grant_policy_id='delectus',
-                    revoke_policy_id='voluptates',
-                    risk_level_value_id='perferendis',
-                    slug='est',
+                    emergency_grant_policy_id='voluptates',
+                    grant_policy_id='perferendis',
+                    revoke_policy_id='est',
+                    risk_level_value_id='quidem',
+                    slug='reprehenderit',
                 ),
             ],
             app_ids=[
-                'quidem',
+                'facere',
             ],
-            created_by_user_id='reprehenderit',
-            description='facere',
-            display_name='fuga',
-            id='8a50ce18-7f86-4bc1-b3d6-89eee9526f8d',
+            created_by_user_id='fuga',
+            description='praesentium',
+            display_name='mollitia',
+            id='50ce187f-86bc-4173-9689-eee9526f8d98',
             published=False,
             visible_to_everyone=False,
         ),
         request_catalog_expand_mask=shared.RequestCatalogExpandMask(
             paths=[
-                'error',
+                'suscipit',
             ],
         ),
-        update_mask='blanditiis',
+        update_mask='repudiandae',
     ),
-    id='6e881ead-4f0e-4101-a563-f94e29e973e9',
+    id='881ead4f-0e10-4125-a3f9-4e29e973e922',
 )
 
 res = s.request_catalog_management.update(req)

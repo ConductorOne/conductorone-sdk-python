@@ -1,4 +1,4 @@
-# app_report
+# AppReport
 
 ### Available Operations
 

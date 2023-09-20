@@ -1,4 +1,4 @@
-# personal_client
+# PersonalClient
 
 ### Available Operations
 

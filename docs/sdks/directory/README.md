@@ -1,4 +1,4 @@
-# directory
+# Directory
 
 ### Available Operations
 
