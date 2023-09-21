@@ -248,6 +248,7 @@ src/sdk/models/shared/rule.py
 src/sdk/models/shared/policypostactions.py
 src/sdk/models/shared/policysteps.py
 src/sdk/models/shared/policystep.py
+src/sdk/models/shared/reject.py
 src/sdk/models/shared/provision.py
 src/sdk/models/shared/provisiontarget.py
 src/sdk/models/shared/approval.py
@@ -258,6 +259,7 @@ src/sdk/models/shared/expressionapproval.py
 src/sdk/models/shared/entitlementownerapproval.py
 src/sdk/models/shared/appownerapproval.py
 src/sdk/models/shared/appgroupapproval.py
+src/sdk/models/shared/accept.py
 src/sdk/models/shared/createpolicyrequest.py
 src/sdk/models/shared/deletepolicyresponse.py
 src/sdk/models/shared/deletepolicyrequest.py
@@ -311,6 +313,7 @@ src/sdk/models/shared/taskgrantsource.py
 src/sdk/models/shared/tasktypecertify.py
 src/sdk/models/shared/policyinstance.py
 src/sdk/models/shared/policystepinstance.py
+src/sdk/models/shared/rejectinstance.py
 src/sdk/models/shared/provisioninstance.py
 src/sdk/models/shared/reassignedbyerroraction.py
 src/sdk/models/shared/erroredaction.py
@@ -322,6 +325,7 @@ src/sdk/models/shared/restartaction.py
 src/sdk/models/shared/reassignedaction.py
 src/sdk/models/shared/deniedaction.py
 src/sdk/models/shared/approvedaction.py
+src/sdk/models/shared/acceptinstance.py
 src/sdk/models/shared/taskservicecreategrantrequest.py
 src/sdk/models/shared/taskexpandmask.py
 src/sdk/models/shared/taskservicecreaterevokeresponse.py
@@ -676,6 +680,7 @@ docs/models/shared/policysteps.md
 docs/models/shared/policystepsinput.md
 docs/models/shared/policystep.md
 docs/models/shared/policystepinput.md
+docs/models/shared/reject.md
 docs/models/shared/provision.md
 docs/models/shared/provisiontarget.md
 docs/models/shared/approval.md
@@ -694,6 +699,7 @@ docs/models/shared/appownerapproval.md
 docs/models/shared/appownerapprovalinput.md
 docs/models/shared/appgroupapproval.md
 docs/models/shared/appgroupapprovalinput.md
+docs/models/shared/accept.md
 docs/models/shared/createpolicyrequestpolicytype.md
 docs/models/shared/createpolicyrequest.md
 docs/models/shared/createpolicyrequestinput.md
@@ -765,6 +771,7 @@ docs/models/shared/tasktypecertify.md
 docs/models/shared/policyinstance.md
 docs/models/shared/policystepinstancestate.md
 docs/models/shared/policystepinstance.md
+docs/models/shared/rejectinstance.md
 docs/models/shared/provisioninstancestate.md
 docs/models/shared/provisioninstance.md
 docs/models/shared/reassignedbyerroraction.md
@@ -778,6 +785,7 @@ docs/models/shared/restartaction.md
 docs/models/shared/reassignedaction.md
 docs/models/shared/deniedaction.md
 docs/models/shared/approvedaction.md
+docs/models/shared/acceptinstance.md
 docs/models/shared/taskservicecreategrantrequest.md
 docs/models/shared/taskexpandmask.md
 docs/models/shared/taskservicecreaterevokeresponse.md

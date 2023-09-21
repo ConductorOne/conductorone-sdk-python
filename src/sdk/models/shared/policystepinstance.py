@@ -2,8 +2,10 @@
 
 from __future__ import annotations
 import dataclasses
+from ..shared import acceptinstance as shared_acceptinstance
 from ..shared import approvalinstance as shared_approvalinstance
 from ..shared import provisioninstance as shared_provisioninstance
+from ..shared import rejectinstance as shared_rejectinstance
 from dataclasses_json import Undefined, dataclass_json
 from enum import Enum
 from sdk import utils
@@ -25,6 +27,12 @@ class PolicyStepInstance:
     This message contains a oneof named instance. Only a single field of the following list may be set at a time:
       - approval
       - provision
+      - accept
+      - reject
+    """
+    accept_instance: Optional[shared_acceptinstance.AcceptInstance] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('accept'), 'exclude': lambda f: f is None }})
+    r"""This policy step indicates that a ticket should have an approved outcome. This is a terminal approval state and is used to explicitly define the end of approval steps.
+     The instance is just a marker for it being copied into an active policy.
     """
     approval_instance: Optional[shared_approvalinstance.ApprovalInstance] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('approval'), 'exclude': lambda f: f is None }})
     r"""The approval instance object describes the way a policy step should be approved as well as its outcomes and state.
@@ -48,6 +56,10 @@ class PolicyStepInstance:
       - cancelled
       - errored
       - reassignedByError
+    """
+    reject_instance: Optional[shared_rejectinstance.RejectInstance] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('reject'), 'exclude': lambda f: f is None }})
+    r"""This policy step indicates that a ticket should have a denied outcome. This is a terminal approval state and is used to explicitly define the end of approval steps.
+     The instance is just a marker for it being copied into an active policy.
     """
     state: Optional[PolicyStepInstanceState] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('state'), 'exclude': lambda f: f is None }})
     r"""The state of the step, which is either active or done."""

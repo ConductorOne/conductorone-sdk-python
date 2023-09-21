@@ -32,6 +32,7 @@ req = shared.CreatePolicyRequestInput(
         "sapiente": shared.PolicyStepsInput(
             steps=[
                 shared.PolicyStepInput(
+                    accept=shared.Accept(),
                     approval=shared.ApprovalInput(
                         app_group_approval=shared.AppGroupApprovalInput(),
                         app_owner_approval=shared.AppOwnerApprovalInput(),
@@ -63,6 +64,7 @@ req = shared.CreatePolicyRequestInput(
                         ),
                         assigned=False,
                     ),
+                    reject=shared.Reject(),
                 ),
             ],
         ),
@@ -239,6 +241,7 @@ req = operations.C1APIPolicyV1PoliciesUpdateRequest(
                 "ullam": shared.PolicyStepsInput(
                     steps=[
                         shared.PolicyStepInput(
+                            accept=shared.Accept(),
                             approval=shared.ApprovalInput(
                                 app_group_approval=shared.AppGroupApprovalInput(),
                                 app_owner_approval=shared.AppOwnerApprovalInput(),
@@ -270,6 +273,7 @@ req = operations.C1APIPolicyV1PoliciesUpdateRequest(
                                 ),
                                 assigned=False,
                             ),
+                            reject=shared.Reject(),
                         ),
                     ],
                 ),
