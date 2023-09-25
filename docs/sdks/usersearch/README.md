@@ -24,29 +24,29 @@ s = sdk.SDK(
 req = shared.SearchUsersRequest(
     user_expand_mask=shared.UserExpandMask(
         paths=[
-            'aliquid',
+            'voluptas',
         ],
     ),
-    email='Hollie_Hirthe@gmail.com',
+    email='Maiya_Bernier@yahoo.com',
     exclude_ids=[
-        'ab',
+        'voluptates',
     ],
     ids=[
-        'error',
+        'mollitia',
     ],
-    page_size=8224.07,
-    page_token='voluptates',
-    query='mollitia',
+    page_size=6717.94,
+    page_token='libero',
+    query='ad',
     refs=[
         shared.UserRef(
-            id='ab5851d6-c645-4b08-b618-91baa0fe1ade',
+            id='851d6c64-5b08-4b61-891b-aa0fe1ade008',
         ),
     ],
     role_ids=[
-        'voluptatem',
+        'earum',
     ],
     user_statuses=[
-        shared.SearchUsersRequestUserStatuses.UNKNOWN,
+        shared.SearchUsersRequestUserStatuses.ENABLED,
     ],
 )
 

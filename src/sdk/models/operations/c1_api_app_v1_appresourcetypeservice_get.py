@@ -20,11 +20,14 @@ class C1APIAppV1AppResourceTypeServiceGetRequest:
 @dataclasses.dataclass
 class C1APIAppV1AppResourceTypeServiceGetResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     app_resource_type_service_get_response: Optional[shared_appresourcetypeservicegetresponse.AppResourceTypeServiceGetResponse] = dataclasses.field(default=None)
     r"""The AppResourceTypeServiceGetResponse contains an expanded array containing the expanded values indicated by the expand mask
      in the request and an app resource type view containing the resource type and JSONPATHs indicating which objects are where in the expand mask.
     """
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     
 

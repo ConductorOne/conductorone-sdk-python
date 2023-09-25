@@ -23,7 +23,7 @@ s = sdk.SDK(
 
 req = operations.C1APIAppV1AppReportActionServiceGenerateReportRequest(
     app_actions_service_generate_report_request=shared.AppActionsServiceGenerateReportRequest(),
-    app_id='vero',
+    app_id='voluptatibus',
 )
 
 res = s.app_report_action.generate_report(req)

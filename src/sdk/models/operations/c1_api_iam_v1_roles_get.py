@@ -19,9 +19,12 @@ class C1APIIamV1RolesGetRequest:
 @dataclasses.dataclass
 class C1APIIamV1RolesGetResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     get_roles_response: Optional[shared_getrolesresponse.GetRolesResponse] = dataclasses.field(default=None)
     r"""The GetRolesResponse message contains the retrieved role."""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     
 

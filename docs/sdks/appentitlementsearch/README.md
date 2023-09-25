@@ -24,36 +24,36 @@ s = sdk.SDK(
 req = shared.AppEntitlementSearchServiceSearchRequest(
     app_entitlement_expand_mask=shared.AppEntitlementExpandMask(
         paths=[
-            'delectus',
+            'molestiae',
         ],
     ),
-    access_review_id='tempora',
-    alias='suscipit',
+    access_review_id='minus',
+    alias='placeat',
     app_ids=[
-        'molestiae',
-    ],
-    app_user_ids=[
-        'minus',
-    ],
-    compliance_framework_ids=[
-        'placeat',
-    ],
-    exclude_app_ids=[
         'voluptatum',
     ],
-    exclude_app_user_ids=[
+    app_user_ids=[
         'iusto',
+    ],
+    compliance_framework_ids=[
+        'excepturi',
+    ],
+    exclude_app_ids=[
+        'nisi',
+    ],
+    exclude_app_user_ids=[
+        'recusandae',
     ],
     include_deleted=False,
     only_get_expiring=False,
-    page_size=5680.45,
-    page_token='nisi',
-    query='recusandae',
+    page_size=8360.79,
+    page_token='ab',
+    query='quis',
     resource_type_ids=[
-        'temporibus',
+        'veritatis',
     ],
     risk_level_ids=[
-        'ab',
+        'deserunt',
     ],
 )
 

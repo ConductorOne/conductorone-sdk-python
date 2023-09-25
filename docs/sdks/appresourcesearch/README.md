@@ -23,22 +23,22 @@ s = sdk.SDK(
 
 req = shared.SearchAppResourceTypesRequest(
     app_ids=[
-        'explicabo',
+        'quibusdam',
     ],
     exclude_resource_type_ids=[
-        'deserunt',
+        'labore',
     ],
     exclude_resource_type_trait_ids=[
-        'distinctio',
+        'modi',
     ],
-    page_size=8413.86,
-    page_token='labore',
-    query='modi',
+    page_size=1831.91,
+    page_token='aliquid',
+    query='cupiditate',
     resource_type_ids=[
-        'qui',
+        'quos',
     ],
     resource_type_trait_ids=[
-        'aliquid',
+        'perferendis',
     ],
 )
 

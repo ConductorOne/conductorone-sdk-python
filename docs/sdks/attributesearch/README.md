@@ -23,18 +23,18 @@ s = sdk.SDK(
 
 req = shared.SearchAttributeValuesRequest(
     attribute_type_ids=[
-        'recusandae',
+        'perspiciatis',
     ],
     exclude_ids=[
-        'omnis',
+        'voluptatem',
     ],
     ids=[
-        'facilis',
+        'porro',
     ],
-    page_size=5966.56,
-    page_token='voluptatem',
-    query='porro',
-    value='consequuntur',
+    page_size=1646.94,
+    page_token='blanditiis',
+    query='error',
+    value='eaque',
 )
 
 res = s.attribute_search.search_attribute_values(req)

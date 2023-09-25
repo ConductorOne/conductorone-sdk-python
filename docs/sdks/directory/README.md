@@ -27,10 +27,10 @@ s = sdk.SDK(
 req = shared.DirectoryServiceCreateRequest(
     directory_expand_mask=shared.DirectoryExpandMask(
         paths=[
-            'praesentium',
+            'fugit',
         ],
     ),
-    app_id='consequuntur',
+    app_id='fuga',
 )
 
 res = s.directory.create(req)
@@ -70,7 +70,7 @@ s = sdk.SDK(
 
 req = operations.C1APIDirectoryV1DirectoryServiceDeleteRequest(
     directory_service_delete_request=shared.DirectoryServiceDeleteRequest(),
-    app_id='deleniti',
+    app_id='mollitia',
 )
 
 res = s.directory.delete(req)
@@ -109,7 +109,7 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIDirectoryV1DirectoryServiceGetRequest(
-    app_id='fugit',
+    app_id='incidunt',
 )
 
 res = s.directory.get(req)
@@ -148,8 +148,8 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIDirectoryV1DirectoryServiceListRequest(
-    page_size=6813.93,
-    page_token='mollitia',
+    page_size=5392.24,
+    page_token='explicabo',
 )
 
 res = s.directory.list(req)

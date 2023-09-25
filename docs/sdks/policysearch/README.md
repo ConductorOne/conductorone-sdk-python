@@ -22,16 +22,16 @@ s = sdk.SDK(
 )
 
 req = shared.SearchPoliciesRequest(
-    display_name='natus',
-    page_size=2446.51,
-    page_token='voluptatibus',
+    display_name='voluptas',
+    page_size=9903.45,
+    page_token='aperiam',
     policy_types=[
         shared.SearchPoliciesRequestPolicyTypes.POLICY_TYPE_REVOKE,
     ],
-    query='asperiores',
+    query='quaerat',
     refs=[
         shared.PolicyRef(
-            id='0642dac7-af51-45cc-813a-a63aae8d6786',
+            id='2dac7af5-15cc-4413-aa63-aae8d67864db',
         ),
     ],
 )

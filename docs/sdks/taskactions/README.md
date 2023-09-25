@@ -28,13 +28,13 @@ req = operations.C1APITaskV1TaskActionsServiceApproveRequest(
     task_actions_service_approve_request=shared.TaskActionsServiceApproveRequest(
         task_expand_mask=shared.TaskExpandMask(
             paths=[
-                'eum',
+                'aspernatur',
             ],
         ),
-        comment='reiciendis',
-        policy_step_id='provident',
+        comment='ullam',
+        policy_step_id='quasi',
     ),
-    task_id='aspernatur',
+    task_id='animi',
 )
 
 res = s.task_actions.approve(req)
@@ -76,12 +76,12 @@ req = operations.C1APITaskV1TaskActionsServiceCommentRequest(
     task_actions_service_comment_request=shared.TaskActionsServiceCommentRequest(
         task_expand_mask=shared.TaskExpandMask(
             paths=[
-                'ullam',
+                'nostrum',
             ],
         ),
-        comment='quasi',
+        comment='mollitia',
     ),
-    task_id='animi',
+    task_id='provident',
 )
 
 res = s.task_actions.comment(req)
@@ -123,13 +123,13 @@ req = operations.C1APITaskV1TaskActionsServiceDenyRequest(
     task_actions_service_deny_request=shared.TaskActionsServiceDenyRequest(
         task_expand_mask=shared.TaskExpandMask(
             paths=[
-                'nostrum',
+                'possimus',
             ],
         ),
-        comment='mollitia',
-        policy_step_id='provident',
+        comment='animi',
+        policy_step_id='ex',
     ),
-    task_id='possimus',
+    task_id='aliquid',
 )
 
 res = s.task_actions.deny(req)
@@ -171,13 +171,13 @@ req = operations.C1APITaskV1TaskActionsServiceEscalateToEmergencyAccessRequest(
     task_actions_service_escalate_to_emergency_access_request=shared.TaskActionsServiceEscalateToEmergencyAccessRequest(
         task_expand_mask=shared.TaskExpandMask(
             paths=[
-                'animi',
+                'accusantium',
             ],
         ),
-        comment='ex',
-        policy_step_id='aliquid',
+        comment='repellat',
+        policy_step_id='doloribus',
     ),
-    task_id='accusantium',
+    task_id='ullam',
 )
 
 res = s.task_actions.escalate_to_emergency_access(req)

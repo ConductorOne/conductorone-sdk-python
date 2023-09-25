@@ -22,9 +22,9 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIAppV1AppEntitlementUserBindingServiceListAppUsersForIdentityWithGrantRequest(
-    app_entitlement_id='quis',
-    app_id='veritatis',
-    identity_user_id='deserunt',
+    app_entitlement_id='perferendis',
+    app_id='ipsam',
+    identity_user_id='repellendus',
 )
 
 res = s.app_entitlement_user_binding.list_app_users_for_identity_with_grant(req)

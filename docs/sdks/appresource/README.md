@@ -23,9 +23,9 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIAppV1AppResourceServiceGetRequest(
-    app_id='nihil',
-    app_resource_type_id='praesentium',
-    id='f097b007-4f15-4471-b5e6-e13b99d488e1',
+    app_id='ipsa',
+    app_resource_type_id='omnis',
+    id='7b0074f1-5471-4b5e-ae13-b99d488e1e91',
 )
 
 res = s.app_resource.get(req)
@@ -64,10 +64,10 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIAppV1AppResourceServiceListRequest(
-    app_id='repudiandae',
-    app_resource_type_id='sint',
-    page_size=831.12,
-    page_token='itaque',
+    app_id='itaque',
+    app_resource_type_id='incidunt',
+    page_size=3185.69,
+    page_token='consequatur',
 )
 
 res = s.app_resource.list(req)

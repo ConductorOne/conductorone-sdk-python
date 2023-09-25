@@ -24,16 +24,16 @@ s = sdk.SDK(
 req = shared.RequestCatalogSearchServiceSearchEntitlementsRequest(
     app_entitlement_expand_mask=shared.AppEntitlementExpandMask(
         paths=[
-            'id',
+            'error',
         ],
     ),
-    app_display_name='quis',
-    entitlement_alias='reprehenderit',
+    app_display_name='illo',
+    entitlement_alias='corporis',
     granted_status=shared.RequestCatalogSearchServiceSearchEntitlementsRequestGrantedStatus.GRANTED,
     include_deleted=False,
-    page_size=764.86,
-    page_token='corporis',
-    query='quidem',
+    page_size=9109.94,
+    page_token='non',
+    query='vero',
 )
 
 res = s.request_catalog_search.search_entitlements(req)

@@ -20,8 +20,11 @@ class C1APIUserV1UserServiceListRequest:
 @dataclasses.dataclass
 class C1APIUserV1UserServiceListResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     user_service_list_response: Optional[shared_userservicelistresponse.UserServiceListResponse] = dataclasses.field(default=None)
     r"""The UserServiceListResponse message contains a list of results and a nextPageToken if applicable."""
     

@@ -11,9 +11,12 @@ from typing import Optional
 @dataclasses.dataclass
 class C1APIDirectoryV1DirectoryServiceCreateResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     directory_service_create_response: Optional[shared_directoryservicecreateresponse.DirectoryServiceCreateResponse] = dataclasses.field(default=None)
     r"""The DirectoryServiceCreateResponse message."""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     
 
