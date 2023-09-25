@@ -22,9 +22,12 @@ class C1APIAppV1AppUserServiceUpdateRequest:
 @dataclasses.dataclass
 class C1APIAppV1AppUserServiceUpdateResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     app_user_service_update_response: Optional[shared_appuserserviceupdateresponse.AppUserServiceUpdateResponse] = dataclasses.field(default=None)
     r"""Successful response"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     
 

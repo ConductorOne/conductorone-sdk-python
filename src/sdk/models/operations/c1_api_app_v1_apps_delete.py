@@ -21,9 +21,12 @@ class C1APIAppV1AppsDeleteRequest:
 @dataclasses.dataclass
 class C1APIAppV1AppsDeleteResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     delete_app_response: Optional[shared_deleteappresponse.DeleteAppResponse] = dataclasses.field(default=None)
     r"""Empty response body. Status code indicates success."""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     
 

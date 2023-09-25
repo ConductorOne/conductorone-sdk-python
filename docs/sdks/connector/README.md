@@ -1,4 +1,4 @@
-# connector
+# Connector
 
 ### Available Operations
 
@@ -34,19 +34,19 @@ req = operations.C1APIAppV1ConnectorServiceCreateRequest(
     connector_service_create_request=shared.ConnectorServiceCreateRequest(
         connector_expand_mask=shared.ConnectorExpandMask(
             paths=[
-                'optio',
+                'saepe',
             ],
         ),
-        catalog_id='accusamus',
+        catalog_id='suscipit',
         config={
-            "ad": 'saepe',
+            "deserunt": 'provident',
         },
-        description='suscipit',
+        description='minima',
         user_ids=[
-            'deserunt',
+            'repellendus',
         ],
     ),
-    app_id='provident',
+    app_id='totam',
 )
 
 res = s.connector.create(req)
@@ -88,17 +88,17 @@ req = operations.C1APIAppV1ConnectorServiceCreateDelegatedRequest(
     connector_service_create_delegated_request=shared.ConnectorServiceCreateDelegatedRequest(
         connector_expand_mask=shared.ConnectorExpandMask(
             paths=[
-                'minima',
+                'similique',
             ],
         ),
-        catalog_id='repellendus',
-        description='totam',
-        display_name='similique',
+        catalog_id='alias',
+        description='at',
+        display_name='quaerat',
         user_ids=[
-            'alias',
+            'tempora',
         ],
     ),
-    app_id='at',
+    app_id='vel',
 )
 
 res = s.connector.create_delegated(req)
@@ -138,8 +138,8 @@ s = sdk.SDK(
 
 req = operations.C1APIAppV1ConnectorServiceDeleteRequest(
     connector_service_delete_request=shared.ConnectorServiceDeleteRequest(),
-    app_id='quaerat',
-    id='46ce2af7-a73c-4f3b-a453-f870b326b5a7',
+    app_id='quod',
+    id='e2af7a73-cf3b-4e45-bf87-0b326b5a7342',
 )
 
 res = s.connector.delete(req)
@@ -178,8 +178,8 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIAppV1ConnectorServiceGetRequest(
-    app_id='ipsum',
-    id='429cdb1a-8422-4bb6-b9d2-322715bf0cbb',
+    app_id='cupiditate',
+    id='cdb1a842-2bb6-479d-a322-715bf0cbb1e3',
 )
 
 res = s.connector.get(req)
@@ -218,9 +218,9 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIAppV1ConnectorServiceGetCredentialsRequest(
-    app_id='et',
-    connector_id='saepe',
-    id='31b8b90f-3443-4a11-88e0-adcf4b921879',
+    app_id='veritatis',
+    connector_id='nobis',
+    id='8b90f344-3a11-408e-8adc-f4b921879fce',
 )
 
 res = s.connector.get_credentials(req)
@@ -259,9 +259,9 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIAppV1ConnectorServiceListRequest(
-    app_id='voluptatibus',
-    page_size=7875.42,
-    page_token='vero',
+    app_id='omnis',
+    page_size=3381.59,
+    page_token='ipsum',
 )
 
 res = s.connector.list(req)
@@ -301,9 +301,9 @@ s = sdk.SDK(
 
 req = operations.C1APIAppV1ConnectorServiceRevokeCredentialRequest(
     connector_service_revoke_credential_request=shared.ConnectorServiceRevokeCredentialRequest(),
-    app_id='omnis',
-    connector_id='quis',
-    id='3f73ef7f-bc7a-4bd7-8dd3-9c0f5d2cff7c',
+    app_id='delectus',
+    connector_id='voluptate',
+    id='3ef7fbc7-abd7-44dd-b9c0-f5d2cff7c70a',
 )
 
 res = s.connector.revoke_credential(req)
@@ -343,8 +343,8 @@ s = sdk.SDK(
 
 req = operations.C1APIAppV1ConnectorServiceRotateCredentialRequest(
     connector_service_rotate_credential_request=shared.ConnectorServiceRotateCredentialRequest(),
-    app_id='ducimus',
-    connector_id='alias',
+    app_id='tempora',
+    connector_id='ipsam',
 )
 
 res = s.connector.rotate_credential(req)
@@ -387,33 +387,33 @@ req = operations.C1APIAppV1ConnectorServiceUpdateRequest(
     connector_service_update_request_input=shared.ConnectorServiceUpdateRequestInput(
         connector=shared.ConnectorInput(
             connector_status=shared.ConnectorStatus(
-                completed_at=dateutil.parser.isoparse('2022-06-18T06:43:12.261Z'),
-                last_error='ipsam',
-                started_at=dateutil.parser.isoparse('2022-11-12T00:45:12.094Z'),
-                status=shared.ConnectorStatusStatus.SYNC_STATUS_RUNNING,
-                updated_at=dateutil.parser.isoparse('2022-02-08T20:43:00.221Z'),
+                completed_at=dateutil.parser.isoparse('2022-11-12T00:45:12.094Z'),
+                last_error='vel',
+                started_at=dateutil.parser.isoparse('2022-02-08T20:43:00.221Z'),
+                status=shared.ConnectorStatusStatus.SYNC_STATUS_UNSPECIFIED,
+                updated_at=dateutil.parser.isoparse('2022-06-28T08:50:44.084Z'),
             ),
             o_auth2_authorized_as=shared.OAuth2AuthorizedAsInput(),
-            app_id='ratione',
+            app_id='dicta',
             config={
-                "ex": 'laudantium',
+                "dolor": 'maiores',
             },
-            description='dicta',
-            display_name='dolor',
-            id='f16d9f5f-ce6c-4556-946c-3e250fb008c4',
+            description='quasi',
+            display_name='ex',
+            id='d9f5fce6-c556-4146-83e2-50fb008c42e1',
             user_ids=[
-                'fugit',
+                'non',
             ],
         ),
         connector_expand_mask=shared.ConnectorExpandMask(
             paths=[
-                'accusamus',
+                'et',
             ],
         ),
-        update_mask='inventore',
+        update_mask='dolorum',
     ),
-    app_id='non',
-    id='1aac366c-8dd6-4b14-8290-7474778a7bd4',
+    app_id='laborum',
+    id='c366c8dd-6b14-4429-8747-4778a7bd466d',
 )
 
 res = s.connector.update(req)
@@ -456,33 +456,33 @@ req = operations.C1APIAppV1ConnectorServiceUpdateDelegatedRequest(
     connector_service_update_delegated_request_input=shared.ConnectorServiceUpdateDelegatedRequestInput(
         connector=shared.ConnectorInput(
             connector_status=shared.ConnectorStatus(
-                completed_at=dateutil.parser.isoparse('2022-08-15T07:50:23.042Z'),
-                last_error='assumenda',
-                started_at=dateutil.parser.isoparse('2022-06-29T02:09:48.123Z'),
-                status=shared.ConnectorStatusStatus.SYNC_STATUS_ERROR,
-                updated_at=dateutil.parser.isoparse('2022-12-11T06:00:38.230Z'),
+                completed_at=dateutil.parser.isoparse('2022-06-29T02:09:48.123Z'),
+                last_error='quisquam',
+                started_at=dateutil.parser.isoparse('2022-12-11T06:00:38.230Z'),
+                status=shared.ConnectorStatusStatus.SYNC_STATUS_DONE,
+                updated_at=dateutil.parser.isoparse('2022-08-03T04:27:44.236Z'),
             ),
             o_auth2_authorized_as=shared.OAuth2AuthorizedAsInput(),
-            app_id='id',
+            app_id='quo',
             config={
-                "quidem": 'neque',
+                "illum": 'quo',
             },
-            description='quo',
-            display_name='illum',
-            id='ca425190-4e52-43c7-a0bc-7178e4796f2a',
+            description='fuga',
+            display_name='eius',
+            id='251904e5-23c7-4e0b-8717-8e4796f2a70c',
             user_ids=[
-                'molestiae',
+                'eum',
             ],
         ),
         connector_expand_mask=shared.ConnectorExpandMask(
             paths=[
-                'accusantium',
+                'quas',
             ],
         ),
-        update_mask='porro',
+        update_mask='praesentium',
     ),
-    connector_app_id='eum',
-    connector_id='quas',
+    connector_app_id='consequuntur',
+    connector_id='deleniti',
 )
 
 res = s.connector.update_delegated(req)

@@ -29,6 +29,8 @@ class RequestCatalogSearchServiceSearchEntitlementsRequest:
     r"""Search for entitlements with this alias (exact match)."""
     granted_status: Optional[RequestCatalogSearchServiceSearchEntitlementsRequestGrantedStatus] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('grantedStatus'), 'exclude': lambda f: f is None }})
     r"""Search entitlements with this granted status for your signed in user."""
+    include_deleted: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('includeDeleted'), 'exclude': lambda f: f is None }})
+    r"""Include deleted entitlements"""
     page_size: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('pageSize'), 'exclude': lambda f: f is None }})
     r"""The pageSize where 0 <= pageSize <= 100. Values < 10 will be set to 10. A value of 0 returns the default page size (currently 25)"""
     page_token: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('pageToken'), 'exclude': lambda f: f is None }})

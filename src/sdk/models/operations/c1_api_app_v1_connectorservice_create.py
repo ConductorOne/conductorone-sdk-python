@@ -21,9 +21,12 @@ class C1APIAppV1ConnectorServiceCreateRequest:
 @dataclasses.dataclass
 class C1APIAppV1ConnectorServiceCreateResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     connector_service_create_response: Optional[shared_connectorservicecreateresponse.ConnectorServiceCreateResponse] = dataclasses.field(default=None)
     r"""The ConnectorServiceCreateResponse is the response returned from creating a connector."""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     
 

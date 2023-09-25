@@ -20,9 +20,12 @@ class C1APIPolicyV1PoliciesListRequest:
 @dataclasses.dataclass
 class C1APIPolicyV1PoliciesListResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     list_policy_response: Optional[shared_listpolicyresponse.ListPolicyResponse] = dataclasses.field(default=None)
     r"""Successful response"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     
 

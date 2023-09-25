@@ -11,8 +11,11 @@ from typing import Optional
 @dataclasses.dataclass
 class C1APITaskV1TaskServiceCreateGrantTaskResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     task_service_create_grant_response: Optional[shared_taskservicecreategrantresponse.TaskServiceCreateGrantResponse] = dataclasses.field(default=None)
     r"""The TaskServiceCreateGrantResponse returns a task view which has a task including JSONPATHs to the expanded items in the expanded array."""
     

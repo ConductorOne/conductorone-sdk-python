@@ -1,4 +1,4 @@
-# app_usage_controls
+# AppUsageControls
 
 ### Available Operations
 
@@ -23,7 +23,7 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIAppV1AppUsageControlsServiceGetRequest(
-    app_id='non',
+    app_id='accusamus',
 )
 
 res = s.app_usage_controls.get(req)
@@ -64,15 +64,15 @@ s = sdk.SDK(
 req = operations.C1APIAppV1AppUsageControlsServiceUpdateRequest(
     update_app_usage_controls_request=shared.UpdateAppUsageControlsRequest(
         app_usage_controls=shared.AppUsageControls(
-            app_id='occaecati',
+            app_id='delectus',
             notify=False,
-            notify_after_days=3132.18,
+            notify_after_days=6925.32,
             revoke=False,
-            revoke_after_days=8817.36,
+            revoke_after_days=5884.65,
         ),
-        update_mask='delectus',
+        update_mask='nam',
     ),
-    app_id='quidem',
+    app_id='id',
 )
 
 res = s.app_usage_controls.update(req)

@@ -11,9 +11,12 @@ from typing import Optional
 @dataclasses.dataclass
 class C1APIAuthV1AuthIntrospectResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     introspect_response: Optional[shared_introspectresponse.IntrospectResponse] = dataclasses.field(default=None)
     r"""IntrospectResponse contains information about the current user who is authenticated."""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     
 

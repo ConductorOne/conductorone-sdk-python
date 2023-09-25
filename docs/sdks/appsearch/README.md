@@ -1,4 +1,4 @@
-# app_search
+# AppSearch
 
 ### Available Operations
 
@@ -23,15 +23,15 @@ s = sdk.SDK(
 
 req = shared.SearchAppsRequest(
     app_ids=[
-        'cumque',
+        'aliquid',
     ],
-    display_name='facere',
+    display_name='laborum',
     exclude_app_ids=[
-        'ea',
+        'accusamus',
     ],
-    page_size=3965.06,
-    page_token='laborum',
-    query='accusamus',
+    page_size=2497.96,
+    page_token='occaecati',
+    query='enim',
 )
 
 res = s.app_search.search(req)

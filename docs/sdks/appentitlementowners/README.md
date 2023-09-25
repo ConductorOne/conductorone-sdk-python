@@ -1,4 +1,4 @@
-# app_entitlement_owners
+# AppEntitlementOwners
 
 ### Available Operations
 
@@ -26,10 +26,10 @@ s = sdk.SDK(
 
 req = operations.C1APIAppV1AppEntitlementOwnersAddRequest(
     add_app_entitlement_owner_request=shared.AddAppEntitlementOwnerRequest(
-        user_id='quibusdam',
+        user_id='corrupti',
     ),
-    app_id='unde',
-    entitlement_id='nulla',
+    app_id='illum',
+    entitlement_id='vel',
 )
 
 res = s.app_entitlement_owners.add(req)
@@ -68,10 +68,10 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIAppV1AppEntitlementOwnersListRequest(
-    app_id='corrupti',
-    entitlement_id='illum',
-    page_size=4236.55,
-    page_token='error',
+    app_id='error',
+    entitlement_id='deserunt',
+    page_size=3843.82,
+    page_token='iure',
 )
 
 res = s.app_entitlement_owners.list(req)
@@ -111,9 +111,9 @@ s = sdk.SDK(
 
 req = operations.C1APIAppV1AppEntitlementOwnersRemoveRequest(
     remove_app_entitlement_owner_request=shared.RemoveAppEntitlementOwnerRequest(),
-    app_id='deserunt',
-    entitlement_id='suscipit',
-    user_id='iure',
+    app_id='magnam',
+    entitlement_id='debitis',
+    user_id='ipsa',
 )
 
 res = s.app_entitlement_owners.remove(req)
@@ -154,11 +154,11 @@ s = sdk.SDK(
 req = operations.C1APIAppV1AppEntitlementOwnersSetRequest(
     set_app_entitlement_owners_request=shared.SetAppEntitlementOwnersRequest(
         user_ids=[
-            'magnam',
+            'delectus',
         ],
     ),
-    app_id='debitis',
-    entitlement_id='ipsa',
+    app_id='tempora',
+    entitlement_id='suscipit',
 )
 
 res = s.app_entitlement_owners.set(req)

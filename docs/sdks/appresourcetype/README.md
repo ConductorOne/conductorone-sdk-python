@@ -1,4 +1,4 @@
-# app_resource_type
+# AppResourceType
 
 ### Available Operations
 
@@ -23,8 +23,8 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIAppV1AppResourceTypeServiceGetRequest(
-    app_id='cupiditate',
-    id='802d502a-94bb-44f6-bc96-9e9a3efa77df',
+    app_id='magni',
+    id='d502a94b-b4f6-43c9-a9e9-a3efa77dfb14',
 )
 
 res = s.app_resource_type.get(req)
@@ -63,9 +63,9 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIAppV1AppResourceTypeServiceListRequest(
-    app_id='rerum',
-    page_size=1162.02,
-    page_token='magnam',
+    app_id='cumque',
+    page_size=8137.98,
+    page_token='ea',
 )
 
 res = s.app_resource_type.list(req)

@@ -11,9 +11,12 @@ from typing import Optional
 @dataclasses.dataclass
 class C1APIAttributeV1AttributesCreateAttributeValueResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     create_attribute_value_response: Optional[shared_createattributevalueresponse.CreateAttributeValueResponse] = dataclasses.field(default=None)
     r"""CreateAttributeValueResponse is the response for creating an attribute value."""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     
 

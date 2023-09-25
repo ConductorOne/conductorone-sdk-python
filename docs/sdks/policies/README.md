@@ -1,4 +1,4 @@
-# policies
+# Policies
 
 ### Available Operations
 
@@ -26,16 +26,18 @@ s = sdk.SDK(
 )
 
 req = shared.CreatePolicyRequestInput(
-    description='nisi',
-    display_name='fugit',
+    description='consequuntur',
+    display_name='ratione',
     policy_steps={
-        "sapiente": shared.PolicyStepsInput(
+        "explicabo": shared.PolicyStepsInput(
             steps=[
                 shared.PolicyStepInput(
+                    accept=shared.Accept(),
                     approval=shared.ApprovalInput(
                         app_group_approval=shared.AppGroupApprovalInput(),
                         app_owner_approval=shared.AppOwnerApprovalInput(),
                         entitlement_owner_approval=shared.EntitlementOwnerApprovalInput(),
+                        expression_approval=shared.ExpressionApprovalInput(),
                         manager_approval=shared.ManagerApprovalInput(),
                         self_approval=shared.SelfApprovalInput(),
                         user_approval=shared.UserApprovalInput(),
@@ -44,29 +46,30 @@ req = shared.CreatePolicyRequestInput(
                         provision_policy=shared.ProvisionPolicy(
                             connector_provision=shared.ConnectorProvision(),
                             delegated_provision=shared.DelegatedProvision(
-                                app_id='consequuntur',
-                                entitlement_id='ratione',
+                                app_id='saepe',
+                                entitlement_id='occaecati',
                             ),
                             manual_provision=shared.ManualProvision(
-                                instructions='explicabo',
+                                instructions='atque',
                                 user_ids=[
-                                    'saepe',
+                                    'et',
                                 ],
                             ),
                         ),
                         provision_target=shared.ProvisionTarget(
-                            app_entitlement_id='occaecati',
-                            app_id='atque',
-                            app_user_id='et',
-                            grant_duration='esse',
+                            app_entitlement_id='esse',
+                            app_id='eveniet',
+                            app_user_id='accusamus',
+                            grant_duration='veritatis',
                         ),
                         assigned=False,
                     ),
+                    reject=shared.Reject(),
                 ),
             ],
         ),
     },
-    policy_type=shared.CreatePolicyRequestPolicyType.POLICY_TYPE_PROVISION,
+    policy_type=shared.CreatePolicyRequestPolicyType.POLICY_TYPE_REVOKE,
     post_actions=[
         shared.PolicyPostActions(
             certify_remediate_immediately=False,
@@ -112,7 +115,7 @@ s = sdk.SDK(
 
 req = operations.C1APIPolicyV1PoliciesDeleteRequest(
     delete_policy_request=shared.DeletePolicyRequest(),
-    id='e17cbe61-e6b7-4b95-bc0a-b3c20c4f3789',
+    id='cbe61e6b-7b95-4bc0-ab3c-20c4f3789fd8',
 )
 
 res = s.policies.delete(req)
@@ -151,7 +154,7 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIPolicyV1PoliciesGetRequest(
-    id='fd871f99-dd2e-4fd1-a1aa-6f1e674bdb04',
+    id='71f99dd2-efd1-421a-a6f1-e674bdb04f15',
 )
 
 res = s.policies.get(req)
@@ -190,8 +193,8 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIPolicyV1PoliciesListRequest(
-    page_size=9589.83,
-    page_token='dicta',
+    page_size=4438.79,
+    page_token='ullam',
 )
 
 res = s.policies.list(req)
@@ -232,16 +235,18 @@ s = sdk.SDK(
 req = operations.C1APIPolicyV1PoliciesUpdateRequest(
     update_policy_request_input=shared.UpdatePolicyRequestInput(
         policy=shared.PolicyInput(
-            description='ullam',
-            display_name='reprehenderit',
+            description='nisi',
+            display_name='aut',
             policy_steps={
-                "ullam": shared.PolicyStepsInput(
+                "voluptatum": shared.PolicyStepsInput(
                     steps=[
                         shared.PolicyStepInput(
+                            accept=shared.Accept(),
                             approval=shared.ApprovalInput(
                                 app_group_approval=shared.AppGroupApprovalInput(),
                                 app_owner_approval=shared.AppOwnerApprovalInput(),
                                 entitlement_owner_approval=shared.EntitlementOwnerApprovalInput(),
+                                expression_approval=shared.ExpressionApprovalInput(),
                                 manager_approval=shared.ManagerApprovalInput(),
                                 self_approval=shared.SelfApprovalInput(),
                                 user_approval=shared.UserApprovalInput(),
@@ -250,39 +255,46 @@ req = operations.C1APIPolicyV1PoliciesUpdateRequest(
                                 provision_policy=shared.ProvisionPolicy(
                                     connector_provision=shared.ConnectorProvision(),
                                     delegated_provision=shared.DelegatedProvision(
-                                        app_id='nisi',
-                                        entitlement_id='aut',
+                                        app_id='qui',
+                                        entitlement_id='quibusdam',
                                     ),
                                     manual_provision=shared.ManualProvision(
-                                        instructions='voluptatum',
+                                        instructions='ex',
                                         user_ids=[
-                                            'qui',
+                                            'deleniti',
                                         ],
                                     ),
                                 ),
                                 provision_target=shared.ProvisionTarget(
-                                    app_entitlement_id='quibusdam',
-                                    app_id='ex',
-                                    app_user_id='deleniti',
-                                    grant_duration='itaque',
+                                    app_entitlement_id='itaque',
+                                    app_id='dolorum',
+                                    app_user_id='architecto',
+                                    grant_duration='omnis',
                                 ),
                                 assigned=False,
                             ),
+                            reject=shared.Reject(),
                         ),
                     ],
                 ),
             },
-            policy_type=shared.PolicyPolicyType.POLICY_TYPE_ACCESS_REQUEST,
+            policy_type=shared.PolicyPolicyType.POLICY_TYPE_PROVISION,
             post_actions=[
                 shared.PolicyPostActions(
                     certify_remediate_immediately=False,
                 ),
             ],
             reassign_tasks_to_delegates=False,
+            rules=[
+                shared.Rule(
+                    condition='quasi',
+                    policy_key='at',
+                ),
+            ],
         ),
-        update_mask='architecto',
+        update_mask='et',
     ),
-    id='9f1d1705-1339-4d08-886a-1840394c2607',
+    id='7051339d-0808-46a1-8403-94c26071f93f',
 )
 
 res = s.policies.update(req)

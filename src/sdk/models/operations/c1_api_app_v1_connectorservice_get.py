@@ -20,9 +20,12 @@ class C1APIAppV1ConnectorServiceGetRequest:
 @dataclasses.dataclass
 class C1APIAppV1ConnectorServiceGetResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     connector_service_get_response: Optional[shared_connectorservicegetresponse.ConnectorServiceGetResponse] = dataclasses.field(default=None)
     r"""The ConnectorServiceGetResponse message contains the connectorView, and an expand mask."""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     
 

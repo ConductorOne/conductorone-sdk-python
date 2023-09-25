@@ -21,9 +21,12 @@ class C1APIAppV1ConnectorServiceListRequest:
 @dataclasses.dataclass
 class C1APIAppV1ConnectorServiceListResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     connector_service_list_response: Optional[shared_connectorservicelistresponse.ConnectorServiceListResponse] = dataclasses.field(default=None)
     r"""The ConnectorServiceListResponse message contains a list of results and a nextPageToken if applicable"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     
 

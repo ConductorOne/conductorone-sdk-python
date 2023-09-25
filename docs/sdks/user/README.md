@@ -1,4 +1,4 @@
-# user
+# User
 
 ### Available Operations
 
@@ -23,7 +23,7 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIUserV1UserServiceGetRequest(
-    id='12fde047-7177-48ff-a1d0-17476360a15d',
+    id='04771778-ff61-4d01-b476-360a15db6a66',
 )
 
 res = s.user.get(req)
@@ -62,8 +62,8 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIUserV1UserServiceListRequest(
-    page_size=7137.67,
-    page_token='aliquid',
+    page_size=219.73,
+    page_token='eum',
 )
 
 res = s.user.list(req)

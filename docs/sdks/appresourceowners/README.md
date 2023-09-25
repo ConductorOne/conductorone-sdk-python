@@ -1,4 +1,4 @@
-# app_resource_owners
+# AppResourceOwners
 
 ### Available Operations
 
@@ -22,11 +22,11 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIAppV1AppResourceOwnersListRequest(
-    app_id='incidunt',
-    page_size=3185.69,
-    page_token='consequatur',
-    resource_id='est',
-    resource_type_id='quibusdam',
+    app_id='est',
+    page_size=8423.42,
+    page_token='explicabo',
+    resource_id='deserunt',
+    resource_type_id='distinctio',
 )
 
 res = s.app_resource_owners.list(req)

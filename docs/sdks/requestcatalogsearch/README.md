@@ -1,4 +1,4 @@
-# request_catalog_search
+# RequestCatalogSearch
 
 ### Available Operations
 
@@ -24,15 +24,16 @@ s = sdk.SDK(
 req = shared.RequestCatalogSearchServiceSearchEntitlementsRequest(
     app_entitlement_expand_mask=shared.AppEntitlementExpandMask(
         paths=[
-            'consequuntur',
+            'error',
         ],
     ),
-    app_display_name='fugit',
-    entitlement_alias='id',
-    granted_status=shared.RequestCatalogSearchServiceSearchEntitlementsRequestGrantedStatus.ALL,
-    page_size=4402.64,
-    page_token='error',
-    query='illo',
+    app_display_name='illo',
+    entitlement_alias='corporis',
+    granted_status=shared.RequestCatalogSearchServiceSearchEntitlementsRequestGrantedStatus.GRANTED,
+    include_deleted=False,
+    page_size=9109.94,
+    page_token='non',
+    query='vero',
 )
 
 res = s.request_catalog_search.search_entitlements(req)

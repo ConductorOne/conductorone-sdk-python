@@ -20,9 +20,12 @@ class C1APIAppV1AppsListRequest:
 @dataclasses.dataclass
 class C1APIAppV1AppsListResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     list_apps_response: Optional[shared_listappsresponse.ListAppsResponse] = dataclasses.field(default=None)
     r"""The ListAppsResponse message contains a list of results and a nextPageToken if applicable."""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     
 

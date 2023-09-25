@@ -21,8 +21,11 @@ class C1APIAppV1AppUsageControlsServiceUpdateRequest:
 @dataclasses.dataclass
 class C1APIAppV1AppUsageControlsServiceUpdateResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     update_app_usage_controls_response: Optional[shared_updateappusagecontrolsresponse.UpdateAppUsageControlsResponse] = dataclasses.field(default=None)
     r"""The UpdateAppUsageControlsResponse message contains the updated AppUsageControls object."""
     

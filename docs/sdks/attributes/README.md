@@ -1,4 +1,4 @@
-# attributes
+# Attributes
 
 ### Available Operations
 
@@ -26,8 +26,8 @@ s = sdk.SDK(
 )
 
 req = shared.CreateAttributeValueRequest(
-    attribute_type_id='blanditiis',
-    value='error',
+    attribute_type_id='occaecati',
+    value='rerum',
 )
 
 res = s.attributes.create_attribute_value(req)
@@ -67,7 +67,7 @@ s = sdk.SDK(
 
 req = operations.C1APIAttributeV1AttributesDeleteAttributeValueRequest(
     delete_attribute_value_request=shared.DeleteAttributeValueRequest(),
-    id='09b3fe49-a8d9-4cbf-8863-3323f9b77f3a',
+    id='3fe49a8d-9cbf-4486-b332-3f9b77f3a410',
 )
 
 res = s.attributes.delete_attribute_value(req)
@@ -106,7 +106,7 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIAttributeV1AttributesGetAttributeValueRequest(
-    id='4100674e-bf69-4280-91ba-77a89ebf737a',
+    id='0674ebf6-9280-4d1b-a77a-89ebf737ae42',
 )
 
 res = s.attributes.get_attribute_value(req)
@@ -145,8 +145,8 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIAttributeV1AttributesListAttributeTypesRequest(
-    page_size=9064.18,
-    page_token='eius',
+    page_size=206.51,
+    page_token='amet',
 )
 
 res = s.attributes.list_attribute_types(req)
@@ -185,9 +185,9 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIAttributeV1AttributesListAttributeValuesRequest(
-    attribute_type_id='aspernatur',
-    page_size=206.51,
-    page_token='amet',
+    attribute_type_id='optio',
+    page_size=8815.86,
+    page_token='ad',
 )
 
 res = s.attributes.list_attribute_values(req)

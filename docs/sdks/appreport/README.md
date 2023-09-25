@@ -1,4 +1,4 @@
-# app_report
+# AppReport
 
 ### Available Operations
 
@@ -22,9 +22,9 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIAppV1AppReportServiceListRequest(
-    app_id='quasi',
-    page_size=9719.45,
-    page_token='voluptatibus',
+    app_id='vero',
+    page_size=4686.51,
+    page_token='praesentium',
 )
 
 res = s.app_report.list(req)

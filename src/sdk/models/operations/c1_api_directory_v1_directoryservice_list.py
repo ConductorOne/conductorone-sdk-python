@@ -20,9 +20,12 @@ class C1APIDirectoryV1DirectoryServiceListRequest:
 @dataclasses.dataclass
 class C1APIDirectoryV1DirectoryServiceListResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     directory_service_list_response: Optional[shared_directoryservicelistresponse.DirectoryServiceListResponse] = dataclasses.field(default=None)
     r"""The DirectoryServiceListResponse message contains a list of results and a nextPageToken if applicable."""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     
 

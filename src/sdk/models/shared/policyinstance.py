@@ -27,6 +27,8 @@ class PolicyInstance:
     This message contains a oneof named instance. Only a single field of the following list may be set at a time:
       - approval
       - provision
+      - accept
+      - reject
     """
     
 

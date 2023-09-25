@@ -22,8 +22,11 @@ class C1APIAppV1AppOwnersRemoveRequest:
 @dataclasses.dataclass
 class C1APIAppV1AppOwnersRemoveResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     remove_app_owner_response: Optional[shared_removeappownerresponse.RemoveAppOwnerResponse] = dataclasses.field(default=None)
     r"""Empty response with a status code indicating success."""
     

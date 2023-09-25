@@ -1,4 +1,4 @@
-# app_entitlements
+# AppEntitlements
 
 ### Available Operations
 
@@ -27,8 +27,8 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIAppV1AppEntitlementsGetRequest(
-    app_id='perferendis',
-    id='5dfc2ddf-7cc7-48ca-9ba9-28fc816742cb',
+    app_id='sapiente',
+    id='c2ddf7cc-78ca-41ba-928f-c816742cb739',
 )
 
 res = s.app_entitlements.get(req)
@@ -67,9 +67,9 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIAppV1AppEntitlementsListRequest(
-    app_id='esse',
-    page_size=2165.5,
-    page_token='excepturi',
+    app_id='aspernatur',
+    page_size=187.89,
+    page_token='ad',
 )
 
 res = s.app_entitlements.list(req)
@@ -108,11 +108,11 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIAppV1AppEntitlementsListForAppResourceRequest(
-    app_id='aspernatur',
-    app_resource_id='perferendis',
-    app_resource_type_id='ad',
-    page_size=6176.36,
-    page_token='sed',
+    app_id='natus',
+    app_resource_id='sed',
+    app_resource_type_id='iste',
+    page_size=2223.21,
+    page_token='natus',
 )
 
 res = s.app_entitlements.list_for_app_resource(req)
@@ -151,10 +151,10 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIAppV1AppEntitlementsListForAppUserRequest(
-    app_id='iste',
-    app_user_id='dolor',
-    page_size=6169.34,
-    page_token='laboriosam',
+    app_id='laboriosam',
+    app_user_id='hic',
+    page_size=9025.99,
+    page_token='fuga',
 )
 
 res = s.app_entitlements.list_for_app_user(req)
@@ -193,10 +193,10 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIAppV1AppEntitlementsListUsersRequest(
-    app_entitlement_id='hic',
-    app_id='saepe',
-    page_size=6818.2,
-    page_token='in',
+    app_entitlement_id='in',
+    app_id='corporis',
+    page_size=6130.64,
+    page_token='iure',
 )
 
 res = s.app_entitlements.list_users(req)
@@ -240,43 +240,43 @@ req = operations.C1APIAppV1AppEntitlementsUpdateRequest(
             provision_policy=shared.ProvisionPolicy(
                 connector_provision=shared.ConnectorProvision(),
                 delegated_provision=shared.DelegatedProvision(
-                    app_id='corporis',
-                    entitlement_id='iste',
+                    app_id='saepe',
+                    entitlement_id='quidem',
                 ),
                 manual_provision=shared.ManualProvision(
-                    instructions='iure',
+                    instructions='architecto',
                     user_ids=[
-                        'saepe',
+                        'ipsa',
                     ],
                 ),
             ),
-            app_id='quidem',
-            app_resource_id='architecto',
-            app_resource_type_id='ipsa',
-            certify_policy_id='reiciendis',
+            app_id='reiciendis',
+            app_resource_id='est',
+            app_resource_type_id='mollitia',
+            certify_policy_id='laborum',
             compliance_framework_value_ids=[
-                'est',
+                'dolores',
             ],
-            description='mollitia',
-            display_name='laborum',
-            duration_grant='dolores',
+            description='dolorem',
+            display_name='corporis',
+            duration_grant='explicabo',
             duration_unset=shared.AppEntitlementDurationUnset(),
             emergency_grant_enabled=False,
-            emergency_grant_policy_id='dolorem',
-            grant_policy_id='corporis',
-            revoke_policy_id='explicabo',
-            risk_level_value_id='nobis',
-            slug='enim',
+            emergency_grant_policy_id='nobis',
+            grant_policy_id='enim',
+            revoke_policy_id='omnis',
+            risk_level_value_id='nemo',
+            slug='minima',
         ),
         app_entitlement_expand_mask=shared.AppEntitlementExpandMask(
             paths=[
-                'omnis',
+                'excepturi',
             ],
         ),
-        update_mask='nemo',
+        update_mask='accusantium',
     ),
-    app_id='minima',
-    id='907aff1a-3a2f-4a94-a773-9251aa52c3f5',
+    app_id='iure',
+    id='aff1a3a2-fa94-4677-b925-1aa52c3f5ad0',
 )
 
 res = s.app_entitlements.update(req)

@@ -1,4 +1,4 @@
-# personal_client
+# PersonalClient
 
 ### Available Operations
 
@@ -23,12 +23,12 @@ s = sdk.SDK(
 
 req = shared.PersonalClientServiceCreateRequest(
     allow_source_cidr=[
-        'incidunt',
-    ],
-    display_name='atque',
-    expires='explicabo',
-    scoped_roles=[
         'minima',
+    ],
+    display_name='nisi',
+    expires='fugit',
+    scoped_roles=[
+        'sapiente',
     ],
 )
 
