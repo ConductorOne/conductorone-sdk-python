@@ -1,4 +1,5 @@
 # RequestCatalogSearch
+(*request_catalog_search*)
 
 ### Available Operations
 

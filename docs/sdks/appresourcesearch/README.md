@@ -1,4 +1,5 @@
 # AppResourceSearch
+(*app_resource_search*)
 
 ### Available Operations
 

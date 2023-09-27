@@ -1,4 +1,5 @@
 # AppEntitlementSearch
+(*app_entitlement_search*)
 
 ### Available Operations
 

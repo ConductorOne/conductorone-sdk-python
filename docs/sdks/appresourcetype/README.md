@@ -1,4 +1,5 @@
 # AppResourceType
+(*app_resource_type*)
 
 ### Available Operations
 
