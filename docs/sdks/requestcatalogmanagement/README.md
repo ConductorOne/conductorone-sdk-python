@@ -36,12 +36,12 @@ req = operations.C1APIRequestcatalogV1RequestCatalogManagementServiceAddAccessEn
     request_catalog_management_service_add_access_entitlements_request=shared.RequestCatalogManagementServiceAddAccessEntitlementsRequest(
         access_entitlements=[
             shared.AppEntitlementRef(
-                app_id='cum',
-                id='675fd5e6-0b37-45ed-8f6f-bee41f33317f',
+                app_id='deposit',
+                id='<ID>',
             ),
         ],
     ),
-    catalog_id='debitis',
+    catalog_id='Principal',
 )
 
 res = s.request_catalog_management.add_access_entitlements(req)
@@ -83,12 +83,12 @@ req = operations.C1APIRequestcatalogV1RequestCatalogManagementServiceAddAppEntit
     request_catalog_management_service_add_app_entitlements_request=shared.RequestCatalogManagementServiceAddAppEntitlementsRequest(
         app_entitlements=[
             shared.AppEntitlementRef(
-                app_id='consectetur',
-                id='5b60eb1e-a426-4555-ba3c-28744ed53b88',
+                app_id='East cyan Wilma',
+                id='<ID>',
             ),
         ],
     ),
-    catalog_id='hic',
+    catalog_id='Southeast Steel slight',
 )
 
 res = s.request_catalog_management.add_app_entitlements(req)
@@ -129,11 +129,11 @@ s = sdk.SDK(
 req = shared.RequestCatalogManagementServiceCreateRequest(
     request_catalog_expand_mask=shared.RequestCatalogExpandMask(
         paths=[
-            'nesciunt',
+            'neural',
         ],
     ),
-    description='culpa',
-    display_name='corrupti',
+    description='Expanded zero tolerance migration',
+    display_name='Sausages ASCII',
     published=False,
     visible_to_everyone=False,
 )
@@ -175,7 +175,7 @@ s = sdk.SDK(
 
 req = operations.C1APIRequestcatalogV1RequestCatalogManagementServiceDeleteRequest(
     request_catalog_management_service_delete_request=shared.RequestCatalogManagementServiceDeleteRequest(),
-    id='d8f5c0b2-f2fb-47b1-94a2-76b26916fe1f',
+    id='<ID>',
 )
 
 res = s.request_catalog_management.delete(req)
@@ -214,7 +214,7 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIRequestcatalogV1RequestCatalogManagementServiceGetRequest(
-    id='08f4294e-3698-4f44-bf60-3e8b445e80ca',
+    id='<ID>',
 )
 
 res = s.request_catalog_management.get(req)
@@ -283,9 +283,9 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIRequestcatalogV1RequestCatalogManagementServiceListEntitlementsForAccessRequest(
-    catalog_id='veniam',
-    page_size=3295.43,
-    page_token='recusandae',
+    catalog_id='mint digital Man',
+    page_size=4915.05,
+    page_token='sympathetically',
 )
 
 res = s.request_catalog_management.list_entitlements_for_access(req)
@@ -324,9 +324,9 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIRequestcatalogV1RequestCatalogManagementServiceListEntitlementsPerCatalogRequest(
-    catalog_id='reiciendis',
-    page_size=8623.19,
-    page_token='magni',
+    catalog_id='Senior',
+    page_size=7955.89,
+    page_token='male',
 )
 
 res = s.request_catalog_management.list_entitlements_per_catalog(req)
@@ -368,12 +368,12 @@ req = operations.C1APIRequestcatalogV1RequestCatalogManagementServiceRemoveAcces
     request_catalog_management_service_remove_access_entitlements_request=shared.RequestCatalogManagementServiceRemoveAccessEntitlementsRequest(
         access_entitlements=[
             shared.AppEntitlementRef(
-                app_id='aperiam',
-                id='e457e185-8b6a-489f-be3a-5aa8e4824d0a',
+                app_id='Mill Audi indigo',
+                id='<ID>',
             ),
         ],
     ),
-    catalog_id='expedita',
+    catalog_id='Director',
 )
 
 res = s.request_catalog_management.remove_access_entitlements(req)
@@ -415,12 +415,12 @@ req = operations.C1APIRequestcatalogV1RequestCatalogManagementServiceRemoveAppEn
     request_catalog_management_service_remove_app_entitlements_request=shared.RequestCatalogManagementServiceRemoveAppEntitlementsRequest(
         app_entitlements=[
             shared.AppEntitlementRef(
-                app_id='magnam',
-                id='075088e5-1862-4065-a904-f3b1194b8abf',
+                app_id='UTF8',
+                id='<ID>',
             ),
         ],
     ),
-    catalog_id='laboriosam',
+    catalog_id='bus',
 )
 
 res = s.request_catalog_management.remove_app_entitlements(req)
@@ -466,53 +466,53 @@ req = operations.C1APIRequestcatalogV1RequestCatalogManagementServiceUpdateReque
                     provision_policy=shared.ProvisionPolicy(
                         connector_provision=shared.ConnectorProvision(),
                         delegated_provision=shared.DelegatedProvision(
-                            app_id='alias',
-                            entitlement_id='amet',
+                            app_id='South complexity',
+                            entitlement_id='Tempe Ruble ADP',
                         ),
                         manual_provision=shared.ManualProvision(
-                            instructions='deserunt',
+                            instructions='Holmium',
                             user_ids=[
-                                'voluptate',
+                                'Country',
                             ],
                         ),
                     ),
-                    app_id='unde',
-                    app_resource_id='reiciendis',
-                    app_resource_type_id='provident',
-                    certify_policy_id='repellendus',
+                    app_id='Albany Southeast Computer',
+                    app_resource_id='Towels',
+                    app_resource_type_id='invoice Northeast orange',
+                    certify_policy_id='Response HTTP',
                     compliance_framework_value_ids=[
-                        'delectus',
+                        'Hybrid',
                     ],
-                    description='voluptates',
-                    display_name='perferendis',
-                    duration_grant='est',
+                    description='Stand-alone encompassing middleware',
+                    display_name='index Iran after',
+                    duration_grant='through',
                     duration_unset=shared.AppEntitlementDurationUnset(),
                     emergency_grant_enabled=False,
-                    emergency_grant_policy_id='quidem',
-                    grant_policy_id='reprehenderit',
-                    revoke_policy_id='facere',
-                    risk_level_value_id='fuga',
-                    slug='praesentium',
+                    emergency_grant_policy_id='Optimized',
+                    grant_policy_id='fugit fuchsia',
+                    revoke_policy_id='sternly meter experiences',
+                    risk_level_value_id='as Electric than',
+                    slug='Benz Representative',
                 ),
             ],
             app_ids=[
-                'mollitia',
+                'wireless',
             ],
-            created_by_user_id='veniam',
-            description='voluptatem',
-            display_name='quisquam',
-            id='e187f86b-c173-4d68-9eee-9526f8d986e8',
+            created_by_user_id='index',
+            description='Public-key methodical info-mediaries',
+            display_name='Virgin',
+            id='<ID>',
             published=False,
             visible_to_everyone=False,
         ),
         request_catalog_expand_mask=shared.RequestCatalogExpandMask(
             paths=[
-                'atque',
+                'relationships',
             ],
         ),
-        update_mask='sunt',
+        update_mask='Northeast Executive',
     ),
-    id='ead4f0e1-0125-463f-94e2-9e973e922a57',
+    id='<ID>',
 )
 
 res = s.request_catalog_management.update(req)

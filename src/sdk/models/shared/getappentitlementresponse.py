@@ -15,7 +15,7 @@ class GetAppEntitlementResponse:
     r"""The get app entitlement response returns an entitlement view containing paths in the expanded array for the objects expanded as indicated by the expand mask in the request."""
     app_entitlement_view: Optional[shared_appentitlementview.AppEntitlementView] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('appEntitlementView'), 'exclude': lambda f: f is None }})
     r"""The app entitlement view contains the serialized app entitlement and paths to objects referenced by the app entitlement."""
-    expanded: Optional[list[dict[str, Any]]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('expanded'), 'exclude': lambda f: f is None }})
+    expanded: Optional[list[dict[str, Any]]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('expanded') }})
     r"""List of serialized related objects."""
     
 

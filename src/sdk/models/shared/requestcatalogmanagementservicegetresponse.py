@@ -13,7 +13,7 @@ from typing import Any, Optional
 @dataclasses.dataclass
 class RequestCatalogManagementServiceGetResponse:
     r"""The request catalog management service get response returns a request catalog view with the expanded items in the expanded array indicated by the expand mask in the request."""
-    expanded: Optional[list[dict[str, Any]]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('expanded'), 'exclude': lambda f: f is None }})
+    expanded: Optional[list[dict[str, Any]]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('expanded') }})
     r"""List of serialized related objects."""
     request_catalog_view: Optional[shared_requestcatalogview.RequestCatalogView] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('requestCatalogView'), 'exclude': lambda f: f is None }})
     r"""The request catalog view contains the serialized request catalog and paths to objects referenced by the request catalog."""

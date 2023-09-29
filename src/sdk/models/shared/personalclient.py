@@ -14,7 +14,7 @@ from typing import Optional
 @dataclasses.dataclass
 class PersonalClient:
     r"""The PersonalClient message contains information about a presonal client credential."""
-    allow_source_cidr: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('allowSourceCidr'), 'exclude': lambda f: f is None }})
+    allow_source_cidr: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('allowSourceCidr') }})
     r"""If set, only allows the CIDRs in the array to use the credential."""
     client_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('clientId'), 'exclude': lambda f: f is None }})
     r"""The clientID of the credential."""
@@ -26,7 +26,7 @@ class PersonalClient:
     id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id'), 'exclude': lambda f: f is None }})
     r"""The unique ID of the personal client credential."""
     last_used_at: Optional[datetime] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('lastUsedAt'), 'encoder': utils.datetimeisoformat(True), 'decoder': dateutil.parser.isoparse, 'exclude': lambda f: f is None }})
-    scoped_roles: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('scopedRoles'), 'exclude': lambda f: f is None }})
+    scoped_roles: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('scopedRoles') }})
     r"""scoped_roles provides a list of IAM Roles
      that this OAuth2 Client's API permissions
      are reduced to. The permissions granted to OAuth2 Client

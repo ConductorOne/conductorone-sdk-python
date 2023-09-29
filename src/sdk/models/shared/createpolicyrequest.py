@@ -32,7 +32,7 @@ class CreatePolicyRequest:
     r"""The map of policy type to policy steps. The key is the stringified version of the enum. See other policies for examples."""
     policy_type: Optional[CreatePolicyRequestPolicyType] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('policyType'), 'exclude': lambda f: f is None }})
     r"""The enum of the policy type."""
-    post_actions: Optional[list[shared_policypostactions.PolicyPostActions]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('postActions'), 'exclude': lambda f: f is None }})
+    post_actions: Optional[list[shared_policypostactions.PolicyPostActions]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('postActions') }})
     r"""Actions to occur after a policy finishes. As of now this is only valid on a certify policy to remediate a denied certification immediately."""
     reassign_tasks_to_delegates: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('reassignTasksToDelegates'), 'exclude': lambda f: f is None }})
     r"""Allows reassigning tasks to delegates."""
@@ -53,7 +53,7 @@ class CreatePolicyRequestInput:
     r"""The map of policy type to policy steps. The key is the stringified version of the enum. See other policies for examples."""
     policy_type: Optional[CreatePolicyRequestPolicyType] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('policyType'), 'exclude': lambda f: f is None }})
     r"""The enum of the policy type."""
-    post_actions: Optional[list[shared_policypostactions.PolicyPostActions]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('postActions'), 'exclude': lambda f: f is None }})
+    post_actions: Optional[list[shared_policypostactions.PolicyPostActions]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('postActions') }})
     r"""Actions to occur after a policy finishes. As of now this is only valid on a certify policy to remediate a denied certification immediately."""
     reassign_tasks_to_delegates: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('reassignTasksToDelegates'), 'exclude': lambda f: f is None }})
     r"""Allows reassigning tasks to delegates."""

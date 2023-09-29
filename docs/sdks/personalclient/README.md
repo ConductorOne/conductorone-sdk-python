@@ -24,12 +24,12 @@ s = sdk.SDK(
 
 req = shared.PersonalClientServiceCreateRequest(
     allow_source_cidr=[
-        'minima',
+        'neural',
     ],
-    display_name='nisi',
-    expires='fugit',
+    display_name='pirouette',
+    expires='Sausages ASCII',
     scoped_roles=[
-        'sapiente',
+        'ohm',
     ],
 )
 

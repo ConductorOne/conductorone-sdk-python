@@ -15,6 +15,6 @@ class UpdatePolicyRequestInput:
     r"""The UpdatePolicyRequest message contains the policy object to update and a field mask to indicate which fields to update. It uses URL value for input."""
     policy: Optional[shared_policy.PolicyInput] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('policy'), 'exclude': lambda f: f is None }})
     r"""A policy describes the behavior of the ConductorOne system when processing a task. You can describe the type, approvers, fallback behavior, and escalation processes."""
-    update_mask: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('updateMask'), 'exclude': lambda f: f is None }})
+    update_mask: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('updateMask') }})
     
 

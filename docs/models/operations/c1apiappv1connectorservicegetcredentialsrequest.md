@@ -5,6 +5,6 @@
 
 | Field              | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
-| `app_id`           | *str*              | :heavy_check_mark: | N/A                |
-| `connector_id`     | *str*              | :heavy_check_mark: | N/A                |
-| `id`               | *str*              | :heavy_check_mark: | N/A                |
+| `app_id`           | *Optional[str]*    | :heavy_check_mark: | N/A                |
+| `connector_id`     | *Optional[str]*    | :heavy_check_mark: | N/A                |
+| `id`               | *Optional[str]*    | :heavy_check_mark: | N/A                |

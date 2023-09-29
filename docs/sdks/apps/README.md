@@ -27,15 +27,15 @@ s = sdk.SDK(
 )
 
 req = shared.CreateAppRequest(
-    certify_policy_id='nisi',
-    description='vel',
-    display_name='natus',
-    grant_policy_id='omnis',
-    monthly_cost_usd=4748.67,
+    certify_policy_id='Electric pirouette',
+    description='Integrated context-sensitive throughput',
+    display_name='Southwest alarm',
+    grant_policy_id='Lauderhill connecting',
+    monthly_cost_usd=2282.74,
     owners=[
-        'perferendis',
+        'Latin',
     ],
-    revoke_policy_id='nihil',
+    revoke_policy_id='Garden',
 )
 
 res = s.apps.create(req)
@@ -75,7 +75,7 @@ s = sdk.SDK(
 
 req = operations.C1APIAppV1AppsDeleteRequest(
     delete_app_request=shared.DeleteAppRequest(),
-    id='4ba4469b-6e21-4419-9989-0afa563e2516',
+    id='<ID>',
 )
 
 res = s.apps.delete(req)
@@ -114,7 +114,7 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIAppV1AppsGetRequest(
-    id='fe4c8b71-1e5b-47fd-aed0-28921cddc692',
+    id='<ID>',
 )
 
 res = s.apps.get(req)
@@ -153,8 +153,8 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIAppV1AppsListRequest(
-    page_size=4071.83,
-    page_token='accusantium',
+    page_size=6488.05,
+    page_token='Southeast',
 )
 
 res = s.apps.list(req)
@@ -195,17 +195,17 @@ s = sdk.SDK(
 req = operations.C1APIAppV1AppsUpdateRequest(
     update_app_request_input=shared.UpdateAppRequestInput(
         app=shared.AppInput(
-            certify_policy_id='ab',
-            description='maiores',
-            display_name='quidem',
-            grant_policy_id='ipsam',
-            icon_url='voluptate',
-            monthly_cost_usd=4200.75,
-            revoke_policy_id='nam',
+            certify_policy_id='South complexity',
+            description='Public-key 3rd generation success',
+            display_name='Ohio ADP',
+            grant_policy_id='Holmium',
+            icon_url='Land alarmed',
+            monthly_cost_usd=49.06,
+            revoke_policy_id='Chevrolet',
         ),
-        update_mask='eaque',
+        update_mask='teal',
     ),
-    id='d5f0d30c-5fbb-4258-b053-202c73d5fe9b',
+    id='<ID>',
 )
 
 res = s.apps.update(req)

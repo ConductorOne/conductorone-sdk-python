@@ -14,7 +14,7 @@ class UserExpandMask:
     r"""The user expand mask is used to indicate which related objects should be expanded in the response.
      The supported paths are 'role_ids', 'manager_ids', 'delegated_user_id', 'directory_ids', and '*'.
     """
-    paths: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('paths'), 'exclude': lambda f: f is None }})
+    paths: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('paths') }})
     r"""An array of paths to be expanded in the response."""
     
 

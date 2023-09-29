@@ -25,16 +25,16 @@ s = sdk.SDK(
 req = shared.RequestCatalogSearchServiceSearchEntitlementsRequest(
     app_entitlement_expand_mask=shared.AppEntitlementExpandMask(
         paths=[
-            'error',
+            'Cotton',
         ],
     ),
-    app_display_name='illo',
-    entitlement_alias='corporis',
+    app_display_name='Santa Savings siemens',
+    entitlement_alias='male virtual',
     granted_status=shared.RequestCatalogSearchServiceSearchEntitlementsRequestGrantedStatus.GRANTED,
     include_deleted=False,
-    page_size=9109.94,
-    page_token='non',
-    query='vero',
+    page_size=8308.06,
+    page_token='Gloves if EXE',
+    query='intuitive UDP',
 )
 
 res = s.request_catalog_search.search_entitlements(req)

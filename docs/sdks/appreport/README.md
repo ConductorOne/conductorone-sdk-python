@@ -23,9 +23,9 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIAppV1AppReportServiceListRequest(
-    app_id='vero',
-    page_size=4686.51,
-    page_token='praesentium',
+    app_id='Bronze Architect',
+    page_size=9628.76,
+    page_token='female',
 )
 
 res = s.app_report.list(req)

@@ -23,16 +23,16 @@ s = sdk.SDK(
 )
 
 req = shared.SearchPoliciesRequest(
-    display_name='voluptas',
-    page_size=9903.45,
-    page_token='aperiam',
+    display_name='specific',
+    page_size=4589.64,
+    page_token='Coordinator',
     policy_types=[
         shared.SearchPoliciesRequestPolicyTypes.POLICY_TYPE_REVOKE,
     ],
-    query='quaerat',
+    query='siemens Russian',
     refs=[
         shared.PolicyRef(
-            id='2dac7af5-15cc-4413-aa63-aae8d67864db',
+            id='<ID>',
         ),
     ],
 )

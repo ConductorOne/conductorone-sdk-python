@@ -24,8 +24,8 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIAppV1AppResourceTypeServiceGetRequest(
-    app_id='magni',
-    id='d502a94b-b4f6-43c9-a9e9-a3efa77dfb14',
+    app_id='Group Cambridgeshire',
+    id='<ID>',
 )
 
 res = s.app_resource_type.get(req)
@@ -64,9 +64,9 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIAppV1AppResourceTypeServiceListRequest(
-    app_id='cumque',
-    page_size=8137.98,
-    page_token='ea',
+    app_id='Bronze Architect',
+    page_size=9628.76,
+    page_token='female',
 )
 
 res = s.app_resource_type.list(req)

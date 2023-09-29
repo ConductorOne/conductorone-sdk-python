@@ -12,7 +12,7 @@ from typing import Optional
 @dataclasses.dataclass
 class SetAppEntitlementOwnersRequest:
     r"""The request message for setting the app entitlement owners."""
-    user_ids: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('userIds'), 'exclude': lambda f: f is None }})
+    user_ids: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('userIds') }})
     r"""The user_ids field for the users to set as an owner of the app entitlement."""
     
 

@@ -5,6 +5,6 @@ The RequestCatalogManagementServiceRemoveAppEntitlementsRequest message is used 
 
 ## Fields
 
-| Field                                                               | Type                                                                | Required                                                            | Description                                                         |
-| ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
-| `app_entitlements`                                                  | list[[AppEntitlementRef](../../models/shared/appentitlementref.md)] | :heavy_minus_sign:                                                  | The list of app entitlements to remove from the catalog.            |
+| Field                                                                          | Type                                                                           | Required                                                                       | Description                                                                    |
+| ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ |
+| `app_entitlements`                                                             | list[[shared.AppEntitlementRef](undefined/models/shared/appentitlementref.md)] | :heavy_minus_sign:                                                             | The list of app entitlements to remove from the catalog.                       |

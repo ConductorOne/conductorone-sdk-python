@@ -27,10 +27,10 @@ s = sdk.SDK(
 )
 
 req = shared.CreatePolicyRequestInput(
-    description='consequuntur',
-    display_name='ratione',
+    description='Multi-tiered scalable data-warehouse',
+    display_name='Markets Sausages ASCII',
     policy_steps={
-        "explicabo": shared.PolicyStepsInput(
+        "eligendi": shared.PolicyStepsInput(
             steps=[
                 shared.PolicyStepInput(
                     accept=shared.Accept(),
@@ -47,21 +47,21 @@ req = shared.CreatePolicyRequestInput(
                         provision_policy=shared.ProvisionPolicy(
                             connector_provision=shared.ConnectorProvision(),
                             delegated_provision=shared.DelegatedProvision(
-                                app_id='saepe',
-                                entitlement_id='occaecati',
+                                app_id='National Lauderhill',
+                                entitlement_id='overriding Latin',
                             ),
                             manual_provision=shared.ManualProvision(
-                                instructions='atque',
+                                instructions='Garden',
                                 user_ids=[
-                                    'et',
+                                    'Health',
                                 ],
                             ),
                         ),
                         provision_target=shared.ProvisionTarget(
-                            app_entitlement_id='esse',
-                            app_id='eveniet',
-                            app_user_id='accusamus',
-                            grant_duration='veritatis',
+                            app_entitlement_id='exuding',
+                            app_id='SSD',
+                            app_user_id='Money mesh',
+                            grant_duration='silver compressing Berkshire',
                         ),
                         assigned=False,
                     ),
@@ -116,7 +116,7 @@ s = sdk.SDK(
 
 req = operations.C1APIPolicyV1PoliciesDeleteRequest(
     delete_policy_request=shared.DeletePolicyRequest(),
-    id='cbe61e6b-7b95-4bc0-ab3c-20c4f3789fd8',
+    id='<ID>',
 )
 
 res = s.policies.delete(req)
@@ -155,7 +155,7 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIPolicyV1PoliciesGetRequest(
-    id='71f99dd2-efd1-421a-a6f1-e674bdb04f15',
+    id='<ID>',
 )
 
 res = s.policies.get(req)
@@ -194,8 +194,8 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIPolicyV1PoliciesListRequest(
-    page_size=4438.79,
-    page_token='ullam',
+    page_size=6488.05,
+    page_token='Southeast',
 )
 
 res = s.policies.list(req)
@@ -236,10 +236,10 @@ s = sdk.SDK(
 req = operations.C1APIPolicyV1PoliciesUpdateRequest(
     update_policy_request_input=shared.UpdatePolicyRequestInput(
         policy=shared.PolicyInput(
-            description='nisi',
-            display_name='aut',
+            description='Optimized 24/7 middleware',
+            display_name='Clothing Tempe',
             policy_steps={
-                "voluptatum": shared.PolicyStepsInput(
+                "eum": shared.PolicyStepsInput(
                     steps=[
                         shared.PolicyStepInput(
                             accept=shared.Accept(),
@@ -256,21 +256,21 @@ req = operations.C1APIPolicyV1PoliciesUpdateRequest(
                                 provision_policy=shared.ProvisionPolicy(
                                     connector_provision=shared.ConnectorProvision(),
                                     delegated_provision=shared.DelegatedProvision(
-                                        app_id='qui',
-                                        entitlement_id='quibusdam',
+                                        app_id='Architect',
+                                        entitlement_id='Oregon',
                                     ),
                                     manual_provision=shared.ManualProvision(
-                                        instructions='ex',
+                                        instructions='Country alarmed',
                                         user_ids=[
-                                            'deleniti',
+                                            'North',
                                         ],
                                     ),
                                 ),
                                 provision_target=shared.ProvisionTarget(
-                                    app_entitlement_id='itaque',
-                                    app_id='dolorum',
-                                    app_user_id='architecto',
-                                    grant_duration='omnis',
+                                    app_entitlement_id='Computer teal laborum',
+                                    app_id='capitalize mint',
+                                    app_user_id='Response HTTP',
+                                    grant_duration='Sedan aw Azerbaijanian',
                                 ),
                                 assigned=False,
                             ),
@@ -288,14 +288,14 @@ req = operations.C1APIPolicyV1PoliciesUpdateRequest(
             reassign_tasks_to_delegates=False,
             rules=[
                 shared.Rule(
-                    condition='quasi',
-                    policy_key='at',
+                    condition='Wisconsin',
+                    policy_key='Plastic generate fugit',
                 ),
             ],
         ),
-        update_mask='et',
+        update_mask='SUV',
     ),
-    id='7051339d-0808-46a1-8403-94c26071f93f',
+    id='<ID>',
 )
 
 res = s.policies.update(req)

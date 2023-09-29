@@ -23,6 +23,6 @@ class UpdateAppEntitlementRequestInput:
     """
     app_entitlement_expand_mask: Optional[shared_appentitlementexpandmask.AppEntitlementExpandMask] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('expandMask'), 'exclude': lambda f: f is None }})
     r"""The app entitlement expand mask allows the user to get additional information when getting responses containing app entitlement views."""
-    update_mask: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('updateMask'), 'exclude': lambda f: f is None }})
+    update_mask: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('updateMask') }})
     
 

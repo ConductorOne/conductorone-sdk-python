@@ -27,10 +27,10 @@ s = sdk.SDK(
 
 req = operations.C1APIAppV1AppEntitlementOwnersAddRequest(
     add_app_entitlement_owner_request=shared.AddAppEntitlementOwnerRequest(
-        user_id='corrupti',
+        user_id='Small West',
     ),
-    app_id='illum',
-    entitlement_id='vel',
+    app_id='Officer impactful',
+    entitlement_id='Developer portals editorialise',
 )
 
 res = s.app_entitlement_owners.add(req)
@@ -69,10 +69,10 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIAppV1AppEntitlementOwnersListRequest(
-    app_id='error',
-    entitlement_id='deserunt',
-    page_size=3843.82,
-    page_token='iure',
+    app_id='Bronze Architect',
+    entitlement_id='Southeast Soap katal',
+    page_size=4900.99,
+    page_token='aftermath',
 )
 
 res = s.app_entitlement_owners.list(req)
@@ -112,9 +112,9 @@ s = sdk.SDK(
 
 req = operations.C1APIAppV1AppEntitlementOwnersRemoveRequest(
     remove_app_entitlement_owner_request=shared.RemoveAppEntitlementOwnerRequest(),
-    app_id='magnam',
-    entitlement_id='debitis',
-    user_id='ipsa',
+    app_id='SCSI',
+    entitlement_id='JBOD tan',
+    user_id='encompassing',
 )
 
 res = s.app_entitlement_owners.remove(req)
@@ -155,11 +155,11 @@ s = sdk.SDK(
 req = operations.C1APIAppV1AppEntitlementOwnersSetRequest(
     set_app_entitlement_owners_request=shared.SetAppEntitlementOwnersRequest(
         user_ids=[
-            'delectus',
+            'markets',
         ],
     ),
-    app_id='tempora',
-    entitlement_id='suscipit',
+    app_id='yahoo bandwidth',
+    entitlement_id='male microchip',
 )
 
 res = s.app_entitlement_owners.set(req)

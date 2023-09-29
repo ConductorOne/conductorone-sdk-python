@@ -17,7 +17,7 @@ class AppResourceTypeServiceGetResponse:
     """
     app_resource_type_view: Optional[shared_appresourcetypeview.AppResourceTypeView] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('appResourceTypeView'), 'exclude': lambda f: f is None }})
     r"""The AppResourceTypeView message."""
-    expanded: Optional[list[dict[str, Any]]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('expanded'), 'exclude': lambda f: f is None }})
+    expanded: Optional[list[dict[str, Any]]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('expanded') }})
     r"""List of serialized related objects."""
     
 

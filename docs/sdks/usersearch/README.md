@@ -25,29 +25,29 @@ s = sdk.SDK(
 req = shared.SearchUsersRequest(
     user_expand_mask=shared.UserExpandMask(
         paths=[
-            'voluptas',
+            'transition',
         ],
     ),
-    email='Maiya_Bernier@yahoo.com',
+    email='Jadyn.Goyette43@hotmail.com',
     exclude_ids=[
-        'voluptates',
+        'Hyundai',
     ],
     ids=[
-        'mollitia',
+        'Future',
     ],
-    page_size=6717.94,
-    page_token='libero',
-    query='ad',
+    page_size=1145.76,
+    page_token='broach dependent Mozambique',
+    query='eligendi Tobago',
     refs=[
         shared.UserRef(
-            id='851d6c64-5b08-4b61-891b-aa0fe1ade008',
+            id='<ID>',
         ),
     ],
     role_ids=[
-        'earum',
+        'Protactinium',
     ],
     user_statuses=[
-        shared.SearchUsersRequestUserStatuses.ENABLED,
+        shared.SearchUsersRequestUserStatuses.DISABLED,
     ],
 )
 

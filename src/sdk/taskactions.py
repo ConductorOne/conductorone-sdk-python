@@ -20,11 +20,11 @@ class TaskActions:
         
         url = utils.generate_url(operations.C1APITaskV1TaskActionsServiceApproveRequest, base_url, '/api/v1/tasks/{task_id}/action/approve', request)
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "task_actions_service_approve_request", 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, "task_actions_service_approve_request", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = 'application/json'
-        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
+        headers['user-agent'] = self.sdk_configuration.user_agent
         
         client = self.sdk_configuration.security_client
         
@@ -53,11 +53,11 @@ class TaskActions:
         
         url = utils.generate_url(operations.C1APITaskV1TaskActionsServiceCommentRequest, base_url, '/api/v1/tasks/{task_id}/action/comment', request)
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "task_actions_service_comment_request", 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, "task_actions_service_comment_request", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = 'application/json'
-        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
+        headers['user-agent'] = self.sdk_configuration.user_agent
         
         client = self.sdk_configuration.security_client
         
@@ -86,11 +86,11 @@ class TaskActions:
         
         url = utils.generate_url(operations.C1APITaskV1TaskActionsServiceDenyRequest, base_url, '/api/v1/tasks/{task_id}/action/deny', request)
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "task_actions_service_deny_request", 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, "task_actions_service_deny_request", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = 'application/json'
-        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
+        headers['user-agent'] = self.sdk_configuration.user_agent
         
         client = self.sdk_configuration.security_client
         
@@ -119,11 +119,11 @@ class TaskActions:
         
         url = utils.generate_url(operations.C1APITaskV1TaskActionsServiceEscalateToEmergencyAccessRequest, base_url, '/api/v1/tasks/{task_id}/action/escalate', request)
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "task_actions_service_escalate_to_emergency_access_request", 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, "task_actions_service_escalate_to_emergency_access_request", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = 'application/json'
-        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
+        headers['user-agent'] = self.sdk_configuration.user_agent
         
         client = self.sdk_configuration.security_client
         

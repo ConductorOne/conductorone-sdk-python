@@ -13,7 +13,7 @@ from typing import Optional
 @dataclasses.dataclass
 class ListAppUsersForIdentityWithGrantResponse:
     r"""The ListAppUsersForIdentityWithGrantResponse message."""
-    bindings: Optional[list[shared_appentitlementuserbinding.AppEntitlementUserBinding]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('bindings'), 'exclude': lambda f: f is None }})
+    bindings: Optional[list[shared_appentitlementuserbinding.AppEntitlementUserBinding]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('bindings') }})
     r"""The list of app users that may also have grant information."""
     
 

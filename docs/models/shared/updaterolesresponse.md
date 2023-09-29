@@ -7,4 +7,4 @@ UpdateRolesResponse is the response message containing the updated role.
 
 | Field                                                          | Type                                                           | Required                                                       | Description                                                    |
 | -------------------------------------------------------------- | -------------------------------------------------------------- | -------------------------------------------------------------- | -------------------------------------------------------------- |
-| `role`                                                         | [Optional[Role]](../../models/shared/role.md)                  | :heavy_minus_sign:                                             | Role is a role that can be assigned to a user in ConductorOne. |
+| `role`                                                         | [Optional[shared.Role]](undefined/models/shared/role.md)       | :heavy_minus_sign:                                             | Role is a role that can be assigned to a user in ConductorOne. |

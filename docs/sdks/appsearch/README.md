@@ -24,15 +24,15 @@ s = sdk.SDK(
 
 req = shared.SearchAppsRequest(
     app_ids=[
-        'aliquid',
+        'transition',
     ],
-    display_name='laborum',
+    display_name='withdrawal Coordinator Ngultrum',
     exclude_app_ids=[
-        'accusamus',
+        'Hyundai',
     ],
-    page_size=2497.96,
-    page_token='occaecati',
-    query='enim',
+    page_size=6788.05,
+    page_token='Northeast',
+    query='broach dependent Mozambique',
 )
 
 res = s.app_search.search(req)

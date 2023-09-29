@@ -13,7 +13,7 @@ from typing import Optional
 @dataclasses.dataclass
 class RequestCatalogManagementServiceAddAppEntitlementsRequest:
     r"""The RequestCatalogManagementServiceAddAppEntitlementsRequest object is used to add app requestable app entitlements to a request catalog."""
-    app_entitlements: Optional[list[shared_appentitlementref.AppEntitlementRef]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('appEntitlements'), 'exclude': lambda f: f is None }})
+    app_entitlements: Optional[list[shared_appentitlementref.AppEntitlementRef]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('appEntitlements') }})
     r"""List of entitlements to add to the request catalog."""
     
 

@@ -35,19 +35,19 @@ req = operations.C1APIAppV1ConnectorServiceCreateRequest(
     connector_service_create_request=shared.ConnectorServiceCreateRequest(
         connector_expand_mask=shared.ConnectorExpandMask(
             paths=[
-                'saepe',
+                'neural',
             ],
         ),
-        catalog_id='suscipit',
+        catalog_id='pirouette',
         config={
-            "deserunt": 'provident',
+            "laboriosam": 'Sausages',
         },
-        description='minima',
+        description='Multi-layered background pricing structure',
         user_ids=[
-            'repellendus',
+            'alarm',
         ],
     ),
-    app_id='totam',
+    app_id='Lauderhill connecting',
 )
 
 res = s.connector.create(req)
@@ -89,17 +89,17 @@ req = operations.C1APIAppV1ConnectorServiceCreateDelegatedRequest(
     connector_service_create_delegated_request=shared.ConnectorServiceCreateDelegatedRequest(
         connector_expand_mask=shared.ConnectorExpandMask(
             paths=[
-                'similique',
+                'Keyboard',
             ],
         ),
-        catalog_id='alias',
-        description='at',
-        display_name='quaerat',
+        catalog_id='obtrude',
+        description='Face to face tangible superstructure',
+        display_name='female',
         user_ids=[
-            'tempora',
+            'Tools',
         ],
     ),
-    app_id='vel',
+    app_id='Land Rock',
 )
 
 res = s.connector.create_delegated(req)
@@ -139,8 +139,8 @@ s = sdk.SDK(
 
 req = operations.C1APIAppV1ConnectorServiceDeleteRequest(
     connector_service_delete_request=shared.ConnectorServiceDeleteRequest(),
-    app_id='quod',
-    id='e2af7a73-cf3b-4e45-bf87-0b326b5a7342',
+    app_id='Architect Cotton port',
+    id='<ID>',
 )
 
 res = s.connector.delete(req)
@@ -179,8 +179,8 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIAppV1ConnectorServiceGetRequest(
-    app_id='cupiditate',
-    id='cdb1a842-2bb6-479d-a322-715bf0cbb1e3',
+    app_id='Group Cambridgeshire',
+    id='<ID>',
 )
 
 res = s.connector.get(req)
@@ -219,9 +219,9 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIAppV1ConnectorServiceGetCredentialsRequest(
-    app_id='veritatis',
-    connector_id='nobis',
-    id='8b90f344-3a11-408e-8adc-f4b921879fce',
+    app_id='reluctance',
+    connector_id='Cambridgeshire',
+    id='<ID>',
 )
 
 res = s.connector.get_credentials(req)
@@ -260,9 +260,9 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIAppV1ConnectorServiceListRequest(
-    app_id='omnis',
-    page_size=3381.59,
-    page_token='ipsum',
+    app_id='Bronze Architect',
+    page_size=9628.76,
+    page_token='female',
 )
 
 res = s.connector.list(req)
@@ -302,9 +302,9 @@ s = sdk.SDK(
 
 req = operations.C1APIAppV1ConnectorServiceRevokeCredentialRequest(
     connector_service_revoke_credential_request=shared.ConnectorServiceRevokeCredentialRequest(),
-    app_id='delectus',
-    connector_id='voluptate',
-    id='3ef7fbc7-abd7-44dd-b9c0-f5d2cff7c70a',
+    app_id='Supervisor Senior',
+    connector_id='North as symbolise',
+    id='<ID>',
 )
 
 res = s.connector.revoke_credential(req)
@@ -344,8 +344,8 @@ s = sdk.SDK(
 
 req = operations.C1APIAppV1ConnectorServiceRotateCredentialRequest(
     connector_service_rotate_credential_request=shared.ConnectorServiceRotateCredentialRequest(),
-    app_id='tempora',
-    connector_id='ipsam',
+    app_id='yawningly Clothing',
+    connector_id='watt functional ferociously',
 )
 
 res = s.connector.rotate_credential(req)
@@ -388,33 +388,33 @@ req = operations.C1APIAppV1ConnectorServiceUpdateRequest(
     connector_service_update_request_input=shared.ConnectorServiceUpdateRequestInput(
         connector=shared.ConnectorInput(
             connector_status=shared.ConnectorStatus(
-                completed_at=dateutil.parser.isoparse('2022-11-12T00:45:12.094Z'),
-                last_error='vel',
-                started_at=dateutil.parser.isoparse('2022-02-08T20:43:00.221Z'),
+                completed_at=dateutil.parser.isoparse('2022-08-25T07:18:46.400Z'),
+                last_error='Gender',
+                started_at=dateutil.parser.isoparse('2023-01-24T19:54:18.196Z'),
                 status=shared.ConnectorStatusStatus.SYNC_STATUS_UNSPECIFIED,
-                updated_at=dateutil.parser.isoparse('2022-06-28T08:50:44.084Z'),
+                updated_at=dateutil.parser.isoparse('2023-08-31T09:59:08.279Z'),
             ),
             o_auth2_authorized_as=shared.OAuth2AuthorizedAsInput(),
-            app_id='dicta',
+            app_id='Ohio ADP',
             config={
-                "dolor": 'maiores',
+                "dicta": 'Holmium',
             },
-            description='quasi',
-            display_name='ex',
-            id='d9f5fce6-c556-4146-83e2-50fb008c42e1',
+            description='Grass-roots secondary matrices',
+            display_name='alarmed North',
+            id='<ID>',
             user_ids=[
-                'non',
+                'Chevrolet',
             ],
         ),
         connector_expand_mask=shared.ConnectorExpandMask(
             paths=[
-                'et',
+                'Northeast',
             ],
         ),
-        update_mask='dolorum',
+        update_mask='laborum',
     ),
-    app_id='laborum',
-    id='c366c8dd-6b14-4429-8747-4778a7bd466d',
+    app_id='capitalize mint',
+    id='<ID>',
 )
 
 res = s.connector.update(req)
@@ -457,33 +457,33 @@ req = operations.C1APIAppV1ConnectorServiceUpdateDelegatedRequest(
     connector_service_update_delegated_request_input=shared.ConnectorServiceUpdateDelegatedRequestInput(
         connector=shared.ConnectorInput(
             connector_status=shared.ConnectorStatus(
-                completed_at=dateutil.parser.isoparse('2022-06-29T02:09:48.123Z'),
-                last_error='quisquam',
-                started_at=dateutil.parser.isoparse('2022-12-11T06:00:38.230Z'),
+                completed_at=dateutil.parser.isoparse('2022-10-12T21:45:05.114Z'),
+                last_error='Ouguiya methodologies North',
+                started_at=dateutil.parser.isoparse('2022-04-11T03:27:06.440Z'),
                 status=shared.ConnectorStatusStatus.SYNC_STATUS_DONE,
-                updated_at=dateutil.parser.isoparse('2022-08-03T04:27:44.236Z'),
+                updated_at=dateutil.parser.isoparse('2023-11-25T06:25:11.398Z'),
             ),
             o_auth2_authorized_as=shared.OAuth2AuthorizedAsInput(),
-            app_id='quo',
+            app_id='support since Director',
             config={
-                "illum": 'quo',
+                "consequuntur": 'instead',
             },
-            description='fuga',
-            display_name='eius',
-            id='251904e5-23c7-4e0b-8717-8e4796f2a70c',
+            description='Advanced leading edge superstructure',
+            display_name='aut',
+            id='<ID>',
             user_ids=[
-                'eum',
+                'upon',
             ],
         ),
         connector_expand_mask=shared.ConnectorExpandMask(
             paths=[
-                'quas',
+                'Wooden',
             ],
         ),
-        update_mask='praesentium',
+        update_mask='er Southeast',
     ),
-    connector_app_id='consequuntur',
-    connector_id='deleniti',
+    connector_app_id='invoice Account',
+    connector_id='except ASCII driver',
 )
 
 res = s.connector.update_delegated(req)

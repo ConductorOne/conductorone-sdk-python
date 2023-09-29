@@ -15,6 +15,6 @@ class UpdateAppUsageControlsRequest:
     r"""The UpdateAppUsageControlsRequest message contains the AppUsageControls object to update and the update mask."""
     app_usage_controls: Optional[shared_appusagecontrols.AppUsageControls] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('appUsageControls'), 'exclude': lambda f: f is None }})
     r"""The AppUsageControls object describes some peripheral configuration for an app."""
-    update_mask: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('updateMask'), 'exclude': lambda f: f is None }})
+    update_mask: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('updateMask') }})
     
 

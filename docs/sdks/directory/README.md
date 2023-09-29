@@ -28,10 +28,10 @@ s = sdk.SDK(
 req = shared.DirectoryServiceCreateRequest(
     directory_expand_mask=shared.DirectoryExpandMask(
         paths=[
-            'fugit',
+            'neural',
         ],
     ),
-    app_id='fuga',
+    app_id='pirouette',
 )
 
 res = s.directory.create(req)
@@ -71,7 +71,7 @@ s = sdk.SDK(
 
 req = operations.C1APIDirectoryV1DirectoryServiceDeleteRequest(
     directory_service_delete_request=shared.DirectoryServiceDeleteRequest(),
-    app_id='mollitia',
+    app_id='Architect Cotton port',
 )
 
 res = s.directory.delete(req)
@@ -110,7 +110,7 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIDirectoryV1DirectoryServiceGetRequest(
-    app_id='incidunt',
+    app_id='Group Cambridgeshire',
 )
 
 res = s.directory.get(req)
@@ -149,8 +149,8 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIDirectoryV1DirectoryServiceListRequest(
-    page_size=5392.24,
-    page_token='explicabo',
+    page_size=6488.05,
+    page_token='Southeast',
 )
 
 res = s.directory.list(req)

@@ -20,11 +20,11 @@ class AppEntitlementOwners:
         
         url = utils.generate_url(operations.C1APIAppV1AppEntitlementOwnersAddRequest, base_url, '/api/v1/apps/{app_id}/entitlements/{entitlement_id}/owners', request)
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "add_app_entitlement_owner_request", 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, "add_app_entitlement_owner_request", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = 'application/json'
-        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
+        headers['user-agent'] = self.sdk_configuration.user_agent
         
         client = self.sdk_configuration.security_client
         
@@ -55,7 +55,7 @@ class AppEntitlementOwners:
         headers = {}
         query_params = utils.get_query_params(operations.C1APIAppV1AppEntitlementOwnersListRequest, request)
         headers['Accept'] = 'application/json'
-        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
+        headers['user-agent'] = self.sdk_configuration.user_agent
         
         client = self.sdk_configuration.security_client
         
@@ -84,11 +84,11 @@ class AppEntitlementOwners:
         
         url = utils.generate_url(operations.C1APIAppV1AppEntitlementOwnersRemoveRequest, base_url, '/api/v1/apps/{app_id}/entitlements/{entitlement_id}/owners/{user_id}', request)
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "remove_app_entitlement_owner_request", 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, "remove_app_entitlement_owner_request", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = 'application/json'
-        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
+        headers['user-agent'] = self.sdk_configuration.user_agent
         
         client = self.sdk_configuration.security_client
         
@@ -117,11 +117,11 @@ class AppEntitlementOwners:
         
         url = utils.generate_url(operations.C1APIAppV1AppEntitlementOwnersSetRequest, base_url, '/api/v1/apps/{app_id}/entitlements/{entitlement_id}/owners', request)
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "set_app_entitlement_owners_request", 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, "set_app_entitlement_owners_request", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = 'application/json'
-        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
+        headers['user-agent'] = self.sdk_configuration.user_agent
         
         client = self.sdk_configuration.security_client
         

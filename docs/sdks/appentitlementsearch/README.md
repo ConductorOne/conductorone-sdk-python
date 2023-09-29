@@ -25,36 +25,36 @@ s = sdk.SDK(
 req = shared.AppEntitlementSearchServiceSearchRequest(
     app_entitlement_expand_mask=shared.AppEntitlementExpandMask(
         paths=[
-            'molestiae',
+            'transition',
         ],
     ),
-    access_review_id='minus',
-    alias='placeat',
+    access_review_id='withdrawal Coordinator Ngultrum',
+    alias='Russian Northeast yearningly',
     app_ids=[
-        'voluptatum',
+        'Southeast',
     ],
     app_user_ids=[
-        'iusto',
+        'Books',
     ],
     compliance_framework_ids=[
-        'excepturi',
+        'Other',
     ],
     exclude_app_ids=[
-        'nisi',
+        'eligendi',
     ],
     exclude_app_user_ids=[
-        'recusandae',
+        'Tobago',
     ],
     include_deleted=False,
     only_get_expiring=False,
-    page_size=8360.79,
-    page_token='ab',
-    query='quis',
+    page_size=7320.8,
+    page_token='Arsenic Gasoline Oklahoma',
+    query='opposite',
     resource_type_ids=[
-        'veritatis',
+        'Synchronised',
     ],
     risk_level_ids=[
-        'deserunt',
+        'huzzah',
     ],
 )
 

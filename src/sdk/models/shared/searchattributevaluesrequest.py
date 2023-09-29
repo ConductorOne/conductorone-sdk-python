@@ -12,11 +12,11 @@ from typing import Optional
 @dataclasses.dataclass
 class SearchAttributeValuesRequest:
     r"""Search Attributes by a few properties."""
-    attribute_type_ids: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('attributeTypeIds'), 'exclude': lambda f: f is None }})
+    attribute_type_ids: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('attributeTypeIds') }})
     r"""The attribute type ids for what type of attributes to search for."""
-    exclude_ids: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('excludeIds'), 'exclude': lambda f: f is None }})
+    exclude_ids: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('excludeIds') }})
     r"""Exclude attributes with these ids from the search results."""
-    ids: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('ids'), 'exclude': lambda f: f is None }})
+    ids: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('ids') }})
     r"""Include attributes with these ids in the search results."""
     page_size: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('pageSize'), 'exclude': lambda f: f is None }})
     r"""The pageSize where 0 <= pageSize <= 100. Values < 10 will be set to 10. A value of 0 returns the default page size (currently 25)"""

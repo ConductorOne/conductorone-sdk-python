@@ -24,9 +24,9 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIAppV1AppResourceServiceGetRequest(
-    app_id='ipsa',
-    app_resource_type_id='omnis',
-    id='7b0074f1-5471-4b5e-ae13-b99d488e1e91',
+    app_id='Group Cambridgeshire',
+    app_resource_type_id='reintermediate fuchsia Planner',
+    id='<ID>',
 )
 
 res = s.app_resource.get(req)
@@ -65,10 +65,10 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIAppV1AppResourceServiceListRequest(
-    app_id='itaque',
-    app_resource_type_id='incidunt',
-    page_size=3185.69,
-    page_token='consequatur',
+    app_id='Bronze Architect',
+    app_resource_type_id='Southeast Soap katal',
+    page_size=4900.99,
+    page_token='aftermath',
 )
 
 res = s.app_resource.list(req)

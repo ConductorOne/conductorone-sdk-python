@@ -24,22 +24,22 @@ s = sdk.SDK(
 
 req = shared.SearchAppResourceTypesRequest(
     app_ids=[
-        'quibusdam',
+        'Soap',
     ],
     exclude_resource_type_ids=[
-        'labore',
+        'paradigms',
     ],
     exclude_resource_type_trait_ids=[
-        'modi',
+        'World',
     ],
-    page_size=1831.91,
-    page_token='aliquid',
-    query='cupiditate',
+    page_size=553.23,
+    page_token='SUV nostrum specifically',
+    query='Distributed across',
     resource_type_ids=[
-        'quos',
+        'minima',
     ],
     resource_type_trait_ids=[
-        'perferendis',
+        'Branding',
     ],
 )
 

@@ -25,7 +25,7 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIIamV1RolesGetRequest(
-    role_id='doloremque',
+    role_id='Group Cambridgeshire',
 )
 
 res = s.roles.get(req)
@@ -64,8 +64,8 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIIamV1RolesListRequest(
-    page_size=4341.56,
-    page_token='ipsa',
+    page_size=6488.05,
+    page_token='Southeast',
 )
 
 res = s.roles.list(req)
@@ -106,17 +106,17 @@ s = sdk.SDK(
 req = operations.C1APIIamV1RolesUpdateRequest(
     update_role_request_input=shared.UpdateRoleRequestInput(
         role=shared.RoleInput(
-            display_name='totam',
+            display_name='South complexity',
             permissions=[
-                'quae',
+                'Supervisor',
             ],
             service_roles=[
-                'molestiae',
+                'less',
             ],
         ),
-        update_mask='eveniet',
+        update_mask='Architect',
     ),
-    role_id='qui',
+    role_id='Oregon',
 )
 
 res = s.roles.update(req)

@@ -24,7 +24,7 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIUserV1UserServiceGetRequest(
-    id='04771778-ff61-4d01-b476-360a15db6a66',
+    id='<ID>',
 )
 
 res = s.user.get(req)
@@ -63,8 +63,8 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIUserV1UserServiceListRequest(
-    page_size=219.73,
-    page_token='eum',
+    page_size=6488.05,
+    page_token='Southeast',
 )
 
 res = s.user.list(req)

@@ -23,11 +23,11 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIAppV1AppResourceOwnersListRequest(
-    app_id='est',
-    page_size=8423.42,
-    page_token='explicabo',
-    resource_id='deserunt',
-    resource_type_id='distinctio',
+    app_id='Bronze Architect',
+    page_size=9628.76,
+    page_token='female',
+    resource_id='katal auxiliary',
+    resource_type_id='East ohm experiences',
 )
 
 res = s.app_resource_owners.list(req)

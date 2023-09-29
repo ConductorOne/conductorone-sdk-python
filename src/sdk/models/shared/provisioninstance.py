@@ -34,17 +34,17 @@ class ProvisionInstance:
       - errored
       - reassignedByError
     """
-    cancelled_action: Optional[shared_cancelledaction.CancelledAction] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('cancelled'), 'exclude': lambda f: f is None }})
+    cancelled_action: Optional[shared_cancelledaction.CancelledAction] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('cancelled') }})
     r"""The outcome of a provision instance that is cancelled."""
-    completed_action: Optional[shared_completedaction.CompletedAction] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('completed'), 'exclude': lambda f: f is None }})
+    completed_action: Optional[shared_completedaction.CompletedAction] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('completed') }})
     r"""The outcome of a provision instance that has been completed succesfully."""
-    errored_action: Optional[shared_erroredaction.ErroredAction] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('errored'), 'exclude': lambda f: f is None }})
+    errored_action: Optional[shared_erroredaction.ErroredAction] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('errored') }})
     r"""The outcome of a provision instance that has errored."""
     notification_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('notificationId'), 'exclude': lambda f: f is None }})
     r"""This indicates the notification id for this step."""
-    provision: Optional[shared_provision.Provision] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('provision'), 'exclude': lambda f: f is None }})
+    provision: Optional[shared_provision.Provision] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('provision') }})
     r"""The provision step references a provision policy for this step."""
-    reassigned_by_error_action: Optional[shared_reassignedbyerroraction.ReassignedByErrorAction] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('reassignedByError'), 'exclude': lambda f: f is None }})
+    reassigned_by_error_action: Optional[shared_reassignedbyerroraction.ReassignedByErrorAction] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('reassignedByError') }})
     r"""The ReassignedByErrorAction object describes the outcome of a policy step that has been reassigned because it had an error provisioning."""
     state: Optional[ProvisionInstanceState] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('state'), 'exclude': lambda f: f is None }})
     r"""This property indicates the current state of this step."""

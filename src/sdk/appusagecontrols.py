@@ -21,7 +21,7 @@ class AppUsageControls:
         url = utils.generate_url(operations.C1APIAppV1AppUsageControlsServiceGetRequest, base_url, '/api/v1/apps/{app_id}/usage_controls', request)
         headers = {}
         headers['Accept'] = 'application/json'
-        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
+        headers['user-agent'] = self.sdk_configuration.user_agent
         
         client = self.sdk_configuration.security_client
         
@@ -50,11 +50,11 @@ class AppUsageControls:
         
         url = utils.generate_url(operations.C1APIAppV1AppUsageControlsServiceUpdateRequest, base_url, '/api/v1/apps/{app_id}/usage_controls', request)
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "update_app_usage_controls_request", 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, "update_app_usage_controls_request", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = 'application/json'
-        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
+        headers['user-agent'] = self.sdk_configuration.user_agent
         
         client = self.sdk_configuration.security_client
         

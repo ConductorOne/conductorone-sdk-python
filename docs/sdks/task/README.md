@@ -27,20 +27,20 @@ s = sdk.SDK(
 req = shared.TaskServiceCreateGrantRequest(
     task_expand_mask=shared.TaskExpandMask(
         paths=[
-            'cum',
+            'Northwest',
         ],
     ),
     task_grant_source=shared.TaskGrantSource(
-        external_url='iure',
-        integration_id='necessitatibus',
+        external_url='barring',
+        integration_id='vote Tuna Florida',
     ),
-    app_entitlement_id='ratione',
-    app_id='laborum',
-    app_user_id='distinctio',
-    description='voluptatum',
+    app_entitlement_id='parsing',
+    app_id='Aliso',
+    app_user_id='under',
+    description='Proactive system-worthy middleware',
     emergency_access=False,
-    grant_duration='rem',
-    identity_user_id='aliquam',
+    grant_duration='Van',
+    identity_user_id='alarm Algeria circa',
 )
 
 res = s.task.create_grant_task(req)
@@ -81,14 +81,14 @@ s = sdk.SDK(
 req = shared.TaskServiceCreateRevokeRequest(
     task_expand_mask=shared.TaskExpandMask(
         paths=[
-            'ad',
+            'tame',
         ],
     ),
-    app_entitlement_id='repellat',
-    app_id='alias',
-    app_user_id='corporis',
-    description='perspiciatis',
-    identity_user_id='nihil',
+    app_entitlement_id='Arab cultivate Clothing',
+    app_id='Southwest',
+    app_user_id='Actinium streamline',
+    description='Down-sized coherent success',
+    identity_user_id='North',
 )
 
 res = s.task.create_revoke_task(req)
@@ -127,7 +127,7 @@ s = sdk.SDK(
 )
 
 req = operations.C1APITaskV1TaskServiceGetRequest(
-    id='a60ff2a5-4a31-4e94-b64a-3e865e7956f9',
+    id='<ID>',
 )
 
 res = s.task.get(req)

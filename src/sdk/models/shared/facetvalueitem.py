@@ -13,7 +13,7 @@ from typing import Optional
 @dataclasses.dataclass
 class FacetValueItem:
     r"""The FacetValueItem message."""
-    values: Optional[list[shared_facetvalue.FacetValue]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('values'), 'exclude': lambda f: f is None }})
+    values: Optional[list[shared_facetvalue.FacetValue]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('values') }})
     r"""An array of facet values."""
     
 

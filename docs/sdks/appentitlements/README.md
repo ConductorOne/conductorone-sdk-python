@@ -28,8 +28,8 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIAppV1AppEntitlementsGetRequest(
-    app_id='sapiente',
-    id='c2ddf7cc-78ca-41ba-928f-c816742cb739',
+    app_id='Group Cambridgeshire',
+    id='<ID>',
 )
 
 res = s.app_entitlements.get(req)
@@ -68,9 +68,9 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIAppV1AppEntitlementsListRequest(
-    app_id='aspernatur',
-    page_size=187.89,
-    page_token='ad',
+    app_id='Bronze Architect',
+    page_size=9628.76,
+    page_token='female',
 )
 
 res = s.app_entitlements.list(req)
@@ -109,11 +109,11 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIAppV1AppEntitlementsListForAppResourceRequest(
-    app_id='natus',
-    app_resource_id='sed',
-    app_resource_type_id='iste',
-    page_size=2223.21,
-    page_token='natus',
+    app_id='SDD convergence',
+    app_resource_id='quis whether',
+    app_resource_type_id='Non',
+    page_size=7654.99,
+    page_token='Fitness Dollar Licensed',
 )
 
 res = s.app_entitlements.list_for_app_resource(req)
@@ -152,10 +152,10 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIAppV1AppEntitlementsListForAppUserRequest(
-    app_id='laboriosam',
-    app_user_id='hic',
-    page_size=9025.99,
-    page_token='fuga',
+    app_id='Gardena payment Mountain',
+    app_user_id='Cruiser',
+    page_size=7218.97,
+    page_token='Franc Novato',
 )
 
 res = s.app_entitlements.list_for_app_user(req)
@@ -194,10 +194,10 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIAppV1AppEntitlementsListUsersRequest(
-    app_entitlement_id='in',
-    app_id='corporis',
-    page_size=6130.64,
-    page_token='iure',
+    app_entitlement_id='yellow payment',
+    app_id='why Electric',
+    page_size=782.05,
+    page_token='Metal rack whether',
 )
 
 res = s.app_entitlements.list_users(req)
@@ -241,43 +241,43 @@ req = operations.C1APIAppV1AppEntitlementsUpdateRequest(
             provision_policy=shared.ProvisionPolicy(
                 connector_provision=shared.ConnectorProvision(),
                 delegated_provision=shared.DelegatedProvision(
-                    app_id='saepe',
-                    entitlement_id='quidem',
+                    app_id='South complexity',
+                    entitlement_id='Tempe Ruble ADP',
                 ),
                 manual_provision=shared.ManualProvision(
-                    instructions='architecto',
+                    instructions='Holmium',
                     user_ids=[
-                        'ipsa',
+                        'Country',
                     ],
                 ),
             ),
-            app_id='reiciendis',
-            app_resource_id='est',
-            app_resource_type_id='mollitia',
-            certify_policy_id='laborum',
+            app_id='Albany Southeast Computer',
+            app_resource_id='Towels',
+            app_resource_type_id='invoice Northeast orange',
+            certify_policy_id='Response HTTP',
             compliance_framework_value_ids=[
-                'dolores',
+                'Hybrid',
             ],
-            description='dolorem',
-            display_name='corporis',
-            duration_grant='explicabo',
+            description='Stand-alone encompassing middleware',
+            display_name='index Iran after',
+            duration_grant='through',
             duration_unset=shared.AppEntitlementDurationUnset(),
             emergency_grant_enabled=False,
-            emergency_grant_policy_id='nobis',
-            grant_policy_id='enim',
-            revoke_policy_id='omnis',
-            risk_level_value_id='nemo',
-            slug='minima',
+            emergency_grant_policy_id='Optimized',
+            grant_policy_id='fugit fuchsia',
+            revoke_policy_id='sternly meter experiences',
+            risk_level_value_id='as Electric than',
+            slug='Benz Representative',
         ),
         app_entitlement_expand_mask=shared.AppEntitlementExpandMask(
             paths=[
-                'excepturi',
+                'wireless',
             ],
         ),
-        update_mask='accusantium',
+        update_mask='index',
     ),
-    app_id='iure',
-    id='aff1a3a2-fa94-4677-b925-1aa52c3f5ad0',
+    app_id='Funk Small system',
+    id='<ID>',
 )
 
 res = s.app_entitlements.update(req)

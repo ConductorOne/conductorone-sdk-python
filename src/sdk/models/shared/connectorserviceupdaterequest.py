@@ -18,6 +18,6 @@ class ConnectorServiceUpdateRequestInput:
     r"""A Connector is used to sync objects into Apps"""
     connector_expand_mask: Optional[shared_connectorexpandmask.ConnectorExpandMask] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('expandMask'), 'exclude': lambda f: f is None }})
     r"""The ConnectorExpandMask is used to expand related objects on a connector."""
-    update_mask: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('updateMask'), 'exclude': lambda f: f is None }})
+    update_mask: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('updateMask') }})
     
 
