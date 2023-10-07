@@ -35,13 +35,10 @@ s = sdk.SDK(
 req = operations.C1APIRequestcatalogV1RequestCatalogManagementServiceAddAccessEntitlementsRequest(
     request_catalog_management_service_add_access_entitlements_request=shared.RequestCatalogManagementServiceAddAccessEntitlementsRequest(
         access_entitlements=[
-            shared.AppEntitlementRef(
-                app_id='deposit',
-                id='<ID>',
-            ),
+            shared.AppEntitlementRef(),
         ],
     ),
-    catalog_id='Principal',
+    catalog_id='deposit',
 )
 
 res = s.request_catalog_management.add_access_entitlements(req)
@@ -82,13 +79,10 @@ s = sdk.SDK(
 req = operations.C1APIRequestcatalogV1RequestCatalogManagementServiceAddAppEntitlementsRequest(
     request_catalog_management_service_add_app_entitlements_request=shared.RequestCatalogManagementServiceAddAppEntitlementsRequest(
         app_entitlements=[
-            shared.AppEntitlementRef(
-                app_id='East cyan Wilma',
-                id='<ID>',
-            ),
+            shared.AppEntitlementRef(),
         ],
     ),
-    catalog_id='Southeast Steel slight',
+    catalog_id='East cyan Wilma',
 )
 
 res = s.request_catalog_management.add_app_entitlements(req)
@@ -132,10 +126,6 @@ req = shared.RequestCatalogManagementServiceCreateRequest(
             'neural',
         ],
     ),
-    description='Expanded zero tolerance migration',
-    display_name='Sausages ASCII',
-    published=False,
-    visible_to_everyone=False,
 )
 
 res = s.request_catalog_management.create(req)
@@ -284,8 +274,6 @@ s = sdk.SDK(
 
 req = operations.C1APIRequestcatalogV1RequestCatalogManagementServiceListEntitlementsForAccessRequest(
     catalog_id='mint digital Man',
-    page_size=4915.05,
-    page_token='sympathetically',
 )
 
 res = s.request_catalog_management.list_entitlements_for_access(req)
@@ -325,8 +313,6 @@ s = sdk.SDK(
 
 req = operations.C1APIRequestcatalogV1RequestCatalogManagementServiceListEntitlementsPerCatalogRequest(
     catalog_id='Senior',
-    page_size=7955.89,
-    page_token='male',
 )
 
 res = s.request_catalog_management.list_entitlements_per_catalog(req)
@@ -367,13 +353,10 @@ s = sdk.SDK(
 req = operations.C1APIRequestcatalogV1RequestCatalogManagementServiceRemoveAccessEntitlementsRequest(
     request_catalog_management_service_remove_access_entitlements_request=shared.RequestCatalogManagementServiceRemoveAccessEntitlementsRequest(
         access_entitlements=[
-            shared.AppEntitlementRef(
-                app_id='Mill Audi indigo',
-                id='<ID>',
-            ),
+            shared.AppEntitlementRef(),
         ],
     ),
-    catalog_id='Director',
+    catalog_id='Mill Audi indigo',
 )
 
 res = s.request_catalog_management.remove_access_entitlements(req)
@@ -414,13 +397,10 @@ s = sdk.SDK(
 req = operations.C1APIRequestcatalogV1RequestCatalogManagementServiceRemoveAppEntitlementsRequest(
     request_catalog_management_service_remove_app_entitlements_request=shared.RequestCatalogManagementServiceRemoveAppEntitlementsRequest(
         app_entitlements=[
-            shared.AppEntitlementRef(
-                app_id='UTF8',
-                id='<ID>',
-            ),
+            shared.AppEntitlementRef(),
         ],
     ),
-    catalog_id='bus',
+    catalog_id='UTF8',
 )
 
 res = s.request_catalog_management.remove_app_entitlements(req)
@@ -465,52 +445,28 @@ req = operations.C1APIRequestcatalogV1RequestCatalogManagementServiceUpdateReque
                 shared.AppEntitlementInput(
                     provision_policy=shared.ProvisionPolicy(
                         connector_provision=shared.ConnectorProvision(),
-                        delegated_provision=shared.DelegatedProvision(
-                            app_id='South complexity',
-                            entitlement_id='Tempe Ruble ADP',
-                        ),
+                        delegated_provision=shared.DelegatedProvision(),
                         manual_provision=shared.ManualProvision(
-                            instructions='Holmium',
                             user_ids=[
-                                'Country',
+                                'up',
                             ],
                         ),
                     ),
-                    app_id='Albany Southeast Computer',
-                    app_resource_id='Towels',
-                    app_resource_type_id='invoice Northeast orange',
-                    certify_policy_id='Response HTTP',
                     compliance_framework_value_ids=[
-                        'Hybrid',
+                        'complexity',
                     ],
-                    description='Stand-alone encompassing middleware',
-                    display_name='index Iran after',
-                    duration_grant='through',
                     duration_unset=shared.AppEntitlementDurationUnset(),
-                    emergency_grant_enabled=False,
-                    emergency_grant_policy_id='Optimized',
-                    grant_policy_id='fugit fuchsia',
-                    revoke_policy_id='sternly meter experiences',
-                    risk_level_value_id='as Electric than',
-                    slug='Benz Representative',
                 ),
             ],
             app_ids=[
-                'wireless',
+                'Supervisor',
             ],
-            created_by_user_id='index',
-            description='Public-key methodical info-mediaries',
-            display_name='Virgin',
-            id='<ID>',
-            published=False,
-            visible_to_everyone=False,
         ),
         request_catalog_expand_mask=shared.RequestCatalogExpandMask(
             paths=[
-                'relationships',
+                'less',
             ],
         ),
-        update_mask='Northeast Executive',
     ),
     id='<ID>',
 )

@@ -27,17 +27,15 @@ req = operations.C1APIAppV1AppUserServiceUpdateRequest(
     app_user_service_update_request_input=shared.AppUserServiceUpdateRequestInput(
         app_user=shared.AppUserInput(
             app_user_status=shared.AppUserStatusInput(),
-            app_user_type=shared.AppUserAppUserType.APP_USER_TYPE_SERVICE_ACCOUNT,
         ),
         app_user_expand_mask=shared.AppUserExpandMask(
             paths=[
-                'South',
+                'up',
             ],
         ),
-        update_mask='Clothing Tempe',
     ),
-    app_user_app_id='Ohio ADP',
-    app_user_id='Holmium',
+    app_user_app_id='Clothing Tempe',
+    app_user_id='Ohio ADP',
 )
 
 res = s.app_user.update(req)

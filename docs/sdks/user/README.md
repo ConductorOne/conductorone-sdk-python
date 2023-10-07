@@ -62,10 +62,7 @@ s = sdk.SDK(
     ),
 )
 
-req = operations.C1APIUserV1UserServiceListRequest(
-    page_size=6488.05,
-    page_token='Southeast',
-)
+req = operations.C1APIUserV1UserServiceListRequest()
 
 res = s.user.list(req)
 

@@ -28,26 +28,20 @@ req = shared.SearchUsersRequest(
             'transition',
         ],
     ),
-    email='Jadyn.Goyette43@hotmail.com',
     exclude_ids=[
-        'Hyundai',
+        'turquoise',
     ],
     ids=[
-        'Future',
+        'Hyundai',
     ],
-    page_size=1145.76,
-    page_token='broach dependent Mozambique',
-    query='eligendi Tobago',
     refs=[
-        shared.UserRef(
-            id='<ID>',
-        ),
+        shared.UserRef(),
     ],
     role_ids=[
-        'Protactinium',
+        'Future',
     ],
     user_statuses=[
-        shared.SearchUsersRequestUserStatuses.DISABLED,
+        shared.SearchUsersRequestUserStatuses.UNKNOWN,
     ],
 )
 

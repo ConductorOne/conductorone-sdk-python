@@ -31,7 +31,6 @@ req = shared.DirectoryServiceCreateRequest(
             'neural',
         ],
     ),
-    app_id='pirouette',
 )
 
 res = s.directory.create(req)
@@ -148,10 +147,7 @@ s = sdk.SDK(
     ),
 )
 
-req = operations.C1APIDirectoryV1DirectoryServiceListRequest(
-    page_size=6488.05,
-    page_token='Southeast',
-)
+req = operations.C1APIDirectoryV1DirectoryServiceListRequest()
 
 res = s.directory.list(req)
 

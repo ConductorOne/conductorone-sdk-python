@@ -24,10 +24,8 @@ s = sdk.SDK(
 
 req = operations.C1APIAppV1AppResourceOwnersListRequest(
     app_id='Bronze Architect',
-    page_size=9628.76,
-    page_token='female',
-    resource_id='katal auxiliary',
-    resource_type_id='East ohm experiences',
+    resource_id='Southeast Soap katal',
+    resource_type_id='West East',
 )
 
 res = s.app_resource_owners.list(req)

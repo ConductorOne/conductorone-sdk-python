@@ -69,8 +69,6 @@ s = sdk.SDK(
 
 req = operations.C1APIAppV1AppEntitlementsListRequest(
     app_id='Bronze Architect',
-    page_size=9628.76,
-    page_token='female',
 )
 
 res = s.app_entitlements.list(req)
@@ -112,8 +110,6 @@ req = operations.C1APIAppV1AppEntitlementsListForAppResourceRequest(
     app_id='SDD convergence',
     app_resource_id='quis whether',
     app_resource_type_id='Non',
-    page_size=7654.99,
-    page_token='Fitness Dollar Licensed',
 )
 
 res = s.app_entitlements.list_for_app_resource(req)
@@ -154,8 +150,6 @@ s = sdk.SDK(
 req = operations.C1APIAppV1AppEntitlementsListForAppUserRequest(
     app_id='Gardena payment Mountain',
     app_user_id='Cruiser',
-    page_size=7218.97,
-    page_token='Franc Novato',
 )
 
 res = s.app_entitlements.list_for_app_user(req)
@@ -196,8 +190,6 @@ s = sdk.SDK(
 req = operations.C1APIAppV1AppEntitlementsListUsersRequest(
     app_entitlement_id='yellow payment',
     app_id='why Electric',
-    page_size=782.05,
-    page_token='Metal rack whether',
 )
 
 res = s.app_entitlements.list_users(req)
@@ -240,43 +232,25 @@ req = operations.C1APIAppV1AppEntitlementsUpdateRequest(
         app_entitlement=shared.AppEntitlementInput(
             provision_policy=shared.ProvisionPolicy(
                 connector_provision=shared.ConnectorProvision(),
-                delegated_provision=shared.DelegatedProvision(
-                    app_id='South complexity',
-                    entitlement_id='Tempe Ruble ADP',
-                ),
+                delegated_provision=shared.DelegatedProvision(),
                 manual_provision=shared.ManualProvision(
-                    instructions='Holmium',
                     user_ids=[
-                        'Country',
+                        'up',
                     ],
                 ),
             ),
-            app_id='Albany Southeast Computer',
-            app_resource_id='Towels',
-            app_resource_type_id='invoice Northeast orange',
-            certify_policy_id='Response HTTP',
             compliance_framework_value_ids=[
-                'Hybrid',
+                'complexity',
             ],
-            description='Stand-alone encompassing middleware',
-            display_name='index Iran after',
-            duration_grant='through',
             duration_unset=shared.AppEntitlementDurationUnset(),
-            emergency_grant_enabled=False,
-            emergency_grant_policy_id='Optimized',
-            grant_policy_id='fugit fuchsia',
-            revoke_policy_id='sternly meter experiences',
-            risk_level_value_id='as Electric than',
-            slug='Benz Representative',
         ),
         app_entitlement_expand_mask=shared.AppEntitlementExpandMask(
             paths=[
-                'wireless',
+                'Supervisor',
             ],
         ),
-        update_mask='index',
     ),
-    app_id='Funk Small system',
+    app_id='Ruble ADP Oregon',
     id='<ID>',
 )
 

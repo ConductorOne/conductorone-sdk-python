@@ -28,33 +28,26 @@ req = shared.AppEntitlementSearchServiceSearchRequest(
             'transition',
         ],
     ),
-    access_review_id='withdrawal Coordinator Ngultrum',
-    alias='Russian Northeast yearningly',
     app_ids=[
-        'Southeast',
+        'turquoise',
     ],
     app_user_ids=[
-        'Books',
+        'Hyundai',
     ],
     compliance_framework_ids=[
-        'Other',
+        'Future',
     ],
     exclude_app_ids=[
-        'eligendi',
+        'Southwest',
     ],
     exclude_app_user_ids=[
-        'Tobago',
+        'broach',
     ],
-    include_deleted=False,
-    only_get_expiring=False,
-    page_size=7320.8,
-    page_token='Arsenic Gasoline Oklahoma',
-    query='opposite',
     resource_type_ids=[
-        'Synchronised',
+        'dependent',
     ],
     risk_level_ids=[
-        'huzzah',
+        'Mozambique',
     ],
 )
 

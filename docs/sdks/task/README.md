@@ -30,17 +30,9 @@ req = shared.TaskServiceCreateGrantRequest(
             'Northwest',
         ],
     ),
-    task_grant_source=shared.TaskGrantSource(
-        external_url='barring',
-        integration_id='vote Tuna Florida',
-    ),
-    app_entitlement_id='parsing',
-    app_id='Aliso',
-    app_user_id='under',
-    description='Proactive system-worthy middleware',
-    emergency_access=False,
-    grant_duration='Van',
-    identity_user_id='alarm Algeria circa',
+    task_grant_source=shared.TaskGrantSource(),
+    app_entitlement_id='barring',
+    app_id='vote Tuna Florida',
 )
 
 res = s.task.create_grant_task(req)
@@ -86,9 +78,6 @@ req = shared.TaskServiceCreateRevokeRequest(
     ),
     app_entitlement_id='Arab cultivate Clothing',
     app_id='Southwest',
-    app_user_id='Actinium streamline',
-    description='Down-sized coherent success',
-    identity_user_id='North',
 )
 
 res = s.task.create_revoke_task(req)

@@ -63,10 +63,7 @@ s = sdk.SDK(
     ),
 )
 
-req = operations.C1APIIamV1RolesListRequest(
-    page_size=6488.05,
-    page_token='Southeast',
-)
+req = operations.C1APIIamV1RolesListRequest()
 
 res = s.roles.list(req)
 
@@ -106,17 +103,15 @@ s = sdk.SDK(
 req = operations.C1APIIamV1RolesUpdateRequest(
     update_role_request_input=shared.UpdateRoleRequestInput(
         role=shared.RoleInput(
-            display_name='South complexity',
             permissions=[
-                'Supervisor',
+                'up',
             ],
             service_roles=[
-                'less',
+                'complexity',
             ],
         ),
-        update_mask='Architect',
     ),
-    role_id='Oregon',
+    role_id='Tempe Ruble ADP',
 )
 
 res = s.roles.update(req)

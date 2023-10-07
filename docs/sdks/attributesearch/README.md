@@ -32,10 +32,6 @@ req = shared.SearchAttributeValuesRequest(
     ids=[
         'connecting',
     ],
-    page_size=2740.57,
-    page_token='male uniform Lithium',
-    query='black West',
-    value='Mountain Oriental',
 )
 
 res = s.attribute_search.search_attribute_values(req)

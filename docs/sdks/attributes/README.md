@@ -26,10 +26,7 @@ s = sdk.SDK(
     ),
 )
 
-req = shared.CreateAttributeValueRequest(
-    attribute_type_id='and Hawaii',
-    value='Hyundai Wooden',
-)
+req = shared.CreateAttributeValueRequest()
 
 res = s.attributes.create_attribute_value(req)
 
@@ -145,10 +142,7 @@ s = sdk.SDK(
     ),
 )
 
-req = operations.C1APIAttributeV1AttributesListAttributeTypesRequest(
-    page_size=620.98,
-    page_token='Gasoline',
-)
+req = operations.C1APIAttributeV1AttributesListAttributeTypesRequest()
 
 res = s.attributes.list_attribute_types(req)
 
@@ -187,8 +181,6 @@ s = sdk.SDK(
 
 req = operations.C1APIAttributeV1AttributesListAttributeValuesRequest(
     attribute_type_id='trot markets',
-    page_size=9405.85,
-    page_token='City behind outgoing',
 )
 
 res = s.attributes.list_attribute_values(req)

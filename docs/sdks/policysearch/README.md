@@ -23,17 +23,11 @@ s = sdk.SDK(
 )
 
 req = shared.SearchPoliciesRequest(
-    display_name='specific',
-    page_size=4589.64,
-    page_token='Coordinator',
     policy_types=[
-        shared.SearchPoliciesRequestPolicyTypes.POLICY_TYPE_REVOKE,
+        shared.SearchPoliciesRequestPolicyTypes.POLICY_TYPE_GRANT,
     ],
-    query='siemens Russian',
     refs=[
-        shared.PolicyRef(
-            id='<ID>',
-        ),
+        shared.PolicyRef(),
     ],
 )
 

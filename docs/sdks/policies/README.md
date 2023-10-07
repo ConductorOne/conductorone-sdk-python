@@ -27,10 +27,8 @@ s = sdk.SDK(
 )
 
 req = shared.CreatePolicyRequestInput(
-    description='Multi-tiered scalable data-warehouse',
-    display_name='Markets Sausages ASCII',
     policy_steps={
-        "eligendi": shared.PolicyStepsInput(
+        "neural": shared.PolicyStepsInput(
             steps=[
                 shared.PolicyStepInput(
                     accept=shared.Accept(),
@@ -46,37 +44,23 @@ req = shared.CreatePolicyRequestInput(
                     provision=shared.Provision(
                         provision_policy=shared.ProvisionPolicy(
                             connector_provision=shared.ConnectorProvision(),
-                            delegated_provision=shared.DelegatedProvision(
-                                app_id='National Lauderhill',
-                                entitlement_id='overriding Latin',
-                            ),
+                            delegated_provision=shared.DelegatedProvision(),
                             manual_provision=shared.ManualProvision(
-                                instructions='Garden',
                                 user_ids=[
-                                    'Health',
+                                    'Tasty',
                                 ],
                             ),
                         ),
-                        provision_target=shared.ProvisionTarget(
-                            app_entitlement_id='exuding',
-                            app_id='SSD',
-                            app_user_id='Money mesh',
-                            grant_duration='silver compressing Berkshire',
-                        ),
-                        assigned=False,
+                        provision_target=shared.ProvisionTarget(),
                     ),
                     reject=shared.Reject(),
                 ),
             ],
         ),
     },
-    policy_type=shared.CreatePolicyRequestPolicyType.POLICY_TYPE_REVOKE,
     post_actions=[
-        shared.PolicyPostActions(
-            certify_remediate_immediately=False,
-        ),
+        shared.PolicyPostActions(),
     ],
-    reassign_tasks_to_delegates=False,
 )
 
 res = s.policies.create(req)
@@ -193,10 +177,7 @@ s = sdk.SDK(
     ),
 )
 
-req = operations.C1APIPolicyV1PoliciesListRequest(
-    page_size=6488.05,
-    page_token='Southeast',
-)
+req = operations.C1APIPolicyV1PoliciesListRequest()
 
 res = s.policies.list(req)
 
@@ -236,10 +217,8 @@ s = sdk.SDK(
 req = operations.C1APIPolicyV1PoliciesUpdateRequest(
     update_policy_request_input=shared.UpdatePolicyRequestInput(
         policy=shared.PolicyInput(
-            description='Optimized 24/7 middleware',
-            display_name='Clothing Tempe',
             policy_steps={
-                "eum": shared.PolicyStepsInput(
+                "up": shared.PolicyStepsInput(
                     steps=[
                         shared.PolicyStepInput(
                             accept=shared.Accept(),
@@ -255,45 +234,27 @@ req = operations.C1APIPolicyV1PoliciesUpdateRequest(
                             provision=shared.Provision(
                                 provision_policy=shared.ProvisionPolicy(
                                     connector_provision=shared.ConnectorProvision(),
-                                    delegated_provision=shared.DelegatedProvision(
-                                        app_id='Architect',
-                                        entitlement_id='Oregon',
-                                    ),
+                                    delegated_provision=shared.DelegatedProvision(),
                                     manual_provision=shared.ManualProvision(
-                                        instructions='Country alarmed',
                                         user_ids=[
-                                            'North',
+                                            'complexity',
                                         ],
                                     ),
                                 ),
-                                provision_target=shared.ProvisionTarget(
-                                    app_entitlement_id='Computer teal laborum',
-                                    app_id='capitalize mint',
-                                    app_user_id='Response HTTP',
-                                    grant_duration='Sedan aw Azerbaijanian',
-                                ),
-                                assigned=False,
+                                provision_target=shared.ProvisionTarget(),
                             ),
                             reject=shared.Reject(),
                         ),
                     ],
                 ),
             },
-            policy_type=shared.PolicyPolicyType.POLICY_TYPE_PROVISION,
             post_actions=[
-                shared.PolicyPostActions(
-                    certify_remediate_immediately=False,
-                ),
+                shared.PolicyPostActions(),
             ],
-            reassign_tasks_to_delegates=False,
             rules=[
-                shared.Rule(
-                    condition='Wisconsin',
-                    policy_key='Plastic generate fugit',
-                ),
+                shared.Rule(),
             ],
         ),
-        update_mask='SUV',
     ),
     id='<ID>',
 )

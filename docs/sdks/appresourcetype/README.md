@@ -65,8 +65,6 @@ s = sdk.SDK(
 
 req = operations.C1APIAppV1AppResourceTypeServiceListRequest(
     app_id='Bronze Architect',
-    page_size=9628.76,
-    page_token='female',
 )
 
 res = s.app_resource_type.list(req)

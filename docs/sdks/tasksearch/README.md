@@ -35,56 +35,44 @@ req = shared.TaskSearchRequestInput(
     account_owner_ids=[
         'Hyundai',
     ],
-    actor_id='Practical yearningly Southeast',
     app_entitlement_ids=[
-        'Books',
+        'Future',
     ],
     app_resource_ids=[
-        'Other',
+        'Southwest',
     ],
     app_resource_type_ids=[
-        'eligendi',
+        'broach',
     ],
     app_user_subject_ids=[
-        'Tobago',
+        'dependent',
     ],
     application_ids=[
-        'Protactinium',
+        'Mozambique',
     ],
     assignees_in_ids=[
-        'Arsenic',
+        'Global',
     ],
-    created_after=dateutil.parser.isoparse('2023-06-10T20:22:45.491Z'),
-    created_before=dateutil.parser.isoparse('2022-09-06T19:12:57.415Z'),
-    current_step=shared.TaskSearchRequestCurrentStep.TASK_SEARCH_CURRENT_STEP_UNSPECIFIED,
-    emergency_status=shared.TaskSearchRequestEmergencyStatus.NON_EMERGENCY,
     exclude_app_entitlement_ids=[
-        'National',
+        'watt',
     ],
     exclude_ids=[
-        'Wagon',
+        'Gasoline',
     ],
-    include_deleted=False,
     my_work_user_ids=[
-        'Estate',
+        'Protactinium',
     ],
     opener_ids=[
-        'female',
+        'Arsenic',
     ],
-    page_size=2339.71,
-    page_token='Soft Bacon',
     previously_acted_on_ids=[
-        'mindshare',
+        'Gasoline',
     ],
-    query='frizzy',
     refs=[
-        shared.TaskRef(
-            id='<ID>',
-        ),
+        shared.TaskRef(),
     ],
-    sort_by=shared.TaskSearchRequestSortBy.TASK_SEARCH_SORT_BY_ACCOUNT_OWNER,
     subject_ids=[
-        'boo',
+        'Oklahoma',
     ],
     task_states=[
         shared.TaskSearchRequestTaskStates.TASK_STATE_UNSPECIFIED,
@@ -93,27 +81,14 @@ req = shared.TaskSearchRequestInput(
         shared.TaskTypeInput(
             task_type_certify=shared.TaskTypeCertifyInput(),
             task_type_grant=shared.TaskTypeGrantInput(
-                task_grant_source=shared.TaskGrantSource(
-                    external_url='Frozen',
-                    integration_id='discrete HDD chargrill',
-                ),
+                task_grant_source=shared.TaskGrantSource(),
             ),
             task_type_revoke=shared.TaskTypeRevokeInput(
                 task_revoke_source=shared.TaskRevokeSource(
-                    task_revoke_source_expired=shared.TaskRevokeSourceExpired(
-                        expired_at=dateutil.parser.isoparse('2023-03-10T15:48:59.869Z'),
-                    ),
-                    task_revoke_source_non_usage=shared.TaskRevokeSourceNonUsage(
-                        expires_at=dateutil.parser.isoparse('2023-01-14T01:21:25.379Z'),
-                        last_login=dateutil.parser.isoparse('2021-01-22T06:17:27.525Z'),
-                    ),
-                    task_revoke_source_request=shared.TaskRevokeSourceRequest(
-                        request_user_id='overriding Focused',
-                    ),
-                    task_revoke_source_review=shared.TaskRevokeSourceReview(
-                        access_review_id='plum Astatine',
-                        cert_ticket_id='soliloquize instead',
-                    ),
+                    task_revoke_source_expired=shared.TaskRevokeSourceExpired(),
+                    task_revoke_source_non_usage=shared.TaskRevokeSourceNonUsage(),
+                    task_revoke_source_request=shared.TaskRevokeSourceRequest(),
+                    task_revoke_source_review=shared.TaskRevokeSourceReview(),
                 ),
             ),
         ),

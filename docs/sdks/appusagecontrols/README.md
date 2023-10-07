@@ -64,16 +64,9 @@ s = sdk.SDK(
 
 req = operations.C1APIAppV1AppUsageControlsServiceUpdateRequest(
     update_app_usage_controls_request=shared.UpdateAppUsageControlsRequest(
-        app_usage_controls=shared.AppUsageControls(
-            app_id='South complexity',
-            notify=False,
-            notify_after_days=6884.29,
-            revoke=False,
-            revoke_after_days=296.2,
-        ),
-        update_mask='Ruble ADP Oregon',
+        app_usage_controls=shared.AppUsageControls(),
     ),
-    app_id='Country alarmed',
+    app_id='South complexity',
 )
 
 res = s.app_usage_controls.update(req)

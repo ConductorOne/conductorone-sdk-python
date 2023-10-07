@@ -26,13 +26,9 @@ req = shared.SearchAppsRequest(
     app_ids=[
         'transition',
     ],
-    display_name='withdrawal Coordinator Ngultrum',
     exclude_app_ids=[
-        'Hyundai',
+        'turquoise',
     ],
-    page_size=6788.05,
-    page_token='Northeast',
-    query='broach dependent Mozambique',
 )
 
 res = s.app_search.search(req)

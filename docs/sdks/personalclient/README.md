@@ -26,10 +26,8 @@ req = shared.PersonalClientServiceCreateRequest(
     allow_source_cidr=[
         'neural',
     ],
-    display_name='pirouette',
-    expires='Sausages ASCII',
     scoped_roles=[
-        'ohm',
+        'Tasty',
     ],
 )
 

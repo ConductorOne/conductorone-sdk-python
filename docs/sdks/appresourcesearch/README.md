@@ -32,14 +32,11 @@ req = shared.SearchAppResourceTypesRequest(
     exclude_resource_type_trait_ids=[
         'World',
     ],
-    page_size=553.23,
-    page_token='SUV nostrum specifically',
-    query='Distributed across',
     resource_type_ids=[
-        'minima',
+        'Turkmenistan',
     ],
     resource_type_trait_ids=[
-        'Branding',
+        'SUV',
     ],
 )
 

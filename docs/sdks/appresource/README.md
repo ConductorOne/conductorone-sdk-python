@@ -67,8 +67,6 @@ s = sdk.SDK(
 req = operations.C1APIAppV1AppResourceServiceListRequest(
     app_id='Bronze Architect',
     app_resource_type_id='Southeast Soap katal',
-    page_size=4900.99,
-    page_token='aftermath',
 )
 
 res = s.app_resource.list(req)

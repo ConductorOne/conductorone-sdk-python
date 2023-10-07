@@ -27,15 +27,9 @@ s = sdk.SDK(
 )
 
 req = shared.CreateAppRequest(
-    certify_policy_id='Electric pirouette',
-    description='Integrated context-sensitive throughput',
-    display_name='Southwest alarm',
-    grant_policy_id='Lauderhill connecting',
-    monthly_cost_usd=2282.74,
     owners=[
-        'Latin',
+        'neural',
     ],
-    revoke_policy_id='Garden',
 )
 
 res = s.apps.create(req)
@@ -152,10 +146,7 @@ s = sdk.SDK(
     ),
 )
 
-req = operations.C1APIAppV1AppsListRequest(
-    page_size=6488.05,
-    page_token='Southeast',
-)
+req = operations.C1APIAppV1AppsListRequest()
 
 res = s.apps.list(req)
 
@@ -194,16 +185,7 @@ s = sdk.SDK(
 
 req = operations.C1APIAppV1AppsUpdateRequest(
     update_app_request_input=shared.UpdateAppRequestInput(
-        app=shared.AppInput(
-            certify_policy_id='South complexity',
-            description='Public-key 3rd generation success',
-            display_name='Ohio ADP',
-            grant_policy_id='Holmium',
-            icon_url='Land alarmed',
-            monthly_cost_usd=49.06,
-            revoke_policy_id='Chevrolet',
-        ),
-        update_mask='teal',
+        app=shared.AppInput(),
     ),
     id='<ID>',
 )
