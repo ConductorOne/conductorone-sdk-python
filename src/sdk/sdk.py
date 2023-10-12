@@ -73,7 +73,7 @@ class SDK:
     sdk_configuration: SDKConfiguration
 
     def __init__(self,
-                 bearer_auth: str,
+                 security: shared.Security = None,
                  tenant_domain: str = None,
                  server_idx: int = None,
                  server_url: str = None,
@@ -83,8 +83,8 @@ class SDK:
                  ) -> None:
         """Instantiates the SDK configuring it with the provided parameters.
         
-        :param bearer_auth: The bearer_auth required for authentication
-        :type bearer_auth: str
+        :param security: The security details required for authentication
+        :type security: shared.Security
         :param tenant_domain: Allows setting the tenantDomain variable for url substitution
         :type tenant_domain: str
         :param server_idx: The index of the server to use for all operations

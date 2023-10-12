@@ -8,7 +8,7 @@ from dataclasses_json import Undefined, dataclass_json
 from datetime import datetime
 from enum import Enum
 from sdk import utils
-from typing import Optional
+from typing import Any, Optional, Union
 
 class UserDirectoryStatus(str, Enum):
     r"""The status of the user in the directory."""
@@ -16,6 +16,18 @@ class UserDirectoryStatus(str, Enum):
     ENABLED = 'ENABLED'
     DISABLED = 'DISABLED'
     DELETED = 'DELETED'
+
+
+
+@dataclasses.dataclass
+class UserProfile3:
+    pass
+
+
+
+@dataclasses.dataclass
+class UserProfile:
+    pass
 
 class UserStatus(str, Enum):
     r"""The status of the user in the system."""
@@ -66,6 +78,7 @@ class User:
     r"""A list of ids of the user's managers."""
     manager_sources: Optional[list[shared_userattributemappingsource.UserAttributeMappingSource]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('managerSources') }})
     r"""A list of objects mapped based on managerId attribute mappings configured in the system."""
+    profile: Optional[dict[str, Union[str, float, UserProfile3, list[Any], bool]]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('profile'), 'exclude': lambda f: f is None }})
     role_ids: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('roleIds') }})
     r"""A list of unique identifiers that maps to ConductorOne’s user roles let you assign users permissions tailored to the work they do in the software."""
     status: Optional[UserStatus] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status'), 'exclude': lambda f: f is None }})
