@@ -45,6 +45,7 @@ res = s.request_catalog_management.add_access_entitlements(req)
 
 if res.request_catalog_management_service_add_access_entitlements_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -89,6 +90,7 @@ res = s.request_catalog_management.add_app_entitlements(req)
 
 if res.request_catalog_management_service_add_app_entitlements_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -132,6 +134,7 @@ res = s.request_catalog_management.create(req)
 
 if res.request_catalog_management_service_get_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -172,6 +175,7 @@ res = s.request_catalog_management.delete(req)
 
 if res.request_catalog_management_service_delete_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -211,6 +215,7 @@ res = s.request_catalog_management.get(req)
 
 if res.request_catalog_management_service_get_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -247,6 +252,7 @@ res = s.request_catalog_management.list()
 
 if res.request_catalog_management_service_list_response is not None:
     # handle response
+    pass
 ```
 
 
@@ -280,6 +286,7 @@ res = s.request_catalog_management.list_entitlements_for_access(req)
 
 if res.request_catalog_management_service_list_entitlements_for_access_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -319,6 +326,7 @@ res = s.request_catalog_management.list_entitlements_per_catalog(req)
 
 if res.request_catalog_management_service_list_entitlements_per_catalog_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -363,6 +371,7 @@ res = s.request_catalog_management.remove_access_entitlements(req)
 
 if res.request_catalog_management_service_remove_access_entitlements_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -407,6 +416,7 @@ res = s.request_catalog_management.remove_app_entitlements(req)
 
 if res.request_catalog_management_service_remove_app_entitlements_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -475,6 +485,7 @@ res = s.request_catalog_management.update(req)
 
 if res.request_catalog_management_service_get_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters

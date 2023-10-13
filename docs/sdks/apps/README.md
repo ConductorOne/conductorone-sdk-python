@@ -36,6 +36,7 @@ res = s.apps.create(req)
 
 if res.create_app_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -76,6 +77,7 @@ res = s.apps.delete(req)
 
 if res.delete_app_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -115,6 +117,7 @@ res = s.apps.get(req)
 
 if res.get_app_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -152,6 +155,7 @@ res = s.apps.list(req)
 
 if res.list_apps_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -194,6 +198,7 @@ res = s.apps.update(req)
 
 if res.update_app_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters

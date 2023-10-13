@@ -27,6 +27,7 @@ res = s.auth.introspect()
 
 if res.introspect_response is not None:
     # handle response
+    pass
 ```
 
 

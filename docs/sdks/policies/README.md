@@ -67,6 +67,7 @@ res = s.policies.create(req)
 
 if res.create_policy_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -107,6 +108,7 @@ res = s.policies.delete(req)
 
 if res.delete_policy_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -146,6 +148,7 @@ res = s.policies.get(req)
 
 if res.get_policy_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -183,6 +186,7 @@ res = s.policies.list(req)
 
 if res.list_policy_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -263,6 +267,7 @@ res = s.policies.update(req)
 
 if res.update_policy_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters

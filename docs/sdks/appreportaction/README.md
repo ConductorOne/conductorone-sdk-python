@@ -31,6 +31,7 @@ res = s.app_report_action.generate_report(req)
 
 if res.app_actions_service_generate_report_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters

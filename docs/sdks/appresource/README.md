@@ -33,6 +33,7 @@ res = s.app_resource.get(req)
 
 if res.app_resource_service_get_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -73,6 +74,7 @@ res = s.app_resource.list(req)
 
 if res.app_resource_service_list_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters

@@ -32,6 +32,7 @@ res = s.app_resource_owners.list(req)
 
 if res.list_app_resource_owners_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters

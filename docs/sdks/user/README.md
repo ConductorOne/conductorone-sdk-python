@@ -31,6 +31,7 @@ res = s.user.get(req)
 
 if res.user_service_get_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -68,6 +69,7 @@ res = s.user.list(req)
 
 if res.user_service_list_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters

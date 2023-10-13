@@ -34,6 +34,7 @@ res = s.app_owners.add(req)
 
 if res.add_app_owner_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -73,6 +74,7 @@ res = s.app_owners.list(req)
 
 if res.list_app_owners_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -114,6 +116,7 @@ res = s.app_owners.remove(req)
 
 if res.remove_app_owner_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters

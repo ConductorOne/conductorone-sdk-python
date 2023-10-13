@@ -39,6 +39,7 @@ res = s.task.create_grant_task(req)
 
 if res.task_service_create_grant_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -84,6 +85,7 @@ res = s.task.create_revoke_task(req)
 
 if res.task_service_create_revoke_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -123,6 +125,7 @@ res = s.task.get(req)
 
 if res.task_service_get_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters

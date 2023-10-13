@@ -31,6 +31,7 @@ res = s.app_usage_controls.get(req)
 
 if res.get_app_usage_controls_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -73,6 +74,7 @@ res = s.app_usage_controls.update(req)
 
 if res.update_app_usage_controls_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters

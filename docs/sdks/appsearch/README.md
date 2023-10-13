@@ -35,6 +35,7 @@ res = s.app_search.search(req)
 
 if res.search_apps_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters

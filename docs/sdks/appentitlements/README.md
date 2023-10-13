@@ -36,6 +36,7 @@ res = s.app_entitlements.get(req)
 
 if res.get_app_entitlement_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -75,6 +76,7 @@ res = s.app_entitlements.list(req)
 
 if res.list_app_entitlements_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -116,6 +118,7 @@ res = s.app_entitlements.list_for_app_resource(req)
 
 if res.list_app_entitlements_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -156,6 +159,7 @@ res = s.app_entitlements.list_for_app_user(req)
 
 if res.list_app_entitlements_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -196,6 +200,7 @@ res = s.app_entitlements.list_users(req)
 
 if res.list_app_entitlement_users_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -258,6 +263,7 @@ res = s.app_entitlements.update(req)
 
 if res.update_app_entitlement_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters

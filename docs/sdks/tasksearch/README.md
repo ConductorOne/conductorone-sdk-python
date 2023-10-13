@@ -99,6 +99,7 @@ res = s.task_search.search(req)
 
 if res.task_search_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
