@@ -1,4 +1,5 @@
 # AppEntitlements
+(*app_entitlements*)
 
 ### Available Operations
 
@@ -27,14 +28,15 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIAppV1AppEntitlementsGetRequest(
-    app_id='sapiente',
-    id='c2ddf7cc-78ca-41ba-928f-c816742cb739',
+    app_id='Group Cambridgeshire',
+    id='<ID>',
 )
 
 res = s.app_entitlements.get(req)
 
 if res.get_app_entitlement_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -67,15 +69,14 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIAppV1AppEntitlementsListRequest(
-    app_id='aspernatur',
-    page_size=187.89,
-    page_token='ad',
+    app_id='Bronze Architect',
 )
 
 res = s.app_entitlements.list(req)
 
 if res.list_app_entitlements_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -108,17 +109,16 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIAppV1AppEntitlementsListForAppResourceRequest(
-    app_id='natus',
-    app_resource_id='sed',
-    app_resource_type_id='iste',
-    page_size=2223.21,
-    page_token='natus',
+    app_id='SDD convergence',
+    app_resource_id='quis whether',
+    app_resource_type_id='Non',
 )
 
 res = s.app_entitlements.list_for_app_resource(req)
 
 if res.list_app_entitlements_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -151,16 +151,15 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIAppV1AppEntitlementsListForAppUserRequest(
-    app_id='laboriosam',
-    app_user_id='hic',
-    page_size=9025.99,
-    page_token='fuga',
+    app_id='Gardena payment Mountain',
+    app_user_id='Cruiser',
 )
 
 res = s.app_entitlements.list_for_app_user(req)
 
 if res.list_app_entitlements_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -193,16 +192,15 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIAppV1AppEntitlementsListUsersRequest(
-    app_entitlement_id='in',
-    app_id='corporis',
-    page_size=6130.64,
-    page_token='iure',
+    app_entitlement_id='yellow payment',
+    app_id='why Electric',
 )
 
 res = s.app_entitlements.list_users(req)
 
 if res.list_app_entitlement_users_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -239,50 +237,33 @@ req = operations.C1APIAppV1AppEntitlementsUpdateRequest(
         app_entitlement=shared.AppEntitlementInput(
             provision_policy=shared.ProvisionPolicy(
                 connector_provision=shared.ConnectorProvision(),
-                delegated_provision=shared.DelegatedProvision(
-                    app_id='saepe',
-                    entitlement_id='quidem',
-                ),
+                delegated_provision=shared.DelegatedProvision(),
                 manual_provision=shared.ManualProvision(
-                    instructions='architecto',
                     user_ids=[
-                        'ipsa',
+                        'up',
                     ],
                 ),
             ),
-            app_id='reiciendis',
-            app_resource_id='est',
-            app_resource_type_id='mollitia',
-            certify_policy_id='laborum',
             compliance_framework_value_ids=[
-                'dolores',
+                'complexity',
             ],
-            description='dolorem',
-            display_name='corporis',
-            duration_grant='explicabo',
             duration_unset=shared.AppEntitlementDurationUnset(),
-            emergency_grant_enabled=False,
-            emergency_grant_policy_id='nobis',
-            grant_policy_id='enim',
-            revoke_policy_id='omnis',
-            risk_level_value_id='nemo',
-            slug='minima',
         ),
         app_entitlement_expand_mask=shared.AppEntitlementExpandMask(
             paths=[
-                'excepturi',
+                'Supervisor',
             ],
         ),
-        update_mask='accusantium',
     ),
-    app_id='iure',
-    id='aff1a3a2-fa94-4677-b925-1aa52c3f5ad0',
+    app_id='Ruble ADP Oregon',
+    id='<ID>',
 )
 
 res = s.app_entitlements.update(req)
 
 if res.update_app_entitlement_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters

@@ -1,4 +1,5 @@
 # TaskActions
+(*task_actions*)
 
 ### Available Operations
 
@@ -28,19 +29,19 @@ req = operations.C1APITaskV1TaskActionsServiceApproveRequest(
     task_actions_service_approve_request=shared.TaskActionsServiceApproveRequest(
         task_expand_mask=shared.TaskExpandMask(
             paths=[
-                'aspernatur',
+                'Gasoline',
             ],
         ),
-        comment='ullam',
-        policy_step_id='quasi',
+        policy_step_id='edge Tennessee',
     ),
-    task_id='animi',
+    task_id='Hatchback Northeast',
 )
 
 res = s.task_actions.approve(req)
 
 if res.task_actions_service_approve_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -76,18 +77,18 @@ req = operations.C1APITaskV1TaskActionsServiceCommentRequest(
     task_actions_service_comment_request=shared.TaskActionsServiceCommentRequest(
         task_expand_mask=shared.TaskExpandMask(
             paths=[
-                'nostrum',
+                'Synergized',
             ],
         ),
-        comment='mollitia',
     ),
-    task_id='provident',
+    task_id='physically redefine azure',
 )
 
 res = s.task_actions.comment(req)
 
 if res.task_actions_service_comment_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -123,19 +124,18 @@ req = operations.C1APITaskV1TaskActionsServiceDenyRequest(
     task_actions_service_deny_request=shared.TaskActionsServiceDenyRequest(
         task_expand_mask=shared.TaskExpandMask(
             paths=[
-                'possimus',
+                'relationships',
             ],
         ),
-        comment='animi',
-        policy_step_id='ex',
     ),
-    task_id='aliquid',
+    task_id='Poinciana',
 )
 
 res = s.task_actions.deny(req)
 
 if res.task_actions_service_deny_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -171,19 +171,18 @@ req = operations.C1APITaskV1TaskActionsServiceEscalateToEmergencyAccessRequest(
     task_actions_service_escalate_to_emergency_access_request=shared.TaskActionsServiceEscalateToEmergencyAccessRequest(
         task_expand_mask=shared.TaskExpandMask(
             paths=[
-                'accusantium',
+                'Practical',
             ],
         ),
-        comment='repellat',
-        policy_step_id='doloribus',
     ),
-    task_id='ullam',
+    task_id='reprehenderit',
 )
 
 res = s.task_actions.escalate_to_emergency_access(req)
 
 if res.task_service_action_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters

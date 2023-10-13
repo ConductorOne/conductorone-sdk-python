@@ -18,6 +18,6 @@ class AppUserServiceUpdateRequestInput:
     r"""Application User that represents an account in the application."""
     app_user_expand_mask: Optional[shared_appuserexpandmask.AppUserExpandMask] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('expandMask'), 'exclude': lambda f: f is None }})
     r"""The AppUserExpandMask message contains a list of paths to expand in the response."""
-    update_mask: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('updateMask'), 'exclude': lambda f: f is None }})
+    update_mask: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('updateMask') }})
     
 

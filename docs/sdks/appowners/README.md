@@ -1,4 +1,5 @@
 # AppOwners
+(*app_owners*)
 
 ### Available Operations
 
@@ -25,14 +26,15 @@ s = sdk.SDK(
 
 req = operations.C1APIAppV1AppOwnersAddRequest(
     add_app_owner_request=shared.AddAppOwnerRequest(),
-    app_id='quasi',
-    user_id='error',
+    app_id='Small West',
+    user_id='Officer impactful',
 )
 
 res = s.app_owners.add(req)
 
 if res.add_app_owner_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -65,15 +67,14 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIAppV1AppOwnersListRequest(
-    app_id='temporibus',
-    page_size=6736.6,
-    page_token='quasi',
+    app_id='Bronze Architect',
 )
 
 res = s.app_owners.list(req)
 
 if res.list_app_owners_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -107,14 +108,15 @@ s = sdk.SDK(
 
 req = operations.C1APIAppV1AppOwnersRemoveRequest(
     remove_app_owner_request=shared.RemoveAppOwnerRequest(),
-    app_id='reiciendis',
-    user_id='voluptatibus',
+    app_id='SCSI',
+    user_id='JBOD tan',
 )
 
 res = s.app_owners.remove(req)
 
 if res.remove_app_owner_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters

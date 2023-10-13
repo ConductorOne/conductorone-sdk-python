@@ -1,4 +1,5 @@
 # AppEntitlementOwners
+(*app_entitlement_owners*)
 
 ### Available Operations
 
@@ -25,17 +26,16 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIAppV1AppEntitlementOwnersAddRequest(
-    add_app_entitlement_owner_request=shared.AddAppEntitlementOwnerRequest(
-        user_id='corrupti',
-    ),
-    app_id='illum',
-    entitlement_id='vel',
+    add_app_entitlement_owner_request=shared.AddAppEntitlementOwnerRequest(),
+    app_id='Small West',
+    entitlement_id='Officer impactful',
 )
 
 res = s.app_entitlement_owners.add(req)
 
 if res.add_app_entitlement_owner_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -68,16 +68,15 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIAppV1AppEntitlementOwnersListRequest(
-    app_id='error',
-    entitlement_id='deserunt',
-    page_size=3843.82,
-    page_token='iure',
+    app_id='Bronze Architect',
+    entitlement_id='Southeast Soap katal',
 )
 
 res = s.app_entitlement_owners.list(req)
 
 if res.list_app_entitlement_owners_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -111,15 +110,16 @@ s = sdk.SDK(
 
 req = operations.C1APIAppV1AppEntitlementOwnersRemoveRequest(
     remove_app_entitlement_owner_request=shared.RemoveAppEntitlementOwnerRequest(),
-    app_id='magnam',
-    entitlement_id='debitis',
-    user_id='ipsa',
+    app_id='SCSI',
+    entitlement_id='JBOD tan',
+    user_id='encompassing',
 )
 
 res = s.app_entitlement_owners.remove(req)
 
 if res.remove_app_entitlement_owner_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -154,17 +154,18 @@ s = sdk.SDK(
 req = operations.C1APIAppV1AppEntitlementOwnersSetRequest(
     set_app_entitlement_owners_request=shared.SetAppEntitlementOwnersRequest(
         user_ids=[
-            'delectus',
+            'markets',
         ],
     ),
-    app_id='tempora',
-    entitlement_id='suscipit',
+    app_id='yahoo bandwidth',
+    entitlement_id='male microchip',
 )
 
 res = s.app_entitlement_owners.set(req)
 
 if res.set_app_entitlement_owners_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters

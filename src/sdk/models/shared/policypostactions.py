@@ -16,7 +16,7 @@ class PolicyPostActions:
     This message contains a oneof named action. Only a single field of the following list may be set at a time:
       - certifyRemediateImmediately
     """
-    certify_remediate_immediately: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('certifyRemediateImmediately'), 'exclude': lambda f: f is None }})
+    certify_remediate_immediately: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('certifyRemediateImmediately') }})
     r"""ONLY valid when used in a CERTIFY Ticket Type:
      Causes any deprovision or change in a grant to be applied when Certify Ticket is closed.
     This field is part of the `action` oneof.

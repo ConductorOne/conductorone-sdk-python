@@ -23,9 +23,9 @@ class PolicyStep:
       - accept
       - reject
     """
-    accept: Optional[shared_accept.Accept] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('accept'), 'exclude': lambda f: f is None }})
+    accept: Optional[shared_accept.Accept] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('accept') }})
     r"""This policy step indicates that a ticket should have an approved outcome. This is a terminal approval state and is used to explicitly define the end of approval steps."""
-    approval: Optional[shared_approval.Approval] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('approval'), 'exclude': lambda f: f is None }})
+    approval: Optional[shared_approval.Approval] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('approval') }})
     r"""The Approval message.
 
     This message contains a oneof named typ. Only a single field of the following list may be set at a time:
@@ -37,9 +37,9 @@ class PolicyStep:
       - entitlementOwners
       - expression
     """
-    provision: Optional[shared_provision.Provision] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('provision'), 'exclude': lambda f: f is None }})
+    provision: Optional[shared_provision.Provision] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('provision') }})
     r"""The provision step references a provision policy for this step."""
-    reject: Optional[shared_reject.Reject] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('reject'), 'exclude': lambda f: f is None }})
+    reject: Optional[shared_reject.Reject] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('reject') }})
     r"""This policy step indicates that a ticket should have a denied outcome. This is a terminal approval state and is used to explicitly define the end of approval steps."""
     
 
@@ -57,9 +57,9 @@ class PolicyStepInput:
       - accept
       - reject
     """
-    accept: Optional[shared_accept.Accept] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('accept'), 'exclude': lambda f: f is None }})
+    accept: Optional[shared_accept.Accept] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('accept') }})
     r"""This policy step indicates that a ticket should have an approved outcome. This is a terminal approval state and is used to explicitly define the end of approval steps."""
-    approval: Optional[shared_approval.ApprovalInput] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('approval'), 'exclude': lambda f: f is None }})
+    approval: Optional[shared_approval.ApprovalInput] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('approval') }})
     r"""The Approval message.
 
     This message contains a oneof named typ. Only a single field of the following list may be set at a time:
@@ -71,9 +71,9 @@ class PolicyStepInput:
       - entitlementOwners
       - expression
     """
-    provision: Optional[shared_provision.Provision] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('provision'), 'exclude': lambda f: f is None }})
+    provision: Optional[shared_provision.Provision] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('provision') }})
     r"""The provision step references a provision policy for this step."""
-    reject: Optional[shared_reject.Reject] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('reject'), 'exclude': lambda f: f is None }})
+    reject: Optional[shared_reject.Reject] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('reject') }})
     r"""This policy step indicates that a ticket should have a denied outcome. This is a terminal approval state and is used to explicitly define the end of approval steps."""
     
 

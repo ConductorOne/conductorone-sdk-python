@@ -1,4 +1,5 @@
 # AppUser
+(*app_user*)
 
 ### Available Operations
 
@@ -26,23 +27,22 @@ req = operations.C1APIAppV1AppUserServiceUpdateRequest(
     app_user_service_update_request_input=shared.AppUserServiceUpdateRequestInput(
         app_user=shared.AppUserInput(
             app_user_status=shared.AppUserStatusInput(),
-            app_user_type=shared.AppUserAppUserType.APP_USER_TYPE_SERVICE_ACCOUNT,
         ),
         app_user_expand_mask=shared.AppUserExpandMask(
             paths=[
-                'deleniti',
+                'up',
             ],
         ),
-        update_mask='sapiente',
     ),
-    app_user_app_id='amet',
-    app_user_id='deserunt',
+    app_user_app_id='Clothing Tempe',
+    app_user_id='Ohio ADP',
 )
 
 res = s.app_user.update(req)
 
 if res.app_user_service_update_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters

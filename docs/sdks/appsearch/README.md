@@ -1,4 +1,5 @@
 # AppSearch
+(*app_search*)
 
 ### Available Operations
 
@@ -23,21 +24,18 @@ s = sdk.SDK(
 
 req = shared.SearchAppsRequest(
     app_ids=[
-        'aliquid',
+        'transition',
     ],
-    display_name='laborum',
     exclude_app_ids=[
-        'accusamus',
+        'turquoise',
     ],
-    page_size=2497.96,
-    page_token='occaecati',
-    query='enim',
 )
 
 res = s.app_search.search(req)
 
 if res.search_apps_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters

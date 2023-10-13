@@ -20,7 +20,7 @@ class AppGroupApproval:
     r"""The ID of the app that conatins the group specified for approval."""
     fallback: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('fallback'), 'exclude': lambda f: f is None }})
     r"""Configuration to allow a fallback if the group is empty."""
-    fallback_user_ids: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('fallbackUserIds'), 'exclude': lambda f: f is None }})
+    fallback_user_ids: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('fallbackUserIds') }})
     r"""Configuration to specific which users to fallback to if fallback is enabled and the group is empty."""
     
 

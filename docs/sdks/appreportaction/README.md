@@ -1,4 +1,5 @@
 # AppReportAction
+(*app_report_action*)
 
 ### Available Operations
 
@@ -23,13 +24,14 @@ s = sdk.SDK(
 
 req = operations.C1APIAppV1AppReportActionServiceGenerateReportRequest(
     app_actions_service_generate_report_request=shared.AppActionsServiceGenerateReportRequest(),
-    app_id='voluptatibus',
+    app_id='World',
 )
 
 res = s.app_report_action.generate_report(req)
 
 if res.app_actions_service_generate_report_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters

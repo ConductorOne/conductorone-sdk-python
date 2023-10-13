@@ -16,7 +16,7 @@ class EntitlementOwnerApproval:
     r"""Configuration to allow self approval if the target user is an entitlement owner during this step."""
     fallback: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('fallback'), 'exclude': lambda f: f is None }})
     r"""Configuration to allow a fallback if the entitlement owner cannot be identified."""
-    fallback_user_ids: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('fallbackUserIds'), 'exclude': lambda f: f is None }})
+    fallback_user_ids: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('fallbackUserIds') }})
     r"""Configuration to specific which users to fallback to if fallback is enabled and the entitlement owner cannot be identified."""
     
 

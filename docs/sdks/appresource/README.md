@@ -1,4 +1,5 @@
 # AppResource
+(*app_resource*)
 
 ### Available Operations
 
@@ -23,15 +24,16 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIAppV1AppResourceServiceGetRequest(
-    app_id='ipsa',
-    app_resource_type_id='omnis',
-    id='7b0074f1-5471-4b5e-ae13-b99d488e1e91',
+    app_id='Group Cambridgeshire',
+    app_resource_type_id='reintermediate fuchsia Planner',
+    id='<ID>',
 )
 
 res = s.app_resource.get(req)
 
 if res.app_resource_service_get_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -64,16 +66,15 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIAppV1AppResourceServiceListRequest(
-    app_id='itaque',
-    app_resource_type_id='incidunt',
-    page_size=3185.69,
-    page_token='consequatur',
+    app_id='Bronze Architect',
+    app_resource_type_id='Southeast Soap katal',
 )
 
 res = s.app_resource.list(req)
 
 if res.app_resource_service_list_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters

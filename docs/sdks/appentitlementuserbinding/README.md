@@ -1,4 +1,5 @@
 # AppEntitlementUserBinding
+(*app_entitlement_user_binding*)
 
 ### Available Operations
 
@@ -22,15 +23,16 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIAppV1AppEntitlementUserBindingServiceListAppUsersForIdentityWithGrantRequest(
-    app_entitlement_id='perferendis',
-    app_id='ipsam',
-    identity_user_id='repellendus',
+    app_entitlement_id='Applications parsing',
+    app_id='turquoise tan sympathetically',
+    identity_user_id='Plastic',
 )
 
 res = s.app_entitlement_user_binding.list_app_users_for_identity_with_grant(req)
 
 if res.list_app_users_for_identity_with_grant_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters

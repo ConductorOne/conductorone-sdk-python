@@ -21,7 +21,7 @@ class Roles:
         url = utils.generate_url(operations.C1APIIamV1RolesGetRequest, base_url, '/api/v1/iam/roles/{role_id}', request)
         headers = {}
         headers['Accept'] = 'application/json'
-        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
+        headers['user-agent'] = self.sdk_configuration.user_agent
         
         client = self.sdk_configuration.security_client
         
@@ -52,7 +52,7 @@ class Roles:
         headers = {}
         query_params = utils.get_query_params(operations.C1APIIamV1RolesListRequest, request)
         headers['Accept'] = 'application/json'
-        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
+        headers['user-agent'] = self.sdk_configuration.user_agent
         
         client = self.sdk_configuration.security_client
         
@@ -81,11 +81,11 @@ class Roles:
         
         url = utils.generate_url(operations.C1APIIamV1RolesUpdateRequest, base_url, '/api/v1/iam/roles/{role_id}', request)
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "update_role_request_input", 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, "update_role_request_input", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = 'application/json'
-        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
+        headers['user-agent'] = self.sdk_configuration.user_agent
         
         client = self.sdk_configuration.security_client
         

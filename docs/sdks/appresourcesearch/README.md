@@ -1,4 +1,5 @@
 # AppResourceSearch
+(*app_resource_search*)
 
 ### Available Operations
 
@@ -23,22 +24,19 @@ s = sdk.SDK(
 
 req = shared.SearchAppResourceTypesRequest(
     app_ids=[
-        'quibusdam',
+        'Soap',
     ],
     exclude_resource_type_ids=[
-        'labore',
+        'paradigms',
     ],
     exclude_resource_type_trait_ids=[
-        'modi',
+        'World',
     ],
-    page_size=1831.91,
-    page_token='aliquid',
-    query='cupiditate',
     resource_type_ids=[
-        'quos',
+        'Turkmenistan',
     ],
     resource_type_trait_ids=[
-        'perferendis',
+        'SUV',
     ],
 )
 
@@ -46,6 +44,7 @@ res = s.app_resource_search.search_app_resource_types(req)
 
 if res.search_app_resource_types_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters

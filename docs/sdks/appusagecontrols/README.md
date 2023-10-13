@@ -1,4 +1,5 @@
 # AppUsageControls
+(*app_usage_controls*)
 
 ### Available Operations
 
@@ -23,13 +24,14 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIAppV1AppUsageControlsServiceGetRequest(
-    app_id='accusamus',
+    app_id='Group Cambridgeshire',
 )
 
 res = s.app_usage_controls.get(req)
 
 if res.get_app_usage_controls_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -63,22 +65,16 @@ s = sdk.SDK(
 
 req = operations.C1APIAppV1AppUsageControlsServiceUpdateRequest(
     update_app_usage_controls_request=shared.UpdateAppUsageControlsRequest(
-        app_usage_controls=shared.AppUsageControls(
-            app_id='delectus',
-            notify=False,
-            notify_after_days=6925.32,
-            revoke=False,
-            revoke_after_days=5884.65,
-        ),
-        update_mask='nam',
+        app_usage_controls=shared.AppUsageControls(),
     ),
-    app_id='id',
+    app_id='South complexity',
 )
 
 res = s.app_usage_controls.update(req)
 
 if res.update_app_usage_controls_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters

@@ -1,4 +1,5 @@
 # UserSearch
+(*user_search*)
 
 ### Available Operations
 
@@ -24,29 +25,23 @@ s = sdk.SDK(
 req = shared.SearchUsersRequest(
     user_expand_mask=shared.UserExpandMask(
         paths=[
-            'voluptas',
+            'transition',
         ],
     ),
-    email='Maiya_Bernier@yahoo.com',
     exclude_ids=[
-        'voluptates',
+        'turquoise',
     ],
     ids=[
-        'mollitia',
+        'Hyundai',
     ],
-    page_size=6717.94,
-    page_token='libero',
-    query='ad',
     refs=[
-        shared.UserRef(
-            id='851d6c64-5b08-4b61-891b-aa0fe1ade008',
-        ),
+        shared.UserRef(),
     ],
     role_ids=[
-        'earum',
+        'Future',
     ],
     user_statuses=[
-        shared.SearchUsersRequestUserStatuses.ENABLED,
+        shared.SearchUsersRequestUserStatuses.UNKNOWN,
     ],
 )
 
@@ -54,6 +49,7 @@ res = s.user_search.search(req)
 
 if res.search_users_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters

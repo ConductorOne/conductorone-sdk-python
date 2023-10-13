@@ -13,7 +13,7 @@ from typing import Any, Optional
 @dataclasses.dataclass
 class UserServiceGetResponse:
     r"""The UserServiceGetResponse returns a user view which has a user including JSONPATHs to the expanded items in the expanded array."""
-    expanded: Optional[list[dict[str, Any]]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('expanded'), 'exclude': lambda f: f is None }})
+    expanded: Optional[list[dict[str, Any]]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('expanded') }})
     r"""List of serialized related objects."""
     user_view: Optional[shared_userview.UserView] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('userView'), 'exclude': lambda f: f is None }})
     r"""The UserView object provides a user response object, as well as JSONPATHs to related objects provided by expanders."""

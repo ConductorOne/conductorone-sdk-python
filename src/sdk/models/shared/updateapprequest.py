@@ -15,6 +15,6 @@ class UpdateAppRequestInput:
     r"""The UpdateAppRequest message contains the app to update and the fields to update."""
     app: Optional[shared_app.AppInput] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('app'), 'exclude': lambda f: f is None }})
     r"""The App object provides all of the details for an app, as well as some configuration."""
-    update_mask: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('updateMask'), 'exclude': lambda f: f is None }})
+    update_mask: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('updateMask') }})
     
 

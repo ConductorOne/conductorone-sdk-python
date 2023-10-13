@@ -1,4 +1,5 @@
 # RequestCatalogManagement
+(*request_catalog_management*)
 
 ### Available Operations
 
@@ -34,19 +35,17 @@ s = sdk.SDK(
 req = operations.C1APIRequestcatalogV1RequestCatalogManagementServiceAddAccessEntitlementsRequest(
     request_catalog_management_service_add_access_entitlements_request=shared.RequestCatalogManagementServiceAddAccessEntitlementsRequest(
         access_entitlements=[
-            shared.AppEntitlementRef(
-                app_id='cum',
-                id='675fd5e6-0b37-45ed-8f6f-bee41f33317f',
-            ),
+            shared.AppEntitlementRef(),
         ],
     ),
-    catalog_id='debitis',
+    catalog_id='deposit',
 )
 
 res = s.request_catalog_management.add_access_entitlements(req)
 
 if res.request_catalog_management_service_add_access_entitlements_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -81,19 +80,17 @@ s = sdk.SDK(
 req = operations.C1APIRequestcatalogV1RequestCatalogManagementServiceAddAppEntitlementsRequest(
     request_catalog_management_service_add_app_entitlements_request=shared.RequestCatalogManagementServiceAddAppEntitlementsRequest(
         app_entitlements=[
-            shared.AppEntitlementRef(
-                app_id='consectetur',
-                id='5b60eb1e-a426-4555-ba3c-28744ed53b88',
-            ),
+            shared.AppEntitlementRef(),
         ],
     ),
-    catalog_id='hic',
+    catalog_id='East cyan Wilma',
 )
 
 res = s.request_catalog_management.add_app_entitlements(req)
 
 if res.request_catalog_management_service_add_app_entitlements_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -128,19 +125,16 @@ s = sdk.SDK(
 req = shared.RequestCatalogManagementServiceCreateRequest(
     request_catalog_expand_mask=shared.RequestCatalogExpandMask(
         paths=[
-            'nesciunt',
+            'neural',
         ],
     ),
-    description='culpa',
-    display_name='corrupti',
-    published=False,
-    visible_to_everyone=False,
 )
 
 res = s.request_catalog_management.create(req)
 
 if res.request_catalog_management_service_get_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -174,13 +168,14 @@ s = sdk.SDK(
 
 req = operations.C1APIRequestcatalogV1RequestCatalogManagementServiceDeleteRequest(
     request_catalog_management_service_delete_request=shared.RequestCatalogManagementServiceDeleteRequest(),
-    id='d8f5c0b2-f2fb-47b1-94a2-76b26916fe1f',
+    id='<ID>',
 )
 
 res = s.request_catalog_management.delete(req)
 
 if res.request_catalog_management_service_delete_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -213,13 +208,14 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIRequestcatalogV1RequestCatalogManagementServiceGetRequest(
-    id='08f4294e-3698-4f44-bf60-3e8b445e80ca',
+    id='<ID>',
 )
 
 res = s.request_catalog_management.get(req)
 
 if res.request_catalog_management_service_get_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -256,6 +252,7 @@ res = s.request_catalog_management.list()
 
 if res.request_catalog_management_service_list_response is not None:
     # handle response
+    pass
 ```
 
 
@@ -282,15 +279,14 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIRequestcatalogV1RequestCatalogManagementServiceListEntitlementsForAccessRequest(
-    catalog_id='veniam',
-    page_size=3295.43,
-    page_token='recusandae',
+    catalog_id='mint digital Man',
 )
 
 res = s.request_catalog_management.list_entitlements_for_access(req)
 
 if res.request_catalog_management_service_list_entitlements_for_access_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -323,15 +319,14 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIRequestcatalogV1RequestCatalogManagementServiceListEntitlementsPerCatalogRequest(
-    catalog_id='reiciendis',
-    page_size=8623.19,
-    page_token='magni',
+    catalog_id='Senior',
 )
 
 res = s.request_catalog_management.list_entitlements_per_catalog(req)
 
 if res.request_catalog_management_service_list_entitlements_per_catalog_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -366,19 +361,17 @@ s = sdk.SDK(
 req = operations.C1APIRequestcatalogV1RequestCatalogManagementServiceRemoveAccessEntitlementsRequest(
     request_catalog_management_service_remove_access_entitlements_request=shared.RequestCatalogManagementServiceRemoveAccessEntitlementsRequest(
         access_entitlements=[
-            shared.AppEntitlementRef(
-                app_id='aperiam',
-                id='e457e185-8b6a-489f-be3a-5aa8e4824d0a',
-            ),
+            shared.AppEntitlementRef(),
         ],
     ),
-    catalog_id='expedita',
+    catalog_id='Mill Audi indigo',
 )
 
 res = s.request_catalog_management.remove_access_entitlements(req)
 
 if res.request_catalog_management_service_remove_access_entitlements_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -413,19 +406,17 @@ s = sdk.SDK(
 req = operations.C1APIRequestcatalogV1RequestCatalogManagementServiceRemoveAppEntitlementsRequest(
     request_catalog_management_service_remove_app_entitlements_request=shared.RequestCatalogManagementServiceRemoveAppEntitlementsRequest(
         app_entitlements=[
-            shared.AppEntitlementRef(
-                app_id='magnam',
-                id='075088e5-1862-4065-a904-f3b1194b8abf',
-            ),
+            shared.AppEntitlementRef(),
         ],
     ),
-    catalog_id='laboriosam',
+    catalog_id='UTF8',
 )
 
 res = s.request_catalog_management.remove_app_entitlements(req)
 
 if res.request_catalog_management_service_remove_app_entitlements_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -464,60 +455,37 @@ req = operations.C1APIRequestcatalogV1RequestCatalogManagementServiceUpdateReque
                 shared.AppEntitlementInput(
                     provision_policy=shared.ProvisionPolicy(
                         connector_provision=shared.ConnectorProvision(),
-                        delegated_provision=shared.DelegatedProvision(
-                            app_id='alias',
-                            entitlement_id='amet',
-                        ),
+                        delegated_provision=shared.DelegatedProvision(),
                         manual_provision=shared.ManualProvision(
-                            instructions='deserunt',
                             user_ids=[
-                                'voluptate',
+                                'up',
                             ],
                         ),
                     ),
-                    app_id='unde',
-                    app_resource_id='reiciendis',
-                    app_resource_type_id='provident',
-                    certify_policy_id='repellendus',
                     compliance_framework_value_ids=[
-                        'delectus',
+                        'complexity',
                     ],
-                    description='voluptates',
-                    display_name='perferendis',
-                    duration_grant='est',
                     duration_unset=shared.AppEntitlementDurationUnset(),
-                    emergency_grant_enabled=False,
-                    emergency_grant_policy_id='quidem',
-                    grant_policy_id='reprehenderit',
-                    revoke_policy_id='facere',
-                    risk_level_value_id='fuga',
-                    slug='praesentium',
                 ),
             ],
             app_ids=[
-                'mollitia',
+                'Supervisor',
             ],
-            created_by_user_id='veniam',
-            description='voluptatem',
-            display_name='quisquam',
-            id='e187f86b-c173-4d68-9eee-9526f8d986e8',
-            published=False,
-            visible_to_everyone=False,
         ),
         request_catalog_expand_mask=shared.RequestCatalogExpandMask(
             paths=[
-                'atque',
+                'less',
             ],
         ),
-        update_mask='sunt',
     ),
-    id='ead4f0e1-0125-463f-94e2-9e973e922a57',
+    id='<ID>',
 )
 
 res = s.request_catalog_management.update(req)
 
 if res.request_catalog_management_service_get_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters

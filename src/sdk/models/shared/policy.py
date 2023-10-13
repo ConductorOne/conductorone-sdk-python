@@ -39,11 +39,11 @@ class Policy:
     r"""A map of string(policy type) to steps in a policy. This structure is leftover from a previous design, and should only ever have one key->value set."""
     policy_type: Optional[PolicyPolicyType] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('policyType'), 'exclude': lambda f: f is None }})
     r"""Indicates the type of this policy. Can also be used to get the value from policySteps."""
-    post_actions: Optional[list[shared_policypostactions.PolicyPostActions]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('postActions'), 'exclude': lambda f: f is None }})
+    post_actions: Optional[list[shared_policypostactions.PolicyPostActions]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('postActions') }})
     r"""An array of actions (ordered) to take place after a policy completes processing."""
     reassign_tasks_to_delegates: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('reassignTasksToDelegates'), 'exclude': lambda f: f is None }})
     r"""A policy configuration option that allows for reassinging tasks to delgated users. This level of delegation referrs to the individual delegates users set on their account."""
-    rules: Optional[list[shared_rule.Rule]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('rules'), 'exclude': lambda f: f is None }})
+    rules: Optional[list[shared_rule.Rule]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('rules') }})
     r"""The rules field."""
     system_builtin: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('systemBuiltin'), 'exclude': lambda f: f is None }})
     r"""Whether this policy is a builtin system policy. Builtin system policies cannot be edited."""
@@ -65,11 +65,11 @@ class PolicyInput:
     r"""A map of string(policy type) to steps in a policy. This structure is leftover from a previous design, and should only ever have one key->value set."""
     policy_type: Optional[PolicyPolicyType] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('policyType'), 'exclude': lambda f: f is None }})
     r"""Indicates the type of this policy. Can also be used to get the value from policySteps."""
-    post_actions: Optional[list[shared_policypostactions.PolicyPostActions]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('postActions'), 'exclude': lambda f: f is None }})
+    post_actions: Optional[list[shared_policypostactions.PolicyPostActions]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('postActions') }})
     r"""An array of actions (ordered) to take place after a policy completes processing."""
     reassign_tasks_to_delegates: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('reassignTasksToDelegates'), 'exclude': lambda f: f is None }})
     r"""A policy configuration option that allows for reassinging tasks to delgated users. This level of delegation referrs to the individual delegates users set on their account."""
-    rules: Optional[list[shared_rule.Rule]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('rules'), 'exclude': lambda f: f is None }})
+    rules: Optional[list[shared_rule.Rule]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('rules') }})
     r"""The rules field."""
     
 

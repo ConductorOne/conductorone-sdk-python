@@ -1,4 +1,5 @@
 # Apps
+(*apps*)
 
 ### Available Operations
 
@@ -26,21 +27,16 @@ s = sdk.SDK(
 )
 
 req = shared.CreateAppRequest(
-    certify_policy_id='nisi',
-    description='vel',
-    display_name='natus',
-    grant_policy_id='omnis',
-    monthly_cost_usd=4748.67,
     owners=[
-        'perferendis',
+        'neural',
     ],
-    revoke_policy_id='nihil',
 )
 
 res = s.apps.create(req)
 
 if res.create_app_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -74,13 +70,14 @@ s = sdk.SDK(
 
 req = operations.C1APIAppV1AppsDeleteRequest(
     delete_app_request=shared.DeleteAppRequest(),
-    id='4ba4469b-6e21-4419-9989-0afa563e2516',
+    id='<ID>',
 )
 
 res = s.apps.delete(req)
 
 if res.delete_app_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -113,13 +110,14 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIAppV1AppsGetRequest(
-    id='fe4c8b71-1e5b-47fd-aed0-28921cddc692',
+    id='<ID>',
 )
 
 res = s.apps.get(req)
 
 if res.get_app_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -151,15 +149,13 @@ s = sdk.SDK(
     ),
 )
 
-req = operations.C1APIAppV1AppsListRequest(
-    page_size=4071.83,
-    page_token='accusantium',
-)
+req = operations.C1APIAppV1AppsListRequest()
 
 res = s.apps.list(req)
 
 if res.list_apps_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -193,24 +189,16 @@ s = sdk.SDK(
 
 req = operations.C1APIAppV1AppsUpdateRequest(
     update_app_request_input=shared.UpdateAppRequestInput(
-        app=shared.AppInput(
-            certify_policy_id='ab',
-            description='maiores',
-            display_name='quidem',
-            grant_policy_id='ipsam',
-            icon_url='voluptate',
-            monthly_cost_usd=4200.75,
-            revoke_policy_id='nam',
-        ),
-        update_mask='eaque',
+        app=shared.AppInput(),
     ),
-    id='d5f0d30c-5fbb-4258-b053-202c73d5fe9b',
+    id='<ID>',
 )
 
 res = s.apps.update(req)
 
 if res.update_app_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters

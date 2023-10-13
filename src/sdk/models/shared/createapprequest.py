@@ -22,7 +22,7 @@ class CreateAppRequest:
     r"""Creates the app with this grant policy."""
     monthly_cost_usd: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('monthlyCostUsd'), 'exclude': lambda f: f is None }})
     r"""Creates the app with this monthly cost per seat."""
-    owners: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('owners'), 'exclude': lambda f: f is None }})
+    owners: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('owners') }})
     r"""Creates the app with this array of owners."""
     revoke_policy_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('revokePolicyId'), 'exclude': lambda f: f is None }})
     r"""Creates the app with this revoke policy."""

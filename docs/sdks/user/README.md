@@ -1,4 +1,5 @@
 # User
+(*user*)
 
 ### Available Operations
 
@@ -23,13 +24,14 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIUserV1UserServiceGetRequest(
-    id='04771778-ff61-4d01-b476-360a15db6a66',
+    id='<ID>',
 )
 
 res = s.user.get(req)
 
 if res.user_service_get_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -61,15 +63,13 @@ s = sdk.SDK(
     ),
 )
 
-req = operations.C1APIUserV1UserServiceListRequest(
-    page_size=219.73,
-    page_token='eum',
-)
+req = operations.C1APIUserV1UserServiceListRequest()
 
 res = s.user.list(req)
 
 if res.user_service_list_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters

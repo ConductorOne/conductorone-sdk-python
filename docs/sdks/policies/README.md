@@ -1,4 +1,5 @@
 # Policies
+(*policies*)
 
 ### Available Operations
 
@@ -26,10 +27,8 @@ s = sdk.SDK(
 )
 
 req = shared.CreatePolicyRequestInput(
-    description='consequuntur',
-    display_name='ratione',
     policy_steps={
-        "explicabo": shared.PolicyStepsInput(
+        "neural": shared.PolicyStepsInput(
             steps=[
                 shared.PolicyStepInput(
                     accept=shared.Accept(),
@@ -45,43 +44,30 @@ req = shared.CreatePolicyRequestInput(
                     provision=shared.Provision(
                         provision_policy=shared.ProvisionPolicy(
                             connector_provision=shared.ConnectorProvision(),
-                            delegated_provision=shared.DelegatedProvision(
-                                app_id='saepe',
-                                entitlement_id='occaecati',
-                            ),
+                            delegated_provision=shared.DelegatedProvision(),
                             manual_provision=shared.ManualProvision(
-                                instructions='atque',
                                 user_ids=[
-                                    'et',
+                                    'Tasty',
                                 ],
                             ),
                         ),
-                        provision_target=shared.ProvisionTarget(
-                            app_entitlement_id='esse',
-                            app_id='eveniet',
-                            app_user_id='accusamus',
-                            grant_duration='veritatis',
-                        ),
-                        assigned=False,
+                        provision_target=shared.ProvisionTarget(),
                     ),
                     reject=shared.Reject(),
                 ),
             ],
         ),
     },
-    policy_type=shared.CreatePolicyRequestPolicyType.POLICY_TYPE_REVOKE,
     post_actions=[
-        shared.PolicyPostActions(
-            certify_remediate_immediately=False,
-        ),
+        shared.PolicyPostActions(),
     ],
-    reassign_tasks_to_delegates=False,
 )
 
 res = s.policies.create(req)
 
 if res.create_policy_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -115,13 +101,14 @@ s = sdk.SDK(
 
 req = operations.C1APIPolicyV1PoliciesDeleteRequest(
     delete_policy_request=shared.DeletePolicyRequest(),
-    id='cbe61e6b-7b95-4bc0-ab3c-20c4f3789fd8',
+    id='<ID>',
 )
 
 res = s.policies.delete(req)
 
 if res.delete_policy_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -154,13 +141,14 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIPolicyV1PoliciesGetRequest(
-    id='71f99dd2-efd1-421a-a6f1-e674bdb04f15',
+    id='<ID>',
 )
 
 res = s.policies.get(req)
 
 if res.get_policy_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -192,15 +180,13 @@ s = sdk.SDK(
     ),
 )
 
-req = operations.C1APIPolicyV1PoliciesListRequest(
-    page_size=4438.79,
-    page_token='ullam',
-)
+req = operations.C1APIPolicyV1PoliciesListRequest()
 
 res = s.policies.list(req)
 
 if res.list_policy_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -235,10 +221,8 @@ s = sdk.SDK(
 req = operations.C1APIPolicyV1PoliciesUpdateRequest(
     update_policy_request_input=shared.UpdatePolicyRequestInput(
         policy=shared.PolicyInput(
-            description='nisi',
-            display_name='aut',
             policy_steps={
-                "voluptatum": shared.PolicyStepsInput(
+                "up": shared.PolicyStepsInput(
                     steps=[
                         shared.PolicyStepInput(
                             accept=shared.Accept(),
@@ -254,53 +238,36 @@ req = operations.C1APIPolicyV1PoliciesUpdateRequest(
                             provision=shared.Provision(
                                 provision_policy=shared.ProvisionPolicy(
                                     connector_provision=shared.ConnectorProvision(),
-                                    delegated_provision=shared.DelegatedProvision(
-                                        app_id='qui',
-                                        entitlement_id='quibusdam',
-                                    ),
+                                    delegated_provision=shared.DelegatedProvision(),
                                     manual_provision=shared.ManualProvision(
-                                        instructions='ex',
                                         user_ids=[
-                                            'deleniti',
+                                            'complexity',
                                         ],
                                     ),
                                 ),
-                                provision_target=shared.ProvisionTarget(
-                                    app_entitlement_id='itaque',
-                                    app_id='dolorum',
-                                    app_user_id='architecto',
-                                    grant_duration='omnis',
-                                ),
-                                assigned=False,
+                                provision_target=shared.ProvisionTarget(),
                             ),
                             reject=shared.Reject(),
                         ),
                     ],
                 ),
             },
-            policy_type=shared.PolicyPolicyType.POLICY_TYPE_PROVISION,
             post_actions=[
-                shared.PolicyPostActions(
-                    certify_remediate_immediately=False,
-                ),
+                shared.PolicyPostActions(),
             ],
-            reassign_tasks_to_delegates=False,
             rules=[
-                shared.Rule(
-                    condition='quasi',
-                    policy_key='at',
-                ),
+                shared.Rule(),
             ],
         ),
-        update_mask='et',
     ),
-    id='7051339d-0808-46a1-8403-94c26071f93f',
+    id='<ID>',
 )
 
 res = s.policies.update(req)
 
 if res.update_policy_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters

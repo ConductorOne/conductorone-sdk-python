@@ -15,9 +15,9 @@ from typing import Optional
 @dataclasses.dataclass
 class PolicyInstance:
     r"""A policy instance is an object that contains a reference to the policy it was created from, the currently executing step, the next steps, and the history of previously completed steps."""
-    history: Optional[list[shared_policystepinstance.PolicyStepInstance]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('history'), 'exclude': lambda f: f is None }})
+    history: Optional[list[shared_policystepinstance.PolicyStepInstance]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('history') }})
     r"""An array of steps that were previously processed by the ticket with their outcomes set, in order."""
-    next: Optional[list[shared_policystep.PolicyStep]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('next'), 'exclude': lambda f: f is None }})
+    next: Optional[list[shared_policystep.PolicyStep]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('next') }})
     r"""An array of steps that will be processed by the ticket, in order."""
     policy: Optional[shared_policy.Policy] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('policy'), 'exclude': lambda f: f is None }})
     r"""A policy describes the behavior of the ConductorOne system when processing a task. You can describe the type, approvers, fallback behavior, and escalation processes."""

@@ -15,6 +15,6 @@ class UpdateRoleRequestInput:
     r"""The UpdateRoleRequest message contains the role to update and the update mask."""
     role: Optional[shared_role.RoleInput] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('role'), 'exclude': lambda f: f is None }})
     r"""Role is a role that can be assigned to a user in ConductorOne."""
-    update_mask: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('updateMask'), 'exclude': lambda f: f is None }})
+    update_mask: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('updateMask') }})
     
 

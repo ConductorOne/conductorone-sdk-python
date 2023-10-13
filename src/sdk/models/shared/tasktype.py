@@ -21,11 +21,11 @@ class TaskTypeInput:
       - revoke
       - certify
     """
-    task_type_certify: Optional[shared_tasktypecertify.TaskTypeCertifyInput] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('certify'), 'exclude': lambda f: f is None }})
+    task_type_certify: Optional[shared_tasktypecertify.TaskTypeCertifyInput] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('certify') }})
     r"""The TaskTypeCertify message indicates that a task is a certify task and all related details."""
-    task_type_grant: Optional[shared_tasktypegrant.TaskTypeGrantInput] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('grant'), 'exclude': lambda f: f is None }})
+    task_type_grant: Optional[shared_tasktypegrant.TaskTypeGrantInput] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('grant') }})
     r"""The TaskTypeGrant message indicates that a task is a grant task and all related details."""
-    task_type_revoke: Optional[shared_tasktyperevoke.TaskTypeRevokeInput] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('revoke'), 'exclude': lambda f: f is None }})
+    task_type_revoke: Optional[shared_tasktyperevoke.TaskTypeRevokeInput] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('revoke') }})
     r"""The TaskTypeRevoke message indicates that a task is a revoke task and all related details."""
     
 
@@ -42,11 +42,11 @@ class TaskType:
       - revoke
       - certify
     """
-    task_type_certify: Optional[shared_tasktypecertify.TaskTypeCertify] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('certify'), 'exclude': lambda f: f is None }})
+    task_type_certify: Optional[shared_tasktypecertify.TaskTypeCertify] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('certify') }})
     r"""The TaskTypeCertify message indicates that a task is a certify task and all related details."""
-    task_type_grant: Optional[shared_tasktypegrant.TaskTypeGrant] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('grant'), 'exclude': lambda f: f is None }})
+    task_type_grant: Optional[shared_tasktypegrant.TaskTypeGrant] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('grant') }})
     r"""The TaskTypeGrant message indicates that a task is a grant task and all related details."""
-    task_type_revoke: Optional[shared_tasktyperevoke.TaskTypeRevoke] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('revoke'), 'exclude': lambda f: f is None }})
+    task_type_revoke: Optional[shared_tasktyperevoke.TaskTypeRevoke] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('revoke') }})
     r"""The TaskTypeRevoke message indicates that a task is a revoke task and all related details."""
     
 

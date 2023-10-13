@@ -13,7 +13,7 @@ from typing import Optional
 @dataclasses.dataclass
 class FacetRangeItem:
     r"""The FacetRangeItem message."""
-    ranges: Optional[list[shared_facetrange.FacetRange]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('ranges'), 'exclude': lambda f: f is None }})
+    ranges: Optional[list[shared_facetrange.FacetRange]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('ranges') }})
     r"""An array of facet ranges."""
     
 

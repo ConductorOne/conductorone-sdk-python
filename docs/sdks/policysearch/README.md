@@ -1,4 +1,5 @@
 # PolicySearch
+(*policy_search*)
 
 ### Available Operations
 
@@ -22,17 +23,11 @@ s = sdk.SDK(
 )
 
 req = shared.SearchPoliciesRequest(
-    display_name='voluptas',
-    page_size=9903.45,
-    page_token='aperiam',
     policy_types=[
-        shared.SearchPoliciesRequestPolicyTypes.POLICY_TYPE_REVOKE,
+        shared.SearchPoliciesRequestPolicyTypes.POLICY_TYPE_GRANT,
     ],
-    query='quaerat',
     refs=[
-        shared.PolicyRef(
-            id='2dac7af5-15cc-4413-aa63-aae8d67864db',
-        ),
+        shared.PolicyRef(),
     ],
 )
 
@@ -40,6 +35,7 @@ res = s.policy_search.search(req)
 
 if res.list_policy_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters

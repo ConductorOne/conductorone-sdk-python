@@ -21,7 +21,7 @@ class AppResourceType:
         url = utils.generate_url(operations.C1APIAppV1AppResourceTypeServiceGetRequest, base_url, '/api/v1/apps/{app_id}/resource_types/{id}', request)
         headers = {}
         headers['Accept'] = 'application/json'
-        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
+        headers['user-agent'] = self.sdk_configuration.user_agent
         
         client = self.sdk_configuration.security_client
         
@@ -52,7 +52,7 @@ class AppResourceType:
         headers = {}
         query_params = utils.get_query_params(operations.C1APIAppV1AppResourceTypeServiceListRequest, request)
         headers['Accept'] = 'application/json'
-        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
+        headers['user-agent'] = self.sdk_configuration.user_agent
         
         client = self.sdk_configuration.security_client
         

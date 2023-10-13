@@ -1,4 +1,5 @@
 # Task
+(*task*)
 
 ### Available Operations
 
@@ -26,26 +27,19 @@ s = sdk.SDK(
 req = shared.TaskServiceCreateGrantRequest(
     task_expand_mask=shared.TaskExpandMask(
         paths=[
-            'cum',
+            'Northwest',
         ],
     ),
-    task_grant_source=shared.TaskGrantSource(
-        external_url='iure',
-        integration_id='necessitatibus',
-    ),
-    app_entitlement_id='ratione',
-    app_id='laborum',
-    app_user_id='distinctio',
-    description='voluptatum',
-    emergency_access=False,
-    grant_duration='rem',
-    identity_user_id='aliquam',
+    task_grant_source=shared.TaskGrantSource(),
+    app_entitlement_id='barring',
+    app_id='vote Tuna Florida',
 )
 
 res = s.task.create_grant_task(req)
 
 if res.task_service_create_grant_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -80,20 +74,18 @@ s = sdk.SDK(
 req = shared.TaskServiceCreateRevokeRequest(
     task_expand_mask=shared.TaskExpandMask(
         paths=[
-            'ad',
+            'tame',
         ],
     ),
-    app_entitlement_id='repellat',
-    app_id='alias',
-    app_user_id='corporis',
-    description='perspiciatis',
-    identity_user_id='nihil',
+    app_entitlement_id='Arab cultivate Clothing',
+    app_id='Southwest',
 )
 
 res = s.task.create_revoke_task(req)
 
 if res.task_service_create_revoke_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -126,13 +118,14 @@ s = sdk.SDK(
 )
 
 req = operations.C1APITaskV1TaskServiceGetRequest(
-    id='a60ff2a5-4a31-4e94-b64a-3e865e7956f9',
+    id='<ID>',
 )
 
 res = s.task.get(req)
 
 if res.task_service_get_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters

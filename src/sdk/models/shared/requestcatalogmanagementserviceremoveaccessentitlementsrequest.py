@@ -15,7 +15,7 @@ class RequestCatalogManagementServiceRemoveAccessEntitlementsRequest:
     r"""The RequestCatalogManagementServiceRemoveAccessEntitlementsRequest message is used to remove access entitlements from a request catalog.
      The access entitlements are used to determine which users can view the request catalog.
     """
-    access_entitlements: Optional[list[shared_appentitlementref.AppEntitlementRef]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('accessEntitlements'), 'exclude': lambda f: f is None }})
+    access_entitlements: Optional[list[shared_appentitlementref.AppEntitlementRef]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('accessEntitlements') }})
     r"""The list of access entitlements to remove from the catalog."""
     
 

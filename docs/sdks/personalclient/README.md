@@ -1,4 +1,5 @@
 # PersonalClient
+(*personal_client*)
 
 ### Available Operations
 
@@ -23,12 +24,10 @@ s = sdk.SDK(
 
 req = shared.PersonalClientServiceCreateRequest(
     allow_source_cidr=[
-        'minima',
+        'neural',
     ],
-    display_name='nisi',
-    expires='fugit',
     scoped_roles=[
-        'sapiente',
+        'Tasty',
     ],
 )
 
@@ -36,6 +35,7 @@ res = s.personal_client.create(req)
 
 if res.personal_client_service_create_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters

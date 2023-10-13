@@ -36,7 +36,7 @@ class AppEntitlement:
     r"""The ID of the app resource type that is associated with the app entitlement"""
     certify_policy_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('certifyPolicyId'), 'exclude': lambda f: f is None }})
     r"""The ID of the policy that will be used for certify tickets related to the app entitlement."""
-    compliance_framework_value_ids: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('complianceFrameworkValueIds'), 'exclude': lambda f: f is None }})
+    compliance_framework_value_ids: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('complianceFrameworkValueIds') }})
     r"""The IDs of different compliance frameworks associated with this app entitlement ex (SOX, HIPAA, PCI, etc.)"""
     created_at: Optional[datetime] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('createdAt'), 'encoder': utils.datetimeisoformat(True), 'decoder': dateutil.parser.isoparse, 'exclude': lambda f: f is None }})
     deleted_at: Optional[datetime] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('deletedAt'), 'encoder': utils.datetimeisoformat(True), 'decoder': dateutil.parser.isoparse, 'exclude': lambda f: f is None }})
@@ -45,7 +45,7 @@ class AppEntitlement:
     display_name: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('displayName'), 'exclude': lambda f: f is None }})
     r"""The display name of the app entitlement."""
     duration_grant: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('durationGrant'), 'exclude': lambda f: f is None }})
-    duration_unset: Optional[AppEntitlementDurationUnset] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('durationUnset'), 'exclude': lambda f: f is None }})
+    duration_unset: Optional[AppEntitlementDurationUnset] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('durationUnset') }})
     emergency_grant_enabled: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('emergencyGrantEnabled'), 'exclude': lambda f: f is None }})
     r"""This enables tasks to be created in an emergency and use a selected emergency access policy."""
     emergency_grant_policy_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('emergencyGrantPolicyId'), 'exclude': lambda f: f is None }})
@@ -95,14 +95,14 @@ class AppEntitlementInput:
     r"""The ID of the app resource type that is associated with the app entitlement"""
     certify_policy_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('certifyPolicyId'), 'exclude': lambda f: f is None }})
     r"""The ID of the policy that will be used for certify tickets related to the app entitlement."""
-    compliance_framework_value_ids: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('complianceFrameworkValueIds'), 'exclude': lambda f: f is None }})
+    compliance_framework_value_ids: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('complianceFrameworkValueIds') }})
     r"""The IDs of different compliance frameworks associated with this app entitlement ex (SOX, HIPAA, PCI, etc.)"""
     description: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('description'), 'exclude': lambda f: f is None }})
     r"""The description of the app entitlement."""
     display_name: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('displayName'), 'exclude': lambda f: f is None }})
     r"""The display name of the app entitlement."""
     duration_grant: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('durationGrant'), 'exclude': lambda f: f is None }})
-    duration_unset: Optional[AppEntitlementDurationUnset] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('durationUnset'), 'exclude': lambda f: f is None }})
+    duration_unset: Optional[AppEntitlementDurationUnset] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('durationUnset') }})
     emergency_grant_enabled: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('emergencyGrantEnabled'), 'exclude': lambda f: f is None }})
     r"""This enables tasks to be created in an emergency and use a selected emergency access policy."""
     emergency_grant_policy_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('emergencyGrantPolicyId'), 'exclude': lambda f: f is None }})

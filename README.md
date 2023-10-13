@@ -31,22 +31,22 @@ if res.app_entitlement_search_service_search_response is not None:
 ## Available Resources and Operations
 
 
-### [AppEntitlementOwners](docs/sdks/appentitlementowners/README.md)
+### [app_entitlement_owners](docs/sdks/appentitlementowners/README.md)
 
 * [add](docs/sdks/appentitlementowners/README.md#add) - Add
 * [list](docs/sdks/appentitlementowners/README.md#list) - List
 * [remove](docs/sdks/appentitlementowners/README.md#remove) - Remove
 * [set](docs/sdks/appentitlementowners/README.md#set) - Set
 
-### [AppEntitlementSearch](docs/sdks/appentitlementsearch/README.md)
+### [app_entitlement_search](docs/sdks/appentitlementsearch/README.md)
 
 * [search](docs/sdks/appentitlementsearch/README.md#search) - Search
 
-### [AppEntitlementUserBinding](docs/sdks/appentitlementuserbinding/README.md)
+### [app_entitlement_user_binding](docs/sdks/appentitlementuserbinding/README.md)
 
 * [list_app_users_for_identity_with_grant](docs/sdks/appentitlementuserbinding/README.md#list_app_users_for_identity_with_grant) - List App Users For Identity With Grant
 
-### [AppEntitlements](docs/sdks/appentitlements/README.md)
+### [app_entitlements](docs/sdks/appentitlements/README.md)
 
 * [get](docs/sdks/appentitlements/README.md#get) - Get
 * [list](docs/sdks/appentitlements/README.md#list) - List
@@ -55,52 +55,52 @@ if res.app_entitlement_search_service_search_response is not None:
 * [list_users](docs/sdks/appentitlements/README.md#list_users) - List Users
 * [update](docs/sdks/appentitlements/README.md#update) - Update
 
-### [AppOwners](docs/sdks/appowners/README.md)
+### [app_owners](docs/sdks/appowners/README.md)
 
 * [add](docs/sdks/appowners/README.md#add) - Add
 * [list](docs/sdks/appowners/README.md#list) - List
 * [remove](docs/sdks/appowners/README.md#remove) - Remove
 
-### [AppReport](docs/sdks/appreport/README.md)
+### [app_report](docs/sdks/appreport/README.md)
 
 * [list](docs/sdks/appreport/README.md#list) - List
 
-### [AppReportAction](docs/sdks/appreportaction/README.md)
+### [app_report_action](docs/sdks/appreportaction/README.md)
 
 * [generate_report](docs/sdks/appreportaction/README.md#generate_report) - Generate Report
 
-### [AppResource](docs/sdks/appresource/README.md)
+### [app_resource](docs/sdks/appresource/README.md)
 
 * [get](docs/sdks/appresource/README.md#get) - Get
 * [list](docs/sdks/appresource/README.md#list) - List
 
-### [AppResourceOwners](docs/sdks/appresourceowners/README.md)
+### [app_resource_owners](docs/sdks/appresourceowners/README.md)
 
 * [list](docs/sdks/appresourceowners/README.md#list) - List
 
-### [AppResourceSearch](docs/sdks/appresourcesearch/README.md)
+### [app_resource_search](docs/sdks/appresourcesearch/README.md)
 
 * [search_app_resource_types](docs/sdks/appresourcesearch/README.md#search_app_resource_types) - Search App Resource Types
 
-### [AppResourceType](docs/sdks/appresourcetype/README.md)
+### [app_resource_type](docs/sdks/appresourcetype/README.md)
 
 * [get](docs/sdks/appresourcetype/README.md#get) - Get
 * [list](docs/sdks/appresourcetype/README.md#list) - List
 
-### [AppSearch](docs/sdks/appsearch/README.md)
+### [app_search](docs/sdks/appsearch/README.md)
 
 * [search](docs/sdks/appsearch/README.md#search) - Search
 
-### [AppUsageControls](docs/sdks/appusagecontrols/README.md)
+### [app_usage_controls](docs/sdks/appusagecontrols/README.md)
 
 * [get](docs/sdks/appusagecontrols/README.md#get) - Get
 * [update](docs/sdks/appusagecontrols/README.md#update) - Update
 
-### [AppUser](docs/sdks/appuser/README.md)
+### [app_user](docs/sdks/appuser/README.md)
 
 * [update](docs/sdks/appuser/README.md#update) - Update
 
-### [Apps](docs/sdks/apps/README.md)
+### [apps](docs/sdks/apps/README.md)
 
 * [create](docs/sdks/apps/README.md#create) - Create
 * [delete](docs/sdks/apps/README.md#delete) - Delete
@@ -108,11 +108,11 @@ if res.app_entitlement_search_service_search_response is not None:
 * [list](docs/sdks/apps/README.md#list) - List
 * [update](docs/sdks/apps/README.md#update) - Update
 
-### [AttributeSearch](docs/sdks/attributesearch/README.md)
+### [attribute_search](docs/sdks/attributesearch/README.md)
 
 * [search_attribute_values](docs/sdks/attributesearch/README.md#search_attribute_values) - Search Attribute Values
 
-### [Attributes](docs/sdks/attributes/README.md)
+### [attributes](docs/sdks/attributes/README.md)
 
 * [create_attribute_value](docs/sdks/attributes/README.md#create_attribute_value) - Create Attribute Value
 * [delete_attribute_value](docs/sdks/attributes/README.md#delete_attribute_value) - Delete Attribute Value
@@ -120,11 +120,11 @@ if res.app_entitlement_search_service_search_response is not None:
 * [list_attribute_types](docs/sdks/attributes/README.md#list_attribute_types) - List Attribute Types
 * [list_attribute_values](docs/sdks/attributes/README.md#list_attribute_values) - List Attribute Values
 
-### [Auth](docs/sdks/auth/README.md)
+### [auth](docs/sdks/auth/README.md)
 
 * [introspect](docs/sdks/auth/README.md#introspect) - Introspect
 
-### [Connector](docs/sdks/connector/README.md)
+### [connector](docs/sdks/connector/README.md)
 
 * [create](docs/sdks/connector/README.md#create) - Create
 * [create_delegated](docs/sdks/connector/README.md#create_delegated) - Create Delegated
@@ -137,18 +137,18 @@ if res.app_entitlement_search_service_search_response is not None:
 * [update](docs/sdks/connector/README.md#update) - Update
 * [update_delegated](docs/sdks/connector/README.md#update_delegated) - Update Delegated
 
-### [Directory](docs/sdks/directory/README.md)
+### [directory](docs/sdks/directory/README.md)
 
 * [create](docs/sdks/directory/README.md#create) - Create
 * [delete](docs/sdks/directory/README.md#delete) - Delete
 * [get](docs/sdks/directory/README.md#get) - Get
 * [list](docs/sdks/directory/README.md#list) - List
 
-### [PersonalClient](docs/sdks/personalclient/README.md)
+### [personal_client](docs/sdks/personalclient/README.md)
 
 * [create](docs/sdks/personalclient/README.md#create) - Create
 
-### [Policies](docs/sdks/policies/README.md)
+### [policies](docs/sdks/policies/README.md)
 
 * [create](docs/sdks/policies/README.md#create) - Create
 * [delete](docs/sdks/policies/README.md#delete) - Delete
@@ -156,11 +156,11 @@ if res.app_entitlement_search_service_search_response is not None:
 * [list](docs/sdks/policies/README.md#list) - List
 * [update](docs/sdks/policies/README.md#update) - Update
 
-### [PolicySearch](docs/sdks/policysearch/README.md)
+### [policy_search](docs/sdks/policysearch/README.md)
 
 * [search](docs/sdks/policysearch/README.md#search) - Search
 
-### [RequestCatalogManagement](docs/sdks/requestcatalogmanagement/README.md)
+### [request_catalog_management](docs/sdks/requestcatalogmanagement/README.md)
 
 * [add_access_entitlements](docs/sdks/requestcatalogmanagement/README.md#add_access_entitlements) - Add Access Entitlements
 * [add_app_entitlements](docs/sdks/requestcatalogmanagement/README.md#add_app_entitlements) - Add App Entitlements
@@ -174,39 +174,39 @@ if res.app_entitlement_search_service_search_response is not None:
 * [remove_app_entitlements](docs/sdks/requestcatalogmanagement/README.md#remove_app_entitlements) - Remove App Entitlements
 * [update](docs/sdks/requestcatalogmanagement/README.md#update) - Update
 
-### [RequestCatalogSearch](docs/sdks/requestcatalogsearch/README.md)
+### [request_catalog_search](docs/sdks/requestcatalogsearch/README.md)
 
 * [search_entitlements](docs/sdks/requestcatalogsearch/README.md#search_entitlements) - Search Entitlements
 
-### [Roles](docs/sdks/roles/README.md)
+### [roles](docs/sdks/roles/README.md)
 
 * [get](docs/sdks/roles/README.md#get) - Get
 * [list](docs/sdks/roles/README.md#list) - List
 * [update](docs/sdks/roles/README.md#update) - Update
 
-### [Task](docs/sdks/task/README.md)
+### [task](docs/sdks/task/README.md)
 
 * [create_grant_task](docs/sdks/task/README.md#create_grant_task) - Create Grant Task
 * [create_revoke_task](docs/sdks/task/README.md#create_revoke_task) - Create Revoke Task
 * [get](docs/sdks/task/README.md#get) - Get
 
-### [TaskActions](docs/sdks/taskactions/README.md)
+### [task_actions](docs/sdks/taskactions/README.md)
 
 * [approve](docs/sdks/taskactions/README.md#approve) - Approve
 * [comment](docs/sdks/taskactions/README.md#comment) - Comment
 * [deny](docs/sdks/taskactions/README.md#deny) - Deny
 * [escalate_to_emergency_access](docs/sdks/taskactions/README.md#escalate_to_emergency_access) - Escalate To Emergency Access
 
-### [TaskSearch](docs/sdks/tasksearch/README.md)
+### [task_search](docs/sdks/tasksearch/README.md)
 
 * [search](docs/sdks/tasksearch/README.md#search) - Search
 
-### [User](docs/sdks/user/README.md)
+### [user](docs/sdks/user/README.md)
 
 * [get](docs/sdks/user/README.md#get) - Get
 * [list](docs/sdks/user/README.md#list) - List
 
-### [UserSearch](docs/sdks/usersearch/README.md)
+### [user_search](docs/sdks/usersearch/README.md)
 
 * [search](docs/sdks/usersearch/README.md#search) - Search
 <!-- End SDK Available Operations -->
@@ -215,8 +215,6 @@ if res.app_entitlement_search_service_search_response is not None:
 
 
 <!-- Start Dev Containers -->
-
-
 
 <!-- End Dev Containers -->
 
@@ -230,8 +228,6 @@ returned response object will have a `Next` method that can be called to pull do
 return value of `Next` is `None`, then there are no more pages to be fetched.
 
 Here's an example of one such pagination call:
-
-
 <!-- End Pagination -->
 
 <!-- Placeholder for Future Speakeasy SDK Sections -->

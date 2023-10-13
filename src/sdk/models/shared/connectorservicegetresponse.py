@@ -15,7 +15,7 @@ class ConnectorServiceGetResponse:
     r"""The ConnectorServiceGetResponse message contains the connectorView, and an expand mask."""
     connector_view: Optional[shared_connectorview.ConnectorView] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('connectorView'), 'exclude': lambda f: f is None }})
     r"""The ConnectorView object provides a connector response object, as well as JSONPATHs to related objects provided by expanders."""
-    expanded: Optional[list[dict[str, Any]]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('expanded'), 'exclude': lambda f: f is None }})
+    expanded: Optional[list[dict[str, Any]]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('expanded') }})
     r"""The array of expanded items indicated by the request."""
     
 

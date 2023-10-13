@@ -1,4 +1,5 @@
 # Attributes
+(*attributes*)
 
 ### Available Operations
 
@@ -25,15 +26,13 @@ s = sdk.SDK(
     ),
 )
 
-req = shared.CreateAttributeValueRequest(
-    attribute_type_id='occaecati',
-    value='rerum',
-)
+req = shared.CreateAttributeValueRequest()
 
 res = s.attributes.create_attribute_value(req)
 
 if res.create_attribute_value_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -67,13 +66,14 @@ s = sdk.SDK(
 
 req = operations.C1APIAttributeV1AttributesDeleteAttributeValueRequest(
     delete_attribute_value_request=shared.DeleteAttributeValueRequest(),
-    id='3fe49a8d-9cbf-4486-b332-3f9b77f3a410',
+    id='<ID>',
 )
 
 res = s.attributes.delete_attribute_value(req)
 
 if res.delete_attribute_value_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -106,13 +106,14 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIAttributeV1AttributesGetAttributeValueRequest(
-    id='0674ebf6-9280-4d1b-a77a-89ebf737ae42',
+    id='<ID>',
 )
 
 res = s.attributes.get_attribute_value(req)
 
 if res.get_attribute_value_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -144,15 +145,13 @@ s = sdk.SDK(
     ),
 )
 
-req = operations.C1APIAttributeV1AttributesListAttributeTypesRequest(
-    page_size=206.51,
-    page_token='amet',
-)
+req = operations.C1APIAttributeV1AttributesListAttributeTypesRequest()
 
 res = s.attributes.list_attribute_types(req)
 
 if res.list_attribute_types_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -185,15 +184,14 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIAttributeV1AttributesListAttributeValuesRequest(
-    attribute_type_id='optio',
-    page_size=8815.86,
-    page_token='ad',
+    attribute_type_id='trot markets',
 )
 
 res = s.attributes.list_attribute_values(req)
 
 if res.list_attribute_values_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters

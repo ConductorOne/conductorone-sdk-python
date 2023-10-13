@@ -21,7 +21,7 @@ class AppEntitlementUserBinding:
         url = utils.generate_url(operations.C1APIAppV1AppEntitlementUserBindingServiceListAppUsersForIdentityWithGrantRequest, base_url, '/api/v1/apps/{app_id}/entitlements/{app_entitlement_id}/users/{identity_user_id}/grants', request)
         headers = {}
         headers['Accept'] = 'application/json'
-        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
+        headers['user-agent'] = self.sdk_configuration.user_agent
         
         client = self.sdk_configuration.security_client
         

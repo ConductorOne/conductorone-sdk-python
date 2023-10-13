@@ -1,4 +1,5 @@
 # AppEntitlementSearch
+(*app_entitlement_search*)
 
 ### Available Operations
 
@@ -24,36 +25,29 @@ s = sdk.SDK(
 req = shared.AppEntitlementSearchServiceSearchRequest(
     app_entitlement_expand_mask=shared.AppEntitlementExpandMask(
         paths=[
-            'molestiae',
+            'transition',
         ],
     ),
-    access_review_id='minus',
-    alias='placeat',
     app_ids=[
-        'voluptatum',
+        'turquoise',
     ],
     app_user_ids=[
-        'iusto',
+        'Hyundai',
     ],
     compliance_framework_ids=[
-        'excepturi',
+        'Future',
     ],
     exclude_app_ids=[
-        'nisi',
+        'Southwest',
     ],
     exclude_app_user_ids=[
-        'recusandae',
+        'broach',
     ],
-    include_deleted=False,
-    only_get_expiring=False,
-    page_size=8360.79,
-    page_token='ab',
-    query='quis',
     resource_type_ids=[
-        'veritatis',
+        'dependent',
     ],
     risk_level_ids=[
-        'deserunt',
+        'Mozambique',
     ],
 )
 
@@ -61,6 +55,7 @@ res = s.app_entitlement_search.search(req)
 
 if res.app_entitlement_search_service_search_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters

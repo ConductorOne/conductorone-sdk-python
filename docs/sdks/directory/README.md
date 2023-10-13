@@ -1,4 +1,5 @@
 # Directory
+(*directory*)
 
 ### Available Operations
 
@@ -27,16 +28,16 @@ s = sdk.SDK(
 req = shared.DirectoryServiceCreateRequest(
     directory_expand_mask=shared.DirectoryExpandMask(
         paths=[
-            'fugit',
+            'neural',
         ],
     ),
-    app_id='fuga',
 )
 
 res = s.directory.create(req)
 
 if res.directory_service_create_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -70,13 +71,14 @@ s = sdk.SDK(
 
 req = operations.C1APIDirectoryV1DirectoryServiceDeleteRequest(
     directory_service_delete_request=shared.DirectoryServiceDeleteRequest(),
-    app_id='mollitia',
+    app_id='Architect Cotton port',
 )
 
 res = s.directory.delete(req)
 
 if res.directory_service_delete_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -109,13 +111,14 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIDirectoryV1DirectoryServiceGetRequest(
-    app_id='incidunt',
+    app_id='Group Cambridgeshire',
 )
 
 res = s.directory.get(req)
 
 if res.directory_service_get_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -147,15 +150,13 @@ s = sdk.SDK(
     ),
 )
 
-req = operations.C1APIDirectoryV1DirectoryServiceListRequest(
-    page_size=5392.24,
-    page_token='explicabo',
-)
+req = operations.C1APIDirectoryV1DirectoryServiceListRequest()
 
 res = s.directory.list(req)
 
 if res.directory_service_list_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters

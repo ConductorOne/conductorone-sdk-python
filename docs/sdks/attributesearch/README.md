@@ -1,4 +1,5 @@
 # AttributeSearch
+(*attribute_search*)
 
 ### Available Operations
 
@@ -23,24 +24,21 @@ s = sdk.SDK(
 
 req = shared.SearchAttributeValuesRequest(
     attribute_type_ids=[
-        'perspiciatis',
+        'Specialist',
     ],
     exclude_ids=[
-        'voluptatem',
+        'generation',
     ],
     ids=[
-        'porro',
+        'connecting',
     ],
-    page_size=1646.94,
-    page_token='blanditiis',
-    query='error',
-    value='eaque',
 )
 
 res = s.attribute_search.search_attribute_values(req)
 
 if res.search_attribute_values_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters

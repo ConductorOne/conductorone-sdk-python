@@ -1,4 +1,5 @@
 # AppResourceOwners
+(*app_resource_owners*)
 
 ### Available Operations
 
@@ -22,17 +23,16 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIAppV1AppResourceOwnersListRequest(
-    app_id='est',
-    page_size=8423.42,
-    page_token='explicabo',
-    resource_id='deserunt',
-    resource_type_id='distinctio',
+    app_id='Bronze Architect',
+    resource_id='Southeast Soap katal',
+    resource_type_id='West East',
 )
 
 res = s.app_resource_owners.list(req)
 
 if res.list_app_resource_owners_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters

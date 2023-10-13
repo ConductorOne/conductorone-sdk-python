@@ -15,7 +15,7 @@ class AppUserServiceUpdateResponse:
     r"""The AppUserServiceUpdateResponse message."""
     app_user_view: Optional[shared_appuserview.AppUserView] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('appUserView'), 'exclude': lambda f: f is None }})
     r"""The AppUserView contains an app user as well as paths for apps, identity users, and last usage in expanded arrays."""
-    expanded: Optional[list[dict[str, Any]]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('expanded'), 'exclude': lambda f: f is None }})
+    expanded: Optional[list[dict[str, Any]]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('expanded') }})
     r"""The expanded field."""
     
 

@@ -15,7 +15,7 @@ class Facets:
     r"""Indicates one value of a facet."""
     count: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('count'), 'exclude': lambda f: f is None }})
     r"""The count of items in this facet."""
-    facets: Optional[list[shared_facetcategory.FacetCategory]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('facets'), 'exclude': lambda f: f is None }})
+    facets: Optional[list[shared_facetcategory.FacetCategory]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('facets') }})
     r"""The facet being referenced."""
     
 

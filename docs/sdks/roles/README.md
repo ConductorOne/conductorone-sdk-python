@@ -1,4 +1,5 @@
 # Roles
+(*roles*)
 
 ### Available Operations
 
@@ -24,13 +25,14 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIIamV1RolesGetRequest(
-    role_id='doloremque',
+    role_id='Group Cambridgeshire',
 )
 
 res = s.roles.get(req)
 
 if res.get_roles_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -62,15 +64,13 @@ s = sdk.SDK(
     ),
 )
 
-req = operations.C1APIIamV1RolesListRequest(
-    page_size=4341.56,
-    page_token='ipsa',
-)
+req = operations.C1APIIamV1RolesListRequest()
 
 res = s.roles.list(req)
 
 if res.list_roles_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -105,23 +105,22 @@ s = sdk.SDK(
 req = operations.C1APIIamV1RolesUpdateRequest(
     update_role_request_input=shared.UpdateRoleRequestInput(
         role=shared.RoleInput(
-            display_name='totam',
             permissions=[
-                'quae',
+                'up',
             ],
             service_roles=[
-                'molestiae',
+                'complexity',
             ],
         ),
-        update_mask='eveniet',
     ),
-    role_id='qui',
+    role_id='Tempe Ruble ADP',
 )
 
 res = s.roles.update(req)
 
 if res.update_roles_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
