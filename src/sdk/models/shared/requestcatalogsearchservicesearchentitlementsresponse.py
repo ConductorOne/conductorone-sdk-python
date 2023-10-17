@@ -14,9 +14,9 @@ from typing import Any, Optional
 class RequestCatalogSearchServiceSearchEntitlementsResponse:
     r"""The RequestCatalogSearchServiceSearchEntitlementsResponse message contains a list of results and a nextPageToken if applicable."""
     expanded: Optional[list[dict[str, Any]]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('expanded') }})
-    r"""The list of results containing up to X results, where X is the page size defined in the request."""
-    list_: Optional[list[shared_appentitlementwithuserbindings.AppEntitlementWithUserBindings]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('list') }})
     r"""List of serialized related objects."""
+    list_: Optional[list[shared_appentitlementwithuserbindings.AppEntitlementWithUserBindings]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('list') }})
+    r"""The list of results containing up to X results, where X is the page size defined in the request."""
     next_page_token: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('nextPageToken'), 'exclude': lambda f: f is None }})
     r"""The nextPageToken is shown for the next page if the number of results is larger than the max page size.
      The server returns one page of results and the nextPageToken until all results are retreived.

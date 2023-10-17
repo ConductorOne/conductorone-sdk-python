@@ -60,6 +60,8 @@ class User:
     r"""The display name of the user."""
     email: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('email'), 'exclude': lambda f: f is None }})
     r"""This is the user's email."""
+    emails: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('emails') }})
+    r"""This is a list of all of the user's emails from app users."""
     employment_status: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('employmentStatus'), 'exclude': lambda f: f is None }})
     r"""The users employment status."""
     employment_status_sources: Optional[list[shared_userattributemappingsource.UserAttributeMappingSource]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('employmentStatusSources') }})
@@ -84,5 +86,9 @@ class User:
     status: Optional[UserStatus] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status'), 'exclude': lambda f: f is None }})
     r"""The status of the user in the system."""
     updated_at: Optional[datetime] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('updatedAt'), 'encoder': utils.datetimeisoformat(True), 'decoder': dateutil.parser.isoparse, 'exclude': lambda f: f is None }})
+    username: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('username'), 'exclude': lambda f: f is None }})
+    r"""This is the user's primary username. Typically sourced from the primary directory."""
+    usernames: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('usernames') }})
+    r"""This is a list of all of the user's usernames from app users."""
     
 
