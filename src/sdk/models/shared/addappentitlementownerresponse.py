@@ -4,7 +4,6 @@ from __future__ import annotations
 import dataclasses
 
 
-
 @dataclasses.dataclass
 class AddAppEntitlementOwnerResponse:
     r"""The empty response message for adding an app entitlement owner."""

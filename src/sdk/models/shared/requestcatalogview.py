@@ -9,7 +9,6 @@ from typing import Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class RequestCatalogView:
     r"""The request catalog view contains the serialized request catalog and paths to objects referenced by the request catalog."""

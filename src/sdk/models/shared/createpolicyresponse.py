@@ -9,7 +9,6 @@ from typing import Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class CreatePolicyResponse:
     r"""The CreatePolicyResponse message contains the created policy object."""

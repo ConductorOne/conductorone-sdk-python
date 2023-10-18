@@ -7,7 +7,6 @@ from ..shared import taskservicecreaterevokeresponse as shared_taskservicecreate
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class C1APITaskV1TaskServiceCreateRevokeTaskResponse:
     content_type: str = dataclasses.field()

@@ -8,14 +8,12 @@ from typing import Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class AppOwnerApproval:
     r"""App owner approval provides the configuration for an approval step when the app owner is the target."""
     allow_self_approval: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('allowSelfApproval'), 'exclude': lambda f: f is None }})
     r"""Configuration that allows a user to self approve if they are an app owner during this approval step."""
     
-
 
 
 

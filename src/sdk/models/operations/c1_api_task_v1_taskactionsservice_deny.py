@@ -8,13 +8,11 @@ from ..shared import taskactionsservicedenyresponse as shared_taskactionsservice
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class C1APITaskV1TaskActionsServiceDenyRequest:
     task_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'task_id', 'style': 'simple', 'explode': False }})
     task_actions_service_deny_request: Optional[shared_taskactionsservicedenyrequest.TaskActionsServiceDenyRequest] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})
     
-
 
 
 

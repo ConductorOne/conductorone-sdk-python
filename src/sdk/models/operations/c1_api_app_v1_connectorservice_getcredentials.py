@@ -7,14 +7,12 @@ from ..shared import connectorservicegetcredentialsresponse as shared_connectors
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class C1APIAppV1ConnectorServiceGetCredentialsRequest:
     app_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'app_id', 'style': 'simple', 'explode': False }})
     connector_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'connector_id', 'style': 'simple', 'explode': False }})
     id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'id', 'style': 'simple', 'explode': False }})
     
-
 
 
 

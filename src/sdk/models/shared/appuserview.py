@@ -9,7 +9,6 @@ from typing import Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class AppUserView:
     r"""The AppUserView contains an app user as well as paths for apps, identity users, and last usage in expanded arrays."""

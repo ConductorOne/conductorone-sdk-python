@@ -4,7 +4,6 @@ from __future__ import annotations
 import dataclasses
 
 
-
 @dataclasses.dataclass
 class DirectoryServiceDeleteRequest:
     r"""DirectoryServiceDeleteRequest is the request message for deleting a directory. It uses URL values for input."""

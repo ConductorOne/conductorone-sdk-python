@@ -28,7 +28,7 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIAppV1AppEntitlementsGetRequest(
-    app_id='Group Cambridgeshire',
+    app_id='motivating',
     id='<ID>',
 )
 
@@ -69,7 +69,7 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIAppV1AppEntitlementsListRequest(
-    app_id='Bronze Architect',
+    app_id='Future',
 )
 
 res = s.app_entitlements.list(req)
@@ -109,9 +109,9 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIAppV1AppEntitlementsListForAppResourceRequest(
-    app_id='SDD convergence',
-    app_resource_id='quis whether',
-    app_resource_type_id='Non',
+    app_id='person',
+    app_resource_id='convergence',
+    app_resource_type_id='area',
 )
 
 res = s.app_entitlements.list_for_app_resource(req)
@@ -151,8 +151,8 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIAppV1AppEntitlementsListForAppUserRequest(
-    app_id='Gardena payment Mountain',
-    app_user_id='Cruiser',
+    app_id='meter',
+    app_user_id='Monitored',
 )
 
 res = s.app_entitlements.list_for_app_user(req)
@@ -192,8 +192,8 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIAppV1AppEntitlementsListUsersRequest(
-    app_entitlement_id='yellow payment',
-    app_id='why Electric',
+    app_entitlement_id='invoice',
+    app_id='Northwest',
 )
 
 res = s.app_entitlements.list_users(req)
@@ -255,7 +255,7 @@ req = operations.C1APIAppV1AppEntitlementsUpdateRequest(
             ],
         ),
     ),
-    app_id='Ruble ADP Oregon',
+    app_id='less',
     id='<ID>',
 )
 

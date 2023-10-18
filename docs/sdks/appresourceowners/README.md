@@ -23,9 +23,9 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIAppV1AppResourceOwnersListRequest(
-    app_id='Bronze Architect',
-    resource_id='Southeast Soap katal',
-    resource_type_id='West East',
+    app_id='Future',
+    resource_id='Southeast',
+    resource_type_id='XML',
 )
 
 res = s.app_resource_owners.list(req)

@@ -9,7 +9,6 @@ from typing import Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class ConnectorServiceRotateCredentialResponse:
     r"""ConnectorServiceRotateCredentialResponse is the response returned by the rotate method."""

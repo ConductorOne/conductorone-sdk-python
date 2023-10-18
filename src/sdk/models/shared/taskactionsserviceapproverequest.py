@@ -9,7 +9,6 @@ from typing import Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class TaskActionsServiceApproveRequest:
     r"""The TaskActionsServiceApproveRequest object lets you approve a task."""
