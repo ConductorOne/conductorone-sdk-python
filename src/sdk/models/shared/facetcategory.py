@@ -10,7 +10,6 @@ from typing import Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class FacetCategory:
     r"""The FacetCategory indicates a grouping of facets by type. For example, facets \\"OnePassword\\" and \\"Okta\\" would group under an \\"Apps\\" category.

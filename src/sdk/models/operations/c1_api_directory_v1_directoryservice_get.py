@@ -7,12 +7,10 @@ from ..shared import directoryservicegetresponse as shared_directoryservicegetre
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class C1APIDirectoryV1DirectoryServiceGetRequest:
     app_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'app_id', 'style': 'simple', 'explode': False }})
     
-
 
 
 

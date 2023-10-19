@@ -7,4 +7,4 @@ The FacetValueItem message.
 
 | Field                                                 | Type                                                  | Required                                              | Description                                           |
 | ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- |
-| `values`                                              | list[[FacetValue](../../models/shared/facetvalue.md)] | :heavy_minus_sign:                                    | An array of facet values.                             |
+| `values`                                              | List[[FacetValue](../../models/shared/facetvalue.md)] | :heavy_minus_sign:                                    | An array of facet values.                             |

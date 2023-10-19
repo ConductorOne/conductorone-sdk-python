@@ -7,7 +7,6 @@ from ..shared import createappresponse as shared_createappresponse
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class C1APIAppV1AppsCreateResponse:
     content_type: str = dataclasses.field()

@@ -9,7 +9,8 @@ generation:
   singleTagPerOp: false
 features:
   python:
-    core: 2.88.6
+    additionalProperties: 0.1.0
+    core: 3.0.2
     globalSecurity: 2.82.0
     globalServerURLs: 2.82.0
     groups: 2.81.2

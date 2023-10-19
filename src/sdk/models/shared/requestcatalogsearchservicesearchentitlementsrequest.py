@@ -17,7 +17,6 @@ class RequestCatalogSearchServiceSearchEntitlementsRequestGrantedStatus(str, Enu
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class RequestCatalogSearchServiceSearchEntitlementsRequest:
     r"""The RequestCatalogSearchServiceSearchEntitlementsRequest searches entitlements, but only ones that are available to you through the open catalogs."""

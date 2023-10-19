@@ -8,7 +8,6 @@ from typing import Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class TaskRevokeSourceReview:
     r"""The TaskRevokeSourceReview message tracks which access review was the source of the specificed revoke ticket."""

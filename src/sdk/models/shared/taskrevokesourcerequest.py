@@ -8,7 +8,6 @@ from typing import Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class TaskRevokeSourceRequest:
     r"""The TaskRevokeSourceRequest message indicates that the source of the revoke task was a request."""

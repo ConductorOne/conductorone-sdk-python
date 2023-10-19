@@ -8,13 +8,11 @@ from ..shared import deleteattributevalueresponse as shared_deleteattributevalue
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class C1APIAttributeV1AttributesDeleteAttributeValueRequest:
     id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'id', 'style': 'simple', 'explode': False }})
     delete_attribute_value_request: Optional[shared_deleteattributevaluerequest.DeleteAttributeValueRequest] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})
     
-
 
 
 

@@ -19,7 +19,6 @@ class PolicyStepInstanceState(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PolicyStepInstance:
     r"""The policy step instance includes a reference to an instance of a policy step that tracks state and has a unique ID.

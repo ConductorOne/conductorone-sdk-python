@@ -23,7 +23,7 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIAppV1AppReportServiceListRequest(
-    app_id='Bronze Architect',
+    app_id='Future',
 )
 
 res = s.app_report.list(req)

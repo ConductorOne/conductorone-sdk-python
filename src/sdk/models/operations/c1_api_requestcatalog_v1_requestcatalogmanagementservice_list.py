@@ -7,7 +7,6 @@ from ..shared import requestcatalogmanagementservicelistresponse as shared_reque
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class C1APIRequestcatalogV1RequestCatalogManagementServiceListResponse:
     content_type: str = dataclasses.field()

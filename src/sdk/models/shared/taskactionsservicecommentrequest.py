@@ -9,7 +9,6 @@ from typing import Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class TaskActionsServiceCommentRequest:
     r"""The TaskActionsServiceCommentRequest object lets you create a new comment on a task."""

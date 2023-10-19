@@ -8,14 +8,12 @@ from ..shared import addappownerresponse as shared_addappownerresponse
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class C1APIAppV1AppOwnersAddRequest:
     app_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'app_id', 'style': 'simple', 'explode': False }})
     user_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'user_id', 'style': 'simple', 'explode': False }})
     add_app_owner_request: Optional[shared_addappownerrequest.AddAppOwnerRequest] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})
     
-
 
 
 

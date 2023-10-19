@@ -7,7 +7,6 @@ from ..shared import personalclientservicecreateresponse as shared_personalclien
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class C1APIIamV1PersonalClientServiceCreateResponse:
     content_type: str = dataclasses.field()

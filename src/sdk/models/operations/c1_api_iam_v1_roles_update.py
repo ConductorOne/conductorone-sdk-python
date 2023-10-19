@@ -8,13 +8,11 @@ from ..shared import updaterolesresponse as shared_updaterolesresponse
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class C1APIIamV1RolesUpdateRequest:
     role_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'role_id', 'style': 'simple', 'explode': False }})
     update_role_request_input: Optional[shared_updaterolerequest.UpdateRoleRequestInput] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})
     
-
 
 
 

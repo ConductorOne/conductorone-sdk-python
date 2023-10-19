@@ -9,7 +9,6 @@ from typing import Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class UpdateRolesResponse:
     r"""UpdateRolesResponse is the response message containing the updated role."""

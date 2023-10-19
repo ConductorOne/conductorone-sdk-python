@@ -8,13 +8,11 @@ from ..shared import updatepolicyresponse as shared_updatepolicyresponse
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class C1APIPolicyV1PoliciesUpdateRequest:
     id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'id', 'style': 'simple', 'explode': False }})
     update_policy_request_input: Optional[shared_updatepolicyrequest.UpdatePolicyRequestInput] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})
     
-
 
 
 

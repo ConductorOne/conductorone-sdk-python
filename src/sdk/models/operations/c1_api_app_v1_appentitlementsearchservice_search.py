@@ -7,7 +7,6 @@ from ..shared import appentitlementsearchservicesearchresponse as shared_appenti
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class C1APIAppV1AppEntitlementSearchServiceSearchResponse:
     content_type: str = dataclasses.field()

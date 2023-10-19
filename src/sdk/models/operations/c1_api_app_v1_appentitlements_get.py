@@ -7,13 +7,11 @@ from ..shared import getappentitlementresponse as shared_getappentitlementrespon
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class C1APIAppV1AppEntitlementsGetRequest:
     app_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'app_id', 'style': 'simple', 'explode': False }})
     id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'id', 'style': 'simple', 'explode': False }})
     
-
 
 
 
