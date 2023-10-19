@@ -4,7 +4,7 @@
 ## SDK Installation
 
 ```bash
-pip install git+https://github.com/ConductorOne/conductorone-sdk-python/.git
+pip install git+https://github.com/ConductorOne/conductorone-sdk-python.git
 ```
 <!-- End SDK Installation -->
 
