@@ -9,7 +9,6 @@ from typing import Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class UserView:
     r"""The UserView object provides a user response object, as well as JSONPATHs to related objects provided by expanders."""

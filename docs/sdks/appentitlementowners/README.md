@@ -27,8 +27,8 @@ s = sdk.SDK(
 
 req = operations.C1APIAppV1AppEntitlementOwnersAddRequest(
     add_app_entitlement_owner_request=shared.AddAppEntitlementOwnerRequest(),
-    app_id='Small West',
-    entitlement_id='Officer impactful',
+    app_id='program',
+    entitlement_id='North',
 )
 
 res = s.app_entitlement_owners.add(req)
@@ -68,8 +68,8 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIAppV1AppEntitlementOwnersListRequest(
-    app_id='Bronze Architect',
-    entitlement_id='Southeast Soap katal',
+    app_id='Future',
+    entitlement_id='Southeast',
 )
 
 res = s.app_entitlement_owners.list(req)
@@ -110,9 +110,9 @@ s = sdk.SDK(
 
 req = operations.C1APIAppV1AppEntitlementOwnersRemoveRequest(
     remove_app_entitlement_owner_request=shared.RemoveAppEntitlementOwnerRequest(),
-    app_id='SCSI',
-    entitlement_id='JBOD tan',
-    user_id='encompassing',
+    app_id='Optimization',
+    entitlement_id='JBOD',
+    user_id='tan',
 )
 
 res = s.app_entitlement_owners.remove(req)
@@ -157,8 +157,8 @@ req = operations.C1APIAppV1AppEntitlementOwnersSetRequest(
             'markets',
         ],
     ),
-    app_id='yahoo bandwidth',
-    entitlement_id='male microchip',
+    app_id='Non',
+    entitlement_id='bandwidth',
 )
 
 res = s.app_entitlement_owners.set(req)

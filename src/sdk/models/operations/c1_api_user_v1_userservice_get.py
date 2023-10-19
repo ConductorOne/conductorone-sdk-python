@@ -7,12 +7,10 @@ from ..shared import userservicegetresponse as shared_userservicegetresponse
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class C1APIUserV1UserServiceGetRequest:
     id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'id', 'style': 'simple', 'explode': False }})
     
-
 
 
 

@@ -7,13 +7,11 @@ from ..shared import userservicelistresponse as shared_userservicelistresponse
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class C1APIUserV1UserServiceListRequest:
     page_size: Optional[float] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'page_size', 'style': 'form', 'explode': True }})
     page_token: Optional[str] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'page_token', 'style': 'form', 'explode': True }})
     
-
 
 
 

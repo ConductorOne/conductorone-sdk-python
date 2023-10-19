@@ -10,7 +10,6 @@ from sdk import utils
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class TaskTypeCertifyInput:
     r"""The TaskTypeCertify message indicates that a task is a certify task and all related details."""
@@ -27,7 +26,6 @@ class TaskTypeCertifyOutcome(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class TaskTypeCertify:
     r"""The TaskTypeCertify message indicates that a task is a certify task and all related details."""

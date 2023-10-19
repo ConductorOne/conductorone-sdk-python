@@ -32,9 +32,9 @@ req = operations.C1APITaskV1TaskActionsServiceApproveRequest(
                 'Gasoline',
             ],
         ),
-        policy_step_id='edge Tennessee',
+        policy_step_id='National',
     ),
-    task_id='Hatchback Northeast',
+    task_id='synthesize',
 )
 
 res = s.task_actions.approve(req)
@@ -81,7 +81,7 @@ req = operations.C1APITaskV1TaskActionsServiceCommentRequest(
             ],
         ),
     ),
-    task_id='physically redefine azure',
+    task_id='Tesla',
 )
 
 res = s.task_actions.comment(req)
@@ -128,7 +128,7 @@ req = operations.C1APITaskV1TaskActionsServiceDenyRequest(
             ],
         ),
     ),
-    task_id='Poinciana',
+    task_id='Alaska',
 )
 
 res = s.task_actions.deny(req)
@@ -175,7 +175,7 @@ req = operations.C1APITaskV1TaskActionsServiceEscalateToEmergencyAccessRequest(
             ],
         ),
     ),
-    task_id='reprehenderit',
+    task_id='Cotton',
 )
 
 res = s.task_actions.escalate_to_emergency_access(req)

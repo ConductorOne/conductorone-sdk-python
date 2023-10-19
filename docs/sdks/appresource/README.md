@@ -24,8 +24,8 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIAppV1AppResourceServiceGetRequest(
-    app_id='Group Cambridgeshire',
-    app_resource_type_id='reintermediate fuchsia Planner',
+    app_id='motivating',
+    app_resource_type_id='Account',
     id='<ID>',
 )
 
@@ -66,8 +66,8 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIAppV1AppResourceServiceListRequest(
-    app_id='Bronze Architect',
-    app_resource_type_id='Southeast Soap katal',
+    app_id='Future',
+    app_resource_type_id='Southeast',
 )
 
 res = s.app_resource.list(req)

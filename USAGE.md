@@ -14,8 +14,8 @@ s = sdk.SDK(
 
 req = operations.C1APIAppV1AppEntitlementOwnersAddRequest(
     add_app_entitlement_owner_request=shared.AddAppEntitlementOwnerRequest(),
-    app_id='Small West',
-    entitlement_id='Officer impactful',
+    app_id='program',
+    entitlement_id='North',
 )
 
 res = s.app_entitlement_owners.add(req)

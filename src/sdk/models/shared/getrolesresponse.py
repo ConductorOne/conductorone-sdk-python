@@ -9,7 +9,6 @@ from typing import Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class GetRolesResponse:
     r"""The GetRolesResponse message contains the retrieved role."""

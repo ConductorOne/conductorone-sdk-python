@@ -5,17 +5,27 @@ import dataclasses
 from ..shared import connectorview as shared_connectorview
 from dataclasses_json import Undefined, dataclass_json
 from sdk import utils
-from typing import Any, Optional
+from typing import Any, Dict, List, Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+@dataclasses.dataclass
+class ConnectorServiceCreateResponseExpanded:
+    r"""Contains an arbitrary serialized message along with a @type that describes the type of the serialized message."""
+    at_type: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('@type'), 'exclude': lambda f: f is None }})
+    r"""The type of the serialized message."""
+    additional_properties: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'exclude': lambda f: f is None }})
+    
 
+
+
+@dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class ConnectorServiceCreateResponse:
     r"""The ConnectorServiceCreateResponse is the response returned from creating a connector."""
     connector_view: Optional[shared_connectorview.ConnectorView] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('connectorView'), 'exclude': lambda f: f is None }})
     r"""The ConnectorView object provides a connector response object, as well as JSONPATHs to related objects provided by expanders."""
-    expanded: Optional[list[dict[str, Any]]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('expanded') }})
+    expanded: Optional[List[ConnectorServiceCreateResponseExpanded]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('expanded') }})
     r"""The array of expanded items indicated by the request."""
     
 

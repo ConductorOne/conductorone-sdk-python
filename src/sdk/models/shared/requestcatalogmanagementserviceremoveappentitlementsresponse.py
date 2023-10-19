@@ -4,7 +4,6 @@ from __future__ import annotations
 import dataclasses
 
 
-
 @dataclasses.dataclass
 class RequestCatalogManagementServiceRemoveAppEntitlementsResponse:
     r"""Empty response with a status code indicating success"""

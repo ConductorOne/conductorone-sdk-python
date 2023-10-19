@@ -7,14 +7,12 @@ from ..shared import listappusersforidentitywithgrantresponse as shared_listappu
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class C1APIAppV1AppEntitlementUserBindingServiceListAppUsersForIdentityWithGrantRequest:
     app_entitlement_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'app_entitlement_id', 'style': 'simple', 'explode': False }})
     app_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'app_id', 'style': 'simple', 'explode': False }})
     identity_user_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'identity_user_id', 'style': 'simple', 'explode': False }})
     
-
 
 
 

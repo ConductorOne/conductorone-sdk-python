@@ -31,8 +31,8 @@ req = shared.TaskServiceCreateGrantRequest(
         ],
     ),
     task_grant_source=shared.TaskGrantSource(),
-    app_entitlement_id='barring',
-    app_id='vote Tuna Florida',
+    app_entitlement_id='Cheese',
+    app_id='barring',
 )
 
 res = s.task.create_grant_task(req)
@@ -77,8 +77,8 @@ req = shared.TaskServiceCreateRevokeRequest(
             'tame',
         ],
     ),
-    app_entitlement_id='Arab cultivate Clothing',
-    app_id='Southwest',
+    app_entitlement_id='Nitrogen',
+    app_id='connecting',
 )
 
 res = s.task.create_revoke_task(req)

@@ -25,7 +25,7 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIIamV1RolesGetRequest(
-    role_id='Group Cambridgeshire',
+    role_id='motivating',
 )
 
 res = s.roles.get(req)
@@ -113,7 +113,7 @@ req = operations.C1APIIamV1RolesUpdateRequest(
             ],
         ),
     ),
-    role_id='Tempe Ruble ADP',
+    role_id='Supervisor',
 )
 
 res = s.roles.update(req)

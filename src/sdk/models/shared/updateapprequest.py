@@ -9,7 +9,6 @@ from typing import Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class UpdateAppRequestInput:
     r"""The UpdateAppRequest message contains the app to update and the fields to update."""

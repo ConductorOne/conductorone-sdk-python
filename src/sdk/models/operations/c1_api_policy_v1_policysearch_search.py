@@ -7,7 +7,6 @@ from ..shared import listpolicyresponse as shared_listpolicyresponse
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class C1APIPolicyV1PolicySearchSearchResponse:
     content_type: str = dataclasses.field()

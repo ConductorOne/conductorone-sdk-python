@@ -10,7 +10,7 @@ from dataclasses_json import Undefined, dataclass_json
 from datetime import datetime
 from enum import Enum
 from sdk import utils
-from typing import Optional
+from typing import List, Optional
 
 class TaskSearchRequestCurrentStep(str, Enum):
     r"""Search tasks that have this type of step as the current step."""
@@ -40,27 +40,26 @@ class TaskSearchRequestTaskStates(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class TaskSearchRequestInput:
     r"""Search for tasks based on a plethora filters."""
-    access_review_ids: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('accessReviewIds') }})
+    access_review_ids: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('accessReviewIds') }})
     r"""Search tasks that belong to any of the access reviews included in this list."""
-    account_owner_ids: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('accountOwnerIds') }})
+    account_owner_ids: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('accountOwnerIds') }})
     r"""Search tasks that have any of these account owners."""
     actor_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('actorId'), 'exclude': lambda f: f is None }})
     r"""Search tasks that have this actor ID."""
-    app_entitlement_ids: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('appEntitlementIds') }})
+    app_entitlement_ids: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('appEntitlementIds') }})
     r"""Search tasks that have any of these app entitlement IDs."""
-    application_ids: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('applicationIds') }})
+    application_ids: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('applicationIds') }})
     r"""Search tasks that have any of these apps as targets."""
-    app_resource_ids: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('appResourceIds') }})
+    app_resource_ids: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('appResourceIds') }})
     r"""Search tasks that have any of these app resource IDs."""
-    app_resource_type_ids: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('appResourceTypeIds') }})
+    app_resource_type_ids: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('appResourceTypeIds') }})
     r"""Search tasks that have any of these app resource type IDs."""
-    app_user_subject_ids: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('appUserSubjectIds') }})
+    app_user_subject_ids: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('appUserSubjectIds') }})
     r"""Search tasks that have any of these app users as subjects."""
-    assignees_in_ids: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('assigneesInIds') }})
+    assignees_in_ids: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('assigneesInIds') }})
     r"""Search tasks by  List of UserIDs which are currently assigned these Tasks"""
     created_after: Optional[datetime] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('createdAfter'), 'encoder': utils.datetimeisoformat(True), 'decoder': dateutil.parser.isoparse, 'exclude': lambda f: f is None }})
     created_before: Optional[datetime] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('createdBefore'), 'encoder': utils.datetimeisoformat(True), 'decoder': dateutil.parser.isoparse, 'exclude': lambda f: f is None }})
@@ -68,35 +67,35 @@ class TaskSearchRequestInput:
     r"""Search tasks that have this type of step as the current step."""
     emergency_status: Optional[TaskSearchRequestEmergencyStatus] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('emergencyStatus'), 'exclude': lambda f: f is None }})
     r"""Search tasks that are or are not emergency access."""
-    exclude_app_entitlement_ids: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('excludeAppEntitlementIds') }})
+    exclude_app_entitlement_ids: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('excludeAppEntitlementIds') }})
     r"""Search tasks that do not have any of these app entitlement IDs."""
-    exclude_ids: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('excludeIds') }})
+    exclude_ids: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('excludeIds') }})
     r"""Exclude Specific TaskIDs from this serach result."""
     include_deleted: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('includeDeleted'), 'exclude': lambda f: f is None }})
     r"""Whether or not to include deleted tasks."""
-    my_work_user_ids: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('myWorkUserIds') }})
+    my_work_user_ids: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('myWorkUserIds') }})
     r"""Search tasks where the user would see this task in the My Work section"""
-    opener_ids: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('openerIds') }})
+    opener_ids: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('openerIds') }})
     r"""Search tasks that were created by any of the users in this array."""
     page_size: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('pageSize'), 'exclude': lambda f: f is None }})
     r"""The pageSize where 0 <= pageSize <= 100. Values < 10 will be set to 10. A value of 0 returns the default page size (currently 25)"""
     page_token: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('pageToken'), 'exclude': lambda f: f is None }})
     r"""The pageToken field."""
-    previously_acted_on_ids: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('previouslyActedOnIds') }})
+    previously_acted_on_ids: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('previouslyActedOnIds') }})
     r"""Search tasks that were acted on by any of these users."""
     query: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('query'), 'exclude': lambda f: f is None }})
     r"""Fuzzy search tasks by display name or description. Also can search by numeric ID."""
-    refs: Optional[list[shared_taskref.TaskRef]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('refs') }})
+    refs: Optional[List[shared_taskref.TaskRef]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('refs') }})
     r"""Query tasks by display name, description, or numeric ID."""
     sort_by: Optional[TaskSearchRequestSortBy] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('sortBy'), 'exclude': lambda f: f is None }})
     r"""Sort tasks in a specific order."""
-    subject_ids: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('subjectIds') }})
+    subject_ids: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('subjectIds') }})
     r"""Search tasks where these users are the subject."""
     task_expand_mask: Optional[shared_taskexpandmask.TaskExpandMask] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('expandMask'), 'exclude': lambda f: f is None }})
     r"""The task expand mask is an array of strings that specifes the related objects the requester wishes to have returned when making a request where the expand mask is part of the input. Use '*' to view all possible responses."""
-    task_states: Optional[list[TaskSearchRequestTaskStates]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('taskStates') }})
+    task_states: Optional[List[TaskSearchRequestTaskStates]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('taskStates') }})
     r"""Search tasks with this task state."""
-    task_types: Optional[list[shared_tasktype.TaskTypeInput]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('taskTypes') }})
+    task_types: Optional[List[shared_tasktype.TaskTypeInput]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('taskTypes') }})
     r"""Search tasks with this task type. This is a oneOf, and needs an object, which can be empty, to sort."""
     
 
