@@ -5,15 +5,14 @@ import dataclasses
 from ..shared import appentitlementuserbinding as shared_appentitlementuserbinding
 from dataclasses_json import Undefined, dataclass_json
 from sdk import utils
-from typing import Optional
+from typing import List, Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class ListAppUsersForIdentityWithGrantResponse:
     r"""The ListAppUsersForIdentityWithGrantResponse message."""
-    bindings: Optional[list[shared_appentitlementuserbinding.AppEntitlementUserBinding]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('bindings') }})
+    bindings: Optional[List[shared_appentitlementuserbinding.AppEntitlementUserBinding]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('bindings') }})
     r"""The list of app users that may also have grant information."""
     
 

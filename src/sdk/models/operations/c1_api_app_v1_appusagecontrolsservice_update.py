@@ -8,13 +8,11 @@ from ..shared import updateappusagecontrolsresponse as shared_updateappusagecont
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class C1APIAppV1AppUsageControlsServiceUpdateRequest:
     app_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'app_id', 'style': 'simple', 'explode': False }})
     update_app_usage_controls_request: Optional[shared_updateappusagecontrolsrequest.UpdateAppUsageControlsRequest] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})
     
-
 
 
 

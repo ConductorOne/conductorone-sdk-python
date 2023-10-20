@@ -9,7 +9,6 @@ from typing import Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class ConnectorView:
     r"""The ConnectorView object provides a connector response object, as well as JSONPATHs to related objects provided by expanders."""

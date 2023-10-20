@@ -7,7 +7,6 @@ from ..shared import listappentitlementusersresponse as shared_listappentitlemen
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class C1APIAppV1AppEntitlementsListUsersRequest:
     app_entitlement_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'app_entitlement_id', 'style': 'simple', 'explode': False }})
@@ -15,7 +14,6 @@ class C1APIAppV1AppEntitlementsListUsersRequest:
     page_size: Optional[float] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'page_size', 'style': 'form', 'explode': True }})
     page_token: Optional[str] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'page_token', 'style': 'form', 'explode': True }})
     
-
 
 
 

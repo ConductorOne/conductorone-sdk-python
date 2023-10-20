@@ -9,7 +9,6 @@ from typing import Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class ConnectorServiceGetCredentialsResponse:
     r"""ConnectorServiceGetCredentialsResponse is the response returned by the get method."""

@@ -9,7 +9,6 @@ from typing import Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class UpdateRoleRequestInput:
     r"""The UpdateRoleRequest message contains the role to update and the update mask."""

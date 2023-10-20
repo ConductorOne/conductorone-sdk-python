@@ -4,7 +4,6 @@ from __future__ import annotations
 import dataclasses
 
 
-
 @dataclasses.dataclass
 class RemoveAppEntitlementOwnerRequest:
     r"""The request message for removing an app entitlement owner."""

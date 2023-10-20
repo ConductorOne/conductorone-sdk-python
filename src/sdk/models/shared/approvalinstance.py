@@ -23,7 +23,6 @@ class ApprovalInstanceState(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class ApprovalInstance:
     r"""The approval instance object describes the way a policy step should be approved as well as its outcomes and state.
