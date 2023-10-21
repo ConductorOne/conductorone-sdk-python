@@ -4,7 +4,6 @@ from __future__ import annotations
 import dataclasses
 
 
-
 @dataclasses.dataclass
 class ConnectorProvision:
     r"""Indicates that a connector should perform the provisioning. This object has no fields."""

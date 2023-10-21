@@ -7,12 +7,10 @@ from ..shared import getappresponse as shared_getappresponse
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class C1APIAppV1AppsGetRequest:
     id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'id', 'style': 'simple', 'explode': False }})
     
-
 
 
 

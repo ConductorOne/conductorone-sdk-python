@@ -5,17 +5,27 @@ import dataclasses
 from ..shared import appresourceview as shared_appresourceview
 from dataclasses_json import Undefined, dataclass_json
 from sdk import utils
-from typing import Any, Optional
+from typing import Any, Dict, List, Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+@dataclasses.dataclass
+class AppResourceServiceGetResponseExpanded:
+    r"""Contains an arbitrary serialized message along with a @type that describes the type of the serialized message."""
+    at_type: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('@type'), 'exclude': lambda f: f is None }})
+    r"""The type of the serialized message."""
+    additional_properties: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'exclude': lambda f: f is None }})
+    
 
+
+
+@dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class AppResourceServiceGetResponse:
     r"""The app resource service get response contains the app resource view and array of expanded items indicated by the request's expand mask."""
     app_resource_view: Optional[shared_appresourceview.AppResourceView] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('appResourceView'), 'exclude': lambda f: f is None }})
     r"""The app resource view returns an app resource with paths for items in the expand mask filled in when this response is returned and a request expand mask has \\"*\\" or \\"app_id\\" or \\"resource_type_id\\"."""
-    expanded: Optional[list[dict[str, Any]]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('expanded') }})
+    expanded: Optional[List[AppResourceServiceGetResponseExpanded]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('expanded') }})
     r"""List of serialized related objects."""
     
 

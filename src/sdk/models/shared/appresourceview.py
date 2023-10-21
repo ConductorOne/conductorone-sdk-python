@@ -9,7 +9,6 @@ from typing import Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class AppResourceView:
     r"""The app resource view returns an app resource with paths for items in the expand mask filled in when this response is returned and a request expand mask has \\"*\\" or \\"app_id\\" or \\"resource_type_id\\"."""

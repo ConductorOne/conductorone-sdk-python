@@ -8,7 +8,6 @@ from ..shared import removeappentitlementownerresponse as shared_removeappentitl
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class C1APIAppV1AppEntitlementOwnersRemoveRequest:
     app_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'app_id', 'style': 'simple', 'explode': False }})
@@ -16,7 +15,6 @@ class C1APIAppV1AppEntitlementOwnersRemoveRequest:
     user_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'user_id', 'style': 'simple', 'explode': False }})
     remove_app_entitlement_owner_request: Optional[shared_removeappentitlementownerrequest.RemoveAppEntitlementOwnerRequest] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})
     
-
 
 
 

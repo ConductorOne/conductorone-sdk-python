@@ -8,13 +8,11 @@ from ..shared import requestcatalogmanagementservicedeleteresponse as shared_req
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class C1APIRequestcatalogV1RequestCatalogManagementServiceDeleteRequest:
     id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'id', 'style': 'simple', 'explode': False }})
     request_catalog_management_service_delete_request: Optional[shared_requestcatalogmanagementservicedeleterequest.RequestCatalogManagementServiceDeleteRequest] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})
     
-
 
 
 

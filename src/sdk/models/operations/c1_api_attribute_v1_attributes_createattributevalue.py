@@ -7,7 +7,6 @@ from ..shared import createattributevalueresponse as shared_createattributevalue
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class C1APIAttributeV1AttributesCreateAttributeValueResponse:
     content_type: str = dataclasses.field()

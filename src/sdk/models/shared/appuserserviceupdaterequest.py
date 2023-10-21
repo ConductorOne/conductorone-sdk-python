@@ -10,7 +10,6 @@ from typing import Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class AppUserServiceUpdateRequestInput:
     r"""The AppUserServiceUpdateRequest message contains the app user and the fields to be updated."""

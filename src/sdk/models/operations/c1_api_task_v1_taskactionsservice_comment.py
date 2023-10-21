@@ -8,13 +8,11 @@ from ..shared import taskactionsservicecommentresponse as shared_taskactionsserv
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class C1APITaskV1TaskActionsServiceCommentRequest:
     task_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'task_id', 'style': 'simple', 'explode': False }})
     task_actions_service_comment_request: Optional[shared_taskactionsservicecommentrequest.TaskActionsServiceCommentRequest] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})
     
-
 
 
 

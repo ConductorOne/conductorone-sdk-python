@@ -7,12 +7,10 @@ from ..shared import getpolicyresponse as shared_getpolicyresponse
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class C1APIPolicyV1PoliciesGetRequest:
     id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'id', 'style': 'simple', 'explode': False }})
     
-
 
 
 

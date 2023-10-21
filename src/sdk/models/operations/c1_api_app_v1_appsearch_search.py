@@ -7,7 +7,6 @@ from ..shared import searchappsresponse as shared_searchappsresponse
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class C1APIAppV1AppSearchSearchResponse:
     content_type: str = dataclasses.field()

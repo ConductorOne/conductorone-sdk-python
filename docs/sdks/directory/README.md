@@ -28,7 +28,7 @@ s = sdk.SDK(
 req = shared.DirectoryServiceCreateRequest(
     directory_expand_mask=shared.DirectoryExpandMask(
         paths=[
-            'neural',
+            'string',
         ],
     ),
 )
@@ -71,7 +71,7 @@ s = sdk.SDK(
 
 req = operations.C1APIDirectoryV1DirectoryServiceDeleteRequest(
     directory_service_delete_request=shared.DirectoryServiceDeleteRequest(),
-    app_id='Architect Cotton port',
+    app_id='string',
 )
 
 res = s.directory.delete(req)
@@ -111,7 +111,7 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIDirectoryV1DirectoryServiceGetRequest(
-    app_id='Group Cambridgeshire',
+    app_id='string',
 )
 
 res = s.directory.get(req)

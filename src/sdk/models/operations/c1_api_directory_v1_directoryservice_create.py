@@ -7,7 +7,6 @@ from ..shared import directoryservicecreateresponse as shared_directoryservicecr
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class C1APIDirectoryV1DirectoryServiceCreateResponse:
     content_type: str = dataclasses.field()

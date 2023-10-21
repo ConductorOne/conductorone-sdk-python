@@ -25,7 +25,7 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIIamV1RolesGetRequest(
-    role_id='Group Cambridgeshire',
+    role_id='string',
 )
 
 res = s.roles.get(req)
@@ -106,14 +106,14 @@ req = operations.C1APIIamV1RolesUpdateRequest(
     update_role_request_input=shared.UpdateRoleRequestInput(
         role=shared.RoleInput(
             permissions=[
-                'up',
+                'string',
             ],
             service_roles=[
-                'complexity',
+                'string',
             ],
         ),
     ),
-    role_id='Tempe Ruble ADP',
+    role_id='string',
 )
 
 res = s.roles.update(req)

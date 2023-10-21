@@ -11,7 +11,6 @@ from typing import Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class TaskTypeInput:
     r"""Task Type provides configuration for the type of task: certify, grant, or revoke
@@ -32,7 +31,6 @@ class TaskTypeInput:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class TaskType:
     r"""Task Type provides configuration for the type of task: certify, grant, or revoke

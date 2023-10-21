@@ -8,14 +8,12 @@ from ..shared import connectorserviceupdateresponse as shared_connectorserviceup
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class C1APIAppV1ConnectorServiceUpdateRequest:
     app_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'app_id', 'style': 'simple', 'explode': False }})
     id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'id', 'style': 'simple', 'explode': False }})
     connector_service_update_request_input: Optional[shared_connectorserviceupdaterequest.ConnectorServiceUpdateRequestInput] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})
     
-
 
 
 

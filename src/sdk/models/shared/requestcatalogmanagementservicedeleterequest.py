@@ -4,7 +4,6 @@ from __future__ import annotations
 import dataclasses
 
 
-
 @dataclasses.dataclass
 class RequestCatalogManagementServiceDeleteRequest:
     r"""Delete a request catalog by Id. It uses URL value for input."""
