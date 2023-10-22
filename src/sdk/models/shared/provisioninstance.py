@@ -23,7 +23,6 @@ class ProvisionInstanceState(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class ProvisionInstance:
     r"""A provision instance describes the specific configuration of an executing provision policy step including actions taken and notification id.

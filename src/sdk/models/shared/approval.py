@@ -15,7 +15,6 @@ from typing import Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class Approval:
     r"""The Approval message.
@@ -56,7 +55,6 @@ class Approval:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class ApprovalInput:
     r"""The Approval message.

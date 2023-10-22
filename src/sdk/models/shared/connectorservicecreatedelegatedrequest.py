@@ -5,11 +5,10 @@ import dataclasses
 from ..shared import connectorexpandmask as shared_connectorexpandmask
 from dataclasses_json import Undefined, dataclass_json
 from sdk import utils
-from typing import Optional
+from typing import List, Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class ConnectorServiceCreateDelegatedRequest:
     r"""The ConnectorServiceCreateDelegatedRequest message contains the fields required to create a connector."""
@@ -21,7 +20,7 @@ class ConnectorServiceCreateDelegatedRequest:
     r"""The description of the connector."""
     display_name: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('displayName'), 'exclude': lambda f: f is None }})
     r"""The displayName of the connector."""
-    user_ids: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('userIds') }})
+    user_ids: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('userIds') }})
     r"""The userIds field is used to define the integration owners of the connector."""
     
 

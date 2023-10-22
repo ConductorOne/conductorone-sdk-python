@@ -26,8 +26,8 @@ s = sdk.SDK(
 
 req = operations.C1APIAppV1AppOwnersAddRequest(
     add_app_owner_request=shared.AddAppOwnerRequest(),
-    app_id='Small West',
-    user_id='Officer impactful',
+    app_id='string',
+    user_id='string',
 )
 
 res = s.app_owners.add(req)
@@ -67,7 +67,7 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIAppV1AppOwnersListRequest(
-    app_id='Bronze Architect',
+    app_id='string',
 )
 
 res = s.app_owners.list(req)
@@ -108,8 +108,8 @@ s = sdk.SDK(
 
 req = operations.C1APIAppV1AppOwnersRemoveRequest(
     remove_app_owner_request=shared.RemoveAppOwnerRequest(),
-    app_id='SCSI',
-    user_id='JBOD tan',
+    app_id='string',
+    user_id='string',
 )
 
 res = s.app_owners.remove(req)

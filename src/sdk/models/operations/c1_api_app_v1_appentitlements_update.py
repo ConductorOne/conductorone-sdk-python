@@ -8,14 +8,12 @@ from ..shared import updateappentitlementresponse as shared_updateappentitlement
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class C1APIAppV1AppEntitlementsUpdateRequest:
     app_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'app_id', 'style': 'simple', 'explode': False }})
     id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'id', 'style': 'simple', 'explode': False }})
     update_app_entitlement_request_input: Optional[shared_updateappentitlementrequest.UpdateAppEntitlementRequestInput] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})
     
-
 
 
 

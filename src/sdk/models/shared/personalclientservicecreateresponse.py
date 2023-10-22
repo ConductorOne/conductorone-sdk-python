@@ -9,7 +9,6 @@ from typing import Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PersonalClientServiceCreateResponse:
     r"""The PersonalClientServiceCreateResponse message contains the created personal client and client secret."""

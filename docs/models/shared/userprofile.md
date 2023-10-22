@@ -24,7 +24,7 @@ userProfile: shared.UserProfile3 = /* values here */
 ### 
 
 ```python
-userProfile: list[Any] = /* values here */
+userProfile: List[Any] = /* values here */
 ```
 
 ### 

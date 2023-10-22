@@ -12,7 +12,6 @@ from typing import Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class TaskRevokeSource:
     r"""The TaskRevokeSource message indicates the source of the revoke task is one of expired, nonUsage, request, or review.

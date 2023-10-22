@@ -184,7 +184,7 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIAttributeV1AttributesListAttributeValuesRequest(
-    attribute_type_id='trot markets',
+    attribute_type_id='string',
 )
 
 res = s.attributes.list_attribute_values(req)

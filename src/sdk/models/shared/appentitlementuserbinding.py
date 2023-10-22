@@ -10,7 +10,6 @@ from typing import Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class AppEntitlementUserBinding:
     r"""The AppEntitlementUserBinding represents the relationship that gives an app user access to an app entitlement"""

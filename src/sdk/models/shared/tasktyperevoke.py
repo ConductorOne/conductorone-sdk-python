@@ -12,7 +12,6 @@ from typing import Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class TaskTypeRevokeInput:
     r"""The TaskTypeRevoke message indicates that a task is a revoke task and all related details."""
@@ -38,7 +37,6 @@ class TaskTypeRevokeOutcome(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class TaskTypeRevoke:
     r"""The TaskTypeRevoke message indicates that a task is a revoke task and all related details."""

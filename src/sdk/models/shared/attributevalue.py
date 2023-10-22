@@ -10,7 +10,6 @@ from typing import Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class AttributeValue:
     r"""AttributeValue is the value of an attribute of a defined type."""

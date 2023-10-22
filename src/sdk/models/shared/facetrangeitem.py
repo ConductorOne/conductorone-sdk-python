@@ -5,15 +5,14 @@ import dataclasses
 from ..shared import facetrange as shared_facetrange
 from dataclasses_json import Undefined, dataclass_json
 from sdk import utils
-from typing import Optional
+from typing import List, Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class FacetRangeItem:
     r"""The FacetRangeItem message."""
-    ranges: Optional[list[shared_facetrange.FacetRange]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('ranges') }})
+    ranges: Optional[List[shared_facetrange.FacetRange]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('ranges') }})
     r"""An array of facet ranges."""
     
 

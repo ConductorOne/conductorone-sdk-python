@@ -7,7 +7,6 @@ from ..shared import listappresourceownersresponse as shared_listappresourceowne
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class C1APIAppV1AppResourceOwnersListRequest:
     app_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'app_id', 'style': 'simple', 'explode': False }})
@@ -16,7 +15,6 @@ class C1APIAppV1AppResourceOwnersListRequest:
     page_size: Optional[float] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'page_size', 'style': 'form', 'explode': True }})
     page_token: Optional[str] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'page_token', 'style': 'form', 'explode': True }})
     
-
 
 
 

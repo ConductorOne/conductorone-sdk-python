@@ -7,16 +7,15 @@ from ..shared import appentitlementreference as shared_appentitlementreference
 from dataclasses_json import Undefined, dataclass_json
 from datetime import datetime
 from sdk import utils
-from typing import Optional
+from typing import List, Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class CompletedAction:
     r"""The outcome of a provision instance that has been completed succesfully."""
     completed_at: Optional[datetime] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('completedAt'), 'encoder': utils.datetimeisoformat(True), 'decoder': dateutil.parser.isoparse, 'exclude': lambda f: f is None }})
-    entitlements: Optional[list[shared_appentitlementreference.AppEntitlementReference]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('entitlements') }})
+    entitlements: Optional[List[shared_appentitlementreference.AppEntitlementReference]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('entitlements') }})
     r"""The list of entitlements that were provisioned. This is leftover from an older design, and is only ever going to be a single entitlement."""
     user_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('userId'), 'exclude': lambda f: f is None }})
     r"""The UserID of who completed provisioning. For connector provisioning this is the system user id, for manual provisioning this is who clicked \\"provision complete\\" """

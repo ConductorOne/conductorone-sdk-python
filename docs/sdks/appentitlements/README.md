@@ -28,7 +28,7 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIAppV1AppEntitlementsGetRequest(
-    app_id='Group Cambridgeshire',
+    app_id='string',
     id='<ID>',
 )
 
@@ -69,7 +69,7 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIAppV1AppEntitlementsListRequest(
-    app_id='Bronze Architect',
+    app_id='string',
 )
 
 res = s.app_entitlements.list(req)
@@ -109,9 +109,9 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIAppV1AppEntitlementsListForAppResourceRequest(
-    app_id='SDD convergence',
-    app_resource_id='quis whether',
-    app_resource_type_id='Non',
+    app_id='string',
+    app_resource_id='string',
+    app_resource_type_id='string',
 )
 
 res = s.app_entitlements.list_for_app_resource(req)
@@ -151,8 +151,8 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIAppV1AppEntitlementsListForAppUserRequest(
-    app_id='Gardena payment Mountain',
-    app_user_id='Cruiser',
+    app_id='string',
+    app_user_id='string',
 )
 
 res = s.app_entitlements.list_for_app_user(req)
@@ -192,8 +192,8 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIAppV1AppEntitlementsListUsersRequest(
-    app_entitlement_id='yellow payment',
-    app_id='why Electric',
+    app_entitlement_id='string',
+    app_id='string',
 )
 
 res = s.app_entitlements.list_users(req)
@@ -240,22 +240,22 @@ req = operations.C1APIAppV1AppEntitlementsUpdateRequest(
                 delegated_provision=shared.DelegatedProvision(),
                 manual_provision=shared.ManualProvision(
                     user_ids=[
-                        'up',
+                        'string',
                     ],
                 ),
             ),
             compliance_framework_value_ids=[
-                'complexity',
+                'string',
             ],
             duration_unset=shared.AppEntitlementDurationUnset(),
         ),
         app_entitlement_expand_mask=shared.AppEntitlementExpandMask(
             paths=[
-                'Supervisor',
+                'string',
             ],
         ),
     ),
-    app_id='Ruble ADP Oregon',
+    app_id='string',
     id='<ID>',
 )
 
