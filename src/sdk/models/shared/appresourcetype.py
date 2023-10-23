@@ -10,7 +10,6 @@ from typing import Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class AppResourceType:
     r"""The AppResourceType is referenced by an app entitlement defining its resource types. Commonly things like Group or Role."""

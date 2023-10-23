@@ -25,23 +25,23 @@ s = sdk.SDK(
 req = shared.SearchUsersRequest(
     user_expand_mask=shared.UserExpandMask(
         paths=[
-            'transition',
+            'string',
         ],
     ),
     exclude_ids=[
-        'turquoise',
+        'string',
     ],
     ids=[
-        'Hyundai',
+        'string',
     ],
     refs=[
         shared.UserRef(),
     ],
     role_ids=[
-        'Future',
+        'string',
     ],
     user_statuses=[
-        shared.SearchUsersRequestUserStatuses.UNKNOWN,
+        shared.SearchUsersRequestUserStatuses.ENABLED,
     ],
 )
 

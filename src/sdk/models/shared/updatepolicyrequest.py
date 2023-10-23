@@ -9,7 +9,6 @@ from typing import Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class UpdatePolicyRequestInput:
     r"""The UpdatePolicyRequest message contains the policy object to update and a field mask to indicate which fields to update. It uses URL value for input."""

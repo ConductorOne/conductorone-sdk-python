@@ -7,4 +7,4 @@ The fields to be included in the directory response.
 
 | Field                                                        | Type                                                         | Required                                                     | Description                                                  |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| `paths`                                                      | list[*str*]                                                  | :heavy_minus_sign:                                           | An array of fields to be included in the directory response. |
+| `paths`                                                      | List[*str*]                                                  | :heavy_minus_sign:                                           | An array of fields to be included in the directory response. |

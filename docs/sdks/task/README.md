@@ -27,12 +27,12 @@ s = sdk.SDK(
 req = shared.TaskServiceCreateGrantRequest(
     task_expand_mask=shared.TaskExpandMask(
         paths=[
-            'Northwest',
+            'string',
         ],
     ),
     task_grant_source=shared.TaskGrantSource(),
-    app_entitlement_id='barring',
-    app_id='vote Tuna Florida',
+    app_entitlement_id='string',
+    app_id='string',
 )
 
 res = s.task.create_grant_task(req)
@@ -74,11 +74,11 @@ s = sdk.SDK(
 req = shared.TaskServiceCreateRevokeRequest(
     task_expand_mask=shared.TaskExpandMask(
         paths=[
-            'tame',
+            'string',
         ],
     ),
-    app_entitlement_id='Arab cultivate Clothing',
-    app_id='Southwest',
+    app_entitlement_id='string',
+    app_id='string',
 )
 
 res = s.task.create_revoke_task(req)

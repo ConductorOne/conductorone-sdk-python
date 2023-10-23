@@ -4,7 +4,6 @@ from __future__ import annotations
 import dataclasses
 
 
-
 @dataclasses.dataclass
 class DeleteAttributeValueResponse:
     r"""DeleteAttributeValueResponse is the empty response for deleting an attribute value."""

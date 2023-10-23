@@ -11,7 +11,6 @@ from typing import Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class ProvisionPolicy:
     r"""ProvisionPolicy is a oneOf that indicates how a provision step should be processed.

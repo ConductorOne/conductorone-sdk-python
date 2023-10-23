@@ -7,7 +7,6 @@ from ..shared import createpolicyresponse as shared_createpolicyresponse
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class C1APIPolicyV1PoliciesCreateResponse:
     content_type: str = dataclasses.field()

@@ -7,7 +7,6 @@ from ..shared import searchattributevaluesresponse as shared_searchattributevalu
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class C1APIAttributeV1AttributeSearchSearchAttributeValuesResponse:
     content_type: str = dataclasses.field()

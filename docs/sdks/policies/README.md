@@ -28,7 +28,7 @@ s = sdk.SDK(
 
 req = shared.CreatePolicyRequestInput(
     policy_steps={
-        "neural": shared.PolicyStepsInput(
+        "key": shared.PolicyStepsInput(
             steps=[
                 shared.PolicyStepInput(
                     accept=shared.Accept(),
@@ -47,7 +47,7 @@ req = shared.CreatePolicyRequestInput(
                             delegated_provision=shared.DelegatedProvision(),
                             manual_provision=shared.ManualProvision(
                                 user_ids=[
-                                    'Tasty',
+                                    'string',
                                 ],
                             ),
                         ),
@@ -222,7 +222,7 @@ req = operations.C1APIPolicyV1PoliciesUpdateRequest(
     update_policy_request_input=shared.UpdatePolicyRequestInput(
         policy=shared.PolicyInput(
             policy_steps={
-                "up": shared.PolicyStepsInput(
+                "key": shared.PolicyStepsInput(
                     steps=[
                         shared.PolicyStepInput(
                             accept=shared.Accept(),
@@ -241,7 +241,7 @@ req = operations.C1APIPolicyV1PoliciesUpdateRequest(
                                     delegated_provision=shared.DelegatedProvision(),
                                     manual_provision=shared.ManualProvision(
                                         user_ids=[
-                                            'complexity',
+                                            'string',
                                         ],
                                     ),
                                 ),

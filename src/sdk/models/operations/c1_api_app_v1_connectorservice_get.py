@@ -7,13 +7,11 @@ from ..shared import connectorservicegetresponse as shared_connectorservicegetre
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class C1APIAppV1ConnectorServiceGetRequest:
     app_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'app_id', 'style': 'simple', 'explode': False }})
     id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'id', 'style': 'simple', 'explode': False }})
     
-
 
 
 

@@ -7,14 +7,12 @@ from ..shared import appresourceservicegetresponse as shared_appresourceserviceg
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class C1APIAppV1AppResourceServiceGetRequest:
     app_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'app_id', 'style': 'simple', 'explode': False }})
     app_resource_type_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'app_resource_type_id', 'style': 'simple', 'explode': False }})
     id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'id', 'style': 'simple', 'explode': False }})
     
-
 
 
 

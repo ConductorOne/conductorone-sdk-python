@@ -23,9 +23,9 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIAppV1AppEntitlementUserBindingServiceListAppUsersForIdentityWithGrantRequest(
-    app_entitlement_id='Applications parsing',
-    app_id='turquoise tan sympathetically',
-    identity_user_id='Plastic',
+    app_entitlement_id='string',
+    app_id='string',
+    identity_user_id='string',
 )
 
 res = s.app_entitlement_user_binding.list_app_users_for_identity_with_grant(req)

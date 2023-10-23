@@ -12,7 +12,6 @@ from typing import Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class TaskTypeGrantInput:
     r"""The TaskTypeGrant message indicates that a task is a grant task and all related details."""
@@ -31,7 +30,6 @@ class TaskTypeGrantOutcome(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class TaskTypeGrant:
     r"""The TaskTypeGrant message indicates that a task is a grant task and all related details."""

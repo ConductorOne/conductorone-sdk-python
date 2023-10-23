@@ -8,13 +8,11 @@ from ..shared import requestcatalogmanagementserviceaddaccessentitlementsrespons
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class C1APIRequestcatalogV1RequestCatalogManagementServiceAddAccessEntitlementsRequest:
     catalog_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'catalog_id', 'style': 'simple', 'explode': False }})
     request_catalog_management_service_add_access_entitlements_request: Optional[shared_requestcatalogmanagementserviceaddaccessentitlementsrequest.RequestCatalogManagementServiceAddAccessEntitlementsRequest] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})
     
-
 
 
 
