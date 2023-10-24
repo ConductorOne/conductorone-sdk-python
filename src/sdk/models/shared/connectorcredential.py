@@ -10,7 +10,6 @@ from typing import Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class ConnectorCredential:
     r"""ConnectorCredential is used by a connector to authenticate with conductor one."""

@@ -10,7 +10,6 @@ from typing import Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class DeniedAction:
     r"""The denied action indicates that the c1.api.policy.v1.ApprovalInstance had an outcome of denied."""

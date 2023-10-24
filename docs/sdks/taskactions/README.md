@@ -29,12 +29,12 @@ req = operations.C1APITaskV1TaskActionsServiceApproveRequest(
     task_actions_service_approve_request=shared.TaskActionsServiceApproveRequest(
         task_expand_mask=shared.TaskExpandMask(
             paths=[
-                'Gasoline',
+                'string',
             ],
         ),
-        policy_step_id='edge Tennessee',
+        policy_step_id='string',
     ),
-    task_id='Hatchback Northeast',
+    task_id='string',
 )
 
 res = s.task_actions.approve(req)
@@ -77,11 +77,11 @@ req = operations.C1APITaskV1TaskActionsServiceCommentRequest(
     task_actions_service_comment_request=shared.TaskActionsServiceCommentRequest(
         task_expand_mask=shared.TaskExpandMask(
             paths=[
-                'Synergized',
+                'string',
             ],
         ),
     ),
-    task_id='physically redefine azure',
+    task_id='string',
 )
 
 res = s.task_actions.comment(req)
@@ -124,11 +124,11 @@ req = operations.C1APITaskV1TaskActionsServiceDenyRequest(
     task_actions_service_deny_request=shared.TaskActionsServiceDenyRequest(
         task_expand_mask=shared.TaskExpandMask(
             paths=[
-                'relationships',
+                'string',
             ],
         ),
     ),
-    task_id='Poinciana',
+    task_id='string',
 )
 
 res = s.task_actions.deny(req)
@@ -171,11 +171,11 @@ req = operations.C1APITaskV1TaskActionsServiceEscalateToEmergencyAccessRequest(
     task_actions_service_escalate_to_emergency_access_request=shared.TaskActionsServiceEscalateToEmergencyAccessRequest(
         task_expand_mask=shared.TaskExpandMask(
             paths=[
-                'Practical',
+                'string',
             ],
         ),
     ),
-    task_id='reprehenderit',
+    task_id='string',
 )
 
 res = s.task_actions.escalate_to_emergency_access(req)

@@ -9,7 +9,6 @@ from typing import Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class UpdateAppUsageControlsRequest:
     r"""The UpdateAppUsageControlsRequest message contains the AppUsageControls object to update and the update mask."""

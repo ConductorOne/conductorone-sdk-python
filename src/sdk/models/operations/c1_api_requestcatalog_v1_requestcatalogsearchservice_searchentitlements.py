@@ -7,7 +7,6 @@ from ..shared import requestcatalogsearchservicesearchentitlementsresponse as sh
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class C1APIRequestcatalogV1RequestCatalogSearchServiceSearchEntitlementsResponse:
     content_type: str = dataclasses.field()

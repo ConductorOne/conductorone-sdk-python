@@ -14,7 +14,6 @@ class ExternalRefExternalRefSource(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class ExternalRef:
     r"""A reference to an external source. This value is unused currently, but may be brought back."""

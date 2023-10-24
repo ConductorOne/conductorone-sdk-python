@@ -4,7 +4,6 @@ from __future__ import annotations
 import dataclasses
 
 
-
 @dataclasses.dataclass
 class RemoveAppOwnerRequest:
     r"""RemoveAppOwnerRequest is the request body for removing an app owner. It uses URL values for input."""

@@ -9,7 +9,6 @@ from typing import Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class GetAppResponse:
     r"""The GetAppResponse message contains the details of the requested app in the app field."""

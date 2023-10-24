@@ -7,7 +7,6 @@ from ..shared import tasksearchresponse as shared_tasksearchresponse
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class C1APITaskV1TaskSearchServiceSearchResponse:
     content_type: str = dataclasses.field()

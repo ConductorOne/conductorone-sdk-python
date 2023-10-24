@@ -10,7 +10,6 @@ from typing import Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class ReassignedAction:
     r"""The ReassignedAction object describes the outcome of a policy step that has been reassigned."""

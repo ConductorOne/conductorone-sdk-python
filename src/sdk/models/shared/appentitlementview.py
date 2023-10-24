@@ -9,7 +9,6 @@ from typing import Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class AppEntitlementView:
     r"""The app entitlement view contains the serialized app entitlement and paths to objects referenced by the app entitlement."""

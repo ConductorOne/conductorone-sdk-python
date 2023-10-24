@@ -8,7 +8,6 @@ from typing import Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class TaskGrantSource:
     r"""The TaskGrantSource message tracks which external URL was the source of the specificed grant ticket."""

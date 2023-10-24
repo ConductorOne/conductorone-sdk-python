@@ -10,7 +10,6 @@ from typing import Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class ConnectorServiceUpdateRequestInput:
     r"""The ConnectorServiceUpdateRequest message contains the fields required to update a connector."""

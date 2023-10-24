@@ -35,17 +35,19 @@ req = operations.C1APIAppV1ConnectorServiceCreateRequest(
     connector_service_create_request=shared.ConnectorServiceCreateRequest(
         connector_expand_mask=shared.ConnectorExpandMask(
             paths=[
-                'neural',
+                'string',
             ],
         ),
-        config={
-            "Tasty": 'island',
-        },
+        config=shared.ConnectorServiceCreateRequestConfig(
+            additional_properties={
+                "key": 'string',
+            },
+        ),
         user_ids=[
-            'Southwest',
+            'string',
         ],
     ),
-    app_id='National Lauderhill',
+    app_id='string',
 )
 
 res = s.connector.create(req)
@@ -88,14 +90,14 @@ req = operations.C1APIAppV1ConnectorServiceCreateDelegatedRequest(
     connector_service_create_delegated_request=shared.ConnectorServiceCreateDelegatedRequest(
         connector_expand_mask=shared.ConnectorExpandMask(
             paths=[
-                'Keyboard',
+                'string',
             ],
         ),
         user_ids=[
-            'Southwest',
+            'string',
         ],
     ),
-    app_id='visionary curiously',
+    app_id='string',
 )
 
 res = s.connector.create_delegated(req)
@@ -136,7 +138,7 @@ s = sdk.SDK(
 
 req = operations.C1APIAppV1ConnectorServiceDeleteRequest(
     connector_service_delete_request=shared.ConnectorServiceDeleteRequest(),
-    app_id='Architect Cotton port',
+    app_id='string',
     id='<ID>',
 )
 
@@ -177,7 +179,7 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIAppV1ConnectorServiceGetRequest(
-    app_id='Group Cambridgeshire',
+    app_id='string',
     id='<ID>',
 )
 
@@ -218,8 +220,8 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIAppV1ConnectorServiceGetCredentialsRequest(
-    app_id='reluctance',
-    connector_id='Cambridgeshire',
+    app_id='string',
+    connector_id='string',
     id='<ID>',
 )
 
@@ -260,7 +262,7 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIAppV1ConnectorServiceListRequest(
-    app_id='Bronze Architect',
+    app_id='string',
 )
 
 res = s.connector.list(req)
@@ -301,8 +303,8 @@ s = sdk.SDK(
 
 req = operations.C1APIAppV1ConnectorServiceRevokeCredentialRequest(
     connector_service_revoke_credential_request=shared.ConnectorServiceRevokeCredentialRequest(),
-    app_id='Supervisor Senior',
-    connector_id='North as symbolise',
+    app_id='string',
+    connector_id='string',
     id='<ID>',
 )
 
@@ -344,8 +346,8 @@ s = sdk.SDK(
 
 req = operations.C1APIAppV1ConnectorServiceRotateCredentialRequest(
     connector_service_rotate_credential_request=shared.ConnectorServiceRotateCredentialRequest(),
-    app_id='yawningly Clothing',
-    connector_id='watt functional ferociously',
+    app_id='string',
+    connector_id='string',
 )
 
 res = s.connector.rotate_credential(req)
@@ -390,20 +392,22 @@ req = operations.C1APIAppV1ConnectorServiceUpdateRequest(
         connector=shared.ConnectorInput(
             connector_status=shared.ConnectorStatus(),
             o_auth2_authorized_as=shared.OAuth2AuthorizedAsInput(),
-            config={
-                "up": 'complexity',
-            },
+            config=shared.ConnectorConfig(
+                additional_properties={
+                    "key": 'string',
+                },
+            ),
             user_ids=[
-                'Supervisor',
+                'string',
             ],
         ),
         connector_expand_mask=shared.ConnectorExpandMask(
             paths=[
-                'less',
+                'string',
             ],
         ),
     ),
-    app_id='Architect',
+    app_id='string',
     id='<ID>',
 )
 
@@ -449,21 +453,23 @@ req = operations.C1APIAppV1ConnectorServiceUpdateDelegatedRequest(
         connector=shared.ConnectorInput(
             connector_status=shared.ConnectorStatus(),
             o_auth2_authorized_as=shared.OAuth2AuthorizedAsInput(),
-            config={
-                "Rap": 'Ouguiya',
-            },
+            config=shared.ConnectorConfig(
+                additional_properties={
+                    "key": 'string',
+                },
+            ),
             user_ids=[
-                'methodologies',
+                'string',
             ],
         ),
         connector_expand_mask=shared.ConnectorExpandMask(
             paths=[
-                'North',
+                'string',
             ],
         ),
     ),
-    connector_app_id='Moscovium Pickup',
-    connector_id='synthesize initiatives instead',
+    connector_app_id='string',
+    connector_id='string',
 )
 
 res = s.connector.update_delegated(req)

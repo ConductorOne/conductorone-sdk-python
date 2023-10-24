@@ -8,7 +8,6 @@ from ..shared import connectorservicerevokecredentialresponse as shared_connecto
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class C1APIAppV1ConnectorServiceRevokeCredentialRequest:
     app_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'app_id', 'style': 'simple', 'explode': False }})
@@ -16,7 +15,6 @@ class C1APIAppV1ConnectorServiceRevokeCredentialRequest:
     id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'id', 'style': 'simple', 'explode': False }})
     connector_service_revoke_credential_request: Optional[shared_connectorservicerevokecredentialrequest.ConnectorServiceRevokeCredentialRequest] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})
     
-
 
 
 

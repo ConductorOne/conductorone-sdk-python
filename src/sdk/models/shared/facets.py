@@ -5,17 +5,16 @@ import dataclasses
 from ..shared import facetcategory as shared_facetcategory
 from dataclasses_json import Undefined, dataclass_json
 from sdk import utils
-from typing import Optional
+from typing import List, Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class Facets:
     r"""Indicates one value of a facet."""
     count: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('count'), 'exclude': lambda f: f is None }})
     r"""The count of items in this facet."""
-    facets: Optional[list[shared_facetcategory.FacetCategory]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('facets') }})
+    facets: Optional[List[shared_facetcategory.FacetCategory]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('facets') }})
     r"""The facet being referenced."""
     
 
