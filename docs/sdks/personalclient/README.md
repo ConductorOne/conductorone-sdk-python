@@ -24,10 +24,10 @@ s = sdk.SDK(
 
 req = shared.PersonalClientServiceCreateRequest(
     allow_source_cidr=[
-        'neural',
+        'string',
     ],
     scoped_roles=[
-        'Tasty',
+        'string',
     ],
 )
 

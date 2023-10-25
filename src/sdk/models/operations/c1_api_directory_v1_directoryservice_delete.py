@@ -8,13 +8,11 @@ from ..shared import directoryservicedeleteresponse as shared_directoryservicede
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class C1APIDirectoryV1DirectoryServiceDeleteRequest:
     app_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'app_id', 'style': 'simple', 'explode': False }})
     directory_service_delete_request: Optional[shared_directoryservicedeleterequest.DirectoryServiceDeleteRequest] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})
     
-
 
 
 

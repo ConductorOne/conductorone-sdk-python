@@ -4,7 +4,6 @@ from __future__ import annotations
 import dataclasses
 
 
-
 @dataclasses.dataclass
 class AddAppOwnerRequest:
     r"""Empty request body. Just placeholder for the add app owner request which uses URL values for input."""

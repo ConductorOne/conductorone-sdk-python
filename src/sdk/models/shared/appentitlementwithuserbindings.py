@@ -6,15 +6,14 @@ from ..shared import appentitlementuserbinding as shared_appentitlementuserbindi
 from ..shared import appentitlementview as shared_appentitlementview
 from dataclasses_json import Undefined, dataclass_json
 from sdk import utils
-from typing import Optional
+from typing import List, Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class AppEntitlementWithUserBindings:
     r"""The AppEntitlementWithUserBindings message represents an app entitlement and its associated user bindings."""
-    app_entitlement_user_bindings: Optional[list[shared_appentitlementuserbinding.AppEntitlementUserBinding]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('appEntitlementUserBindings') }})
+    app_entitlement_user_bindings: Optional[List[shared_appentitlementuserbinding.AppEntitlementUserBinding]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('appEntitlementUserBindings') }})
     r"""An array of AppEntitlementUserBinding objects which represent the relationships that give app users access to the specific app entitlement."""
     app_entitlement_view: Optional[shared_appentitlementview.AppEntitlementView] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('entitlement'), 'exclude': lambda f: f is None }})
     r"""The app entitlement view contains the serialized app entitlement and paths to objects referenced by the app entitlement."""

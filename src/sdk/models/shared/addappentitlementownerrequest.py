@@ -8,7 +8,6 @@ from typing import Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class AddAppEntitlementOwnerRequest:
     r"""The request message for adding an app entitlement owner."""
