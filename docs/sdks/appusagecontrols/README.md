@@ -24,7 +24,7 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIAppV1AppUsageControlsServiceGetRequest(
-    app_id='motivating',
+    app_id='string',
 )
 
 res = s.app_usage_controls.get(req)
@@ -67,7 +67,7 @@ req = operations.C1APIAppV1AppUsageControlsServiceUpdateRequest(
     update_app_usage_controls_request=shared.UpdateAppUsageControlsRequest(
         app_usage_controls=shared.AppUsageControls(),
     ),
-    app_id='up',
+    app_id='string',
 )
 
 res = s.app_usage_controls.update(req)

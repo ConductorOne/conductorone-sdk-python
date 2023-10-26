@@ -24,19 +24,19 @@ s = sdk.SDK(
 
 req = shared.SearchAppResourceTypesRequest(
     app_ids=[
-        'Soap',
+        'string',
     ],
     exclude_resource_type_ids=[
-        'paradigms',
+        'string',
     ],
     exclude_resource_type_trait_ids=[
-        'World',
+        'string',
     ],
     resource_type_ids=[
-        'Turkmenistan',
+        'string',
     ],
     resource_type_trait_ids=[
-        'SUV',
+        'string',
     ],
 )
 

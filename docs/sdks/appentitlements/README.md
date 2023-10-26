@@ -28,7 +28,7 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIAppV1AppEntitlementsGetRequest(
-    app_id='motivating',
+    app_id='string',
     id='<ID>',
 )
 
@@ -69,7 +69,7 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIAppV1AppEntitlementsListRequest(
-    app_id='Future',
+    app_id='string',
 )
 
 res = s.app_entitlements.list(req)
@@ -109,9 +109,9 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIAppV1AppEntitlementsListForAppResourceRequest(
-    app_id='person',
-    app_resource_id='convergence',
-    app_resource_type_id='area',
+    app_id='string',
+    app_resource_id='string',
+    app_resource_type_id='string',
 )
 
 res = s.app_entitlements.list_for_app_resource(req)
@@ -151,8 +151,8 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIAppV1AppEntitlementsListForAppUserRequest(
-    app_id='meter',
-    app_user_id='Monitored',
+    app_id='string',
+    app_user_id='string',
 )
 
 res = s.app_entitlements.list_for_app_user(req)
@@ -192,8 +192,8 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIAppV1AppEntitlementsListUsersRequest(
-    app_entitlement_id='invoice',
-    app_id='Northwest',
+    app_entitlement_id='string',
+    app_id='string',
 )
 
 res = s.app_entitlements.list_users(req)
@@ -240,22 +240,22 @@ req = operations.C1APIAppV1AppEntitlementsUpdateRequest(
                 delegated_provision=shared.DelegatedProvision(),
                 manual_provision=shared.ManualProvision(
                     user_ids=[
-                        'up',
+                        'string',
                     ],
                 ),
             ),
             compliance_framework_value_ids=[
-                'complexity',
+                'string',
             ],
             duration_unset=shared.AppEntitlementDurationUnset(),
         ),
         app_entitlement_expand_mask=shared.AppEntitlementExpandMask(
             paths=[
-                'Supervisor',
+                'string',
             ],
         ),
     ),
-    app_id='less',
+    app_id='string',
     id='<ID>',
 )
 
