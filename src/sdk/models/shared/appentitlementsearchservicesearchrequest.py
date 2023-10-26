@@ -5,11 +5,10 @@ import dataclasses
 from ..shared import appentitlementexpandmask as shared_appentitlementexpandmask
 from dataclasses_json import Undefined, dataclass_json
 from sdk import utils
-from typing import Optional
+from typing import List, Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class AppEntitlementSearchServiceSearchRequest:
     r"""Search app entitlements by a variety of filters."""
@@ -19,15 +18,15 @@ class AppEntitlementSearchServiceSearchRequest:
     r"""Search for app entitlements that have this alias (exact match)."""
     app_entitlement_expand_mask: Optional[shared_appentitlementexpandmask.AppEntitlementExpandMask] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('expandMask'), 'exclude': lambda f: f is None }})
     r"""The app entitlement expand mask allows the user to get additional information when getting responses containing app entitlement views."""
-    app_ids: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('appIds') }})
+    app_ids: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('appIds') }})
     r"""Search for app entitlements contained in any of these apps."""
-    app_user_ids: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('appUserIds') }})
+    app_user_ids: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('appUserIds') }})
     r"""Search for app entitlements that are granted to any of these app user ids."""
-    compliance_framework_ids: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('complianceFrameworkIds') }})
+    compliance_framework_ids: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('complianceFrameworkIds') }})
     r"""Search for app entitlements that are part of these compliace frameworks."""
-    exclude_app_ids: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('excludeAppIds') }})
+    exclude_app_ids: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('excludeAppIds') }})
     r"""Exclude app entitlements from the results that are in these app IDs."""
-    exclude_app_user_ids: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('excludeAppUserIds') }})
+    exclude_app_user_ids: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('excludeAppUserIds') }})
     r"""Exclude app entitlements from the results that these app users have granted."""
     include_deleted: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('includeDeleted'), 'exclude': lambda f: f is None }})
     r"""Include deleted app entitlements, this includes app entitlements that have a deleted parent object (app, app resource, app resource type)"""
@@ -39,9 +38,9 @@ class AppEntitlementSearchServiceSearchRequest:
     r"""The pageToken field."""
     query: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('query'), 'exclude': lambda f: f is None }})
     r"""Query the app entitlements with a fuzzy search on display name and description."""
-    resource_type_ids: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('resourceTypeIds') }})
+    resource_type_ids: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('resourceTypeIds') }})
     r"""Search for app entitlements that are for items on these resource types."""
-    risk_level_ids: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('riskLevelIds') }})
+    risk_level_ids: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('riskLevelIds') }})
     r"""Search for app entitlements with these risk levels."""
     
 

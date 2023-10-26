@@ -7,7 +7,6 @@ from ..shared import taskservicecreategrantresponse as shared_taskservicecreateg
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class C1APITaskV1TaskServiceCreateGrantTaskResponse:
     content_type: str = dataclasses.field()

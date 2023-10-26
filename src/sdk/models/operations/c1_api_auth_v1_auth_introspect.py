@@ -7,7 +7,6 @@ from ..shared import introspectresponse as shared_introspectresponse
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class C1APIAuthV1AuthIntrospectResponse:
     content_type: str = dataclasses.field()

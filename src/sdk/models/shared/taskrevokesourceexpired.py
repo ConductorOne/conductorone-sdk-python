@@ -10,7 +10,6 @@ from typing import Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class TaskRevokeSourceExpired:
     r"""The TaskRevokeSourceExpired message indicates that the source of the revoke task is due to a grant expiring."""

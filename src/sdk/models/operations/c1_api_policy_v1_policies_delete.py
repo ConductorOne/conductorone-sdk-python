@@ -8,13 +8,11 @@ from ..shared import deletepolicyresponse as shared_deletepolicyresponse
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class C1APIPolicyV1PoliciesDeleteRequest:
     id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'id', 'style': 'simple', 'explode': False }})
     delete_policy_request: Optional[shared_deletepolicyrequest.DeletePolicyRequest] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})
     
-
 
 
 

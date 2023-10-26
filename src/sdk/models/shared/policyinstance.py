@@ -7,17 +7,16 @@ from ..shared import policystep as shared_policystep
 from ..shared import policystepinstance as shared_policystepinstance
 from dataclasses_json import Undefined, dataclass_json
 from sdk import utils
-from typing import Optional
+from typing import List, Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PolicyInstance:
     r"""A policy instance is an object that contains a reference to the policy it was created from, the currently executing step, the next steps, and the history of previously completed steps."""
-    history: Optional[list[shared_policystepinstance.PolicyStepInstance]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('history') }})
+    history: Optional[List[shared_policystepinstance.PolicyStepInstance]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('history') }})
     r"""An array of steps that were previously processed by the ticket with their outcomes set, in order."""
-    next: Optional[list[shared_policystep.PolicyStep]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('next') }})
+    next: Optional[List[shared_policystep.PolicyStep]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('next') }})
     r"""An array of steps that will be processed by the ticket, in order."""
     policy: Optional[shared_policy.Policy] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('policy'), 'exclude': lambda f: f is None }})
     r"""A policy describes the behavior of the ConductorOne system when processing a task. You can describe the type, approvers, fallback behavior, and escalation processes."""

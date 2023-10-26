@@ -8,7 +8,6 @@ from typing import Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class AppUsageControls:
     r"""The AppUsageControls object describes some peripheral configuration for an app."""

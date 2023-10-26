@@ -8,7 +8,6 @@ from sdk import utils
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class AppUserStatusInput:
     r"""The satus of the applicaiton user."""
@@ -24,7 +23,6 @@ class AppUserStatusStatus(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class AppUserStatus:
     r"""The satus of the applicaiton user."""

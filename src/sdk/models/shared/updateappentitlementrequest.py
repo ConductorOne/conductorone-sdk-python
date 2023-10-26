@@ -10,7 +10,6 @@ from typing import Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class UpdateAppEntitlementRequestInput:
     r"""The UpdateAppEntitlementRequest message contains the app entitlement and the fields to be updated."""

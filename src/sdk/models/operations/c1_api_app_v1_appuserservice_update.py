@@ -8,14 +8,12 @@ from ..shared import appuserserviceupdateresponse as shared_appuserserviceupdate
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class C1APIAppV1AppUserServiceUpdateRequest:
     app_user_app_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'app_user_app_id', 'style': 'simple', 'explode': False }})
     app_user_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'app_user_id', 'style': 'simple', 'explode': False }})
     app_user_service_update_request_input: Optional[shared_appuserserviceupdaterequest.AppUserServiceUpdateRequestInput] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})
     
-
 
 
 

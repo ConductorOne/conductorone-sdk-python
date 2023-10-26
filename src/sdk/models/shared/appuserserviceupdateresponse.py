@@ -5,17 +5,27 @@ import dataclasses
 from ..shared import appuserview as shared_appuserview
 from dataclasses_json import Undefined, dataclass_json
 from sdk import utils
-from typing import Any, Optional
+from typing import Any, Dict, List, Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+@dataclasses.dataclass
+class AppUserServiceUpdateResponseExpanded:
+    r"""Contains an arbitrary serialized message along with a @type that describes the type of the serialized message."""
+    at_type: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('@type'), 'exclude': lambda f: f is None }})
+    r"""The type of the serialized message."""
+    additional_properties: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'exclude': lambda f: f is None }})
+    
 
+
+
+@dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class AppUserServiceUpdateResponse:
     r"""The AppUserServiceUpdateResponse message."""
     app_user_view: Optional[shared_appuserview.AppUserView] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('appUserView'), 'exclude': lambda f: f is None }})
     r"""The AppUserView contains an app user as well as paths for apps, identity users, and last usage in expanded arrays."""
-    expanded: Optional[list[dict[str, Any]]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('expanded') }})
+    expanded: Optional[List[AppUserServiceUpdateResponseExpanded]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('expanded') }})
     r"""The expanded field."""
     
 

@@ -5,17 +5,27 @@ import dataclasses
 from ..shared import appresourcetypeview as shared_appresourcetypeview
 from dataclasses_json import Undefined, dataclass_json
 from sdk import utils
-from typing import Any, Optional
+from typing import Any, Dict, List, Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+@dataclasses.dataclass
+class AppResourceTypeServiceListResponseExpanded:
+    r"""Contains an arbitrary serialized message along with a @type that describes the type of the serialized message."""
+    at_type: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('@type'), 'exclude': lambda f: f is None }})
+    r"""The type of the serialized message."""
+    additional_properties: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'exclude': lambda f: f is None }})
+    
 
+
+
+@dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class AppResourceTypeServiceListResponse:
     r"""The AppResourceTypeServiceListResponse message contains a list of results and a nextPageToken if applicable."""
-    expanded: Optional[list[dict[str, Any]]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('expanded') }})
+    expanded: Optional[List[AppResourceTypeServiceListResponseExpanded]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('expanded') }})
     r"""List of serialized related objects."""
-    list_: Optional[list[shared_appresourcetypeview.AppResourceTypeView]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('list') }})
+    list: Optional[List[shared_appresourcetypeview.AppResourceTypeView]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('list') }})
     r"""The list of results containing up to X results, where X is the page size defined in the request."""
     next_page_token: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('nextPageToken'), 'exclude': lambda f: f is None }})
     r"""The nextPageToken is shown for the next page if the number of results is larger than the max page size.
