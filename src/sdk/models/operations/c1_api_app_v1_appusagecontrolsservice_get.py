@@ -7,12 +7,10 @@ from ..shared import getappusagecontrolsresponse as shared_getappusagecontrolsre
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class C1APIAppV1AppUsageControlsServiceGetRequest:
     app_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'app_id', 'style': 'simple', 'explode': False }})
     
-
 
 
 

@@ -41,5 +41,5 @@ setuptools.setup(
         "dev":["pylint==2.16.2"]
     },
     package_dir={'': 'src'},
-    python_requires='>=3.9'
+    python_requires='>=3.8'
 )

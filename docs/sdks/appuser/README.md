@@ -34,8 +34,8 @@ req = operations.C1APIAppV1AppUserServiceUpdateRequest(
             ],
         ),
     ),
-    app_user_app_id='Clothing Tempe',
-    app_user_id='Ohio ADP',
+    app_user_app_id='complexity',
+    app_user_id='Supervisor',
 )
 
 res = s.app_user.update(req)

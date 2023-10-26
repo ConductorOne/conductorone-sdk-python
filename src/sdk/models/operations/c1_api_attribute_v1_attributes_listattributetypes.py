@@ -7,13 +7,11 @@ from ..shared import listattributetypesresponse as shared_listattributetypesresp
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class C1APIAttributeV1AttributesListAttributeTypesRequest:
     page_size: Optional[float] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'page_size', 'style': 'form', 'explode': True }})
     page_token: Optional[str] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'page_token', 'style': 'form', 'explode': True }})
     
-
 
 
 

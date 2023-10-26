@@ -2,8 +2,9 @@
 
 import requests
 from dataclasses import dataclass, field
-
+from typing import Dict, List, Tuple
 from .utils.retries import RetryConfig
+from .utils import utils
 
 
 SERVERS = [
@@ -20,17 +21,17 @@ class SDKConfiguration:
     security_client: requests.Session
     server_url: str = ''
     server_idx: int = 0
-    server_defaults: list[dict[str, str]] = field(default_factory=list)
+    server_defaults: List[Dict[str, str]] = field(default_factory=List)
     language: str = 'python'
     openapi_doc_version: str = '0.1.0-alpha'
     sdk_version: str = '0.5.2'
-    gen_version: str = '2.154.1'
-    user_agent: str = 'speakeasy-sdk/python 0.5.2 2.154.1 0.1.0-alpha openapi'
+    gen_version: str = '2.161.0'
+    user_agent: str = 'speakeasy-sdk/python 0.5.2 2.161.0 0.1.0-alpha openapi'
     retry_config: RetryConfig = None
 
-    def get_server_details(self) -> tuple[str, dict[str, str]]:
+    def get_server_details(self) -> Tuple[str, Dict[str, str]]:
         if self.server_url:
-            return self.server_url.removesuffix('/'), {}
+            return utils.remove_suffix(self.server_url, '/'), {}
         if self.server_idx is None:
             self.server_idx = 0
 

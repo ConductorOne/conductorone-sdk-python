@@ -10,7 +10,6 @@ from typing import Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class App:
     r"""The App object provides all of the details for an app, as well as some configuration."""
@@ -49,7 +48,6 @@ class App:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class AppInput:
     r"""The App object provides all of the details for an app, as well as some configuration."""

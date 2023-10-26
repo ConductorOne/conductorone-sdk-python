@@ -4,7 +4,6 @@ from __future__ import annotations
 import dataclasses
 
 
-
 @dataclasses.dataclass
 class DeletePolicyRequest:
     r"""The DeletePolicyRequest message contains the ID of the policy to delete. It uses URL value for input."""

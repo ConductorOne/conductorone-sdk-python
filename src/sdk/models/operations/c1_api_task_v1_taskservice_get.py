@@ -7,12 +7,10 @@ from ..shared import taskservicegetresponse as shared_taskservicegetresponse
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class C1APITaskV1TaskServiceGetRequest:
     id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'id', 'style': 'simple', 'explode': False }})
     
-
 
 
 

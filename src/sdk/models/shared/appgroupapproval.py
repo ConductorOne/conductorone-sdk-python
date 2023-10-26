@@ -4,11 +4,10 @@ from __future__ import annotations
 import dataclasses
 from dataclasses_json import Undefined, dataclass_json
 from sdk import utils
-from typing import Optional
+from typing import List, Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class AppGroupApproval:
     r"""The AppGroupApproval object provides the configuration for setting a group as the approvers of an approval policy step."""
@@ -20,10 +19,9 @@ class AppGroupApproval:
     r"""The ID of the app that conatins the group specified for approval."""
     fallback: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('fallback'), 'exclude': lambda f: f is None }})
     r"""Configuration to allow a fallback if the group is empty."""
-    fallback_user_ids: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('fallbackUserIds') }})
+    fallback_user_ids: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('fallbackUserIds') }})
     r"""Configuration to specific which users to fallback to if fallback is enabled and the group is empty."""
     
-
 
 
 

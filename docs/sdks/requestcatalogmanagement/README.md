@@ -38,7 +38,7 @@ req = operations.C1APIRequestcatalogV1RequestCatalogManagementServiceAddAccessEn
             shared.AppEntitlementRef(),
         ],
     ),
-    catalog_id='deposit',
+    catalog_id='Killeen',
 )
 
 res = s.request_catalog_management.add_access_entitlements(req)
@@ -83,7 +83,7 @@ req = operations.C1APIRequestcatalogV1RequestCatalogManagementServiceAddAppEntit
             shared.AppEntitlementRef(),
         ],
     ),
-    catalog_id='East cyan Wilma',
+    catalog_id='female',
 )
 
 res = s.request_catalog_management.add_app_entitlements(req)
@@ -279,7 +279,7 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIRequestcatalogV1RequestCatalogManagementServiceListEntitlementsForAccessRequest(
-    catalog_id='mint digital Man',
+    catalog_id='deliberately',
 )
 
 res = s.request_catalog_management.list_entitlements_for_access(req)
@@ -319,7 +319,7 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIRequestcatalogV1RequestCatalogManagementServiceListEntitlementsPerCatalogRequest(
-    catalog_id='Senior',
+    catalog_id='Incredible',
 )
 
 res = s.request_catalog_management.list_entitlements_per_catalog(req)
@@ -364,7 +364,7 @@ req = operations.C1APIRequestcatalogV1RequestCatalogManagementServiceRemoveAcces
             shared.AppEntitlementRef(),
         ],
     ),
-    catalog_id='Mill Audi indigo',
+    catalog_id='Convertible',
 )
 
 res = s.request_catalog_management.remove_access_entitlements(req)
@@ -409,7 +409,7 @@ req = operations.C1APIRequestcatalogV1RequestCatalogManagementServiceRemoveAppEn
             shared.AppEntitlementRef(),
         ],
     ),
-    catalog_id='UTF8',
+    catalog_id='Elsinore',
 )
 
 res = s.request_catalog_management.remove_app_entitlements(req)

@@ -9,7 +9,6 @@ from typing import Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class TaskActionsServiceDenyRequest:
     r"""The TaskActionsServiceDenyRequest object lets you deny a task."""

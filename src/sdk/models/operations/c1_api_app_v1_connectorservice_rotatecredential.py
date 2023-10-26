@@ -8,14 +8,12 @@ from ..shared import connectorservicerotatecredentialresponse as shared_connecto
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class C1APIAppV1ConnectorServiceRotateCredentialRequest:
     app_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'app_id', 'style': 'simple', 'explode': False }})
     connector_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'connector_id', 'style': 'simple', 'explode': False }})
     connector_service_rotate_credential_request: Optional[shared_connectorservicerotatecredentialrequest.ConnectorServiceRotateCredentialRequest] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})
     
-
 
 
 

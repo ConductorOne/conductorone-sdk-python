@@ -8,14 +8,12 @@ from ..shared import setappentitlementownersresponse as shared_setappentitlement
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class C1APIAppV1AppEntitlementOwnersSetRequest:
     app_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'app_id', 'style': 'simple', 'explode': False }})
     entitlement_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'entitlement_id', 'style': 'simple', 'explode': False }})
     set_app_entitlement_owners_request: Optional[shared_setappentitlementownersrequest.SetAppEntitlementOwnersRequest] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})
     
-
 
 
 

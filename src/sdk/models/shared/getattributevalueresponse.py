@@ -9,7 +9,6 @@ from typing import Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class GetAttributeValueResponse:
     r"""GetAttributeValueResponse is the response for getting an attribute value by id."""

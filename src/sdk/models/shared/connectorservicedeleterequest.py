@@ -4,7 +4,6 @@ from __future__ import annotations
 import dataclasses
 
 
-
 @dataclasses.dataclass
 class ConnectorServiceDeleteRequest:
     r"""ConnectorServiceDeleteRequest is a request for deleting a connector. It uses URL values for input."""

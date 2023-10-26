@@ -8,13 +8,11 @@ from ..shared import taskserviceactionresponse as shared_taskserviceactionrespon
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class C1APITaskV1TaskActionsServiceEscalateToEmergencyAccessRequest:
     task_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'task_id', 'style': 'simple', 'explode': False }})
     task_actions_service_escalate_to_emergency_access_request: Optional[shared_taskactionsserviceescalatetoemergencyaccessrequest.TaskActionsServiceEscalateToEmergencyAccessRequest] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})
     
-
 
 
 
