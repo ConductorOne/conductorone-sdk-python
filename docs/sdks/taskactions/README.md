@@ -7,6 +7,7 @@
 * [comment](#comment) - Comment
 * [deny](#deny) - Deny
 * [escalate_to_emergency_access](#escalate_to_emergency_access) - Escalate To Emergency Access
+* [restart](#restart) - Restart
 
 ## approve
 
@@ -195,4 +196,51 @@ if res.task_service_action_response is not None:
 ### Response
 
 **[operations.C1APITaskV1TaskActionsServiceEscalateToEmergencyAccessResponse](../../models/operations/c1apitaskv1taskactionsserviceescalatetoemergencyaccessresponse.md)**
+
+
+## restart
+
+Invokes the c1.api.task.v1.TaskActionsService.Restart method.
+
+### Example Usage
+
+```python
+import sdk
+from sdk.models import operations, shared
+
+s = sdk.SDK(
+    security=shared.Security(
+        bearer_auth="",
+        oauth="",
+    ),
+)
+
+req = operations.C1APITaskV1TaskActionsServiceRestartRequest(
+    task_actions_service_restart_request=shared.TaskActionsServiceRestartRequest(
+        task_expand_mask=shared.TaskExpandMask(
+            paths=[
+                'string',
+            ],
+        ),
+    ),
+    task_id='string',
+)
+
+res = s.task_actions.restart(req)
+
+if res.task_actions_service_restart_response is not None:
+    # handle response
+    pass
+```
+
+### Parameters
+
+| Parameter                                                                                                                        | Type                                                                                                                             | Required                                                                                                                         | Description                                                                                                                      |
+| -------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
+| `request`                                                                                                                        | [operations.C1APITaskV1TaskActionsServiceRestartRequest](../../models/operations/c1apitaskv1taskactionsservicerestartrequest.md) | :heavy_check_mark:                                                                                                               | The request object to use for the request.                                                                                       |
+
+
+### Response
+
+**[operations.C1APITaskV1TaskActionsServiceRestartResponse](../../models/operations/c1apitaskv1taskactionsservicerestartresponse.md)**
 
