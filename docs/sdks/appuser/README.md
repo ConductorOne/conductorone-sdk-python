@@ -30,12 +30,12 @@ req = operations.C1APIAppV1AppUserServiceUpdateRequest(
         ),
         app_user_expand_mask=shared.AppUserExpandMask(
             paths=[
-                'up',
+                'string',
             ],
         ),
     ),
-    app_user_app_id='complexity',
-    app_user_id='Supervisor',
+    app_user_app_id='string',
+    app_user_id='string',
 )
 
 res = s.app_user.update(req)

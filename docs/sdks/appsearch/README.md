@@ -24,10 +24,10 @@ s = sdk.SDK(
 
 req = shared.SearchAppsRequest(
     app_ids=[
-        'transition',
+        'string',
     ],
     exclude_app_ids=[
-        'turquoise',
+        'string',
     ],
 )
 

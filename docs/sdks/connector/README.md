@@ -35,19 +35,19 @@ req = operations.C1APIAppV1ConnectorServiceCreateRequest(
     connector_service_create_request=shared.ConnectorServiceCreateRequest(
         connector_expand_mask=shared.ConnectorExpandMask(
             paths=[
-                'neural',
+                'string',
             ],
         ),
         config=shared.ConnectorServiceCreateRequestConfig(
             additional_properties={
-                "Tasty": 'island',
+                "key": 'string',
             },
         ),
         user_ids=[
-            'Southwest',
+            'string',
         ],
     ),
-    app_id='alarm',
+    app_id='string',
 )
 
 res = s.connector.create(req)
@@ -90,14 +90,14 @@ req = operations.C1APIAppV1ConnectorServiceCreateDelegatedRequest(
     connector_service_create_delegated_request=shared.ConnectorServiceCreateDelegatedRequest(
         connector_expand_mask=shared.ConnectorExpandMask(
             paths=[
-                'Keyboard',
+                'string',
             ],
         ),
         user_ids=[
-            'Southwest',
+            'string',
         ],
     ),
-    app_id='labore',
+    app_id='string',
 )
 
 res = s.connector.create_delegated(req)
@@ -138,7 +138,7 @@ s = sdk.SDK(
 
 req = operations.C1APIAppV1ConnectorServiceDeleteRequest(
     connector_service_delete_request=shared.ConnectorServiceDeleteRequest(),
-    app_id='roughly',
+    app_id='string',
     id='<ID>',
 )
 
@@ -179,7 +179,7 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIAppV1ConnectorServiceGetRequest(
-    app_id='motivating',
+    app_id='string',
     id='<ID>',
 )
 
@@ -220,8 +220,8 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIAppV1ConnectorServiceGetCredentialsRequest(
-    app_id='West',
-    connector_id='Beryllium',
+    app_id='string',
+    connector_id='string',
     id='<ID>',
 )
 
@@ -262,7 +262,7 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIAppV1ConnectorServiceListRequest(
-    app_id='Future',
+    app_id='string',
 )
 
 res = s.connector.list(req)
@@ -303,8 +303,8 @@ s = sdk.SDK(
 
 req = operations.C1APIAppV1ConnectorServiceRevokeCredentialRequest(
     connector_service_revoke_credential_request=shared.ConnectorServiceRevokeCredentialRequest(),
-    app_id='Focused',
-    connector_id='Passenger',
+    app_id='string',
+    connector_id='string',
     id='<ID>',
 )
 
@@ -346,8 +346,8 @@ s = sdk.SDK(
 
 req = operations.C1APIAppV1ConnectorServiceRotateCredentialRequest(
     connector_service_rotate_credential_request=shared.ConnectorServiceRotateCredentialRequest(),
-    app_id='program',
-    connector_id='cost',
+    app_id='string',
+    connector_id='string',
 )
 
 res = s.connector.rotate_credential(req)
@@ -394,20 +394,20 @@ req = operations.C1APIAppV1ConnectorServiceUpdateRequest(
             o_auth2_authorized_as=shared.OAuth2AuthorizedAsInput(),
             config=shared.ConnectorConfig(
                 additional_properties={
-                    "up": 'complexity',
+                    "key": 'string',
                 },
             ),
             user_ids=[
-                'Supervisor',
+                'string',
             ],
         ),
         connector_expand_mask=shared.ConnectorExpandMask(
             paths=[
-                'less',
+                'string',
             ],
         ),
     ),
-    app_id='Ohio',
+    app_id='string',
     id='<ID>',
 )
 
@@ -455,21 +455,21 @@ req = operations.C1APIAppV1ConnectorServiceUpdateDelegatedRequest(
             o_auth2_authorized_as=shared.OAuth2AuthorizedAsInput(),
             config=shared.ConnectorConfig(
                 additional_properties={
-                    "Rap": 'Ouguiya',
+                    "key": 'string',
                 },
             ),
             user_ids=[
-                'methodologies',
+                'string',
             ],
         ),
         connector_expand_mask=shared.ConnectorExpandMask(
             paths=[
-                'North',
+                'string',
             ],
         ),
     ),
-    connector_app_id='Dollar',
-    connector_id='Pickup',
+    connector_app_id='string',
+    connector_id='string',
 )
 
 res = s.connector.update_delegated(req)

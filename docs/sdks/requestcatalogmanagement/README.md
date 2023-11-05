@@ -38,7 +38,7 @@ req = operations.C1APIRequestcatalogV1RequestCatalogManagementServiceAddAccessEn
             shared.AppEntitlementRef(),
         ],
     ),
-    catalog_id='Killeen',
+    catalog_id='string',
 )
 
 res = s.request_catalog_management.add_access_entitlements(req)
@@ -83,7 +83,7 @@ req = operations.C1APIRequestcatalogV1RequestCatalogManagementServiceAddAppEntit
             shared.AppEntitlementRef(),
         ],
     ),
-    catalog_id='female',
+    catalog_id='string',
 )
 
 res = s.request_catalog_management.add_app_entitlements(req)
@@ -125,7 +125,7 @@ s = sdk.SDK(
 req = shared.RequestCatalogManagementServiceCreateRequest(
     request_catalog_expand_mask=shared.RequestCatalogExpandMask(
         paths=[
-            'neural',
+            'string',
         ],
     ),
 )
@@ -279,7 +279,7 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIRequestcatalogV1RequestCatalogManagementServiceListEntitlementsForAccessRequest(
-    catalog_id='deliberately',
+    catalog_id='string',
 )
 
 res = s.request_catalog_management.list_entitlements_for_access(req)
@@ -319,7 +319,7 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIRequestcatalogV1RequestCatalogManagementServiceListEntitlementsPerCatalogRequest(
-    catalog_id='Incredible',
+    catalog_id='string',
 )
 
 res = s.request_catalog_management.list_entitlements_per_catalog(req)
@@ -364,7 +364,7 @@ req = operations.C1APIRequestcatalogV1RequestCatalogManagementServiceRemoveAcces
             shared.AppEntitlementRef(),
         ],
     ),
-    catalog_id='Convertible',
+    catalog_id='string',
 )
 
 res = s.request_catalog_management.remove_access_entitlements(req)
@@ -409,7 +409,7 @@ req = operations.C1APIRequestcatalogV1RequestCatalogManagementServiceRemoveAppEn
             shared.AppEntitlementRef(),
         ],
     ),
-    catalog_id='Elsinore',
+    catalog_id='string',
 )
 
 res = s.request_catalog_management.remove_app_entitlements(req)
@@ -458,23 +458,23 @@ req = operations.C1APIRequestcatalogV1RequestCatalogManagementServiceUpdateReque
                         delegated_provision=shared.DelegatedProvision(),
                         manual_provision=shared.ManualProvision(
                             user_ids=[
-                                'up',
+                                'string',
                             ],
                         ),
                     ),
                     compliance_framework_value_ids=[
-                        'complexity',
+                        'string',
                     ],
                     duration_unset=shared.AppEntitlementDurationUnset(),
                 ),
             ],
             app_ids=[
-                'Supervisor',
+                'string',
             ],
         ),
         request_catalog_expand_mask=shared.RequestCatalogExpandMask(
             paths=[
-                'less',
+                'string',
             ],
         ),
     ),

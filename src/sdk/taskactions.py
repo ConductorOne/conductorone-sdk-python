@@ -144,3 +144,36 @@ class TaskActions:
         return res
 
     
+    def restart(self, request: operations.C1APITaskV1TaskActionsServiceRestartRequest) -> operations.C1APITaskV1TaskActionsServiceRestartResponse:
+        r"""Restart
+        Invokes the c1.api.task.v1.TaskActionsService.Restart method.
+        """
+        base_url = utils.template_url(*self.sdk_configuration.get_server_details())
+        
+        url = utils.generate_url(operations.C1APITaskV1TaskActionsServiceRestartRequest, base_url, '/api/v1/tasks/{task_id}/action/restart', request)
+        headers = {}
+        req_content_type, data, form = utils.serialize_request_body(request, "task_actions_service_restart_request", False, True, 'json')
+        if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
+            headers['content-type'] = req_content_type
+        headers['Accept'] = 'application/json'
+        headers['user-agent'] = self.sdk_configuration.user_agent
+        
+        client = self.sdk_configuration.security_client
+        
+        http_res = client.request('POST', url, data=data, files=form, headers=headers)
+        content_type = http_res.headers.get('Content-Type')
+
+        res = operations.C1APITaskV1TaskActionsServiceRestartResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        
+        if http_res.status_code == 200:
+            if utils.match_content_type(content_type, 'application/json'):
+                out = utils.unmarshal_json(http_res.text, Optional[shared.TaskActionsServiceRestartResponse])
+                res.task_actions_service_restart_response = out
+            else:
+                raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
+        elif http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+
+        return res
+
+    

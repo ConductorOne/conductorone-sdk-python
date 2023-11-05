@@ -24,13 +24,13 @@ s = sdk.SDK(
 
 req = shared.SearchAttributeValuesRequest(
     attribute_type_ids=[
-        'Specialist',
+        'string',
     ],
     exclude_ids=[
-        'generation',
+        'string',
     ],
     ids=[
-        'connecting',
+        'string',
     ],
 )
 

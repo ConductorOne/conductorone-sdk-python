@@ -28,7 +28,7 @@ s = sdk.SDK(
 
 req = shared.CreateAppRequest(
     owners=[
-        'neural',
+        'string',
     ],
 )
 

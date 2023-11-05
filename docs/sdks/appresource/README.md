@@ -24,8 +24,8 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIAppV1AppResourceServiceGetRequest(
-    app_id='motivating',
-    app_resource_type_id='Account',
+    app_id='string',
+    app_resource_type_id='string',
     id='<ID>',
 )
 
@@ -66,8 +66,8 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIAppV1AppResourceServiceListRequest(
-    app_id='Future',
-    app_resource_type_id='Southeast',
+    app_id='string',
+    app_resource_type_id='string',
 )
 
 res = s.app_resource.list(req)

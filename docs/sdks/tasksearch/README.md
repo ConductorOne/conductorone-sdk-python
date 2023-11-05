@@ -26,53 +26,53 @@ s = sdk.SDK(
 req = shared.TaskSearchRequestInput(
     task_expand_mask=shared.TaskExpandMask(
         paths=[
-            'transition',
+            'string',
         ],
     ),
     access_review_ids=[
-        'turquoise',
+        'string',
     ],
     account_owner_ids=[
-        'Hyundai',
+        'string',
     ],
     app_entitlement_ids=[
-        'Future',
+        'string',
     ],
     app_resource_ids=[
-        'Southwest',
+        'string',
     ],
     app_resource_type_ids=[
-        'broach',
+        'string',
     ],
     app_user_subject_ids=[
-        'dependent',
+        'string',
     ],
     application_ids=[
-        'Mozambique',
+        'string',
     ],
     assignees_in_ids=[
-        'Global',
+        'string',
     ],
     exclude_app_entitlement_ids=[
-        'watt',
+        'string',
     ],
     exclude_ids=[
-        'Gasoline',
+        'string',
     ],
     my_work_user_ids=[
-        'Protactinium',
+        'string',
     ],
     opener_ids=[
-        'Arsenic',
+        'string',
     ],
     previously_acted_on_ids=[
-        'Gasoline',
+        'string',
     ],
     refs=[
         shared.TaskRef(),
     ],
     subject_ids=[
-        'Oklahoma',
+        'string',
     ],
     task_states=[
         shared.TaskSearchRequestTaskStates.TASK_STATE_UNSPECIFIED,

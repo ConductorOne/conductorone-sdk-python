@@ -24,7 +24,7 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIAppV1AppResourceTypeServiceGetRequest(
-    app_id='motivating',
+    app_id='string',
     id='<ID>',
 )
 
@@ -65,7 +65,7 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIAppV1AppResourceTypeServiceListRequest(
-    app_id='Future',
+    app_id='string',
 )
 
 res = s.app_resource_type.list(req)

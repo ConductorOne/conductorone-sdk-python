@@ -15,5 +15,7 @@ class DelegatedProvision:
     r"""The AppID of the entitlement to delegate provisioning to."""
     entitlement_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('entitlementId'), 'exclude': lambda f: f is None }})
     r"""The ID of the entitlement we are delegating provisioning to."""
+    implicit: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('implicit'), 'exclude': lambda f: f is None }})
+    r"""If true, a binding will be automatically created from the entitlement of the parent app."""
     
 
