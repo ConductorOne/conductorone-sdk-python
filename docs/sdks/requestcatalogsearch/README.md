@@ -25,7 +25,7 @@ s = sdk.SDK(
 req = shared.RequestCatalogSearchServiceSearchEntitlementsRequest(
     app_entitlement_expand_mask=shared.AppEntitlementExpandMask(
         paths=[
-            'Cotton',
+            'string',
         ],
     ),
 )

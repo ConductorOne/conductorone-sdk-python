@@ -12,6 +12,30 @@ from typing import List, Optional
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
+class RequestCatalogInput:
+    r"""The RequestCatalog is used for managing which entitlements are requestable, and who can request them."""
+    access_entitlements: Optional[List[shared_appentitlement.AppEntitlementInput]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('accessEntitlements') }})
+    r"""An array of app entitlements that, if the user has, can view the contents of this catalog."""
+    app_ids: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('appIds') }})
+    r"""The Apps contained in this request catalog."""
+    created_by_user_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('createdByUserId'), 'exclude': lambda f: f is None }})
+    r"""The id of the user this request catalog was created by."""
+    description: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('description'), 'exclude': lambda f: f is None }})
+    r"""The description of the request catalog."""
+    display_name: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('displayName'), 'exclude': lambda f: f is None }})
+    r"""The display name of the request catalog."""
+    id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id'), 'exclude': lambda f: f is None }})
+    r"""The id of the request catalog."""
+    published: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('published'), 'exclude': lambda f: f is None }})
+    r"""Whether or not this catalog is published."""
+    visible_to_everyone: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('visibleToEveryone'), 'exclude': lambda f: f is None }})
+    r"""If this is true, the access entitlement requirement is ignored."""
+    
+
+
+
+@dataclass_json(undefined=Undefined.EXCLUDE)
+@dataclasses.dataclass
 class RequestCatalog:
     r"""The RequestCatalog is used for managing which entitlements are requestable, and who can request them."""
     access_entitlements: Optional[List[shared_appentitlement.AppEntitlement]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('accessEntitlements') }})
@@ -31,30 +55,6 @@ class RequestCatalog:
     published: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('published'), 'exclude': lambda f: f is None }})
     r"""Whether or not this catalog is published."""
     updated_at: Optional[datetime] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('updatedAt'), 'encoder': utils.datetimeisoformat(True), 'decoder': dateutil.parser.isoparse, 'exclude': lambda f: f is None }})
-    visible_to_everyone: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('visibleToEveryone'), 'exclude': lambda f: f is None }})
-    r"""If this is true, the access entitlement requirement is ignored."""
-    
-
-
-
-@dataclass_json(undefined=Undefined.EXCLUDE)
-@dataclasses.dataclass
-class RequestCatalogInput:
-    r"""The RequestCatalog is used for managing which entitlements are requestable, and who can request them."""
-    access_entitlements: Optional[List[shared_appentitlement.AppEntitlementInput]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('accessEntitlements') }})
-    r"""An array of app entitlements that, if the user has, can view the contents of this catalog."""
-    app_ids: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('appIds') }})
-    r"""The Apps contained in this request catalog."""
-    created_by_user_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('createdByUserId'), 'exclude': lambda f: f is None }})
-    r"""The id of the user this request catalog was created by."""
-    description: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('description'), 'exclude': lambda f: f is None }})
-    r"""The description of the request catalog."""
-    display_name: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('displayName'), 'exclude': lambda f: f is None }})
-    r"""The display name of the request catalog."""
-    id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id'), 'exclude': lambda f: f is None }})
-    r"""The id of the request catalog."""
-    published: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('published'), 'exclude': lambda f: f is None }})
-    r"""Whether or not this catalog is published."""
     visible_to_everyone: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('visibleToEveryone'), 'exclude': lambda f: f is None }})
     r"""If this is true, the access entitlement requirement is ignored."""
     

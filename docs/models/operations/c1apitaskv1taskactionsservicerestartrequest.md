@@ -1,0 +1,9 @@
+# C1APITaskV1TaskActionsServiceRestartRequest
+
+
+## Fields
+
+| Field                                                                                                        | Type                                                                                                         | Required                                                                                                     | Description                                                                                                  |
+| ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ |
+| `task_actions_service_restart_request`                                                                       | [Optional[shared.TaskActionsServiceRestartRequest]](../../models/shared/taskactionsservicerestartrequest.md) | :heavy_minus_sign:                                                                                           | N/A                                                                                                          |
+| `task_id`                                                                                                    | *str*                                                                                                        | :heavy_check_mark:                                                                                           | N/A                                                                                                          |
