@@ -276,7 +276,7 @@ class Connector:
         
         url = utils.generate_url(operations.C1APIAppV1ConnectorServiceUpdateRequest, base_url, '/api/v1/apps/{app_id}/connectors/{id}', request)
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "connector_service_update_request_input", False, True, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, "connector_service_update_request", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = 'application/json'
@@ -309,7 +309,7 @@ class Connector:
         
         url = utils.generate_url(operations.C1APIAppV1ConnectorServiceUpdateDelegatedRequest, base_url, '/api/v1/apps/{connector_app_id}/connectors/{connector_id}/delegated', request)
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "connector_service_update_delegated_request_input", False, True, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, "connector_service_update_delegated_request", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = 'application/json'

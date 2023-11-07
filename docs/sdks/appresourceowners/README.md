@@ -1,5 +1,5 @@
 # AppResourceOwners
-(*app_resource_owners*)
+(*.app_resource_owners*)
 
 ### Available Operations
 

@@ -1,5 +1,5 @@
 # AppEntitlementOwners
-(*app_entitlement_owners*)
+(*.app_entitlement_owners*)
 
 ### Available Operations
 

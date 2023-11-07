@@ -3,8 +3,8 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import connectorservicerotatecredentialrequest as shared_connectorservicerotatecredentialrequest
-from ..shared import connectorservicerotatecredentialresponse as shared_connectorservicerotatecredentialresponse
+from ...models.shared import connectorservicerotatecredentialrequest as shared_connectorservicerotatecredentialrequest
+from ...models.shared import connectorservicerotatecredentialresponse as shared_connectorservicerotatecredentialresponse
 from typing import Optional
 
 

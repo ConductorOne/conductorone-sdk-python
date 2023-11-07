@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 import dataclasses
-from ..shared import requestcatalogview as shared_requestcatalogview
+from .requestcatalogview import RequestCatalogView
 from dataclasses_json import Undefined, dataclass_json
 from sdk import utils
 from typing import Any, Dict, List, Optional
@@ -25,7 +25,7 @@ class RequestCatalogManagementServiceGetResponse:
     r"""The request catalog management service get response returns a request catalog view with the expanded items in the expanded array indicated by the expand mask in the request."""
     expanded: Optional[List[RequestCatalogManagementServiceGetResponseExpanded]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('expanded') }})
     r"""List of serialized related objects."""
-    request_catalog_view: Optional[shared_requestcatalogview.RequestCatalogView] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('requestCatalogView'), 'exclude': lambda f: f is None }})
+    request_catalog_view: Optional[RequestCatalogView] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('requestCatalogView'), 'exclude': lambda f: f is None }})
     r"""The request catalog view contains the serialized request catalog and paths to objects referenced by the request catalog."""
     
 

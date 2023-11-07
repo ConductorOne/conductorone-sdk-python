@@ -3,7 +3,7 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import listappentitlementusersresponse as shared_listappentitlementusersresponse
+from ...models.shared import listappentitlementusersresponse as shared_listappentitlementusersresponse
 from typing import Optional
 
 

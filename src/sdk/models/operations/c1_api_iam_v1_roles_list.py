@@ -3,7 +3,7 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import listrolesresponse as shared_listrolesresponse
+from ...models.shared import listrolesresponse as shared_listrolesresponse
 from typing import Optional
 
 

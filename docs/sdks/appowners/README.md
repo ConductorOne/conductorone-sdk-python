@@ -1,5 +1,5 @@
 # AppOwners
-(*app_owners*)
+(*.app_owners*)
 
 ### Available Operations
 

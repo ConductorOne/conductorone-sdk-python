@@ -1,5 +1,5 @@
 # PolicySearch
-(*policy_search*)
+(*.policy_search*)
 
 ### Available Operations
 
@@ -24,7 +24,7 @@ s = sdk.SDK(
 
 req = shared.SearchPoliciesRequest(
     policy_types=[
-        shared.SearchPoliciesRequestPolicyTypes.POLICY_TYPE_GRANT,
+        shared.PolicyTypes.POLICY_TYPE_GRANT,
     ],
     refs=[
         shared.PolicyRef(),

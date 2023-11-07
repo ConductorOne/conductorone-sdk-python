@@ -2,8 +2,8 @@
 
 from __future__ import annotations
 import dataclasses
-from ..shared import facetrangeitem as shared_facetrangeitem
-from ..shared import facetvalueitem as shared_facetvalueitem
+from .facetrangeitem import FacetRangeItem
+from .facetvalueitem import FacetValueItem
 from dataclasses_json import Undefined, dataclass_json
 from sdk import utils
 from typing import Optional
@@ -20,9 +20,9 @@ class FacetCategory:
     """
     display_name: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('displayName'), 'exclude': lambda f: f is None }})
     r"""The display name of the category."""
-    facet_range_item: Optional[shared_facetrangeitem.FacetRangeItem] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('range') }})
+    facet_range_item: Optional[FacetRangeItem] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('range') }})
     r"""The FacetRangeItem message."""
-    facet_value_item: Optional[shared_facetvalueitem.FacetValueItem] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('value') }})
+    facet_value_item: Optional[FacetValueItem] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('value') }})
     r"""The FacetValueItem message."""
     icon_url: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('iconUrl'), 'exclude': lambda f: f is None }})
     r"""An icon for the category."""

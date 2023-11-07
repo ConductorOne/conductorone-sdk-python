@@ -1,5 +1,5 @@
 # RequestCatalogSearch
-(*request_catalog_search*)
+(*.request_catalog_search*)
 
 ### Available Operations
 

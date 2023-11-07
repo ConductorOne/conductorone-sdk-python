@@ -1,5 +1,5 @@
 # AppUser
-(*app_user*)
+(*.app_user*)
 
 ### Available Operations
 
@@ -24,7 +24,7 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIAppV1AppUserServiceUpdateRequest(
-    app_user_service_update_request_input=shared.AppUserServiceUpdateRequestInput(
+    app_user_service_update_request=shared.AppUserServiceUpdateRequest(
         app_user=shared.AppUserInput(
             app_user_status=shared.AppUserStatusInput(),
         ),

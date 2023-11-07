@@ -1,5 +1,5 @@
 # Apps
-(*apps*)
+(*.apps*)
 
 ### Available Operations
 
@@ -188,7 +188,7 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIAppV1AppsUpdateRequest(
-    update_app_request_input=shared.UpdateAppRequestInput(
+    update_app_request=shared.UpdateAppRequest(
         app=shared.AppInput(),
     ),
     id='<ID>',

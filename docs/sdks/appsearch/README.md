@@ -1,5 +1,5 @@
 # AppSearch
-(*app_search*)
+(*.app_search*)
 
 ### Available Operations
 

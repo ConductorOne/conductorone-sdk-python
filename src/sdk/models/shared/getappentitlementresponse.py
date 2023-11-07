@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 import dataclasses
-from ..shared import appentitlementview as shared_appentitlementview
+from .appentitlementview import AppEntitlementView
 from dataclasses_json import Undefined, dataclass_json
 from sdk import utils
 from typing import Any, Dict, List, Optional
@@ -23,7 +23,7 @@ class GetAppEntitlementResponseExpanded:
 @dataclasses.dataclass
 class GetAppEntitlementResponse:
     r"""The get app entitlement response returns an entitlement view containing paths in the expanded array for the objects expanded as indicated by the expand mask in the request."""
-    app_entitlement_view: Optional[shared_appentitlementview.AppEntitlementView] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('appEntitlementView'), 'exclude': lambda f: f is None }})
+    app_entitlement_view: Optional[AppEntitlementView] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('appEntitlementView'), 'exclude': lambda f: f is None }})
     r"""The app entitlement view contains the serialized app entitlement and paths to objects referenced by the app entitlement."""
     expanded: Optional[List[GetAppEntitlementResponseExpanded]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('expanded') }})
     r"""List of serialized related objects."""

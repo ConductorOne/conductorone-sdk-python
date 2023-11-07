@@ -3,15 +3,15 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import updatepolicyrequest as shared_updatepolicyrequest
-from ..shared import updatepolicyresponse as shared_updatepolicyresponse
+from ...models.shared import updatepolicyrequest as shared_updatepolicyrequest
+from ...models.shared import updatepolicyresponse as shared_updatepolicyresponse
 from typing import Optional
 
 
 @dataclasses.dataclass
 class C1APIPolicyV1PoliciesUpdateRequest:
     id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'id', 'style': 'simple', 'explode': False }})
-    update_policy_request_input: Optional[shared_updatepolicyrequest.UpdatePolicyRequestInput] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})
+    update_policy_request: Optional[shared_updatepolicyrequest.UpdatePolicyRequest] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})
     
 
 

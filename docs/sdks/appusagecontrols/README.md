@@ -1,5 +1,5 @@
 # AppUsageControls
-(*app_usage_controls*)
+(*.app_usage_controls*)
 
 ### Available Operations
 

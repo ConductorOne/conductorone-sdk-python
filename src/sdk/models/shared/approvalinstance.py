@@ -2,12 +2,12 @@
 
 from __future__ import annotations
 import dataclasses
-from ..shared import approval as shared_approval
-from ..shared import approvedaction as shared_approvedaction
-from ..shared import deniedaction as shared_deniedaction
-from ..shared import reassignedaction as shared_reassignedaction
-from ..shared import reassignedbyerroraction as shared_reassignedbyerroraction
-from ..shared import restartaction as shared_restartaction
+from .approval import Approval
+from .approvedaction import ApprovedAction
+from .deniedaction import DeniedAction
+from .reassignedaction import ReassignedAction
+from .reassignedbyerroraction import ReassignedByErrorAction
+from .restartaction import RestartAction
 from dataclasses_json import Undefined, dataclass_json
 from enum import Enum
 from sdk import utils
@@ -34,7 +34,7 @@ class ApprovalInstance:
       - restarted
       - reassignedByError
     """
-    approval: Optional[shared_approval.Approval] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('approval') }})
+    approval: Optional[Approval] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('approval') }})
     r"""The Approval message.
 
     This message contains a oneof named typ. Only a single field of the following list may be set at a time:
@@ -46,15 +46,15 @@ class ApprovalInstance:
       - entitlementOwners
       - expression
     """
-    approved_action: Optional[shared_approvedaction.ApprovedAction] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('approved') }})
+    approved_action: Optional[ApprovedAction] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('approved') }})
     r"""The approved action indicates that the approvalinstance had an outcome of approved."""
-    denied_action: Optional[shared_deniedaction.DeniedAction] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('denied') }})
+    denied_action: Optional[DeniedAction] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('denied') }})
     r"""The denied action indicates that the c1.api.policy.v1.ApprovalInstance had an outcome of denied."""
-    reassigned_action: Optional[shared_reassignedaction.ReassignedAction] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('reassigned') }})
+    reassigned_action: Optional[ReassignedAction] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('reassigned') }})
     r"""The ReassignedAction object describes the outcome of a policy step that has been reassigned."""
-    reassigned_by_error_action: Optional[shared_reassignedbyerroraction.ReassignedByErrorAction] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('reassignedByError') }})
+    reassigned_by_error_action: Optional[ReassignedByErrorAction] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('reassignedByError') }})
     r"""The ReassignedByErrorAction object describes the outcome of a policy step that has been reassigned because it had an error provisioning."""
-    restart_action: Optional[shared_restartaction.RestartAction] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('restarted') }})
+    restart_action: Optional[RestartAction] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('restarted') }})
     r"""The restart action describes the outcome of policy steps for when the task was restarted. This can be applied to multiple steps since restart skips all pending next steps."""
     state: Optional[ApprovalInstanceState] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('state'), 'exclude': lambda f: f is None }})
     r"""The state of the approval instance"""

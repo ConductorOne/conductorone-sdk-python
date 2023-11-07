@@ -3,8 +3,8 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import requestcatalogmanagementservicedeleterequest as shared_requestcatalogmanagementservicedeleterequest
-from ..shared import requestcatalogmanagementservicedeleteresponse as shared_requestcatalogmanagementservicedeleteresponse
+from ...models.shared import requestcatalogmanagementservicedeleterequest as shared_requestcatalogmanagementservicedeleterequest
+from ...models.shared import requestcatalogmanagementservicedeleteresponse as shared_requestcatalogmanagementservicedeleteresponse
 from typing import Optional
 
 

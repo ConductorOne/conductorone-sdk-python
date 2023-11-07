@@ -3,8 +3,8 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import connectorservicedeleterequest as shared_connectorservicedeleterequest
-from ..shared import connectorservicedeleteresponse as shared_connectorservicedeleteresponse
+from ...models.shared import connectorservicedeleterequest as shared_connectorservicedeleterequest
+from ...models.shared import connectorservicedeleteresponse as shared_connectorservicedeleteresponse
 from typing import Optional
 
 

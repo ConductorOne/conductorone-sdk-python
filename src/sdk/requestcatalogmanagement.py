@@ -340,7 +340,7 @@ class RequestCatalogManagement:
         
         url = utils.generate_url(operations.C1APIRequestcatalogV1RequestCatalogManagementServiceUpdateRequest, base_url, '/api/v1/catalogs/{id}', request)
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "request_catalog_management_service_update_request_input", False, True, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, "request_catalog_management_service_update_request", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = 'application/json'

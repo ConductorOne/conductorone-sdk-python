@@ -3,8 +3,8 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import taskactionsservicedenyrequest as shared_taskactionsservicedenyrequest
-from ..shared import taskactionsservicedenyresponse as shared_taskactionsservicedenyresponse
+from ...models.shared import taskactionsservicedenyrequest as shared_taskactionsservicedenyrequest
+from ...models.shared import taskactionsservicedenyresponse as shared_taskactionsservicedenyresponse
 from typing import Optional
 
 

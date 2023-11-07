@@ -1,5 +1,5 @@
 # AppReport
-(*app_report*)
+(*.app_report*)
 
 ### Available Operations
 

@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 import dataclasses
-from ..shared import appuser as shared_appuser
+from .appuser import AppUser
 from dataclasses_json import Undefined, dataclass_json
 from sdk import utils
 from typing import Optional
@@ -14,7 +14,7 @@ class AppUserView:
     r"""The AppUserView contains an app user as well as paths for apps, identity users, and last usage in expanded arrays."""
     app_path: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('appPath'), 'exclude': lambda f: f is None }})
     r"""JSONPATH expression indicating where the app is expanded in expanded arrays indicated in the request."""
-    app_user: Optional[shared_appuser.AppUser] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('appUser'), 'exclude': lambda f: f is None }})
+    app_user: Optional[AppUser] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('appUser'), 'exclude': lambda f: f is None }})
     r"""Application User that represents an account in the application."""
     identity_user_path: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('identityUserPath'), 'exclude': lambda f: f is None }})
     r"""JSONPATH expression indicating where the identity user is expanded in expanded arrays indicated in the request."""

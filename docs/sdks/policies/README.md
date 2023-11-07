@@ -1,5 +1,5 @@
 # Policies
-(*policies*)
+(*.policies*)
 
 ### Available Operations
 
@@ -26,7 +26,7 @@ s = sdk.SDK(
     ),
 )
 
-req = shared.CreatePolicyRequestInput(
+req = shared.CreatePolicyRequest(
     policy_steps={
         "key": shared.PolicyStepsInput(
             steps=[
@@ -72,9 +72,9 @@ if res.create_policy_response is not None:
 
 ### Parameters
 
-| Parameter                                                                          | Type                                                                               | Required                                                                           | Description                                                                        |
-| ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
-| `request`                                                                          | [shared.CreatePolicyRequestInput](../../models/shared/createpolicyrequestinput.md) | :heavy_check_mark:                                                                 | The request object to use for the request.                                         |
+| Parameter                                                                | Type                                                                     | Required                                                                 | Description                                                              |
+| ------------------------------------------------------------------------ | ------------------------------------------------------------------------ | ------------------------------------------------------------------------ | ------------------------------------------------------------------------ |
+| `request`                                                                | [shared.CreatePolicyRequest](../../models/shared/createpolicyrequest.md) | :heavy_check_mark:                                                       | The request object to use for the request.                               |
 
 
 ### Response
@@ -219,7 +219,7 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIPolicyV1PoliciesUpdateRequest(
-    update_policy_request_input=shared.UpdatePolicyRequestInput(
+    update_policy_request=shared.UpdatePolicyRequest(
         policy=shared.PolicyInput(
             policy_steps={
                 "key": shared.PolicyStepsInput(

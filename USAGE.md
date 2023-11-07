@@ -3,7 +3,7 @@
 
 ```python
 import sdk
-from sdk.models import operations, shared
+from sdk.models import shared
 
 s = sdk.SDK(
     security=shared.Security(
@@ -12,15 +12,15 @@ s = sdk.SDK(
     ),
 )
 
-req = operations.C1APIAppV1AppEntitlementOwnersAddRequest(
-    add_app_entitlement_owner_request=shared.AddAppEntitlementOwnerRequest(),
-    app_id='string',
-    entitlement_id='string',
+req = shared.CreateAppRequest(
+    owners=[
+        'string',
+    ],
 )
 
-res = s.app_entitlement_owners.add(req)
+res = s.apps.create(req)
 
-if res.add_app_entitlement_owner_response is not None:
+if res.create_app_response is not None:
     # handle response
     pass
 ```

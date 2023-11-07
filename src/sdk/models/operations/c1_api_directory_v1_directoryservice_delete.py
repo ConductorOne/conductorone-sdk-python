@@ -3,8 +3,8 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import directoryservicedeleterequest as shared_directoryservicedeleterequest
-from ..shared import directoryservicedeleteresponse as shared_directoryservicedeleteresponse
+from ...models.shared import directoryservicedeleterequest as shared_directoryservicedeleterequest
+from ...models.shared import directoryservicedeleteresponse as shared_directoryservicedeleteresponse
 from typing import Optional
 
 

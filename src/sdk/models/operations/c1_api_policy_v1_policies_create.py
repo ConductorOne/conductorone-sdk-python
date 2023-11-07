@@ -3,7 +3,7 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import createpolicyresponse as shared_createpolicyresponse
+from ...models.shared import createpolicyresponse as shared_createpolicyresponse
 from typing import Optional
 
 

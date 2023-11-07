@@ -1,5 +1,5 @@
 # AppResource
-(*app_resource*)
+(*.app_resource*)
 
 ### Available Operations
 

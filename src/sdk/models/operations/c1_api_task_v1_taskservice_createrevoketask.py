@@ -3,7 +3,7 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import taskservicecreaterevokeresponse as shared_taskservicecreaterevokeresponse
+from ...models.shared import taskservicecreaterevokeresponse as shared_taskservicecreaterevokeresponse
 from typing import Optional
 
 

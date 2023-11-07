@@ -3,8 +3,8 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import connectorserviceupdatedelegatedrequest as shared_connectorserviceupdatedelegatedrequest
-from ..shared import connectorserviceupdateresponse as shared_connectorserviceupdateresponse
+from ...models.shared import connectorserviceupdatedelegatedrequest as shared_connectorserviceupdatedelegatedrequest
+from ...models.shared import connectorserviceupdateresponse as shared_connectorserviceupdateresponse
 from typing import Optional
 
 
@@ -12,7 +12,7 @@ from typing import Optional
 class C1APIAppV1ConnectorServiceUpdateDelegatedRequest:
     connector_app_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'connector_app_id', 'style': 'simple', 'explode': False }})
     connector_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'connector_id', 'style': 'simple', 'explode': False }})
-    connector_service_update_delegated_request_input: Optional[shared_connectorserviceupdatedelegatedrequest.ConnectorServiceUpdateDelegatedRequestInput] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})
+    connector_service_update_delegated_request: Optional[shared_connectorserviceupdatedelegatedrequest.ConnectorServiceUpdateDelegatedRequest] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})
     
 
 

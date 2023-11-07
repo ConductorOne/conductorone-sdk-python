@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 import dataclasses
-from ..shared import policystep as shared_policystep
+from .policystep import PolicyStep, PolicyStepInput
 from dataclasses_json import Undefined, dataclass_json
 from sdk import utils
 from typing import List, Optional
@@ -12,7 +12,7 @@ from typing import List, Optional
 @dataclasses.dataclass
 class PolicySteps:
     r"""The PolicySteps message."""
-    steps: Optional[List[shared_policystep.PolicyStep]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('steps') }})
+    steps: Optional[List[PolicyStep]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('steps') }})
     r"""An array of policy steps indicating the processing flow of a policy. These steps are oneOfs, and only one property may be set for each array index at a time."""
     
 
@@ -22,7 +22,7 @@ class PolicySteps:
 @dataclasses.dataclass
 class PolicyStepsInput:
     r"""The PolicySteps message."""
-    steps: Optional[List[shared_policystep.PolicyStepInput]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('steps') }})
+    steps: Optional[List[PolicyStepInput]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('steps') }})
     r"""An array of policy steps indicating the processing flow of a policy. These steps are oneOfs, and only one property may be set for each array index at a time."""
     
 

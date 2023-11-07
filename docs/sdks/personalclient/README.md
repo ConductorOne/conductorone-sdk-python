@@ -1,5 +1,5 @@
 # PersonalClient
-(*personal_client*)
+(*.personal_client*)
 
 ### Available Operations
 

@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 import dataclasses
-from ..shared import directoryview as shared_directoryview
+from .directoryview import DirectoryView
 from dataclasses_json import Undefined, dataclass_json
 from sdk import utils
 from typing import Any, Dict, List, Optional
@@ -23,7 +23,7 @@ class DirectoryServiceCreateResponseExpanded:
 @dataclasses.dataclass
 class DirectoryServiceCreateResponse:
     r"""The DirectoryServiceCreateResponse message."""
-    directory_view: Optional[shared_directoryview.DirectoryView] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('directoryView'), 'exclude': lambda f: f is None }})
+    directory_view: Optional[DirectoryView] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('directoryView'), 'exclude': lambda f: f is None }})
     r"""The directory view contains a directory and an app_path which is a JSONPATH set to the location in the expand mask that the expanded app will live if requested by the expander."""
     expanded: Optional[List[DirectoryServiceCreateResponseExpanded]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('expanded') }})
     r"""List of serialized related objects."""

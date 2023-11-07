@@ -1,5 +1,5 @@
 # Roles
-(*roles*)
+(*.roles*)
 
 ### Available Operations
 
@@ -103,7 +103,7 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIIamV1RolesUpdateRequest(
-    update_role_request_input=shared.UpdateRoleRequestInput(
+    update_role_request=shared.UpdateRoleRequest(
         role=shared.RoleInput(
             permissions=[
                 'string',

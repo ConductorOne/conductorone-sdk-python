@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 import dataclasses
-from ..shared import facetvalue as shared_facetvalue
+from .facetvalue import FacetValue
 from dataclasses_json import Undefined, dataclass_json
 from sdk import utils
 from typing import List, Optional
@@ -12,7 +12,7 @@ from typing import List, Optional
 @dataclasses.dataclass
 class FacetValueItem:
     r"""The FacetValueItem message."""
-    values: Optional[List[shared_facetvalue.FacetValue]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('values') }})
+    values: Optional[List[FacetValue]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('values') }})
     r"""An array of facet values."""
     
 

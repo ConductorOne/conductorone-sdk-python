@@ -1,5 +1,5 @@
 # AppEntitlementUserBinding
-(*app_entitlement_user_binding*)
+(*.app_entitlement_user_binding*)
 
 ### Available Operations
 

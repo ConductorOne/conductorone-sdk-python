@@ -1,5 +1,5 @@
 # Directory
-(*directory*)
+(*.directory*)
 
 ### Available Operations
 

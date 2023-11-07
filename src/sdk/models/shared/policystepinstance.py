@@ -2,10 +2,10 @@
 
 from __future__ import annotations
 import dataclasses
-from ..shared import acceptinstance as shared_acceptinstance
-from ..shared import approvalinstance as shared_approvalinstance
-from ..shared import provisioninstance as shared_provisioninstance
-from ..shared import rejectinstance as shared_rejectinstance
+from .acceptinstance import AcceptInstance
+from .approvalinstance import ApprovalInstance
+from .provisioninstance import ProvisionInstance
+from .rejectinstance import RejectInstance
 from dataclasses_json import Undefined, dataclass_json
 from enum import Enum
 from sdk import utils
@@ -29,11 +29,11 @@ class PolicyStepInstance:
       - accept
       - reject
     """
-    accept_instance: Optional[shared_acceptinstance.AcceptInstance] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('accept') }})
+    accept_instance: Optional[AcceptInstance] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('accept') }})
     r"""This policy step indicates that a ticket should have an approved outcome. This is a terminal approval state and is used to explicitly define the end of approval steps.
      The instance is just a marker for it being copied into an active policy.
     """
-    approval_instance: Optional[shared_approvalinstance.ApprovalInstance] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('approval') }})
+    approval_instance: Optional[ApprovalInstance] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('approval') }})
     r"""The approval instance object describes the way a policy step should be approved as well as its outcomes and state.
 
     This message contains a oneof named outcome. Only a single field of the following list may be set at a time:
@@ -47,7 +47,7 @@ class PolicyStepInstance:
     r"""The ID of the PolicyStepInstance. This is required by many action submission endpoints to indicate what step you're approving."""
     policy_generation_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('policyGenerationId'), 'exclude': lambda f: f is None }})
     r"""The policy generation id refers to the version of the policy that this step was created from."""
-    provision_instance: Optional[shared_provisioninstance.ProvisionInstance] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('provision') }})
+    provision_instance: Optional[ProvisionInstance] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('provision') }})
     r"""A provision instance describes the specific configuration of an executing provision policy step including actions taken and notification id.
 
     This message contains a oneof named outcome. Only a single field of the following list may be set at a time:
@@ -56,7 +56,7 @@ class PolicyStepInstance:
       - errored
       - reassignedByError
     """
-    reject_instance: Optional[shared_rejectinstance.RejectInstance] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('reject') }})
+    reject_instance: Optional[RejectInstance] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('reject') }})
     r"""This policy step indicates that a ticket should have a denied outcome. This is a terminal approval state and is used to explicitly define the end of approval steps.
      The instance is just a marker for it being copied into an active policy.
     """

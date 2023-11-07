@@ -1,5 +1,5 @@
 # UserSearch
-(*user_search*)
+(*.user_search*)
 
 ### Available Operations
 
@@ -41,7 +41,7 @@ req = shared.SearchUsersRequest(
         'string',
     ],
     user_statuses=[
-        shared.SearchUsersRequestUserStatuses.ENABLED,
+        shared.UserStatuses.ENABLED,
     ],
 )
 

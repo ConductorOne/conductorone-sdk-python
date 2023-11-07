@@ -3,8 +3,8 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import connectorservicerevokecredentialrequest as shared_connectorservicerevokecredentialrequest
-from ..shared import connectorservicerevokecredentialresponse as shared_connectorservicerevokecredentialresponse
+from ...models.shared import connectorservicerevokecredentialrequest as shared_connectorservicerevokecredentialrequest
+from ...models.shared import connectorservicerevokecredentialresponse as shared_connectorservicerevokecredentialresponse
 from typing import Optional
 
 

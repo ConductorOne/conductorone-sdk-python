@@ -3,7 +3,7 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import appresourcetypeservicelistresponse as shared_appresourcetypeservicelistresponse
+from ...models.shared import appresourcetypeservicelistresponse as shared_appresourcetypeservicelistresponse
 from typing import Optional
 
 

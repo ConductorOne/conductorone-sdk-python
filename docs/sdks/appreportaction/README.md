@@ -1,5 +1,5 @@
 # AppReportAction
-(*app_report_action*)
+(*.app_report_action*)
 
 ### Available Operations
 

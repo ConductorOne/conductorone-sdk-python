@@ -3,22 +3,12 @@
 from __future__ import annotations
 import dataclasses
 import dateutil.parser
-from ..shared import taskgrantsource as shared_taskgrantsource
+from .taskgrantsource import TaskGrantSource
 from dataclasses_json import Undefined, dataclass_json
 from datetime import datetime
 from enum import Enum
 from sdk import utils
 from typing import Optional
-
-
-@dataclass_json(undefined=Undefined.EXCLUDE)
-@dataclasses.dataclass
-class TaskTypeGrantInput:
-    r"""The TaskTypeGrant message indicates that a task is a grant task and all related details."""
-    task_grant_source: Optional[shared_taskgrantsource.TaskGrantSource] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('source'), 'exclude': lambda f: f is None }})
-    r"""The TaskGrantSource message tracks which external URL was the source of the specificed grant ticket."""
-    
-
 
 class TaskTypeGrantOutcome(str, Enum):
     r"""The outcome of the grant."""
@@ -45,7 +35,17 @@ class TaskTypeGrant:
     outcome: Optional[TaskTypeGrantOutcome] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('outcome'), 'exclude': lambda f: f is None }})
     r"""The outcome of the grant."""
     outcome_time: Optional[datetime] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('outcomeTime'), 'encoder': utils.datetimeisoformat(True), 'decoder': dateutil.parser.isoparse, 'exclude': lambda f: f is None }})
-    task_grant_source: Optional[shared_taskgrantsource.TaskGrantSource] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('source'), 'exclude': lambda f: f is None }})
+    task_grant_source: Optional[TaskGrantSource] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('source'), 'exclude': lambda f: f is None }})
+    r"""The TaskGrantSource message tracks which external URL was the source of the specificed grant ticket."""
+    
+
+
+
+@dataclass_json(undefined=Undefined.EXCLUDE)
+@dataclasses.dataclass
+class TaskTypeGrantInput:
+    r"""The TaskTypeGrant message indicates that a task is a grant task and all related details."""
+    task_grant_source: Optional[TaskGrantSource] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('source'), 'exclude': lambda f: f is None }})
     r"""The TaskGrantSource message tracks which external URL was the source of the specificed grant ticket."""
     
 

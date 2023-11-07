@@ -3,8 +3,8 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import removeappownerrequest as shared_removeappownerrequest
-from ..shared import removeappownerresponse as shared_removeappownerresponse
+from ...models.shared import removeappownerrequest as shared_removeappownerrequest
+from ...models.shared import removeappownerresponse as shared_removeappownerresponse
 from typing import Optional
 
 

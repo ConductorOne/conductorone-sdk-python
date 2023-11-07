@@ -3,7 +3,7 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import requestcatalogmanagementservicelistentitlementsforaccessresponse as shared_requestcatalogmanagementservicelistentitlementsforaccessresponse
+from ...models.shared import requestcatalogmanagementservicelistentitlementsforaccessresponse as shared_requestcatalogmanagementservicelistentitlementsforaccessresponse
 from typing import Optional
 
 

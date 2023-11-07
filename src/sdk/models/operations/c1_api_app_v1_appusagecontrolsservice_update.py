@@ -3,8 +3,8 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import updateappusagecontrolsrequest as shared_updateappusagecontrolsrequest
-from ..shared import updateappusagecontrolsresponse as shared_updateappusagecontrolsresponse
+from ...models.shared import updateappusagecontrolsrequest as shared_updateappusagecontrolsrequest
+from ...models.shared import updateappusagecontrolsresponse as shared_updateappusagecontrolsresponse
 from typing import Optional
 
 

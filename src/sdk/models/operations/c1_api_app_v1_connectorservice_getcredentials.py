@@ -3,7 +3,7 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import connectorservicegetcredentialsresponse as shared_connectorservicegetcredentialsresponse
+from ...models.shared import connectorservicegetcredentialsresponse as shared_connectorservicegetcredentialsresponse
 from typing import Optional
 
 

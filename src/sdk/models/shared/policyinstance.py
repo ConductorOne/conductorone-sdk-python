@@ -2,9 +2,9 @@
 
 from __future__ import annotations
 import dataclasses
-from ..shared import policy as shared_policy
-from ..shared import policystep as shared_policystep
-from ..shared import policystepinstance as shared_policystepinstance
+from .policy import Policy
+from .policystep import PolicyStep
+from .policystepinstance import PolicyStepInstance
 from dataclasses_json import Undefined, dataclass_json
 from sdk import utils
 from typing import List, Optional
@@ -14,13 +14,13 @@ from typing import List, Optional
 @dataclasses.dataclass
 class PolicyInstance:
     r"""A policy instance is an object that contains a reference to the policy it was created from, the currently executing step, the next steps, and the history of previously completed steps."""
-    history: Optional[List[shared_policystepinstance.PolicyStepInstance]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('history') }})
+    history: Optional[List[PolicyStepInstance]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('history') }})
     r"""An array of steps that were previously processed by the ticket with their outcomes set, in order."""
-    next: Optional[List[shared_policystep.PolicyStep]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('next') }})
+    next: Optional[List[PolicyStep]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('next') }})
     r"""An array of steps that will be processed by the ticket, in order."""
-    policy: Optional[shared_policy.Policy] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('policy'), 'exclude': lambda f: f is None }})
+    policy: Optional[Policy] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('policy'), 'exclude': lambda f: f is None }})
     r"""A policy describes the behavior of the ConductorOne system when processing a task. You can describe the type, approvers, fallback behavior, and escalation processes."""
-    policy_step_instance: Optional[shared_policystepinstance.PolicyStepInstance] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('current'), 'exclude': lambda f: f is None }})
+    policy_step_instance: Optional[PolicyStepInstance] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('current'), 'exclude': lambda f: f is None }})
     r"""The policy step instance includes a reference to an instance of a policy step that tracks state and has a unique ID.
 
     This message contains a oneof named instance. Only a single field of the following list may be set at a time:

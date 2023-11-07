@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 import dataclasses
-from ..shared import appentitlementref as shared_appentitlementref
+from .appentitlementref import AppEntitlementRef
 from dataclasses_json import Undefined, dataclass_json
 from sdk import utils
 from typing import List, Optional
@@ -14,7 +14,7 @@ class RequestCatalogManagementServiceAddAccessEntitlementsRequest:
     r"""The RequestCatalogManagementServiceAddAccessEntitlementsRequest message is used to add access entitlements to a request
      catalog to determine which users can view the request catalog.
     """
-    access_entitlements: Optional[List[shared_appentitlementref.AppEntitlementRef]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('accessEntitlements') }})
+    access_entitlements: Optional[List[AppEntitlementRef]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('accessEntitlements') }})
     r"""List of entitlements to add to the request catalog as access entitlements."""
     
 

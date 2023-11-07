@@ -3,8 +3,8 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import deleteattributevaluerequest as shared_deleteattributevaluerequest
-from ..shared import deleteattributevalueresponse as shared_deleteattributevalueresponse
+from ...models.shared import deleteattributevaluerequest as shared_deleteattributevaluerequest
+from ...models.shared import deleteattributevalueresponse as shared_deleteattributevalueresponse
 from typing import Optional
 
 

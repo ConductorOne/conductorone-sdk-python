@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 import dataclasses
-from ..shared import appentitlementref as shared_appentitlementref
+from .appentitlementref import AppEntitlementRef
 from dataclasses_json import Undefined, dataclass_json
 from sdk import utils
 from typing import List, Optional
@@ -14,7 +14,7 @@ class RequestCatalogManagementServiceRemoveAccessEntitlementsRequest:
     r"""The RequestCatalogManagementServiceRemoveAccessEntitlementsRequest message is used to remove access entitlements from a request catalog.
      The access entitlements are used to determine which users can view the request catalog.
     """
-    access_entitlements: Optional[List[shared_appentitlementref.AppEntitlementRef]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('accessEntitlements') }})
+    access_entitlements: Optional[List[AppEntitlementRef]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('accessEntitlements') }})
     r"""The list of access entitlements to remove from the catalog."""
     
 

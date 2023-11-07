@@ -1,5 +1,5 @@
 # RequestCatalogManagement
-(*request_catalog_management*)
+(*.request_catalog_management*)
 
 ### Available Operations
 
@@ -449,7 +449,7 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIRequestcatalogV1RequestCatalogManagementServiceUpdateRequest(
-    request_catalog_management_service_update_request_input=shared.RequestCatalogManagementServiceUpdateRequestInput(
+    request_catalog_management_service_update_request=shared.RequestCatalogManagementServiceUpdateRequest(
         request_catalog=shared.RequestCatalogInput(
             access_entitlements=[
                 shared.AppEntitlementInput(
@@ -465,7 +465,7 @@ req = operations.C1APIRequestcatalogV1RequestCatalogManagementServiceUpdateReque
                     compliance_framework_value_ids=[
                         'string',
                     ],
-                    duration_unset=shared.AppEntitlementDurationUnset(),
+                    duration_unset=shared.DurationUnset(),
                 ),
             ],
             app_ids=[

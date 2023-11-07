@@ -3,7 +3,7 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import directoryservicegetresponse as shared_directoryservicegetresponse
+from ...models.shared import directoryservicegetresponse as shared_directoryservicegetresponse
 from typing import Optional
 
 

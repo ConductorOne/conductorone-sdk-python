@@ -3,8 +3,8 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import connectorservicecreatedelegatedrequest as shared_connectorservicecreatedelegatedrequest
-from ..shared import connectorservicecreateresponse as shared_connectorservicecreateresponse
+from ...models.shared import connectorservicecreatedelegatedrequest as shared_connectorservicecreatedelegatedrequest
+from ...models.shared import connectorservicecreateresponse as shared_connectorservicecreateresponse
 from typing import Optional
 
 

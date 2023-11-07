@@ -9,7 +9,7 @@ from enum import Enum
 from sdk import utils
 from typing import Dict, Optional
 
-class AppPopulationReportState(str, Enum):
+class State(str, Enum):
     r"""The state field tracks the state of the AppPopulationReport. This state field can be one of REPORT_STATE_PENDING, REPORT_STATE_UNSPECIFIED, REPORT_STATE_OK, REPORT_STATE_ERROR."""
     REPORT_STATE_UNSPECIFIED = 'REPORT_STATE_UNSPECIFIED'
     REPORT_STATE_PENDING = 'REPORT_STATE_PENDING'
@@ -30,7 +30,7 @@ class AppPopulationReport:
     r"""The hashes field contains the file hashes of the report."""
     id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id'), 'exclude': lambda f: f is None }})
     r"""The id field."""
-    state: Optional[AppPopulationReportState] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('state'), 'exclude': lambda f: f is None }})
+    state: Optional[State] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('state'), 'exclude': lambda f: f is None }})
     r"""The state field tracks the state of the AppPopulationReport. This state field can be one of REPORT_STATE_PENDING, REPORT_STATE_UNSPECIFIED, REPORT_STATE_OK, REPORT_STATE_ERROR."""
     
 

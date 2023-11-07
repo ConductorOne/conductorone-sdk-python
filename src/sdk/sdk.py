@@ -39,37 +39,37 @@ from typing import Dict
 
 class SDK:
     r"""ConductorOne API: The ConductorOne API is a HTTP API for managing ConductorOne resources."""
-    app_entitlement_owners: AppEntitlementOwners
-    app_entitlement_search: AppEntitlementSearch
-    app_entitlement_user_binding: AppEntitlementUserBinding
+    apps: Apps
+    connector: Connector
     app_entitlements: AppEntitlements
+    app_entitlement_user_binding: AppEntitlementUserBinding
+    app_entitlement_owners: AppEntitlementOwners
     app_owners: AppOwners
     app_report: AppReport
     app_report_action: AppReportAction
+    app_resource_type: AppResourceType
     app_resource: AppResource
     app_resource_owners: AppResourceOwners
-    app_resource_search: AppResourceSearch
-    app_resource_type: AppResourceType
-    app_search: AppSearch
     app_usage_controls: AppUsageControls
     app_user: AppUser
-    apps: Apps
-    attribute_search: AttributeSearch
     attributes: Attributes
     auth: Auth
-    connector: Connector
+    request_catalog_management: RequestCatalogManagement
     directory: Directory
     personal_client: PersonalClient
-    policies: Policies
-    policy_search: PolicySearch
-    request_catalog_management: RequestCatalogManagement
-    request_catalog_search: RequestCatalogSearch
     roles: Roles
+    policies: Policies
+    app_resource_search: AppResourceSearch
+    app_search: AppSearch
+    attribute_search: AttributeSearch
+    app_entitlement_search: AppEntitlementSearch
+    policy_search: PolicySearch
+    request_catalog_search: RequestCatalogSearch
+    task_search: TaskSearch
+    user_search: UserSearch
     task: Task
     task_actions: TaskActions
-    task_search: TaskSearch
     user: User
-    user_search: UserSearch
 
     sdk_configuration: SDKConfiguration
 
@@ -87,7 +87,7 @@ class SDK:
         :param security: The security details required for authentication
         :type security: shared.Security
         :param tenant_domain: Allows setting the tenantDomain variable for url substitution
-        :type tenant_domain: str
+        :type tenant_domain: 
         :param server_idx: The index of the server to use for all operations
         :type server_idx: int
         :param server_url: The server URL to use for all operations
@@ -120,35 +120,35 @@ class SDK:
         self._init_sdks()
     
     def _init_sdks(self):
-        self.app_entitlement_owners = AppEntitlementOwners(self.sdk_configuration)
-        self.app_entitlement_search = AppEntitlementSearch(self.sdk_configuration)
-        self.app_entitlement_user_binding = AppEntitlementUserBinding(self.sdk_configuration)
+        self.apps = Apps(self.sdk_configuration)
+        self.connector = Connector(self.sdk_configuration)
         self.app_entitlements = AppEntitlements(self.sdk_configuration)
+        self.app_entitlement_user_binding = AppEntitlementUserBinding(self.sdk_configuration)
+        self.app_entitlement_owners = AppEntitlementOwners(self.sdk_configuration)
         self.app_owners = AppOwners(self.sdk_configuration)
         self.app_report = AppReport(self.sdk_configuration)
         self.app_report_action = AppReportAction(self.sdk_configuration)
+        self.app_resource_type = AppResourceType(self.sdk_configuration)
         self.app_resource = AppResource(self.sdk_configuration)
         self.app_resource_owners = AppResourceOwners(self.sdk_configuration)
-        self.app_resource_search = AppResourceSearch(self.sdk_configuration)
-        self.app_resource_type = AppResourceType(self.sdk_configuration)
-        self.app_search = AppSearch(self.sdk_configuration)
         self.app_usage_controls = AppUsageControls(self.sdk_configuration)
         self.app_user = AppUser(self.sdk_configuration)
-        self.apps = Apps(self.sdk_configuration)
-        self.attribute_search = AttributeSearch(self.sdk_configuration)
         self.attributes = Attributes(self.sdk_configuration)
         self.auth = Auth(self.sdk_configuration)
-        self.connector = Connector(self.sdk_configuration)
+        self.request_catalog_management = RequestCatalogManagement(self.sdk_configuration)
         self.directory = Directory(self.sdk_configuration)
         self.personal_client = PersonalClient(self.sdk_configuration)
-        self.policies = Policies(self.sdk_configuration)
-        self.policy_search = PolicySearch(self.sdk_configuration)
-        self.request_catalog_management = RequestCatalogManagement(self.sdk_configuration)
-        self.request_catalog_search = RequestCatalogSearch(self.sdk_configuration)
         self.roles = Roles(self.sdk_configuration)
+        self.policies = Policies(self.sdk_configuration)
+        self.app_resource_search = AppResourceSearch(self.sdk_configuration)
+        self.app_search = AppSearch(self.sdk_configuration)
+        self.attribute_search = AttributeSearch(self.sdk_configuration)
+        self.app_entitlement_search = AppEntitlementSearch(self.sdk_configuration)
+        self.policy_search = PolicySearch(self.sdk_configuration)
+        self.request_catalog_search = RequestCatalogSearch(self.sdk_configuration)
+        self.task_search = TaskSearch(self.sdk_configuration)
+        self.user_search = UserSearch(self.sdk_configuration)
         self.task = Task(self.sdk_configuration)
         self.task_actions = TaskActions(self.sdk_configuration)
-        self.task_search = TaskSearch(self.sdk_configuration)
         self.user = User(self.sdk_configuration)
-        self.user_search = UserSearch(self.sdk_configuration)
     

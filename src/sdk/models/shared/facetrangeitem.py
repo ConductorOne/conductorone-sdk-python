@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 import dataclasses
-from ..shared import facetrange as shared_facetrange
+from .facetrange import FacetRange
 from dataclasses_json import Undefined, dataclass_json
 from sdk import utils
 from typing import List, Optional
@@ -12,7 +12,7 @@ from typing import List, Optional
 @dataclasses.dataclass
 class FacetRangeItem:
     r"""The FacetRangeItem message."""
-    ranges: Optional[List[shared_facetrange.FacetRange]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('ranges') }})
+    ranges: Optional[List[FacetRange]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('ranges') }})
     r"""An array of facet ranges."""
     
 

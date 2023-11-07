@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 import dataclasses
-from ..shared import requestcatalogexpandmask as shared_requestcatalogexpandmask
+from .requestcatalogexpandmask import RequestCatalogExpandMask
 from dataclasses_json import Undefined, dataclass_json
 from sdk import utils
 from typing import Optional
@@ -18,7 +18,7 @@ class RequestCatalogManagementServiceCreateRequest:
     r"""The display name of the new request catalog."""
     published: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('published'), 'exclude': lambda f: f is None }})
     r"""Whether or not the new catalog should be created as published."""
-    request_catalog_expand_mask: Optional[shared_requestcatalogexpandmask.RequestCatalogExpandMask] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('expandMask'), 'exclude': lambda f: f is None }})
+    request_catalog_expand_mask: Optional[RequestCatalogExpandMask] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('expandMask'), 'exclude': lambda f: f is None }})
     r"""The RequestCatalogExpandMask includes the paths in the catalog view to expand in the return value of this call."""
     visible_to_everyone: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('visibleToEveryone'), 'exclude': lambda f: f is None }})
     r"""Whether or not the new catalog is visible to everyone by default."""

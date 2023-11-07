@@ -3,7 +3,7 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import searchappresourcetypesresponse as shared_searchappresourcetypesresponse
+from ...models.shared import searchappresourcetypesresponse as shared_searchappresourcetypesresponse
 from typing import Optional
 
 

@@ -3,16 +3,16 @@
 from __future__ import annotations
 import dataclasses
 import dateutil.parser
-from ..shared import externalref as shared_externalref
-from ..shared import policyinstance as shared_policyinstance
-from ..shared import tasktype as shared_tasktype
+from .externalref import ExternalRef
+from .policyinstance import PolicyInstance
+from .tasktype import TaskType
 from dataclasses_json import Undefined, dataclass_json
 from datetime import datetime
 from enum import Enum
 from sdk import utils
 from typing import Any, Dict, List, Optional
 
-class TaskActions(str, Enum):
+class Actions(str, Enum):
     TASK_ACTION_TYPE_UNSPECIFIED = 'TASK_ACTION_TYPE_UNSPECIFIED'
     TASK_ACTION_TYPE_CLOSE = 'TASK_ACTION_TYPE_CLOSE'
     TASK_ACTION_TYPE_APPROVE = 'TASK_ACTION_TYPE_APPROVE'
@@ -35,7 +35,7 @@ class TaskActions(str, Enum):
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class TaskAnnotations:
+class Annotations:
     r"""Contains an arbitrary serialized message along with a @type that describes the type of the serialized message."""
     at_type: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('@type'), 'exclude': lambda f: f is None }})
     r"""The type of the serialized message."""
@@ -43,7 +43,7 @@ class TaskAnnotations:
     
 
 
-class TaskProcessing(str, Enum):
+class Processing(str, Enum):
     r"""The processing state of a task as defined by the `processing_enum`"""
     TASK_PROCESSING_TYPE_UNSPECIFIED = 'TASK_PROCESSING_TYPE_UNSPECIFIED'
     TASK_PROCESSING_TYPE_PROCESSING = 'TASK_PROCESSING_TYPE_PROCESSING'
@@ -61,11 +61,11 @@ class TaskState(str, Enum):
 @dataclasses.dataclass
 class Task:
     r"""A fully-fleged task object. Includes its policy, references to external apps, its type, its processing history, and more."""
-    actions: Optional[List[TaskActions]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('actions') }})
+    actions: Optional[List[Actions]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('actions') }})
     r"""The actions that can be performed on the task by the current user."""
     analysis_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('analysisId'), 'exclude': lambda f: f is None }})
     r"""The ID of the analysis object associated with this task created by an analysis workflow if the analysis feature is enabled for your tenant."""
-    annotations: Optional[List[TaskAnnotations]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('annotations') }})
+    annotations: Optional[List[Annotations]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('annotations') }})
     r"""An array of `google.protobuf.Any` annotations with various base64-encoded data."""
     comment_count: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('commentCount'), 'exclude': lambda f: f is None }})
     r"""The count of comments."""
@@ -79,7 +79,7 @@ class Task:
     r"""The display name of the task."""
     emergency_access: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('emergencyAccess'), 'exclude': lambda f: f is None }})
     r"""A field indicating whether this task was created using an emergency access flow, or escalated to emergency access. On task creation, it will also use the app entitlement's emergency policy when possible."""
-    external_refs: Optional[List[shared_externalref.ExternalRef]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('externalRefs') }})
+    external_refs: Optional[List[ExternalRef]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('externalRefs') }})
     r"""An array of external references to the task. Historically that has been items like Jira task IDs. This is currently unused, but may come back in the future for integrations."""
     id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id'), 'exclude': lambda f: f is None }})
     r"""The ID of the task."""
@@ -87,15 +87,15 @@ class Task:
     r"""A human-usable numeric ID of a task which can be included in place of the fully qualified task id in path parmeters (but not search queries)."""
     policy_generation_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('policyGenerationId'), 'exclude': lambda f: f is None }})
     r"""The policy generation id refers to the current policy's generation ID. This is changed when the policy is changed on a task."""
-    policy_instance: Optional[shared_policyinstance.PolicyInstance] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('policy'), 'exclude': lambda f: f is None }})
+    policy_instance: Optional[PolicyInstance] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('policy'), 'exclude': lambda f: f is None }})
     r"""A policy instance is an object that contains a reference to the policy it was created from, the currently executing step, the next steps, and the history of previously completed steps."""
-    processing: Optional[TaskProcessing] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('processing'), 'exclude': lambda f: f is None }})
+    processing: Optional[Processing] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('processing'), 'exclude': lambda f: f is None }})
     r"""The processing state of a task as defined by the `processing_enum`"""
     state: Optional[TaskState] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('state'), 'exclude': lambda f: f is None }})
     r"""The current state of the task as defined by the `state_enum`"""
     step_approver_ids: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('stepApproverIds') }})
     r"""An array of IDs belonging to Identity Users that are allowed to review this step in a task."""
-    task_type: Optional[shared_tasktype.TaskType] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type'), 'exclude': lambda f: f is None }})
+    task_type: Optional[TaskType] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type'), 'exclude': lambda f: f is None }})
     r"""Task Type provides configuration for the type of task: certify, grant, or revoke
 
     This message contains a oneof named task_type. Only a single field of the following list may be set at a time:

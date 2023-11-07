@@ -3,8 +3,8 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import addappownerrequest as shared_addappownerrequest
-from ..shared import addappownerresponse as shared_addappownerresponse
+from ...models.shared import addappownerrequest as shared_addappownerrequest
+from ...models.shared import addappownerresponse as shared_addappownerresponse
 from typing import Optional
 
 

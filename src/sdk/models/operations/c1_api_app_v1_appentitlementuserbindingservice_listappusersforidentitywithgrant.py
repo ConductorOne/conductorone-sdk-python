@@ -3,7 +3,7 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import listappusersforidentitywithgrantresponse as shared_listappusersforidentitywithgrantresponse
+from ...models.shared import listappusersforidentitywithgrantresponse as shared_listappusersforidentitywithgrantresponse
 from typing import Optional
 
 

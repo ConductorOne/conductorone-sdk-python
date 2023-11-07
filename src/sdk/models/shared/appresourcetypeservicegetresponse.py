@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 import dataclasses
-from ..shared import appresourcetypeview as shared_appresourcetypeview
+from .appresourcetypeview import AppResourceTypeView
 from dataclasses_json import Undefined, dataclass_json
 from sdk import utils
 from typing import Any, Dict, List, Optional
@@ -25,7 +25,7 @@ class AppResourceTypeServiceGetResponse:
     r"""The AppResourceTypeServiceGetResponse contains an expanded array containing the expanded values indicated by the expand mask
      in the request and an app resource type view containing the resource type and JSONPATHs indicating which objects are where in the expand mask.
     """
-    app_resource_type_view: Optional[shared_appresourcetypeview.AppResourceTypeView] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('appResourceTypeView'), 'exclude': lambda f: f is None }})
+    app_resource_type_view: Optional[AppResourceTypeView] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('appResourceTypeView'), 'exclude': lambda f: f is None }})
     r"""The AppResourceTypeView message."""
     expanded: Optional[List[AppResourceTypeServiceGetResponseExpanded]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('expanded') }})
     r"""List of serialized related objects."""

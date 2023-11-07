@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 import dataclasses
-from ..shared import appentitlementuserbinding as shared_appentitlementuserbinding
+from .appentitlementuserbinding import AppEntitlementUserBinding
 from dataclasses_json import Undefined, dataclass_json
 from sdk import utils
 from typing import List, Optional
@@ -12,7 +12,7 @@ from typing import List, Optional
 @dataclasses.dataclass
 class ListAppUsersForIdentityWithGrantResponse:
     r"""The ListAppUsersForIdentityWithGrantResponse message."""
-    bindings: Optional[List[shared_appentitlementuserbinding.AppEntitlementUserBinding]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('bindings') }})
+    bindings: Optional[List[AppEntitlementUserBinding]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('bindings') }})
     r"""The list of app users that may also have grant information."""
     
 

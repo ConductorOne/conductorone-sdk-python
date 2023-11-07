@@ -1,5 +1,5 @@
 # Attributes
-(*attributes*)
+(*.attributes*)
 
 ### Available Operations
 

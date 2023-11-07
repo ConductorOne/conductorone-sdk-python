@@ -9,14 +9,7 @@ from enum import Enum
 from sdk import utils
 from typing import Optional
 
-
-@dataclasses.dataclass
-class TaskTypeCertifyInput:
-    r"""The TaskTypeCertify message indicates that a task is a certify task and all related details."""
-    
-
-
-class TaskTypeCertifyOutcome(str, Enum):
+class Outcome(str, Enum):
     r"""The outcome of the certification."""
     CERTIFY_OUTCOME_UNSPECIFIED = 'CERTIFY_OUTCOME_UNSPECIFIED'
     CERTIFY_OUTCOME_CERTIFIED = 'CERTIFY_OUTCOME_CERTIFIED'
@@ -41,8 +34,15 @@ class TaskTypeCertify:
     r"""The ID of the app user."""
     identity_user_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('identityUserId'), 'exclude': lambda f: f is None }})
     r"""The ID of the user."""
-    outcome: Optional[TaskTypeCertifyOutcome] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('outcome'), 'exclude': lambda f: f is None }})
+    outcome: Optional[Outcome] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('outcome'), 'exclude': lambda f: f is None }})
     r"""The outcome of the certification."""
     outcome_time: Optional[datetime] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('outcomeTime'), 'encoder': utils.datetimeisoformat(True), 'decoder': dateutil.parser.isoparse, 'exclude': lambda f: f is None }})
+    
+
+
+
+@dataclasses.dataclass
+class TaskTypeCertifyInput:
+    r"""The TaskTypeCertify message indicates that a task is a certify task and all related details."""
     
 

@@ -3,15 +3,15 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import updaterolerequest as shared_updaterolerequest
-from ..shared import updaterolesresponse as shared_updaterolesresponse
+from ...models.shared import updaterolerequest as shared_updaterolerequest
+from ...models.shared import updaterolesresponse as shared_updaterolesresponse
 from typing import Optional
 
 
 @dataclasses.dataclass
 class C1APIIamV1RolesUpdateRequest:
     role_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'role_id', 'style': 'simple', 'explode': False }})
-    update_role_request_input: Optional[shared_updaterolerequest.UpdateRoleRequestInput] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})
+    update_role_request: Optional[shared_updaterolerequest.UpdateRoleRequest] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})
     
 
 

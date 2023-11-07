@@ -3,7 +3,7 @@
 from __future__ import annotations
 import dataclasses
 import dateutil.parser
-from ..shared import appentitlement as shared_appentitlement
+from .appentitlement import AppEntitlement, AppEntitlementInput
 from dataclasses_json import Undefined, dataclass_json
 from datetime import datetime
 from sdk import utils
@@ -14,7 +14,7 @@ from typing import List, Optional
 @dataclasses.dataclass
 class RequestCatalogInput:
     r"""The RequestCatalog is used for managing which entitlements are requestable, and who can request them."""
-    access_entitlements: Optional[List[shared_appentitlement.AppEntitlementInput]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('accessEntitlements') }})
+    access_entitlements: Optional[List[AppEntitlementInput]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('accessEntitlements') }})
     r"""An array of app entitlements that, if the user has, can view the contents of this catalog."""
     app_ids: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('appIds') }})
     r"""The Apps contained in this request catalog."""
@@ -38,7 +38,7 @@ class RequestCatalogInput:
 @dataclasses.dataclass
 class RequestCatalog:
     r"""The RequestCatalog is used for managing which entitlements are requestable, and who can request them."""
-    access_entitlements: Optional[List[shared_appentitlement.AppEntitlement]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('accessEntitlements') }})
+    access_entitlements: Optional[List[AppEntitlement]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('accessEntitlements') }})
     r"""An array of app entitlements that, if the user has, can view the contents of this catalog."""
     app_ids: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('appIds') }})
     r"""The Apps contained in this request catalog."""

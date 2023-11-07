@@ -12,7 +12,7 @@ class TaskSearch:
         self.sdk_configuration = sdk_config
         
     
-    def search(self, request: shared.TaskSearchRequestInput) -> operations.C1APITaskV1TaskSearchServiceSearchResponse:
+    def search(self, request: shared.TaskSearchRequest) -> operations.C1APITaskV1TaskSearchServiceSearchResponse:
         r"""Search
         Search tasks based on filters specified in the request body.
         """

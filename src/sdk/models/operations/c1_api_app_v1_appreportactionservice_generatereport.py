@@ -3,8 +3,8 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import appactionsservicegeneratereportrequest as shared_appactionsservicegeneratereportrequest
-from ..shared import appactionsservicegeneratereportresponse as shared_appactionsservicegeneratereportresponse
+from ...models.shared import appactionsservicegeneratereportrequest as shared_appactionsservicegeneratereportrequest
+from ...models.shared import appactionsservicegeneratereportresponse as shared_appactionsservicegeneratereportresponse
 from typing import Optional
 
 

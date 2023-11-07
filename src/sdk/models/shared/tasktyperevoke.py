@@ -3,29 +3,12 @@
 from __future__ import annotations
 import dataclasses
 import dateutil.parser
-from ..shared import taskrevokesource as shared_taskrevokesource
+from .taskrevokesource import TaskRevokeSource
 from dataclasses_json import Undefined, dataclass_json
 from datetime import datetime
 from enum import Enum
 from sdk import utils
 from typing import Optional
-
-
-@dataclass_json(undefined=Undefined.EXCLUDE)
-@dataclasses.dataclass
-class TaskTypeRevokeInput:
-    r"""The TaskTypeRevoke message indicates that a task is a revoke task and all related details."""
-    task_revoke_source: Optional[shared_taskrevokesource.TaskRevokeSource] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('source'), 'exclude': lambda f: f is None }})
-    r"""The TaskRevokeSource message indicates the source of the revoke task is one of expired, nonUsage, request, or review.
-
-    This message contains a oneof named origin. Only a single field of the following list may be set at a time:
-      - review
-      - request
-      - expired
-      - nonUsage
-    """
-    
-
 
 class TaskTypeRevokeOutcome(str, Enum):
     r"""The outcome of the revoke."""
@@ -51,7 +34,24 @@ class TaskTypeRevoke:
     outcome: Optional[TaskTypeRevokeOutcome] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('outcome'), 'exclude': lambda f: f is None }})
     r"""The outcome of the revoke."""
     outcome_time: Optional[datetime] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('outcomeTime'), 'encoder': utils.datetimeisoformat(True), 'decoder': dateutil.parser.isoparse, 'exclude': lambda f: f is None }})
-    task_revoke_source: Optional[shared_taskrevokesource.TaskRevokeSource] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('source'), 'exclude': lambda f: f is None }})
+    task_revoke_source: Optional[TaskRevokeSource] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('source'), 'exclude': lambda f: f is None }})
+    r"""The TaskRevokeSource message indicates the source of the revoke task is one of expired, nonUsage, request, or review.
+
+    This message contains a oneof named origin. Only a single field of the following list may be set at a time:
+      - review
+      - request
+      - expired
+      - nonUsage
+    """
+    
+
+
+
+@dataclass_json(undefined=Undefined.EXCLUDE)
+@dataclasses.dataclass
+class TaskTypeRevokeInput:
+    r"""The TaskTypeRevoke message indicates that a task is a revoke task and all related details."""
+    task_revoke_source: Optional[TaskRevokeSource] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('source'), 'exclude': lambda f: f is None }})
     r"""The TaskRevokeSource message indicates the source of the revoke task is one of expired, nonUsage, request, or review.
 
     This message contains a oneof named origin. Only a single field of the following list may be set at a time:

@@ -3,8 +3,8 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import taskactionsserviceapproverequest as shared_taskactionsserviceapproverequest
-from ..shared import taskactionsserviceapproveresponse as shared_taskactionsserviceapproveresponse
+from ...models.shared import taskactionsserviceapproverequest as shared_taskactionsserviceapproverequest
+from ...models.shared import taskactionsserviceapproveresponse as shared_taskactionsserviceapproveresponse
 from typing import Optional
 
 

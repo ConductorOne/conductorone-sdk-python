@@ -5,6 +5,6 @@ The FacetRangeItem message.
 
 ## Fields
 
-| Field                                                 | Type                                                  | Required                                              | Description                                           |
-| ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- |
-| `ranges`                                              | List[[FacetRange](../../models/shared/facetrange.md)] | :heavy_minus_sign:                                    | An array of facet ranges.                             |
+| Field                                                        | Type                                                         | Required                                                     | Description                                                  |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| `ranges`                                                     | List[[shared.FacetRange](../../models/shared/facetrange.md)] | :heavy_minus_sign:                                           | An array of facet ranges.                                    |

@@ -3,15 +3,15 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import requestcatalogmanagementservicegetresponse as shared_requestcatalogmanagementservicegetresponse
-from ..shared import requestcatalogmanagementserviceupdaterequest as shared_requestcatalogmanagementserviceupdaterequest
+from ...models.shared import requestcatalogmanagementservicegetresponse as shared_requestcatalogmanagementservicegetresponse
+from ...models.shared import requestcatalogmanagementserviceupdaterequest as shared_requestcatalogmanagementserviceupdaterequest
 from typing import Optional
 
 
 @dataclasses.dataclass
 class C1APIRequestcatalogV1RequestCatalogManagementServiceUpdateRequest:
     id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'id', 'style': 'simple', 'explode': False }})
-    request_catalog_management_service_update_request_input: Optional[shared_requestcatalogmanagementserviceupdaterequest.RequestCatalogManagementServiceUpdateRequestInput] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})
+    request_catalog_management_service_update_request: Optional[shared_requestcatalogmanagementserviceupdaterequest.RequestCatalogManagementServiceUpdateRequest] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})
     
 
 

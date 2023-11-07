@@ -1,5 +1,5 @@
 # TaskSearch
-(*task_search*)
+(*.task_search*)
 
 ### Available Operations
 
@@ -12,8 +12,8 @@ Search tasks based on filters specified in the request body.
 ### Example Usage
 
 ```python
-import sdk
 import dateutil.parser
+import sdk
 from sdk.models import shared
 
 s = sdk.SDK(
@@ -23,7 +23,7 @@ s = sdk.SDK(
     ),
 )
 
-req = shared.TaskSearchRequestInput(
+req = shared.TaskSearchRequest(
     task_expand_mask=shared.TaskExpandMask(
         paths=[
             'string',
@@ -75,7 +75,7 @@ req = shared.TaskSearchRequestInput(
         'string',
     ],
     task_states=[
-        shared.TaskSearchRequestTaskStates.TASK_STATE_UNSPECIFIED,
+        shared.TaskStates.TASK_STATE_UNSPECIFIED,
     ],
     task_types=[
         shared.TaskTypeInput(
@@ -104,9 +104,9 @@ if res.task_search_response is not None:
 
 ### Parameters
 
-| Parameter                                                                      | Type                                                                           | Required                                                                       | Description                                                                    |
-| ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ |
-| `request`                                                                      | [shared.TaskSearchRequestInput](../../models/shared/tasksearchrequestinput.md) | :heavy_check_mark:                                                             | The request object to use for the request.                                     |
+| Parameter                                                            | Type                                                                 | Required                                                             | Description                                                          |
+| -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- |
+| `request`                                                            | [shared.TaskSearchRequest](../../models/shared/tasksearchrequest.md) | :heavy_check_mark:                                                   | The request object to use for the request.                           |
 
 
 ### Response

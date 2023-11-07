@@ -3,8 +3,8 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import taskactionsserviceescalatetoemergencyaccessrequest as shared_taskactionsserviceescalatetoemergencyaccessrequest
-from ..shared import taskserviceactionresponse as shared_taskserviceactionresponse
+from ...models.shared import taskactionsserviceescalatetoemergencyaccessrequest as shared_taskactionsserviceescalatetoemergencyaccessrequest
+from ...models.shared import taskserviceactionresponse as shared_taskserviceactionresponse
 from typing import Optional
 
 

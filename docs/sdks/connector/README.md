@@ -1,5 +1,5 @@
 # Connector
-(*connector*)
+(*.connector*)
 
 ### Available Operations
 
@@ -376,8 +376,8 @@ Update a connector.
 ### Example Usage
 
 ```python
-import sdk
 import dateutil.parser
+import sdk
 from sdk.models import operations, shared
 
 s = sdk.SDK(
@@ -388,11 +388,11 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIAppV1ConnectorServiceUpdateRequest(
-    connector_service_update_request_input=shared.ConnectorServiceUpdateRequestInput(
+    connector_service_update_request=shared.ConnectorServiceUpdateRequest(
         connector=shared.ConnectorInput(
             connector_status=shared.ConnectorStatus(),
             o_auth2_authorized_as=shared.OAuth2AuthorizedAsInput(),
-            config=shared.ConnectorConfig(
+            config=shared.Config(
                 additional_properties={
                     "key": 'string',
                 },
@@ -437,8 +437,8 @@ Update a delegated connector.
 ### Example Usage
 
 ```python
-import sdk
 import dateutil.parser
+import sdk
 from sdk.models import operations, shared
 
 s = sdk.SDK(
@@ -449,11 +449,11 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIAppV1ConnectorServiceUpdateDelegatedRequest(
-    connector_service_update_delegated_request_input=shared.ConnectorServiceUpdateDelegatedRequestInput(
+    connector_service_update_delegated_request=shared.ConnectorServiceUpdateDelegatedRequest(
         connector=shared.ConnectorInput(
             connector_status=shared.ConnectorStatus(),
             o_auth2_authorized_as=shared.OAuth2AuthorizedAsInput(),
-            config=shared.ConnectorConfig(
+            config=shared.Config(
                 additional_properties={
                     "key": 'string',
                 },

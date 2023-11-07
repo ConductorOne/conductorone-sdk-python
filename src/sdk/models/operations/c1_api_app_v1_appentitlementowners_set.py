@@ -3,8 +3,8 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import setappentitlementownersrequest as shared_setappentitlementownersrequest
-from ..shared import setappentitlementownersresponse as shared_setappentitlementownersresponse
+from ...models.shared import setappentitlementownersrequest as shared_setappentitlementownersrequest
+from ...models.shared import setappentitlementownersresponse as shared_setappentitlementownersresponse
 from typing import Optional
 
 

@@ -3,15 +3,15 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import updateapprequest as shared_updateapprequest
-from ..shared import updateappresponse as shared_updateappresponse
+from ...models.shared import updateapprequest as shared_updateapprequest
+from ...models.shared import updateappresponse as shared_updateappresponse
 from typing import Optional
 
 
 @dataclasses.dataclass
 class C1APIAppV1AppsUpdateRequest:
     id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'id', 'style': 'simple', 'explode': False }})
-    update_app_request_input: Optional[shared_updateapprequest.UpdateAppRequestInput] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})
+    update_app_request: Optional[shared_updateapprequest.UpdateAppRequest] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})
     
 
 

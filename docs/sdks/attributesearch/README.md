@@ -1,5 +1,5 @@
 # AttributeSearch
-(*attribute_search*)
+(*.attribute_search*)
 
 ### Available Operations
 

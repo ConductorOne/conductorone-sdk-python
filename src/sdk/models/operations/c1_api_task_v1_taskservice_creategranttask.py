@@ -3,7 +3,7 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import taskservicecreategrantresponse as shared_taskservicecreategrantresponse
+from ...models.shared import taskservicecreategrantresponse as shared_taskservicecreategrantresponse
 from typing import Optional
 
 

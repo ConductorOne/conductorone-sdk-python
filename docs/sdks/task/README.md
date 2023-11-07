@@ -1,5 +1,5 @@
 # Task
-(*task*)
+(*.task*)
 
 ### Available Operations
 

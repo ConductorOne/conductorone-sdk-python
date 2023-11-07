@@ -2,10 +2,10 @@
 
 from __future__ import annotations
 import dataclasses
-from ..shared import taskrevokesourceexpired as shared_taskrevokesourceexpired
-from ..shared import taskrevokesourcenonusage as shared_taskrevokesourcenonusage
-from ..shared import taskrevokesourcerequest as shared_taskrevokesourcerequest
-from ..shared import taskrevokesourcereview as shared_taskrevokesourcereview
+from .taskrevokesourceexpired import TaskRevokeSourceExpired
+from .taskrevokesourcenonusage import TaskRevokeSourceNonUsage
+from .taskrevokesourcerequest import TaskRevokeSourceRequest
+from .taskrevokesourcereview import TaskRevokeSourceReview
 from dataclasses_json import Undefined, dataclass_json
 from sdk import utils
 from typing import Optional
@@ -22,13 +22,13 @@ class TaskRevokeSource:
       - expired
       - nonUsage
     """
-    task_revoke_source_expired: Optional[shared_taskrevokesourceexpired.TaskRevokeSourceExpired] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('expired') }})
+    task_revoke_source_expired: Optional[TaskRevokeSourceExpired] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('expired') }})
     r"""The TaskRevokeSourceExpired message indicates that the source of the revoke task is due to a grant expiring."""
-    task_revoke_source_non_usage: Optional[shared_taskrevokesourcenonusage.TaskRevokeSourceNonUsage] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('nonUsage') }})
+    task_revoke_source_non_usage: Optional[TaskRevokeSourceNonUsage] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('nonUsage') }})
     r"""The TaskRevokeSourceNonUsage message indicates that the source of the revoke task is due to the grant not being used."""
-    task_revoke_source_request: Optional[shared_taskrevokesourcerequest.TaskRevokeSourceRequest] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('request') }})
+    task_revoke_source_request: Optional[TaskRevokeSourceRequest] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('request') }})
     r"""The TaskRevokeSourceRequest message indicates that the source of the revoke task was a request."""
-    task_revoke_source_review: Optional[shared_taskrevokesourcereview.TaskRevokeSourceReview] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('review') }})
+    task_revoke_source_review: Optional[TaskRevokeSourceReview] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('review') }})
     r"""The TaskRevokeSourceReview message tracks which access review was the source of the specificed revoke ticket."""
     
 

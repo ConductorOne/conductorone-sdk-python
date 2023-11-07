@@ -3,8 +3,8 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import taskactionsservicecommentrequest as shared_taskactionsservicecommentrequest
-from ..shared import taskactionsservicecommentresponse as shared_taskactionsservicecommentresponse
+from ...models.shared import taskactionsservicecommentrequest as shared_taskactionsservicecommentrequest
+from ...models.shared import taskactionsservicecommentresponse as shared_taskactionsservicecommentresponse
 from typing import Optional
 
 

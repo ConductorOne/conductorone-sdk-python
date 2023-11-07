@@ -15,10 +15,10 @@ userProfile: str = /* values here */
 userProfile: float = /* values here */
 ```
 
-### UserProfile3
+### User3
 
 ```python
-userProfile: shared.UserProfile3 = /* values here */
+userProfile: shared.User3 = /* values here */
 ```
 
 ### 

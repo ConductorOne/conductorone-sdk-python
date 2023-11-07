@@ -1,5 +1,5 @@
 # AppEntitlements
-(*app_entitlements*)
+(*.app_entitlements*)
 
 ### Available Operations
 
@@ -233,7 +233,7 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIAppV1AppEntitlementsUpdateRequest(
-    update_app_entitlement_request_input=shared.UpdateAppEntitlementRequestInput(
+    update_app_entitlement_request=shared.UpdateAppEntitlementRequest(
         app_entitlement=shared.AppEntitlementInput(
             provision_policy=shared.ProvisionPolicy(
                 connector_provision=shared.ConnectorProvision(),
@@ -247,7 +247,7 @@ req = operations.C1APIAppV1AppEntitlementsUpdateRequest(
             compliance_framework_value_ids=[
                 'string',
             ],
-            duration_unset=shared.AppEntitlementDurationUnset(),
+            duration_unset=shared.DurationUnset(),
         ),
         app_entitlement_expand_mask=shared.AppEntitlementExpandMask(
             paths=[

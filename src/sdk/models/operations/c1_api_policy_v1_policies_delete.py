@@ -3,8 +3,8 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import deletepolicyrequest as shared_deletepolicyrequest
-from ..shared import deletepolicyresponse as shared_deletepolicyresponse
+from ...models.shared import deletepolicyrequest as shared_deletepolicyrequest
+from ...models.shared import deletepolicyresponse as shared_deletepolicyresponse
 from typing import Optional
 
 
