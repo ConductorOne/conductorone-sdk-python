@@ -1,5 +1,5 @@
 # AppResource
-(*.app_resource*)
+(*app_resource*)
 
 ### Available Operations
 
@@ -46,7 +46,11 @@ if res.app_resource_service_get_response is not None:
 ### Response
 
 **[operations.C1APIAppV1AppResourceServiceGetResponse](../../models/operations/c1apiappv1appresourceservicegetresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## list
 
@@ -87,4 +91,8 @@ if res.app_resource_service_list_response is not None:
 ### Response
 
 **[operations.C1APIAppV1AppResourceServiceListResponse](../../models/operations/c1apiappv1appresourceservicelistresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |

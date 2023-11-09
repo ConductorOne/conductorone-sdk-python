@@ -1,5 +1,5 @@
 # AppEntitlementUserBinding
-(*.app_entitlement_user_binding*)
+(*app_entitlement_user_binding*)
 
 ### Available Operations
 
@@ -45,4 +45,8 @@ if res.list_app_users_for_identity_with_grant_response is not None:
 ### Response
 
 **[operations.C1APIAppV1AppEntitlementUserBindingServiceListAppUsersForIdentityWithGrantResponse](../../models/operations/c1apiappv1appentitlementuserbindingservicelistappusersforidentitywithgrantresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |

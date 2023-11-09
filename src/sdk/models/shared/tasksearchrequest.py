@@ -5,7 +5,7 @@ import dataclasses
 import dateutil.parser
 from .taskexpandmask import TaskExpandMask
 from .taskref import TaskRef
-from .tasktype import TaskTypeInput
+from .tasktype_input import TaskTypeInput
 from dataclasses_json import Undefined, dataclass_json
 from datetime import datetime
 from enum import Enum

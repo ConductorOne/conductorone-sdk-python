@@ -3,7 +3,8 @@
 from __future__ import annotations
 import dataclasses
 import dateutil.parser
-from .appuserstatus import AppUserStatus, AppUserStatusInput
+from .appuserstatus import AppUserStatus
+from .appuserstatus_input import AppUserStatusInput
 from dataclasses_json import Undefined, dataclass_json
 from datetime import datetime
 from enum import Enum
@@ -18,25 +19,8 @@ class AppUserType(str, Enum):
     APP_USER_TYPE_SYSTEM_ACCOUNT = 'APP_USER_TYPE_SYSTEM_ACCOUNT'
 
 
-@dataclass_json(undefined=Undefined.EXCLUDE)
-@dataclasses.dataclass
-class AppUserInput:
-    r"""Application User that represents an account in the application."""
-    app_user_status: Optional[AppUserStatusInput] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status'), 'exclude': lambda f: f is None }})
-    r"""The satus of the applicaiton user."""
-    app_user_type: Optional[AppUserType] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('appUserType'), 'exclude': lambda f: f is None }})
-    r"""The appplication user type. Type can be user, system or service."""
-    
-
-
-
 @dataclasses.dataclass
 class Three:
-    pass
-
-
-@dataclasses.dataclass
-class Profile:
     pass
 
 
@@ -68,5 +52,17 @@ class AppUser:
     r"""The username field of the application user."""
     usernames: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('usernames') }})
     r"""The usernames field of the application user."""
+    
+
+
+
+@dataclass_json(undefined=Undefined.EXCLUDE)
+@dataclasses.dataclass
+class AppUserInput:
+    r"""Application User that represents an account in the application."""
+    app_user_status: Optional[AppUserStatusInput] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status'), 'exclude': lambda f: f is None }})
+    r"""The satus of the applicaiton user."""
+    app_user_type: Optional[AppUserType] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('appUserType'), 'exclude': lambda f: f is None }})
+    r"""The appplication user type. Type can be user, system or service."""
     
 

@@ -12,6 +12,7 @@ class Policies:
         self.sdk_configuration = sdk_config
         
     
+    
     def create(self, request: shared.CreatePolicyRequest) -> operations.C1APIPolicyV1PoliciesCreateResponse:
         r"""Create
         Create a policy.
@@ -26,7 +27,10 @@ class Policies:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -45,6 +49,7 @@ class Policies:
         return res
 
     
+    
     def delete(self, request: operations.C1APIPolicyV1PoliciesDeleteRequest) -> operations.C1APIPolicyV1PoliciesDeleteResponse:
         r"""Delete
         Delete a policy by ID.
@@ -59,7 +64,10 @@ class Policies:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('DELETE', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -78,6 +86,7 @@ class Policies:
         return res
 
     
+    
     def get(self, request: operations.C1APIPolicyV1PoliciesGetRequest) -> operations.C1APIPolicyV1PoliciesGetResponse:
         r"""Get
         Get a policy by ID.
@@ -89,7 +98,10 @@ class Policies:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -108,6 +120,7 @@ class Policies:
         return res
 
     
+    
     def list(self, request: operations.C1APIPolicyV1PoliciesListRequest) -> operations.C1APIPolicyV1PoliciesListResponse:
         r"""List
         List policies.
@@ -120,7 +133,10 @@ class Policies:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -139,6 +155,7 @@ class Policies:
         return res
 
     
+    
     def update(self, request: operations.C1APIPolicyV1PoliciesUpdateRequest) -> operations.C1APIPolicyV1PoliciesUpdateResponse:
         r"""Update
         Update a policy by providing a policy object and an update mask.
@@ -153,7 +170,10 @@ class Policies:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')

@@ -1,5 +1,5 @@
 # TaskActions
-(*.task_actions*)
+(*task_actions*)
 
 ### Available Operations
 
@@ -55,7 +55,11 @@ if res.task_actions_service_approve_response is not None:
 ### Response
 
 **[operations.C1APITaskV1TaskActionsServiceApproveResponse](../../models/operations/c1apitaskv1taskactionsserviceapproveresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## comment
 
@@ -102,7 +106,11 @@ if res.task_actions_service_comment_response is not None:
 ### Response
 
 **[operations.C1APITaskV1TaskActionsServiceCommentResponse](../../models/operations/c1apitaskv1taskactionsservicecommentresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## deny
 
@@ -149,7 +157,11 @@ if res.task_actions_service_deny_response is not None:
 ### Response
 
 **[operations.C1APITaskV1TaskActionsServiceDenyResponse](../../models/operations/c1apitaskv1taskactionsservicedenyresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## escalate_to_emergency_access
 
@@ -196,7 +208,11 @@ if res.task_service_action_response is not None:
 ### Response
 
 **[operations.C1APITaskV1TaskActionsServiceEscalateToEmergencyAccessResponse](../../models/operations/c1apitaskv1taskactionsserviceescalatetoemergencyaccessresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## restart
 
@@ -243,4 +259,8 @@ if res.task_actions_service_restart_response is not None:
 ### Response
 
 **[operations.C1APITaskV1TaskActionsServiceRestartResponse](../../models/operations/c1apitaskv1taskactionsservicerestartresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |

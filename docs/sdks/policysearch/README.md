@@ -1,5 +1,5 @@
 # PolicySearch
-(*.policy_search*)
+(*policy_search*)
 
 ### Available Operations
 
@@ -48,4 +48,8 @@ if res.list_policy_response is not None:
 ### Response
 
 **[operations.C1APIPolicyV1PolicySearchSearchResponse](../../models/operations/c1apipolicyv1policysearchsearchresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |

@@ -12,6 +12,7 @@ class AppOwners:
         self.sdk_configuration = sdk_config
         
     
+    
     def add(self, request: operations.C1APIAppV1AppOwnersAddRequest) -> operations.C1APIAppV1AppOwnersAddResponse:
         r"""Add
         Adds an owner to an app.
@@ -26,7 +27,10 @@ class AppOwners:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -45,6 +49,7 @@ class AppOwners:
         return res
 
     
+    
     def list(self, request: operations.C1APIAppV1AppOwnersListRequest) -> operations.C1APIAppV1AppOwnersListResponse:
         r"""List
         List owners of an app.
@@ -57,7 +62,10 @@ class AppOwners:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -76,6 +84,7 @@ class AppOwners:
         return res
 
     
+    
     def remove(self, request: operations.C1APIAppV1AppOwnersRemoveRequest) -> operations.C1APIAppV1AppOwnersRemoveResponse:
         r"""Remove
         Removes an owner from an app.
@@ -90,7 +99,10 @@ class AppOwners:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('DELETE', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')

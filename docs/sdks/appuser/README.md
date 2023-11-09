@@ -1,5 +1,5 @@
 # AppUser
-(*.app_user*)
+(*app_user*)
 
 ### Available Operations
 
@@ -55,4 +55,8 @@ if res.app_user_service_update_response is not None:
 ### Response
 
 **[operations.C1APIAppV1AppUserServiceUpdateResponse](../../models/operations/c1apiappv1appuserserviceupdateresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |

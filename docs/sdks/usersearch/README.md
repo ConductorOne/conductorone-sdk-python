@@ -1,5 +1,5 @@
 # UserSearch
-(*.user_search*)
+(*user_search*)
 
 ### Available Operations
 
@@ -62,4 +62,8 @@ if res.search_users_response is not None:
 ### Response
 
 **[operations.C1APIUserV1UserSearchSearchResponse](../../models/operations/c1apiuserv1usersearchsearchresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |

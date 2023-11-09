@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 import dataclasses
-from .requestcatalog import RequestCatalogInput
+from .requestcatalog_input import RequestCatalogInput
 from .requestcatalogexpandmask import RequestCatalogExpandMask
 from dataclasses_json import Undefined, dataclass_json
 from sdk import utils

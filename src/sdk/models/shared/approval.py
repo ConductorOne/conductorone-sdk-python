@@ -2,13 +2,13 @@
 
 from __future__ import annotations
 import dataclasses
-from .appgroupapproval import AppGroupApproval, AppGroupApprovalInput
-from .appownerapproval import AppOwnerApproval, AppOwnerApprovalInput
-from .entitlementownerapproval import EntitlementOwnerApproval, EntitlementOwnerApprovalInput
-from .expressionapproval import ExpressionApproval, ExpressionApprovalInput
-from .managerapproval import ManagerApproval, ManagerApprovalInput
-from .selfapproval import SelfApproval, SelfApprovalInput
-from .userapproval import UserApproval, UserApprovalInput
+from .appgroupapproval import AppGroupApproval
+from .appownerapproval import AppOwnerApproval
+from .entitlementownerapproval import EntitlementOwnerApproval
+from .expressionapproval import ExpressionApproval
+from .managerapproval import ManagerApproval
+from .selfapproval import SelfApproval
+from .userapproval import UserApproval
 from dataclasses_json import Undefined, dataclass_json
 from sdk import utils
 from typing import Optional
@@ -49,38 +49,6 @@ class Approval:
     self_approval: Optional[SelfApproval] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('self') }})
     r"""The self approval object describes the configuration of a policy step that needs to be approved by the target of the request."""
     user_approval: Optional[UserApproval] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('users') }})
-    r"""The user approval object describes the approval configuration of a policy step that needs to be approved by a specific list of users."""
-    
-
-
-
-@dataclass_json(undefined=Undefined.EXCLUDE)
-@dataclasses.dataclass
-class ApprovalInput:
-    r"""The Approval message.
-
-    This message contains a oneof named typ. Only a single field of the following list may be set at a time:
-      - users
-      - manager
-      - appOwners
-      - group
-      - self
-      - entitlementOwners
-      - expression
-    """
-    app_group_approval: Optional[AppGroupApprovalInput] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('group') }})
-    r"""The AppGroupApproval object provides the configuration for setting a group as the approvers of an approval policy step."""
-    app_owner_approval: Optional[AppOwnerApprovalInput] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('appOwners') }})
-    r"""App owner approval provides the configuration for an approval step when the app owner is the target."""
-    entitlement_owner_approval: Optional[EntitlementOwnerApprovalInput] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('entitlementOwners') }})
-    r"""The entitlement owner approval allows configuration of the approval step when the target approvers are the entitlement owners."""
-    expression_approval: Optional[ExpressionApprovalInput] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('expression') }})
-    r"""The ExpressionApproval message."""
-    manager_approval: Optional[ManagerApprovalInput] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('manager') }})
-    r"""The manager approval object provides configuration options for approval when the target of the approval is the manager of the user in the task."""
-    self_approval: Optional[SelfApprovalInput] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('self') }})
-    r"""The self approval object describes the configuration of a policy step that needs to be approved by the target of the request."""
-    user_approval: Optional[UserApprovalInput] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('users') }})
     r"""The user approval object describes the approval configuration of a policy step that needs to be approved by a specific list of users."""
     
 

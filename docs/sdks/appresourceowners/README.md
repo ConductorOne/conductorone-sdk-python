@@ -1,5 +1,5 @@
 # AppResourceOwners
-(*.app_resource_owners*)
+(*app_resource_owners*)
 
 ### Available Operations
 
@@ -45,4 +45,8 @@ if res.list_app_resource_owners_response is not None:
 ### Response
 
 **[operations.C1APIAppV1AppResourceOwnersListResponse](../../models/operations/c1apiappv1appresourceownerslistresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |

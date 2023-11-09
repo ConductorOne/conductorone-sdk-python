@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 import dataclasses
-from .role import RoleInput
+from .role_input import RoleInput
 from dataclasses_json import Undefined, dataclass_json
 from sdk import utils
 from typing import Optional

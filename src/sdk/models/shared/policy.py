@@ -4,7 +4,8 @@ from __future__ import annotations
 import dataclasses
 import dateutil.parser
 from .policypostactions import PolicyPostActions
-from .policysteps import PolicySteps, PolicyStepsInput
+from .policysteps import PolicySteps
+from .policysteps_input import PolicyStepsInput
 from .rule import Rule
 from dataclasses_json import Undefined, dataclass_json
 from datetime import datetime

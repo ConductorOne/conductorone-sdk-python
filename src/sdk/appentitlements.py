@@ -12,6 +12,7 @@ class AppEntitlements:
         self.sdk_configuration = sdk_config
         
     
+    
     def get(self, request: operations.C1APIAppV1AppEntitlementsGetRequest) -> operations.C1APIAppV1AppEntitlementsGetResponse:
         r"""Get
         Get an app entitlement by ID.
@@ -23,7 +24,10 @@ class AppEntitlements:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -42,6 +46,7 @@ class AppEntitlements:
         return res
 
     
+    
     def list(self, request: operations.C1APIAppV1AppEntitlementsListRequest) -> operations.C1APIAppV1AppEntitlementsListResponse:
         r"""List
         List app entitlements associated with an app.
@@ -54,7 +59,10 @@ class AppEntitlements:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -73,6 +81,7 @@ class AppEntitlements:
         return res
 
     
+    
     def list_for_app_resource(self, request: operations.C1APIAppV1AppEntitlementsListForAppResourceRequest) -> operations.C1APIAppV1AppEntitlementsListForAppResourceResponse:
         r"""List For App Resource
         List app entitlements associated with an app resource.
@@ -85,7 +94,10 @@ class AppEntitlements:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -104,6 +116,7 @@ class AppEntitlements:
         return res
 
     
+    
     def list_for_app_user(self, request: operations.C1APIAppV1AppEntitlementsListForAppUserRequest) -> operations.C1APIAppV1AppEntitlementsListForAppUserResponse:
         r"""List For App User
         List app entitlements associated with an app user.
@@ -116,7 +129,10 @@ class AppEntitlements:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -135,6 +151,7 @@ class AppEntitlements:
         return res
 
     
+    
     def list_users(self, request: operations.C1APIAppV1AppEntitlementsListUsersRequest) -> operations.C1APIAppV1AppEntitlementsListUsersResponse:
         r"""List Users
         List the users, as AppEntitlementUsers objects, of an app entitlement.
@@ -147,7 +164,10 @@ class AppEntitlements:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -166,6 +186,7 @@ class AppEntitlements:
         return res
 
     
+    
     def update(self, request: operations.C1APIAppV1AppEntitlementsUpdateRequest) -> operations.C1APIAppV1AppEntitlementsUpdateResponse:
         r"""Update
         Update an app entitlement by ID.
@@ -180,7 +201,10 @@ class AppEntitlements:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')

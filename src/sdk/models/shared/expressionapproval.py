@@ -23,10 +23,3 @@ class ExpressionApproval:
     r"""Configuration to specific which users to fallback to if and the expression does not return a valid list of users."""
     
 
-
-
-@dataclasses.dataclass
-class ExpressionApprovalInput:
-    r"""The ExpressionApproval message."""
-    
-

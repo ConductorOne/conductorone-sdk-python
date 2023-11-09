@@ -12,6 +12,7 @@ class RequestCatalogManagement:
         self.sdk_configuration = sdk_config
         
     
+    
     def add_access_entitlements(self, request: operations.C1APIRequestcatalogV1RequestCatalogManagementServiceAddAccessEntitlementsRequest) -> operations.C1APIRequestcatalogV1RequestCatalogManagementServiceAddAccessEntitlementsResponse:
         r"""Add Access Entitlements
         Add visibility bindings (access entitlements) to a catalog.
@@ -26,7 +27,10 @@ class RequestCatalogManagement:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -45,6 +49,7 @@ class RequestCatalogManagement:
         return res
 
     
+    
     def add_app_entitlements(self, request: operations.C1APIRequestcatalogV1RequestCatalogManagementServiceAddAppEntitlementsRequest) -> operations.C1APIRequestcatalogV1RequestCatalogManagementServiceAddAppEntitlementsResponse:
         r"""Add App Entitlements
         Add requestable entitlements to a catalog.
@@ -59,7 +64,10 @@ class RequestCatalogManagement:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -78,6 +86,7 @@ class RequestCatalogManagement:
         return res
 
     
+    
     def create(self, request: shared.RequestCatalogManagementServiceCreateRequest) -> operations.C1APIRequestcatalogV1RequestCatalogManagementServiceCreateResponse:
         r"""Create
         Creates a new request catalog.
@@ -92,7 +101,10 @@ class RequestCatalogManagement:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -111,6 +123,7 @@ class RequestCatalogManagement:
         return res
 
     
+    
     def delete(self, request: operations.C1APIRequestcatalogV1RequestCatalogManagementServiceDeleteRequest) -> operations.C1APIRequestcatalogV1RequestCatalogManagementServiceDeleteResponse:
         r"""Delete
         Delete a catalog.
@@ -125,7 +138,10 @@ class RequestCatalogManagement:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('DELETE', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -144,6 +160,7 @@ class RequestCatalogManagement:
         return res
 
     
+    
     def get(self, request: operations.C1APIRequestcatalogV1RequestCatalogManagementServiceGetRequest) -> operations.C1APIRequestcatalogV1RequestCatalogManagementServiceGetResponse:
         r"""Get
         Get a catalog.
@@ -155,7 +172,10 @@ class RequestCatalogManagement:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -174,6 +194,7 @@ class RequestCatalogManagement:
         return res
 
     
+    
     def list(self) -> operations.C1APIRequestcatalogV1RequestCatalogManagementServiceListResponse:
         r"""List
         Get a list of request catalogs.
@@ -185,7 +206,10 @@ class RequestCatalogManagement:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -204,6 +228,7 @@ class RequestCatalogManagement:
         return res
 
     
+    
     def list_entitlements_for_access(self, request: operations.C1APIRequestcatalogV1RequestCatalogManagementServiceListEntitlementsForAccessRequest) -> operations.C1APIRequestcatalogV1RequestCatalogManagementServiceListEntitlementsForAccessResponse:
         r"""List Entitlements For Access
         List visibility bindings (access entitlements) for a catalog.
@@ -216,7 +241,10 @@ class RequestCatalogManagement:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -235,6 +263,7 @@ class RequestCatalogManagement:
         return res
 
     
+    
     def list_entitlements_per_catalog(self, request: operations.C1APIRequestcatalogV1RequestCatalogManagementServiceListEntitlementsPerCatalogRequest) -> operations.C1APIRequestcatalogV1RequestCatalogManagementServiceListEntitlementsPerCatalogResponse:
         r"""List Entitlements Per Catalog
         List entitlements in a catalog that are requestable.
@@ -247,7 +276,10 @@ class RequestCatalogManagement:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -266,6 +298,7 @@ class RequestCatalogManagement:
         return res
 
     
+    
     def remove_access_entitlements(self, request: operations.C1APIRequestcatalogV1RequestCatalogManagementServiceRemoveAccessEntitlementsRequest) -> operations.C1APIRequestcatalogV1RequestCatalogManagementServiceRemoveAccessEntitlementsResponse:
         r"""Remove Access Entitlements
         Remove visibility bindings (access entitlements) to a catalog.
@@ -280,7 +313,10 @@ class RequestCatalogManagement:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('DELETE', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -299,6 +335,7 @@ class RequestCatalogManagement:
         return res
 
     
+    
     def remove_app_entitlements(self, request: operations.C1APIRequestcatalogV1RequestCatalogManagementServiceRemoveAppEntitlementsRequest) -> operations.C1APIRequestcatalogV1RequestCatalogManagementServiceRemoveAppEntitlementsResponse:
         r"""Remove App Entitlements
         Remove requestable entitlements from a catalog.
@@ -313,7 +350,10 @@ class RequestCatalogManagement:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('DELETE', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -332,6 +372,7 @@ class RequestCatalogManagement:
         return res
 
     
+    
     def update(self, request: operations.C1APIRequestcatalogV1RequestCatalogManagementServiceUpdateRequest) -> operations.C1APIRequestcatalogV1RequestCatalogManagementServiceUpdateResponse:
         r"""Update
         Update a catalog.
@@ -346,7 +387,10 @@ class RequestCatalogManagement:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')

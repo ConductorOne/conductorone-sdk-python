@@ -12,6 +12,7 @@ class TaskActions:
         self.sdk_configuration = sdk_config
         
     
+    
     def approve(self, request: operations.C1APITaskV1TaskActionsServiceApproveRequest) -> operations.C1APITaskV1TaskActionsServiceApproveResponse:
         r"""Approve
         Invokes the c1.api.task.v1.TaskActionsService.Approve method.
@@ -26,7 +27,10 @@ class TaskActions:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -45,6 +49,7 @@ class TaskActions:
         return res
 
     
+    
     def comment(self, request: operations.C1APITaskV1TaskActionsServiceCommentRequest) -> operations.C1APITaskV1TaskActionsServiceCommentResponse:
         r"""Comment
         Invokes the c1.api.task.v1.TaskActionsService.Comment method.
@@ -59,7 +64,10 @@ class TaskActions:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -78,6 +86,7 @@ class TaskActions:
         return res
 
     
+    
     def deny(self, request: operations.C1APITaskV1TaskActionsServiceDenyRequest) -> operations.C1APITaskV1TaskActionsServiceDenyResponse:
         r"""Deny
         Invokes the c1.api.task.v1.TaskActionsService.Deny method.
@@ -92,7 +101,10 @@ class TaskActions:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -111,6 +123,7 @@ class TaskActions:
         return res
 
     
+    
     def escalate_to_emergency_access(self, request: operations.C1APITaskV1TaskActionsServiceEscalateToEmergencyAccessRequest) -> operations.C1APITaskV1TaskActionsServiceEscalateToEmergencyAccessResponse:
         r"""Escalate To Emergency Access
         Invokes the c1.api.task.v1.TaskActionsService.EscalateToEmergencyAccess method.
@@ -125,7 +138,10 @@ class TaskActions:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -144,6 +160,7 @@ class TaskActions:
         return res
 
     
+    
     def restart(self, request: operations.C1APITaskV1TaskActionsServiceRestartRequest) -> operations.C1APITaskV1TaskActionsServiceRestartResponse:
         r"""Restart
         Invokes the c1.api.task.v1.TaskActionsService.Restart method.
@@ -158,7 +175,10 @@ class TaskActions:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')

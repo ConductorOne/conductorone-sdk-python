@@ -1,5 +1,5 @@
 # RequestCatalogSearch
-(*.request_catalog_search*)
+(*request_catalog_search*)
 
 ### Available Operations
 
@@ -47,4 +47,8 @@ if res.request_catalog_search_service_search_entitlements_response is not None:
 ### Response
 
 **[operations.C1APIRequestcatalogV1RequestCatalogSearchServiceSearchEntitlementsResponse](../../models/operations/c1apirequestcatalogv1requestcatalogsearchservicesearchentitlementsresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |

@@ -1,5 +1,5 @@
 # AppEntitlementOwners
-(*.app_entitlement_owners*)
+(*app_entitlement_owners*)
 
 ### Available Operations
 
@@ -48,7 +48,11 @@ if res.add_app_entitlement_owner_response is not None:
 ### Response
 
 **[operations.C1APIAppV1AppEntitlementOwnersAddResponse](../../models/operations/c1apiappv1appentitlementownersaddresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## list
 
@@ -89,7 +93,11 @@ if res.list_app_entitlement_owners_response is not None:
 ### Response
 
 **[operations.C1APIAppV1AppEntitlementOwnersListResponse](../../models/operations/c1apiappv1appentitlementownerslistresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## remove
 
@@ -132,7 +140,11 @@ if res.remove_app_entitlement_owner_response is not None:
 ### Response
 
 **[operations.C1APIAppV1AppEntitlementOwnersRemoveResponse](../../models/operations/c1apiappv1appentitlementownersremoveresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## set
 
@@ -178,4 +190,8 @@ if res.set_app_entitlement_owners_response is not None:
 ### Response
 
 **[operations.C1APIAppV1AppEntitlementOwnersSetResponse](../../models/operations/c1apiappv1appentitlementownerssetresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |

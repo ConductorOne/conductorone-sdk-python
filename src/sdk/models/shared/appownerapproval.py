@@ -15,10 +15,3 @@ class AppOwnerApproval:
     r"""Configuration that allows a user to self approve if they are an app owner during this approval step."""
     
 
-
-
-@dataclasses.dataclass
-class AppOwnerApprovalInput:
-    r"""App owner approval provides the configuration for an approval step when the app owner is the target."""
-    
-

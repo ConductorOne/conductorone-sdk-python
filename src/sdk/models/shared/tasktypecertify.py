@@ -39,10 +39,3 @@ class TaskTypeCertify:
     outcome_time: Optional[datetime] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('outcomeTime'), 'encoder': utils.datetimeisoformat(True), 'decoder': dateutil.parser.isoparse, 'exclude': lambda f: f is None }})
     
 
-
-
-@dataclasses.dataclass
-class TaskTypeCertifyInput:
-    r"""The TaskTypeCertify message indicates that a task is a certify task and all related details."""
-    
-

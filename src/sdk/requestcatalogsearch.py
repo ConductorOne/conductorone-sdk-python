@@ -12,6 +12,7 @@ class RequestCatalogSearch:
         self.sdk_configuration = sdk_config
         
     
+    
     def search_entitlements(self, request: shared.RequestCatalogSearchServiceSearchEntitlementsRequest) -> operations.C1APIRequestcatalogV1RequestCatalogSearchServiceSearchEntitlementsResponse:
         r"""Search Entitlements
         Search request catalogs based on filters specified in the request body.
@@ -26,7 +27,10 @@ class RequestCatalogSearch:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')

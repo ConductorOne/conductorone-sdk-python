@@ -1,5 +1,5 @@
 # PersonalClient
-(*.personal_client*)
+(*personal_client*)
 
 ### Available Operations
 
@@ -48,4 +48,8 @@ if res.personal_client_service_create_response is not None:
 ### Response
 
 **[operations.C1APIIamV1PersonalClientServiceCreateResponse](../../models/operations/c1apiiamv1personalclientservicecreateresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |

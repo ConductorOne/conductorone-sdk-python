@@ -9,13 +9,6 @@ from sdk import utils
 from typing import Optional
 
 
-@dataclasses.dataclass
-class OAuth2AuthorizedAsInput:
-    r"""OAuth2AuthorizedAs tracks the user that OAuthed with the connector."""
-    
-
-
-
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class OAuth2AuthorizedAs:

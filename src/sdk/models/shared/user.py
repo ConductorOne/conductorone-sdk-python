@@ -22,11 +22,6 @@ class DirectoryStatus(str, Enum):
 class User3:
     pass
 
-
-@dataclasses.dataclass
-class UserProfile:
-    pass
-
 class UserStatus(str, Enum):
     r"""The status of the user in the system."""
     UNKNOWN = 'UNKNOWN'

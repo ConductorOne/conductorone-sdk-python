@@ -1,5 +1,5 @@
 # AppResourceSearch
-(*.app_resource_search*)
+(*app_resource_search*)
 
 ### Available Operations
 
@@ -57,4 +57,8 @@ if res.search_app_resource_types_response is not None:
 ### Response
 
 **[operations.C1APIAppV1AppResourceSearchSearchAppResourceTypesResponse](../../models/operations/c1apiappv1appresourcesearchsearchappresourcetypesresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |

@@ -4,7 +4,8 @@ from __future__ import annotations
 import dataclasses
 import dateutil.parser
 from .connectorstatus import ConnectorStatus
-from .oauth2authorizedas import OAuth2AuthorizedAs, OAuth2AuthorizedAsInput
+from .oauth2authorizedas import OAuth2AuthorizedAs
+from .oauth2authorizedas_input import OAuth2AuthorizedAsInput
 from dataclasses_json import Undefined, dataclass_json
 from datetime import datetime
 from sdk import utils
@@ -18,30 +19,6 @@ class Config:
     at_type: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('@type'), 'exclude': lambda f: f is None }})
     r"""The type of the serialized message."""
     additional_properties: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'exclude': lambda f: f is None }})
-    
-
-
-
-@dataclass_json(undefined=Undefined.EXCLUDE)
-@dataclasses.dataclass
-class ConnectorInput:
-    r"""A Connector is used to sync objects into Apps"""
-    app_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('appId'), 'exclude': lambda f: f is None }})
-    r"""The id of the app the connector is associated with."""
-    config: Optional[Config] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('config'), 'exclude': lambda f: f is None }})
-    r"""Contains an arbitrary serialized message along with a @type that describes the type of the serialized message."""
-    connector_status: Optional[ConnectorStatus] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status'), 'exclude': lambda f: f is None }})
-    r"""The status field on the connector is used to track the status of the connectors sync, and when syncing last started, completed, or caused the connector to update."""
-    description: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('description'), 'exclude': lambda f: f is None }})
-    r"""The description of the connector."""
-    display_name: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('displayName'), 'exclude': lambda f: f is None }})
-    r"""The display name of the connector."""
-    id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id'), 'exclude': lambda f: f is None }})
-    r"""The id of the connector."""
-    o_auth2_authorized_as: Optional[OAuth2AuthorizedAsInput] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('oauthAuthorizedAs'), 'exclude': lambda f: f is None }})
-    r"""OAuth2AuthorizedAs tracks the user that OAuthed with the connector."""
-    user_ids: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('userIds') }})
-    r"""The userIds field is used to define the integration owners of the connector."""
     
 
 
@@ -71,6 +48,30 @@ class Connector:
     o_auth2_authorized_as: Optional[OAuth2AuthorizedAs] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('oauthAuthorizedAs'), 'exclude': lambda f: f is None }})
     r"""OAuth2AuthorizedAs tracks the user that OAuthed with the connector."""
     updated_at: Optional[datetime] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('updatedAt'), 'encoder': utils.datetimeisoformat(True), 'decoder': dateutil.parser.isoparse, 'exclude': lambda f: f is None }})
+    user_ids: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('userIds') }})
+    r"""The userIds field is used to define the integration owners of the connector."""
+    
+
+
+
+@dataclass_json(undefined=Undefined.EXCLUDE)
+@dataclasses.dataclass
+class ConnectorInput:
+    r"""A Connector is used to sync objects into Apps"""
+    app_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('appId'), 'exclude': lambda f: f is None }})
+    r"""The id of the app the connector is associated with."""
+    config: Optional[Config] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('config'), 'exclude': lambda f: f is None }})
+    r"""Contains an arbitrary serialized message along with a @type that describes the type of the serialized message."""
+    connector_status: Optional[ConnectorStatus] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status'), 'exclude': lambda f: f is None }})
+    r"""The status field on the connector is used to track the status of the connectors sync, and when syncing last started, completed, or caused the connector to update."""
+    description: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('description'), 'exclude': lambda f: f is None }})
+    r"""The description of the connector."""
+    display_name: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('displayName'), 'exclude': lambda f: f is None }})
+    r"""The display name of the connector."""
+    id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id'), 'exclude': lambda f: f is None }})
+    r"""The id of the connector."""
+    o_auth2_authorized_as: Optional[OAuth2AuthorizedAsInput] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('oauthAuthorizedAs'), 'exclude': lambda f: f is None }})
+    r"""OAuth2AuthorizedAs tracks the user that OAuthed with the connector."""
     user_ids: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('userIds') }})
     r"""The userIds field is used to define the integration owners of the connector."""
     

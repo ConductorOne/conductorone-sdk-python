@@ -12,6 +12,7 @@ class Task:
         self.sdk_configuration = sdk_config
         
     
+    
     def create_grant_task(self, request: shared.TaskServiceCreateGrantRequest) -> operations.C1APITaskV1TaskServiceCreateGrantTaskResponse:
         r"""Create Grant Task
         Create a grant task
@@ -26,7 +27,10 @@ class Task:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -45,6 +49,7 @@ class Task:
         return res
 
     
+    
     def create_revoke_task(self, request: shared.TaskServiceCreateRevokeRequest) -> operations.C1APITaskV1TaskServiceCreateRevokeTaskResponse:
         r"""Create Revoke Task
         Create a revoke task
@@ -59,7 +64,10 @@ class Task:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -78,6 +86,7 @@ class Task:
         return res
 
     
+    
     def get(self, request: operations.C1APITaskV1TaskServiceGetRequest) -> operations.C1APITaskV1TaskServiceGetResponse:
         r"""Get
         Get a task by ID
@@ -89,7 +98,10 @@ class Task:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')

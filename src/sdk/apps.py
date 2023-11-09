@@ -12,6 +12,7 @@ class Apps:
         self.sdk_configuration = sdk_config
         
     
+    
     def create(self, request: shared.CreateAppRequest) -> operations.C1APIAppV1AppsCreateResponse:
         r"""Create
         Create a new app.
@@ -26,7 +27,10 @@ class Apps:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -45,6 +49,7 @@ class Apps:
         return res
 
     
+    
     def delete(self, request: operations.C1APIAppV1AppsDeleteRequest) -> operations.C1APIAppV1AppsDeleteResponse:
         r"""Delete
         Delete an app.
@@ -59,7 +64,10 @@ class Apps:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('DELETE', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -78,6 +86,7 @@ class Apps:
         return res
 
     
+    
     def get(self, request: operations.C1APIAppV1AppsGetRequest) -> operations.C1APIAppV1AppsGetResponse:
         r"""Get
         Get an app by ID.
@@ -89,7 +98,10 @@ class Apps:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -108,6 +120,7 @@ class Apps:
         return res
 
     
+    
     def list(self, request: operations.C1APIAppV1AppsListRequest) -> operations.C1APIAppV1AppsListResponse:
         r"""List
         List all apps.
@@ -120,7 +133,10 @@ class Apps:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -139,6 +155,7 @@ class Apps:
         return res
 
     
+    
     def update(self, request: operations.C1APIAppV1AppsUpdateRequest) -> operations.C1APIAppV1AppsUpdateResponse:
         r"""Update
         Update an existing app.
@@ -153,7 +170,10 @@ class Apps:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')

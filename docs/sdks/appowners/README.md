@@ -1,5 +1,5 @@
 # AppOwners
-(*.app_owners*)
+(*app_owners*)
 
 ### Available Operations
 
@@ -47,7 +47,11 @@ if res.add_app_owner_response is not None:
 ### Response
 
 **[operations.C1APIAppV1AppOwnersAddResponse](../../models/operations/c1apiappv1appownersaddresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## list
 
@@ -87,7 +91,11 @@ if res.list_app_owners_response is not None:
 ### Response
 
 **[operations.C1APIAppV1AppOwnersListResponse](../../models/operations/c1apiappv1appownerslistresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## remove
 
@@ -129,4 +137,8 @@ if res.remove_app_owner_response is not None:
 ### Response
 
 **[operations.C1APIAppV1AppOwnersRemoveResponse](../../models/operations/c1apiappv1appownersremoveresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |

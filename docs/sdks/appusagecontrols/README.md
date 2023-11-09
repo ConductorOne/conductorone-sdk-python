@@ -1,5 +1,5 @@
 # AppUsageControls
-(*.app_usage_controls*)
+(*app_usage_controls*)
 
 ### Available Operations
 
@@ -44,7 +44,11 @@ if res.get_app_usage_controls_response is not None:
 ### Response
 
 **[operations.C1APIAppV1AppUsageControlsServiceGetResponse](../../models/operations/c1apiappv1appusagecontrolsservicegetresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## update
 
@@ -87,4 +91,8 @@ if res.update_app_usage_controls_response is not None:
 ### Response
 
 **[operations.C1APIAppV1AppUsageControlsServiceUpdateResponse](../../models/operations/c1apiappv1appusagecontrolsserviceupdateresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |

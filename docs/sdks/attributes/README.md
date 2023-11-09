@@ -1,5 +1,5 @@
 # Attributes
-(*.attributes*)
+(*attributes*)
 
 ### Available Operations
 
@@ -45,7 +45,11 @@ if res.create_attribute_value_response is not None:
 ### Response
 
 **[operations.C1APIAttributeV1AttributesCreateAttributeValueResponse](../../models/operations/c1apiattributev1attributescreateattributevalueresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## delete_attribute_value
 
@@ -86,7 +90,11 @@ if res.delete_attribute_value_response is not None:
 ### Response
 
 **[operations.C1APIAttributeV1AttributesDeleteAttributeValueResponse](../../models/operations/c1apiattributev1attributesdeleteattributevalueresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## get_attribute_value
 
@@ -126,7 +134,11 @@ if res.get_attribute_value_response is not None:
 ### Response
 
 **[operations.C1APIAttributeV1AttributesGetAttributeValueResponse](../../models/operations/c1apiattributev1attributesgetattributevalueresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## list_attribute_types
 
@@ -164,7 +176,11 @@ if res.list_attribute_types_response is not None:
 ### Response
 
 **[operations.C1APIAttributeV1AttributesListAttributeTypesResponse](../../models/operations/c1apiattributev1attributeslistattributetypesresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## list_attribute_values
 
@@ -204,4 +220,8 @@ if res.list_attribute_values_response is not None:
 ### Response
 
 **[operations.C1APIAttributeV1AttributesListAttributeValuesResponse](../../models/operations/c1apiattributev1attributeslistattributevaluesresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |

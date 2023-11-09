@@ -39,13 +39,3 @@ class TaskTypeGrant:
     r"""The TaskGrantSource message tracks which external URL was the source of the specificed grant ticket."""
     
 
-
-
-@dataclass_json(undefined=Undefined.EXCLUDE)
-@dataclasses.dataclass
-class TaskTypeGrantInput:
-    r"""The TaskTypeGrant message indicates that a task is a grant task and all related details."""
-    task_grant_source: Optional[TaskGrantSource] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('source'), 'exclude': lambda f: f is None }})
-    r"""The TaskGrantSource message tracks which external URL was the source of the specificed grant ticket."""
-    
-

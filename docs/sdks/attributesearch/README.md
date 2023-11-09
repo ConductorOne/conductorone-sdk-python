@@ -1,5 +1,5 @@
 # AttributeSearch
-(*.attribute_search*)
+(*attribute_search*)
 
 ### Available Operations
 
@@ -51,4 +51,8 @@ if res.search_attribute_values_response is not None:
 ### Response
 
 **[operations.C1APIAttributeV1AttributeSearchSearchAttributeValuesResponse](../../models/operations/c1apiattributev1attributesearchsearchattributevaluesresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |

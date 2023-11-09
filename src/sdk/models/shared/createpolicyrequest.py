@@ -3,7 +3,7 @@
 from __future__ import annotations
 import dataclasses
 from .policypostactions import PolicyPostActions
-from .policysteps import PolicyStepsInput
+from .policysteps_input import PolicyStepsInput
 from dataclasses_json import Undefined, dataclass_json
 from enum import Enum
 from sdk import utils

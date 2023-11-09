@@ -45,20 +45,3 @@ class TaskTypeRevoke:
     """
     
 
-
-
-@dataclass_json(undefined=Undefined.EXCLUDE)
-@dataclasses.dataclass
-class TaskTypeRevokeInput:
-    r"""The TaskTypeRevoke message indicates that a task is a revoke task and all related details."""
-    task_revoke_source: Optional[TaskRevokeSource] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('source'), 'exclude': lambda f: f is None }})
-    r"""The TaskRevokeSource message indicates the source of the revoke task is one of expired, nonUsage, request, or review.
-
-    This message contains a oneof named origin. Only a single field of the following list may be set at a time:
-      - review
-      - request
-      - expired
-      - nonUsage
-    """
-    
-

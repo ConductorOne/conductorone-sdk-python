@@ -1,5 +1,5 @@
 # AppEntitlementSearch
-(*.app_entitlement_search*)
+(*app_entitlement_search*)
 
 ### Available Operations
 
@@ -68,4 +68,8 @@ if res.app_entitlement_search_service_search_response is not None:
 ### Response
 
 **[operations.C1APIAppV1AppEntitlementSearchServiceSearchResponse](../../models/operations/c1apiappv1appentitlementsearchservicesearchresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |

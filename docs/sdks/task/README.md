@@ -1,5 +1,5 @@
 # Task
-(*.task*)
+(*task*)
 
 ### Available Operations
 
@@ -52,7 +52,11 @@ if res.task_service_create_grant_response is not None:
 ### Response
 
 **[operations.C1APITaskV1TaskServiceCreateGrantTaskResponse](../../models/operations/c1apitaskv1taskservicecreategranttaskresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## create_revoke_task
 
@@ -98,7 +102,11 @@ if res.task_service_create_revoke_response is not None:
 ### Response
 
 **[operations.C1APITaskV1TaskServiceCreateRevokeTaskResponse](../../models/operations/c1apitaskv1taskservicecreaterevoketaskresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## get
 
@@ -138,4 +146,8 @@ if res.task_service_get_response is not None:
 ### Response
 
 **[operations.C1APITaskV1TaskServiceGetResponse](../../models/operations/c1apitaskv1taskservicegetresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |

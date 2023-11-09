@@ -1,5 +1,5 @@
 # AppSearch
-(*.app_search*)
+(*app_search*)
 
 ### Available Operations
 
@@ -48,4 +48,8 @@ if res.search_apps_response is not None:
 ### Response
 
 **[operations.C1APIAppV1AppSearchSearchResponse](../../models/operations/c1apiappv1appsearchsearchresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
