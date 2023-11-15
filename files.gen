@@ -19,6 +19,7 @@ src/sdk/directory.py
 src/sdk/personalclient.py
 src/sdk/roles.py
 src/sdk/policies.py
+src/sdk/policyvalidate.py
 src/sdk/appresourcesearch.py
 src/sdk/appsearch.py
 src/sdk/attributesearch.py
@@ -105,6 +106,7 @@ src/sdk/models/operations/c1_api_policy_v1_policies_delete.py
 src/sdk/models/operations/c1_api_policy_v1_policies_get.py
 src/sdk/models/operations/c1_api_policy_v1_policies_list.py
 src/sdk/models/operations/c1_api_policy_v1_policies_update.py
+src/sdk/models/operations/c1_api_policy_v1_policyvalidate_validatecel.py
 src/sdk/models/operations/c1_api_app_v1_appresourcesearch_searchappresourcetypes.py
 src/sdk/models/operations/c1_api_app_v1_appsearch_search.py
 src/sdk/models/operations/c1_api_attribute_v1_attributesearch_searchattributevalues.py
@@ -292,6 +294,9 @@ src/sdk/models/shared/getpolicyresponse.py
 src/sdk/models/shared/listpolicyresponse.py
 src/sdk/models/shared/updatepolicyresponse.py
 src/sdk/models/shared/updatepolicyrequest.py
+src/sdk/models/shared/validatepolicycelresponse.py
+src/sdk/models/shared/marker.py
+src/sdk/models/shared/validatepolicycelrequest.py
 src/sdk/models/shared/searchappresourcetypesresponse.py
 src/sdk/models/shared/searchappresourcetypesrequest.py
 src/sdk/models/shared/searchappsresponse.py
@@ -505,6 +510,7 @@ docs/models/operations/c1apipolicyv1policieslistrequest.md
 docs/models/operations/c1apipolicyv1policieslistresponse.md
 docs/models/operations/c1apipolicyv1policiesupdaterequest.md
 docs/models/operations/c1apipolicyv1policiesupdateresponse.md
+docs/models/operations/c1apipolicyv1policyvalidatevalidatecelresponse.md
 docs/models/operations/c1apiappv1appresourcesearchsearchappresourcetypesresponse.md
 docs/models/operations/c1apiappv1appsearchsearchresponse.md
 docs/models/operations/c1apiattributev1attributesearchsearchattributevaluesresponse.md
@@ -739,6 +745,10 @@ docs/models/shared/listpolicyresponse.md
 docs/models/shared/updatepolicyresponse.md
 docs/models/shared/updatepolicyrequest.md
 docs/models/shared/policyinput.md
+docs/models/shared/validatepolicycelresponse.md
+docs/models/shared/severity.md
+docs/models/shared/marker.md
+docs/models/shared/validatepolicycelrequest.md
 docs/models/shared/searchappresourcetypesresponse.md
 docs/models/shared/searchappresourcetypesrequest.md
 docs/models/shared/searchappsresponse.md
@@ -870,6 +880,7 @@ docs/sdks/directory/README.md
 docs/sdks/personalclient/README.md
 docs/sdks/roles/README.md
 docs/sdks/policies/README.md
+docs/sdks/policyvalidate/README.md
 docs/sdks/appresourcesearch/README.md
 docs/sdks/appsearch/README.md
 docs/sdks/attributesearch/README.md

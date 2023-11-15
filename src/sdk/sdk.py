@@ -24,6 +24,7 @@ from .directory import Directory
 from .personalclient import PersonalClient
 from .policies import Policies
 from .policysearch import PolicySearch
+from .policyvalidate import PolicyValidate
 from .requestcatalogmanagement import RequestCatalogManagement
 from .requestcatalogsearch import RequestCatalogSearch
 from .roles import Roles
@@ -59,6 +60,7 @@ class SDK:
     personal_client: PersonalClient
     roles: Roles
     policies: Policies
+    policy_validate: PolicyValidate
     app_resource_search: AppResourceSearch
     app_search: AppSearch
     attribute_search: AttributeSearch
@@ -136,6 +138,7 @@ class SDK:
         self.personal_client = PersonalClient(self.sdk_configuration)
         self.roles = Roles(self.sdk_configuration)
         self.policies = Policies(self.sdk_configuration)
+        self.policy_validate = PolicyValidate(self.sdk_configuration)
         self.app_resource_search = AppResourceSearch(self.sdk_configuration)
         self.app_search = AppSearch(self.sdk_configuration)
         self.attribute_search = AttributeSearch(self.sdk_configuration)
