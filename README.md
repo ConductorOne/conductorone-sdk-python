@@ -77,6 +77,7 @@ if res.app_entitlement_search_service_search_response is not None:
 * [add](docs/sdks/appowners/README.md#add) - Add
 * [list](docs/sdks/appowners/README.md#list) - List
 * [remove](docs/sdks/appowners/README.md#remove) - Remove
+* [set](docs/sdks/appowners/README.md#set) - Set
 
 ### [app_report](docs/sdks/appreport/README.md)
 

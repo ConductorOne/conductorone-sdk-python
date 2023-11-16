@@ -18,13 +18,13 @@ class C1APIDirectoryV1DirectoryServiceGetRequest:
 class C1APIDirectoryV1DirectoryServiceGetResponse:
     content_type: str = dataclasses.field()
     r"""HTTP response content type for this operation"""
+    raw_response: requests_http.Response = dataclasses.field()
+    r"""Raw HTTP response; suitable for custom response parsing"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
     directory_service_get_response: Optional[shared_directoryservicegetresponse.DirectoryServiceGetResponse] = dataclasses.field(default=None)
     r"""The Directory Service Get Response returns a directory view with a directory and JSONPATHs indicating the
      location in the expanded array that items are expanded as indicated by the expand mask in the request.
     """
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
-    r"""Raw HTTP response; suitable for custom response parsing"""
     
 

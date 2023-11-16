@@ -21,11 +21,11 @@ class C1APIAppV1ConnectorServiceDeleteRequest:
 class C1APIAppV1ConnectorServiceDeleteResponse:
     content_type: str = dataclasses.field()
     r"""HTTP response content type for this operation"""
+    raw_response: requests_http.Response = dataclasses.field()
+    r"""Raw HTTP response; suitable for custom response parsing"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
     connector_service_delete_response: Optional[shared_connectorservicedeleteresponse.ConnectorServiceDeleteResponse] = dataclasses.field(default=None)
     r"""Empty response body. Status code indicates success."""
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
-    r"""Raw HTTP response; suitable for custom response parsing"""
     
 

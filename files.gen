@@ -66,6 +66,7 @@ src/sdk/models/operations/c1_api_app_v1_appentitlementowners_set.py
 src/sdk/models/operations/c1_api_app_v1_appowners_add.py
 src/sdk/models/operations/c1_api_app_v1_appowners_list.py
 src/sdk/models/operations/c1_api_app_v1_appowners_remove.py
+src/sdk/models/operations/c1_api_app_v1_appowners_set.py
 src/sdk/models/operations/c1_api_app_v1_appreportservice_list.py
 src/sdk/models/operations/c1_api_app_v1_appreportactionservice_generatereport.py
 src/sdk/models/operations/c1_api_app_v1_appresourcetypeservice_get.py
@@ -189,6 +190,8 @@ src/sdk/models/shared/addappownerrequest.py
 src/sdk/models/shared/listappownersresponse.py
 src/sdk/models/shared/removeappownerresponse.py
 src/sdk/models/shared/removeappownerrequest.py
+src/sdk/models/shared/setappownersresponse.py
+src/sdk/models/shared/setappownersrequest.py
 src/sdk/models/shared/appreportservicelistresponse.py
 src/sdk/models/shared/apppopulationreport.py
 src/sdk/models/shared/appactionsservicegeneratereportresponse.py
@@ -437,6 +440,8 @@ docs/models/operations/c1apiappv1appownerslistrequest.md
 docs/models/operations/c1apiappv1appownerslistresponse.md
 docs/models/operations/c1apiappv1appownersremoverequest.md
 docs/models/operations/c1apiappv1appownersremoveresponse.md
+docs/models/operations/c1apiappv1appownerssetrequest.md
+docs/models/operations/c1apiappv1appownerssetresponse.md
 docs/models/operations/c1apiappv1appreportservicelistrequest.md
 docs/models/operations/c1apiappv1appreportservicelistresponse.md
 docs/models/operations/c1apiappv1appreportactionservicegeneratereportrequest.md
@@ -623,6 +628,8 @@ docs/models/shared/addappownerrequest.md
 docs/models/shared/listappownersresponse.md
 docs/models/shared/removeappownerresponse.md
 docs/models/shared/removeappownerrequest.md
+docs/models/shared/setappownersresponse.md
+docs/models/shared/setappownersrequest.md
 docs/models/shared/appreportservicelistresponse.md
 docs/models/shared/state.md
 docs/models/shared/apppopulationreport.md

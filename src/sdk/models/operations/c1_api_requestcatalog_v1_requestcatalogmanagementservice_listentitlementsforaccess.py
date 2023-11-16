@@ -20,10 +20,10 @@ class C1APIRequestcatalogV1RequestCatalogManagementServiceListEntitlementsForAcc
 class C1APIRequestcatalogV1RequestCatalogManagementServiceListEntitlementsForAccessResponse:
     content_type: str = dataclasses.field()
     r"""HTTP response content type for this operation"""
+    raw_response: requests_http.Response = dataclasses.field()
+    r"""Raw HTTP response; suitable for custom response parsing"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
-    r"""Raw HTTP response; suitable for custom response parsing"""
     request_catalog_management_service_list_entitlements_for_access_response: Optional[shared_requestcatalogmanagementservicelistentitlementsforaccessresponse.RequestCatalogManagementServiceListEntitlementsForAccessResponse] = dataclasses.field(default=None)
     r"""The RequestCatalogManagementServiceListEntitlementsForAccessResponse message contains a list of results and a nextPageToken if applicable."""
     

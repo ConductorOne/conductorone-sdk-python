@@ -20,11 +20,11 @@ class C1APIAttributeV1AttributesListAttributeValuesRequest:
 class C1APIAttributeV1AttributesListAttributeValuesResponse:
     content_type: str = dataclasses.field()
     r"""HTTP response content type for this operation"""
+    raw_response: requests_http.Response = dataclasses.field()
+    r"""Raw HTTP response; suitable for custom response parsing"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
     list_attribute_values_response: Optional[shared_listattributevaluesresponse.ListAttributeValuesResponse] = dataclasses.field(default=None)
     r"""ListAttributeValuesResponse is the response for listing attribute values for a given AttributeType."""
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
-    r"""Raw HTTP response; suitable for custom response parsing"""
     
 
