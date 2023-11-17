@@ -24,6 +24,8 @@ class TaskView:
     r"""JSONPATH expression indicating the location of the Entitlements objects in the expanded array"""
     identity_user_path: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('identityUserPath'), 'exclude': lambda f: f is None }})
     r"""JSONPATH expression indicating the location of the User object of the User that this task is targeting in the expanded array. This is the user that is the identity when the target of a task is an app user."""
+    insights_path: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('insightsPath'), 'exclude': lambda f: f is None }})
+    r"""JSONPATH expression indicating the location of the Insights objects in the expanded array"""
     step_approvers_path: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('stepApproversPath'), 'exclude': lambda f: f is None }})
     r"""JSONPATH expression indicating the location of the StepApproverUsers objects in the expanded array"""
     task: Optional[Task] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('task'), 'exclude': lambda f: f is None }})

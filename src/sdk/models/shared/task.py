@@ -50,6 +50,12 @@ class Processing(str, Enum):
     TASK_PROCESSING_TYPE_WAITING = 'TASK_PROCESSING_TYPE_WAITING'
     TASK_PROCESSING_TYPE_DONE = 'TASK_PROCESSING_TYPE_DONE'
 
+class Recommendation(str, Enum):
+    r"""The recommendation field."""
+    INSIGHT_RECOMMENDATION_UNSPECIFIED = 'INSIGHT_RECOMMENDATION_UNSPECIFIED'
+    INSIGHT_RECOMMENDATION_APPROVE = 'INSIGHT_RECOMMENDATION_APPROVE'
+    INSIGHT_RECOMMENDATION_DENY = 'INSIGHT_RECOMMENDATION_DENY'
+
 class TaskState(str, Enum):
     r"""The current state of the task as defined by the `state_enum`"""
     TASK_STATE_UNSPECIFIED = 'TASK_STATE_UNSPECIFIED'
@@ -83,6 +89,8 @@ class Task:
     r"""An array of external references to the task. Historically that has been items like Jira task IDs. This is currently unused, but may come back in the future for integrations."""
     id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id'), 'exclude': lambda f: f is None }})
     r"""The ID of the task."""
+    insight_ids: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('insightIds') }})
+    r"""The insightIds field."""
     numeric_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('numericId'), 'exclude': lambda f: f is None }})
     r"""A human-usable numeric ID of a task which can be included in place of the fully qualified task id in path parmeters (but not search queries)."""
     policy_generation_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('policyGenerationId'), 'exclude': lambda f: f is None }})
@@ -91,6 +99,8 @@ class Task:
     r"""A policy instance is an object that contains a reference to the policy it was created from, the currently executing step, the next steps, and the history of previously completed steps."""
     processing: Optional[Processing] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('processing'), 'exclude': lambda f: f is None }})
     r"""The processing state of a task as defined by the `processing_enum`"""
+    recommendation: Optional[Recommendation] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('recommendation'), 'exclude': lambda f: f is None }})
+    r"""The recommendation field."""
     state: Optional[TaskState] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('state'), 'exclude': lambda f: f is None }})
     r"""The current state of the task as defined by the `state_enum`"""
     step_approver_ids: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('stepApproverIds') }})
