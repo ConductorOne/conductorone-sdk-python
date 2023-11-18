@@ -37,6 +37,7 @@ src/sdk/utils/__init__.py
 src/sdk/utils/retries.py
 src/sdk/utils/utils.py
 src/sdk/models/errors/sdkerror.py
+tests/helpers.py
 src/sdk/models/operations/c1_api_app_v1_apps_create.py
 src/sdk/models/operations/c1_api_app_v1_apps_delete.py
 src/sdk/models/operations/c1_api_app_v1_apps_get.py
