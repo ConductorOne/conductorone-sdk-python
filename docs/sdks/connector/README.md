@@ -40,7 +40,7 @@ req = operations.C1APIAppV1ConnectorServiceCreateRequest(
         ),
         config=shared.ConnectorServiceCreateRequestConfig(
             additional_properties={
-                "key": 'string',
+                'key': 'string',
             },
         ),
         user_ids=[
@@ -426,7 +426,7 @@ req = operations.C1APIAppV1ConnectorServiceUpdateRequest(
             o_auth2_authorized_as=shared.OAuth2AuthorizedAsInput(),
             config=shared.Config(
                 additional_properties={
-                    "key": 'string',
+                    'key': 'string',
                 },
             ),
             user_ids=[
@@ -491,7 +491,7 @@ req = operations.C1APIAppV1ConnectorServiceUpdateDelegatedRequest(
             o_auth2_authorized_as=shared.OAuth2AuthorizedAsInput(),
             config=shared.Config(
                 additional_properties={
-                    "key": 'string',
+                    'key': 'string',
                 },
             ),
             user_ids=[

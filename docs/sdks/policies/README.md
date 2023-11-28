@@ -28,7 +28,7 @@ s = sdk.SDK(
 
 req = shared.CreatePolicyRequest(
     policy_steps={
-        "key": shared.PolicyStepsInput(
+        'key': shared.PolicyStepsInput(
             steps=[
                 shared.PolicyStepInput(
                     accept=shared.Accept(),
@@ -238,7 +238,7 @@ req = operations.C1APIPolicyV1PoliciesUpdateRequest(
     update_policy_request=shared.UpdatePolicyRequest(
         policy=shared.PolicyInput(
             policy_steps={
-                "key": shared.PolicyStepsInput(
+                'key': shared.PolicyStepsInput(
                     steps=[
                         shared.PolicyStepInput(
                             accept=shared.Accept(),
