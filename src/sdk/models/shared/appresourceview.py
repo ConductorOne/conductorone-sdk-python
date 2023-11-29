@@ -16,6 +16,10 @@ class AppResourceView:
     r"""JSONPATH expression indicating the location of the App object in the array"""
     app_resource: Optional[AppResource] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('appResource'), 'exclude': lambda f: f is None }})
     r"""The app resource message is a single resource that can have entitlements."""
+    parent_resource_path: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('parentResourcePath'), 'exclude': lambda f: f is None }})
+    r"""JSONPATH expression indicating the location of the Parent Resource object in the array"""
+    parent_resource_type_path: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('parentResourceTypePath'), 'exclude': lambda f: f is None }})
+    r"""JSONPATH expression indicating the location of the Parent Resource Type object in the array"""
     resource_type_path: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('resourceTypePath'), 'exclude': lambda f: f is None }})
     r"""JSONPATH expression indicating the location of the Resource Type object in the array"""
     
