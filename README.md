@@ -254,10 +254,9 @@ req = shared.CreateAppRequest(
 res = None
 try:
     res = s.apps.create(req)
-
-except (errors.SDKError) as e:
-    print(e) # handle exception
-
+except errors.SDKError as e:
+    print(e)  # handle exception
+    raise(e)
 
 if res.create_app_response is not None:
     # handle response

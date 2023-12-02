@@ -32,6 +32,8 @@ class App:
     r"""The URL of an icon to display for the app."""
     id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id'), 'exclude': lambda f: f is None }})
     r"""The ID of the app."""
+    is_directory: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('isDirectory'), 'exclude': lambda f: f is None }})
+    r"""Specifies if the app is a directory."""
     logo_uri: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('logoUri'), 'exclude': lambda f: f is None }})
     r"""The URL of a logo to display for the app."""
     monthly_cost_usd: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('monthlyCostUsd'), 'exclude': lambda f: f is None }})
