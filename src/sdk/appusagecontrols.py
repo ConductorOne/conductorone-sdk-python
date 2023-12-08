@@ -12,6 +12,7 @@ class AppUsageControls:
         self.sdk_configuration = sdk_config
         
     
+    
     def get(self, request: operations.C1APIAppV1AppUsageControlsServiceGetRequest) -> operations.C1APIAppV1AppUsageControlsServiceGetResponse:
         r"""Get
         Get usage controls, as an AppUsageControls object which describes some peripheral configuration, for an app.
@@ -23,11 +24,14 @@ class AppUsageControls:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
-
+        
         res = operations.C1APIAppV1AppUsageControlsServiceGetResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
@@ -41,6 +45,7 @@ class AppUsageControls:
 
         return res
 
+    
     
     def update(self, request: operations.C1APIAppV1AppUsageControlsServiceUpdateRequest) -> operations.C1APIAppV1AppUsageControlsServiceUpdateResponse:
         r"""Update
@@ -56,11 +61,14 @@ class AppUsageControls:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
-
+        
         res = operations.C1APIAppV1AppUsageControlsServiceUpdateResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:

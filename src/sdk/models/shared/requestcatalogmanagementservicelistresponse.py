@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 import dataclasses
-from ..shared import requestcatalogview as shared_requestcatalogview
+from .requestcatalogview import RequestCatalogView
 from dataclasses_json import Undefined, dataclass_json
 from sdk import utils
 from typing import Any, Dict, List, Optional
@@ -25,7 +25,7 @@ class RequestCatalogManagementServiceListResponse:
     r"""The RequestCatalogManagementServiceListResponse message."""
     expanded: Optional[List[RequestCatalogManagementServiceListResponseExpanded]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('expanded') }})
     r"""List of serialized related objects."""
-    list: Optional[List[shared_requestcatalogview.RequestCatalogView]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('list') }})
+    list: Optional[List[RequestCatalogView]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('list') }})
     r"""The list of request catalogs."""
     next_page_token: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('nextPageToken'), 'exclude': lambda f: f is None }})
     r"""The nextPageToken is shown for the next page if the number of results is larger than the max page size.

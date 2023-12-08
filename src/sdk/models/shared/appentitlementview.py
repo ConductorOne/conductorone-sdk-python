@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 import dataclasses
-from ..shared import appentitlement as shared_appentitlement
+from .appentitlement import AppEntitlement
 from dataclasses_json import Undefined, dataclass_json
 from sdk import utils
 from typing import Optional
@@ -12,7 +12,7 @@ from typing import Optional
 @dataclasses.dataclass
 class AppEntitlementView:
     r"""The app entitlement view contains the serialized app entitlement and paths to objects referenced by the app entitlement."""
-    app_entitlement: Optional[shared_appentitlement.AppEntitlement] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('appEntitlement'), 'exclude': lambda f: f is None }})
+    app_entitlement: Optional[AppEntitlement] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('appEntitlement'), 'exclude': lambda f: f is None }})
     r"""The app entitlement represents one permission in a downstream App (SAAS) that can be granted. For example, GitHub Read vs GitHub Write.
 
     This message contains a oneof named max_grant_duration. Only a single field of the following list may be set at a time:

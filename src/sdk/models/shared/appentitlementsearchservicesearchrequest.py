@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 import dataclasses
-from ..shared import appentitlementexpandmask as shared_appentitlementexpandmask
+from .appentitlementexpandmask import AppEntitlementExpandMask
 from dataclasses_json import Undefined, dataclass_json
 from sdk import utils
 from typing import List, Optional
@@ -16,7 +16,7 @@ class AppEntitlementSearchServiceSearchRequest:
     r"""Search for app entitlements that are being reviewed as part of this access review campaign."""
     alias: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('alias'), 'exclude': lambda f: f is None }})
     r"""Search for app entitlements that have this alias (exact match)."""
-    app_entitlement_expand_mask: Optional[shared_appentitlementexpandmask.AppEntitlementExpandMask] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('expandMask'), 'exclude': lambda f: f is None }})
+    app_entitlement_expand_mask: Optional[AppEntitlementExpandMask] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('expandMask'), 'exclude': lambda f: f is None }})
     r"""The app entitlement expand mask allows the user to get additional information when getting responses containing app entitlement views."""
     app_ids: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('appIds') }})
     r"""Search for app entitlements contained in any of these apps."""

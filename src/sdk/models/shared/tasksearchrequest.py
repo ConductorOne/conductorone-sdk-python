@@ -3,29 +3,29 @@
 from __future__ import annotations
 import dataclasses
 import dateutil.parser
-from ..shared import taskexpandmask as shared_taskexpandmask
-from ..shared import taskref as shared_taskref
-from ..shared import tasktype as shared_tasktype
+from .taskexpandmask import TaskExpandMask
+from .taskref import TaskRef
+from .tasktype_input import TaskTypeInput
 from dataclasses_json import Undefined, dataclass_json
 from datetime import datetime
 from enum import Enum
 from sdk import utils
 from typing import List, Optional
 
-class TaskSearchRequestCurrentStep(str, Enum):
+class CurrentStep(str, Enum):
     r"""Search tasks that have this type of step as the current step."""
     TASK_SEARCH_CURRENT_STEP_UNSPECIFIED = 'TASK_SEARCH_CURRENT_STEP_UNSPECIFIED'
     TASK_SEARCH_CURRENT_STEP_APPROVAL = 'TASK_SEARCH_CURRENT_STEP_APPROVAL'
     TASK_SEARCH_CURRENT_STEP_PROVISION = 'TASK_SEARCH_CURRENT_STEP_PROVISION'
 
-class TaskSearchRequestEmergencyStatus(str, Enum):
+class EmergencyStatus(str, Enum):
     r"""Search tasks that are or are not emergency access."""
     UNSPECIFIED = 'UNSPECIFIED'
     ALL = 'ALL'
     NON_EMERGENCY = 'NON_EMERGENCY'
     EMERGENCY = 'EMERGENCY'
 
-class TaskSearchRequestSortBy(str, Enum):
+class SortBy(str, Enum):
     r"""Sort tasks in a specific order."""
     TASK_SEARCH_SORT_BY_UNSPECIFIED = 'TASK_SEARCH_SORT_BY_UNSPECIFIED'
     TASK_SEARCH_SORT_BY_ACCOUNT = 'TASK_SEARCH_SORT_BY_ACCOUNT'
@@ -33,7 +33,7 @@ class TaskSearchRequestSortBy(str, Enum):
     TASK_SEARCH_SORT_BY_ACCOUNT_OWNER = 'TASK_SEARCH_SORT_BY_ACCOUNT_OWNER'
     TASK_SEARCH_SORT_BY_REVERSE_TICKET_ID = 'TASK_SEARCH_SORT_BY_REVERSE_TICKET_ID'
 
-class TaskSearchRequestTaskStates(str, Enum):
+class TaskStates(str, Enum):
     TASK_STATE_UNSPECIFIED = 'TASK_STATE_UNSPECIFIED'
     TASK_STATE_OPEN = 'TASK_STATE_OPEN'
     TASK_STATE_CLOSED = 'TASK_STATE_CLOSED'
@@ -41,7 +41,7 @@ class TaskSearchRequestTaskStates(str, Enum):
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class TaskSearchRequestInput:
+class TaskSearchRequest:
     r"""Search for tasks based on a plethora filters."""
     access_review_ids: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('accessReviewIds') }})
     r"""Search tasks that belong to any of the access reviews included in this list."""
@@ -63,9 +63,9 @@ class TaskSearchRequestInput:
     r"""Search tasks by  List of UserIDs which are currently assigned these Tasks"""
     created_after: Optional[datetime] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('createdAfter'), 'encoder': utils.datetimeisoformat(True), 'decoder': dateutil.parser.isoparse, 'exclude': lambda f: f is None }})
     created_before: Optional[datetime] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('createdBefore'), 'encoder': utils.datetimeisoformat(True), 'decoder': dateutil.parser.isoparse, 'exclude': lambda f: f is None }})
-    current_step: Optional[TaskSearchRequestCurrentStep] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('currentStep'), 'exclude': lambda f: f is None }})
+    current_step: Optional[CurrentStep] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('currentStep'), 'exclude': lambda f: f is None }})
     r"""Search tasks that have this type of step as the current step."""
-    emergency_status: Optional[TaskSearchRequestEmergencyStatus] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('emergencyStatus'), 'exclude': lambda f: f is None }})
+    emergency_status: Optional[EmergencyStatus] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('emergencyStatus'), 'exclude': lambda f: f is None }})
     r"""Search tasks that are or are not emergency access."""
     exclude_app_entitlement_ids: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('excludeAppEntitlementIds') }})
     r"""Search tasks that do not have any of these app entitlement IDs."""
@@ -85,17 +85,17 @@ class TaskSearchRequestInput:
     r"""Search tasks that were acted on by any of these users."""
     query: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('query'), 'exclude': lambda f: f is None }})
     r"""Fuzzy search tasks by display name or description. Also can search by numeric ID."""
-    refs: Optional[List[shared_taskref.TaskRef]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('refs') }})
+    refs: Optional[List[TaskRef]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('refs') }})
     r"""Query tasks by display name, description, or numeric ID."""
-    sort_by: Optional[TaskSearchRequestSortBy] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('sortBy'), 'exclude': lambda f: f is None }})
+    sort_by: Optional[SortBy] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('sortBy'), 'exclude': lambda f: f is None }})
     r"""Sort tasks in a specific order."""
     subject_ids: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('subjectIds') }})
     r"""Search tasks where these users are the subject."""
-    task_expand_mask: Optional[shared_taskexpandmask.TaskExpandMask] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('expandMask'), 'exclude': lambda f: f is None }})
+    task_expand_mask: Optional[TaskExpandMask] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('expandMask'), 'exclude': lambda f: f is None }})
     r"""The task expand mask is an array of strings that specifes the related objects the requester wishes to have returned when making a request where the expand mask is part of the input. Use '*' to view all possible responses."""
-    task_states: Optional[List[TaskSearchRequestTaskStates]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('taskStates') }})
+    task_states: Optional[List[TaskStates]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('taskStates') }})
     r"""Search tasks with this task state."""
-    task_types: Optional[List[shared_tasktype.TaskTypeInput]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('taskTypes') }})
+    task_types: Optional[List[TaskTypeInput]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('taskTypes') }})
     r"""Search tasks with this task type. This is a oneOf, and needs an object, which can be empty, to sort."""
     
 

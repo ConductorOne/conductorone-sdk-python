@@ -12,6 +12,7 @@ class Directory:
         self.sdk_configuration = sdk_config
         
     
+    
     def create(self, request: shared.DirectoryServiceCreateRequest) -> operations.C1APIDirectoryV1DirectoryServiceCreateResponse:
         r"""Create
         Create a directory.
@@ -26,11 +27,14 @@ class Directory:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
-
+        
         res = operations.C1APIDirectoryV1DirectoryServiceCreateResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
@@ -44,6 +48,7 @@ class Directory:
 
         return res
 
+    
     
     def delete(self, request: operations.C1APIDirectoryV1DirectoryServiceDeleteRequest) -> operations.C1APIDirectoryV1DirectoryServiceDeleteResponse:
         r"""Delete
@@ -59,11 +64,14 @@ class Directory:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('DELETE', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
-
+        
         res = operations.C1APIDirectoryV1DirectoryServiceDeleteResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
@@ -78,6 +86,7 @@ class Directory:
         return res
 
     
+    
     def get(self, request: operations.C1APIDirectoryV1DirectoryServiceGetRequest) -> operations.C1APIDirectoryV1DirectoryServiceGetResponse:
         r"""Get
         Get a directory by app_id.
@@ -89,11 +98,14 @@ class Directory:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
-
+        
         res = operations.C1APIDirectoryV1DirectoryServiceGetResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
@@ -108,6 +120,7 @@ class Directory:
         return res
 
     
+    
     def list(self, request: operations.C1APIDirectoryV1DirectoryServiceListRequest) -> operations.C1APIDirectoryV1DirectoryServiceListResponse:
         r"""List
         List directories.
@@ -120,11 +133,14 @@ class Directory:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')
-
+        
         res = operations.C1APIDirectoryV1DirectoryServiceListResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:

@@ -3,8 +3,8 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import connectorservicerevokecredentialrequest as shared_connectorservicerevokecredentialrequest
-from ..shared import connectorservicerevokecredentialresponse as shared_connectorservicerevokecredentialresponse
+from ...models.shared import connectorservicerevokecredentialrequest as shared_connectorservicerevokecredentialrequest
+from ...models.shared import connectorservicerevokecredentialresponse as shared_connectorservicerevokecredentialresponse
 from typing import Optional
 
 
@@ -22,11 +22,11 @@ class C1APIAppV1ConnectorServiceRevokeCredentialRequest:
 class C1APIAppV1ConnectorServiceRevokeCredentialResponse:
     content_type: str = dataclasses.field()
     r"""HTTP response content type for this operation"""
+    raw_response: requests_http.Response = dataclasses.field()
+    r"""Raw HTTP response; suitable for custom response parsing"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
     connector_service_revoke_credential_response: Optional[shared_connectorservicerevokecredentialresponse.ConnectorServiceRevokeCredentialResponse] = dataclasses.field(default=None)
     r"""Empty response body. Status code indicates success."""
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
-    r"""Raw HTTP response; suitable for custom response parsing"""
     
 

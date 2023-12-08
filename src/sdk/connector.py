@@ -12,6 +12,7 @@ class Connector:
         self.sdk_configuration = sdk_config
         
     
+    
     def create(self, request: operations.C1APIAppV1ConnectorServiceCreateRequest) -> operations.C1APIAppV1ConnectorServiceCreateResponse:
         r"""Create
         Create a configured connector.
@@ -26,11 +27,14 @@ class Connector:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
-
+        
         res = operations.C1APIAppV1ConnectorServiceCreateResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
@@ -44,6 +48,7 @@ class Connector:
 
         return res
 
+    
     
     def create_delegated(self, request: operations.C1APIAppV1ConnectorServiceCreateDelegatedRequest) -> operations.C1APIAppV1ConnectorServiceCreateDelegatedResponse:
         r"""Create Delegated
@@ -59,11 +64,14 @@ class Connector:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
-
+        
         res = operations.C1APIAppV1ConnectorServiceCreateDelegatedResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
@@ -77,6 +85,7 @@ class Connector:
 
         return res
 
+    
     
     def delete(self, request: operations.C1APIAppV1ConnectorServiceDeleteRequest) -> operations.C1APIAppV1ConnectorServiceDeleteResponse:
         r"""Delete
@@ -92,11 +101,14 @@ class Connector:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('DELETE', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
-
+        
         res = operations.C1APIAppV1ConnectorServiceDeleteResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
@@ -111,6 +123,7 @@ class Connector:
         return res
 
     
+    
     def get(self, request: operations.C1APIAppV1ConnectorServiceGetRequest) -> operations.C1APIAppV1ConnectorServiceGetResponse:
         r"""Get
         Get a connector.
@@ -122,11 +135,14 @@ class Connector:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
-
+        
         res = operations.C1APIAppV1ConnectorServiceGetResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
@@ -141,6 +157,7 @@ class Connector:
         return res
 
     
+    
     def get_credentials(self, request: operations.C1APIAppV1ConnectorServiceGetCredentialsRequest) -> operations.C1APIAppV1ConnectorServiceGetCredentialsResponse:
         r"""Get Credentials
         Get credentials for a connector.
@@ -152,11 +169,14 @@ class Connector:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
-
+        
         res = operations.C1APIAppV1ConnectorServiceGetCredentialsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
@@ -171,6 +191,7 @@ class Connector:
         return res
 
     
+    
     def list(self, request: operations.C1APIAppV1ConnectorServiceListRequest) -> operations.C1APIAppV1ConnectorServiceListResponse:
         r"""List
         List connectors for an app.
@@ -183,11 +204,14 @@ class Connector:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')
-
+        
         res = operations.C1APIAppV1ConnectorServiceListResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
@@ -201,6 +225,7 @@ class Connector:
 
         return res
 
+    
     
     def revoke_credential(self, request: operations.C1APIAppV1ConnectorServiceRevokeCredentialRequest) -> operations.C1APIAppV1ConnectorServiceRevokeCredentialResponse:
         r"""Revoke Credential
@@ -216,11 +241,14 @@ class Connector:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
-
+        
         res = operations.C1APIAppV1ConnectorServiceRevokeCredentialResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
@@ -234,6 +262,7 @@ class Connector:
 
         return res
 
+    
     
     def rotate_credential(self, request: operations.C1APIAppV1ConnectorServiceRotateCredentialRequest) -> operations.C1APIAppV1ConnectorServiceRotateCredentialResponse:
         r"""Rotate Credential
@@ -249,11 +278,14 @@ class Connector:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
-
+        
         res = operations.C1APIAppV1ConnectorServiceRotateCredentialResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
@@ -268,6 +300,7 @@ class Connector:
         return res
 
     
+    
     def update(self, request: operations.C1APIAppV1ConnectorServiceUpdateRequest) -> operations.C1APIAppV1ConnectorServiceUpdateResponse:
         r"""Update
         Update a connector.
@@ -276,17 +309,20 @@ class Connector:
         
         url = utils.generate_url(operations.C1APIAppV1ConnectorServiceUpdateRequest, base_url, '/api/v1/apps/{app_id}/connectors/{id}', request)
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "connector_service_update_request_input", False, True, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, "connector_service_update_request", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
-
+        
         res = operations.C1APIAppV1ConnectorServiceUpdateResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
@@ -301,6 +337,7 @@ class Connector:
         return res
 
     
+    
     def update_delegated(self, request: operations.C1APIAppV1ConnectorServiceUpdateDelegatedRequest) -> operations.C1APIAppV1ConnectorServiceUpdateDelegatedResponse:
         r"""Update Delegated
         Update a delegated connector.
@@ -309,17 +346,20 @@ class Connector:
         
         url = utils.generate_url(operations.C1APIAppV1ConnectorServiceUpdateDelegatedRequest, base_url, '/api/v1/apps/{connector_app_id}/connectors/{connector_id}/delegated', request)
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "connector_service_update_delegated_request_input", False, True, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, "connector_service_update_delegated_request", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
-
+        
         res = operations.C1APIAppV1ConnectorServiceUpdateDelegatedResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:

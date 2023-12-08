@@ -29,6 +29,10 @@ class AppResource:
     r"""The number of grants to this resource."""
     id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id'), 'exclude': lambda f: f is None }})
     r"""The id of the resource."""
+    parent_app_resource_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('parentAppResourceId'), 'exclude': lambda f: f is None }})
+    r"""The parent resource id, if this resource is a child of another resource."""
+    parent_app_resource_type_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('parentAppResourceTypeId'), 'exclude': lambda f: f is None }})
+    r"""The parent resource type id, if this resource is a child of another resource."""
     updated_at: Optional[datetime] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('updatedAt'), 'encoder': utils.datetimeisoformat(True), 'decoder': dateutil.parser.isoparse, 'exclude': lambda f: f is None }})
     
 

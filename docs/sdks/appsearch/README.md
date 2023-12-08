@@ -24,10 +24,10 @@ s = sdk.SDK(
 
 req = shared.SearchAppsRequest(
     app_ids=[
-        'transition',
+        'string',
     ],
     exclude_app_ids=[
-        'turquoise',
+        'string',
     ],
 )
 
@@ -48,4 +48,8 @@ if res.search_apps_response is not None:
 ### Response
 
 **[operations.C1APIAppV1AppSearchSearchResponse](../../models/operations/c1apiappv1appsearchsearchresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |

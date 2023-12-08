@@ -23,9 +23,9 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIAppV1AppEntitlementUserBindingServiceListAppUsersForIdentityWithGrantRequest(
-    app_entitlement_id='Balboa',
-    app_id='PCI',
-    identity_user_id='soup',
+    app_entitlement_id='string',
+    app_id='string',
+    identity_user_id='string',
 )
 
 res = s.app_entitlement_user_binding.list_app_users_for_identity_with_grant(req)
@@ -45,4 +45,8 @@ if res.list_app_users_for_identity_with_grant_response is not None:
 ### Response
 
 **[operations.C1APIAppV1AppEntitlementUserBindingServiceListAppUsersForIdentityWithGrantResponse](../../models/operations/c1apiappv1appentitlementuserbindingservicelistappusersforidentitywithgrantresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |

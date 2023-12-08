@@ -32,6 +32,8 @@ class App:
     r"""The URL of an icon to display for the app."""
     id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id'), 'exclude': lambda f: f is None }})
     r"""The ID of the app."""
+    is_directory: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('isDirectory'), 'exclude': lambda f: f is None }})
+    r"""Specifies if the app is a directory."""
     logo_uri: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('logoUri'), 'exclude': lambda f: f is None }})
     r"""The URL of a logo to display for the app."""
     monthly_cost_usd: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('monthlyCostUsd'), 'exclude': lambda f: f is None }})
@@ -43,27 +45,5 @@ class App:
     updated_at: Optional[datetime] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('updatedAt'), 'encoder': utils.datetimeisoformat(True), 'decoder': dateutil.parser.isoparse, 'exclude': lambda f: f is None }})
     user_count: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('userCount'), 'exclude': lambda f: f is None }})
     r"""The number of users with grants to this app."""
-    
-
-
-
-@dataclass_json(undefined=Undefined.EXCLUDE)
-@dataclasses.dataclass
-class AppInput:
-    r"""The App object provides all of the details for an app, as well as some configuration."""
-    certify_policy_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('certifyPolicyId'), 'exclude': lambda f: f is None }})
-    r"""The ID of the Certify Policy associated with this App."""
-    description: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('description'), 'exclude': lambda f: f is None }})
-    r"""The app's description."""
-    display_name: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('displayName'), 'exclude': lambda f: f is None }})
-    r"""The app's display name."""
-    grant_policy_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('grantPolicyId'), 'exclude': lambda f: f is None }})
-    r"""The ID of the Grant Policy associated with this App."""
-    icon_url: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('iconUrl'), 'exclude': lambda f: f is None }})
-    r"""The URL of an icon to display for the app."""
-    monthly_cost_usd: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('monthlyCostUsd'), 'exclude': lambda f: f is None }})
-    r"""The cost of an app per-seat, so that total cost can be calculated by the grant count."""
-    revoke_policy_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('revokePolicyId'), 'exclude': lambda f: f is None }})
-    r"""The ID of the Revoke Policy associated with this App."""
     
 

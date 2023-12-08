@@ -6,6 +6,7 @@
 * [add](#add) - Add
 * [list](#list) - List
 * [remove](#remove) - Remove
+* [set](#set) - Set
 
 ## add
 
@@ -26,8 +27,8 @@ s = sdk.SDK(
 
 req = operations.C1APIAppV1AppOwnersAddRequest(
     add_app_owner_request=shared.AddAppOwnerRequest(),
-    app_id='program',
-    user_id='North',
+    app_id='string',
+    user_id='string',
 )
 
 res = s.app_owners.add(req)
@@ -47,7 +48,11 @@ if res.add_app_owner_response is not None:
 ### Response
 
 **[operations.C1APIAppV1AppOwnersAddResponse](../../models/operations/c1apiappv1appownersaddresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## list
 
@@ -67,7 +72,7 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIAppV1AppOwnersListRequest(
-    app_id='Future',
+    app_id='string',
 )
 
 res = s.app_owners.list(req)
@@ -87,7 +92,11 @@ if res.list_app_owners_response is not None:
 ### Response
 
 **[operations.C1APIAppV1AppOwnersListResponse](../../models/operations/c1apiappv1appownerslistresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## remove
 
@@ -108,8 +117,8 @@ s = sdk.SDK(
 
 req = operations.C1APIAppV1AppOwnersRemoveRequest(
     remove_app_owner_request=shared.RemoveAppOwnerRequest(),
-    app_id='Optimization',
-    user_id='JBOD',
+    app_id='string',
+    user_id='string',
 )
 
 res = s.app_owners.remove(req)
@@ -129,4 +138,57 @@ if res.remove_app_owner_response is not None:
 ### Response
 
 **[operations.C1APIAppV1AppOwnersRemoveResponse](../../models/operations/c1apiappv1appownersremoveresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
+
+## set
+
+Sets the owners for a given app to the specified list of users.
+
+### Example Usage
+
+```python
+import sdk
+from sdk.models import operations, shared
+
+s = sdk.SDK(
+    security=shared.Security(
+        bearer_auth="",
+        oauth="",
+    ),
+)
+
+req = operations.C1APIAppV1AppOwnersSetRequest(
+    set_app_owners_request=shared.SetAppOwnersRequest(
+        user_ids=[
+            'string',
+        ],
+    ),
+    app_id='string',
+)
+
+res = s.app_owners.set(req)
+
+if res.set_app_owners_response is not None:
+    # handle response
+    pass
+```
+
+### Parameters
+
+| Parameter                                                                                            | Type                                                                                                 | Required                                                                                             | Description                                                                                          |
+| ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
+| `request`                                                                                            | [operations.C1APIAppV1AppOwnersSetRequest](../../models/operations/c1apiappv1appownerssetrequest.md) | :heavy_check_mark:                                                                                   | The request object to use for the request.                                                           |
+
+
+### Response
+
+**[operations.C1APIAppV1AppOwnersSetResponse](../../models/operations/c1apiappv1appownerssetresponse.md)**
+### Errors
+
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |

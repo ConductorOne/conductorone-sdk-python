@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 import dataclasses
-from ..shared import appuserview as shared_appuserview
+from .appuserview import AppUserView
 from dataclasses_json import Undefined, dataclass_json
 from sdk import utils
 from typing import Any, Dict, List, Optional
@@ -23,7 +23,7 @@ class AppUserServiceUpdateResponseExpanded:
 @dataclasses.dataclass
 class AppUserServiceUpdateResponse:
     r"""The AppUserServiceUpdateResponse message."""
-    app_user_view: Optional[shared_appuserview.AppUserView] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('appUserView'), 'exclude': lambda f: f is None }})
+    app_user_view: Optional[AppUserView] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('appUserView'), 'exclude': lambda f: f is None }})
     r"""The AppUserView contains an app user as well as paths for apps, identity users, and last usage in expanded arrays."""
     expanded: Optional[List[AppUserServiceUpdateResponseExpanded]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('expanded') }})
     r"""The expanded field."""

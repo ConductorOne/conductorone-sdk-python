@@ -3,8 +3,8 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import taskactionsserviceescalatetoemergencyaccessrequest as shared_taskactionsserviceescalatetoemergencyaccessrequest
-from ..shared import taskserviceactionresponse as shared_taskserviceactionresponse
+from ...models.shared import taskactionsserviceescalatetoemergencyaccessrequest as shared_taskactionsserviceescalatetoemergencyaccessrequest
+from ...models.shared import taskserviceactionresponse as shared_taskserviceactionresponse
 from typing import Optional
 
 
@@ -20,10 +20,10 @@ class C1APITaskV1TaskActionsServiceEscalateToEmergencyAccessRequest:
 class C1APITaskV1TaskActionsServiceEscalateToEmergencyAccessResponse:
     content_type: str = dataclasses.field()
     r"""HTTP response content type for this operation"""
+    raw_response: requests_http.Response = dataclasses.field()
+    r"""Raw HTTP response; suitable for custom response parsing"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
-    r"""Raw HTTP response; suitable for custom response parsing"""
     task_service_action_response: Optional[shared_taskserviceactionresponse.TaskServiceActionResponse] = dataclasses.field(default=None)
     r"""Successful response"""
     

@@ -12,6 +12,7 @@ class Attributes:
         self.sdk_configuration = sdk_config
         
     
+    
     def create_attribute_value(self, request: shared.CreateAttributeValueRequest) -> operations.C1APIAttributeV1AttributesCreateAttributeValueResponse:
         r"""Create Attribute Value
         Create a new attribute value.
@@ -26,11 +27,14 @@ class Attributes:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
-
+        
         res = operations.C1APIAttributeV1AttributesCreateAttributeValueResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
@@ -44,6 +48,7 @@ class Attributes:
 
         return res
 
+    
     
     def delete_attribute_value(self, request: operations.C1APIAttributeV1AttributesDeleteAttributeValueRequest) -> operations.C1APIAttributeV1AttributesDeleteAttributeValueResponse:
         r"""Delete Attribute Value
@@ -59,11 +64,14 @@ class Attributes:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('DELETE', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
-
+        
         res = operations.C1APIAttributeV1AttributesDeleteAttributeValueResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
@@ -78,6 +86,7 @@ class Attributes:
         return res
 
     
+    
     def get_attribute_value(self, request: operations.C1APIAttributeV1AttributesGetAttributeValueRequest) -> operations.C1APIAttributeV1AttributesGetAttributeValueResponse:
         r"""Get Attribute Value
         Get an attribute value by id.
@@ -89,11 +98,14 @@ class Attributes:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
-
+        
         res = operations.C1APIAttributeV1AttributesGetAttributeValueResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
@@ -108,6 +120,7 @@ class Attributes:
         return res
 
     
+    
     def list_attribute_types(self, request: operations.C1APIAttributeV1AttributesListAttributeTypesRequest) -> operations.C1APIAttributeV1AttributesListAttributeTypesResponse:
         r"""List Attribute Types
         List all attribute types.
@@ -120,11 +133,14 @@ class Attributes:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')
-
+        
         res = operations.C1APIAttributeV1AttributesListAttributeTypesResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
@@ -139,6 +155,7 @@ class Attributes:
         return res
 
     
+    
     def list_attribute_values(self, request: operations.C1APIAttributeV1AttributesListAttributeValuesRequest) -> operations.C1APIAttributeV1AttributesListAttributeValuesResponse:
         r"""List Attribute Values
         List all attribute values for a given attribute type.
@@ -151,11 +168,14 @@ class Attributes:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')
-
+        
         res = operations.C1APIAttributeV1AttributesListAttributeValuesResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:

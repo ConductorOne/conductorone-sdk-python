@@ -12,6 +12,7 @@ class Auth:
         self.sdk_configuration = sdk_config
         
     
+    
     def introspect(self) -> operations.C1APIAuthV1AuthIntrospectResponse:
         r"""Introspect
         Introspect returns the current user's principle_id, user_id and a list of roles, permissions, and enabled features.
@@ -23,11 +24,14 @@ class Auth:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
-
+        
         res = operations.C1APIAuthV1AuthIntrospectResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:

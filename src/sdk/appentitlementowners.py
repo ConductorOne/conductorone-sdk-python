@@ -12,6 +12,7 @@ class AppEntitlementOwners:
         self.sdk_configuration = sdk_config
         
     
+    
     def add(self, request: operations.C1APIAppV1AppEntitlementOwnersAddRequest) -> operations.C1APIAppV1AppEntitlementOwnersAddResponse:
         r"""Add
         Add an owner to a given app entitlement.
@@ -26,11 +27,14 @@ class AppEntitlementOwners:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
-
+        
         res = operations.C1APIAppV1AppEntitlementOwnersAddResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
@@ -45,6 +49,7 @@ class AppEntitlementOwners:
         return res
 
     
+    
     def list(self, request: operations.C1APIAppV1AppEntitlementOwnersListRequest) -> operations.C1APIAppV1AppEntitlementOwnersListResponse:
         r"""List
         List owners for a given app entitlement.
@@ -57,11 +62,14 @@ class AppEntitlementOwners:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')
-
+        
         res = operations.C1APIAppV1AppEntitlementOwnersListResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
@@ -75,6 +83,7 @@ class AppEntitlementOwners:
 
         return res
 
+    
     
     def remove(self, request: operations.C1APIAppV1AppEntitlementOwnersRemoveRequest) -> operations.C1APIAppV1AppEntitlementOwnersRemoveResponse:
         r"""Remove
@@ -90,11 +99,14 @@ class AppEntitlementOwners:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('DELETE', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
-
+        
         res = operations.C1APIAppV1AppEntitlementOwnersRemoveResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
@@ -108,6 +120,7 @@ class AppEntitlementOwners:
 
         return res
 
+    
     
     def set(self, request: operations.C1APIAppV1AppEntitlementOwnersSetRequest) -> operations.C1APIAppV1AppEntitlementOwnersSetResponse:
         r"""Set
@@ -123,11 +136,14 @@ class AppEntitlementOwners:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('PUT', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
-
+        
         res = operations.C1APIAppV1AppEntitlementOwnersSetResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:

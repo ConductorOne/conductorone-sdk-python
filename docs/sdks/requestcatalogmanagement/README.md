@@ -38,7 +38,7 @@ req = operations.C1APIRequestcatalogV1RequestCatalogManagementServiceAddAccessEn
             shared.AppEntitlementRef(),
         ],
     ),
-    catalog_id='Killeen',
+    catalog_id='string',
 )
 
 res = s.request_catalog_management.add_access_entitlements(req)
@@ -58,7 +58,11 @@ if res.request_catalog_management_service_add_access_entitlements_response is no
 ### Response
 
 **[operations.C1APIRequestcatalogV1RequestCatalogManagementServiceAddAccessEntitlementsResponse](../../models/operations/c1apirequestcatalogv1requestcatalogmanagementserviceaddaccessentitlementsresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## add_app_entitlements
 
@@ -83,7 +87,7 @@ req = operations.C1APIRequestcatalogV1RequestCatalogManagementServiceAddAppEntit
             shared.AppEntitlementRef(),
         ],
     ),
-    catalog_id='female',
+    catalog_id='string',
 )
 
 res = s.request_catalog_management.add_app_entitlements(req)
@@ -103,7 +107,11 @@ if res.request_catalog_management_service_add_app_entitlements_response is not N
 ### Response
 
 **[operations.C1APIRequestcatalogV1RequestCatalogManagementServiceAddAppEntitlementsResponse](../../models/operations/c1apirequestcatalogv1requestcatalogmanagementserviceaddappentitlementsresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## create
 
@@ -125,7 +133,7 @@ s = sdk.SDK(
 req = shared.RequestCatalogManagementServiceCreateRequest(
     request_catalog_expand_mask=shared.RequestCatalogExpandMask(
         paths=[
-            'neural',
+            'string',
         ],
     ),
 )
@@ -147,7 +155,11 @@ if res.request_catalog_management_service_get_response is not None:
 ### Response
 
 **[operations.C1APIRequestcatalogV1RequestCatalogManagementServiceCreateResponse](../../models/operations/c1apirequestcatalogv1requestcatalogmanagementservicecreateresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## delete
 
@@ -188,7 +200,11 @@ if res.request_catalog_management_service_delete_response is not None:
 ### Response
 
 **[operations.C1APIRequestcatalogV1RequestCatalogManagementServiceDeleteResponse](../../models/operations/c1apirequestcatalogv1requestcatalogmanagementservicedeleteresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## get
 
@@ -228,7 +244,11 @@ if res.request_catalog_management_service_get_response is not None:
 ### Response
 
 **[operations.C1APIRequestcatalogV1RequestCatalogManagementServiceGetResponse](../../models/operations/c1apirequestcatalogv1requestcatalogmanagementservicegetresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## list
 
@@ -259,7 +279,11 @@ if res.request_catalog_management_service_list_response is not None:
 ### Response
 
 **[operations.C1APIRequestcatalogV1RequestCatalogManagementServiceListResponse](../../models/operations/c1apirequestcatalogv1requestcatalogmanagementservicelistresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## list_entitlements_for_access
 
@@ -279,7 +303,7 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIRequestcatalogV1RequestCatalogManagementServiceListEntitlementsForAccessRequest(
-    catalog_id='deliberately',
+    catalog_id='string',
 )
 
 res = s.request_catalog_management.list_entitlements_for_access(req)
@@ -299,7 +323,11 @@ if res.request_catalog_management_service_list_entitlements_for_access_response 
 ### Response
 
 **[operations.C1APIRequestcatalogV1RequestCatalogManagementServiceListEntitlementsForAccessResponse](../../models/operations/c1apirequestcatalogv1requestcatalogmanagementservicelistentitlementsforaccessresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## list_entitlements_per_catalog
 
@@ -319,7 +347,7 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIRequestcatalogV1RequestCatalogManagementServiceListEntitlementsPerCatalogRequest(
-    catalog_id='Incredible',
+    catalog_id='string',
 )
 
 res = s.request_catalog_management.list_entitlements_per_catalog(req)
@@ -339,7 +367,11 @@ if res.request_catalog_management_service_list_entitlements_per_catalog_response
 ### Response
 
 **[operations.C1APIRequestcatalogV1RequestCatalogManagementServiceListEntitlementsPerCatalogResponse](../../models/operations/c1apirequestcatalogv1requestcatalogmanagementservicelistentitlementspercatalogresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## remove_access_entitlements
 
@@ -364,7 +396,7 @@ req = operations.C1APIRequestcatalogV1RequestCatalogManagementServiceRemoveAcces
             shared.AppEntitlementRef(),
         ],
     ),
-    catalog_id='Convertible',
+    catalog_id='string',
 )
 
 res = s.request_catalog_management.remove_access_entitlements(req)
@@ -384,7 +416,11 @@ if res.request_catalog_management_service_remove_access_entitlements_response is
 ### Response
 
 **[operations.C1APIRequestcatalogV1RequestCatalogManagementServiceRemoveAccessEntitlementsResponse](../../models/operations/c1apirequestcatalogv1requestcatalogmanagementserviceremoveaccessentitlementsresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## remove_app_entitlements
 
@@ -409,7 +445,7 @@ req = operations.C1APIRequestcatalogV1RequestCatalogManagementServiceRemoveAppEn
             shared.AppEntitlementRef(),
         ],
     ),
-    catalog_id='Elsinore',
+    catalog_id='string',
 )
 
 res = s.request_catalog_management.remove_app_entitlements(req)
@@ -429,7 +465,11 @@ if res.request_catalog_management_service_remove_app_entitlements_response is no
 ### Response
 
 **[operations.C1APIRequestcatalogV1RequestCatalogManagementServiceRemoveAppEntitlementsResponse](../../models/operations/c1apirequestcatalogv1requestcatalogmanagementserviceremoveappentitlementsresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## update
 
@@ -449,7 +489,7 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIRequestcatalogV1RequestCatalogManagementServiceUpdateRequest(
-    request_catalog_management_service_update_request_input=shared.RequestCatalogManagementServiceUpdateRequestInput(
+    request_catalog_management_service_update_request=shared.RequestCatalogManagementServiceUpdateRequest(
         request_catalog=shared.RequestCatalogInput(
             access_entitlements=[
                 shared.AppEntitlementInput(
@@ -458,23 +498,23 @@ req = operations.C1APIRequestcatalogV1RequestCatalogManagementServiceUpdateReque
                         delegated_provision=shared.DelegatedProvision(),
                         manual_provision=shared.ManualProvision(
                             user_ids=[
-                                'up',
+                                'string',
                             ],
                         ),
                     ),
                     compliance_framework_value_ids=[
-                        'complexity',
+                        'string',
                     ],
-                    duration_unset=shared.AppEntitlementDurationUnset(),
+                    duration_unset=shared.DurationUnset(),
                 ),
             ],
             app_ids=[
-                'Supervisor',
+                'string',
             ],
         ),
         request_catalog_expand_mask=shared.RequestCatalogExpandMask(
             paths=[
-                'less',
+                'string',
             ],
         ),
     ),
@@ -498,4 +538,8 @@ if res.request_catalog_management_service_get_response is not None:
 ### Response
 
 **[operations.C1APIRequestcatalogV1RequestCatalogManagementServiceUpdateResponse](../../models/operations/c1apirequestcatalogv1requestcatalogmanagementserviceupdateresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |

@@ -25,7 +25,7 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIIamV1RolesGetRequest(
-    role_id='motivating',
+    role_id='string',
 )
 
 res = s.roles.get(req)
@@ -45,7 +45,11 @@ if res.get_roles_response is not None:
 ### Response
 
 **[operations.C1APIIamV1RolesGetResponse](../../models/operations/c1apiiamv1rolesgetresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## list
 
@@ -83,7 +87,11 @@ if res.list_roles_response is not None:
 ### Response
 
 **[operations.C1APIIamV1RolesListResponse](../../models/operations/c1apiiamv1roleslistresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## update
 
@@ -103,17 +111,17 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIIamV1RolesUpdateRequest(
-    update_role_request_input=shared.UpdateRoleRequestInput(
+    update_role_request=shared.UpdateRoleRequest(
         role=shared.RoleInput(
             permissions=[
-                'up',
+                'string',
             ],
             service_roles=[
-                'complexity',
+                'string',
             ],
         ),
     ),
-    role_id='Supervisor',
+    role_id='string',
 )
 
 res = s.roles.update(req)
@@ -133,4 +141,8 @@ if res.update_roles_response is not None:
 ### Response
 
 **[operations.C1APIIamV1RolesUpdateResponse](../../models/operations/c1apiiamv1rolesupdateresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |

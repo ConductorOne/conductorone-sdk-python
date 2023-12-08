@@ -3,8 +3,8 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import appactionsservicegeneratereportrequest as shared_appactionsservicegeneratereportrequest
-from ..shared import appactionsservicegeneratereportresponse as shared_appactionsservicegeneratereportresponse
+from ...models.shared import appactionsservicegeneratereportrequest as shared_appactionsservicegeneratereportrequest
+from ...models.shared import appactionsservicegeneratereportresponse as shared_appactionsservicegeneratereportresponse
 from typing import Optional
 
 
@@ -20,11 +20,11 @@ class C1APIAppV1AppReportActionServiceGenerateReportRequest:
 class C1APIAppV1AppReportActionServiceGenerateReportResponse:
     content_type: str = dataclasses.field()
     r"""HTTP response content type for this operation"""
+    raw_response: requests_http.Response = dataclasses.field()
+    r"""Raw HTTP response; suitable for custom response parsing"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
     app_actions_service_generate_report_response: Optional[shared_appactionsservicegeneratereportresponse.AppActionsServiceGenerateReportResponse] = dataclasses.field(default=None)
     r"""Empty response body. Status code indicates success."""
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
-    r"""Raw HTTP response; suitable for custom response parsing"""
     
 

@@ -3,8 +3,8 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import connectorserviceupdatedelegatedrequest as shared_connectorserviceupdatedelegatedrequest
-from ..shared import connectorserviceupdateresponse as shared_connectorserviceupdateresponse
+from ...models.shared import connectorserviceupdatedelegatedrequest as shared_connectorserviceupdatedelegatedrequest
+from ...models.shared import connectorserviceupdateresponse as shared_connectorserviceupdateresponse
 from typing import Optional
 
 
@@ -12,7 +12,7 @@ from typing import Optional
 class C1APIAppV1ConnectorServiceUpdateDelegatedRequest:
     connector_app_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'connector_app_id', 'style': 'simple', 'explode': False }})
     connector_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'connector_id', 'style': 'simple', 'explode': False }})
-    connector_service_update_delegated_request_input: Optional[shared_connectorserviceupdatedelegatedrequest.ConnectorServiceUpdateDelegatedRequestInput] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})
+    connector_service_update_delegated_request: Optional[shared_connectorserviceupdatedelegatedrequest.ConnectorServiceUpdateDelegatedRequest] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})
     
 
 
@@ -21,11 +21,11 @@ class C1APIAppV1ConnectorServiceUpdateDelegatedRequest:
 class C1APIAppV1ConnectorServiceUpdateDelegatedResponse:
     content_type: str = dataclasses.field()
     r"""HTTP response content type for this operation"""
+    raw_response: requests_http.Response = dataclasses.field()
+    r"""Raw HTTP response; suitable for custom response parsing"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
     connector_service_update_response: Optional[shared_connectorserviceupdateresponse.ConnectorServiceUpdateResponse] = dataclasses.field(default=None)
     r"""ConnectorServiceUpdateResponse is the response returned by the update method."""
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
-    r"""Raw HTTP response; suitable for custom response parsing"""
     
 

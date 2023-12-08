@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 import dataclasses
-from ..shared import taskview as shared_taskview
+from .taskview import TaskView
 from dataclasses_json import Undefined, dataclass_json
 from sdk import utils
 from typing import Any, Dict, List, Optional
@@ -25,7 +25,7 @@ class TaskSearchResponse:
     r"""The TaskSearchResponse message contains a list of results and a nextPageToken if applicable."""
     expanded: Optional[List[TaskSearchResponseExpanded]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('expanded') }})
     r"""The list of results containing up to X results, where X is the page size defined in the request."""
-    list: Optional[List[shared_taskview.TaskView]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('list') }})
+    list: Optional[List[TaskView]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('list') }})
     r"""List of serialized related objects."""
     next_page_token: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('nextPageToken'), 'exclude': lambda f: f is None }})
     r"""The nextPageToken is shown for the next page if the number of results is larger than the max page size.

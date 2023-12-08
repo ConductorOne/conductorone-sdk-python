@@ -27,8 +27,8 @@ s = sdk.SDK(
 
 req = operations.C1APIAppV1AppEntitlementOwnersAddRequest(
     add_app_entitlement_owner_request=shared.AddAppEntitlementOwnerRequest(),
-    app_id='program',
-    entitlement_id='North',
+    app_id='string',
+    entitlement_id='string',
 )
 
 res = s.app_entitlement_owners.add(req)
@@ -48,7 +48,11 @@ if res.add_app_entitlement_owner_response is not None:
 ### Response
 
 **[operations.C1APIAppV1AppEntitlementOwnersAddResponse](../../models/operations/c1apiappv1appentitlementownersaddresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## list
 
@@ -68,8 +72,8 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIAppV1AppEntitlementOwnersListRequest(
-    app_id='Future',
-    entitlement_id='Southeast',
+    app_id='string',
+    entitlement_id='string',
 )
 
 res = s.app_entitlement_owners.list(req)
@@ -89,7 +93,11 @@ if res.list_app_entitlement_owners_response is not None:
 ### Response
 
 **[operations.C1APIAppV1AppEntitlementOwnersListResponse](../../models/operations/c1apiappv1appentitlementownerslistresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## remove
 
@@ -110,9 +118,9 @@ s = sdk.SDK(
 
 req = operations.C1APIAppV1AppEntitlementOwnersRemoveRequest(
     remove_app_entitlement_owner_request=shared.RemoveAppEntitlementOwnerRequest(),
-    app_id='Optimization',
-    entitlement_id='JBOD',
-    user_id='tan',
+    app_id='string',
+    entitlement_id='string',
+    user_id='string',
 )
 
 res = s.app_entitlement_owners.remove(req)
@@ -132,7 +140,11 @@ if res.remove_app_entitlement_owner_response is not None:
 ### Response
 
 **[operations.C1APIAppV1AppEntitlementOwnersRemoveResponse](../../models/operations/c1apiappv1appentitlementownersremoveresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## set
 
@@ -154,11 +166,11 @@ s = sdk.SDK(
 req = operations.C1APIAppV1AppEntitlementOwnersSetRequest(
     set_app_entitlement_owners_request=shared.SetAppEntitlementOwnersRequest(
         user_ids=[
-            'markets',
+            'string',
         ],
     ),
-    app_id='Non',
-    entitlement_id='bandwidth',
+    app_id='string',
+    entitlement_id='string',
 )
 
 res = s.app_entitlement_owners.set(req)
@@ -178,4 +190,8 @@ if res.set_app_entitlement_owners_response is not None:
 ### Response
 
 **[operations.C1APIAppV1AppEntitlementOwnersSetResponse](../../models/operations/c1apiappv1appentitlementownerssetresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |

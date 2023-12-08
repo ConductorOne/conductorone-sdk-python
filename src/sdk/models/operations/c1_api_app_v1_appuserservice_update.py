@@ -3,8 +3,8 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import appuserserviceupdaterequest as shared_appuserserviceupdaterequest
-from ..shared import appuserserviceupdateresponse as shared_appuserserviceupdateresponse
+from ...models.shared import appuserserviceupdaterequest as shared_appuserserviceupdaterequest
+from ...models.shared import appuserserviceupdateresponse as shared_appuserserviceupdateresponse
 from typing import Optional
 
 
@@ -12,7 +12,7 @@ from typing import Optional
 class C1APIAppV1AppUserServiceUpdateRequest:
     app_user_app_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'app_user_app_id', 'style': 'simple', 'explode': False }})
     app_user_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'app_user_id', 'style': 'simple', 'explode': False }})
-    app_user_service_update_request_input: Optional[shared_appuserserviceupdaterequest.AppUserServiceUpdateRequestInput] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})
+    app_user_service_update_request: Optional[shared_appuserserviceupdaterequest.AppUserServiceUpdateRequest] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})
     
 
 
@@ -21,11 +21,11 @@ class C1APIAppV1AppUserServiceUpdateRequest:
 class C1APIAppV1AppUserServiceUpdateResponse:
     content_type: str = dataclasses.field()
     r"""HTTP response content type for this operation"""
+    raw_response: requests_http.Response = dataclasses.field()
+    r"""Raw HTTP response; suitable for custom response parsing"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
     app_user_service_update_response: Optional[shared_appuserserviceupdateresponse.AppUserServiceUpdateResponse] = dataclasses.field(default=None)
     r"""Successful response"""
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
-    r"""Raw HTTP response; suitable for custom response parsing"""
     
 

@@ -12,6 +12,7 @@ class Roles:
         self.sdk_configuration = sdk_config
         
     
+    
     def get(self, request: operations.C1APIIamV1RolesGetRequest) -> operations.C1APIIamV1RolesGetResponse:
         r"""Get
         Get a role by id.
@@ -23,11 +24,14 @@ class Roles:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
-
+        
         res = operations.C1APIIamV1RolesGetResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
@@ -42,6 +46,7 @@ class Roles:
         return res
 
     
+    
     def list(self, request: operations.C1APIIamV1RolesListRequest) -> operations.C1APIIamV1RolesListResponse:
         r"""List
         List all roles for the current user.
@@ -54,11 +59,14 @@ class Roles:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')
-
+        
         res = operations.C1APIIamV1RolesListResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
@@ -73,6 +81,7 @@ class Roles:
         return res
 
     
+    
     def update(self, request: operations.C1APIIamV1RolesUpdateRequest) -> operations.C1APIIamV1RolesUpdateResponse:
         r"""Update
         Update a role by passing a Role object.
@@ -81,17 +90,20 @@ class Roles:
         
         url = utils.generate_url(operations.C1APIIamV1RolesUpdateRequest, base_url, '/api/v1/iam/roles/{role_id}', request)
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "update_role_request_input", False, True, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, "update_role_request", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
-
+        
         res = operations.C1APIIamV1RolesUpdateResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:

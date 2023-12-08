@@ -27,12 +27,12 @@ s = sdk.SDK(
 req = shared.TaskServiceCreateGrantRequest(
     task_expand_mask=shared.TaskExpandMask(
         paths=[
-            'Northwest',
+            'string',
         ],
     ),
     task_grant_source=shared.TaskGrantSource(),
-    app_entitlement_id='Cheese',
-    app_id='barring',
+    app_entitlement_id='string',
+    app_id='string',
 )
 
 res = s.task.create_grant_task(req)
@@ -52,7 +52,11 @@ if res.task_service_create_grant_response is not None:
 ### Response
 
 **[operations.C1APITaskV1TaskServiceCreateGrantTaskResponse](../../models/operations/c1apitaskv1taskservicecreategranttaskresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## create_revoke_task
 
@@ -74,11 +78,11 @@ s = sdk.SDK(
 req = shared.TaskServiceCreateRevokeRequest(
     task_expand_mask=shared.TaskExpandMask(
         paths=[
-            'tame',
+            'string',
         ],
     ),
-    app_entitlement_id='Nitrogen',
-    app_id='connecting',
+    app_entitlement_id='string',
+    app_id='string',
 )
 
 res = s.task.create_revoke_task(req)
@@ -98,7 +102,11 @@ if res.task_service_create_revoke_response is not None:
 ### Response
 
 **[operations.C1APITaskV1TaskServiceCreateRevokeTaskResponse](../../models/operations/c1apitaskv1taskservicecreaterevoketaskresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## get
 
@@ -138,4 +146,8 @@ if res.task_service_get_response is not None:
 ### Response
 
 **[operations.C1APITaskV1TaskServiceGetResponse](../../models/operations/c1apitaskv1taskservicegetresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |

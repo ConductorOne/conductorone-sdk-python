@@ -3,7 +3,7 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import taskservicecreaterevokeresponse as shared_taskservicecreaterevokeresponse
+from ...models.shared import taskservicecreaterevokeresponse as shared_taskservicecreaterevokeresponse
 from typing import Optional
 
 
@@ -11,10 +11,10 @@ from typing import Optional
 class C1APITaskV1TaskServiceCreateRevokeTaskResponse:
     content_type: str = dataclasses.field()
     r"""HTTP response content type for this operation"""
+    raw_response: requests_http.Response = dataclasses.field()
+    r"""Raw HTTP response; suitable for custom response parsing"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
-    r"""Raw HTTP response; suitable for custom response parsing"""
     task_service_create_revoke_response: Optional[shared_taskservicecreaterevokeresponse.TaskServiceCreateRevokeResponse] = dataclasses.field(default=None)
     r"""The TaskServiceCreateRevokeResponse returns a task view which has a task including JSONPATHs to the expanded items in the expanded array."""
     

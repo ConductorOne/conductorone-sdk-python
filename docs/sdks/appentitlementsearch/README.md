@@ -25,29 +25,29 @@ s = sdk.SDK(
 req = shared.AppEntitlementSearchServiceSearchRequest(
     app_entitlement_expand_mask=shared.AppEntitlementExpandMask(
         paths=[
-            'transition',
+            'string',
         ],
     ),
     app_ids=[
-        'turquoise',
+        'string',
     ],
     app_user_ids=[
-        'Hyundai',
+        'string',
     ],
     compliance_framework_ids=[
-        'Future',
+        'string',
     ],
     exclude_app_ids=[
-        'Southwest',
+        'string',
     ],
     exclude_app_user_ids=[
-        'broach',
+        'string',
     ],
     resource_type_ids=[
-        'dependent',
+        'string',
     ],
     risk_level_ids=[
-        'Mozambique',
+        'string',
     ],
 )
 
@@ -68,4 +68,8 @@ if res.app_entitlement_search_service_search_response is not None:
 ### Response
 
 **[operations.C1APIAppV1AppEntitlementSearchServiceSearchResponse](../../models/operations/c1apiappv1appentitlementsearchservicesearchresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |

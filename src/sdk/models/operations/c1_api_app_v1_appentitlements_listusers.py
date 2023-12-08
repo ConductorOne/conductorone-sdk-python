@@ -3,7 +3,7 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import listappentitlementusersresponse as shared_listappentitlementusersresponse
+from ...models.shared import listappentitlementusersresponse as shared_listappentitlementusersresponse
 from typing import Optional
 
 
@@ -21,11 +21,11 @@ class C1APIAppV1AppEntitlementsListUsersRequest:
 class C1APIAppV1AppEntitlementsListUsersResponse:
     content_type: str = dataclasses.field()
     r"""HTTP response content type for this operation"""
+    raw_response: requests_http.Response = dataclasses.field()
+    r"""Raw HTTP response; suitable for custom response parsing"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
     list_app_entitlement_users_response: Optional[shared_listappentitlementusersresponse.ListAppEntitlementUsersResponse] = dataclasses.field(default=None)
     r"""The ListAppEntitlementUsersResponse message contains a list of results and a nextPageToken if applicable."""
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
-    r"""Raw HTTP response; suitable for custom response parsing"""
     
 

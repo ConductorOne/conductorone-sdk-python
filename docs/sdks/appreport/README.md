@@ -23,7 +23,7 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIAppV1AppReportServiceListRequest(
-    app_id='Future',
+    app_id='string',
 )
 
 res = s.app_report.list(req)
@@ -43,4 +43,8 @@ if res.app_report_service_list_response is not None:
 ### Response
 
 **[operations.C1APIAppV1AppReportServiceListResponse](../../models/operations/c1apiappv1appreportservicelistresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |

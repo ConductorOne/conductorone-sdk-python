@@ -3,15 +3,15 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import requestcatalogmanagementservicegetresponse as shared_requestcatalogmanagementservicegetresponse
-from ..shared import requestcatalogmanagementserviceupdaterequest as shared_requestcatalogmanagementserviceupdaterequest
+from ...models.shared import requestcatalogmanagementservicegetresponse as shared_requestcatalogmanagementservicegetresponse
+from ...models.shared import requestcatalogmanagementserviceupdaterequest as shared_requestcatalogmanagementserviceupdaterequest
 from typing import Optional
 
 
 @dataclasses.dataclass
 class C1APIRequestcatalogV1RequestCatalogManagementServiceUpdateRequest:
     id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'id', 'style': 'simple', 'explode': False }})
-    request_catalog_management_service_update_request_input: Optional[shared_requestcatalogmanagementserviceupdaterequest.RequestCatalogManagementServiceUpdateRequestInput] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})
+    request_catalog_management_service_update_request: Optional[shared_requestcatalogmanagementserviceupdaterequest.RequestCatalogManagementServiceUpdateRequest] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})
     
 
 
@@ -20,10 +20,10 @@ class C1APIRequestcatalogV1RequestCatalogManagementServiceUpdateRequest:
 class C1APIRequestcatalogV1RequestCatalogManagementServiceUpdateResponse:
     content_type: str = dataclasses.field()
     r"""HTTP response content type for this operation"""
+    raw_response: requests_http.Response = dataclasses.field()
+    r"""Raw HTTP response; suitable for custom response parsing"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
-    r"""Raw HTTP response; suitable for custom response parsing"""
     request_catalog_management_service_get_response: Optional[shared_requestcatalogmanagementservicegetresponse.RequestCatalogManagementServiceGetResponse] = dataclasses.field(default=None)
     r"""The request catalog management service get response returns a request catalog view with the expanded items in the expanded array indicated by the expand mask in the request."""
     

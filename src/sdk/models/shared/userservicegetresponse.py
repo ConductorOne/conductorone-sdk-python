@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 import dataclasses
-from ..shared import userview as shared_userview
+from .userview import UserView
 from dataclasses_json import Undefined, dataclass_json
 from sdk import utils
 from typing import Any, Dict, List, Optional
@@ -25,7 +25,7 @@ class UserServiceGetResponse:
     r"""The UserServiceGetResponse returns a user view which has a user including JSONPATHs to the expanded items in the expanded array."""
     expanded: Optional[List[UserServiceGetResponseExpanded]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('expanded') }})
     r"""List of serialized related objects."""
-    user_view: Optional[shared_userview.UserView] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('userView'), 'exclude': lambda f: f is None }})
+    user_view: Optional[UserView] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('userView'), 'exclude': lambda f: f is None }})
     r"""The UserView object provides a user response object, as well as JSONPATHs to related objects provided by expanders."""
     
 

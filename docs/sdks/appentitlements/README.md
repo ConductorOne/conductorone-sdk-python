@@ -28,7 +28,7 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIAppV1AppEntitlementsGetRequest(
-    app_id='motivating',
+    app_id='string',
     id='<ID>',
 )
 
@@ -49,7 +49,11 @@ if res.get_app_entitlement_response is not None:
 ### Response
 
 **[operations.C1APIAppV1AppEntitlementsGetResponse](../../models/operations/c1apiappv1appentitlementsgetresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## list
 
@@ -69,7 +73,7 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIAppV1AppEntitlementsListRequest(
-    app_id='Future',
+    app_id='string',
 )
 
 res = s.app_entitlements.list(req)
@@ -89,7 +93,11 @@ if res.list_app_entitlements_response is not None:
 ### Response
 
 **[operations.C1APIAppV1AppEntitlementsListResponse](../../models/operations/c1apiappv1appentitlementslistresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## list_for_app_resource
 
@@ -109,9 +117,9 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIAppV1AppEntitlementsListForAppResourceRequest(
-    app_id='person',
-    app_resource_id='convergence',
-    app_resource_type_id='area',
+    app_id='string',
+    app_resource_id='string',
+    app_resource_type_id='string',
 )
 
 res = s.app_entitlements.list_for_app_resource(req)
@@ -131,7 +139,11 @@ if res.list_app_entitlements_response is not None:
 ### Response
 
 **[operations.C1APIAppV1AppEntitlementsListForAppResourceResponse](../../models/operations/c1apiappv1appentitlementslistforappresourceresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## list_for_app_user
 
@@ -151,8 +163,8 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIAppV1AppEntitlementsListForAppUserRequest(
-    app_id='meter',
-    app_user_id='Monitored',
+    app_id='string',
+    app_user_id='string',
 )
 
 res = s.app_entitlements.list_for_app_user(req)
@@ -172,7 +184,11 @@ if res.list_app_entitlements_response is not None:
 ### Response
 
 **[operations.C1APIAppV1AppEntitlementsListForAppUserResponse](../../models/operations/c1apiappv1appentitlementslistforappuserresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## list_users
 
@@ -192,8 +208,8 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIAppV1AppEntitlementsListUsersRequest(
-    app_entitlement_id='invoice',
-    app_id='Northwest',
+    app_entitlement_id='string',
+    app_id='string',
 )
 
 res = s.app_entitlements.list_users(req)
@@ -213,7 +229,11 @@ if res.list_app_entitlement_users_response is not None:
 ### Response
 
 **[operations.C1APIAppV1AppEntitlementsListUsersResponse](../../models/operations/c1apiappv1appentitlementslistusersresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## update
 
@@ -233,29 +253,29 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIAppV1AppEntitlementsUpdateRequest(
-    update_app_entitlement_request_input=shared.UpdateAppEntitlementRequestInput(
+    update_app_entitlement_request=shared.UpdateAppEntitlementRequest(
         app_entitlement=shared.AppEntitlementInput(
             provision_policy=shared.ProvisionPolicy(
                 connector_provision=shared.ConnectorProvision(),
                 delegated_provision=shared.DelegatedProvision(),
                 manual_provision=shared.ManualProvision(
                     user_ids=[
-                        'up',
+                        'string',
                     ],
                 ),
             ),
             compliance_framework_value_ids=[
-                'complexity',
+                'string',
             ],
-            duration_unset=shared.AppEntitlementDurationUnset(),
+            duration_unset=shared.DurationUnset(),
         ),
         app_entitlement_expand_mask=shared.AppEntitlementExpandMask(
             paths=[
-                'Supervisor',
+                'string',
             ],
         ),
     ),
-    app_id='less',
+    app_id='string',
     id='<ID>',
 )
 
@@ -276,4 +296,8 @@ if res.update_app_entitlement_response is not None:
 ### Response
 
 **[operations.C1APIAppV1AppEntitlementsUpdateResponse](../../models/operations/c1apiappv1appentitlementsupdateresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |

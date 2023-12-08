@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 import dataclasses
-from ..shared import role as shared_role
+from .role_input import RoleInput
 from dataclasses_json import Undefined, dataclass_json
 from sdk import utils
 from typing import Optional
@@ -10,9 +10,9 @@ from typing import Optional
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class UpdateRoleRequestInput:
+class UpdateRoleRequest:
     r"""The UpdateRoleRequest message contains the role to update and the update mask."""
-    role: Optional[shared_role.RoleInput] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('role'), 'exclude': lambda f: f is None }})
+    role: Optional[RoleInput] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('role'), 'exclude': lambda f: f is None }})
     r"""Role is a role that can be assigned to a user in ConductorOne."""
     update_mask: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('updateMask') }})
     

@@ -3,14 +3,15 @@
 from __future__ import annotations
 import dataclasses
 import dateutil.parser
-from ..shared import appuserstatus as shared_appuserstatus
+from .appuserstatus import AppUserStatus
+from .appuserstatus_input import AppUserStatusInput
 from dataclasses_json import Undefined, dataclass_json
 from datetime import datetime
 from enum import Enum
 from sdk import utils
 from typing import Any, Dict, List, Optional, Union
 
-class AppUserAppUserType(str, Enum):
+class AppUserType(str, Enum):
     r"""The appplication user type. Type can be user, system or service."""
     APP_USER_TYPE_UNSPECIFIED = 'APP_USER_TYPE_UNSPECIFIED'
     APP_USER_TYPE_USER = 'APP_USER_TYPE_USER'
@@ -18,25 +19,8 @@ class AppUserAppUserType(str, Enum):
     APP_USER_TYPE_SYSTEM_ACCOUNT = 'APP_USER_TYPE_SYSTEM_ACCOUNT'
 
 
-@dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class AppUserInput:
-    r"""Application User that represents an account in the application."""
-    app_user_status: Optional[shared_appuserstatus.AppUserStatusInput] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status'), 'exclude': lambda f: f is None }})
-    r"""The satus of the applicaiton user."""
-    app_user_type: Optional[AppUserAppUserType] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('appUserType'), 'exclude': lambda f: f is None }})
-    r"""The appplication user type. Type can be user, system or service."""
-    
-
-
-
-@dataclasses.dataclass
-class AppUserProfile3:
-    pass
-
-
-@dataclasses.dataclass
-class AppUserProfile:
+class Three:
     pass
 
 
@@ -46,9 +30,9 @@ class AppUser:
     r"""Application User that represents an account in the application."""
     app_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('appId'), 'exclude': lambda f: f is None }})
     r"""The ID of the application."""
-    app_user_status: Optional[shared_appuserstatus.AppUserStatus] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status'), 'exclude': lambda f: f is None }})
+    app_user_status: Optional[AppUserStatus] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status'), 'exclude': lambda f: f is None }})
     r"""The satus of the applicaiton user."""
-    app_user_type: Optional[AppUserAppUserType] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('appUserType'), 'exclude': lambda f: f is None }})
+    app_user_type: Optional[AppUserType] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('appUserType'), 'exclude': lambda f: f is None }})
     r"""The appplication user type. Type can be user, system or service."""
     created_at: Optional[datetime] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('createdAt'), 'encoder': utils.datetimeisoformat(True), 'decoder': dateutil.parser.isoparse, 'exclude': lambda f: f is None }})
     deleted_at: Optional[datetime] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('deletedAt'), 'encoder': utils.datetimeisoformat(True), 'decoder': dateutil.parser.isoparse, 'exclude': lambda f: f is None }})
@@ -62,11 +46,23 @@ class AppUser:
     r"""A unique idenditfier of the application user."""
     identity_user_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('identityUserId'), 'exclude': lambda f: f is None }})
     r"""The conductor one user ID of the account owner."""
-    profile: Optional[Dict[str, Union[str, float, AppUserProfile3, List[Any], bool]]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('profile'), 'exclude': lambda f: f is None }})
+    profile: Optional[Dict[str, Union[str, float, Three, List[Any], bool]]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('profile'), 'exclude': lambda f: f is None }})
     updated_at: Optional[datetime] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('updatedAt'), 'encoder': utils.datetimeisoformat(True), 'decoder': dateutil.parser.isoparse, 'exclude': lambda f: f is None }})
     username: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('username'), 'exclude': lambda f: f is None }})
     r"""The username field of the application user."""
     usernames: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('usernames') }})
     r"""The usernames field of the application user."""
+    
+
+
+
+@dataclass_json(undefined=Undefined.EXCLUDE)
+@dataclasses.dataclass
+class AppUserInput:
+    r"""Application User that represents an account in the application."""
+    app_user_status: Optional[AppUserStatusInput] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status'), 'exclude': lambda f: f is None }})
+    r"""The satus of the applicaiton user."""
+    app_user_type: Optional[AppUserType] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('appUserType'), 'exclude': lambda f: f is None }})
+    r"""The appplication user type. Type can be user, system or service."""
     
 

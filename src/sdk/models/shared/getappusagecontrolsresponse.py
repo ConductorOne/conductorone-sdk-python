@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 import dataclasses
-from ..shared import appusagecontrols as shared_appusagecontrols
+from .appusagecontrols import AppUsageControls
 from dataclasses_json import Undefined, dataclass_json
 from sdk import utils
 from typing import Optional
@@ -12,7 +12,7 @@ from typing import Optional
 @dataclasses.dataclass
 class GetAppUsageControlsResponse:
     r"""The GetAppUsageControlsResponse message contains the retrieved AppUsageControls object."""
-    app_usage_controls: Optional[shared_appusagecontrols.AppUsageControls] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('appUsageControls'), 'exclude': lambda f: f is None }})
+    app_usage_controls: Optional[AppUsageControls] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('appUsageControls'), 'exclude': lambda f: f is None }})
     r"""The AppUsageControls object describes some peripheral configuration for an app."""
     has_usage_data: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('hasUsageData'), 'exclude': lambda f: f is None }})
     r"""HasUsageData is false if the access entitlement for this app has no usage data."""

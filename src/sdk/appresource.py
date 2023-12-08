@@ -12,6 +12,7 @@ class AppResource:
         self.sdk_configuration = sdk_config
         
     
+    
     def get(self, request: operations.C1APIAppV1AppResourceServiceGetRequest) -> operations.C1APIAppV1AppResourceServiceGetResponse:
         r"""Get
         Invokes the c1.api.app.v1.AppResourceService.Get method.
@@ -23,11 +24,14 @@ class AppResource:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
-
+        
         res = operations.C1APIAppV1AppResourceServiceGetResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
@@ -42,6 +46,7 @@ class AppResource:
         return res
 
     
+    
     def list(self, request: operations.C1APIAppV1AppResourceServiceListRequest) -> operations.C1APIAppV1AppResourceServiceListResponse:
         r"""List
         Invokes the c1.api.app.v1.AppResourceService.List method.
@@ -54,11 +59,14 @@ class AppResource:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')
-
+        
         res = operations.C1APIAppV1AppResourceServiceListResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:

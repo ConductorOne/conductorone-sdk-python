@@ -21,10 +21,3 @@ class ManagerApproval:
     r"""Configuration to specific which users to fallback to if fallback is enabled and no manager is found."""
     
 
-
-
-@dataclasses.dataclass
-class ManagerApprovalInput:
-    r"""The manager approval object provides configuration options for approval when the target of the approval is the manager of the user in the task."""
-    
-

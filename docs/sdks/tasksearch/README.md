@@ -12,8 +12,8 @@ Search tasks based on filters specified in the request body.
 ### Example Usage
 
 ```python
-import sdk
 import dateutil.parser
+import sdk
 from sdk.models import shared
 
 s = sdk.SDK(
@@ -23,59 +23,59 @@ s = sdk.SDK(
     ),
 )
 
-req = shared.TaskSearchRequestInput(
+req = shared.TaskSearchRequest(
     task_expand_mask=shared.TaskExpandMask(
         paths=[
-            'transition',
+            'string',
         ],
     ),
     access_review_ids=[
-        'turquoise',
+        'string',
     ],
     account_owner_ids=[
-        'Hyundai',
+        'string',
     ],
     app_entitlement_ids=[
-        'Future',
+        'string',
     ],
     app_resource_ids=[
-        'Southwest',
+        'string',
     ],
     app_resource_type_ids=[
-        'broach',
+        'string',
     ],
     app_user_subject_ids=[
-        'dependent',
+        'string',
     ],
     application_ids=[
-        'Mozambique',
+        'string',
     ],
     assignees_in_ids=[
-        'Global',
+        'string',
     ],
     exclude_app_entitlement_ids=[
-        'watt',
+        'string',
     ],
     exclude_ids=[
-        'Gasoline',
+        'string',
     ],
     my_work_user_ids=[
-        'Protactinium',
+        'string',
     ],
     opener_ids=[
-        'Arsenic',
+        'string',
     ],
     previously_acted_on_ids=[
-        'Gasoline',
+        'string',
     ],
     refs=[
         shared.TaskRef(),
     ],
     subject_ids=[
-        'Oklahoma',
+        'string',
     ],
     task_states=[
-        shared.TaskSearchRequestTaskStates.TASK_STATE_UNSPECIFIED,
+        shared.TaskStates.TASK_STATE_UNSPECIFIED,
     ],
     task_types=[
         shared.TaskTypeInput(
@@ -104,12 +104,16 @@ if res.task_search_response is not None:
 
 ### Parameters
 
-| Parameter                                                                      | Type                                                                           | Required                                                                       | Description                                                                    |
-| ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ |
-| `request`                                                                      | [shared.TaskSearchRequestInput](../../models/shared/tasksearchrequestinput.md) | :heavy_check_mark:                                                             | The request object to use for the request.                                     |
+| Parameter                                                            | Type                                                                 | Required                                                             | Description                                                          |
+| -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- |
+| `request`                                                            | [shared.TaskSearchRequest](../../models/shared/tasksearchrequest.md) | :heavy_check_mark:                                                   | The request object to use for the request.                           |
 
 
 ### Response
 
 **[operations.C1APITaskV1TaskSearchServiceSearchResponse](../../models/operations/c1apitaskv1tasksearchservicesearchresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |

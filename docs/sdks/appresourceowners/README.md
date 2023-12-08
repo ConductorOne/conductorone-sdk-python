@@ -23,9 +23,9 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIAppV1AppResourceOwnersListRequest(
-    app_id='Future',
-    resource_id='Southeast',
-    resource_type_id='XML',
+    app_id='string',
+    resource_id='string',
+    resource_type_id='string',
 )
 
 res = s.app_resource_owners.list(req)
@@ -45,4 +45,8 @@ if res.list_app_resource_owners_response is not None:
 ### Response
 
 **[operations.C1APIAppV1AppResourceOwnersListResponse](../../models/operations/c1apiappv1appresourceownerslistresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |

@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 import dataclasses
-from ..shared import attributetype as shared_attributetype
+from .attributetype import AttributeType
 from dataclasses_json import Undefined, dataclass_json
 from sdk import utils
 from typing import List, Optional
@@ -12,7 +12,7 @@ from typing import List, Optional
 @dataclasses.dataclass
 class ListAttributeTypesResponse:
     r"""ListAttributeTypesResponse is the response for listing attribute types."""
-    list: Optional[List[shared_attributetype.AttributeType]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('list') }})
+    list: Optional[List[AttributeType]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('list') }})
     r"""The list of AttributeTypes."""
     next_page_token: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('nextPageToken'), 'exclude': lambda f: f is None }})
     r"""The nextPageToken is shown for the next page if the number of results is larger than the max page size.

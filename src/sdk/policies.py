@@ -12,7 +12,8 @@ class Policies:
         self.sdk_configuration = sdk_config
         
     
-    def create(self, request: shared.CreatePolicyRequestInput) -> operations.C1APIPolicyV1PoliciesCreateResponse:
+    
+    def create(self, request: shared.CreatePolicyRequest) -> operations.C1APIPolicyV1PoliciesCreateResponse:
         r"""Create
         Create a policy.
         """
@@ -26,11 +27,14 @@ class Policies:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
-
+        
         res = operations.C1APIPolicyV1PoliciesCreateResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
@@ -44,6 +48,7 @@ class Policies:
 
         return res
 
+    
     
     def delete(self, request: operations.C1APIPolicyV1PoliciesDeleteRequest) -> operations.C1APIPolicyV1PoliciesDeleteResponse:
         r"""Delete
@@ -59,11 +64,14 @@ class Policies:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('DELETE', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
-
+        
         res = operations.C1APIPolicyV1PoliciesDeleteResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
@@ -78,6 +86,7 @@ class Policies:
         return res
 
     
+    
     def get(self, request: operations.C1APIPolicyV1PoliciesGetRequest) -> operations.C1APIPolicyV1PoliciesGetResponse:
         r"""Get
         Get a policy by ID.
@@ -89,11 +98,14 @@ class Policies:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
-
+        
         res = operations.C1APIPolicyV1PoliciesGetResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
@@ -108,6 +120,7 @@ class Policies:
         return res
 
     
+    
     def list(self, request: operations.C1APIPolicyV1PoliciesListRequest) -> operations.C1APIPolicyV1PoliciesListResponse:
         r"""List
         List policies.
@@ -120,11 +133,14 @@ class Policies:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')
-
+        
         res = operations.C1APIPolicyV1PoliciesListResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
@@ -139,6 +155,7 @@ class Policies:
         return res
 
     
+    
     def update(self, request: operations.C1APIPolicyV1PoliciesUpdateRequest) -> operations.C1APIPolicyV1PoliciesUpdateResponse:
         r"""Update
         Update a policy by providing a policy object and an update mask.
@@ -147,17 +164,20 @@ class Policies:
         
         url = utils.generate_url(operations.C1APIPolicyV1PoliciesUpdateRequest, base_url, '/api/v1/policies/{id}', request)
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "update_policy_request_input", False, True, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, "update_policy_request", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
-
+        
         res = operations.C1APIPolicyV1PoliciesUpdateResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:

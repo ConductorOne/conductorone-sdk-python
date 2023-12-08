@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 import dataclasses
-from ..shared import requestcatalog as shared_requestcatalog
+from .requestcatalog import RequestCatalog
 from dataclasses_json import Undefined, dataclass_json
 from sdk import utils
 from typing import Optional
@@ -18,7 +18,7 @@ class RequestCatalogView:
     r"""JSONPATH expression indicating the location of the App object in the array."""
     created_by_user_path: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('createdByUserPath'), 'exclude': lambda f: f is None }})
     r"""JSONPATH expression indicating the location of the User object, that created the request catalog, in the array."""
-    request_catalog: Optional[shared_requestcatalog.RequestCatalog] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('requestCatalog'), 'exclude': lambda f: f is None }})
+    request_catalog: Optional[RequestCatalog] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('requestCatalog'), 'exclude': lambda f: f is None }})
     r"""The RequestCatalog is used for managing which entitlements are requestable, and who can request them."""
     
 

@@ -28,7 +28,7 @@ s = sdk.SDK(
 
 req = shared.CreateAppRequest(
     owners=[
-        'neural',
+        'string',
     ],
 )
 
@@ -49,7 +49,11 @@ if res.create_app_response is not None:
 ### Response
 
 **[operations.C1APIAppV1AppsCreateResponse](../../models/operations/c1apiappv1appscreateresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## delete
 
@@ -90,7 +94,11 @@ if res.delete_app_response is not None:
 ### Response
 
 **[operations.C1APIAppV1AppsDeleteResponse](../../models/operations/c1apiappv1appsdeleteresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## get
 
@@ -130,7 +138,11 @@ if res.get_app_response is not None:
 ### Response
 
 **[operations.C1APIAppV1AppsGetResponse](../../models/operations/c1apiappv1appsgetresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## list
 
@@ -168,7 +180,11 @@ if res.list_apps_response is not None:
 ### Response
 
 **[operations.C1APIAppV1AppsListResponse](../../models/operations/c1apiappv1appslistresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## update
 
@@ -188,7 +204,7 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIAppV1AppsUpdateRequest(
-    update_app_request_input=shared.UpdateAppRequestInput(
+    update_app_request=shared.UpdateAppRequest(
         app=shared.AppInput(),
     ),
     id='<ID>',
@@ -211,4 +227,8 @@ if res.update_app_response is not None:
 ### Response
 
 **[operations.C1APIAppV1AppsUpdateResponse](../../models/operations/c1apiappv1appsupdateresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |

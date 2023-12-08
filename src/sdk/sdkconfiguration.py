@@ -2,9 +2,10 @@
 
 import requests
 from dataclasses import dataclass, field
-from typing import Dict, List, Tuple
+from typing import Dict, List, Tuple, Callable, Union
 from .utils.retries import RetryConfig
 from .utils import utils
+from sdk.models import shared
 
 
 SERVERS = [
@@ -18,15 +19,15 @@ SERVERS = [
 @dataclass
 class SDKConfiguration:
     client: requests.Session
-    security_client: requests.Session
+    security: Union[shared.Security,Callable[[], shared.Security]] = None
     server_url: str = ''
     server_idx: int = 0
     server_defaults: List[Dict[str, str]] = field(default_factory=List)
     language: str = 'python'
     openapi_doc_version: str = '0.1.0-alpha'
-    sdk_version: str = '0.5.2'
-    gen_version: str = '2.161.0'
-    user_agent: str = 'speakeasy-sdk/python 0.5.2 2.161.0 0.1.0-alpha openapi'
+    sdk_version: str = '0.8.8'
+    gen_version: str = '2.210.3'
+    user_agent: str = 'speakeasy-sdk/python 0.8.8 2.210.3 0.1.0-alpha openapi'
     retry_config: RetryConfig = None
 
     def get_server_details(self) -> Tuple[str, Dict[str, str]]:

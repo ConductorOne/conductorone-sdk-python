@@ -24,10 +24,10 @@ s = sdk.SDK(
 
 req = shared.PersonalClientServiceCreateRequest(
     allow_source_cidr=[
-        'neural',
+        'string',
     ],
     scoped_roles=[
-        'Tasty',
+        'string',
     ],
 )
 
@@ -48,4 +48,8 @@ if res.personal_client_service_create_response is not None:
 ### Response
 
 **[operations.C1APIIamV1PersonalClientServiceCreateResponse](../../models/operations/c1apiiamv1personalclientservicecreateresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |

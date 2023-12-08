@@ -7,7 +7,7 @@ from enum import Enum
 from sdk import utils
 from typing import Optional
 
-class ExternalRefExternalRefSource(str, Enum):
+class ExternalRefSource(str, Enum):
     r"""The source of the external reference."""
     UNSPECIFIED = 'UNSPECIFIED'
     JIRA = 'JIRA'
@@ -17,7 +17,7 @@ class ExternalRefExternalRefSource(str, Enum):
 @dataclasses.dataclass
 class ExternalRef:
     r"""A reference to an external source. This value is unused currently, but may be brought back."""
-    external_ref_source: Optional[ExternalRefExternalRefSource] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('externalRefSource'), 'exclude': lambda f: f is None }})
+    external_ref_source: Optional[ExternalRefSource] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('externalRefSource'), 'exclude': lambda f: f is None }})
     r"""The source of the external reference."""
     name: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('name'), 'exclude': lambda f: f is None }})
     r"""The name of the external reference."""

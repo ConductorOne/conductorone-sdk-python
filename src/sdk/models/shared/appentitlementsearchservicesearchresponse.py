@@ -2,8 +2,8 @@
 
 from __future__ import annotations
 import dataclasses
-from ..shared import appentitlementview as shared_appentitlementview
-from ..shared import facets as shared_facets
+from .appentitlementview import AppEntitlementView
+from .facets import Facets
 from dataclasses_json import Undefined, dataclass_json
 from sdk import utils
 from typing import Any, Dict, List, Optional
@@ -11,7 +11,7 @@ from typing import Any, Dict, List, Optional
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class AppEntitlementSearchServiceSearchResponseExpanded:
+class Expanded:
     r"""Contains an arbitrary serialized message along with a @type that describes the type of the serialized message."""
     at_type: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('@type'), 'exclude': lambda f: f is None }})
     r"""The type of the serialized message."""
@@ -24,11 +24,11 @@ class AppEntitlementSearchServiceSearchResponseExpanded:
 @dataclasses.dataclass
 class AppEntitlementSearchServiceSearchResponse:
     r"""The AppEntitlementSearchServiceSearchResponse message."""
-    expanded: Optional[List[AppEntitlementSearchServiceSearchResponseExpanded]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('expanded') }})
+    expanded: Optional[List[Expanded]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('expanded') }})
     r"""List of related objects."""
-    facets: Optional[shared_facets.Facets] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('facets'), 'exclude': lambda f: f is None }})
+    facets: Optional[Facets] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('facets'), 'exclude': lambda f: f is None }})
     r"""Indicates one value of a facet."""
-    list: Optional[List[shared_appentitlementview.AppEntitlementView]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('list') }})
+    list: Optional[List[AppEntitlementView]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('list') }})
     r"""List of app entitlement view objects."""
     next_page_token: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('nextPageToken'), 'exclude': lambda f: f is None }})
     r"""The nextPageToken is shown for the next page if the number of results is larger than the max page size. The server returns one page of results and the nextPageToken until all results are retreived. To retrieve the next page, use the same request and append a pageToken field with the value of nextPageToken shown on the previous page."""

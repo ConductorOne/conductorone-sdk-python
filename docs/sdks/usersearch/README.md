@@ -25,23 +25,23 @@ s = sdk.SDK(
 req = shared.SearchUsersRequest(
     user_expand_mask=shared.UserExpandMask(
         paths=[
-            'transition',
+            'string',
         ],
     ),
     exclude_ids=[
-        'turquoise',
+        'string',
     ],
     ids=[
-        'Hyundai',
+        'string',
     ],
     refs=[
         shared.UserRef(),
     ],
     role_ids=[
-        'Future',
+        'string',
     ],
     user_statuses=[
-        shared.SearchUsersRequestUserStatuses.UNKNOWN,
+        shared.UserStatuses.ENABLED,
     ],
 )
 
@@ -62,4 +62,8 @@ if res.search_users_response is not None:
 ### Response
 
 **[operations.C1APIUserV1UserSearchSearchResponse](../../models/operations/c1apiuserv1usersearchsearchresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |

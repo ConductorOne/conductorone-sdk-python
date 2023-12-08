@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 import dataclasses
-from ..shared import attributevalue as shared_attributevalue
+from .attributevalue import AttributeValue
 from dataclasses_json import Undefined, dataclass_json
 from sdk import utils
 from typing import Optional
@@ -12,7 +12,7 @@ from typing import Optional
 @dataclasses.dataclass
 class GetAttributeValueResponse:
     r"""GetAttributeValueResponse is the response for getting an attribute value by id."""
-    attribute_value: Optional[shared_attributevalue.AttributeValue] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('value'), 'exclude': lambda f: f is None }})
+    attribute_value: Optional[AttributeValue] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('value'), 'exclude': lambda f: f is None }})
     r"""AttributeValue is the value of an attribute of a defined type."""
     
 

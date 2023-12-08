@@ -35,19 +35,19 @@ req = operations.C1APIAppV1ConnectorServiceCreateRequest(
     connector_service_create_request=shared.ConnectorServiceCreateRequest(
         connector_expand_mask=shared.ConnectorExpandMask(
             paths=[
-                'neural',
+                'string',
             ],
         ),
         config=shared.ConnectorServiceCreateRequestConfig(
             additional_properties={
-                "Tasty": 'island',
+                'key': 'string',
             },
         ),
         user_ids=[
-            'Southwest',
+            'string',
         ],
     ),
-    app_id='alarm',
+    app_id='string',
 )
 
 res = s.connector.create(req)
@@ -67,7 +67,11 @@ if res.connector_service_create_response is not None:
 ### Response
 
 **[operations.C1APIAppV1ConnectorServiceCreateResponse](../../models/operations/c1apiappv1connectorservicecreateresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## create_delegated
 
@@ -90,14 +94,14 @@ req = operations.C1APIAppV1ConnectorServiceCreateDelegatedRequest(
     connector_service_create_delegated_request=shared.ConnectorServiceCreateDelegatedRequest(
         connector_expand_mask=shared.ConnectorExpandMask(
             paths=[
-                'Keyboard',
+                'string',
             ],
         ),
         user_ids=[
-            'Southwest',
+            'string',
         ],
     ),
-    app_id='labore',
+    app_id='string',
 )
 
 res = s.connector.create_delegated(req)
@@ -117,7 +121,11 @@ if res.connector_service_create_response is not None:
 ### Response
 
 **[operations.C1APIAppV1ConnectorServiceCreateDelegatedResponse](../../models/operations/c1apiappv1connectorservicecreatedelegatedresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## delete
 
@@ -138,7 +146,7 @@ s = sdk.SDK(
 
 req = operations.C1APIAppV1ConnectorServiceDeleteRequest(
     connector_service_delete_request=shared.ConnectorServiceDeleteRequest(),
-    app_id='roughly',
+    app_id='string',
     id='<ID>',
 )
 
@@ -159,7 +167,11 @@ if res.connector_service_delete_response is not None:
 ### Response
 
 **[operations.C1APIAppV1ConnectorServiceDeleteResponse](../../models/operations/c1apiappv1connectorservicedeleteresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## get
 
@@ -179,7 +191,7 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIAppV1ConnectorServiceGetRequest(
-    app_id='motivating',
+    app_id='string',
     id='<ID>',
 )
 
@@ -200,7 +212,11 @@ if res.connector_service_get_response is not None:
 ### Response
 
 **[operations.C1APIAppV1ConnectorServiceGetResponse](../../models/operations/c1apiappv1connectorservicegetresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## get_credentials
 
@@ -220,8 +236,8 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIAppV1ConnectorServiceGetCredentialsRequest(
-    app_id='West',
-    connector_id='Beryllium',
+    app_id='string',
+    connector_id='string',
     id='<ID>',
 )
 
@@ -242,7 +258,11 @@ if res.connector_service_get_credentials_response is not None:
 ### Response
 
 **[operations.C1APIAppV1ConnectorServiceGetCredentialsResponse](../../models/operations/c1apiappv1connectorservicegetcredentialsresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## list
 
@@ -262,7 +282,7 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIAppV1ConnectorServiceListRequest(
-    app_id='Future',
+    app_id='string',
 )
 
 res = s.connector.list(req)
@@ -282,7 +302,11 @@ if res.connector_service_list_response is not None:
 ### Response
 
 **[operations.C1APIAppV1ConnectorServiceListResponse](../../models/operations/c1apiappv1connectorservicelistresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## revoke_credential
 
@@ -303,8 +327,8 @@ s = sdk.SDK(
 
 req = operations.C1APIAppV1ConnectorServiceRevokeCredentialRequest(
     connector_service_revoke_credential_request=shared.ConnectorServiceRevokeCredentialRequest(),
-    app_id='Focused',
-    connector_id='Passenger',
+    app_id='string',
+    connector_id='string',
     id='<ID>',
 )
 
@@ -325,7 +349,11 @@ if res.connector_service_revoke_credential_response is not None:
 ### Response
 
 **[operations.C1APIAppV1ConnectorServiceRevokeCredentialResponse](../../models/operations/c1apiappv1connectorservicerevokecredentialresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## rotate_credential
 
@@ -346,8 +374,8 @@ s = sdk.SDK(
 
 req = operations.C1APIAppV1ConnectorServiceRotateCredentialRequest(
     connector_service_rotate_credential_request=shared.ConnectorServiceRotateCredentialRequest(),
-    app_id='program',
-    connector_id='cost',
+    app_id='string',
+    connector_id='string',
 )
 
 res = s.connector.rotate_credential(req)
@@ -367,7 +395,11 @@ if res.connector_service_rotate_credential_response is not None:
 ### Response
 
 **[operations.C1APIAppV1ConnectorServiceRotateCredentialResponse](../../models/operations/c1apiappv1connectorservicerotatecredentialresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## update
 
@@ -376,8 +408,8 @@ Update a connector.
 ### Example Usage
 
 ```python
-import sdk
 import dateutil.parser
+import sdk
 from sdk.models import operations, shared
 
 s = sdk.SDK(
@@ -388,26 +420,26 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIAppV1ConnectorServiceUpdateRequest(
-    connector_service_update_request_input=shared.ConnectorServiceUpdateRequestInput(
+    connector_service_update_request=shared.ConnectorServiceUpdateRequest(
         connector=shared.ConnectorInput(
             connector_status=shared.ConnectorStatus(),
             o_auth2_authorized_as=shared.OAuth2AuthorizedAsInput(),
-            config=shared.ConnectorConfig(
+            config=shared.Config(
                 additional_properties={
-                    "up": 'complexity',
+                    'key': 'string',
                 },
             ),
             user_ids=[
-                'Supervisor',
+                'string',
             ],
         ),
         connector_expand_mask=shared.ConnectorExpandMask(
             paths=[
-                'less',
+                'string',
             ],
         ),
     ),
-    app_id='Ohio',
+    app_id='string',
     id='<ID>',
 )
 
@@ -428,7 +460,11 @@ if res.connector_service_update_response is not None:
 ### Response
 
 **[operations.C1APIAppV1ConnectorServiceUpdateResponse](../../models/operations/c1apiappv1connectorserviceupdateresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## update_delegated
 
@@ -437,8 +473,8 @@ Update a delegated connector.
 ### Example Usage
 
 ```python
-import sdk
 import dateutil.parser
+import sdk
 from sdk.models import operations, shared
 
 s = sdk.SDK(
@@ -449,27 +485,27 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIAppV1ConnectorServiceUpdateDelegatedRequest(
-    connector_service_update_delegated_request_input=shared.ConnectorServiceUpdateDelegatedRequestInput(
+    connector_service_update_delegated_request=shared.ConnectorServiceUpdateDelegatedRequest(
         connector=shared.ConnectorInput(
             connector_status=shared.ConnectorStatus(),
             o_auth2_authorized_as=shared.OAuth2AuthorizedAsInput(),
-            config=shared.ConnectorConfig(
+            config=shared.Config(
                 additional_properties={
-                    "Rap": 'Ouguiya',
+                    'key': 'string',
                 },
             ),
             user_ids=[
-                'methodologies',
+                'string',
             ],
         ),
         connector_expand_mask=shared.ConnectorExpandMask(
             paths=[
-                'North',
+                'string',
             ],
         ),
     ),
-    connector_app_id='Dollar',
-    connector_id='Pickup',
+    connector_app_id='string',
+    connector_id='string',
 )
 
 res = s.connector.update_delegated(req)
@@ -489,4 +525,8 @@ if res.connector_service_update_response is not None:
 ### Response
 
 **[operations.C1APIAppV1ConnectorServiceUpdateDelegatedResponse](../../models/operations/c1apiappv1connectorserviceupdatedelegatedresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |

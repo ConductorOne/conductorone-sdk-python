@@ -26,9 +26,9 @@ s = sdk.SDK(
     ),
 )
 
-req = shared.CreatePolicyRequestInput(
+req = shared.CreatePolicyRequest(
     policy_steps={
-        "neural": shared.PolicyStepsInput(
+        'key': shared.PolicyStepsInput(
             steps=[
                 shared.PolicyStepInput(
                     accept=shared.Accept(),
@@ -47,7 +47,7 @@ req = shared.CreatePolicyRequestInput(
                             delegated_provision=shared.DelegatedProvision(),
                             manual_provision=shared.ManualProvision(
                                 user_ids=[
-                                    'Tasty',
+                                    'string',
                                 ],
                             ),
                         ),
@@ -72,15 +72,19 @@ if res.create_policy_response is not None:
 
 ### Parameters
 
-| Parameter                                                                          | Type                                                                               | Required                                                                           | Description                                                                        |
-| ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
-| `request`                                                                          | [shared.CreatePolicyRequestInput](../../models/shared/createpolicyrequestinput.md) | :heavy_check_mark:                                                                 | The request object to use for the request.                                         |
+| Parameter                                                                | Type                                                                     | Required                                                                 | Description                                                              |
+| ------------------------------------------------------------------------ | ------------------------------------------------------------------------ | ------------------------------------------------------------------------ | ------------------------------------------------------------------------ |
+| `request`                                                                | [shared.CreatePolicyRequest](../../models/shared/createpolicyrequest.md) | :heavy_check_mark:                                                       | The request object to use for the request.                               |
 
 
 ### Response
 
 **[operations.C1APIPolicyV1PoliciesCreateResponse](../../models/operations/c1apipolicyv1policiescreateresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## delete
 
@@ -121,7 +125,11 @@ if res.delete_policy_response is not None:
 ### Response
 
 **[operations.C1APIPolicyV1PoliciesDeleteResponse](../../models/operations/c1apipolicyv1policiesdeleteresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## get
 
@@ -161,7 +169,11 @@ if res.get_policy_response is not None:
 ### Response
 
 **[operations.C1APIPolicyV1PoliciesGetResponse](../../models/operations/c1apipolicyv1policiesgetresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## list
 
@@ -199,7 +211,11 @@ if res.list_policy_response is not None:
 ### Response
 
 **[operations.C1APIPolicyV1PoliciesListResponse](../../models/operations/c1apipolicyv1policieslistresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## update
 
@@ -219,10 +235,10 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIPolicyV1PoliciesUpdateRequest(
-    update_policy_request_input=shared.UpdatePolicyRequestInput(
+    update_policy_request=shared.UpdatePolicyRequest(
         policy=shared.PolicyInput(
             policy_steps={
-                "up": shared.PolicyStepsInput(
+                'key': shared.PolicyStepsInput(
                     steps=[
                         shared.PolicyStepInput(
                             accept=shared.Accept(),
@@ -241,7 +257,7 @@ req = operations.C1APIPolicyV1PoliciesUpdateRequest(
                                     delegated_provision=shared.DelegatedProvision(),
                                     manual_provision=shared.ManualProvision(
                                         user_ids=[
-                                            'complexity',
+                                            'string',
                                         ],
                                     ),
                                 ),
@@ -280,4 +296,8 @@ if res.update_policy_response is not None:
 ### Response
 
 **[operations.C1APIPolicyV1PoliciesUpdateResponse](../../models/operations/c1apipolicyv1policiesupdateresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |

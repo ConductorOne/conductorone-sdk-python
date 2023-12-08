@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 import dataclasses
-from ..shared import taskexpandmask as shared_taskexpandmask
+from .taskexpandmask import TaskExpandMask
 from dataclasses_json import Undefined, dataclass_json
 from sdk import utils
 from typing import Optional
@@ -16,7 +16,7 @@ class TaskActionsServiceDenyRequest:
     r"""The comment attached to the request."""
     policy_step_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('policyStepId'), 'exclude': lambda f: f is None }})
     r"""The ID of the currently policy step. This is the step you want to deny."""
-    task_expand_mask: Optional[shared_taskexpandmask.TaskExpandMask] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('expandMask'), 'exclude': lambda f: f is None }})
+    task_expand_mask: Optional[TaskExpandMask] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('expandMask'), 'exclude': lambda f: f is None }})
     r"""The task expand mask is an array of strings that specifes the related objects the requester wishes to have returned when making a request where the expand mask is part of the input. Use '*' to view all possible responses."""
     
 

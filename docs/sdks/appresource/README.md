@@ -24,8 +24,8 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIAppV1AppResourceServiceGetRequest(
-    app_id='motivating',
-    app_resource_type_id='Account',
+    app_id='string',
+    app_resource_type_id='string',
     id='<ID>',
 )
 
@@ -46,7 +46,11 @@ if res.app_resource_service_get_response is not None:
 ### Response
 
 **[operations.C1APIAppV1AppResourceServiceGetResponse](../../models/operations/c1apiappv1appresourceservicegetresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## list
 
@@ -66,8 +70,8 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIAppV1AppResourceServiceListRequest(
-    app_id='Future',
-    app_resource_type_id='Southeast',
+    app_id='string',
+    app_resource_type_id='string',
 )
 
 res = s.app_resource.list(req)
@@ -87,4 +91,8 @@ if res.app_resource_service_list_response is not None:
 ### Response
 
 **[operations.C1APIAppV1AppResourceServiceListResponse](../../models/operations/c1apiappv1appresourceservicelistresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |

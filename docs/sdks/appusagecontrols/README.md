@@ -24,7 +24,7 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIAppV1AppUsageControlsServiceGetRequest(
-    app_id='motivating',
+    app_id='string',
 )
 
 res = s.app_usage_controls.get(req)
@@ -44,7 +44,11 @@ if res.get_app_usage_controls_response is not None:
 ### Response
 
 **[operations.C1APIAppV1AppUsageControlsServiceGetResponse](../../models/operations/c1apiappv1appusagecontrolsservicegetresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## update
 
@@ -67,7 +71,7 @@ req = operations.C1APIAppV1AppUsageControlsServiceUpdateRequest(
     update_app_usage_controls_request=shared.UpdateAppUsageControlsRequest(
         app_usage_controls=shared.AppUsageControls(),
     ),
-    app_id='up',
+    app_id='string',
 )
 
 res = s.app_usage_controls.update(req)
@@ -87,4 +91,8 @@ if res.update_app_usage_controls_response is not None:
 ### Response
 
 **[operations.C1APIAppV1AppUsageControlsServiceUpdateResponse](../../models/operations/c1apiappv1appusagecontrolsserviceupdateresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |

@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 import dataclasses
-from ..shared import connectorview as shared_connectorview
+from .connectorview import ConnectorView
 from dataclasses_json import Undefined, dataclass_json
 from sdk import utils
 from typing import Any, Dict, List, Optional
@@ -23,7 +23,7 @@ class ConnectorServiceUpdateResponseExpanded:
 @dataclasses.dataclass
 class ConnectorServiceUpdateResponse:
     r"""ConnectorServiceUpdateResponse is the response returned by the update method."""
-    connector_view: Optional[shared_connectorview.ConnectorView] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('connectorView'), 'exclude': lambda f: f is None }})
+    connector_view: Optional[ConnectorView] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('connectorView'), 'exclude': lambda f: f is None }})
     r"""The ConnectorView object provides a connector response object, as well as JSONPATHs to related objects provided by expanders."""
     expanded: Optional[List[ConnectorServiceUpdateResponseExpanded]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('expanded') }})
     r"""The array of expanded items indicated by the request."""
