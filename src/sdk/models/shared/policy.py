@@ -5,7 +5,6 @@ import dataclasses
 import dateutil.parser
 from .policypostactions import PolicyPostActions
 from .policysteps import PolicySteps
-from .policysteps_input import PolicyStepsInput
 from .rule import Rule
 from dataclasses_json import Undefined, dataclass_json
 from datetime import datetime
@@ -60,7 +59,7 @@ class PolicyInput:
     r"""The description of the Policy."""
     display_name: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('displayName'), 'exclude': lambda f: f is None }})
     r"""The display name of the Policy."""
-    policy_steps: Optional[Dict[str, PolicyStepsInput]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('policySteps'), 'exclude': lambda f: f is None }})
+    policy_steps: Optional[Dict[str, PolicySteps]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('policySteps'), 'exclude': lambda f: f is None }})
     r"""A map of string(policy type) to steps in a policy. This structure is leftover from a previous design, and should only ever have one key->value set."""
     policy_type: Optional[PolicyPolicyType] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('policyType'), 'exclude': lambda f: f is None }})
     r"""Indicates the type of this policy. Can also be used to get the value from policySteps."""

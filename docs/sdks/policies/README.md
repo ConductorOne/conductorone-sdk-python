@@ -28,18 +28,54 @@ s = sdk.SDK(
 
 req = shared.CreatePolicyRequest(
     policy_steps={
-        'key': shared.PolicyStepsInput(
+        'key': shared.PolicySteps(
             steps=[
-                shared.PolicyStepInput(
+                shared.PolicyStep(
                     accept=shared.Accept(),
-                    approval=shared.ApprovalInput(
-                        app_group_approval=shared.AppGroupApprovalInput(),
-                        app_owner_approval=shared.AppOwnerApprovalInput(),
-                        entitlement_owner_approval=shared.EntitlementOwnerApprovalInput(),
-                        expression_approval=shared.ExpressionApprovalInput(),
-                        manager_approval=shared.ManagerApprovalInput(),
-                        self_approval=shared.SelfApprovalInput(),
-                        user_approval=shared.UserApprovalInput(),
+                    approval=shared.Approval(
+                        app_group_approval=shared.AppGroupApproval(
+                            fallback_user_ids=[
+                                'string',
+                            ],
+                        ),
+                        app_owner_approval=shared.AppOwnerApproval(),
+                        entitlement_owner_approval=shared.EntitlementOwnerApproval(
+                            fallback_user_ids=[
+                                'string',
+                            ],
+                        ),
+                        expression_approval=shared.ExpressionApproval(
+                            assigned_user_ids=[
+                                'string',
+                            ],
+                            expressions=[
+                                'string',
+                            ],
+                            fallback_user_ids=[
+                                'string',
+                            ],
+                        ),
+                        manager_approval=shared.ManagerApproval(
+                            assigned_user_ids=[
+                                'string',
+                            ],
+                            fallback_user_ids=[
+                                'string',
+                            ],
+                        ),
+                        self_approval=shared.SelfApproval(
+                            assigned_user_ids=[
+                                'string',
+                            ],
+                            fallback_user_ids=[
+                                'string',
+                            ],
+                        ),
+                        user_approval=shared.UserApproval(
+                            user_ids=[
+                                'string',
+                            ],
+                        ),
                     ),
                     provision=shared.Provision(
                         provision_policy=shared.ProvisionPolicy(
@@ -238,18 +274,54 @@ req = operations.C1APIPolicyV1PoliciesUpdateRequest(
     update_policy_request=shared.UpdatePolicyRequest(
         policy=shared.PolicyInput(
             policy_steps={
-                'key': shared.PolicyStepsInput(
+                'key': shared.PolicySteps(
                     steps=[
-                        shared.PolicyStepInput(
+                        shared.PolicyStep(
                             accept=shared.Accept(),
-                            approval=shared.ApprovalInput(
-                                app_group_approval=shared.AppGroupApprovalInput(),
-                                app_owner_approval=shared.AppOwnerApprovalInput(),
-                                entitlement_owner_approval=shared.EntitlementOwnerApprovalInput(),
-                                expression_approval=shared.ExpressionApprovalInput(),
-                                manager_approval=shared.ManagerApprovalInput(),
-                                self_approval=shared.SelfApprovalInput(),
-                                user_approval=shared.UserApprovalInput(),
+                            approval=shared.Approval(
+                                app_group_approval=shared.AppGroupApproval(
+                                    fallback_user_ids=[
+                                        'string',
+                                    ],
+                                ),
+                                app_owner_approval=shared.AppOwnerApproval(),
+                                entitlement_owner_approval=shared.EntitlementOwnerApproval(
+                                    fallback_user_ids=[
+                                        'string',
+                                    ],
+                                ),
+                                expression_approval=shared.ExpressionApproval(
+                                    assigned_user_ids=[
+                                        'string',
+                                    ],
+                                    expressions=[
+                                        'string',
+                                    ],
+                                    fallback_user_ids=[
+                                        'string',
+                                    ],
+                                ),
+                                manager_approval=shared.ManagerApproval(
+                                    assigned_user_ids=[
+                                        'string',
+                                    ],
+                                    fallback_user_ids=[
+                                        'string',
+                                    ],
+                                ),
+                                self_approval=shared.SelfApproval(
+                                    assigned_user_ids=[
+                                        'string',
+                                    ],
+                                    fallback_user_ids=[
+                                        'string',
+                                    ],
+                                ),
+                                user_approval=shared.UserApproval(
+                                    user_ids=[
+                                        'string',
+                                    ],
+                                ),
                             ),
                             provision=shared.Provision(
                                 provision_policy=shared.ProvisionPolicy(

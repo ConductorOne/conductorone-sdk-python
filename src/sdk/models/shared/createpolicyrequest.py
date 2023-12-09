@@ -3,7 +3,7 @@
 from __future__ import annotations
 import dataclasses
 from .policypostactions import PolicyPostActions
-from .policysteps_input import PolicyStepsInput
+from .policysteps import PolicySteps
 from dataclasses_json import Undefined, dataclass_json
 from enum import Enum
 from sdk import utils
@@ -27,7 +27,7 @@ class CreatePolicyRequest:
     r"""The description of the new policy."""
     display_name: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('displayName'), 'exclude': lambda f: f is None }})
     r"""The display name of the new policy."""
-    policy_steps: Optional[Dict[str, PolicyStepsInput]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('policySteps'), 'exclude': lambda f: f is None }})
+    policy_steps: Optional[Dict[str, PolicySteps]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('policySteps'), 'exclude': lambda f: f is None }})
     r"""The map of policy type to policy steps. The key is the stringified version of the enum. See other policies for examples."""
     policy_type: Optional[PolicyType] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('policyType'), 'exclude': lambda f: f is None }})
     r"""The enum of the policy type."""
