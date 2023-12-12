@@ -13,7 +13,7 @@ class Task:
         
     
     
-    def create_grant_task(self, request: shared.TaskServiceCreateGrantRequest) -> operations.C1APITaskV1TaskServiceCreateGrantTaskResponse:
+    def create_grant_task(self, request: Optional[shared.TaskServiceCreateGrantRequest]) -> operations.C1APITaskV1TaskServiceCreateGrantTaskResponse:
         r"""Create Grant Task
         Create a grant task
         """
@@ -21,7 +21,7 @@ class Task:
         
         url = base_url + '/api/v1/task/grant'
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "request", False, True, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, Optional[shared.TaskServiceCreateGrantRequest], "request", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = 'application/json'
@@ -50,7 +50,7 @@ class Task:
 
     
     
-    def create_revoke_task(self, request: shared.TaskServiceCreateRevokeRequest) -> operations.C1APITaskV1TaskServiceCreateRevokeTaskResponse:
+    def create_revoke_task(self, request: Optional[shared.TaskServiceCreateRevokeRequest]) -> operations.C1APITaskV1TaskServiceCreateRevokeTaskResponse:
         r"""Create Revoke Task
         Create a revoke task
         """
@@ -58,7 +58,7 @@ class Task:
         
         url = base_url + '/api/v1/task/revoke'
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "request", False, True, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, Optional[shared.TaskServiceCreateRevokeRequest], "request", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = 'application/json'

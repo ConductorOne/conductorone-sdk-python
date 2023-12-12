@@ -13,7 +13,7 @@ class AppEntitlementSearch:
         
     
     
-    def search(self, request: shared.AppEntitlementSearchServiceSearchRequest) -> operations.C1APIAppV1AppEntitlementSearchServiceSearchResponse:
+    def search(self, request: Optional[shared.AppEntitlementSearchServiceSearchRequest]) -> operations.C1APIAppV1AppEntitlementSearchServiceSearchResponse:
         r"""Search
         Search app entitlements based on filters specified in the request body.
         """
@@ -21,7 +21,7 @@ class AppEntitlementSearch:
         
         url = base_url + '/api/v1/search/entitlements'
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "request", False, True, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, Optional[shared.AppEntitlementSearchServiceSearchRequest], "request", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = 'application/json'

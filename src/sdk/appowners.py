@@ -21,7 +21,7 @@ class AppOwners:
         
         url = utils.generate_url(operations.C1APIAppV1AppOwnersAddRequest, base_url, '/api/v1/apps/{app_id}/owners/{user_id}', request)
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "add_app_owner_request", False, True, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, operations.C1APIAppV1AppOwnersAddRequest, "add_app_owner_request", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = 'application/json'
@@ -93,7 +93,7 @@ class AppOwners:
         
         url = utils.generate_url(operations.C1APIAppV1AppOwnersRemoveRequest, base_url, '/api/v1/apps/{app_id}/owners/{user_id}', request)
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "remove_app_owner_request", False, True, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, operations.C1APIAppV1AppOwnersRemoveRequest, "remove_app_owner_request", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = 'application/json'
@@ -130,7 +130,7 @@ class AppOwners:
         
         url = utils.generate_url(operations.C1APIAppV1AppOwnersSetRequest, base_url, '/api/v1/apps/{app_id}/owners', request)
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "set_app_owners_request", False, True, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, operations.C1APIAppV1AppOwnersSetRequest, "set_app_owners_request", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = 'application/json'

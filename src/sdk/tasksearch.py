@@ -13,7 +13,7 @@ class TaskSearch:
         
     
     
-    def search(self, request: shared.TaskSearchRequest) -> operations.C1APITaskV1TaskSearchServiceSearchResponse:
+    def search(self, request: Optional[shared.TaskSearchRequest]) -> operations.C1APITaskV1TaskSearchServiceSearchResponse:
         r"""Search
         Search tasks based on filters specified in the request body.
         """
@@ -21,7 +21,7 @@ class TaskSearch:
         
         url = base_url + '/api/v1/search/tasks'
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "request", False, True, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, Optional[shared.TaskSearchRequest], "request", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = 'application/json'

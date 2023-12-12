@@ -13,7 +13,7 @@ class PolicySearch:
         
     
     
-    def search(self, request: shared.SearchPoliciesRequest) -> operations.C1APIPolicyV1PolicySearchSearchResponse:
+    def search(self, request: Optional[shared.SearchPoliciesRequest]) -> operations.C1APIPolicyV1PolicySearchSearchResponse:
         r"""Search
         Search policies based on filters specified in the request body.
         """
@@ -21,7 +21,7 @@ class PolicySearch:
         
         url = base_url + '/api/v1/search/policies'
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "request", False, True, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, Optional[shared.SearchPoliciesRequest], "request", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = 'application/json'

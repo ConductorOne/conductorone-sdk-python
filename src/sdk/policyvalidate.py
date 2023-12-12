@@ -13,7 +13,7 @@ class PolicyValidate:
         
     
     
-    def validate_cel(self, request: shared.ValidatePolicyCELRequest) -> operations.C1APIPolicyV1PolicyValidateValidateCELResponse:
+    def validate_cel(self, request: Optional[shared.ValidatePolicyCELRequest]) -> operations.C1APIPolicyV1PolicyValidateValidateCELResponse:
         r"""Validate Cel
         Validate policies
         """
@@ -21,7 +21,7 @@ class PolicyValidate:
         
         url = base_url + '/api/v1/policies/validate/cel'
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "request", False, True, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, Optional[shared.ValidatePolicyCELRequest], "request", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = 'application/json'

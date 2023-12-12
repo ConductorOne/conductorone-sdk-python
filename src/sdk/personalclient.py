@@ -13,7 +13,7 @@ class PersonalClient:
         
     
     
-    def create(self, request: shared.PersonalClientServiceCreateRequest) -> operations.C1APIIamV1PersonalClientServiceCreateResponse:
+    def create(self, request: Optional[shared.PersonalClientServiceCreateRequest]) -> operations.C1APIIamV1PersonalClientServiceCreateResponse:
         r"""Create
         Create creates a new PersonalClient object for the current User.
         """
@@ -21,7 +21,7 @@ class PersonalClient:
         
         url = base_url + '/api/v1/iam/personal_clients'
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "request", False, True, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, Optional[shared.PersonalClientServiceCreateRequest], "request", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = 'application/json'

@@ -21,7 +21,7 @@ class AppReportAction:
         
         url = utils.generate_url(operations.C1APIAppV1AppReportActionServiceGenerateReportRequest, base_url, '/api/v1/apps/{app_id}/report', request)
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "app_actions_service_generate_report_request", False, True, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, operations.C1APIAppV1AppReportActionServiceGenerateReportRequest, "app_actions_service_generate_report_request", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = 'application/json'

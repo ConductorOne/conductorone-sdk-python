@@ -13,7 +13,7 @@ class Policies:
         
     
     
-    def create(self, request: shared.CreatePolicyRequest) -> operations.C1APIPolicyV1PoliciesCreateResponse:
+    def create(self, request: Optional[shared.CreatePolicyRequest]) -> operations.C1APIPolicyV1PoliciesCreateResponse:
         r"""Create
         Create a policy.
         """
@@ -21,7 +21,7 @@ class Policies:
         
         url = base_url + '/api/v1/policies'
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "request", False, True, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, Optional[shared.CreatePolicyRequest], "request", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = 'application/json'
@@ -58,7 +58,7 @@ class Policies:
         
         url = utils.generate_url(operations.C1APIPolicyV1PoliciesDeleteRequest, base_url, '/api/v1/policies/{id}', request)
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "delete_policy_request", False, True, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, operations.C1APIPolicyV1PoliciesDeleteRequest, "delete_policy_request", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = 'application/json'
@@ -164,7 +164,7 @@ class Policies:
         
         url = utils.generate_url(operations.C1APIPolicyV1PoliciesUpdateRequest, base_url, '/api/v1/policies/{id}', request)
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "update_policy_request", False, True, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, operations.C1APIPolicyV1PoliciesUpdateRequest, "update_policy_request", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = 'application/json'
