@@ -41,7 +41,7 @@ class Policy:
     post_actions: Optional[List[PolicyPostActions]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('postActions') }})
     r"""An array of actions (ordered) to take place after a policy completes processing."""
     reassign_tasks_to_delegates: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('reassignTasksToDelegates'), 'exclude': lambda f: f is None }})
-    r"""A policy configuration option that allows for reassinging tasks to delgated users. This level of delegation referrs to the individual delegates users set on their account."""
+    r"""A policy configuration option that allows for reassinging tasks to delgated users. This level of delegation refers to the individual delegates users set on their account."""
     rules: Optional[List[Rule]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('rules') }})
     r"""The rules field."""
     system_builtin: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('systemBuiltin'), 'exclude': lambda f: f is None }})
@@ -66,7 +66,7 @@ class PolicyInput:
     post_actions: Optional[List[PolicyPostActions]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('postActions') }})
     r"""An array of actions (ordered) to take place after a policy completes processing."""
     reassign_tasks_to_delegates: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('reassignTasksToDelegates'), 'exclude': lambda f: f is None }})
-    r"""A policy configuration option that allows for reassinging tasks to delgated users. This level of delegation referrs to the individual delegates users set on their account."""
+    r"""A policy configuration option that allows for reassinging tasks to delgated users. This level of delegation refers to the individual delegates users set on their account."""
     rules: Optional[List[Rule]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('rules') }})
     r"""The rules field."""
     
