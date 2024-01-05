@@ -15,11 +15,11 @@ class AppUsageControls:
     r"""The app that this object belongs to."""
     notify: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('notify'), 'exclude': lambda f: f is None }})
     r"""Whether or not to notify some if they have access to the app, but has not used it within a configurable amount of time."""
-    notify_after_days: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('notifyAfterDays'), 'exclude': lambda f: f is None }})
+    notify_after_days: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('notifyAfterDays'), 'exclude': lambda f: f is None }})
     r"""The duration in days after which we notify users of nonusage."""
     revoke: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('revoke'), 'exclude': lambda f: f is None }})
     r"""Whether or not to revoke a grant if they have access to the app, but has not used it within a configurable amount of time."""
-    revoke_after_days: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('revokeAfterDays'), 'exclude': lambda f: f is None }})
+    revoke_after_days: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('revokeAfterDays'), 'exclude': lambda f: f is None }})
     r"""The duration in days after which we revoke users that have not used that grant."""
     
 

@@ -32,7 +32,7 @@ class AppEntitlementSearchServiceSearchRequest:
     r"""Include deleted app entitlements, this includes app entitlements that have a deleted parent object (app, app resource, app resource type)"""
     only_get_expiring: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('onlyGetExpiring'), 'exclude': lambda f: f is None }})
     r"""Restrict results to only those who have expiring app entitlement user bindings."""
-    page_size: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('pageSize'), 'exclude': lambda f: f is None }})
+    page_size: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('pageSize'), 'exclude': lambda f: f is None }})
     r"""The pageSize where 0 <= pageSize <= 100. Values < 10 will be set to 10. A value of 0 returns the default page size (currently 25)"""
     page_token: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('pageToken'), 'exclude': lambda f: f is None }})
     r"""The pageToken field."""
