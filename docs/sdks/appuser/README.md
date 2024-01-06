@@ -18,8 +18,8 @@ from sdk.models import operations, shared
 
 s = sdk.SDK(
     security=shared.Security(
-        bearer_auth="",
-        oauth="",
+        bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
+        oauth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
     ),
 )
 
@@ -59,4 +59,4 @@ if res.app_user_service_update_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |

@@ -13,7 +13,7 @@ class Apps:
         
     
     
-    def create(self, request: shared.CreateAppRequest) -> operations.C1APIAppV1AppsCreateResponse:
+    def create(self, request: Optional[shared.CreateAppRequest]) -> operations.C1APIAppV1AppsCreateResponse:
         r"""Create
         Create a new app.
         """
@@ -21,7 +21,7 @@ class Apps:
         
         url = base_url + '/api/v1/apps'
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "request", False, True, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, Optional[shared.CreateAppRequest], "request", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = 'application/json'
@@ -58,7 +58,7 @@ class Apps:
         
         url = utils.generate_url(operations.C1APIAppV1AppsDeleteRequest, base_url, '/api/v1/apps/{id}', request)
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "delete_app_request", False, True, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, operations.C1APIAppV1AppsDeleteRequest, "delete_app_request", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = 'application/json'
@@ -164,7 +164,7 @@ class Apps:
         
         url = utils.generate_url(operations.C1APIAppV1AppsUpdateRequest, base_url, '/api/v1/apps/{id}', request)
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "update_app_request", False, True, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, operations.C1APIAppV1AppsUpdateRequest, "update_app_request", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = 'application/json'

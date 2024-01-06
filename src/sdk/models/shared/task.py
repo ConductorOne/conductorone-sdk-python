@@ -74,7 +74,7 @@ class Task:
     r"""The ID of the analysis object associated with this task created by an analysis workflow if the analysis feature is enabled for your tenant."""
     annotations: Optional[List[Annotations]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('annotations') }})
     r"""An array of `google.protobuf.Any` annotations with various base64-encoded data."""
-    comment_count: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('commentCount'), 'exclude': lambda f: f is None }})
+    comment_count: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('commentCount'), 'exclude': lambda f: f is None }})
     r"""The count of comments."""
     created_at: Optional[datetime] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('createdAt'), 'encoder': utils.datetimeisoformat(True), 'decoder': dateutil.parser.isoparse, 'exclude': lambda f: f is None }})
     created_by_user_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('createdByUserId'), 'exclude': lambda f: f is None }})

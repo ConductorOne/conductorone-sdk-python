@@ -203,3 +203,51 @@ Based on:
 - Speakeasy CLI 1.125.1 (2.210.3) https://github.com/speakeasy-api/speakeasy
 ### Generated
 - [python v0.8.8] .
+
+## 2023-12-09 00:10:01
+### Changes
+Based on:
+- OpenAPI Doc 0.1.0-alpha 
+- Speakeasy CLI 1.125.2 (2.210.6) https://github.com/speakeasy-api/speakeasy
+### Generated
+- [python v0.8.9] .
+
+## 2023-12-12 00:10:00
+### Changes
+Based on:
+- OpenAPI Doc 0.1.0-alpha 
+- Speakeasy CLI 1.126.0 (2.213.3) https://github.com/speakeasy-api/speakeasy
+### Generated
+- [python v0.9.0] .
+
+## 2023-12-13 00:09:52
+### Changes
+Based on:
+- OpenAPI Doc 0.1.0-alpha 
+- Speakeasy CLI 1.126.3 (2.214.3) https://github.com/speakeasy-api/speakeasy
+### Generated
+- [python v0.9.1] .
+
+## 2023-12-19 00:09:51
+### Changes
+Based on:
+- OpenAPI Doc 0.1.0-alpha 
+- Speakeasy CLI 1.127.0 (2.220.0) https://github.com/speakeasy-api/speakeasy
+### Generated
+- [python v0.10.0] .
+
+## 2024-01-05 00:09:56
+### Changes
+Based on:
+- OpenAPI Doc 0.1.0-alpha 
+- Speakeasy CLI 1.130.1 (2.225.2) https://github.com/speakeasy-api/speakeasy
+### Generated
+- [python v0.10.0] .
+
+## 2024-01-06 00:09:45
+### Changes
+Based on:
+- OpenAPI Doc 0.1.0-alpha 
+- Speakeasy CLI 1.133.1 (2.228.1) https://github.com/speakeasy-api/speakeasy
+### Generated
+- [python v0.10.1] .

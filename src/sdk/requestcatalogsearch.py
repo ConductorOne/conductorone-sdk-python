@@ -13,7 +13,7 @@ class RequestCatalogSearch:
         
     
     
-    def search_entitlements(self, request: shared.RequestCatalogSearchServiceSearchEntitlementsRequest) -> operations.C1APIRequestcatalogV1RequestCatalogSearchServiceSearchEntitlementsResponse:
+    def search_entitlements(self, request: Optional[shared.RequestCatalogSearchServiceSearchEntitlementsRequest]) -> operations.C1APIRequestcatalogV1RequestCatalogSearchServiceSearchEntitlementsResponse:
         r"""Search Entitlements
         Search request catalogs based on filters specified in the request body.
         """
@@ -21,7 +21,7 @@ class RequestCatalogSearch:
         
         url = base_url + '/api/v1/search/request_catalog/entitlements'
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "request", False, True, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, Optional[shared.RequestCatalogSearchServiceSearchEntitlementsRequest], "request", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = 'application/json'

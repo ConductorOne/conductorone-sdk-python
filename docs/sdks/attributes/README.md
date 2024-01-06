@@ -21,8 +21,8 @@ from sdk.models import shared
 
 s = sdk.SDK(
     security=shared.Security(
-        bearer_auth="",
-        oauth="",
+        bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
+        oauth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
     ),
 )
 
@@ -49,7 +49,7 @@ if res.create_attribute_value_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## delete_attribute_value
 
@@ -63,8 +63,8 @@ from sdk.models import operations, shared
 
 s = sdk.SDK(
     security=shared.Security(
-        bearer_auth="",
-        oauth="",
+        bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
+        oauth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
     ),
 )
 
@@ -94,7 +94,7 @@ if res.delete_attribute_value_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## get_attribute_value
 
@@ -108,8 +108,8 @@ from sdk.models import operations, shared
 
 s = sdk.SDK(
     security=shared.Security(
-        bearer_auth="",
-        oauth="",
+        bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
+        oauth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
     ),
 )
 
@@ -138,7 +138,7 @@ if res.get_attribute_value_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## list_attribute_types
 
@@ -152,8 +152,8 @@ from sdk.models import operations, shared
 
 s = sdk.SDK(
     security=shared.Security(
-        bearer_auth="",
-        oauth="",
+        bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
+        oauth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
     ),
 )
 
@@ -180,7 +180,7 @@ if res.list_attribute_types_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## list_attribute_values
 
@@ -194,8 +194,8 @@ from sdk.models import operations, shared
 
 s = sdk.SDK(
     security=shared.Security(
-        bearer_auth="",
-        oauth="",
+        bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
+        oauth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
     ),
 )
 
@@ -224,4 +224,4 @@ if res.list_attribute_values_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |

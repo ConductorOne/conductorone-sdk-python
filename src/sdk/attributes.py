@@ -13,7 +13,7 @@ class Attributes:
         
     
     
-    def create_attribute_value(self, request: shared.CreateAttributeValueRequest) -> operations.C1APIAttributeV1AttributesCreateAttributeValueResponse:
+    def create_attribute_value(self, request: Optional[shared.CreateAttributeValueRequest]) -> operations.C1APIAttributeV1AttributesCreateAttributeValueResponse:
         r"""Create Attribute Value
         Create a new attribute value.
         """
@@ -21,7 +21,7 @@ class Attributes:
         
         url = base_url + '/api/v1/attributes'
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "request", False, True, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, Optional[shared.CreateAttributeValueRequest], "request", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = 'application/json'
@@ -58,7 +58,7 @@ class Attributes:
         
         url = utils.generate_url(operations.C1APIAttributeV1AttributesDeleteAttributeValueRequest, base_url, '/api/v1/attribute/{id}', request)
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "delete_attribute_value_request", False, True, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, operations.C1APIAttributeV1AttributesDeleteAttributeValueRequest, "delete_attribute_value_request", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = 'application/json'

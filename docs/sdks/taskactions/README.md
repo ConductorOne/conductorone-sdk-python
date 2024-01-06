@@ -21,8 +21,8 @@ from sdk.models import operations, shared
 
 s = sdk.SDK(
     security=shared.Security(
-        bearer_auth="",
-        oauth="",
+        bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
+        oauth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
     ),
 )
 
@@ -59,7 +59,7 @@ if res.task_actions_service_approve_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## comment
 
@@ -73,8 +73,8 @@ from sdk.models import operations, shared
 
 s = sdk.SDK(
     security=shared.Security(
-        bearer_auth="",
-        oauth="",
+        bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
+        oauth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
     ),
 )
 
@@ -110,7 +110,7 @@ if res.task_actions_service_comment_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## deny
 
@@ -124,8 +124,8 @@ from sdk.models import operations, shared
 
 s = sdk.SDK(
     security=shared.Security(
-        bearer_auth="",
-        oauth="",
+        bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
+        oauth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
     ),
 )
 
@@ -161,7 +161,7 @@ if res.task_actions_service_deny_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## escalate_to_emergency_access
 
@@ -175,8 +175,8 @@ from sdk.models import operations, shared
 
 s = sdk.SDK(
     security=shared.Security(
-        bearer_auth="",
-        oauth="",
+        bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
+        oauth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
     ),
 )
 
@@ -212,7 +212,7 @@ if res.task_service_action_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## restart
 
@@ -226,8 +226,8 @@ from sdk.models import operations, shared
 
 s = sdk.SDK(
     security=shared.Security(
-        bearer_auth="",
-        oauth="",
+        bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
+        oauth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
     ),
 )
 
@@ -263,4 +263,4 @@ if res.task_actions_service_restart_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |

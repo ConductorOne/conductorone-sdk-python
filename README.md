@@ -230,7 +230,7 @@ Handling errors in this SDK should largely match your expectations.  All operati
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ### Example
 
@@ -240,8 +240,8 @@ from sdk.models import shared
 
 s = sdk.SDK(
     security=shared.Security(
-        bearer_auth="",
-        oauth="",
+        bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
+        oauth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
     ),
 )
 
@@ -286,8 +286,8 @@ from sdk.models import shared
 s = sdk.SDK(
     server_idx=0,
     security=shared.Security(
-        bearer_auth="",
-        oauth="",
+        bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
+        oauth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
     ),
 )
 
@@ -319,8 +319,8 @@ from sdk.models import shared
 s = sdk.SDK(
     server_url="https://{tenantDomain}.conductor.one",
     security=shared.Security(
-        bearer_auth="",
-        oauth="",
+        bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
+        oauth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
     ),
 )
 
@@ -343,7 +343,7 @@ if res.create_app_response is not None:
 <!-- Start Custom HTTP Client [http-client] -->
 ## Custom HTTP Client
 
-The Python SDK makes API calls using the (requests)[https://pypi.org/project/requests/] HTTP library.  In order to provide a convenient way to configure timeouts, cookies, proxies, custom headers, and other low-level configuration, you can initialize the SDK client with a custom `requests.Session` object.
+The Python SDK makes API calls using the [requests](https://pypi.org/project/requests/) HTTP library.  In order to provide a convenient way to configure timeouts, cookies, proxies, custom headers, and other low-level configuration, you can initialize the SDK client with a custom `requests.Session` object.
 
 For example, you could specify a header for every request that this sdk makes as follows:
 ```python
@@ -377,8 +377,8 @@ from sdk.models import shared
 
 s = sdk.SDK(
     security=shared.Security(
-        bearer_auth="",
-        oauth="",
+        bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
+        oauth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
     ),
 )
 

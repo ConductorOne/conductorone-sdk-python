@@ -21,7 +21,7 @@ class RequestCatalogManagement:
         
         url = utils.generate_url(operations.C1APIRequestcatalogV1RequestCatalogManagementServiceAddAccessEntitlementsRequest, base_url, '/api/v1/catalogs/{catalog_id}/visibility_bindings', request)
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "request_catalog_management_service_add_access_entitlements_request", False, True, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, operations.C1APIRequestcatalogV1RequestCatalogManagementServiceAddAccessEntitlementsRequest, "request_catalog_management_service_add_access_entitlements_request", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = 'application/json'
@@ -58,7 +58,7 @@ class RequestCatalogManagement:
         
         url = utils.generate_url(operations.C1APIRequestcatalogV1RequestCatalogManagementServiceAddAppEntitlementsRequest, base_url, '/api/v1/catalogs/{catalog_id}/requestable_entries', request)
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "request_catalog_management_service_add_app_entitlements_request", False, True, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, operations.C1APIRequestcatalogV1RequestCatalogManagementServiceAddAppEntitlementsRequest, "request_catalog_management_service_add_app_entitlements_request", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = 'application/json'
@@ -87,7 +87,7 @@ class RequestCatalogManagement:
 
     
     
-    def create(self, request: shared.RequestCatalogManagementServiceCreateRequest) -> operations.C1APIRequestcatalogV1RequestCatalogManagementServiceCreateResponse:
+    def create(self, request: Optional[shared.RequestCatalogManagementServiceCreateRequest]) -> operations.C1APIRequestcatalogV1RequestCatalogManagementServiceCreateResponse:
         r"""Create
         Creates a new request catalog.
         """
@@ -95,7 +95,7 @@ class RequestCatalogManagement:
         
         url = base_url + '/api/v1/catalogs'
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "request", False, True, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, Optional[shared.RequestCatalogManagementServiceCreateRequest], "request", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = 'application/json'
@@ -132,7 +132,7 @@ class RequestCatalogManagement:
         
         url = utils.generate_url(operations.C1APIRequestcatalogV1RequestCatalogManagementServiceDeleteRequest, base_url, '/api/v1/catalogs/{id}', request)
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "request_catalog_management_service_delete_request", False, True, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, operations.C1APIRequestcatalogV1RequestCatalogManagementServiceDeleteRequest, "request_catalog_management_service_delete_request", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = 'application/json'
@@ -307,7 +307,7 @@ class RequestCatalogManagement:
         
         url = utils.generate_url(operations.C1APIRequestcatalogV1RequestCatalogManagementServiceRemoveAccessEntitlementsRequest, base_url, '/api/v1/catalogs/{catalog_id}/visibility_bindings', request)
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "request_catalog_management_service_remove_access_entitlements_request", False, True, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, operations.C1APIRequestcatalogV1RequestCatalogManagementServiceRemoveAccessEntitlementsRequest, "request_catalog_management_service_remove_access_entitlements_request", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = 'application/json'
@@ -344,7 +344,7 @@ class RequestCatalogManagement:
         
         url = utils.generate_url(operations.C1APIRequestcatalogV1RequestCatalogManagementServiceRemoveAppEntitlementsRequest, base_url, '/api/v1/catalogs/{catalog_id}/requestable_entries', request)
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "request_catalog_management_service_remove_app_entitlements_request", False, True, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, operations.C1APIRequestcatalogV1RequestCatalogManagementServiceRemoveAppEntitlementsRequest, "request_catalog_management_service_remove_app_entitlements_request", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = 'application/json'
@@ -381,7 +381,7 @@ class RequestCatalogManagement:
         
         url = utils.generate_url(operations.C1APIRequestcatalogV1RequestCatalogManagementServiceUpdateRequest, base_url, '/api/v1/catalogs/{id}', request)
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "request_catalog_management_service_update_request", False, True, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, operations.C1APIRequestcatalogV1RequestCatalogManagementServiceUpdateRequest, "request_catalog_management_service_update_request", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = 'application/json'

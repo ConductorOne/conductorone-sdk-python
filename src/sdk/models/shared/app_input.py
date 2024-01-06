@@ -21,7 +21,7 @@ class AppInput:
     r"""The ID of the Grant Policy associated with this App."""
     icon_url: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('iconUrl'), 'exclude': lambda f: f is None }})
     r"""The URL of an icon to display for the app."""
-    monthly_cost_usd: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('monthlyCostUsd'), 'exclude': lambda f: f is None }})
+    monthly_cost_usd: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('monthlyCostUsd'), 'exclude': lambda f: f is None }})
     r"""The cost of an app per-seat, so that total cost can be calculated by the grant count."""
     revoke_policy_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('revokePolicyId'), 'exclude': lambda f: f is None }})
     r"""The ID of the Revoke Policy associated with this App."""

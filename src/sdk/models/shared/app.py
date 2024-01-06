@@ -36,7 +36,7 @@ class App:
     r"""Specifies if the app is a directory."""
     logo_uri: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('logoUri'), 'exclude': lambda f: f is None }})
     r"""The URL of a logo to display for the app."""
-    monthly_cost_usd: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('monthlyCostUsd'), 'exclude': lambda f: f is None }})
+    monthly_cost_usd: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('monthlyCostUsd'), 'exclude': lambda f: f is None }})
     r"""The cost of an app per-seat, so that total cost can be calculated by the grant count."""
     parent_app_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('parentAppId'), 'exclude': lambda f: f is None }})
     r"""The ID of the app that created this app, if any."""

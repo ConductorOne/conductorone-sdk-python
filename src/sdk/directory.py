@@ -13,7 +13,7 @@ class Directory:
         
     
     
-    def create(self, request: shared.DirectoryServiceCreateRequest) -> operations.C1APIDirectoryV1DirectoryServiceCreateResponse:
+    def create(self, request: Optional[shared.DirectoryServiceCreateRequest]) -> operations.C1APIDirectoryV1DirectoryServiceCreateResponse:
         r"""Create
         Create a directory.
         """
@@ -21,7 +21,7 @@ class Directory:
         
         url = base_url + '/api/v1/directories'
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "request", False, True, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, Optional[shared.DirectoryServiceCreateRequest], "request", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = 'application/json'
@@ -58,7 +58,7 @@ class Directory:
         
         url = utils.generate_url(operations.C1APIDirectoryV1DirectoryServiceDeleteRequest, base_url, '/api/v1/directories/{app_id}', request)
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "directory_service_delete_request", False, True, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, operations.C1APIDirectoryV1DirectoryServiceDeleteRequest, "directory_service_delete_request", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = 'application/json'

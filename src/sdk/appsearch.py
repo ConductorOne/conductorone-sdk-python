@@ -13,7 +13,7 @@ class AppSearch:
         
     
     
-    def search(self, request: shared.SearchAppsRequest) -> operations.C1APIAppV1AppSearchSearchResponse:
+    def search(self, request: Optional[shared.SearchAppsRequest]) -> operations.C1APIAppV1AppSearchSearchResponse:
         r"""Search
         Search apps based on filters specified in the request body.
         """
@@ -21,7 +21,7 @@ class AppSearch:
         
         url = base_url + '/api/v1/search/apps'
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "request", False, True, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, Optional[shared.SearchAppsRequest], "request", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = 'application/json'

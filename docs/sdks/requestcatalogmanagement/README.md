@@ -27,8 +27,8 @@ from sdk.models import operations, shared
 
 s = sdk.SDK(
     security=shared.Security(
-        bearer_auth="",
-        oauth="",
+        bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
+        oauth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
     ),
 )
 
@@ -62,7 +62,7 @@ if res.request_catalog_management_service_add_access_entitlements_response is no
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## add_app_entitlements
 
@@ -76,8 +76,8 @@ from sdk.models import operations, shared
 
 s = sdk.SDK(
     security=shared.Security(
-        bearer_auth="",
-        oauth="",
+        bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
+        oauth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
     ),
 )
 
@@ -111,7 +111,7 @@ if res.request_catalog_management_service_add_app_entitlements_response is not N
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## create
 
@@ -125,8 +125,8 @@ from sdk.models import shared
 
 s = sdk.SDK(
     security=shared.Security(
-        bearer_auth="",
-        oauth="",
+        bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
+        oauth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
     ),
 )
 
@@ -159,7 +159,7 @@ if res.request_catalog_management_service_get_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## delete
 
@@ -173,8 +173,8 @@ from sdk.models import operations, shared
 
 s = sdk.SDK(
     security=shared.Security(
-        bearer_auth="",
-        oauth="",
+        bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
+        oauth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
     ),
 )
 
@@ -204,7 +204,7 @@ if res.request_catalog_management_service_delete_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## get
 
@@ -218,8 +218,8 @@ from sdk.models import operations, shared
 
 s = sdk.SDK(
     security=shared.Security(
-        bearer_auth="",
-        oauth="",
+        bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
+        oauth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
     ),
 )
 
@@ -248,7 +248,7 @@ if res.request_catalog_management_service_get_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## list
 
@@ -262,8 +262,8 @@ from sdk.models import shared
 
 s = sdk.SDK(
     security=shared.Security(
-        bearer_auth="",
-        oauth="",
+        bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
+        oauth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
     ),
 )
 
@@ -283,7 +283,7 @@ if res.request_catalog_management_service_list_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## list_entitlements_for_access
 
@@ -297,8 +297,8 @@ from sdk.models import operations, shared
 
 s = sdk.SDK(
     security=shared.Security(
-        bearer_auth="",
-        oauth="",
+        bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
+        oauth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
     ),
 )
 
@@ -327,7 +327,7 @@ if res.request_catalog_management_service_list_entitlements_for_access_response 
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## list_entitlements_per_catalog
 
@@ -341,8 +341,8 @@ from sdk.models import operations, shared
 
 s = sdk.SDK(
     security=shared.Security(
-        bearer_auth="",
-        oauth="",
+        bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
+        oauth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
     ),
 )
 
@@ -371,7 +371,7 @@ if res.request_catalog_management_service_list_entitlements_per_catalog_response
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## remove_access_entitlements
 
@@ -385,8 +385,8 @@ from sdk.models import operations, shared
 
 s = sdk.SDK(
     security=shared.Security(
-        bearer_auth="",
-        oauth="",
+        bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
+        oauth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
     ),
 )
 
@@ -420,7 +420,7 @@ if res.request_catalog_management_service_remove_access_entitlements_response is
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## remove_app_entitlements
 
@@ -434,8 +434,8 @@ from sdk.models import operations, shared
 
 s = sdk.SDK(
     security=shared.Security(
-        bearer_auth="",
-        oauth="",
+        bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
+        oauth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
     ),
 )
 
@@ -469,7 +469,7 @@ if res.request_catalog_management_service_remove_app_entitlements_response is no
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## update
 
@@ -483,8 +483,8 @@ from sdk.models import operations, shared
 
 s = sdk.SDK(
     security=shared.Security(
-        bearer_auth="",
-        oauth="",
+        bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
+        oauth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
     ),
 )
 
@@ -542,4 +542,4 @@ if res.request_catalog_management_service_get_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
