@@ -38,6 +38,8 @@ class AppEntitlementSearchServiceSearchRequest:
     r"""The pageToken field."""
     query: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('query'), 'exclude': lambda f: f is None }})
     r"""Query the app entitlements with a fuzzy search on display name and description."""
+    resource_ids: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('resourceIds') }})
+    r"""Search for app entitlements that belongs to these resources."""
     resource_type_ids: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('resourceTypeIds') }})
     r"""Search for app entitlements that are for items on these resource types."""
     risk_level_ids: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('riskLevelIds') }})

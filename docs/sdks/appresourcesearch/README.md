@@ -26,6 +26,9 @@ req = shared.SearchAppResourceTypesRequest(
     app_ids=[
         'string',
     ],
+    app_user_ids=[
+        'string',
+    ],
     exclude_resource_type_ids=[
         'string',
     ],

@@ -43,6 +43,9 @@ req = shared.AppEntitlementSearchServiceSearchRequest(
     exclude_app_user_ids=[
         'string',
     ],
+    resource_ids=[
+        'string',
+    ],
     resource_type_ids=[
         'string',
     ],

@@ -13,6 +13,8 @@ class SearchAppResourceTypesRequest:
     r"""Search for app resources based on some filters."""
     app_ids: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('appIds') }})
     r"""A list of app IDs to restrict the search by."""
+    app_user_ids: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('appUserIds') }})
+    r"""A list of app user IDs to restrict the search by."""
     exclude_resource_type_ids: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('excludeResourceTypeIds') }})
     r"""A list of resource type IDs to exclude from the search."""
     exclude_resource_type_trait_ids: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('excludeResourceTypeTraitIds') }})
