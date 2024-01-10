@@ -29,6 +29,7 @@ from .requestcatalogmanagement import RequestCatalogManagement
 from .requestcatalogsearch import RequestCatalogSearch
 from .roles import Roles
 from .sdkconfiguration import SDKConfiguration
+from .sessionsettings import SessionSettings
 from .task import Task
 from .taskactions import TaskActions
 from .tasksearch import TaskSearch
@@ -69,6 +70,7 @@ class SDK:
     request_catalog_search: RequestCatalogSearch
     task_search: TaskSearch
     user_search: UserSearch
+    session_settings: SessionSettings
     task: Task
     task_actions: TaskActions
     user: User
@@ -147,6 +149,7 @@ class SDK:
         self.request_catalog_search = RequestCatalogSearch(self.sdk_configuration)
         self.task_search = TaskSearch(self.sdk_configuration)
         self.user_search = UserSearch(self.sdk_configuration)
+        self.session_settings = SessionSettings(self.sdk_configuration)
         self.task = Task(self.sdk_configuration)
         self.task_actions = TaskActions(self.sdk_configuration)
         self.user = User(self.sdk_configuration)

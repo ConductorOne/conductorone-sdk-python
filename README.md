@@ -196,6 +196,11 @@ if res.app_entitlement_search_service_search_response is not None:
 
 * [search](docs/sdks/usersearch/README.md#search) - Search
 
+### [session_settings](docs/sdks/sessionsettings/README.md)
+
+* [get](docs/sdks/sessionsettings/README.md#get) - Get
+* [update](docs/sdks/sessionsettings/README.md#update) - Update
+
 ### [task](docs/sdks/task/README.md)
 
 * [create_grant_task](docs/sdks/task/README.md#create_grant_task) - Create Grant Task

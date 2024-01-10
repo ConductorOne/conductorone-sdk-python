@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: caa5cc5d-fe97-4a71-b2f9-77ce0615bbd1
 management:
-  docChecksum: 9c0893bde6be27f571b26c74233be99d
+  docChecksum: 7004709fb63a065761c587feaf4ad036
   docVersion: 0.1.0-alpha
   speakeasyVersion: internal
-  generationVersion: 2.228.1
-  releaseVersion: 0.10.1
-  configChecksum: 4c02f989d4ed03d9a1461dc356f21624
+  generationVersion: 2.230.3
+  releaseVersion: 0.10.2
+  configChecksum: f5ee6131f402f3ecd1eaaf9ec8229f3a
   repoURL: https://github.com/ConductorOne/conductorone-sdk-python.git
   repoSubDirectory: .
   installationURL: https://github.com/ConductorOne/conductorone-sdk-python.git
@@ -51,6 +51,7 @@ generatedFiles:
   - src/sdk/requestcatalogsearch.py
   - src/sdk/tasksearch.py
   - src/sdk/usersearch.py
+  - src/sdk/sessionsettings.py
   - src/sdk/task.py
   - src/sdk/taskactions.py
   - src/sdk/user.py
@@ -140,6 +141,8 @@ generatedFiles:
   - src/sdk/models/operations/c1_api_requestcatalog_v1_requestcatalogsearchservice_searchentitlements.py
   - src/sdk/models/operations/c1_api_task_v1_tasksearchservice_search.py
   - src/sdk/models/operations/c1_api_user_v1_usersearch_search.py
+  - src/sdk/models/operations/c1_api_settings_v1_sessionsettingsservice_get.py
+  - src/sdk/models/operations/c1_api_settings_v1_sessionsettingsservice_update.py
   - src/sdk/models/operations/c1_api_task_v1_taskservice_creategranttask.py
   - src/sdk/models/operations/c1_api_task_v1_taskservice_createrevoketask.py
   - src/sdk/models/operations/c1_api_task_v1_taskservice_get.py
@@ -374,6 +377,10 @@ generatedFiles:
   - src/sdk/models/shared/searchusersrequest.py
   - src/sdk/models/shared/userref.py
   - src/sdk/models/shared/userexpandmask.py
+  - src/sdk/models/shared/getsessionsettingsresponse.py
+  - src/sdk/models/shared/sessionsettings.py
+  - src/sdk/models/shared/updatesessionsettingsresponse.py
+  - src/sdk/models/shared/updatesessionsettingsrequest.py
   - src/sdk/models/shared/taskservicecreategrantresponse.py
   - src/sdk/models/shared/taskservicecreategrantrequest.py
   - src/sdk/models/shared/taskservicecreaterevokeresponse.py
@@ -537,6 +544,8 @@ generatedFiles:
   - docs/models/operations/c1apirequestcatalogv1requestcatalogsearchservicesearchentitlementsresponse.md
   - docs/models/operations/c1apitaskv1tasksearchservicesearchresponse.md
   - docs/models/operations/c1apiuserv1usersearchsearchresponse.md
+  - docs/models/operations/c1apisettingsv1sessionsettingsservicegetresponse.md
+  - docs/models/operations/c1apisettingsv1sessionsettingsserviceupdateresponse.md
   - docs/models/operations/c1apitaskv1taskservicecreategranttaskresponse.md
   - docs/models/operations/c1apitaskv1taskservicecreaterevoketaskresponse.md
   - docs/models/operations/c1apitaskv1taskservicegetrequest.md
@@ -842,6 +851,10 @@ generatedFiles:
   - docs/models/shared/searchusersrequest.md
   - docs/models/shared/userref.md
   - docs/models/shared/userexpandmask.md
+  - docs/models/shared/getsessionsettingsresponse.md
+  - docs/models/shared/sessionsettings.md
+  - docs/models/shared/updatesessionsettingsresponse.md
+  - docs/models/shared/updatesessionsettingsrequest.md
   - docs/models/shared/taskservicecreategrantresponseexpanded.md
   - docs/models/shared/taskservicecreategrantresponse.md
   - docs/models/shared/taskservicecreategrantrequest.md
@@ -900,6 +913,7 @@ generatedFiles:
   - docs/sdks/requestcatalogsearch/README.md
   - docs/sdks/tasksearch/README.md
   - docs/sdks/usersearch/README.md
+  - docs/sdks/sessionsettings/README.md
   - docs/sdks/task/README.md
   - docs/sdks/taskactions/README.md
   - docs/sdks/user/README.md
