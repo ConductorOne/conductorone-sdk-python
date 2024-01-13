@@ -196,6 +196,10 @@ if res.app_entitlement_search_service_search_response is not None:
 
 * [search](docs/sdks/usersearch/README.md#search) - Search
 
+### [aws_external_id_settings](docs/sdks/awsexternalidsettings/README.md)
+
+* [get](docs/sdks/awsexternalidsettings/README.md#get) - Get
+
 ### [session_settings](docs/sdks/sessionsettings/README.md)
 
 * [get](docs/sdks/sessionsettings/README.md#get) - Get

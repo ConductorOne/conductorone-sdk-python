@@ -19,6 +19,7 @@ from .appuser import AppUser
 from .attributes import Attributes
 from .attributesearch import AttributeSearch
 from .auth import Auth
+from .awsexternalidsettings import AWSExternalIDSettings
 from .connector import Connector
 from .directory import Directory
 from .personalclient import PersonalClient
@@ -70,6 +71,7 @@ class SDK:
     request_catalog_search: RequestCatalogSearch
     task_search: TaskSearch
     user_search: UserSearch
+    aws_external_id_settings: AWSExternalIDSettings
     session_settings: SessionSettings
     task: Task
     task_actions: TaskActions
@@ -149,6 +151,7 @@ class SDK:
         self.request_catalog_search = RequestCatalogSearch(self.sdk_configuration)
         self.task_search = TaskSearch(self.sdk_configuration)
         self.user_search = UserSearch(self.sdk_configuration)
+        self.aws_external_id_settings = AWSExternalIDSettings(self.sdk_configuration)
         self.session_settings = SessionSettings(self.sdk_configuration)
         self.task = Task(self.sdk_configuration)
         self.task_actions = TaskActions(self.sdk_configuration)
