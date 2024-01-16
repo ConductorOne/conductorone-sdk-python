@@ -4,7 +4,7 @@ management:
   docChecksum: ad5ec8c296d561a180c3d614ef2b2ff0
   docVersion: 0.1.0-alpha
   speakeasyVersion: internal
-  generationVersion: 2.231.0
+  generationVersion: 2.233.2
   releaseVersion: 0.10.3
   configChecksum: 5d7125f2fa6ce2ce0f5e808a325ea99e
   repoURL: https://github.com/ConductorOne/conductorone-sdk-python.git
