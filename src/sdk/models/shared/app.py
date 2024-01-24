@@ -3,10 +3,11 @@
 from __future__ import annotations
 import dataclasses
 import dateutil.parser
+from .user import User
 from dataclasses_json import Undefined, dataclass_json
 from datetime import datetime
 from sdk import utils
-from typing import Optional
+from typing import List, Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
@@ -17,6 +18,8 @@ class App:
     r"""The ID of the Account named by AccountName."""
     app_account_name: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('appAccountName'), 'exclude': lambda f: f is None }})
     r"""The AccountName of the app. For example, AWS is AccountID, Github is Org Name, and Okta is Okta Subdomain."""
+    app_owners: Optional[List[User]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('appOwners') }})
+    r"""The owners of the app."""
     certify_policy_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('certifyPolicyId'), 'exclude': lambda f: f is None }})
     r"""The ID of the Certify Policy associated with this App."""
     created_at: Optional[datetime] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('createdAt'), 'encoder': utils.datetimeisoformat(True), 'decoder': dateutil.parser.isoparse, 'exclude': lambda f: f is None }})

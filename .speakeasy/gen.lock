@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: caa5cc5d-fe97-4a71-b2f9-77ce0615bbd1
 management:
-  docChecksum: 5d50829a5cc8442c3d8e1043c0e3ad1d
+  docChecksum: ae7dfd3777581d6e7ded27bca7dc187d
   docVersion: 0.1.0-alpha
   speakeasyVersion: internal
-  generationVersion: 2.237.3
-  releaseVersion: 0.10.5
-  configChecksum: 3bfbd36f52fe5584352e8779e0d790b7
+  generationVersion: 2.239.0
+  releaseVersion: 0.10.6
+  configChecksum: b9c2f3b65ed3ca7e35baad81a21dc7bf
   repoURL: https://github.com/ConductorOne/conductorone-sdk-python.git
   repoSubDirectory: .
   installationURL: https://github.com/ConductorOne/conductorone-sdk-python.git
@@ -157,6 +157,8 @@ generatedFiles:
   - src/sdk/models/operations/c1_api_user_v1_userservice_list.py
   - src/sdk/models/shared/createappresponse.py
   - src/sdk/models/shared/app.py
+  - src/sdk/models/shared/user.py
+  - src/sdk/models/shared/userattributemappingsource.py
   - src/sdk/models/shared/createapprequest.py
   - src/sdk/models/shared/deleteappresponse.py
   - src/sdk/models/shared/deleteapprequest.py
@@ -208,8 +210,6 @@ generatedFiles:
   - src/sdk/models/shared/addappentitlementownerresponse.py
   - src/sdk/models/shared/addappentitlementownerrequest.py
   - src/sdk/models/shared/listappentitlementownersresponse.py
-  - src/sdk/models/shared/user.py
-  - src/sdk/models/shared/userattributemappingsource.py
   - src/sdk/models/shared/removeappentitlementownerresponse.py
   - src/sdk/models/shared/removeappentitlementownerrequest.py
   - src/sdk/models/shared/setappentitlementownersresponse.py
@@ -571,6 +571,12 @@ generatedFiles:
   - docs/models/operations/c1apiuserv1userservicelistresponse.md
   - docs/models/shared/createappresponse.md
   - docs/models/shared/app.md
+  - docs/models/shared/directorystatus.md
+  - docs/models/shared/user3.md
+  - docs/models/shared/userprofile.md
+  - docs/models/shared/userstatus.md
+  - docs/models/shared/user.md
+  - docs/models/shared/userattributemappingsource.md
   - docs/models/shared/createapprequest.md
   - docs/models/shared/deleteappresponse.md
   - docs/models/shared/deleteapprequest.md
@@ -640,12 +646,6 @@ generatedFiles:
   - docs/models/shared/addappentitlementownerresponse.md
   - docs/models/shared/addappentitlementownerrequest.md
   - docs/models/shared/listappentitlementownersresponse.md
-  - docs/models/shared/directorystatus.md
-  - docs/models/shared/user3.md
-  - docs/models/shared/userprofile.md
-  - docs/models/shared/userstatus.md
-  - docs/models/shared/user.md
-  - docs/models/shared/userattributemappingsource.md
   - docs/models/shared/removeappentitlementownerresponse.md
   - docs/models/shared/removeappentitlementownerrequest.md
   - docs/models/shared/setappentitlementownersresponse.md

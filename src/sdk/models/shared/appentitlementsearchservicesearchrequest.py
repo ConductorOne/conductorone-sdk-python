@@ -41,7 +41,7 @@ class AppEntitlementSearchServiceSearchRequest:
     resource_ids: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('resourceIds') }})
     r"""Search for app entitlements that belongs to these resources."""
     resource_type_ids: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('resourceTypeIds') }})
-    r"""Search for app entitlements that are for items on these resource types."""
+    r"""Search for app entitlements that are for items with resources types that have matching names. Example names are \\"group\\", \\"role\\", and \\"app\\"."""
     risk_level_ids: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('riskLevelIds') }})
     r"""Search for app entitlements with these risk levels."""
     
