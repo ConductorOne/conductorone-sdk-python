@@ -12,10 +12,10 @@ from typing import Optional
 @dataclasses.dataclass
 class AppResourceView:
     r"""The app resource view returns an app resource with paths for items in the expand mask filled in when this response is returned and a request expand mask has \\"*\\" or \\"app_id\\" or \\"resource_type_id\\"."""
-    app_path: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('appPath'), 'exclude': lambda f: f is None }})
-    r"""JSONPATH expression indicating the location of the App object in the array"""
     app_resource: Optional[AppResource] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('appResource'), 'exclude': lambda f: f is None }})
     r"""The app resource message is a single resource that can have entitlements."""
+    app_path: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('appPath'), 'exclude': lambda f: f is None }})
+    r"""JSONPATH expression indicating the location of the App object in the array"""
     parent_resource_path: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('parentResourcePath'), 'exclude': lambda f: f is None }})
     r"""JSONPATH expression indicating the location of the Parent Resource object in the array"""
     parent_resource_type_path: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('parentResourceTypePath'), 'exclude': lambda f: f is None }})

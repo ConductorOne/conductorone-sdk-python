@@ -20,10 +20,10 @@ class C1APIAppV1AppEntitlementsListRequest:
 class C1APIAppV1AppEntitlementsListResponse:
     content_type: str = dataclasses.field()
     r"""HTTP response content type for this operation"""
-    raw_response: requests_http.Response = dataclasses.field()
-    r"""Raw HTTP response; suitable for custom response parsing"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
+    raw_response: requests_http.Response = dataclasses.field()
+    r"""Raw HTTP response; suitable for custom response parsing"""
     list_app_entitlements_response: Optional[shared_listappentitlementsresponse.ListAppEntitlementsResponse] = dataclasses.field(default=None)
     r"""The ListAppEntitlementsResponse message contains a list of results and a nextPageToken if applicable."""
     

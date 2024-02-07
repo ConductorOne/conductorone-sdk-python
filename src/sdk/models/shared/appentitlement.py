@@ -24,6 +24,14 @@ class AppEntitlement:
       - durationUnset
       - durationGrant
     """
+    provision_policy: Optional[ProvisionPolicy] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('provisionerPolicy'), 'exclude': lambda f: f is None }})
+    r"""ProvisionPolicy is a oneOf that indicates how a provision step should be processed.
+
+    This message contains a oneof named typ. Only a single field of the following list may be set at a time:
+      - connector
+      - manual
+      - delegated
+    """
     alias: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('alias'), 'exclude': lambda f: f is None }})
     r"""The alias of the app entitlement used by Cone. Also exact-match queryable."""
     app_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('appId'), 'exclude': lambda f: f is None }})
@@ -54,14 +62,6 @@ class AppEntitlement:
     r"""The ID of the policy that will be used for grant tickets related to the app entitlement."""
     id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id'), 'exclude': lambda f: f is None }})
     r"""The unique ID for the App Entitlement."""
-    provision_policy: Optional[ProvisionPolicy] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('provisionerPolicy'), 'exclude': lambda f: f is None }})
-    r"""ProvisionPolicy is a oneOf that indicates how a provision step should be processed.
-
-    This message contains a oneof named typ. Only a single field of the following list may be set at a time:
-      - connector
-      - manual
-      - delegated
-    """
     revoke_policy_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('revokePolicyId'), 'exclude': lambda f: f is None }})
     r"""The ID of the policy that will be used for revoke tickets related to the app entitlement"""
     risk_level_value_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('riskLevelValueId'), 'exclude': lambda f: f is None }})
@@ -85,6 +85,14 @@ class AppEntitlementInput:
       - durationUnset
       - durationGrant
     """
+    provision_policy: Optional[ProvisionPolicy] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('provisionerPolicy'), 'exclude': lambda f: f is None }})
+    r"""ProvisionPolicy is a oneOf that indicates how a provision step should be processed.
+
+    This message contains a oneof named typ. Only a single field of the following list may be set at a time:
+      - connector
+      - manual
+      - delegated
+    """
     app_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('appId'), 'exclude': lambda f: f is None }})
     r"""The ID of the app that is associated with the app entitlement."""
     app_resource_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('appResourceId'), 'exclude': lambda f: f is None }})
@@ -107,14 +115,6 @@ class AppEntitlementInput:
     r"""The ID of the policy that will be used for emergency access grant tasks."""
     grant_policy_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('grantPolicyId'), 'exclude': lambda f: f is None }})
     r"""The ID of the policy that will be used for grant tickets related to the app entitlement."""
-    provision_policy: Optional[ProvisionPolicy] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('provisionerPolicy'), 'exclude': lambda f: f is None }})
-    r"""ProvisionPolicy is a oneOf that indicates how a provision step should be processed.
-
-    This message contains a oneof named typ. Only a single field of the following list may be set at a time:
-      - connector
-      - manual
-      - delegated
-    """
     revoke_policy_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('revokePolicyId'), 'exclude': lambda f: f is None }})
     r"""The ID of the policy that will be used for revoke tickets related to the app entitlement"""
     risk_level_value_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('riskLevelValueId'), 'exclude': lambda f: f is None }})

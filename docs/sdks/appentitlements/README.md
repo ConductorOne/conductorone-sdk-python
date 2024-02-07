@@ -253,6 +253,8 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIAppV1AppEntitlementsUpdateRequest(
+    app_id='string',
+    id='<ID>',
     update_app_entitlement_request=shared.UpdateAppEntitlementRequest(
         app_entitlement=shared.AppEntitlementInput(
             provision_policy=shared.ProvisionPolicy(
@@ -275,8 +277,6 @@ req = operations.C1APIAppV1AppEntitlementsUpdateRequest(
             ],
         ),
     ),
-    app_id='string',
-    id='<ID>',
 )
 
 res = s.app_entitlements.update(req)

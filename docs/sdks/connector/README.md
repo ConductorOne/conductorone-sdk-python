@@ -32,6 +32,7 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIAppV1ConnectorServiceCreateRequest(
+    app_id='string',
     connector_service_create_request=shared.ConnectorServiceCreateRequest(
         connector_expand_mask=shared.ConnectorExpandMask(
             paths=[
@@ -47,7 +48,6 @@ req = operations.C1APIAppV1ConnectorServiceCreateRequest(
             'string',
         ],
     ),
-    app_id='string',
 )
 
 res = s.connector.create(req)
@@ -91,6 +91,7 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIAppV1ConnectorServiceCreateDelegatedRequest(
+    app_id='string',
     connector_service_create_delegated_request=shared.ConnectorServiceCreateDelegatedRequest(
         connector_expand_mask=shared.ConnectorExpandMask(
             paths=[
@@ -101,7 +102,6 @@ req = operations.C1APIAppV1ConnectorServiceCreateDelegatedRequest(
             'string',
         ],
     ),
-    app_id='string',
 )
 
 res = s.connector.create_delegated(req)
@@ -145,9 +145,9 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIAppV1ConnectorServiceDeleteRequest(
-    connector_service_delete_request=shared.ConnectorServiceDeleteRequest(),
     app_id='string',
     id='<ID>',
+    connector_service_delete_request=shared.ConnectorServiceDeleteRequest(),
 )
 
 res = s.connector.delete(req)
@@ -326,10 +326,10 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIAppV1ConnectorServiceRevokeCredentialRequest(
-    connector_service_revoke_credential_request=shared.ConnectorServiceRevokeCredentialRequest(),
     app_id='string',
     connector_id='string',
     id='<ID>',
+    connector_service_revoke_credential_request=shared.ConnectorServiceRevokeCredentialRequest(),
 )
 
 res = s.connector.revoke_credential(req)
@@ -373,9 +373,9 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIAppV1ConnectorServiceRotateCredentialRequest(
-    connector_service_rotate_credential_request=shared.ConnectorServiceRotateCredentialRequest(),
     app_id='string',
     connector_id='string',
+    connector_service_rotate_credential_request=shared.ConnectorServiceRotateCredentialRequest(),
 )
 
 res = s.connector.rotate_credential(req)
@@ -420,6 +420,8 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIAppV1ConnectorServiceUpdateRequest(
+    app_id='string',
+    id='<ID>',
     connector_service_update_request=shared.ConnectorServiceUpdateRequest(
         connector=shared.ConnectorInput(
             connector_status=shared.ConnectorStatus(),
@@ -439,8 +441,6 @@ req = operations.C1APIAppV1ConnectorServiceUpdateRequest(
             ],
         ),
     ),
-    app_id='string',
-    id='<ID>',
 )
 
 res = s.connector.update(req)
@@ -485,6 +485,8 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIAppV1ConnectorServiceUpdateDelegatedRequest(
+    connector_app_id='string',
+    connector_id='string',
     connector_service_update_delegated_request=shared.ConnectorServiceUpdateDelegatedRequest(
         connector=shared.ConnectorInput(
             connector_status=shared.ConnectorStatus(),
@@ -504,8 +506,6 @@ req = operations.C1APIAppV1ConnectorServiceUpdateDelegatedRequest(
             ],
         ),
     ),
-    connector_app_id='string',
-    connector_id='string',
 )
 
 res = s.connector.update_delegated(req)

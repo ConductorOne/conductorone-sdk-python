@@ -23,9 +23,9 @@ class TaskActionsServiceCommentResponseExpanded:
 @dataclasses.dataclass
 class TaskActionsServiceCommentResponse:
     r"""Task actions service comment response returns the task view inluding the expanded array of items that are indicated by the expand mask on the request."""
-    expanded: Optional[List[TaskActionsServiceCommentResponseExpanded]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('expanded') }})
-    r"""List of serialized related objects."""
     task_view: Optional[TaskView] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('taskView'), 'exclude': lambda f: f is None }})
     r"""Contains a task and JSONPATH expressions that describe where in the expanded array related objects are located. This view can be used to display a fully-detailed dashboard of task information."""
+    expanded: Optional[List[TaskActionsServiceCommentResponseExpanded]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('expanded') }})
+    r"""List of serialized related objects."""
     
 

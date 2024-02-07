@@ -74,8 +74,8 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIDirectoryV1DirectoryServiceDeleteRequest(
-    directory_service_delete_request=shared.DirectoryServiceDeleteRequest(),
     app_id='string',
+    directory_service_delete_request=shared.DirectoryServiceDeleteRequest(),
 )
 
 res = s.directory.delete(req)

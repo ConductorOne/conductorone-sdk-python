@@ -18,12 +18,12 @@ class FacetCategory:
       - value
       - range
     """
-    display_name: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('displayName'), 'exclude': lambda f: f is None }})
-    r"""The display name of the category."""
     facet_range_item: Optional[FacetRangeItem] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('range') }})
     r"""The FacetRangeItem message."""
     facet_value_item: Optional[FacetValueItem] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('value') }})
     r"""The FacetValueItem message."""
+    display_name: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('displayName'), 'exclude': lambda f: f is None }})
+    r"""The display name of the category."""
     icon_url: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('iconUrl'), 'exclude': lambda f: f is None }})
     r"""An icon for the category."""
     param: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('param'), 'exclude': lambda f: f is None }})

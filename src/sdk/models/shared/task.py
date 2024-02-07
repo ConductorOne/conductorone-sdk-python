@@ -70,6 +70,16 @@ class TaskState(str, Enum):
 @dataclasses.dataclass
 class Task:
     r"""A fully-fleged task object. Includes its policy, references to external apps, its type, its processing history, and more."""
+    policy_instance: Optional[PolicyInstance] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('policy'), 'exclude': lambda f: f is None }})
+    r"""A policy instance is an object that contains a reference to the policy it was created from, the currently executing step, the next steps, and the history of previously completed steps."""
+    task_type: Optional[TaskType] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type'), 'exclude': lambda f: f is None }})
+    r"""Task Type provides configuration for the type of task: certify, grant, or revoke
+
+    This message contains a oneof named task_type. Only a single field of the following list may be set at a time:
+      - grant
+      - revoke
+      - certify
+    """
     actions: Optional[List[Actions]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('actions') }})
     r"""The actions that can be performed on the task by the current user."""
     analysis_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('analysisId'), 'exclude': lambda f: f is None }})
@@ -98,8 +108,6 @@ class Task:
     r"""A human-usable numeric ID of a task which can be included in place of the fully qualified task id in path parmeters (but not search queries)."""
     policy_generation_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('policyGenerationId'), 'exclude': lambda f: f is None }})
     r"""The policy generation id refers to the current policy's generation ID. This is changed when the policy is changed on a task."""
-    policy_instance: Optional[PolicyInstance] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('policy'), 'exclude': lambda f: f is None }})
-    r"""A policy instance is an object that contains a reference to the policy it was created from, the currently executing step, the next steps, and the history of previously completed steps."""
     processing: Optional[Processing] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('processing'), 'exclude': lambda f: f is None }})
     r"""The processing state of a task as defined by the `processing_enum`"""
     recommendation: Optional[Recommendation] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('recommendation'), 'exclude': lambda f: f is None }})
@@ -108,14 +116,6 @@ class Task:
     r"""The current state of the task as defined by the `state_enum`"""
     step_approver_ids: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('stepApproverIds') }})
     r"""An array of IDs belonging to Identity Users that are allowed to review this step in a task."""
-    task_type: Optional[TaskType] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type'), 'exclude': lambda f: f is None }})
-    r"""Task Type provides configuration for the type of task: certify, grant, or revoke
-
-    This message contains a oneof named task_type. Only a single field of the following list may be set at a time:
-      - grant
-      - revoke
-      - certify
-    """
     updated_at: Optional[datetime] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('updatedAt'), 'encoder': utils.datetimeisoformat(True), 'decoder': dateutil.parser.isoparse, 'exclude': lambda f: f is None }})
     user_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('userId'), 'exclude': lambda f: f is None }})
     r"""The ID of the user that is the target of this task. This may be empty if we're targeting a specific app user that has no known identity user."""

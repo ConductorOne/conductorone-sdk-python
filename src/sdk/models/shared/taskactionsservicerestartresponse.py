@@ -23,10 +23,10 @@ class TaskActionsServiceRestartResponseExpanded:
 @dataclasses.dataclass
 class TaskActionsServiceRestartResponse:
     r"""The TaskActionsServiceRestartResponse message."""
-    expanded: Optional[List[TaskActionsServiceRestartResponseExpanded]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('expanded') }})
-    r"""The expanded field."""
     task_view: Optional[TaskView] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('taskView'), 'exclude': lambda f: f is None }})
     r"""Contains a task and JSONPATH expressions that describe where in the expanded array related objects are located. This view can be used to display a fully-detailed dashboard of task information."""
+    expanded: Optional[List[TaskActionsServiceRestartResponseExpanded]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('expanded') }})
+    r"""The expanded field."""
     ticket_action_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('ticketActionId'), 'exclude': lambda f: f is None }})
     r"""The ticketActionId field."""
     

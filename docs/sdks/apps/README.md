@@ -73,8 +73,8 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIAppV1AppsDeleteRequest(
-    delete_app_request=shared.DeleteAppRequest(),
     id='<ID>',
+    delete_app_request=shared.DeleteAppRequest(),
 )
 
 res = s.apps.delete(req)
@@ -204,10 +204,10 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIAppV1AppsUpdateRequest(
+    id='<ID>',
     update_app_request=shared.UpdateAppRequest(
         app=shared.AppInput(),
     ),
-    id='<ID>',
 )
 
 res = s.apps.update(req)

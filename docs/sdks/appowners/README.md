@@ -26,9 +26,9 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIAppV1AppOwnersAddRequest(
-    add_app_owner_request=shared.AddAppOwnerRequest(),
     app_id='string',
     user_id='string',
+    add_app_owner_request=shared.AddAppOwnerRequest(),
 )
 
 res = s.app_owners.add(req)
@@ -116,9 +116,9 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIAppV1AppOwnersRemoveRequest(
-    remove_app_owner_request=shared.RemoveAppOwnerRequest(),
     app_id='string',
     user_id='string',
+    remove_app_owner_request=shared.RemoveAppOwnerRequest(),
 )
 
 res = s.app_owners.remove(req)
@@ -162,12 +162,12 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIAppV1AppOwnersSetRequest(
+    app_id='string',
     set_app_owners_request=shared.SetAppOwnersRequest(
         user_ids=[
             'string',
         ],
     ),
-    app_id='string',
 )
 
 res = s.app_owners.set(req)

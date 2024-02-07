@@ -4,16 +4,16 @@ management:
   docChecksum: ae7dfd3777581d6e7ded27bca7dc187d
   docVersion: 0.1.0-alpha
   speakeasyVersion: internal
-  generationVersion: 2.245.1
-  releaseVersion: 0.10.7
-  configChecksum: ee9f67fbf22ff7784f176aad80e4583c
+  generationVersion: 2.250.12
+  releaseVersion: 0.11.0
+  configChecksum: 1ba1f34f9db5dafdf9e960ee415b0f5a
   repoURL: https://github.com/ConductorOne/conductorone-sdk-python.git
   repoSubDirectory: .
   installationURL: https://github.com/ConductorOne/conductorone-sdk-python.git
 features:
   python:
     additionalProperties: 0.1.0
-    core: 4.4.3
+    core: 4.4.5
     globalSecurity: 2.83.2
     globalServerURLs: 2.82.1
     groups: 2.81.2

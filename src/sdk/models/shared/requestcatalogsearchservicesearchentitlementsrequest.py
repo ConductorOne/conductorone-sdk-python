@@ -20,10 +20,10 @@ class GrantedStatus(str, Enum):
 @dataclasses.dataclass
 class RequestCatalogSearchServiceSearchEntitlementsRequest:
     r"""The RequestCatalogSearchServiceSearchEntitlementsRequest searches entitlements, but only ones that are available to you through the open catalogs."""
-    app_display_name: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('appDisplayName'), 'exclude': lambda f: f is None }})
-    r"""Search entitlements that belong to this app name (exact match)."""
     app_entitlement_expand_mask: Optional[AppEntitlementExpandMask] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('expandMask'), 'exclude': lambda f: f is None }})
     r"""The app entitlement expand mask allows the user to get additional information when getting responses containing app entitlement views."""
+    app_display_name: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('appDisplayName'), 'exclude': lambda f: f is None }})
+    r"""Search entitlements that belong to this app name (exact match)."""
     entitlement_alias: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('entitlementAlias'), 'exclude': lambda f: f is None }})
     r"""Search for entitlements with this alias (exact match)."""
     granted_status: Optional[GrantedStatus] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('grantedStatus'), 'exclude': lambda f: f is None }})

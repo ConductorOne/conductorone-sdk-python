@@ -43,10 +43,6 @@ class PolicyStepInstance:
       - restarted
       - reassignedByError
     """
-    id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id'), 'exclude': lambda f: f is None }})
-    r"""The ID of the PolicyStepInstance. This is required by many action submission endpoints to indicate what step you're approving."""
-    policy_generation_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('policyGenerationId'), 'exclude': lambda f: f is None }})
-    r"""The policy generation id refers to the version of the policy that this step was created from."""
     provision_instance: Optional[ProvisionInstance] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('provision') }})
     r"""A provision instance describes the specific configuration of an executing provision policy step including actions taken and notification id.
 
@@ -60,6 +56,10 @@ class PolicyStepInstance:
     r"""This policy step indicates that a ticket should have a denied outcome. This is a terminal approval state and is used to explicitly define the end of approval steps.
      The instance is just a marker for it being copied into an active policy.
     """
+    id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id'), 'exclude': lambda f: f is None }})
+    r"""The ID of the PolicyStepInstance. This is required by many action submission endpoints to indicate what step you're approving."""
+    policy_generation_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('policyGenerationId'), 'exclude': lambda f: f is None }})
+    r"""The policy generation id refers to the version of the policy that this step was created from."""
     state: Optional[PolicyStepInstanceState] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('state'), 'exclude': lambda f: f is None }})
     r"""The state of the step, which is either active or done."""
     

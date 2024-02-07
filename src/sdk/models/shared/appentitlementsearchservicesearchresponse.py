@@ -24,10 +24,10 @@ class Expanded:
 @dataclasses.dataclass
 class AppEntitlementSearchServiceSearchResponse:
     r"""The AppEntitlementSearchServiceSearchResponse message."""
-    expanded: Optional[List[Expanded]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('expanded') }})
-    r"""List of related objects."""
     facets: Optional[Facets] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('facets'), 'exclude': lambda f: f is None }})
     r"""Indicates one value of a facet."""
+    expanded: Optional[List[Expanded]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('expanded') }})
+    r"""List of related objects."""
     list: Optional[List[AppEntitlementView]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('list') }})
     r"""List of app entitlement view objects."""
     next_page_token: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('nextPageToken'), 'exclude': lambda f: f is None }})

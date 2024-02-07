@@ -12,11 +12,11 @@ from typing import Optional
 @dataclasses.dataclass
 class TaskActionsServiceEscalateToEmergencyAccessRequest:
     r"""The TaskActionsServiceEscalateToEmergencyAccessRequest message."""
+    task_expand_mask: Optional[TaskExpandMask] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('expandMask'), 'exclude': lambda f: f is None }})
+    r"""The task expand mask is an array of strings that specifes the related objects the requester wishes to have returned when making a request where the expand mask is part of the input. Use '*' to view all possible responses."""
     comment: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('comment'), 'exclude': lambda f: f is None }})
     r"""The comment field."""
     policy_step_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('policyStepId'), 'exclude': lambda f: f is None }})
     r"""The policyStepId field."""
-    task_expand_mask: Optional[TaskExpandMask] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('expandMask'), 'exclude': lambda f: f is None }})
-    r"""The task expand mask is an array of strings that specifes the related objects the requester wishes to have returned when making a request where the expand mask is part of the input. Use '*' to view all possible responses."""
     
 

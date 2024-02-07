@@ -12,12 +12,12 @@ from typing import List, Optional
 @dataclasses.dataclass
 class AppEntitlementSearchServiceSearchRequest:
     r"""Search app entitlements by a variety of filters."""
+    app_entitlement_expand_mask: Optional[AppEntitlementExpandMask] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('expandMask'), 'exclude': lambda f: f is None }})
+    r"""The app entitlement expand mask allows the user to get additional information when getting responses containing app entitlement views."""
     access_review_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('accessReviewId'), 'exclude': lambda f: f is None }})
     r"""Search for app entitlements that are being reviewed as part of this access review campaign."""
     alias: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('alias'), 'exclude': lambda f: f is None }})
     r"""Search for app entitlements that have this alias (exact match)."""
-    app_entitlement_expand_mask: Optional[AppEntitlementExpandMask] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('expandMask'), 'exclude': lambda f: f is None }})
-    r"""The app entitlement expand mask allows the user to get additional information when getting responses containing app entitlement views."""
     app_ids: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('appIds') }})
     r"""Search for app entitlements contained in any of these apps."""
     app_user_ids: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('appUserIds') }})

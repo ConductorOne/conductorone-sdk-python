@@ -23,9 +23,9 @@ class TaskServiceGetResponseExpanded:
 @dataclasses.dataclass
 class TaskServiceGetResponse:
     r"""The TaskServiceGetResponse returns a task view which has a task including JSONPATHs to the expanded items in the expanded array."""
-    expanded: Optional[List[TaskServiceGetResponseExpanded]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('expanded') }})
-    r"""List of serialized related objects."""
     task_view: Optional[TaskView] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('taskView'), 'exclude': lambda f: f is None }})
     r"""Contains a task and JSONPATH expressions that describe where in the expanded array related objects are located. This view can be used to display a fully-detailed dashboard of task information."""
+    expanded: Optional[List[TaskServiceGetResponseExpanded]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('expanded') }})
+    r"""List of serialized related objects."""
     
 

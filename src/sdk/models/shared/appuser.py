@@ -28,10 +28,10 @@ class Three:
 @dataclasses.dataclass
 class AppUser:
     r"""Application User that represents an account in the application."""
-    app_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('appId'), 'exclude': lambda f: f is None }})
-    r"""The ID of the application."""
     app_user_status: Optional[AppUserStatus] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status'), 'exclude': lambda f: f is None }})
     r"""The satus of the applicaiton user."""
+    app_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('appId'), 'exclude': lambda f: f is None }})
+    r"""The ID of the application."""
     app_user_type: Optional[AppUserType] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('appUserType'), 'exclude': lambda f: f is None }})
     r"""The appplication user type. Type can be user, system or service."""
     created_at: Optional[datetime] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('createdAt'), 'encoder': utils.datetimeisoformat(True), 'decoder': dateutil.parser.isoparse, 'exclude': lambda f: f is None }})

@@ -140,8 +140,8 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIPolicyV1PoliciesDeleteRequest(
-    delete_policy_request=shared.DeletePolicyRequest(),
     id='<ID>',
+    delete_policy_request=shared.DeletePolicyRequest(),
 )
 
 res = s.policies.delete(req)
@@ -271,6 +271,7 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIPolicyV1PoliciesUpdateRequest(
+    id='<ID>',
     update_policy_request=shared.UpdatePolicyRequest(
         policy=shared.PolicyInput(
             policy_steps={
@@ -348,7 +349,6 @@ req = operations.C1APIPolicyV1PoliciesUpdateRequest(
             ],
         ),
     ),
-    id='<ID>',
 )
 
 res = s.policies.update(req)

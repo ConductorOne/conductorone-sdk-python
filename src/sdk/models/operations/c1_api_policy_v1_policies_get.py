@@ -18,10 +18,10 @@ class C1APIPolicyV1PoliciesGetRequest:
 class C1APIPolicyV1PoliciesGetResponse:
     content_type: str = dataclasses.field()
     r"""HTTP response content type for this operation"""
-    raw_response: requests_http.Response = dataclasses.field()
-    r"""Raw HTTP response; suitable for custom response parsing"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
+    raw_response: requests_http.Response = dataclasses.field()
+    r"""Raw HTTP response; suitable for custom response parsing"""
     get_policy_response: Optional[shared_getpolicyresponse.GetPolicyResponse] = dataclasses.field(default=None)
     r"""The GetPolicyResponse message contains the policy object."""
     

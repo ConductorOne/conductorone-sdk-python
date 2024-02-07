@@ -26,9 +26,9 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIAppV1AppEntitlementOwnersAddRequest(
-    add_app_entitlement_owner_request=shared.AddAppEntitlementOwnerRequest(),
     app_id='string',
     entitlement_id='string',
+    add_app_entitlement_owner_request=shared.AddAppEntitlementOwnerRequest(),
 )
 
 res = s.app_entitlement_owners.add(req)
@@ -117,10 +117,10 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIAppV1AppEntitlementOwnersRemoveRequest(
-    remove_app_entitlement_owner_request=shared.RemoveAppEntitlementOwnerRequest(),
     app_id='string',
     entitlement_id='string',
     user_id='string',
+    remove_app_entitlement_owner_request=shared.RemoveAppEntitlementOwnerRequest(),
 )
 
 res = s.app_entitlement_owners.remove(req)
@@ -164,13 +164,13 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIAppV1AppEntitlementOwnersSetRequest(
+    app_id='string',
+    entitlement_id='string',
     set_app_entitlement_owners_request=shared.SetAppEntitlementOwnersRequest(
         user_ids=[
             'string',
         ],
     ),
-    app_id='string',
-    entitlement_id='string',
 )
 
 res = s.app_entitlement_owners.set(req)

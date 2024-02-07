@@ -111,6 +111,7 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIIamV1RolesUpdateRequest(
+    role_id='string',
     update_role_request=shared.UpdateRoleRequest(
         role=shared.RoleInput(
             permissions=[
@@ -121,7 +122,6 @@ req = operations.C1APIIamV1RolesUpdateRequest(
             ],
         ),
     ),
-    role_id='string',
 )
 
 res = s.roles.update(req)

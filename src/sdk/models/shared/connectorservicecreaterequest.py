@@ -23,12 +23,12 @@ class ConnectorServiceCreateRequestConfig:
 @dataclasses.dataclass
 class ConnectorServiceCreateRequest:
     r"""The ConnectorServiceCreateRequest message."""
+    connector_expand_mask: Optional[ConnectorExpandMask] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('expandMask'), 'exclude': lambda f: f is None }})
+    r"""The ConnectorExpandMask is used to expand related objects on a connector."""
     catalog_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('catalogId'), 'exclude': lambda f: f is None }})
     r"""The catalogId field."""
     config: Optional[ConnectorServiceCreateRequestConfig] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('config'), 'exclude': lambda f: f is None }})
     r"""Contains an arbitrary serialized message along with a @type that describes the type of the serialized message."""
-    connector_expand_mask: Optional[ConnectorExpandMask] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('expandMask'), 'exclude': lambda f: f is None }})
-    r"""The ConnectorExpandMask is used to expand related objects on a connector."""
     description: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('description'), 'exclude': lambda f: f is None }})
     r"""The description field."""
     user_ids: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('userIds') }})

@@ -68,10 +68,10 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIAppV1AppUsageControlsServiceUpdateRequest(
+    app_id='string',
     update_app_usage_controls_request=shared.UpdateAppUsageControlsRequest(
         app_usage_controls=shared.AppUsageControls(),
     ),
-    app_id='string',
 )
 
 res = s.app_usage_controls.update(req)
