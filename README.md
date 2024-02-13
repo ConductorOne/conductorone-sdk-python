@@ -245,7 +245,7 @@ Handling errors in this SDK should largely match your expectations.  All operati
 
 ```python
 import sdk
-from sdk.models import shared
+from sdk.models import errors, shared
 
 s = sdk.SDK(
     security=shared.Security(
@@ -254,17 +254,13 @@ s = sdk.SDK(
     ),
 )
 
-req = shared.CreateAppRequest(
-    owners=[
-        'string',
-    ],
-)
+req = shared.CreateAppRequest()
 
 res = None
 try:
     res = s.apps.create(req)
 except errors.SDKError as e:
-    print(e)  # handle exception
+    # handle exception
     raise(e)
 
 if res.create_app_response is not None:
@@ -300,11 +296,7 @@ s = sdk.SDK(
     ),
 )
 
-req = shared.CreateAppRequest(
-    owners=[
-        'string',
-    ],
-)
+req = shared.CreateAppRequest()
 
 res = s.apps.create(req)
 
@@ -333,11 +325,7 @@ s = sdk.SDK(
     ),
 )
 
-req = shared.CreateAppRequest(
-    owners=[
-        'string',
-    ],
-)
+req = shared.CreateAppRequest()
 
 res = s.apps.create(req)
 
@@ -391,11 +379,7 @@ s = sdk.SDK(
     ),
 )
 
-req = shared.CreateAppRequest(
-    owners=[
-        'string',
-    ],
-)
+req = shared.CreateAppRequest()
 
 res = s.apps.create(req)
 

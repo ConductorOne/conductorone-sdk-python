@@ -22,13 +22,7 @@ s = sdk.SDK(
     ),
 )
 
-req = shared.RequestCatalogSearchServiceSearchEntitlementsRequest(
-    app_entitlement_expand_mask=shared.AppEntitlementExpandMask(
-        paths=[
-            'string',
-        ],
-    ),
-)
+req = shared.RequestCatalogSearchServiceSearchEntitlementsRequest()
 
 res = s.request_catalog_search.search_entitlements(req)
 

@@ -12,7 +12,6 @@ Search tasks based on filters specified in the request body.
 ### Example Usage
 
 ```python
-import dateutil.parser
 import sdk
 from sdk.models import shared
 
@@ -23,77 +22,7 @@ s = sdk.SDK(
     ),
 )
 
-req = shared.TaskSearchRequest(
-    task_expand_mask=shared.TaskExpandMask(
-        paths=[
-            'string',
-        ],
-    ),
-    access_review_ids=[
-        'string',
-    ],
-    account_owner_ids=[
-        'string',
-    ],
-    app_entitlement_ids=[
-        'string',
-    ],
-    app_resource_ids=[
-        'string',
-    ],
-    app_resource_type_ids=[
-        'string',
-    ],
-    app_user_subject_ids=[
-        'string',
-    ],
-    application_ids=[
-        'string',
-    ],
-    assignees_in_ids=[
-        'string',
-    ],
-    exclude_app_entitlement_ids=[
-        'string',
-    ],
-    exclude_ids=[
-        'string',
-    ],
-    my_work_user_ids=[
-        'string',
-    ],
-    opener_ids=[
-        'string',
-    ],
-    previously_acted_on_ids=[
-        'string',
-    ],
-    refs=[
-        shared.TaskRef(),
-    ],
-    subject_ids=[
-        'string',
-    ],
-    task_states=[
-        shared.TaskStates.TASK_STATE_UNSPECIFIED,
-    ],
-    task_types=[
-        shared.TaskTypeInput(
-            task_type_certify=shared.TaskTypeCertifyInput(),
-            task_type_grant=shared.TaskTypeGrantInput(
-                task_grant_source=shared.TaskGrantSource(),
-            ),
-            task_type_revoke=shared.TaskTypeRevokeInput(
-                task_revoke_source=shared.TaskRevokeSource(
-                    task_revoke_source_expired=shared.TaskRevokeSourceExpired(),
-                    task_revoke_source_non_usage=shared.TaskRevokeSourceNonUsage(),
-                    task_revoke_source_request=shared.TaskRevokeSourceRequest(),
-                    task_revoke_source_review=shared.TaskRevokeSourceReview(),
-                ),
-            ),
-        ),
-    ],
-)
+req = shared.TaskSearchRequest()
 
 res = s.task_search.search(req)
 

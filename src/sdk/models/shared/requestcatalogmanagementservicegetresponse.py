@@ -12,6 +12,7 @@ from typing import Any, Dict, List, Optional
 @dataclasses.dataclass
 class RequestCatalogManagementServiceGetResponseExpanded:
     r"""Contains an arbitrary serialized message along with a @type that describes the type of the serialized message."""
+    UNSET='__SPEAKEASY_UNSET__'
     at_type: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('@type'), 'exclude': lambda f: f is None }})
     r"""The type of the serialized message."""
     additional_properties: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'exclude': lambda f: f is None }})
@@ -23,9 +24,10 @@ class RequestCatalogManagementServiceGetResponseExpanded:
 @dataclasses.dataclass
 class RequestCatalogManagementServiceGetResponse:
     r"""The request catalog management service get response returns a request catalog view with the expanded items in the expanded array indicated by the expand mask in the request."""
+    UNSET='__SPEAKEASY_UNSET__'
     request_catalog_view: Optional[RequestCatalogView] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('requestCatalogView'), 'exclude': lambda f: f is None }})
     r"""The request catalog view contains the serialized request catalog and paths to objects referenced by the request catalog."""
-    expanded: Optional[List[RequestCatalogManagementServiceGetResponseExpanded]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('expanded') }})
+    expanded: Optional[List[RequestCatalogManagementServiceGetResponseExpanded]] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('expanded'), 'exclude': lambda f: f is RequestCatalogManagementServiceGetResponse.UNSET }})
     r"""List of serialized related objects."""
     
 

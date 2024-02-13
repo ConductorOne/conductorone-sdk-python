@@ -22,26 +22,7 @@ s = sdk.SDK(
     ),
 )
 
-req = shared.SearchAppResourceTypesRequest(
-    app_ids=[
-        'string',
-    ],
-    app_user_ids=[
-        'string',
-    ],
-    exclude_resource_type_ids=[
-        'string',
-    ],
-    exclude_resource_type_trait_ids=[
-        'string',
-    ],
-    resource_type_ids=[
-        'string',
-    ],
-    resource_type_trait_ids=[
-        'string',
-    ],
-)
+req = shared.SearchAppResourceTypesRequest()
 
 res = s.app_resource_search.search_app_resource_types(req)
 

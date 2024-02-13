@@ -25,13 +25,7 @@ s = sdk.SDK(
     ),
 )
 
-req = shared.DirectoryServiceCreateRequest(
-    directory_expand_mask=shared.DirectoryExpandMask(
-        paths=[
-            'string',
-        ],
-    ),
-)
+req = shared.DirectoryServiceCreateRequest()
 
 res = s.directory.create(req)
 
@@ -75,7 +69,6 @@ s = sdk.SDK(
 
 req = operations.C1APIDirectoryV1DirectoryServiceDeleteRequest(
     app_id='string',
-    directory_service_delete_request=shared.DirectoryServiceDeleteRequest(),
 )
 
 res = s.directory.delete(req)

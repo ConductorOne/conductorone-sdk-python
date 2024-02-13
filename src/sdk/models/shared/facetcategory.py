@@ -18,9 +18,10 @@ class FacetCategory:
       - value
       - range
     """
-    facet_range_item: Optional[FacetRangeItem] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('range') }})
+    UNSET='__SPEAKEASY_UNSET__'
+    facet_range_item: Optional[FacetRangeItem] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('range'), 'exclude': lambda f: f is FacetCategory.UNSET }})
     r"""The FacetRangeItem message."""
-    facet_value_item: Optional[FacetValueItem] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('value') }})
+    facet_value_item: Optional[FacetValueItem] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('value'), 'exclude': lambda f: f is FacetCategory.UNSET }})
     r"""The FacetValueItem message."""
     display_name: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('displayName'), 'exclude': lambda f: f is None }})
     r"""The display name of the category."""

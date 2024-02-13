@@ -24,7 +24,6 @@ s = sdk.SDK(
 
 req = operations.C1APIAppV1AppReportActionServiceGenerateReportRequest(
     app_id='string',
-    app_actions_service_generate_report_request=shared.AppActionsServiceGenerateReportRequest(),
 )
 
 res = s.app_report_action.generate_report(req)

@@ -33,15 +33,16 @@ class ProvisionInstance:
       - errored
       - reassignedByError
     """
-    cancelled_action: Optional[CancelledAction] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('cancelled') }})
+    UNSET='__SPEAKEASY_UNSET__'
+    cancelled_action: Optional[CancelledAction] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('cancelled'), 'exclude': lambda f: f is ProvisionInstance.UNSET }})
     r"""The outcome of a provision instance that is cancelled."""
-    completed_action: Optional[CompletedAction] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('completed') }})
+    completed_action: Optional[CompletedAction] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('completed'), 'exclude': lambda f: f is ProvisionInstance.UNSET }})
     r"""The outcome of a provision instance that has been completed succesfully."""
-    errored_action: Optional[ErroredAction] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('errored') }})
+    errored_action: Optional[ErroredAction] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('errored'), 'exclude': lambda f: f is ProvisionInstance.UNSET }})
     r"""The outcome of a provision instance that has errored."""
-    provision: Optional[Provision] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('provision') }})
+    provision: Optional[Provision] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('provision'), 'exclude': lambda f: f is ProvisionInstance.UNSET }})
     r"""The provision step references a provision policy for this step."""
-    reassigned_by_error_action: Optional[ReassignedByErrorAction] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('reassignedByError') }})
+    reassigned_by_error_action: Optional[ReassignedByErrorAction] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('reassignedByError'), 'exclude': lambda f: f is ProvisionInstance.UNSET }})
     r"""The ReassignedByErrorAction object describes the outcome of a policy step that has been reassigned because it had an error provisioning."""
     notification_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('notificationId'), 'exclude': lambda f: f is None }})
     r"""This indicates the notification id for this step."""

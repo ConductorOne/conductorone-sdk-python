@@ -11,6 +11,7 @@ from typing import List, Optional
 @dataclasses.dataclass
 class AppGroupApproval:
     r"""The AppGroupApproval object provides the configuration for setting a group as the approvers of an approval policy step."""
+    UNSET='__SPEAKEASY_UNSET__'
     allow_self_approval: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('allowSelfApproval'), 'exclude': lambda f: f is None }})
     r"""Configuration to allow self approval if the target user is a member of the group during this step."""
     app_group_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('appGroupId'), 'exclude': lambda f: f is None }})
@@ -19,7 +20,7 @@ class AppGroupApproval:
     r"""The ID of the app that contains the group specified for approval."""
     fallback: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('fallback'), 'exclude': lambda f: f is None }})
     r"""Configuration to allow a fallback if the group is empty."""
-    fallback_user_ids: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('fallbackUserIds') }})
+    fallback_user_ids: Optional[List[str]] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('fallbackUserIds'), 'exclude': lambda f: f is AppGroupApproval.UNSET }})
     r"""Configuration to specific which users to fallback to if fallback is enabled and the group is empty."""
     
 

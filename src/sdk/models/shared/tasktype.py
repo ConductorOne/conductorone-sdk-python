@@ -20,11 +20,12 @@ class TaskType:
       - revoke
       - certify
     """
-    task_type_certify: Optional[TaskTypeCertify] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('certify') }})
+    UNSET='__SPEAKEASY_UNSET__'
+    task_type_certify: Optional[TaskTypeCertify] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('certify'), 'exclude': lambda f: f is TaskType.UNSET }})
     r"""The TaskTypeCertify message indicates that a task is a certify task and all related details."""
-    task_type_grant: Optional[TaskTypeGrant] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('grant') }})
+    task_type_grant: Optional[TaskTypeGrant] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('grant'), 'exclude': lambda f: f is TaskType.UNSET }})
     r"""The TaskTypeGrant message indicates that a task is a grant task and all related details."""
-    task_type_revoke: Optional[TaskTypeRevoke] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('revoke') }})
+    task_type_revoke: Optional[TaskTypeRevoke] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('revoke'), 'exclude': lambda f: f is TaskType.UNSET }})
     r"""The TaskTypeRevoke message indicates that a task is a revoke task and all related details."""
     
 

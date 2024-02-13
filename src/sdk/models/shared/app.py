@@ -14,11 +14,12 @@ from typing import List, Optional
 @dataclasses.dataclass
 class App:
     r"""The App object provides all of the details for an app, as well as some configuration."""
+    UNSET='__SPEAKEASY_UNSET__'
     app_account_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('appAccountId'), 'exclude': lambda f: f is None }})
     r"""The ID of the Account named by AccountName."""
     app_account_name: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('appAccountName'), 'exclude': lambda f: f is None }})
     r"""The AccountName of the app. For example, AWS is AccountID, Github is Org Name, and Okta is Okta Subdomain."""
-    app_owners: Optional[List[User]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('appOwners') }})
+    app_owners: Optional[List[User]] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('appOwners'), 'exclude': lambda f: f is App.UNSET }})
     r"""The owners of the app."""
     certify_policy_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('certifyPolicyId'), 'exclude': lambda f: f is None }})
     r"""The ID of the Certify Policy associated with this App."""
@@ -28,7 +29,7 @@ class App:
     r"""The app's description."""
     display_name: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('displayName'), 'exclude': lambda f: f is None }})
     r"""The app's display name."""
-    field_mask: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('fieldMask') }})
+    field_mask: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('fieldMask'), 'exclude': lambda f: f is App.UNSET }})
     grant_policy_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('grantPolicyId'), 'exclude': lambda f: f is None }})
     r"""The ID of the Grant Policy associated with this App."""
     icon_url: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('iconUrl'), 'exclude': lambda f: f is None }})

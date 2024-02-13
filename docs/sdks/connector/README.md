@@ -33,21 +33,6 @@ s = sdk.SDK(
 
 req = operations.C1APIAppV1ConnectorServiceCreateRequest(
     app_id='string',
-    connector_service_create_request=shared.ConnectorServiceCreateRequest(
-        connector_expand_mask=shared.ConnectorExpandMask(
-            paths=[
-                'string',
-            ],
-        ),
-        config=shared.ConnectorServiceCreateRequestConfig(
-            additional_properties={
-                'key': 'string',
-            },
-        ),
-        user_ids=[
-            'string',
-        ],
-    ),
 )
 
 res = s.connector.create(req)
@@ -92,16 +77,6 @@ s = sdk.SDK(
 
 req = operations.C1APIAppV1ConnectorServiceCreateDelegatedRequest(
     app_id='string',
-    connector_service_create_delegated_request=shared.ConnectorServiceCreateDelegatedRequest(
-        connector_expand_mask=shared.ConnectorExpandMask(
-            paths=[
-                'string',
-            ],
-        ),
-        user_ids=[
-            'string',
-        ],
-    ),
 )
 
 res = s.connector.create_delegated(req)
@@ -147,7 +122,6 @@ s = sdk.SDK(
 req = operations.C1APIAppV1ConnectorServiceDeleteRequest(
     app_id='string',
     id='<ID>',
-    connector_service_delete_request=shared.ConnectorServiceDeleteRequest(),
 )
 
 res = s.connector.delete(req)
@@ -329,7 +303,6 @@ req = operations.C1APIAppV1ConnectorServiceRevokeCredentialRequest(
     app_id='string',
     connector_id='string',
     id='<ID>',
-    connector_service_revoke_credential_request=shared.ConnectorServiceRevokeCredentialRequest(),
 )
 
 res = s.connector.revoke_credential(req)
@@ -375,7 +348,6 @@ s = sdk.SDK(
 req = operations.C1APIAppV1ConnectorServiceRotateCredentialRequest(
     app_id='string',
     connector_id='string',
-    connector_service_rotate_credential_request=shared.ConnectorServiceRotateCredentialRequest(),
 )
 
 res = s.connector.rotate_credential(req)
@@ -408,7 +380,6 @@ Update a connector.
 ### Example Usage
 
 ```python
-import dateutil.parser
 import sdk
 from sdk.models import operations, shared
 
@@ -422,25 +393,6 @@ s = sdk.SDK(
 req = operations.C1APIAppV1ConnectorServiceUpdateRequest(
     app_id='string',
     id='<ID>',
-    connector_service_update_request=shared.ConnectorServiceUpdateRequest(
-        connector=shared.ConnectorInput(
-            connector_status=shared.ConnectorStatus(),
-            o_auth2_authorized_as=shared.OAuth2AuthorizedAsInput(),
-            config=shared.Config(
-                additional_properties={
-                    'key': 'string',
-                },
-            ),
-            user_ids=[
-                'string',
-            ],
-        ),
-        connector_expand_mask=shared.ConnectorExpandMask(
-            paths=[
-                'string',
-            ],
-        ),
-    ),
 )
 
 res = s.connector.update(req)
@@ -473,7 +425,6 @@ Update a delegated connector.
 ### Example Usage
 
 ```python
-import dateutil.parser
 import sdk
 from sdk.models import operations, shared
 
@@ -487,25 +438,6 @@ s = sdk.SDK(
 req = operations.C1APIAppV1ConnectorServiceUpdateDelegatedRequest(
     connector_app_id='string',
     connector_id='string',
-    connector_service_update_delegated_request=shared.ConnectorServiceUpdateDelegatedRequest(
-        connector=shared.ConnectorInput(
-            connector_status=shared.ConnectorStatus(),
-            o_auth2_authorized_as=shared.OAuth2AuthorizedAsInput(),
-            config=shared.Config(
-                additional_properties={
-                    'key': 'string',
-                },
-            ),
-            user_ids=[
-                'string',
-            ],
-        ),
-        connector_expand_mask=shared.ConnectorExpandMask(
-            paths=[
-                'string',
-            ],
-        ),
-    ),
 )
 
 res = s.connector.update_delegated(req)

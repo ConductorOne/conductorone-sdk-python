@@ -11,11 +11,12 @@ from typing import List, Optional
 @dataclasses.dataclass
 class SearchAppsRequest:
     r"""Search Apps by a few properties."""
-    app_ids: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('appIds') }})
+    UNSET='__SPEAKEASY_UNSET__'
+    app_ids: Optional[List[str]] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('appIds'), 'exclude': lambda f: f is SearchAppsRequest.UNSET }})
     r"""A list of app IDs to restrict the search to."""
     display_name: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('displayName'), 'exclude': lambda f: f is None }})
     r"""Search for apps with a case insensitive match on the display name."""
-    exclude_app_ids: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('excludeAppIds') }})
+    exclude_app_ids: Optional[List[str]] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('excludeAppIds'), 'exclude': lambda f: f is SearchAppsRequest.UNSET }})
     r"""A list of app IDs to remove from the results."""
     only_directories: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('onlyDirectories'), 'exclude': lambda f: f is None }})
     r"""Only return apps which are directories"""

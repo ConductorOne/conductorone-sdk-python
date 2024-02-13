@@ -22,14 +22,7 @@ s = sdk.SDK(
     ),
 )
 
-req = shared.SearchAppsRequest(
-    app_ids=[
-        'string',
-    ],
-    exclude_app_ids=[
-        'string',
-    ],
-)
+req = shared.SearchAppsRequest()
 
 res = s.app_search.search(req)
 

@@ -22,14 +22,7 @@ s = sdk.SDK(
     ),
 )
 
-req = shared.SearchPoliciesRequest(
-    policy_types=[
-        shared.PolicyTypes.POLICY_TYPE_GRANT,
-    ],
-    refs=[
-        shared.PolicyRef(),
-    ],
-)
+req = shared.SearchPoliciesRequest()
 
 res = s.policy_search.search(req)
 

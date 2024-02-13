@@ -34,11 +34,6 @@ s = sdk.SDK(
 
 req = operations.C1APIRequestcatalogV1RequestCatalogManagementServiceAddAccessEntitlementsRequest(
     catalog_id='string',
-    request_catalog_management_service_add_access_entitlements_request=shared.RequestCatalogManagementServiceAddAccessEntitlementsRequest(
-        access_entitlements=[
-            shared.AppEntitlementRef(),
-        ],
-    ),
 )
 
 res = s.request_catalog_management.add_access_entitlements(req)
@@ -83,11 +78,6 @@ s = sdk.SDK(
 
 req = operations.C1APIRequestcatalogV1RequestCatalogManagementServiceAddAppEntitlementsRequest(
     catalog_id='string',
-    request_catalog_management_service_add_app_entitlements_request=shared.RequestCatalogManagementServiceAddAppEntitlementsRequest(
-        app_entitlements=[
-            shared.AppEntitlementRef(),
-        ],
-    ),
 )
 
 res = s.request_catalog_management.add_app_entitlements(req)
@@ -130,13 +120,7 @@ s = sdk.SDK(
     ),
 )
 
-req = shared.RequestCatalogManagementServiceCreateRequest(
-    request_catalog_expand_mask=shared.RequestCatalogExpandMask(
-        paths=[
-            'string',
-        ],
-    ),
-)
+req = shared.RequestCatalogManagementServiceCreateRequest()
 
 res = s.request_catalog_management.create(req)
 
@@ -180,7 +164,6 @@ s = sdk.SDK(
 
 req = operations.C1APIRequestcatalogV1RequestCatalogManagementServiceDeleteRequest(
     id='<ID>',
-    request_catalog_management_service_delete_request=shared.RequestCatalogManagementServiceDeleteRequest(),
 )
 
 res = s.request_catalog_management.delete(req)
@@ -392,11 +375,6 @@ s = sdk.SDK(
 
 req = operations.C1APIRequestcatalogV1RequestCatalogManagementServiceRemoveAccessEntitlementsRequest(
     catalog_id='string',
-    request_catalog_management_service_remove_access_entitlements_request=shared.RequestCatalogManagementServiceRemoveAccessEntitlementsRequest(
-        access_entitlements=[
-            shared.AppEntitlementRef(),
-        ],
-    ),
 )
 
 res = s.request_catalog_management.remove_access_entitlements(req)
@@ -441,11 +419,6 @@ s = sdk.SDK(
 
 req = operations.C1APIRequestcatalogV1RequestCatalogManagementServiceRemoveAppEntitlementsRequest(
     catalog_id='string',
-    request_catalog_management_service_remove_app_entitlements_request=shared.RequestCatalogManagementServiceRemoveAppEntitlementsRequest(
-        app_entitlements=[
-            shared.AppEntitlementRef(),
-        ],
-    ),
 )
 
 res = s.request_catalog_management.remove_app_entitlements(req)
@@ -490,35 +463,6 @@ s = sdk.SDK(
 
 req = operations.C1APIRequestcatalogV1RequestCatalogManagementServiceUpdateRequest(
     id='<ID>',
-    request_catalog_management_service_update_request=shared.RequestCatalogManagementServiceUpdateRequest(
-        request_catalog=shared.RequestCatalogInput(
-            access_entitlements=[
-                shared.AppEntitlementInput(
-                    provision_policy=shared.ProvisionPolicy(
-                        connector_provision=shared.ConnectorProvision(),
-                        delegated_provision=shared.DelegatedProvision(),
-                        manual_provision=shared.ManualProvision(
-                            user_ids=[
-                                'string',
-                            ],
-                        ),
-                    ),
-                    compliance_framework_value_ids=[
-                        'string',
-                    ],
-                    duration_unset=shared.DurationUnset(),
-                ),
-            ],
-            app_ids=[
-                'string',
-            ],
-        ),
-        request_catalog_expand_mask=shared.RequestCatalogExpandMask(
-            paths=[
-                'string',
-            ],
-        ),
-    ),
 )
 
 res = s.request_catalog_management.update(req)

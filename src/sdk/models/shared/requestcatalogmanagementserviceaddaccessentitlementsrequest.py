@@ -14,7 +14,8 @@ class RequestCatalogManagementServiceAddAccessEntitlementsRequest:
     r"""The RequestCatalogManagementServiceAddAccessEntitlementsRequest message is used to add access entitlements to a request
      catalog to determine which users can view the request catalog.
     """
-    access_entitlements: Optional[List[AppEntitlementRef]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('accessEntitlements') }})
+    UNSET='__SPEAKEASY_UNSET__'
+    access_entitlements: Optional[List[AppEntitlementRef]] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('accessEntitlements'), 'exclude': lambda f: f is RequestCatalogManagementServiceAddAccessEntitlementsRequest.UNSET }})
     r"""List of entitlements to add to the request catalog as access entitlements."""
     
 

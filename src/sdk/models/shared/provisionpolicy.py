@@ -20,11 +20,12 @@ class ProvisionPolicy:
       - manual
       - delegated
     """
-    connector_provision: Optional[ConnectorProvision] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('connector') }})
+    UNSET='__SPEAKEASY_UNSET__'
+    connector_provision: Optional[ConnectorProvision] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('connector'), 'exclude': lambda f: f is ProvisionPolicy.UNSET }})
     r"""Indicates that a connector should perform the provisioning. This object has no fields."""
-    delegated_provision: Optional[DelegatedProvision] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('delegated') }})
+    delegated_provision: Optional[DelegatedProvision] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('delegated'), 'exclude': lambda f: f is ProvisionPolicy.UNSET }})
     r"""This provision step indicates that we should delegate provisioning to the configuration of another app entitlement. This app entitlement does not have to be one from the same app, but MUST be configured as a proxy binding leading into this entitlement."""
-    manual_provision: Optional[ManualProvision] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('manual') }})
+    manual_provision: Optional[ManualProvision] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('manual'), 'exclude': lambda f: f is ProvisionPolicy.UNSET }})
     r"""Manual provisioning indicates that a human must intervene for the provisioning of this step."""
     
 

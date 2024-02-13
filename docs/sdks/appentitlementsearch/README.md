@@ -22,37 +22,7 @@ s = sdk.SDK(
     ),
 )
 
-req = shared.AppEntitlementSearchServiceSearchRequest(
-    app_entitlement_expand_mask=shared.AppEntitlementExpandMask(
-        paths=[
-            'string',
-        ],
-    ),
-    app_ids=[
-        'string',
-    ],
-    app_user_ids=[
-        'string',
-    ],
-    compliance_framework_ids=[
-        'string',
-    ],
-    exclude_app_ids=[
-        'string',
-    ],
-    exclude_app_user_ids=[
-        'string',
-    ],
-    resource_ids=[
-        'string',
-    ],
-    resource_type_ids=[
-        'string',
-    ],
-    risk_level_ids=[
-        'string',
-    ],
-)
+req = shared.AppEntitlementSearchServiceSearchRequest()
 
 res = s.app_entitlement_search.search(req)
 

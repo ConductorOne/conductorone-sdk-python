@@ -12,7 +12,8 @@ from typing import List, Optional
 @dataclasses.dataclass
 class ValidatePolicyCELResponse:
     r"""The ValidatePolicyCELResponse message."""
-    markers: Optional[List[Marker]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('markers') }})
+    UNSET='__SPEAKEASY_UNSET__'
+    markers: Optional[List[Marker]] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('markers'), 'exclude': lambda f: f is ValidatePolicyCELResponse.UNSET }})
     r"""The markers field."""
     
 

@@ -58,9 +58,7 @@ s = sdk.SDK(
     ),
 )
 
-req = shared.UpdateSessionSettingsRequest(
-    session_settings=shared.SessionSettings(),
-)
+req = shared.UpdateSessionSettingsRequest()
 
 res = s.session_settings.update(req)
 

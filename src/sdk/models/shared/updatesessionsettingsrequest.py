@@ -12,8 +12,9 @@ from typing import Optional
 @dataclasses.dataclass
 class UpdateSessionSettingsRequest:
     r"""The UpdateSessionSettingsRequest message."""
+    UNSET='__SPEAKEASY_UNSET__'
     session_settings: Optional[SessionSettings] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('sessionSettings'), 'exclude': lambda f: f is None }})
     r"""The SessionSettings message."""
-    update_mask: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('updateMask') }})
+    update_mask: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('updateMask'), 'exclude': lambda f: f is UpdateSessionSettingsRequest.UNSET }})
     
 

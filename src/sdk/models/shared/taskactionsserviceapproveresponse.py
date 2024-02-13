@@ -12,6 +12,7 @@ from typing import Any, Dict, List, Optional
 @dataclasses.dataclass
 class TaskActionsServiceApproveResponseExpanded:
     r"""Contains an arbitrary serialized message along with a @type that describes the type of the serialized message."""
+    UNSET='__SPEAKEASY_UNSET__'
     at_type: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('@type'), 'exclude': lambda f: f is None }})
     r"""The type of the serialized message."""
     additional_properties: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'exclude': lambda f: f is None }})
@@ -23,9 +24,10 @@ class TaskActionsServiceApproveResponseExpanded:
 @dataclasses.dataclass
 class TaskActionsServiceApproveResponse:
     r"""The TaskActionsServiceApproveResponse returns a task view with paths indicating the location of expanded items in the array."""
+    UNSET='__SPEAKEASY_UNSET__'
     task_view: Optional[TaskView] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('taskView'), 'exclude': lambda f: f is None }})
     r"""Contains a task and JSONPATH expressions that describe where in the expanded array related objects are located. This view can be used to display a fully-detailed dashboard of task information."""
-    expanded: Optional[List[TaskActionsServiceApproveResponseExpanded]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('expanded') }})
+    expanded: Optional[List[TaskActionsServiceApproveResponseExpanded]] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('expanded'), 'exclude': lambda f: f is TaskActionsServiceApproveResponse.UNSET }})
     r"""List of serialized related objects."""
     ticket_action_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('ticketActionId'), 'exclude': lambda f: f is None }})
     r"""The ID of the ticket (task) approve action created by this request."""

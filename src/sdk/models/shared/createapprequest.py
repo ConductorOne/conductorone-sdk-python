@@ -11,6 +11,7 @@ from typing import List, Optional
 @dataclasses.dataclass
 class CreateAppRequest:
     r"""The CreateAppRequest message is used to create a new app."""
+    UNSET='__SPEAKEASY_UNSET__'
     certify_policy_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('certifyPolicyId'), 'exclude': lambda f: f is None }})
     r"""Creates the app with this certify policy."""
     description: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('description'), 'exclude': lambda f: f is None }})
@@ -21,7 +22,7 @@ class CreateAppRequest:
     r"""Creates the app with this grant policy."""
     monthly_cost_usd: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('monthlyCostUsd'), 'exclude': lambda f: f is None }})
     r"""Creates the app with this monthly cost per seat."""
-    owners: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('owners') }})
+    owners: Optional[List[str]] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('owners'), 'exclude': lambda f: f is CreateAppRequest.UNSET }})
     r"""Creates the app with this array of owners."""
     revoke_policy_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('revokePolicyId'), 'exclude': lambda f: f is None }})
     r"""Creates the app with this revoke policy."""

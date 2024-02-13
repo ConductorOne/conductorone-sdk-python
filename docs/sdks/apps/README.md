@@ -26,11 +26,7 @@ s = sdk.SDK(
     ),
 )
 
-req = shared.CreateAppRequest(
-    owners=[
-        'string',
-    ],
-)
+req = shared.CreateAppRequest()
 
 res = s.apps.create(req)
 
@@ -74,7 +70,6 @@ s = sdk.SDK(
 
 req = operations.C1APIAppV1AppsDeleteRequest(
     id='<ID>',
-    delete_app_request=shared.DeleteAppRequest(),
 )
 
 res = s.apps.delete(req)
@@ -205,9 +200,6 @@ s = sdk.SDK(
 
 req = operations.C1APIAppV1AppsUpdateRequest(
     id='<ID>',
-    update_app_request=shared.UpdateAppRequest(
-        app=shared.AppInput(),
-    ),
 )
 
 res = s.apps.update(req)

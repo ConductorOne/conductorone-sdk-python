@@ -12,6 +12,7 @@ from typing import Any, Dict, List, Optional
 @dataclasses.dataclass
 class ConnectorServiceGetResponseExpanded:
     r"""Contains an arbitrary serialized message along with a @type that describes the type of the serialized message."""
+    UNSET='__SPEAKEASY_UNSET__'
     at_type: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('@type'), 'exclude': lambda f: f is None }})
     r"""The type of the serialized message."""
     additional_properties: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'exclude': lambda f: f is None }})
@@ -23,9 +24,10 @@ class ConnectorServiceGetResponseExpanded:
 @dataclasses.dataclass
 class ConnectorServiceGetResponse:
     r"""The ConnectorServiceGetResponse message contains the connectorView, and an expand mask."""
+    UNSET='__SPEAKEASY_UNSET__'
     connector_view: Optional[ConnectorView] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('connectorView'), 'exclude': lambda f: f is None }})
     r"""The ConnectorView object provides a connector response object, as well as JSONPATHs to related objects provided by expanders."""
-    expanded: Optional[List[ConnectorServiceGetResponseExpanded]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('expanded') }})
+    expanded: Optional[List[ConnectorServiceGetResponseExpanded]] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('expanded'), 'exclude': lambda f: f is ConnectorServiceGetResponse.UNSET }})
     r"""The array of expanded items indicated by the request."""
     
 

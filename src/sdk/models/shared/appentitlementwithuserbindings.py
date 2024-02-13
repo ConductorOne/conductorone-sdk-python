@@ -13,9 +13,10 @@ from typing import List, Optional
 @dataclasses.dataclass
 class AppEntitlementWithUserBindings:
     r"""The AppEntitlementWithUserBindings message represents an app entitlement and its associated user bindings."""
+    UNSET='__SPEAKEASY_UNSET__'
     app_entitlement_view: Optional[AppEntitlementView] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('entitlement'), 'exclude': lambda f: f is None }})
     r"""The app entitlement view contains the serialized app entitlement and paths to objects referenced by the app entitlement."""
-    app_entitlement_user_bindings: Optional[List[AppEntitlementUserBinding]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('appEntitlementUserBindings') }})
+    app_entitlement_user_bindings: Optional[List[AppEntitlementUserBinding]] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('appEntitlementUserBindings'), 'exclude': lambda f: f is AppEntitlementWithUserBindings.UNSET }})
     r"""An array of AppEntitlementUserBinding objects which represent the relationships that give app users access to the specific app entitlement."""
     
 

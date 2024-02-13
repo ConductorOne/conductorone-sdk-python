@@ -12,6 +12,7 @@ from typing import Any, Dict, List, Optional
 @dataclasses.dataclass
 class DirectoryServiceGetResponseExpanded:
     r"""Contains an arbitrary serialized message along with a @type that describes the type of the serialized message."""
+    UNSET='__SPEAKEASY_UNSET__'
     at_type: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('@type'), 'exclude': lambda f: f is None }})
     r"""The type of the serialized message."""
     additional_properties: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'exclude': lambda f: f is None }})
@@ -25,9 +26,10 @@ class DirectoryServiceGetResponse:
     r"""The Directory Service Get Response returns a directory view with a directory and JSONPATHs indicating the
      location in the expanded array that items are expanded as indicated by the expand mask in the request.
     """
+    UNSET='__SPEAKEASY_UNSET__'
     directory_view: Optional[DirectoryView] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('directoryView'), 'exclude': lambda f: f is None }})
     r"""The directory view contains a directory and an app_path which is a JSONPATH set to the location in the expand mask that the expanded app will live if requested by the expander."""
-    expanded: Optional[List[DirectoryServiceGetResponseExpanded]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('expanded') }})
+    expanded: Optional[List[DirectoryServiceGetResponseExpanded]] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('expanded'), 'exclude': lambda f: f is DirectoryServiceGetResponse.UNSET }})
     r"""List of serialized related objects."""
     
 

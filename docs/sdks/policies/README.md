@@ -26,78 +26,7 @@ s = sdk.SDK(
     ),
 )
 
-req = shared.CreatePolicyRequest(
-    policy_steps={
-        'key': shared.PolicySteps(
-            steps=[
-                shared.PolicyStep(
-                    accept=shared.Accept(),
-                    approval=shared.Approval(
-                        app_group_approval=shared.AppGroupApproval(
-                            fallback_user_ids=[
-                                'string',
-                            ],
-                        ),
-                        app_owner_approval=shared.AppOwnerApproval(),
-                        entitlement_owner_approval=shared.EntitlementOwnerApproval(
-                            fallback_user_ids=[
-                                'string',
-                            ],
-                        ),
-                        expression_approval=shared.ExpressionApproval(
-                            assigned_user_ids=[
-                                'string',
-                            ],
-                            expressions=[
-                                'string',
-                            ],
-                            fallback_user_ids=[
-                                'string',
-                            ],
-                        ),
-                        manager_approval=shared.ManagerApproval(
-                            assigned_user_ids=[
-                                'string',
-                            ],
-                            fallback_user_ids=[
-                                'string',
-                            ],
-                        ),
-                        self_approval=shared.SelfApproval(
-                            assigned_user_ids=[
-                                'string',
-                            ],
-                            fallback_user_ids=[
-                                'string',
-                            ],
-                        ),
-                        user_approval=shared.UserApproval(
-                            user_ids=[
-                                'string',
-                            ],
-                        ),
-                    ),
-                    provision=shared.Provision(
-                        provision_policy=shared.ProvisionPolicy(
-                            connector_provision=shared.ConnectorProvision(),
-                            delegated_provision=shared.DelegatedProvision(),
-                            manual_provision=shared.ManualProvision(
-                                user_ids=[
-                                    'string',
-                                ],
-                            ),
-                        ),
-                        provision_target=shared.ProvisionTarget(),
-                    ),
-                    reject=shared.Reject(),
-                ),
-            ],
-        ),
-    },
-    post_actions=[
-        shared.PolicyPostActions(),
-    ],
-)
+req = shared.CreatePolicyRequest()
 
 res = s.policies.create(req)
 
@@ -141,7 +70,6 @@ s = sdk.SDK(
 
 req = operations.C1APIPolicyV1PoliciesDeleteRequest(
     id='<ID>',
-    delete_policy_request=shared.DeletePolicyRequest(),
 )
 
 res = s.policies.delete(req)
@@ -272,83 +200,6 @@ s = sdk.SDK(
 
 req = operations.C1APIPolicyV1PoliciesUpdateRequest(
     id='<ID>',
-    update_policy_request=shared.UpdatePolicyRequest(
-        policy=shared.PolicyInput(
-            policy_steps={
-                'key': shared.PolicySteps(
-                    steps=[
-                        shared.PolicyStep(
-                            accept=shared.Accept(),
-                            approval=shared.Approval(
-                                app_group_approval=shared.AppGroupApproval(
-                                    fallback_user_ids=[
-                                        'string',
-                                    ],
-                                ),
-                                app_owner_approval=shared.AppOwnerApproval(),
-                                entitlement_owner_approval=shared.EntitlementOwnerApproval(
-                                    fallback_user_ids=[
-                                        'string',
-                                    ],
-                                ),
-                                expression_approval=shared.ExpressionApproval(
-                                    assigned_user_ids=[
-                                        'string',
-                                    ],
-                                    expressions=[
-                                        'string',
-                                    ],
-                                    fallback_user_ids=[
-                                        'string',
-                                    ],
-                                ),
-                                manager_approval=shared.ManagerApproval(
-                                    assigned_user_ids=[
-                                        'string',
-                                    ],
-                                    fallback_user_ids=[
-                                        'string',
-                                    ],
-                                ),
-                                self_approval=shared.SelfApproval(
-                                    assigned_user_ids=[
-                                        'string',
-                                    ],
-                                    fallback_user_ids=[
-                                        'string',
-                                    ],
-                                ),
-                                user_approval=shared.UserApproval(
-                                    user_ids=[
-                                        'string',
-                                    ],
-                                ),
-                            ),
-                            provision=shared.Provision(
-                                provision_policy=shared.ProvisionPolicy(
-                                    connector_provision=shared.ConnectorProvision(),
-                                    delegated_provision=shared.DelegatedProvision(),
-                                    manual_provision=shared.ManualProvision(
-                                        user_ids=[
-                                            'string',
-                                        ],
-                                    ),
-                                ),
-                                provision_target=shared.ProvisionTarget(),
-                            ),
-                            reject=shared.Reject(),
-                        ),
-                    ],
-                ),
-            },
-            post_actions=[
-                shared.PolicyPostActions(),
-            ],
-            rules=[
-                shared.Rule(),
-            ],
-        ),
-    ),
 )
 
 res = s.policies.update(req)

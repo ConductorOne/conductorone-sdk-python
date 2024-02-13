@@ -70,7 +70,6 @@ s = sdk.SDK(
 
 req = operations.C1APIAttributeV1AttributesDeleteAttributeValueRequest(
     id='<ID>',
-    delete_attribute_value_request=shared.DeleteAttributeValueRequest(),
 )
 
 res = s.attributes.delete_attribute_value(req)

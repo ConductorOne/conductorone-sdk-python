@@ -22,28 +22,7 @@ s = sdk.SDK(
     ),
 )
 
-req = shared.SearchUsersRequest(
-    user_expand_mask=shared.UserExpandMask(
-        paths=[
-            'string',
-        ],
-    ),
-    exclude_ids=[
-        'string',
-    ],
-    ids=[
-        'string',
-    ],
-    refs=[
-        shared.UserRef(),
-    ],
-    role_ids=[
-        'string',
-    ],
-    user_statuses=[
-        shared.UserStatuses.ENABLED,
-    ],
-)
+req = shared.SearchUsersRequest()
 
 res = s.user_search.search(req)
 

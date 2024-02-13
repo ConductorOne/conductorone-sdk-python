@@ -11,11 +11,12 @@ from typing import List, Optional
 @dataclasses.dataclass
 class RoleInput:
     r"""Role is a role that can be assigned to a user in ConductorOne."""
+    UNSET='__SPEAKEASY_UNSET__'
     display_name: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('displayName'), 'exclude': lambda f: f is None }})
     r"""The display name of the role."""
-    permissions: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('permissions') }})
+    permissions: Optional[List[str]] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('permissions'), 'exclude': lambda f: f is RoleInput.UNSET }})
     r"""The list of permissions this role has."""
-    service_roles: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('serviceRoles') }})
+    service_roles: Optional[List[str]] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('serviceRoles'), 'exclude': lambda f: f is RoleInput.UNSET }})
     r"""The list of serviceRoles that this role has."""
     
 

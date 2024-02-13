@@ -255,28 +255,6 @@ s = sdk.SDK(
 req = operations.C1APIAppV1AppEntitlementsUpdateRequest(
     app_id='string',
     id='<ID>',
-    update_app_entitlement_request=shared.UpdateAppEntitlementRequest(
-        app_entitlement=shared.AppEntitlementInput(
-            provision_policy=shared.ProvisionPolicy(
-                connector_provision=shared.ConnectorProvision(),
-                delegated_provision=shared.DelegatedProvision(),
-                manual_provision=shared.ManualProvision(
-                    user_ids=[
-                        'string',
-                    ],
-                ),
-            ),
-            compliance_framework_value_ids=[
-                'string',
-            ],
-            duration_unset=shared.DurationUnset(),
-        ),
-        app_entitlement_expand_mask=shared.AppEntitlementExpandMask(
-            paths=[
-                'string',
-            ],
-        ),
-    ),
 )
 
 res = s.app_entitlements.update(req)

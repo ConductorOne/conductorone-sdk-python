@@ -22,17 +22,7 @@ s = sdk.SDK(
     ),
 )
 
-req = shared.SearchAttributeValuesRequest(
-    attribute_type_ids=[
-        'string',
-    ],
-    exclude_ids=[
-        'string',
-    ],
-    ids=[
-        'string',
-    ],
-)
+req = shared.SearchAttributeValuesRequest()
 
 res = s.attribute_search.search_attribute_values(req)
 

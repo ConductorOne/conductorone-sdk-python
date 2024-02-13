@@ -12,8 +12,9 @@ from typing import Optional
 @dataclasses.dataclass
 class UpdatePolicyRequest:
     r"""The UpdatePolicyRequest message contains the policy object to update and a field mask to indicate which fields to update. It uses URL value for input."""
+    UNSET='__SPEAKEASY_UNSET__'
     policy: Optional[PolicyInput] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('policy'), 'exclude': lambda f: f is None }})
     r"""A policy describes the behavior of the ConductorOne system when processing a task. You can describe the type, approvers, fallback behavior, and escalation processes."""
-    update_mask: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('updateMask') }})
+    update_mask: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('updateMask'), 'exclude': lambda f: f is UpdatePolicyRequest.UNSET }})
     
 

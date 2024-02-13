@@ -27,12 +27,6 @@ s = sdk.SDK(
 req = shared.TaskServiceCreateGrantRequest(
     app_entitlement_id='string',
     app_id='string',
-    task_expand_mask=shared.TaskExpandMask(
-        paths=[
-            'string',
-        ],
-    ),
-    task_grant_source=shared.TaskGrantSource(),
 )
 
 res = s.task.create_grant_task(req)
@@ -78,11 +72,6 @@ s = sdk.SDK(
 req = shared.TaskServiceCreateRevokeRequest(
     app_entitlement_id='string',
     app_id='string',
-    task_expand_mask=shared.TaskExpandMask(
-        paths=[
-            'string',
-        ],
-    ),
 )
 
 res = s.task.create_revoke_task(req)

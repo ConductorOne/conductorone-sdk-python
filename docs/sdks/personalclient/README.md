@@ -22,14 +22,7 @@ s = sdk.SDK(
     ),
 )
 
-req = shared.PersonalClientServiceCreateRequest(
-    allow_source_cidr=[
-        'string',
-    ],
-    scoped_roles=[
-        'string',
-    ],
-)
+req = shared.PersonalClientServiceCreateRequest()
 
 res = s.personal_client.create(req)
 

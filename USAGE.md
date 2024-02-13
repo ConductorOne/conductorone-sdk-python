@@ -10,11 +10,7 @@ s = sdk.SDK(
     ),
 )
 
-req = shared.CreateAppRequest(
-    owners=[
-        'string',
-    ],
-)
+req = shared.CreateAppRequest()
 
 res = s.apps.create(req)
 

@@ -11,11 +11,12 @@ from typing import List, Optional
 @dataclasses.dataclass
 class SearchAttributeValuesRequest:
     r"""Search Attributes by a few properties."""
-    attribute_type_ids: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('attributeTypeIds') }})
+    UNSET='__SPEAKEASY_UNSET__'
+    attribute_type_ids: Optional[List[str]] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('attributeTypeIds'), 'exclude': lambda f: f is SearchAttributeValuesRequest.UNSET }})
     r"""The attribute type ids for what type of attributes to search for."""
-    exclude_ids: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('excludeIds') }})
+    exclude_ids: Optional[List[str]] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('excludeIds'), 'exclude': lambda f: f is SearchAttributeValuesRequest.UNSET }})
     r"""Exclude attributes with these ids from the search results."""
-    ids: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('ids') }})
+    ids: Optional[List[str]] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('ids'), 'exclude': lambda f: f is SearchAttributeValuesRequest.UNSET }})
     r"""Include attributes with these ids in the search results."""
     page_size: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('pageSize'), 'exclude': lambda f: f is None }})
     r"""The pageSize where 0 <= pageSize <= 100. Values < 10 will be set to 10. A value of 0 returns the default page size (currently 25)"""
