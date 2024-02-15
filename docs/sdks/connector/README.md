@@ -32,7 +32,7 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIAppV1ConnectorServiceCreateRequest(
-    app_id='string',
+    app_id='<value>',
 )
 
 res = s.connector.create(req)
@@ -76,7 +76,7 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIAppV1ConnectorServiceCreateDelegatedRequest(
-    app_id='string',
+    app_id='<value>',
 )
 
 res = s.connector.create_delegated(req)
@@ -120,8 +120,8 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIAppV1ConnectorServiceDeleteRequest(
-    app_id='string',
-    id='<ID>',
+    app_id='<value>',
+    id='<id>',
 )
 
 res = s.connector.delete(req)
@@ -165,8 +165,8 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIAppV1ConnectorServiceGetRequest(
-    app_id='string',
-    id='<ID>',
+    app_id='<value>',
+    id='<id>',
 )
 
 res = s.connector.get(req)
@@ -210,9 +210,9 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIAppV1ConnectorServiceGetCredentialsRequest(
-    app_id='string',
-    connector_id='string',
-    id='<ID>',
+    app_id='<value>',
+    connector_id='<value>',
+    id='<id>',
 )
 
 res = s.connector.get_credentials(req)
@@ -256,7 +256,7 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIAppV1ConnectorServiceListRequest(
-    app_id='string',
+    app_id='<value>',
 )
 
 res = s.connector.list(req)
@@ -300,9 +300,9 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIAppV1ConnectorServiceRevokeCredentialRequest(
-    app_id='string',
-    connector_id='string',
-    id='<ID>',
+    app_id='<value>',
+    connector_id='<value>',
+    id='<id>',
 )
 
 res = s.connector.revoke_credential(req)
@@ -346,8 +346,8 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIAppV1ConnectorServiceRotateCredentialRequest(
-    app_id='string',
-    connector_id='string',
+    app_id='<value>',
+    connector_id='<value>',
 )
 
 res = s.connector.rotate_credential(req)
@@ -391,8 +391,8 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIAppV1ConnectorServiceUpdateRequest(
-    app_id='string',
-    id='<ID>',
+    app_id='<value>',
+    id='<id>',
 )
 
 res = s.connector.update(req)
@@ -436,8 +436,8 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIAppV1ConnectorServiceUpdateDelegatedRequest(
-    connector_app_id='string',
-    connector_id='string',
+    connector_app_id='<value>',
+    connector_id='<value>',
 )
 
 res = s.connector.update_delegated(req)

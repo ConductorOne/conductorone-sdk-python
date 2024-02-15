@@ -27,7 +27,7 @@ s = sdk.SDK(
 )
 
 req = operations.C1APITaskV1TaskActionsServiceApproveRequest(
-    task_id='string',
+    task_id='<value>',
 )
 
 res = s.task_actions.approve(req)
@@ -71,7 +71,7 @@ s = sdk.SDK(
 )
 
 req = operations.C1APITaskV1TaskActionsServiceCommentRequest(
-    task_id='string',
+    task_id='<value>',
 )
 
 res = s.task_actions.comment(req)
@@ -115,7 +115,7 @@ s = sdk.SDK(
 )
 
 req = operations.C1APITaskV1TaskActionsServiceDenyRequest(
-    task_id='string',
+    task_id='<value>',
 )
 
 res = s.task_actions.deny(req)
@@ -159,7 +159,7 @@ s = sdk.SDK(
 )
 
 req = operations.C1APITaskV1TaskActionsServiceEscalateToEmergencyAccessRequest(
-    task_id='string',
+    task_id='<value>',
 )
 
 res = s.task_actions.escalate_to_emergency_access(req)
@@ -203,7 +203,7 @@ s = sdk.SDK(
 )
 
 req = operations.C1APITaskV1TaskActionsServiceRestartRequest(
-    task_id='string',
+    task_id='<value>',
 )
 
 res = s.task_actions.restart(req)

@@ -69,7 +69,7 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIPolicyV1PoliciesDeleteRequest(
-    id='<ID>',
+    id='<id>',
 )
 
 res = s.policies.delete(req)
@@ -113,7 +113,7 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIPolicyV1PoliciesGetRequest(
-    id='<ID>',
+    id='<id>',
 )
 
 res = s.policies.get(req)
@@ -199,7 +199,7 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIPolicyV1PoliciesUpdateRequest(
-    id='<ID>',
+    id='<id>',
 )
 
 res = s.policies.update(req)

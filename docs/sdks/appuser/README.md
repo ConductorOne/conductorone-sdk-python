@@ -24,8 +24,8 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIAppV1AppUserServiceUpdateRequest(
-    app_user_app_id='string',
-    app_user_id='string',
+    app_user_app_id='<value>',
+    app_user_id='<value>',
 )
 
 res = s.app_user.update(req)

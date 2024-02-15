@@ -28,8 +28,8 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIAppV1AppEntitlementsGetRequest(
-    app_id='string',
-    id='<ID>',
+    app_id='<value>',
+    id='<id>',
 )
 
 res = s.app_entitlements.get(req)
@@ -73,7 +73,7 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIAppV1AppEntitlementsListRequest(
-    app_id='string',
+    app_id='<value>',
 )
 
 res = s.app_entitlements.list(req)
@@ -117,9 +117,9 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIAppV1AppEntitlementsListForAppResourceRequest(
-    app_id='string',
-    app_resource_id='string',
-    app_resource_type_id='string',
+    app_id='<value>',
+    app_resource_id='<value>',
+    app_resource_type_id='<value>',
 )
 
 res = s.app_entitlements.list_for_app_resource(req)
@@ -163,8 +163,8 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIAppV1AppEntitlementsListForAppUserRequest(
-    app_id='string',
-    app_user_id='string',
+    app_id='<value>',
+    app_user_id='<value>',
 )
 
 res = s.app_entitlements.list_for_app_user(req)
@@ -208,8 +208,8 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIAppV1AppEntitlementsListUsersRequest(
-    app_entitlement_id='string',
-    app_id='string',
+    app_entitlement_id='<value>',
+    app_id='<value>',
 )
 
 res = s.app_entitlements.list_users(req)
@@ -253,8 +253,8 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIAppV1AppEntitlementsUpdateRequest(
-    app_id='string',
-    id='<ID>',
+    app_id='<value>',
+    id='<id>',
 )
 
 res = s.app_entitlements.update(req)

@@ -25,7 +25,7 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIIamV1RolesGetRequest(
-    role_id='string',
+    role_id='<value>',
 )
 
 res = s.roles.get(req)
@@ -111,7 +111,7 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIIamV1RolesUpdateRequest(
-    role_id='string',
+    role_id='<value>',
 )
 
 res = s.roles.update(req)

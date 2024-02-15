@@ -69,7 +69,7 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIAttributeV1AttributesDeleteAttributeValueRequest(
-    id='<ID>',
+    id='<id>',
 )
 
 res = s.attributes.delete_attribute_value(req)
@@ -113,7 +113,7 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIAttributeV1AttributesGetAttributeValueRequest(
-    id='<ID>',
+    id='<id>',
 )
 
 res = s.attributes.get_attribute_value(req)
@@ -199,7 +199,7 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIAttributeV1AttributesListAttributeValuesRequest(
-    attribute_type_id='string',
+    attribute_type_id='<value>',
 )
 
 res = s.attributes.list_attribute_values(req)

@@ -68,7 +68,7 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIDirectoryV1DirectoryServiceDeleteRequest(
-    app_id='string',
+    app_id='<value>',
 )
 
 res = s.directory.delete(req)
@@ -112,7 +112,7 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIDirectoryV1DirectoryServiceGetRequest(
-    app_id='string',
+    app_id='<value>',
 )
 
 res = s.directory.get(req)

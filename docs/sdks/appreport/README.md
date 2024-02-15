@@ -23,7 +23,7 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIAppV1AppReportServiceListRequest(
-    app_id='string',
+    app_id='<value>',
 )
 
 res = s.app_report.list(req)

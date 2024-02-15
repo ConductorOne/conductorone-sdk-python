@@ -25,8 +25,8 @@ s = sdk.SDK(
 )
 
 req = shared.TaskServiceCreateGrantRequest(
-    app_entitlement_id='string',
-    app_id='string',
+    app_entitlement_id='<value>',
+    app_id='<value>',
 )
 
 res = s.task.create_grant_task(req)
@@ -70,8 +70,8 @@ s = sdk.SDK(
 )
 
 req = shared.TaskServiceCreateRevokeRequest(
-    app_entitlement_id='string',
-    app_id='string',
+    app_entitlement_id='<value>',
+    app_id='<value>',
 )
 
 res = s.task.create_revoke_task(req)
@@ -115,7 +115,7 @@ s = sdk.SDK(
 )
 
 req = operations.C1APITaskV1TaskServiceGetRequest(
-    id='<ID>',
+    id='<id>',
 )
 
 res = s.task.get(req)

@@ -26,8 +26,8 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIAppV1AppOwnersAddRequest(
-    app_id='string',
-    user_id='string',
+    app_id='<value>',
+    user_id='<value>',
 )
 
 res = s.app_owners.add(req)
@@ -71,7 +71,7 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIAppV1AppOwnersListRequest(
-    app_id='string',
+    app_id='<value>',
 )
 
 res = s.app_owners.list(req)
@@ -115,8 +115,8 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIAppV1AppOwnersRemoveRequest(
-    app_id='string',
-    user_id='string',
+    app_id='<value>',
+    user_id='<value>',
 )
 
 res = s.app_owners.remove(req)
@@ -160,7 +160,7 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIAppV1AppOwnersSetRequest(
-    app_id='string',
+    app_id='<value>',
 )
 
 res = s.app_owners.set(req)

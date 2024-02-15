@@ -24,7 +24,7 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIUserV1UserServiceGetRequest(
-    id='<ID>',
+    id='<id>',
 )
 
 res = s.user.get(req)

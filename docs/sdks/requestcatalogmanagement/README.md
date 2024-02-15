@@ -33,7 +33,7 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIRequestcatalogV1RequestCatalogManagementServiceAddAccessEntitlementsRequest(
-    catalog_id='string',
+    catalog_id='<value>',
 )
 
 res = s.request_catalog_management.add_access_entitlements(req)
@@ -77,7 +77,7 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIRequestcatalogV1RequestCatalogManagementServiceAddAppEntitlementsRequest(
-    catalog_id='string',
+    catalog_id='<value>',
 )
 
 res = s.request_catalog_management.add_app_entitlements(req)
@@ -163,7 +163,7 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIRequestcatalogV1RequestCatalogManagementServiceDeleteRequest(
-    id='<ID>',
+    id='<id>',
 )
 
 res = s.request_catalog_management.delete(req)
@@ -207,7 +207,7 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIRequestcatalogV1RequestCatalogManagementServiceGetRequest(
-    id='<ID>',
+    id='<id>',
 )
 
 res = s.request_catalog_management.get(req)
@@ -286,7 +286,7 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIRequestcatalogV1RequestCatalogManagementServiceListEntitlementsForAccessRequest(
-    catalog_id='string',
+    catalog_id='<value>',
 )
 
 res = s.request_catalog_management.list_entitlements_for_access(req)
@@ -330,7 +330,7 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIRequestcatalogV1RequestCatalogManagementServiceListEntitlementsPerCatalogRequest(
-    catalog_id='string',
+    catalog_id='<value>',
 )
 
 res = s.request_catalog_management.list_entitlements_per_catalog(req)
@@ -374,7 +374,7 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIRequestcatalogV1RequestCatalogManagementServiceRemoveAccessEntitlementsRequest(
-    catalog_id='string',
+    catalog_id='<value>',
 )
 
 res = s.request_catalog_management.remove_access_entitlements(req)
@@ -418,7 +418,7 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIRequestcatalogV1RequestCatalogManagementServiceRemoveAppEntitlementsRequest(
-    catalog_id='string',
+    catalog_id='<value>',
 )
 
 res = s.request_catalog_management.remove_app_entitlements(req)
@@ -462,7 +462,7 @@ s = sdk.SDK(
 )
 
 req = operations.C1APIRequestcatalogV1RequestCatalogManagementServiceUpdateRequest(
-    id='<ID>',
+    id='<id>',
 )
 
 res = s.request_catalog_management.update(req)
