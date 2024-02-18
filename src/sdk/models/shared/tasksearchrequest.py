@@ -78,6 +78,7 @@ class TaskSearchRequest:
     r"""Whether or not to include deleted tasks."""
     my_work_user_ids: Optional[List[str]] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('myWorkUserIds'), 'exclude': lambda f: f is TaskSearchRequest.UNSET }})
     r"""Search tasks where the user would see this task in the My Work section"""
+    older_than_duration: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('olderThanDuration'), 'exclude': lambda f: f is None }})
     opener_ids: Optional[List[str]] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('openerIds'), 'exclude': lambda f: f is TaskSearchRequest.UNSET }})
     r"""Search tasks that were created by any of the users in this array."""
     page_size: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('pageSize'), 'exclude': lambda f: f is None }})
