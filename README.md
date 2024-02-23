@@ -43,6 +43,7 @@ if res.app_entitlement_search_service_search_response is not None:
 * [create](docs/sdks/connector/README.md#create) - Create
 * [create_delegated](docs/sdks/connector/README.md#create_delegated) - Create Delegated
 * [delete](docs/sdks/connector/README.md#delete) - Delete
+* [force_sync](docs/sdks/connector/README.md#force_sync) - Force Sync
 * [get](docs/sdks/connector/README.md#get) - Get
 * [get_credentials](docs/sdks/connector/README.md#get_credentials) - Get Credentials
 * [list](docs/sdks/connector/README.md#list) - List

@@ -6,6 +6,7 @@
 * [create](#create) - Create
 * [create_delegated](#create_delegated) - Create Delegated
 * [delete](#delete) - Delete
+* [force_sync](#force_sync) - Force Sync
 * [get](#get) - Get
 * [get_credentials](#get_credentials) - Get Credentials
 * [list](#list) - List
@@ -141,6 +142,51 @@ if res.connector_service_delete_response is not None:
 ### Response
 
 **[operations.C1APIAppV1ConnectorServiceDeleteResponse](../../models/operations/c1apiappv1connectorservicedeleteresponse.md)**
+### Errors
+
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4x-5xx          | */*             |
+
+## force_sync
+
+Invokes the c1.api.app.v1.ConnectorService.ForceSync method.
+
+### Example Usage
+
+```python
+import sdk
+from sdk.models import operations, shared
+
+s = sdk.SDK(
+    security=shared.Security(
+        bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
+        oauth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
+    ),
+)
+
+req = operations.C1APIAppV1ConnectorServiceForceSyncRequest(
+    app_id='<value>',
+    connector_id='<value>',
+)
+
+res = s.connector.force_sync(req)
+
+if res.force_sync_response is not None:
+    # handle response
+    pass
+```
+
+### Parameters
+
+| Parameter                                                                                                                      | Type                                                                                                                           | Required                                                                                                                       | Description                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                      | [operations.C1APIAppV1ConnectorServiceForceSyncRequest](../../models/operations/c1apiappv1connectorserviceforcesyncrequest.md) | :heavy_check_mark:                                                                                                             | The request object to use for the request.                                                                                     |
+
+
+### Response
+
+**[operations.C1APIAppV1ConnectorServiceForceSyncResponse](../../models/operations/c1apiappv1connectorserviceforcesyncresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |

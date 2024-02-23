@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: caa5cc5d-fe97-4a71-b2f9-77ce0615bbd1
 management:
-  docChecksum: 82b657688d39d158fa78c4ef0861f886
+  docChecksum: 6fe9b822104116a07ce1dd7e4ec72a94
   docVersion: 0.1.0-alpha
   speakeasyVersion: internal
-  generationVersion: 2.262.2
-  releaseVersion: 0.11.3
-  configChecksum: c407034828ca857ac6ad92f116f65276
+  generationVersion: 2.269.0
+  releaseVersion: 0.11.4
+  configChecksum: 9ca9448d6600eb3a24cb356a37561d05
   repoURL: https://github.com/ConductorOne/conductorone-sdk-python.git
   repoSubDirectory: .
   installationURL: https://github.com/ConductorOne/conductorone-sdk-python.git
@@ -71,6 +71,7 @@ generatedFiles:
   - src/sdk/models/operations/c1_api_app_v1_connectorservice_create.py
   - src/sdk/models/operations/c1_api_app_v1_connectorservice_createdelegated.py
   - src/sdk/models/operations/c1_api_app_v1_connectorservice_delete.py
+  - src/sdk/models/operations/c1_api_app_v1_connectorservice_forcesync.py
   - src/sdk/models/operations/c1_api_app_v1_connectorservice_get.py
   - src/sdk/models/operations/c1_api_app_v1_connectorservice_getcredentials.py
   - src/sdk/models/operations/c1_api_app_v1_connectorservice_list.py
@@ -177,6 +178,8 @@ generatedFiles:
   - src/sdk/models/shared/connectorservicecreatedelegatedrequest.py
   - src/sdk/models/shared/connectorservicedeleteresponse.py
   - src/sdk/models/shared/connectorservicedeleterequest.py
+  - src/sdk/models/shared/forcesyncresponse.py
+  - src/sdk/models/shared/forcesyncrequest.py
   - src/sdk/models/shared/connectorservicegetresponse.py
   - src/sdk/models/shared/connectorservicegetcredentialsresponse.py
   - src/sdk/models/shared/connectorcredential.py
@@ -422,6 +425,8 @@ generatedFiles:
   - docs/models/operations/c1apiappv1connectorservicecreatedelegatedresponse.md
   - docs/models/operations/c1apiappv1connectorservicedeleterequest.md
   - docs/models/operations/c1apiappv1connectorservicedeleteresponse.md
+  - docs/models/operations/c1apiappv1connectorserviceforcesyncrequest.md
+  - docs/models/operations/c1apiappv1connectorserviceforcesyncresponse.md
   - docs/models/operations/c1apiappv1connectorservicegetrequest.md
   - docs/models/operations/c1apiappv1connectorservicegetresponse.md
   - docs/models/operations/c1apiappv1connectorservicegetcredentialsrequest.md
@@ -599,6 +604,8 @@ generatedFiles:
   - docs/models/shared/connectorservicecreatedelegatedrequest.md
   - docs/models/shared/connectorservicedeleteresponse.md
   - docs/models/shared/connectorservicedeleterequest.md
+  - docs/models/shared/forcesyncresponse.md
+  - docs/models/shared/forcesyncrequest.md
   - docs/models/shared/connectorservicegetresponseexpanded.md
   - docs/models/shared/connectorservicegetresponse.md
   - docs/models/shared/connectorservicegetcredentialsresponse.md
