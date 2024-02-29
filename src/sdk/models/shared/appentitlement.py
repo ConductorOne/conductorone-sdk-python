@@ -63,6 +63,8 @@ class AppEntitlement:
     r"""The ID of the policy that will be used for grant tickets related to the app entitlement."""
     id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id'), 'exclude': lambda f: f is None }})
     r"""The unique ID for the App Entitlement."""
+    is_manually_managed: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('isManuallyManaged'), 'exclude': lambda f: f is None }})
+    r"""Flag to indicate if the app entitlement is manually managed."""
     revoke_policy_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('revokePolicyId'), 'exclude': lambda f: f is None }})
     r"""The ID of the policy that will be used for revoke tickets related to the app entitlement"""
     risk_level_value_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('riskLevelValueId'), 'exclude': lambda f: f is None }})
@@ -117,6 +119,8 @@ class AppEntitlementInput:
     r"""The ID of the policy that will be used for emergency access grant tasks."""
     grant_policy_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('grantPolicyId'), 'exclude': lambda f: f is None }})
     r"""The ID of the policy that will be used for grant tickets related to the app entitlement."""
+    is_manually_managed: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('isManuallyManaged'), 'exclude': lambda f: f is None }})
+    r"""Flag to indicate if the app entitlement is manually managed."""
     revoke_policy_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('revokePolicyId'), 'exclude': lambda f: f is None }})
     r"""The ID of the policy that will be used for revoke tickets related to the app entitlement"""
     risk_level_value_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('riskLevelValueId'), 'exclude': lambda f: f is None }})

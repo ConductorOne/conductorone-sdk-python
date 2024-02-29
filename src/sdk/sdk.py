@@ -36,6 +36,7 @@ from .taskactions import TaskActions
 from .tasksearch import TaskSearch
 from .user import User
 from .usersearch import UserSearch
+from .webhooks import Webhooks
 from sdk import utils
 from sdk.models import shared
 from typing import Callable, Dict, Union
@@ -76,6 +77,7 @@ class SDK:
     task: Task
     task_actions: TaskActions
     user: User
+    webhooks: Webhooks
 
     sdk_configuration: SDKConfiguration
 
@@ -156,4 +158,5 @@ class SDK:
         self.task = Task(self.sdk_configuration)
         self.task_actions = TaskActions(self.sdk_configuration)
         self.user = User(self.sdk_configuration)
+        self.webhooks = Webhooks(self.sdk_configuration)
     

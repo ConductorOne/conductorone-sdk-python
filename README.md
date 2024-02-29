@@ -224,6 +224,10 @@ if res.app_entitlement_search_service_search_response is not None:
 
 * [get](docs/sdks/user/README.md#get) - Get
 * [list](docs/sdks/user/README.md#list) - List
+
+### [webhooks](docs/sdks/webhooks/README.md)
+
+* [test](docs/sdks/webhooks/README.md#test) - Test
 <!-- End Available Resources and Operations [operations] -->
 
 <!-- No SDK Example Usage -->
