@@ -33,6 +33,7 @@ res = s.roles.get(req)
 if res.get_roles_response is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -75,6 +76,7 @@ res = s.roles.list(req)
 if res.list_roles_response is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -119,6 +121,7 @@ res = s.roles.update(req)
 if res.update_roles_response is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters

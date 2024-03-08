@@ -29,6 +29,7 @@ res = s.user_search.search(req)
 if res.search_users_response is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters

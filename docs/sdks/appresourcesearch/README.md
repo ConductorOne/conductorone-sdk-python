@@ -29,6 +29,7 @@ res = s.app_resource_search.search_app_resource_types(req)
 if res.search_app_resource_types_response is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters

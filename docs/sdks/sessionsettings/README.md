@@ -29,6 +29,7 @@ res = s.session_settings.get()
 if res.get_session_settings_response is not None:
     # handle response
     pass
+
 ```
 
 
@@ -65,6 +66,7 @@ res = s.session_settings.update(req)
 if res.update_session_settings_response is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters

@@ -32,6 +32,7 @@ res = s.directory.create(req)
 if res.directory_service_create_response is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -76,6 +77,7 @@ res = s.directory.delete(req)
 if res.directory_service_delete_response is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -120,6 +122,7 @@ res = s.directory.get(req)
 if res.directory_service_get_response is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -162,6 +165,7 @@ res = s.directory.list(req)
 if res.directory_service_list_response is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters

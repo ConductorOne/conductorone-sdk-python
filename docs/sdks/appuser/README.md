@@ -33,6 +33,7 @@ res = s.app_user.update(req)
 if res.app_user_service_update_response is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters

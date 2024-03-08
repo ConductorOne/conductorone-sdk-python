@@ -29,6 +29,7 @@ res = s.app_entitlement_search.search(req)
 if res.app_entitlement_search_service_search_response is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters

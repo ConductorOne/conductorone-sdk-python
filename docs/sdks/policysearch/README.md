@@ -29,6 +29,7 @@ res = s.policy_search.search(req)
 if res.list_policy_response is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters

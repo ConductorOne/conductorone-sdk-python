@@ -28,6 +28,7 @@ res = s.aws_external_id_settings.get()
 if res.get_aws_external_id_response is not None:
     # handle response
     pass
+
 ```
 
 

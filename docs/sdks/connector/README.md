@@ -41,6 +41,7 @@ res = s.connector.create(req)
 if res.connector_service_create_response is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -85,6 +86,7 @@ res = s.connector.create_delegated(req)
 if res.connector_service_create_response is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -130,6 +132,7 @@ res = s.connector.delete(req)
 if res.connector_service_delete_response is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -175,6 +178,7 @@ res = s.connector.force_sync(req)
 if res.force_sync_response is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -220,6 +224,7 @@ res = s.connector.get(req)
 if res.connector_service_get_response is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -266,6 +271,7 @@ res = s.connector.get_credentials(req)
 if res.connector_service_get_credentials_response is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -310,6 +316,7 @@ res = s.connector.list(req)
 if res.connector_service_list_response is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -356,6 +363,7 @@ res = s.connector.revoke_credential(req)
 if res.connector_service_revoke_credential_response is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -401,6 +409,7 @@ res = s.connector.rotate_credential(req)
 if res.connector_service_rotate_credential_response is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -446,6 +455,7 @@ res = s.connector.update(req)
 if res.connector_service_update_response is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -491,6 +501,7 @@ res = s.connector.update_delegated(req)
 if res.connector_service_update_response is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters

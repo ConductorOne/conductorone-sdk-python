@@ -29,6 +29,7 @@ res = s.request_catalog_search.search_entitlements(req)
 if res.request_catalog_search_service_search_entitlements_response is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters

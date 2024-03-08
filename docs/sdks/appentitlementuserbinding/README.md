@@ -33,6 +33,7 @@ res = s.app_entitlement_user_binding.list_app_users_for_identity_with_grant(req)
 if res.list_app_users_for_identity_with_grant_response is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters

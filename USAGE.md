@@ -17,5 +17,6 @@ res = s.apps.create(req)
 if res.create_app_response is not None:
     # handle response
     pass
+
 ```
 <!-- End SDK Example Usage [usage] -->

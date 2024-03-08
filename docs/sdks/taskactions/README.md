@@ -35,6 +35,7 @@ res = s.task_actions.approve(req)
 if res.task_actions_service_approve_response is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -79,6 +80,7 @@ res = s.task_actions.comment(req)
 if res.task_actions_service_comment_response is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -123,6 +125,7 @@ res = s.task_actions.deny(req)
 if res.task_actions_service_deny_response is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -167,6 +170,7 @@ res = s.task_actions.escalate_to_emergency_access(req)
 if res.task_service_action_response is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -211,6 +215,7 @@ res = s.task_actions.restart(req)
 if res.task_actions_service_restart_response is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters

@@ -271,6 +271,7 @@ except errors.SDKError as e:
 if res.create_app_response is not None:
     # handle response
     pass
+
 ```
 <!-- End Error Handling [errors] -->
 
@@ -308,6 +309,7 @@ res = s.apps.create(req)
 if res.create_app_response is not None:
     # handle response
     pass
+
 ```
 
 #### Variables
@@ -337,6 +339,7 @@ res = s.apps.create(req)
 if res.create_app_response is not None:
     # handle response
     pass
+
 ```
 <!-- End Server Selection [server] -->
 
@@ -391,6 +394,7 @@ res = s.apps.create(req)
 if res.create_app_response is not None:
     # handle response
     pass
+
 ```
 <!-- End Authentication [security] -->
 

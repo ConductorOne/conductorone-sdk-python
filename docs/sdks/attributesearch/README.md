@@ -29,6 +29,7 @@ res = s.attribute_search.search_attribute_values(req)
 if res.search_attribute_values_response is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters

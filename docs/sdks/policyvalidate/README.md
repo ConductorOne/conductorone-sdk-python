@@ -29,6 +29,7 @@ res = s.policy_validate.validate_cel(req)
 if res.validate_policy_cel_response is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters

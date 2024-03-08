@@ -3,23 +3,24 @@ id: caa5cc5d-fe97-4a71-b2f9-77ce0615bbd1
 management:
   docChecksum: 7936c3075a84fea09a3206656eee3f52
   docVersion: 0.1.0-alpha
-  speakeasyVersion: internal
-  generationVersion: 2.275.4
-  releaseVersion: 0.12.0
-  configChecksum: e1140ea580716f918903b76835ef8f57
+  speakeasyVersion: 1.204.1
+  generationVersion: 2.279.1
+  releaseVersion: 0.13.0
+  configChecksum: d4c3678d229e9f331a605455edff3b3e
   repoURL: https://github.com/ConductorOne/conductorone-sdk-python.git
   repoSubDirectory: .
   installationURL: https://github.com/ConductorOne/conductorone-sdk-python.git
 features:
   python:
     additionalProperties: 0.1.0
-    core: 4.5.0
+    core: 4.5.1
     globalSecurity: 2.83.4
     globalServerURLs: 2.82.1
     groups: 2.81.2
     inputOutputModels: 2.83.1
     nameOverrides: 2.81.1
-    unions: 2.82.5
+    responseFormat: 0.1.0
+    unions: 2.82.6
 generatedFiles:
   - src/sdk/sdkconfiguration.py
   - src/sdk/apps.py
@@ -58,6 +59,7 @@ generatedFiles:
   - src/sdk/user.py
   - src/sdk/webhooks.py
   - src/sdk/sdk.py
+  - py.typed
   - pylintrc
   - src/sdk/utils/__init__.py
   - src/sdk/utils/retries.py

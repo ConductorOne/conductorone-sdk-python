@@ -31,6 +31,7 @@ res = s.app_report.list(req)
 if res.app_report_service_list_response is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
