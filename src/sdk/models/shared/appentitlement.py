@@ -7,7 +7,7 @@ from .provisionpolicy import ProvisionPolicy
 from dataclasses_json import Undefined, dataclass_json
 from datetime import datetime
 from sdk import utils
-from typing import List, Optional
+from typing import Dict, List, Optional
 
 
 @dataclasses.dataclass
@@ -71,6 +71,8 @@ class AppEntitlement:
     r"""The riskLevelValueId field."""
     slug: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('slug'), 'exclude': lambda f: f is None }})
     r"""The slug is displayed as an oval next to the name in the frontend of C1, it tells you what permission the entitlement grants. See https://www.conductorone.com/docs/product/manage-access/entitlements/"""
+    source_connector_ids: Optional[Dict[str, str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('sourceConnectorIds'), 'exclude': lambda f: f is None }})
+    r"""Map to tell us which connector the entitlement came from."""
     system_builtin: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('systemBuiltin'), 'exclude': lambda f: f is None }})
     r"""This field indicates if this is a system builtin entitlement."""
     updated_at: Optional[datetime] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('updatedAt'), 'encoder': utils.datetimeisoformat(True), 'decoder': dateutil.parser.isoparse, 'exclude': lambda f: f is None }})
@@ -127,6 +129,8 @@ class AppEntitlementInput:
     r"""The riskLevelValueId field."""
     slug: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('slug'), 'exclude': lambda f: f is None }})
     r"""The slug is displayed as an oval next to the name in the frontend of C1, it tells you what permission the entitlement grants. See https://www.conductorone.com/docs/product/manage-access/entitlements/"""
+    source_connector_ids: Optional[Dict[str, str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('sourceConnectorIds'), 'exclude': lambda f: f is None }})
+    r"""Map to tell us which connector the entitlement came from."""
     user_edited_mask: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('userEditedMask'), 'exclude': lambda f: f is AppEntitlementInput.UNSET }})
     
 
