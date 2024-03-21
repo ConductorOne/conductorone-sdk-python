@@ -27,6 +27,8 @@ class RequestCatalogInput:
     r"""The id of the request catalog."""
     published: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('published'), 'exclude': lambda f: f is None }})
     r"""Whether or not this catalog is published."""
+    request_bundle: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('requestBundle'), 'exclude': lambda f: f is None }})
+    r"""Whether all the entitlements in the catalog can be requests at once. Your tenant must have the bundles feature to use this."""
     visible_to_everyone: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('visibleToEveryone'), 'exclude': lambda f: f is None }})
     r"""If this is true, the access entitlement requirement is ignored."""
     

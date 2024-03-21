@@ -20,6 +20,8 @@ class RequestCatalogManagementServiceCreateRequest:
     r"""The display name of the new request catalog."""
     published: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('published'), 'exclude': lambda f: f is None }})
     r"""Whether or not the new catalog should be created as published."""
+    request_bundle: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('requestBundle'), 'exclude': lambda f: f is None }})
+    r"""Whether all the entitlements in the catalog can be requests at once. Your tenant must have the bundles feature to use this."""
     visible_to_everyone: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('visibleToEveryone'), 'exclude': lambda f: f is None }})
     r"""Whether or not the new catalog is visible to everyone by default."""
     
