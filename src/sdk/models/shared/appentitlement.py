@@ -32,6 +32,7 @@ class AppEntitlement:
       - connector
       - manual
       - delegated
+      - webhook
     """
     alias: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('alias'), 'exclude': lambda f: f is None }})
     r"""The alias of the app entitlement used by Cone. Also exact-match queryable."""
@@ -98,6 +99,7 @@ class AppEntitlementInput:
       - connector
       - manual
       - delegated
+      - webhook
     """
     app_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('appId'), 'exclude': lambda f: f is None }})
     r"""The ID of the app that is associated with the app entitlement."""

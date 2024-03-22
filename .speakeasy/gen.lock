@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: caa5cc5d-fe97-4a71-b2f9-77ce0615bbd1
 management:
-  docChecksum: 4591685c542c1234e905df66ef5a02d5
+  docChecksum: 05029033200e79c3e265c09fbfc06a88
   docVersion: 0.1.0-alpha
-  speakeasyVersion: 1.215.1
-  generationVersion: 2.286.4
-  releaseVersion: 0.13.4
-  configChecksum: a050868dceeac319c38e0963b67179d7
+  speakeasyVersion: 1.219.2
+  generationVersion: 2.286.7
+  releaseVersion: 0.13.5
+  configChecksum: 13d3b9e1053811996038bc1fb5d3c6c8
   repoURL: https://github.com/ConductorOne/conductorone-sdk-python.git
   repoSubDirectory: .
   installationURL: https://github.com/ConductorOne/conductorone-sdk-python.git
@@ -199,6 +199,7 @@ generatedFiles:
   - src/sdk/models/shared/appentitlementview.py
   - src/sdk/models/shared/appentitlement.py
   - src/sdk/models/shared/provisionpolicy.py
+  - src/sdk/models/shared/webhookprovision.py
   - src/sdk/models/shared/manualprovision.py
   - src/sdk/models/shared/delegatedprovision.py
   - src/sdk/models/shared/connectorprovision.py
@@ -643,6 +644,7 @@ generatedFiles:
   - docs/models/shared/durationunset.md
   - docs/models/shared/appentitlement.md
   - docs/models/shared/provisionpolicy.md
+  - docs/models/shared/webhookprovision.md
   - docs/models/shared/manualprovision.md
   - docs/models/shared/delegatedprovision.md
   - docs/models/shared/connectorprovision.md

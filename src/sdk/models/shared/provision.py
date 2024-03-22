@@ -20,6 +20,7 @@ class Provision:
       - connector
       - manual
       - delegated
+      - webhook
     """
     provision_target: Optional[ProvisionTarget] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('provisionTarget'), 'exclude': lambda f: f is None }})
     r"""ProvisionTarget indicates the specific app, app entitlement, and if known, the app user and grant duration of this provision step"""

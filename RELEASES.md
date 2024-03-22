@@ -403,3 +403,11 @@ Based on:
 - Speakeasy CLI 1.215.1 (2.286.4) https://github.com/speakeasy-api/speakeasy
 ### Generated
 - [python v0.13.4] .
+
+## 2024-03-22 00:09:22
+### Changes
+Based on:
+- OpenAPI Doc 0.1.0-alpha 
+- Speakeasy CLI 1.219.2 (2.286.7) https://github.com/speakeasy-api/speakeasy
+### Generated
+- [python v0.13.5] .
