@@ -27,9 +27,9 @@ class SDKConfiguration:
     server_defaults: List[Dict[str, str]] = field(default_factory=List)
     language: str = 'python'
     openapi_doc_version: str = '0.1.0-alpha'
-    sdk_version: str = '0.13.5'
-    gen_version: str = '2.286.7'
-    user_agent: str = 'speakeasy-sdk/python 0.13.5 2.286.7 0.1.0-alpha openapi'
+    sdk_version: str = '0.13.6'
+    gen_version: str = '2.287.0'
+    user_agent: str = 'speakeasy-sdk/python 0.13.6 2.287.0 0.1.0-alpha openapi'
     retry_config: RetryConfig = None
     _hooks: SDKHooks = None
 
