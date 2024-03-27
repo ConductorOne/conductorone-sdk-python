@@ -12,9 +12,9 @@ from typing import Optional
 @dataclasses.dataclass
 class DirectoryView:
     r"""The directory view contains a directory and an app_path which is a JSONPATH set to the location in the expand mask that the expanded app will live if requested by the expander."""
-    app_path: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('appPath'), 'exclude': lambda f: f is None }})
-    r"""JSONPATH expression indicating the location of the App object in the  array."""
     directory: Optional[Directory] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('directory'), 'exclude': lambda f: f is None }})
     r"""This object indicates that an app is also a directory."""
+    app_path: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('appPath'), 'exclude': lambda f: f is None }})
+    r"""JSONPATH expression indicating the location of the App object in the  array."""
     
 

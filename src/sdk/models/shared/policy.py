@@ -5,7 +5,6 @@ import dataclasses
 import dateutil.parser
 from .policypostactions import PolicyPostActions
 from .policysteps import PolicySteps
-from .policysteps_input import PolicyStepsInput
 from .rule import Rule
 from dataclasses_json import Undefined, dataclass_json
 from datetime import datetime
@@ -27,6 +26,7 @@ class PolicyPolicyType(str, Enum):
 @dataclasses.dataclass
 class Policy:
     r"""A policy describes the behavior of the ConductorOne system when processing a task. You can describe the type, approvers, fallback behavior, and escalation processes."""
+    UNSET='__SPEAKEASY_UNSET__'
     created_at: Optional[datetime] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('createdAt'), 'encoder': utils.datetimeisoformat(True), 'decoder': dateutil.parser.isoparse, 'exclude': lambda f: f is None }})
     deleted_at: Optional[datetime] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('deletedAt'), 'encoder': utils.datetimeisoformat(True), 'decoder': dateutil.parser.isoparse, 'exclude': lambda f: f is None }})
     description: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('description'), 'exclude': lambda f: f is None }})
@@ -39,11 +39,11 @@ class Policy:
     r"""A map of string(policy type) to steps in a policy. This structure is leftover from a previous design, and should only ever have one key->value set."""
     policy_type: Optional[PolicyPolicyType] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('policyType'), 'exclude': lambda f: f is None }})
     r"""Indicates the type of this policy. Can also be used to get the value from policySteps."""
-    post_actions: Optional[List[PolicyPostActions]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('postActions') }})
+    post_actions: Optional[List[PolicyPostActions]] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('postActions'), 'exclude': lambda f: f is Policy.UNSET }})
     r"""An array of actions (ordered) to take place after a policy completes processing."""
     reassign_tasks_to_delegates: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('reassignTasksToDelegates'), 'exclude': lambda f: f is None }})
-    r"""A policy configuration option that allows for reassinging tasks to delgated users. This level of delegation referrs to the individual delegates users set on their account."""
-    rules: Optional[List[Rule]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('rules') }})
+    r"""A policy configuration option that allows for reassinging tasks to delgated users. This level of delegation refers to the individual delegates users set on their account."""
+    rules: Optional[List[Rule]] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('rules'), 'exclude': lambda f: f is Policy.UNSET }})
     r"""The rules field."""
     system_builtin: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('systemBuiltin'), 'exclude': lambda f: f is None }})
     r"""Whether this policy is a builtin system policy. Builtin system policies cannot be edited."""
@@ -56,19 +56,20 @@ class Policy:
 @dataclasses.dataclass
 class PolicyInput:
     r"""A policy describes the behavior of the ConductorOne system when processing a task. You can describe the type, approvers, fallback behavior, and escalation processes."""
+    UNSET='__SPEAKEASY_UNSET__'
     description: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('description'), 'exclude': lambda f: f is None }})
     r"""The description of the Policy."""
     display_name: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('displayName'), 'exclude': lambda f: f is None }})
     r"""The display name of the Policy."""
-    policy_steps: Optional[Dict[str, PolicyStepsInput]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('policySteps'), 'exclude': lambda f: f is None }})
+    policy_steps: Optional[Dict[str, PolicySteps]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('policySteps'), 'exclude': lambda f: f is None }})
     r"""A map of string(policy type) to steps in a policy. This structure is leftover from a previous design, and should only ever have one key->value set."""
     policy_type: Optional[PolicyPolicyType] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('policyType'), 'exclude': lambda f: f is None }})
     r"""Indicates the type of this policy. Can also be used to get the value from policySteps."""
-    post_actions: Optional[List[PolicyPostActions]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('postActions') }})
+    post_actions: Optional[List[PolicyPostActions]] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('postActions'), 'exclude': lambda f: f is PolicyInput.UNSET }})
     r"""An array of actions (ordered) to take place after a policy completes processing."""
     reassign_tasks_to_delegates: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('reassignTasksToDelegates'), 'exclude': lambda f: f is None }})
-    r"""A policy configuration option that allows for reassinging tasks to delgated users. This level of delegation referrs to the individual delegates users set on their account."""
-    rules: Optional[List[Rule]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('rules') }})
+    r"""A policy configuration option that allows for reassinging tasks to delgated users. This level of delegation refers to the individual delegates users set on their account."""
+    rules: Optional[List[Rule]] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('rules'), 'exclude': lambda f: f is PolicyInput.UNSET }})
     r"""The rules field."""
     
 

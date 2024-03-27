@@ -19,20 +19,14 @@ from sdk.models import shared
 
 s = sdk.SDK(
     security=shared.Security(
-        bearer_auth="",
-        oauth="",
+        bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
+        oauth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
     ),
 )
 
 req = shared.TaskServiceCreateGrantRequest(
-    task_expand_mask=shared.TaskExpandMask(
-        paths=[
-            'string',
-        ],
-    ),
-    task_grant_source=shared.TaskGrantSource(),
-    app_entitlement_id='string',
-    app_id='string',
+    app_entitlement_id='<value>',
+    app_id='<value>',
 )
 
 res = s.task.create_grant_task(req)
@@ -40,6 +34,7 @@ res = s.task.create_grant_task(req)
 if res.task_service_create_grant_response is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -56,7 +51,7 @@ if res.task_service_create_grant_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## create_revoke_task
 
@@ -70,19 +65,14 @@ from sdk.models import shared
 
 s = sdk.SDK(
     security=shared.Security(
-        bearer_auth="",
-        oauth="",
+        bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
+        oauth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
     ),
 )
 
 req = shared.TaskServiceCreateRevokeRequest(
-    task_expand_mask=shared.TaskExpandMask(
-        paths=[
-            'string',
-        ],
-    ),
-    app_entitlement_id='string',
-    app_id='string',
+    app_entitlement_id='<value>',
+    app_id='<value>',
 )
 
 res = s.task.create_revoke_task(req)
@@ -90,6 +80,7 @@ res = s.task.create_revoke_task(req)
 if res.task_service_create_revoke_response is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -106,7 +97,7 @@ if res.task_service_create_revoke_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## get
 
@@ -120,13 +111,13 @@ from sdk.models import operations, shared
 
 s = sdk.SDK(
     security=shared.Security(
-        bearer_auth="",
-        oauth="",
+        bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
+        oauth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
     ),
 )
 
 req = operations.C1APITaskV1TaskServiceGetRequest(
-    id='<ID>',
+    id='<id>',
 )
 
 res = s.task.get(req)
@@ -134,6 +125,7 @@ res = s.task.get(req)
 if res.task_service_get_response is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -150,4 +142,4 @@ if res.task_service_get_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |

@@ -23,6 +23,15 @@ class TaskTypeRevokeOutcome(str, Enum):
 @dataclasses.dataclass
 class TaskTypeRevoke:
     r"""The TaskTypeRevoke message indicates that a task is a revoke task and all related details."""
+    task_revoke_source: Optional[TaskRevokeSource] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('source'), 'exclude': lambda f: f is None }})
+    r"""The TaskRevokeSource message indicates the source of the revoke task is one of expired, nonUsage, request, or review.
+
+    This message contains a oneof named origin. Only a single field of the following list may be set at a time:
+      - review
+      - request
+      - expired
+      - nonUsage
+    """
     app_entitlement_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('appEntitlementId'), 'exclude': lambda f: f is None }})
     r"""The ID of the app entitlement."""
     app_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('appId'), 'exclude': lambda f: f is None }})
@@ -34,14 +43,5 @@ class TaskTypeRevoke:
     outcome: Optional[TaskTypeRevokeOutcome] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('outcome'), 'exclude': lambda f: f is None }})
     r"""The outcome of the revoke."""
     outcome_time: Optional[datetime] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('outcomeTime'), 'encoder': utils.datetimeisoformat(True), 'decoder': dateutil.parser.isoparse, 'exclude': lambda f: f is None }})
-    task_revoke_source: Optional[TaskRevokeSource] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('source'), 'exclude': lambda f: f is None }})
-    r"""The TaskRevokeSource message indicates the source of the revoke task is one of expired, nonUsage, request, or review.
-
-    This message contains a oneof named origin. Only a single field of the following list may be set at a time:
-      - review
-      - request
-      - expired
-      - nonUsage
-    """
     
 

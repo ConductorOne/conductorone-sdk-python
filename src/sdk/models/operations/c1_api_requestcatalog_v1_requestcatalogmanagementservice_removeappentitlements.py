@@ -20,10 +20,10 @@ class C1APIRequestcatalogV1RequestCatalogManagementServiceRemoveAppEntitlementsR
 class C1APIRequestcatalogV1RequestCatalogManagementServiceRemoveAppEntitlementsResponse:
     content_type: str = dataclasses.field()
     r"""HTTP response content type for this operation"""
-    raw_response: requests_http.Response = dataclasses.field()
-    r"""Raw HTTP response; suitable for custom response parsing"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
+    raw_response: requests_http.Response = dataclasses.field()
+    r"""Raw HTTP response; suitable for custom response parsing"""
     request_catalog_management_service_remove_app_entitlements_response: Optional[shared_requestcatalogmanagementserviceremoveappentitlementsresponse.RequestCatalogManagementServiceRemoveAppEntitlementsResponse] = dataclasses.field(default=None)
     r"""Empty response with a status code indicating success"""
     

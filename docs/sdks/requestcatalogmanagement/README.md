@@ -27,18 +27,13 @@ from sdk.models import operations, shared
 
 s = sdk.SDK(
     security=shared.Security(
-        bearer_auth="",
-        oauth="",
+        bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
+        oauth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
     ),
 )
 
 req = operations.C1APIRequestcatalogV1RequestCatalogManagementServiceAddAccessEntitlementsRequest(
-    request_catalog_management_service_add_access_entitlements_request=shared.RequestCatalogManagementServiceAddAccessEntitlementsRequest(
-        access_entitlements=[
-            shared.AppEntitlementRef(),
-        ],
-    ),
-    catalog_id='string',
+    catalog_id='<value>',
 )
 
 res = s.request_catalog_management.add_access_entitlements(req)
@@ -46,6 +41,7 @@ res = s.request_catalog_management.add_access_entitlements(req)
 if res.request_catalog_management_service_add_access_entitlements_response is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -62,7 +58,7 @@ if res.request_catalog_management_service_add_access_entitlements_response is no
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## add_app_entitlements
 
@@ -76,18 +72,13 @@ from sdk.models import operations, shared
 
 s = sdk.SDK(
     security=shared.Security(
-        bearer_auth="",
-        oauth="",
+        bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
+        oauth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
     ),
 )
 
 req = operations.C1APIRequestcatalogV1RequestCatalogManagementServiceAddAppEntitlementsRequest(
-    request_catalog_management_service_add_app_entitlements_request=shared.RequestCatalogManagementServiceAddAppEntitlementsRequest(
-        app_entitlements=[
-            shared.AppEntitlementRef(),
-        ],
-    ),
-    catalog_id='string',
+    catalog_id='<value>',
 )
 
 res = s.request_catalog_management.add_app_entitlements(req)
@@ -95,6 +86,7 @@ res = s.request_catalog_management.add_app_entitlements(req)
 if res.request_catalog_management_service_add_app_entitlements_response is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -111,7 +103,7 @@ if res.request_catalog_management_service_add_app_entitlements_response is not N
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## create
 
@@ -125,24 +117,19 @@ from sdk.models import shared
 
 s = sdk.SDK(
     security=shared.Security(
-        bearer_auth="",
-        oauth="",
+        bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
+        oauth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
     ),
 )
 
-req = shared.RequestCatalogManagementServiceCreateRequest(
-    request_catalog_expand_mask=shared.RequestCatalogExpandMask(
-        paths=[
-            'string',
-        ],
-    ),
-)
+req = shared.RequestCatalogManagementServiceCreateRequest()
 
 res = s.request_catalog_management.create(req)
 
 if res.request_catalog_management_service_get_response is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -159,7 +146,7 @@ if res.request_catalog_management_service_get_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## delete
 
@@ -173,14 +160,13 @@ from sdk.models import operations, shared
 
 s = sdk.SDK(
     security=shared.Security(
-        bearer_auth="",
-        oauth="",
+        bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
+        oauth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
     ),
 )
 
 req = operations.C1APIRequestcatalogV1RequestCatalogManagementServiceDeleteRequest(
-    request_catalog_management_service_delete_request=shared.RequestCatalogManagementServiceDeleteRequest(),
-    id='<ID>',
+    id='<id>',
 )
 
 res = s.request_catalog_management.delete(req)
@@ -188,6 +174,7 @@ res = s.request_catalog_management.delete(req)
 if res.request_catalog_management_service_delete_response is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -204,7 +191,7 @@ if res.request_catalog_management_service_delete_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## get
 
@@ -218,13 +205,13 @@ from sdk.models import operations, shared
 
 s = sdk.SDK(
     security=shared.Security(
-        bearer_auth="",
-        oauth="",
+        bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
+        oauth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
     ),
 )
 
 req = operations.C1APIRequestcatalogV1RequestCatalogManagementServiceGetRequest(
-    id='<ID>',
+    id='<id>',
 )
 
 res = s.request_catalog_management.get(req)
@@ -232,6 +219,7 @@ res = s.request_catalog_management.get(req)
 if res.request_catalog_management_service_get_response is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -248,7 +236,7 @@ if res.request_catalog_management_service_get_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## list
 
@@ -262,8 +250,8 @@ from sdk.models import shared
 
 s = sdk.SDK(
     security=shared.Security(
-        bearer_auth="",
-        oauth="",
+        bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
+        oauth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
     ),
 )
 
@@ -273,6 +261,7 @@ res = s.request_catalog_management.list()
 if res.request_catalog_management_service_list_response is not None:
     # handle response
     pass
+
 ```
 
 
@@ -283,7 +272,7 @@ if res.request_catalog_management_service_list_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## list_entitlements_for_access
 
@@ -297,13 +286,13 @@ from sdk.models import operations, shared
 
 s = sdk.SDK(
     security=shared.Security(
-        bearer_auth="",
-        oauth="",
+        bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
+        oauth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
     ),
 )
 
 req = operations.C1APIRequestcatalogV1RequestCatalogManagementServiceListEntitlementsForAccessRequest(
-    catalog_id='string',
+    catalog_id='<value>',
 )
 
 res = s.request_catalog_management.list_entitlements_for_access(req)
@@ -311,6 +300,7 @@ res = s.request_catalog_management.list_entitlements_for_access(req)
 if res.request_catalog_management_service_list_entitlements_for_access_response is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -327,7 +317,7 @@ if res.request_catalog_management_service_list_entitlements_for_access_response 
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## list_entitlements_per_catalog
 
@@ -341,13 +331,13 @@ from sdk.models import operations, shared
 
 s = sdk.SDK(
     security=shared.Security(
-        bearer_auth="",
-        oauth="",
+        bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
+        oauth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
     ),
 )
 
 req = operations.C1APIRequestcatalogV1RequestCatalogManagementServiceListEntitlementsPerCatalogRequest(
-    catalog_id='string',
+    catalog_id='<value>',
 )
 
 res = s.request_catalog_management.list_entitlements_per_catalog(req)
@@ -355,6 +345,7 @@ res = s.request_catalog_management.list_entitlements_per_catalog(req)
 if res.request_catalog_management_service_list_entitlements_per_catalog_response is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -371,7 +362,7 @@ if res.request_catalog_management_service_list_entitlements_per_catalog_response
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## remove_access_entitlements
 
@@ -385,18 +376,13 @@ from sdk.models import operations, shared
 
 s = sdk.SDK(
     security=shared.Security(
-        bearer_auth="",
-        oauth="",
+        bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
+        oauth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
     ),
 )
 
 req = operations.C1APIRequestcatalogV1RequestCatalogManagementServiceRemoveAccessEntitlementsRequest(
-    request_catalog_management_service_remove_access_entitlements_request=shared.RequestCatalogManagementServiceRemoveAccessEntitlementsRequest(
-        access_entitlements=[
-            shared.AppEntitlementRef(),
-        ],
-    ),
-    catalog_id='string',
+    catalog_id='<value>',
 )
 
 res = s.request_catalog_management.remove_access_entitlements(req)
@@ -404,6 +390,7 @@ res = s.request_catalog_management.remove_access_entitlements(req)
 if res.request_catalog_management_service_remove_access_entitlements_response is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -420,7 +407,7 @@ if res.request_catalog_management_service_remove_access_entitlements_response is
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## remove_app_entitlements
 
@@ -434,18 +421,13 @@ from sdk.models import operations, shared
 
 s = sdk.SDK(
     security=shared.Security(
-        bearer_auth="",
-        oauth="",
+        bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
+        oauth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
     ),
 )
 
 req = operations.C1APIRequestcatalogV1RequestCatalogManagementServiceRemoveAppEntitlementsRequest(
-    request_catalog_management_service_remove_app_entitlements_request=shared.RequestCatalogManagementServiceRemoveAppEntitlementsRequest(
-        app_entitlements=[
-            shared.AppEntitlementRef(),
-        ],
-    ),
-    catalog_id='string',
+    catalog_id='<value>',
 )
 
 res = s.request_catalog_management.remove_app_entitlements(req)
@@ -453,6 +435,7 @@ res = s.request_catalog_management.remove_app_entitlements(req)
 if res.request_catalog_management_service_remove_app_entitlements_response is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -469,7 +452,7 @@ if res.request_catalog_management_service_remove_app_entitlements_response is no
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## update
 
@@ -483,42 +466,13 @@ from sdk.models import operations, shared
 
 s = sdk.SDK(
     security=shared.Security(
-        bearer_auth="",
-        oauth="",
+        bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
+        oauth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
     ),
 )
 
 req = operations.C1APIRequestcatalogV1RequestCatalogManagementServiceUpdateRequest(
-    request_catalog_management_service_update_request=shared.RequestCatalogManagementServiceUpdateRequest(
-        request_catalog=shared.RequestCatalogInput(
-            access_entitlements=[
-                shared.AppEntitlementInput(
-                    provision_policy=shared.ProvisionPolicy(
-                        connector_provision=shared.ConnectorProvision(),
-                        delegated_provision=shared.DelegatedProvision(),
-                        manual_provision=shared.ManualProvision(
-                            user_ids=[
-                                'string',
-                            ],
-                        ),
-                    ),
-                    compliance_framework_value_ids=[
-                        'string',
-                    ],
-                    duration_unset=shared.DurationUnset(),
-                ),
-            ],
-            app_ids=[
-                'string',
-            ],
-        ),
-        request_catalog_expand_mask=shared.RequestCatalogExpandMask(
-            paths=[
-                'string',
-            ],
-        ),
-    ),
-    id='<ID>',
+    id='<id>',
 )
 
 res = s.request_catalog_management.update(req)
@@ -526,6 +480,7 @@ res = s.request_catalog_management.update(req)
 if res.request_catalog_management_service_get_response is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -542,4 +497,4 @@ if res.request_catalog_management_service_get_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |

@@ -29,11 +29,12 @@ class PolicyStepInstance:
       - accept
       - reject
     """
-    accept_instance: Optional[AcceptInstance] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('accept') }})
+    UNSET='__SPEAKEASY_UNSET__'
+    accept_instance: Optional[AcceptInstance] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('accept'), 'exclude': lambda f: f is PolicyStepInstance.UNSET }})
     r"""This policy step indicates that a ticket should have an approved outcome. This is a terminal approval state and is used to explicitly define the end of approval steps.
      The instance is just a marker for it being copied into an active policy.
     """
-    approval_instance: Optional[ApprovalInstance] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('approval') }})
+    approval_instance: Optional[ApprovalInstance] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('approval'), 'exclude': lambda f: f is PolicyStepInstance.UNSET }})
     r"""The approval instance object describes the way a policy step should be approved as well as its outcomes and state.
 
     This message contains a oneof named outcome. Only a single field of the following list may be set at a time:
@@ -43,11 +44,7 @@ class PolicyStepInstance:
       - restarted
       - reassignedByError
     """
-    id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id'), 'exclude': lambda f: f is None }})
-    r"""The ID of the PolicyStepInstance. This is required by many action submission endpoints to indicate what step you're approving."""
-    policy_generation_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('policyGenerationId'), 'exclude': lambda f: f is None }})
-    r"""The policy generation id refers to the version of the policy that this step was created from."""
-    provision_instance: Optional[ProvisionInstance] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('provision') }})
+    provision_instance: Optional[ProvisionInstance] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('provision'), 'exclude': lambda f: f is PolicyStepInstance.UNSET }})
     r"""A provision instance describes the specific configuration of an executing provision policy step including actions taken and notification id.
 
     This message contains a oneof named outcome. Only a single field of the following list may be set at a time:
@@ -56,10 +53,14 @@ class PolicyStepInstance:
       - errored
       - reassignedByError
     """
-    reject_instance: Optional[RejectInstance] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('reject') }})
+    reject_instance: Optional[RejectInstance] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('reject'), 'exclude': lambda f: f is PolicyStepInstance.UNSET }})
     r"""This policy step indicates that a ticket should have a denied outcome. This is a terminal approval state and is used to explicitly define the end of approval steps.
      The instance is just a marker for it being copied into an active policy.
     """
+    id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id'), 'exclude': lambda f: f is None }})
+    r"""The ID of the PolicyStepInstance. This is required by many action submission endpoints to indicate what step you're approving."""
+    policy_generation_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('policyGenerationId'), 'exclude': lambda f: f is None }})
+    r"""The policy generation id refers to the version of the policy that this step was created from."""
     state: Optional[PolicyStepInstanceState] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('state'), 'exclude': lambda f: f is None }})
     r"""The state of the step, which is either active or done."""
     

@@ -17,25 +17,19 @@ from sdk.models import shared
 
 s = sdk.SDK(
     security=shared.Security(
-        bearer_auth="",
-        oauth="",
+        bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
+        oauth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
     ),
 )
 
-req = shared.PersonalClientServiceCreateRequest(
-    allow_source_cidr=[
-        'string',
-    ],
-    scoped_roles=[
-        'string',
-    ],
-)
+req = shared.PersonalClientServiceCreateRequest()
 
 res = s.personal_client.create(req)
 
 if res.personal_client_service_create_response is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -52,4 +46,4 @@ if res.personal_client_service_create_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |

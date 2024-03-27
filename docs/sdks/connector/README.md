@@ -6,6 +6,7 @@
 * [create](#create) - Create
 * [create_delegated](#create_delegated) - Create Delegated
 * [delete](#delete) - Delete
+* [force_sync](#force_sync) - Force Sync
 * [get](#get) - Get
 * [get_credentials](#get_credentials) - Get Credentials
 * [list](#list) - List
@@ -26,28 +27,13 @@ from sdk.models import operations, shared
 
 s = sdk.SDK(
     security=shared.Security(
-        bearer_auth="",
-        oauth="",
+        bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
+        oauth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
     ),
 )
 
 req = operations.C1APIAppV1ConnectorServiceCreateRequest(
-    connector_service_create_request=shared.ConnectorServiceCreateRequest(
-        connector_expand_mask=shared.ConnectorExpandMask(
-            paths=[
-                'string',
-            ],
-        ),
-        config=shared.ConnectorServiceCreateRequestConfig(
-            additional_properties={
-                'key': 'string',
-            },
-        ),
-        user_ids=[
-            'string',
-        ],
-    ),
-    app_id='string',
+    app_id='<value>',
 )
 
 res = s.connector.create(req)
@@ -55,6 +41,7 @@ res = s.connector.create(req)
 if res.connector_service_create_response is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -71,7 +58,7 @@ if res.connector_service_create_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## create_delegated
 
@@ -85,23 +72,13 @@ from sdk.models import operations, shared
 
 s = sdk.SDK(
     security=shared.Security(
-        bearer_auth="",
-        oauth="",
+        bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
+        oauth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
     ),
 )
 
 req = operations.C1APIAppV1ConnectorServiceCreateDelegatedRequest(
-    connector_service_create_delegated_request=shared.ConnectorServiceCreateDelegatedRequest(
-        connector_expand_mask=shared.ConnectorExpandMask(
-            paths=[
-                'string',
-            ],
-        ),
-        user_ids=[
-            'string',
-        ],
-    ),
-    app_id='string',
+    app_id='<value>',
 )
 
 res = s.connector.create_delegated(req)
@@ -109,6 +86,7 @@ res = s.connector.create_delegated(req)
 if res.connector_service_create_response is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -125,7 +103,7 @@ if res.connector_service_create_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## delete
 
@@ -139,15 +117,14 @@ from sdk.models import operations, shared
 
 s = sdk.SDK(
     security=shared.Security(
-        bearer_auth="",
-        oauth="",
+        bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
+        oauth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
     ),
 )
 
 req = operations.C1APIAppV1ConnectorServiceDeleteRequest(
-    connector_service_delete_request=shared.ConnectorServiceDeleteRequest(),
-    app_id='string',
-    id='<ID>',
+    app_id='<value>',
+    id='<id>',
 )
 
 res = s.connector.delete(req)
@@ -155,6 +132,7 @@ res = s.connector.delete(req)
 if res.connector_service_delete_response is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -171,7 +149,53 @@ if res.connector_service_delete_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
+
+## force_sync
+
+Invokes the c1.api.app.v1.ConnectorService.ForceSync method.
+
+### Example Usage
+
+```python
+import sdk
+from sdk.models import operations, shared
+
+s = sdk.SDK(
+    security=shared.Security(
+        bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
+        oauth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
+    ),
+)
+
+req = operations.C1APIAppV1ConnectorServiceForceSyncRequest(
+    app_id='<value>',
+    connector_id='<value>',
+)
+
+res = s.connector.force_sync(req)
+
+if res.force_sync_response is not None:
+    # handle response
+    pass
+
+```
+
+### Parameters
+
+| Parameter                                                                                                                      | Type                                                                                                                           | Required                                                                                                                       | Description                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                      | [operations.C1APIAppV1ConnectorServiceForceSyncRequest](../../models/operations/c1apiappv1connectorserviceforcesyncrequest.md) | :heavy_check_mark:                                                                                                             | The request object to use for the request.                                                                                     |
+
+
+### Response
+
+**[operations.C1APIAppV1ConnectorServiceForceSyncResponse](../../models/operations/c1apiappv1connectorserviceforcesyncresponse.md)**
+### Errors
+
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## get
 
@@ -185,14 +209,14 @@ from sdk.models import operations, shared
 
 s = sdk.SDK(
     security=shared.Security(
-        bearer_auth="",
-        oauth="",
+        bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
+        oauth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
     ),
 )
 
 req = operations.C1APIAppV1ConnectorServiceGetRequest(
-    app_id='string',
-    id='<ID>',
+    app_id='<value>',
+    id='<id>',
 )
 
 res = s.connector.get(req)
@@ -200,6 +224,7 @@ res = s.connector.get(req)
 if res.connector_service_get_response is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -216,7 +241,7 @@ if res.connector_service_get_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## get_credentials
 
@@ -230,15 +255,15 @@ from sdk.models import operations, shared
 
 s = sdk.SDK(
     security=shared.Security(
-        bearer_auth="",
-        oauth="",
+        bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
+        oauth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
     ),
 )
 
 req = operations.C1APIAppV1ConnectorServiceGetCredentialsRequest(
-    app_id='string',
-    connector_id='string',
-    id='<ID>',
+    app_id='<value>',
+    connector_id='<value>',
+    id='<id>',
 )
 
 res = s.connector.get_credentials(req)
@@ -246,6 +271,7 @@ res = s.connector.get_credentials(req)
 if res.connector_service_get_credentials_response is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -262,7 +288,7 @@ if res.connector_service_get_credentials_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## list
 
@@ -276,13 +302,13 @@ from sdk.models import operations, shared
 
 s = sdk.SDK(
     security=shared.Security(
-        bearer_auth="",
-        oauth="",
+        bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
+        oauth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
     ),
 )
 
 req = operations.C1APIAppV1ConnectorServiceListRequest(
-    app_id='string',
+    app_id='<value>',
 )
 
 res = s.connector.list(req)
@@ -290,6 +316,7 @@ res = s.connector.list(req)
 if res.connector_service_list_response is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -306,7 +333,7 @@ if res.connector_service_list_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## revoke_credential
 
@@ -320,16 +347,15 @@ from sdk.models import operations, shared
 
 s = sdk.SDK(
     security=shared.Security(
-        bearer_auth="",
-        oauth="",
+        bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
+        oauth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
     ),
 )
 
 req = operations.C1APIAppV1ConnectorServiceRevokeCredentialRequest(
-    connector_service_revoke_credential_request=shared.ConnectorServiceRevokeCredentialRequest(),
-    app_id='string',
-    connector_id='string',
-    id='<ID>',
+    app_id='<value>',
+    connector_id='<value>',
+    id='<id>',
 )
 
 res = s.connector.revoke_credential(req)
@@ -337,6 +363,7 @@ res = s.connector.revoke_credential(req)
 if res.connector_service_revoke_credential_response is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -353,7 +380,7 @@ if res.connector_service_revoke_credential_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## rotate_credential
 
@@ -367,15 +394,14 @@ from sdk.models import operations, shared
 
 s = sdk.SDK(
     security=shared.Security(
-        bearer_auth="",
-        oauth="",
+        bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
+        oauth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
     ),
 )
 
 req = operations.C1APIAppV1ConnectorServiceRotateCredentialRequest(
-    connector_service_rotate_credential_request=shared.ConnectorServiceRotateCredentialRequest(),
-    app_id='string',
-    connector_id='string',
+    app_id='<value>',
+    connector_id='<value>',
 )
 
 res = s.connector.rotate_credential(req)
@@ -383,6 +409,7 @@ res = s.connector.rotate_credential(req)
 if res.connector_service_rotate_credential_response is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -399,7 +426,7 @@ if res.connector_service_rotate_credential_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## update
 
@@ -408,39 +435,19 @@ Update a connector.
 ### Example Usage
 
 ```python
-import dateutil.parser
 import sdk
 from sdk.models import operations, shared
 
 s = sdk.SDK(
     security=shared.Security(
-        bearer_auth="",
-        oauth="",
+        bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
+        oauth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
     ),
 )
 
 req = operations.C1APIAppV1ConnectorServiceUpdateRequest(
-    connector_service_update_request=shared.ConnectorServiceUpdateRequest(
-        connector=shared.ConnectorInput(
-            connector_status=shared.ConnectorStatus(),
-            o_auth2_authorized_as=shared.OAuth2AuthorizedAsInput(),
-            config=shared.Config(
-                additional_properties={
-                    'key': 'string',
-                },
-            ),
-            user_ids=[
-                'string',
-            ],
-        ),
-        connector_expand_mask=shared.ConnectorExpandMask(
-            paths=[
-                'string',
-            ],
-        ),
-    ),
-    app_id='string',
-    id='<ID>',
+    app_id='<value>',
+    id='<id>',
 )
 
 res = s.connector.update(req)
@@ -448,6 +455,7 @@ res = s.connector.update(req)
 if res.connector_service_update_response is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -464,7 +472,7 @@ if res.connector_service_update_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## update_delegated
 
@@ -473,39 +481,19 @@ Update a delegated connector.
 ### Example Usage
 
 ```python
-import dateutil.parser
 import sdk
 from sdk.models import operations, shared
 
 s = sdk.SDK(
     security=shared.Security(
-        bearer_auth="",
-        oauth="",
+        bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
+        oauth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
     ),
 )
 
 req = operations.C1APIAppV1ConnectorServiceUpdateDelegatedRequest(
-    connector_service_update_delegated_request=shared.ConnectorServiceUpdateDelegatedRequest(
-        connector=shared.ConnectorInput(
-            connector_status=shared.ConnectorStatus(),
-            o_auth2_authorized_as=shared.OAuth2AuthorizedAsInput(),
-            config=shared.Config(
-                additional_properties={
-                    'key': 'string',
-                },
-            ),
-            user_ids=[
-                'string',
-            ],
-        ),
-        connector_expand_mask=shared.ConnectorExpandMask(
-            paths=[
-                'string',
-            ],
-        ),
-    ),
-    connector_app_id='string',
-    connector_id='string',
+    connector_app_id='<value>',
+    connector_id='<value>',
 )
 
 res = s.connector.update_delegated(req)
@@ -513,6 +501,7 @@ res = s.connector.update_delegated(req)
 if res.connector_service_update_response is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -529,4 +518,4 @@ if res.connector_service_update_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |

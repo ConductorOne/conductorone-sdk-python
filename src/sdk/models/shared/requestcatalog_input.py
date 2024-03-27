@@ -12,9 +12,10 @@ from typing import List, Optional
 @dataclasses.dataclass
 class RequestCatalogInput:
     r"""The RequestCatalog is used for managing which entitlements are requestable, and who can request them."""
-    access_entitlements: Optional[List[AppEntitlementInput]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('accessEntitlements') }})
+    UNSET='__SPEAKEASY_UNSET__'
+    access_entitlements: Optional[List[AppEntitlementInput]] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('accessEntitlements'), 'exclude': lambda f: f is RequestCatalogInput.UNSET }})
     r"""An array of app entitlements that, if the user has, can view the contents of this catalog."""
-    app_ids: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('appIds') }})
+    app_ids: Optional[List[str]] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('appIds'), 'exclude': lambda f: f is RequestCatalogInput.UNSET }})
     r"""The Apps contained in this request catalog."""
     created_by_user_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('createdByUserId'), 'exclude': lambda f: f is None }})
     r"""The id of the user this request catalog was created by."""
@@ -26,6 +27,8 @@ class RequestCatalogInput:
     r"""The id of the request catalog."""
     published: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('published'), 'exclude': lambda f: f is None }})
     r"""Whether or not this catalog is published."""
+    request_bundle: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('requestBundle'), 'exclude': lambda f: f is None }})
+    r"""Whether all the entitlements in the catalog can be requests at once. Your tenant must have the bundles feature to use this."""
     visible_to_everyone: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('visibleToEveryone'), 'exclude': lambda f: f is None }})
     r"""If this is true, the access entitlement requirement is ignored."""
     

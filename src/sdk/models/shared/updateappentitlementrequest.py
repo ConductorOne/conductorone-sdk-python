@@ -13,6 +13,7 @@ from typing import Optional
 @dataclasses.dataclass
 class UpdateAppEntitlementRequest:
     r"""The UpdateAppEntitlementRequest message contains the app entitlement and the fields to be updated."""
+    UNSET='__SPEAKEASY_UNSET__'
     app_entitlement: Optional[AppEntitlementInput] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('entitlement'), 'exclude': lambda f: f is None }})
     r"""The app entitlement represents one permission in a downstream App (SAAS) that can be granted. For example, GitHub Read vs GitHub Write.
 
@@ -22,6 +23,6 @@ class UpdateAppEntitlementRequest:
     """
     app_entitlement_expand_mask: Optional[AppEntitlementExpandMask] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('expandMask'), 'exclude': lambda f: f is None }})
     r"""The app entitlement expand mask allows the user to get additional information when getting responses containing app entitlement views."""
-    update_mask: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('updateMask') }})
+    update_mask: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('updateMask'), 'exclude': lambda f: f is UpdateAppEntitlementRequest.UNSET }})
     
 

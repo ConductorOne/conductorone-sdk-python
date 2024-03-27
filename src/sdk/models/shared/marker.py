@@ -20,17 +20,17 @@ class Severity(str, Enum):
 @dataclasses.dataclass
 class Marker:
     r"""The Marker message."""
-    end_column: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('endColumn'), 'exclude': lambda f: f is None }})
+    end_column: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('endColumn'), 'exclude': lambda f: f is None }})
     r"""The endColumn field."""
-    end_line_number: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('endLineNumber'), 'exclude': lambda f: f is None }})
+    end_line_number: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('endLineNumber'), 'exclude': lambda f: f is None }})
     r"""The endLineNumber field."""
     message: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message'), 'exclude': lambda f: f is None }})
     r"""The message field."""
     severity: Optional[Severity] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('severity'), 'exclude': lambda f: f is None }})
     r"""The severity field."""
-    start_column: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('startColumn'), 'exclude': lambda f: f is None }})
+    start_column: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('startColumn'), 'exclude': lambda f: f is None }})
     r"""The startColumn field."""
-    start_line_number: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('startLineNumber'), 'exclude': lambda f: f is None }})
+    start_line_number: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('startLineNumber'), 'exclude': lambda f: f is None }})
     r"""The startLineNumber field."""
     
 

@@ -12,10 +12,10 @@ from typing import Optional
 @dataclasses.dataclass
 class ConnectorView:
     r"""The ConnectorView object provides a connector response object, as well as JSONPATHs to related objects provided by expanders."""
-    app_path: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('appPath'), 'exclude': lambda f: f is None }})
-    r"""JSONPATH expression indicating the location of the App object in the expanded array."""
     connector: Optional[Connector] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('connector'), 'exclude': lambda f: f is None }})
     r"""A Connector is used to sync objects into Apps"""
+    app_path: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('appPath'), 'exclude': lambda f: f is None }})
+    r"""JSONPATH expression indicating the location of the App object in the expanded array."""
     users_path: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('usersPath'), 'exclude': lambda f: f is None }})
     r"""JSONPATH expression indicating the location of the User object in the expanded array. This is the user that is a direct target of the ticket without a specific relationship to a potentially non-existent app user."""
     

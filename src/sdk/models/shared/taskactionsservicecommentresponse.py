@@ -12,6 +12,7 @@ from typing import Any, Dict, List, Optional
 @dataclasses.dataclass
 class TaskActionsServiceCommentResponseExpanded:
     r"""Contains an arbitrary serialized message along with a @type that describes the type of the serialized message."""
+    UNSET='__SPEAKEASY_UNSET__'
     at_type: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('@type'), 'exclude': lambda f: f is None }})
     r"""The type of the serialized message."""
     additional_properties: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'exclude': lambda f: f is None }})
@@ -23,9 +24,10 @@ class TaskActionsServiceCommentResponseExpanded:
 @dataclasses.dataclass
 class TaskActionsServiceCommentResponse:
     r"""Task actions service comment response returns the task view inluding the expanded array of items that are indicated by the expand mask on the request."""
-    expanded: Optional[List[TaskActionsServiceCommentResponseExpanded]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('expanded') }})
-    r"""List of serialized related objects."""
+    UNSET='__SPEAKEASY_UNSET__'
     task_view: Optional[TaskView] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('taskView'), 'exclude': lambda f: f is None }})
     r"""Contains a task and JSONPATH expressions that describe where in the expanded array related objects are located. This view can be used to display a fully-detailed dashboard of task information."""
+    expanded: Optional[List[TaskActionsServiceCommentResponseExpanded]] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('expanded'), 'exclude': lambda f: f is TaskActionsServiceCommentResponse.UNSET }})
+    r"""List of serialized related objects."""
     
 

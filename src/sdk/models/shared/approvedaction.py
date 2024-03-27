@@ -14,8 +14,9 @@ from typing import List, Optional
 @dataclasses.dataclass
 class ApprovedAction:
     r"""The approved action indicates that the approvalinstance had an outcome of approved."""
+    UNSET='__SPEAKEASY_UNSET__'
     approved_at: Optional[datetime] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('approvedAt'), 'encoder': utils.datetimeisoformat(True), 'decoder': dateutil.parser.isoparse, 'exclude': lambda f: f is None }})
-    entitlements: Optional[List[AppEntitlementReference]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('entitlements') }})
+    entitlements: Optional[List[AppEntitlementReference]] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('entitlements'), 'exclude': lambda f: f is ApprovedAction.UNSET }})
     r"""The entitlements that were approved. This will only ever be a list of one entitlement."""
     user_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('userId'), 'exclude': lambda f: f is None }})
     r"""The UserID that approved this step."""

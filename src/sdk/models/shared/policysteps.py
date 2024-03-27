@@ -12,7 +12,8 @@ from typing import List, Optional
 @dataclasses.dataclass
 class PolicySteps:
     r"""The PolicySteps message."""
-    steps: Optional[List[PolicyStep]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('steps') }})
+    UNSET='__SPEAKEASY_UNSET__'
+    steps: Optional[List[PolicyStep]] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('steps'), 'exclude': lambda f: f is PolicySteps.UNSET }})
     r"""An array of policy steps indicating the processing flow of a policy. These steps are oneOfs, and only one property may be set for each array index at a time."""
     
 

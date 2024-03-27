@@ -20,10 +20,10 @@ class C1APIAttributeV1AttributesDeleteAttributeValueRequest:
 class C1APIAttributeV1AttributesDeleteAttributeValueResponse:
     content_type: str = dataclasses.field()
     r"""HTTP response content type for this operation"""
-    raw_response: requests_http.Response = dataclasses.field()
-    r"""Raw HTTP response; suitable for custom response parsing"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
+    raw_response: requests_http.Response = dataclasses.field()
+    r"""Raw HTTP response; suitable for custom response parsing"""
     delete_attribute_value_response: Optional[shared_deleteattributevalueresponse.DeleteAttributeValueResponse] = dataclasses.field(default=None)
     r"""DeleteAttributeValueResponse is the empty response for deleting an attribute value."""
     

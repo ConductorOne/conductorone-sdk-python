@@ -3,7 +3,7 @@
 from __future__ import annotations
 import dataclasses
 from .policypostactions import PolicyPostActions
-from .policysteps_input import PolicyStepsInput
+from .policysteps import PolicySteps
 from dataclasses_json import Undefined, dataclass_json
 from enum import Enum
 from sdk import utils
@@ -23,15 +23,16 @@ class PolicyType(str, Enum):
 @dataclasses.dataclass
 class CreatePolicyRequest:
     r"""The CreatePolicyRequest message is used to create a new policy."""
+    UNSET='__SPEAKEASY_UNSET__'
     description: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('description'), 'exclude': lambda f: f is None }})
     r"""The description of the new policy."""
     display_name: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('displayName'), 'exclude': lambda f: f is None }})
     r"""The display name of the new policy."""
-    policy_steps: Optional[Dict[str, PolicyStepsInput]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('policySteps'), 'exclude': lambda f: f is None }})
+    policy_steps: Optional[Dict[str, PolicySteps]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('policySteps'), 'exclude': lambda f: f is None }})
     r"""The map of policy type to policy steps. The key is the stringified version of the enum. See other policies for examples."""
     policy_type: Optional[PolicyType] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('policyType'), 'exclude': lambda f: f is None }})
     r"""The enum of the policy type."""
-    post_actions: Optional[List[PolicyPostActions]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('postActions') }})
+    post_actions: Optional[List[PolicyPostActions]] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('postActions'), 'exclude': lambda f: f is CreatePolicyRequest.UNSET }})
     r"""Actions to occur after a policy finishes. As of now this is only valid on a certify policy to remediate a denied certification immediately."""
     reassign_tasks_to_delegates: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('reassignTasksToDelegates'), 'exclude': lambda f: f is None }})
     r"""Allows reassigning tasks to delegates."""

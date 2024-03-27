@@ -9,7 +9,7 @@ from typing import Optional
 
 @dataclasses.dataclass
 class C1APIIamV1RolesListRequest:
-    page_size: Optional[float] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'page_size', 'style': 'form', 'explode': True }})
+    page_size: Optional[int] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'page_size', 'style': 'form', 'explode': True }})
     page_token: Optional[str] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'page_token', 'style': 'form', 'explode': True }})
     
 
@@ -19,10 +19,10 @@ class C1APIIamV1RolesListRequest:
 class C1APIIamV1RolesListResponse:
     content_type: str = dataclasses.field()
     r"""HTTP response content type for this operation"""
-    raw_response: requests_http.Response = dataclasses.field()
-    r"""Raw HTTP response; suitable for custom response parsing"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
+    raw_response: requests_http.Response = dataclasses.field()
+    r"""Raw HTTP response; suitable for custom response parsing"""
     list_roles_response: Optional[shared_listrolesresponse.ListRolesResponse] = dataclasses.field(default=None)
     r"""The ListRolesResponse message contains a list of results and a nextPageToken if applicable."""
     

@@ -13,10 +13,11 @@ from typing import Optional
 @dataclasses.dataclass
 class AppUserServiceUpdateRequest:
     r"""The AppUserServiceUpdateRequest message contains the app user and the fields to be updated."""
+    UNSET='__SPEAKEASY_UNSET__'
     app_user: Optional[AppUserInput] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('appUser'), 'exclude': lambda f: f is None }})
     r"""Application User that represents an account in the application."""
     app_user_expand_mask: Optional[AppUserExpandMask] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('expandMask'), 'exclude': lambda f: f is None }})
     r"""The AppUserExpandMask message contains a list of paths to expand in the response."""
-    update_mask: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('updateMask') }})
+    update_mask: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('updateMask'), 'exclude': lambda f: f is AppUserServiceUpdateRequest.UNSET }})
     
 

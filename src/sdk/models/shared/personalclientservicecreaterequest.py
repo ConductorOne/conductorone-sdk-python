@@ -11,12 +11,13 @@ from typing import List, Optional
 @dataclasses.dataclass
 class PersonalClientServiceCreateRequest:
     r"""The PersonalClientServiceCreateRequest message contains the fields for creating a new personal client."""
-    allow_source_cidr: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('allowSourceCidr') }})
+    UNSET='__SPEAKEASY_UNSET__'
+    allow_source_cidr: Optional[List[str]] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('allowSourceCidr'), 'exclude': lambda f: f is PersonalClientServiceCreateRequest.UNSET }})
     r"""A list of CIDRs to restrict this credential to."""
     display_name: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('displayName'), 'exclude': lambda f: f is None }})
     r"""The display name for the new personal client."""
     expires: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('expires'), 'exclude': lambda f: f is None }})
-    scoped_roles: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('scopedRoles') }})
+    scoped_roles: Optional[List[str]] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('scopedRoles'), 'exclude': lambda f: f is PersonalClientServiceCreateRequest.UNSET }})
     r"""The list of roles to restrict the credential to."""
     
 

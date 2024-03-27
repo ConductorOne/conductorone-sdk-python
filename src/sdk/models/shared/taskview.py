@@ -12,6 +12,8 @@ from typing import Optional
 @dataclasses.dataclass
 class TaskView:
     r"""Contains a task and JSONPATH expressions that describe where in the expanded array related objects are located. This view can be used to display a fully-detailed dashboard of task information."""
+    task: Optional[Task] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('task'), 'exclude': lambda f: f is None }})
+    r"""A fully-fleged task object. Includes its policy, references to external apps, its type, its processing history, and more."""
     access_review_path: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('accessReviewPath'), 'exclude': lambda f: f is None }})
     r"""JSONPATH expression indicating the location of the AccessReview object in the expanded array"""
     app_path: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('appPath'), 'exclude': lambda f: f is None }})
@@ -28,8 +30,6 @@ class TaskView:
     r"""JSONPATH expression indicating the location of the Insights objects in the expanded array"""
     step_approvers_path: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('stepApproversPath'), 'exclude': lambda f: f is None }})
     r"""JSONPATH expression indicating the location of the StepApproverUsers objects in the expanded array"""
-    task: Optional[Task] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('task'), 'exclude': lambda f: f is None }})
-    r"""A fully-fleged task object. Includes its policy, references to external apps, its type, its processing history, and more."""
     user_path: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('userPath'), 'exclude': lambda f: f is None }})
     r"""JSONPATH expression indicating the location of the User object in the expanded array. This is the user that is a direct target of the ticket without a specific relationship to a potentially non-existent app user."""
     

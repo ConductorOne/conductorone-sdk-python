@@ -21,21 +21,13 @@ from sdk.models import operations, shared
 
 s = sdk.SDK(
     security=shared.Security(
-        bearer_auth="",
-        oauth="",
+        bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
+        oauth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
     ),
 )
 
 req = operations.C1APITaskV1TaskActionsServiceApproveRequest(
-    task_actions_service_approve_request=shared.TaskActionsServiceApproveRequest(
-        task_expand_mask=shared.TaskExpandMask(
-            paths=[
-                'string',
-            ],
-        ),
-        policy_step_id='string',
-    ),
-    task_id='string',
+    task_id='<value>',
 )
 
 res = s.task_actions.approve(req)
@@ -43,6 +35,7 @@ res = s.task_actions.approve(req)
 if res.task_actions_service_approve_response is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -59,7 +52,7 @@ if res.task_actions_service_approve_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## comment
 
@@ -73,20 +66,13 @@ from sdk.models import operations, shared
 
 s = sdk.SDK(
     security=shared.Security(
-        bearer_auth="",
-        oauth="",
+        bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
+        oauth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
     ),
 )
 
 req = operations.C1APITaskV1TaskActionsServiceCommentRequest(
-    task_actions_service_comment_request=shared.TaskActionsServiceCommentRequest(
-        task_expand_mask=shared.TaskExpandMask(
-            paths=[
-                'string',
-            ],
-        ),
-    ),
-    task_id='string',
+    task_id='<value>',
 )
 
 res = s.task_actions.comment(req)
@@ -94,6 +80,7 @@ res = s.task_actions.comment(req)
 if res.task_actions_service_comment_response is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -110,7 +97,7 @@ if res.task_actions_service_comment_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## deny
 
@@ -124,20 +111,13 @@ from sdk.models import operations, shared
 
 s = sdk.SDK(
     security=shared.Security(
-        bearer_auth="",
-        oauth="",
+        bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
+        oauth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
     ),
 )
 
 req = operations.C1APITaskV1TaskActionsServiceDenyRequest(
-    task_actions_service_deny_request=shared.TaskActionsServiceDenyRequest(
-        task_expand_mask=shared.TaskExpandMask(
-            paths=[
-                'string',
-            ],
-        ),
-    ),
-    task_id='string',
+    task_id='<value>',
 )
 
 res = s.task_actions.deny(req)
@@ -145,6 +125,7 @@ res = s.task_actions.deny(req)
 if res.task_actions_service_deny_response is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -161,7 +142,7 @@ if res.task_actions_service_deny_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## escalate_to_emergency_access
 
@@ -175,20 +156,13 @@ from sdk.models import operations, shared
 
 s = sdk.SDK(
     security=shared.Security(
-        bearer_auth="",
-        oauth="",
+        bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
+        oauth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
     ),
 )
 
 req = operations.C1APITaskV1TaskActionsServiceEscalateToEmergencyAccessRequest(
-    task_actions_service_escalate_to_emergency_access_request=shared.TaskActionsServiceEscalateToEmergencyAccessRequest(
-        task_expand_mask=shared.TaskExpandMask(
-            paths=[
-                'string',
-            ],
-        ),
-    ),
-    task_id='string',
+    task_id='<value>',
 )
 
 res = s.task_actions.escalate_to_emergency_access(req)
@@ -196,6 +170,7 @@ res = s.task_actions.escalate_to_emergency_access(req)
 if res.task_service_action_response is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -212,7 +187,7 @@ if res.task_service_action_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## restart
 
@@ -226,20 +201,13 @@ from sdk.models import operations, shared
 
 s = sdk.SDK(
     security=shared.Security(
-        bearer_auth="",
-        oauth="",
+        bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
+        oauth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
     ),
 )
 
 req = operations.C1APITaskV1TaskActionsServiceRestartRequest(
-    task_actions_service_restart_request=shared.TaskActionsServiceRestartRequest(
-        task_expand_mask=shared.TaskExpandMask(
-            paths=[
-                'string',
-            ],
-        ),
-    ),
-    task_id='string',
+    task_id='<value>',
 )
 
 res = s.task_actions.restart(req)
@@ -247,6 +215,7 @@ res = s.task_actions.restart(req)
 if res.task_actions_service_restart_response is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -263,4 +232,4 @@ if res.task_actions_service_restart_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |

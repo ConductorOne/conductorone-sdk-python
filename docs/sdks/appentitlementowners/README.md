@@ -20,15 +20,14 @@ from sdk.models import operations, shared
 
 s = sdk.SDK(
     security=shared.Security(
-        bearer_auth="",
-        oauth="",
+        bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
+        oauth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
     ),
 )
 
 req = operations.C1APIAppV1AppEntitlementOwnersAddRequest(
-    add_app_entitlement_owner_request=shared.AddAppEntitlementOwnerRequest(),
-    app_id='string',
-    entitlement_id='string',
+    app_id='<value>',
+    entitlement_id='<value>',
 )
 
 res = s.app_entitlement_owners.add(req)
@@ -36,6 +35,7 @@ res = s.app_entitlement_owners.add(req)
 if res.add_app_entitlement_owner_response is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -52,7 +52,7 @@ if res.add_app_entitlement_owner_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## list
 
@@ -66,14 +66,14 @@ from sdk.models import operations, shared
 
 s = sdk.SDK(
     security=shared.Security(
-        bearer_auth="",
-        oauth="",
+        bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
+        oauth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
     ),
 )
 
 req = operations.C1APIAppV1AppEntitlementOwnersListRequest(
-    app_id='string',
-    entitlement_id='string',
+    app_id='<value>',
+    entitlement_id='<value>',
 )
 
 res = s.app_entitlement_owners.list(req)
@@ -81,6 +81,7 @@ res = s.app_entitlement_owners.list(req)
 if res.list_app_entitlement_owners_response is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -97,7 +98,7 @@ if res.list_app_entitlement_owners_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## remove
 
@@ -111,16 +112,15 @@ from sdk.models import operations, shared
 
 s = sdk.SDK(
     security=shared.Security(
-        bearer_auth="",
-        oauth="",
+        bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
+        oauth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
     ),
 )
 
 req = operations.C1APIAppV1AppEntitlementOwnersRemoveRequest(
-    remove_app_entitlement_owner_request=shared.RemoveAppEntitlementOwnerRequest(),
-    app_id='string',
-    entitlement_id='string',
-    user_id='string',
+    app_id='<value>',
+    entitlement_id='<value>',
+    user_id='<value>',
 )
 
 res = s.app_entitlement_owners.remove(req)
@@ -128,6 +128,7 @@ res = s.app_entitlement_owners.remove(req)
 if res.remove_app_entitlement_owner_response is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -144,7 +145,7 @@ if res.remove_app_entitlement_owner_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## set
 
@@ -158,19 +159,14 @@ from sdk.models import operations, shared
 
 s = sdk.SDK(
     security=shared.Security(
-        bearer_auth="",
-        oauth="",
+        bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
+        oauth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
     ),
 )
 
 req = operations.C1APIAppV1AppEntitlementOwnersSetRequest(
-    set_app_entitlement_owners_request=shared.SetAppEntitlementOwnersRequest(
-        user_ids=[
-            'string',
-        ],
-    ),
-    app_id='string',
-    entitlement_id='string',
+    app_id='<value>',
+    entitlement_id='<value>',
 )
 
 res = s.app_entitlement_owners.set(req)
@@ -178,6 +174,7 @@ res = s.app_entitlement_owners.set(req)
 if res.set_app_entitlement_owners_response is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -194,4 +191,4 @@ if res.set_app_entitlement_owners_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |

@@ -17,45 +17,19 @@ from sdk.models import shared
 
 s = sdk.SDK(
     security=shared.Security(
-        bearer_auth="",
-        oauth="",
+        bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
+        oauth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
     ),
 )
 
-req = shared.AppEntitlementSearchServiceSearchRequest(
-    app_entitlement_expand_mask=shared.AppEntitlementExpandMask(
-        paths=[
-            'string',
-        ],
-    ),
-    app_ids=[
-        'string',
-    ],
-    app_user_ids=[
-        'string',
-    ],
-    compliance_framework_ids=[
-        'string',
-    ],
-    exclude_app_ids=[
-        'string',
-    ],
-    exclude_app_user_ids=[
-        'string',
-    ],
-    resource_type_ids=[
-        'string',
-    ],
-    risk_level_ids=[
-        'string',
-    ],
-)
+req = shared.AppEntitlementSearchServiceSearchRequest()
 
 res = s.app_entitlement_search.search(req)
 
 if res.app_entitlement_search_service_search_response is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -72,4 +46,4 @@ if res.app_entitlement_search_service_search_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |

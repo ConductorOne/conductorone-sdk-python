@@ -19,6 +19,7 @@ from .appuser import AppUser
 from .attributes import Attributes
 from .attributesearch import AttributeSearch
 from .auth import Auth
+from .awsexternalidsettings import AWSExternalIDSettings
 from .connector import Connector
 from .directory import Directory
 from .personalclient import PersonalClient
@@ -29,14 +30,17 @@ from .requestcatalogmanagement import RequestCatalogManagement
 from .requestcatalogsearch import RequestCatalogSearch
 from .roles import Roles
 from .sdkconfiguration import SDKConfiguration
+from .sessionsettings import SessionSettings
 from .task import Task
 from .taskactions import TaskActions
 from .tasksearch import TaskSearch
 from .user import User
 from .usersearch import UserSearch
+from .webhooks import Webhooks
 from sdk import utils
+from sdk._hooks import SDKHooks
 from sdk.models import shared
-from typing import Callable, Dict, Union
+from typing import Callable, Dict, Optional, Union
 
 class SDK:
     r"""ConductorOne API: The ConductorOne API is a HTTP API for managing ConductorOne resources."""
@@ -69,27 +73,30 @@ class SDK:
     request_catalog_search: RequestCatalogSearch
     task_search: TaskSearch
     user_search: UserSearch
+    aws_external_id_settings: AWSExternalIDSettings
+    session_settings: SessionSettings
     task: Task
     task_actions: TaskActions
     user: User
+    webhooks: Webhooks
 
     sdk_configuration: SDKConfiguration
 
     def __init__(self,
                  security: Union[shared.Security,Callable[[], shared.Security]] = None,
                  tenant_domain: str = None,
-                 server_idx: int = None,
-                 server_url: str = None,
-                 url_params: Dict[str, str] = None,
-                 client: requests_http.Session = None,
-                 retry_config: utils.RetryConfig = None
+                 server_idx: Optional[int] = None,
+                 server_url: Optional[str] = None,
+                 url_params: Optional[Dict[str, str]] = None,
+                 client: Optional[requests_http.Session] = None,
+                 retry_config: Optional[utils.RetryConfig] = None
                  ) -> None:
         """Instantiates the SDK configuring it with the provided parameters.
-        
+
         :param security: The security details required for authentication
         :type security: Union[shared.Security,Callable[[], shared.Security]]
         :param tenant_domain: Allows setting the tenantDomain variable for url substitution
-        :type tenant_domain: 
+        :type tenant_domain: str
         :param server_idx: The index of the server to use for all operations
         :type server_idx: int
         :param server_url: The server URL to use for all operations
@@ -103,7 +110,7 @@ class SDK:
         """
         if client is None:
             client = requests_http.Session()
-        
+
         if server_url is not None:
             if url_params is not None:
                 server_url = utils.template_url(server_url, url_params)
@@ -113,10 +120,28 @@ class SDK:
             },
         ]
 
-        self.sdk_configuration = SDKConfiguration(client, security, server_url, server_idx, server_defaults, retry_config=retry_config)
-       
+        self.sdk_configuration = SDKConfiguration(
+            client,
+            security,
+            server_url,
+            server_idx,
+            server_defaults,
+            retry_config=retry_config
+        )
+
+        hooks = SDKHooks()
+
+        current_server_url, *_ = self.sdk_configuration.get_server_details()
+        server_url, self.sdk_configuration.client = hooks.sdk_init(current_server_url, self.sdk_configuration.client)
+        if current_server_url != server_url:
+            self.sdk_configuration.server_url = server_url
+
+        # pylint: disable=protected-access
+        self.sdk_configuration._hooks = hooks
+
         self._init_sdks()
-    
+
+
     def _init_sdks(self):
         self.apps = Apps(self.sdk_configuration)
         self.connector = Connector(self.sdk_configuration)
@@ -147,7 +172,9 @@ class SDK:
         self.request_catalog_search = RequestCatalogSearch(self.sdk_configuration)
         self.task_search = TaskSearch(self.sdk_configuration)
         self.user_search = UserSearch(self.sdk_configuration)
+        self.aws_external_id_settings = AWSExternalIDSettings(self.sdk_configuration)
+        self.session_settings = SessionSettings(self.sdk_configuration)
         self.task = Task(self.sdk_configuration)
         self.task_actions = TaskActions(self.sdk_configuration)
         self.user = User(self.sdk_configuration)
-    
+        self.webhooks = Webhooks(self.sdk_configuration)

@@ -17,34 +17,19 @@ from sdk.models import shared
 
 s = sdk.SDK(
     security=shared.Security(
-        bearer_auth="",
-        oauth="",
+        bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
+        oauth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
     ),
 )
 
-req = shared.SearchAppResourceTypesRequest(
-    app_ids=[
-        'string',
-    ],
-    exclude_resource_type_ids=[
-        'string',
-    ],
-    exclude_resource_type_trait_ids=[
-        'string',
-    ],
-    resource_type_ids=[
-        'string',
-    ],
-    resource_type_trait_ids=[
-        'string',
-    ],
-)
+req = shared.SearchAppResourceTypesRequest()
 
 res = s.app_resource_search.search_app_resource_types(req)
 
 if res.search_app_resource_types_response is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -61,4 +46,4 @@ if res.search_app_resource_types_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |

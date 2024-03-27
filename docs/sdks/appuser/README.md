@@ -18,24 +18,14 @@ from sdk.models import operations, shared
 
 s = sdk.SDK(
     security=shared.Security(
-        bearer_auth="",
-        oauth="",
+        bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
+        oauth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
     ),
 )
 
 req = operations.C1APIAppV1AppUserServiceUpdateRequest(
-    app_user_service_update_request=shared.AppUserServiceUpdateRequest(
-        app_user=shared.AppUserInput(
-            app_user_status=shared.AppUserStatusInput(),
-        ),
-        app_user_expand_mask=shared.AppUserExpandMask(
-            paths=[
-                'string',
-            ],
-        ),
-    ),
-    app_user_app_id='string',
-    app_user_id='string',
+    app_user_app_id='<value>',
+    app_user_id='<value>',
 )
 
 res = s.app_user.update(req)
@@ -43,6 +33,7 @@ res = s.app_user.update(req)
 if res.app_user_service_update_response is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -59,4 +50,4 @@ if res.app_user_service_update_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |

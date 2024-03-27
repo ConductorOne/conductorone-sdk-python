@@ -23,6 +23,8 @@ class TaskTypeGrantOutcome(str, Enum):
 @dataclasses.dataclass
 class TaskTypeGrant:
     r"""The TaskTypeGrant message indicates that a task is a grant task and all related details."""
+    task_grant_source: Optional[TaskGrantSource] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('source'), 'exclude': lambda f: f is None }})
+    r"""The TaskGrantSource message tracks which external URL was the source of the specificed grant ticket."""
     app_entitlement_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('appEntitlementId'), 'exclude': lambda f: f is None }})
     r"""The ID of the app entitlement."""
     app_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('appId'), 'exclude': lambda f: f is None }})
@@ -35,7 +37,5 @@ class TaskTypeGrant:
     outcome: Optional[TaskTypeGrantOutcome] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('outcome'), 'exclude': lambda f: f is None }})
     r"""The outcome of the grant."""
     outcome_time: Optional[datetime] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('outcomeTime'), 'encoder': utils.datetimeisoformat(True), 'decoder': dateutil.parser.isoparse, 'exclude': lambda f: f is None }})
-    task_grant_source: Optional[TaskGrantSource] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('source'), 'exclude': lambda f: f is None }})
-    r"""The TaskGrantSource message tracks which external URL was the source of the specificed grant ticket."""
     
 

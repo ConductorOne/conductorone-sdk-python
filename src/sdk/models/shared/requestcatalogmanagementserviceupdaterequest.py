@@ -13,10 +13,11 @@ from typing import Optional
 @dataclasses.dataclass
 class RequestCatalogManagementServiceUpdateRequest:
     r"""Update a request catalog object by ID."""
+    UNSET='__SPEAKEASY_UNSET__'
     request_catalog: Optional[RequestCatalogInput] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('catalog'), 'exclude': lambda f: f is None }})
     r"""The RequestCatalog is used for managing which entitlements are requestable, and who can request them."""
     request_catalog_expand_mask: Optional[RequestCatalogExpandMask] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('expandMask'), 'exclude': lambda f: f is None }})
     r"""The RequestCatalogExpandMask includes the paths in the catalog view to expand in the return value of this call."""
-    update_mask: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('updateMask') }})
+    update_mask: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('updateMask'), 'exclude': lambda f: f is RequestCatalogManagementServiceUpdateRequest.UNSET }})
     
 

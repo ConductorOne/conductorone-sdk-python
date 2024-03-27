@@ -12,9 +12,9 @@ from typing import Optional
 @dataclasses.dataclass
 class PersonalClientServiceCreateResponse:
     r"""The PersonalClientServiceCreateResponse message contains the created personal client and client secret."""
-    client_secret: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('clientSecret'), 'exclude': lambda f: f is None }})
-    r"""The client secret that corresponds to the personal client. Make sure to save this, because it cannot be returned or queried again."""
     personal_client: Optional[PersonalClient] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('client'), 'exclude': lambda f: f is None }})
     r"""The PersonalClient message contains information about a presonal client credential."""
+    client_secret: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('clientSecret'), 'exclude': lambda f: f is None }})
+    r"""The client secret that corresponds to the personal client. Make sure to save this, because it cannot be returned or queried again."""
     
 

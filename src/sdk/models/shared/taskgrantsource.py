@@ -15,5 +15,7 @@ class TaskGrantSource:
     r"""The external url source of the grant ticket."""
     integration_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('integrationId'), 'exclude': lambda f: f is None }})
     r"""The integration id for the source of tickets."""
+    request_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('requestId'), 'exclude': lambda f: f is None }})
+    r"""the request id for the grant ticket if the source is external"""
     
 

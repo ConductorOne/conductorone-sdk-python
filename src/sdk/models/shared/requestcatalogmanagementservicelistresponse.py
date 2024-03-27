@@ -12,6 +12,7 @@ from typing import Any, Dict, List, Optional
 @dataclasses.dataclass
 class RequestCatalogManagementServiceListResponseExpanded:
     r"""Contains an arbitrary serialized message along with a @type that describes the type of the serialized message."""
+    UNSET='__SPEAKEASY_UNSET__'
     at_type: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('@type'), 'exclude': lambda f: f is None }})
     r"""The type of the serialized message."""
     additional_properties: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'exclude': lambda f: f is None }})
@@ -23,9 +24,10 @@ class RequestCatalogManagementServiceListResponseExpanded:
 @dataclasses.dataclass
 class RequestCatalogManagementServiceListResponse:
     r"""The RequestCatalogManagementServiceListResponse message."""
-    expanded: Optional[List[RequestCatalogManagementServiceListResponseExpanded]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('expanded') }})
+    UNSET='__SPEAKEASY_UNSET__'
+    expanded: Optional[List[RequestCatalogManagementServiceListResponseExpanded]] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('expanded'), 'exclude': lambda f: f is RequestCatalogManagementServiceListResponse.UNSET }})
     r"""List of serialized related objects."""
-    list: Optional[List[RequestCatalogView]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('list') }})
+    list: Optional[List[RequestCatalogView]] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('list'), 'exclude': lambda f: f is RequestCatalogManagementServiceListResponse.UNSET }})
     r"""The list of request catalogs."""
     next_page_token: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('nextPageToken'), 'exclude': lambda f: f is None }})
     r"""The nextPageToken is shown for the next page if the number of results is larger than the max page size.

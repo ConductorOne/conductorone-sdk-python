@@ -12,7 +12,8 @@ from typing import List, Optional
 @dataclasses.dataclass
 class FacetValueItem:
     r"""The FacetValueItem message."""
-    values: Optional[List[FacetValue]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('values') }})
+    UNSET='__SPEAKEASY_UNSET__'
+    values: Optional[List[FacetValue]] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('values'), 'exclude': lambda f: f is FacetValueItem.UNSET }})
     r"""An array of facet values."""
     
 

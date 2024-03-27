@@ -17,15 +17,15 @@ from sdk.models import operations, shared
 
 s = sdk.SDK(
     security=shared.Security(
-        bearer_auth="",
-        oauth="",
+        bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
+        oauth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
     ),
 )
 
 req = operations.C1APIAppV1AppEntitlementUserBindingServiceListAppUsersForIdentityWithGrantRequest(
-    app_entitlement_id='string',
-    app_id='string',
-    identity_user_id='string',
+    app_entitlement_id='<value>',
+    app_id='<value>',
+    identity_user_id='<value>',
 )
 
 res = s.app_entitlement_user_binding.list_app_users_for_identity_with_grant(req)
@@ -33,6 +33,7 @@ res = s.app_entitlement_user_binding.list_app_users_for_identity_with_grant(req)
 if res.list_app_users_for_identity_with_grant_response is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -49,4 +50,4 @@ if res.list_app_users_for_identity_with_grant_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |

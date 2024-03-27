@@ -14,8 +14,9 @@ from typing import List, Optional
 @dataclasses.dataclass
 class CompletedAction:
     r"""The outcome of a provision instance that has been completed succesfully."""
+    UNSET='__SPEAKEASY_UNSET__'
     completed_at: Optional[datetime] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('completedAt'), 'encoder': utils.datetimeisoformat(True), 'decoder': dateutil.parser.isoparse, 'exclude': lambda f: f is None }})
-    entitlements: Optional[List[AppEntitlementReference]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('entitlements') }})
+    entitlements: Optional[List[AppEntitlementReference]] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('entitlements'), 'exclude': lambda f: f is CompletedAction.UNSET }})
     r"""The list of entitlements that were provisioned. This is leftover from an older design, and is only ever going to be a single entitlement."""
     user_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('userId'), 'exclude': lambda f: f is None }})
     r"""The UserID of who completed provisioning. For connector provisioning this is the system user id, for manual provisioning this is who clicked \\"provision complete\\" """

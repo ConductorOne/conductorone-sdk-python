@@ -21,53 +21,19 @@ from sdk.models import shared
 
 s = sdk.SDK(
     security=shared.Security(
-        bearer_auth="",
-        oauth="",
+        bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
+        oauth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
     ),
 )
 
-req = shared.CreatePolicyRequest(
-    policy_steps={
-        'key': shared.PolicyStepsInput(
-            steps=[
-                shared.PolicyStepInput(
-                    accept=shared.Accept(),
-                    approval=shared.ApprovalInput(
-                        app_group_approval=shared.AppGroupApprovalInput(),
-                        app_owner_approval=shared.AppOwnerApprovalInput(),
-                        entitlement_owner_approval=shared.EntitlementOwnerApprovalInput(),
-                        expression_approval=shared.ExpressionApprovalInput(),
-                        manager_approval=shared.ManagerApprovalInput(),
-                        self_approval=shared.SelfApprovalInput(),
-                        user_approval=shared.UserApprovalInput(),
-                    ),
-                    provision=shared.Provision(
-                        provision_policy=shared.ProvisionPolicy(
-                            connector_provision=shared.ConnectorProvision(),
-                            delegated_provision=shared.DelegatedProvision(),
-                            manual_provision=shared.ManualProvision(
-                                user_ids=[
-                                    'string',
-                                ],
-                            ),
-                        ),
-                        provision_target=shared.ProvisionTarget(),
-                    ),
-                    reject=shared.Reject(),
-                ),
-            ],
-        ),
-    },
-    post_actions=[
-        shared.PolicyPostActions(),
-    ],
-)
+req = shared.CreatePolicyRequest()
 
 res = s.policies.create(req)
 
 if res.create_policy_response is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -84,7 +50,7 @@ if res.create_policy_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## delete
 
@@ -98,14 +64,13 @@ from sdk.models import operations, shared
 
 s = sdk.SDK(
     security=shared.Security(
-        bearer_auth="",
-        oauth="",
+        bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
+        oauth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
     ),
 )
 
 req = operations.C1APIPolicyV1PoliciesDeleteRequest(
-    delete_policy_request=shared.DeletePolicyRequest(),
-    id='<ID>',
+    id='<id>',
 )
 
 res = s.policies.delete(req)
@@ -113,6 +78,7 @@ res = s.policies.delete(req)
 if res.delete_policy_response is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -129,7 +95,7 @@ if res.delete_policy_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## get
 
@@ -143,13 +109,13 @@ from sdk.models import operations, shared
 
 s = sdk.SDK(
     security=shared.Security(
-        bearer_auth="",
-        oauth="",
+        bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
+        oauth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
     ),
 )
 
 req = operations.C1APIPolicyV1PoliciesGetRequest(
-    id='<ID>',
+    id='<id>',
 )
 
 res = s.policies.get(req)
@@ -157,6 +123,7 @@ res = s.policies.get(req)
 if res.get_policy_response is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -173,7 +140,7 @@ if res.get_policy_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## list
 
@@ -187,8 +154,8 @@ from sdk.models import operations, shared
 
 s = sdk.SDK(
     security=shared.Security(
-        bearer_auth="",
-        oauth="",
+        bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
+        oauth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
     ),
 )
 
@@ -199,6 +166,7 @@ res = s.policies.list(req)
 if res.list_policy_response is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -215,7 +183,7 @@ if res.list_policy_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## update
 
@@ -229,54 +197,13 @@ from sdk.models import operations, shared
 
 s = sdk.SDK(
     security=shared.Security(
-        bearer_auth="",
-        oauth="",
+        bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
+        oauth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
     ),
 )
 
 req = operations.C1APIPolicyV1PoliciesUpdateRequest(
-    update_policy_request=shared.UpdatePolicyRequest(
-        policy=shared.PolicyInput(
-            policy_steps={
-                'key': shared.PolicyStepsInput(
-                    steps=[
-                        shared.PolicyStepInput(
-                            accept=shared.Accept(),
-                            approval=shared.ApprovalInput(
-                                app_group_approval=shared.AppGroupApprovalInput(),
-                                app_owner_approval=shared.AppOwnerApprovalInput(),
-                                entitlement_owner_approval=shared.EntitlementOwnerApprovalInput(),
-                                expression_approval=shared.ExpressionApprovalInput(),
-                                manager_approval=shared.ManagerApprovalInput(),
-                                self_approval=shared.SelfApprovalInput(),
-                                user_approval=shared.UserApprovalInput(),
-                            ),
-                            provision=shared.Provision(
-                                provision_policy=shared.ProvisionPolicy(
-                                    connector_provision=shared.ConnectorProvision(),
-                                    delegated_provision=shared.DelegatedProvision(),
-                                    manual_provision=shared.ManualProvision(
-                                        user_ids=[
-                                            'string',
-                                        ],
-                                    ),
-                                ),
-                                provision_target=shared.ProvisionTarget(),
-                            ),
-                            reject=shared.Reject(),
-                        ),
-                    ],
-                ),
-            },
-            post_actions=[
-                shared.PolicyPostActions(),
-            ],
-            rules=[
-                shared.Rule(),
-            ],
-        ),
-    ),
-    id='<ID>',
+    id='<id>',
 )
 
 res = s.policies.update(req)
@@ -284,6 +211,7 @@ res = s.policies.update(req)
 if res.update_policy_response is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -300,4 +228,4 @@ if res.update_policy_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |

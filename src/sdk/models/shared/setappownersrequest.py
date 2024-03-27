@@ -11,7 +11,8 @@ from typing import List, Optional
 @dataclasses.dataclass
 class SetAppOwnersRequest:
     r"""The request message for setting the app owners."""
-    user_ids: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('userIds') }})
+    UNSET='__SPEAKEASY_UNSET__'
+    user_ids: Optional[List[str]] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('userIds'), 'exclude': lambda f: f is SetAppOwnersRequest.UNSET }})
     r"""The user_ids field for the users to set as an owner of the app."""
     
 

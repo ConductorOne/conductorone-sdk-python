@@ -12,8 +12,9 @@ from typing import Optional
 @dataclasses.dataclass
 class UpdateRoleRequest:
     r"""The UpdateRoleRequest message contains the role to update and the update mask."""
+    UNSET='__SPEAKEASY_UNSET__'
     role: Optional[RoleInput] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('role'), 'exclude': lambda f: f is None }})
     r"""Role is a role that can be assigned to a user in ConductorOne."""
-    update_mask: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('updateMask') }})
+    update_mask: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('updateMask'), 'exclude': lambda f: f is UpdateRoleRequest.UNSET }})
     
 

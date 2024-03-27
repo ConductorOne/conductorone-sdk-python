@@ -11,9 +11,10 @@ from typing import List, Optional
 @dataclasses.dataclass
 class ManualProvision:
     r"""Manual provisioning indicates that a human must intervene for the provisioning of this step."""
+    UNSET='__SPEAKEASY_UNSET__'
     instructions: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('instructions'), 'exclude': lambda f: f is None }})
     r"""This field indicates a text body of instructions for the provisioner to indicate."""
-    user_ids: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('userIds') }})
+    user_ids: Optional[List[str]] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('userIds'), 'exclude': lambda f: f is ManualProvision.UNSET }})
     r"""An array of users that are required to provision during this step."""
     
 

@@ -22,9 +22,10 @@ class PolicyStep:
       - accept
       - reject
     """
-    accept: Optional[Accept] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('accept') }})
+    UNSET='__SPEAKEASY_UNSET__'
+    accept: Optional[Accept] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('accept'), 'exclude': lambda f: f is PolicyStep.UNSET }})
     r"""This policy step indicates that a ticket should have an approved outcome. This is a terminal approval state and is used to explicitly define the end of approval steps."""
-    approval: Optional[Approval] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('approval') }})
+    approval: Optional[Approval] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('approval'), 'exclude': lambda f: f is PolicyStep.UNSET }})
     r"""The Approval message.
 
     This message contains a oneof named typ. Only a single field of the following list may be set at a time:
@@ -36,9 +37,9 @@ class PolicyStep:
       - entitlementOwners
       - expression
     """
-    provision: Optional[Provision] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('provision') }})
+    provision: Optional[Provision] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('provision'), 'exclude': lambda f: f is PolicyStep.UNSET }})
     r"""The provision step references a provision policy for this step."""
-    reject: Optional[Reject] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('reject') }})
+    reject: Optional[Reject] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('reject'), 'exclude': lambda f: f is PolicyStep.UNSET }})
     r"""This policy step indicates that a ticket should have a denied outcome. This is a terminal approval state and is used to explicitly define the end of approval steps."""
     
 
