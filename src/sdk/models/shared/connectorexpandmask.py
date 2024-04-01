@@ -11,7 +11,8 @@ from typing import List, Optional
 @dataclasses.dataclass
 class ConnectorExpandMask:
     r"""The ConnectorExpandMask is used to expand related objects on a connector."""
-    paths: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('paths') }})
+    UNSET='__SPEAKEASY_UNSET__'
+    paths: Optional[List[str]] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('paths'), 'exclude': lambda f: f is ConnectorExpandMask.UNSET }})
     r"""Paths that you want expanded in the response. Possible values are \\"app_id\\" and \\"*\\"."""
     
 

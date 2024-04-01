@@ -12,7 +12,8 @@ from typing import List, Optional
 @dataclasses.dataclass
 class ListAppUsersForIdentityWithGrantResponse:
     r"""The ListAppUsersForIdentityWithGrantResponse message."""
-    bindings: Optional[List[AppEntitlementUserBinding]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('bindings') }})
+    UNSET='__SPEAKEASY_UNSET__'
+    bindings: Optional[List[AppEntitlementUserBinding]] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('bindings'), 'exclude': lambda f: f is ListAppUsersForIdentityWithGrantResponse.UNSET }})
     r"""The list of app users that may also have grant information."""
     
 

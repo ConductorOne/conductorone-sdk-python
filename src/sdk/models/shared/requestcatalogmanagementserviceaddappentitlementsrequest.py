@@ -12,7 +12,8 @@ from typing import List, Optional
 @dataclasses.dataclass
 class RequestCatalogManagementServiceAddAppEntitlementsRequest:
     r"""The RequestCatalogManagementServiceAddAppEntitlementsRequest object is used to add app requestable app entitlements to a request catalog."""
-    app_entitlements: Optional[List[AppEntitlementRef]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('appEntitlements') }})
+    UNSET='__SPEAKEASY_UNSET__'
+    app_entitlements: Optional[List[AppEntitlementRef]] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('appEntitlements'), 'exclude': lambda f: f is RequestCatalogManagementServiceAddAppEntitlementsRequest.UNSET }})
     r"""List of entitlements to add to the request catalog."""
     
 

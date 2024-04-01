@@ -28,27 +28,28 @@ class Approval:
       - entitlementOwners
       - expression
     """
+    UNSET='__SPEAKEASY_UNSET__'
+    app_group_approval: Optional[AppGroupApproval] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('group'), 'exclude': lambda f: f is Approval.UNSET }})
+    r"""The AppGroupApproval object provides the configuration for setting a group as the approvers of an approval policy step."""
+    app_owner_approval: Optional[AppOwnerApproval] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('appOwners'), 'exclude': lambda f: f is Approval.UNSET }})
+    r"""App owner approval provides the configuration for an approval step when the app owner is the target."""
+    entitlement_owner_approval: Optional[EntitlementOwnerApproval] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('entitlementOwners'), 'exclude': lambda f: f is Approval.UNSET }})
+    r"""The entitlement owner approval allows configuration of the approval step when the target approvers are the entitlement owners."""
+    expression_approval: Optional[ExpressionApproval] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('expression'), 'exclude': lambda f: f is Approval.UNSET }})
+    r"""The ExpressionApproval message."""
+    manager_approval: Optional[ManagerApproval] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('manager'), 'exclude': lambda f: f is Approval.UNSET }})
+    r"""The manager approval object provides configuration options for approval when the target of the approval is the manager of the user in the task."""
+    self_approval: Optional[SelfApproval] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('self'), 'exclude': lambda f: f is Approval.UNSET }})
+    r"""The self approval object describes the configuration of a policy step that needs to be approved by the target of the request."""
+    user_approval: Optional[UserApproval] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('users'), 'exclude': lambda f: f is Approval.UNSET }})
+    r"""The user approval object describes the approval configuration of a policy step that needs to be approved by a specific list of users."""
     allow_reassignment: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('allowReassignment'), 'exclude': lambda f: f is None }})
     r"""Configuration to allow reassignment by reviewers during this step."""
-    app_group_approval: Optional[AppGroupApproval] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('group') }})
-    r"""The AppGroupApproval object provides the configuration for setting a group as the approvers of an approval policy step."""
-    app_owner_approval: Optional[AppOwnerApproval] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('appOwners') }})
-    r"""App owner approval provides the configuration for an approval step when the app owner is the target."""
     assigned: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('assigned'), 'exclude': lambda f: f is None }})
     r"""A field indicating whether this step is assigned."""
-    entitlement_owner_approval: Optional[EntitlementOwnerApproval] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('entitlementOwners') }})
-    r"""The entitlement owner approval allows configuration of the approval step when the target approvers are the entitlement owners."""
-    expression_approval: Optional[ExpressionApproval] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('expression') }})
-    r"""The ExpressionApproval message."""
-    manager_approval: Optional[ManagerApproval] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('manager') }})
-    r"""The manager approval object provides configuration options for approval when the target of the approval is the manager of the user in the task."""
     require_approval_reason: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('requireApprovalReason'), 'exclude': lambda f: f is None }})
     r"""Configuration to require a reason when approving this step."""
     require_reassignment_reason: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('requireReassignmentReason'), 'exclude': lambda f: f is None }})
     r"""Configuration to require a reason when reassigning this step."""
-    self_approval: Optional[SelfApproval] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('self') }})
-    r"""The self approval object describes the configuration of a policy step that needs to be approved by the target of the request."""
-    user_approval: Optional[UserApproval] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('users') }})
-    r"""The user approval object describes the approval configuration of a policy step that needs to be approved by a specific list of users."""
     
 

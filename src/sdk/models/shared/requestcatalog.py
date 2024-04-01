@@ -14,9 +14,10 @@ from typing import List, Optional
 @dataclasses.dataclass
 class RequestCatalog:
     r"""The RequestCatalog is used for managing which entitlements are requestable, and who can request them."""
-    access_entitlements: Optional[List[AppEntitlement]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('accessEntitlements') }})
+    UNSET='__SPEAKEASY_UNSET__'
+    access_entitlements: Optional[List[AppEntitlement]] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('accessEntitlements'), 'exclude': lambda f: f is RequestCatalog.UNSET }})
     r"""An array of app entitlements that, if the user has, can view the contents of this catalog."""
-    app_ids: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('appIds') }})
+    app_ids: Optional[List[str]] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('appIds'), 'exclude': lambda f: f is RequestCatalog.UNSET }})
     r"""The Apps contained in this request catalog."""
     created_at: Optional[datetime] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('createdAt'), 'encoder': utils.datetimeisoformat(True), 'decoder': dateutil.parser.isoparse, 'exclude': lambda f: f is None }})
     created_by_user_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('createdByUserId'), 'exclude': lambda f: f is None }})
@@ -30,6 +31,8 @@ class RequestCatalog:
     r"""The id of the request catalog."""
     published: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('published'), 'exclude': lambda f: f is None }})
     r"""Whether or not this catalog is published."""
+    request_bundle: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('requestBundle'), 'exclude': lambda f: f is None }})
+    r"""Whether all the entitlements in the catalog can be requests at once. Your tenant must have the bundles feature to use this."""
     updated_at: Optional[datetime] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('updatedAt'), 'encoder': utils.datetimeisoformat(True), 'decoder': dateutil.parser.isoparse, 'exclude': lambda f: f is None }})
     visible_to_everyone: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('visibleToEveryone'), 'exclude': lambda f: f is None }})
     r"""If this is true, the access entitlement requirement is ignored."""

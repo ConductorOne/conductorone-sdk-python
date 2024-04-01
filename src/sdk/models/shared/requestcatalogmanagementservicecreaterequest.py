@@ -12,14 +12,16 @@ from typing import Optional
 @dataclasses.dataclass
 class RequestCatalogManagementServiceCreateRequest:
     r"""Create a request catalog."""
+    request_catalog_expand_mask: Optional[RequestCatalogExpandMask] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('expandMask'), 'exclude': lambda f: f is None }})
+    r"""The RequestCatalogExpandMask includes the paths in the catalog view to expand in the return value of this call."""
     description: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('description'), 'exclude': lambda f: f is None }})
     r"""The description of the new request catalog."""
     display_name: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('displayName'), 'exclude': lambda f: f is None }})
     r"""The display name of the new request catalog."""
     published: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('published'), 'exclude': lambda f: f is None }})
     r"""Whether or not the new catalog should be created as published."""
-    request_catalog_expand_mask: Optional[RequestCatalogExpandMask] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('expandMask'), 'exclude': lambda f: f is None }})
-    r"""The RequestCatalogExpandMask includes the paths in the catalog view to expand in the return value of this call."""
+    request_bundle: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('requestBundle'), 'exclude': lambda f: f is None }})
+    r"""Whether all the entitlements in the catalog can be requests at once. Your tenant must have the bundles feature to use this."""
     visible_to_everyone: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('visibleToEveryone'), 'exclude': lambda f: f is None }})
     r"""Whether or not the new catalog is visible to everyone by default."""
     

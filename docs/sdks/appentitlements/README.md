@@ -22,14 +22,14 @@ from sdk.models import operations, shared
 
 s = sdk.SDK(
     security=shared.Security(
-        bearer_auth="",
-        oauth="",
+        bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
+        oauth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
     ),
 )
 
 req = operations.C1APIAppV1AppEntitlementsGetRequest(
-    app_id='string',
-    id='<ID>',
+    app_id='<value>',
+    id='<id>',
 )
 
 res = s.app_entitlements.get(req)
@@ -37,6 +37,7 @@ res = s.app_entitlements.get(req)
 if res.get_app_entitlement_response is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -53,7 +54,7 @@ if res.get_app_entitlement_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## list
 
@@ -67,13 +68,13 @@ from sdk.models import operations, shared
 
 s = sdk.SDK(
     security=shared.Security(
-        bearer_auth="",
-        oauth="",
+        bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
+        oauth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
     ),
 )
 
 req = operations.C1APIAppV1AppEntitlementsListRequest(
-    app_id='string',
+    app_id='<value>',
 )
 
 res = s.app_entitlements.list(req)
@@ -81,6 +82,7 @@ res = s.app_entitlements.list(req)
 if res.list_app_entitlements_response is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -97,7 +99,7 @@ if res.list_app_entitlements_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## list_for_app_resource
 
@@ -111,15 +113,15 @@ from sdk.models import operations, shared
 
 s = sdk.SDK(
     security=shared.Security(
-        bearer_auth="",
-        oauth="",
+        bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
+        oauth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
     ),
 )
 
 req = operations.C1APIAppV1AppEntitlementsListForAppResourceRequest(
-    app_id='string',
-    app_resource_id='string',
-    app_resource_type_id='string',
+    app_id='<value>',
+    app_resource_id='<value>',
+    app_resource_type_id='<value>',
 )
 
 res = s.app_entitlements.list_for_app_resource(req)
@@ -127,6 +129,7 @@ res = s.app_entitlements.list_for_app_resource(req)
 if res.list_app_entitlements_response is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -143,7 +146,7 @@ if res.list_app_entitlements_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## list_for_app_user
 
@@ -157,14 +160,14 @@ from sdk.models import operations, shared
 
 s = sdk.SDK(
     security=shared.Security(
-        bearer_auth="",
-        oauth="",
+        bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
+        oauth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
     ),
 )
 
 req = operations.C1APIAppV1AppEntitlementsListForAppUserRequest(
-    app_id='string',
-    app_user_id='string',
+    app_id='<value>',
+    app_user_id='<value>',
 )
 
 res = s.app_entitlements.list_for_app_user(req)
@@ -172,6 +175,7 @@ res = s.app_entitlements.list_for_app_user(req)
 if res.list_app_entitlements_response is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -188,7 +192,7 @@ if res.list_app_entitlements_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## list_users
 
@@ -202,14 +206,14 @@ from sdk.models import operations, shared
 
 s = sdk.SDK(
     security=shared.Security(
-        bearer_auth="",
-        oauth="",
+        bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
+        oauth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
     ),
 )
 
 req = operations.C1APIAppV1AppEntitlementsListUsersRequest(
-    app_entitlement_id='string',
-    app_id='string',
+    app_entitlement_id='<value>',
+    app_id='<value>',
 )
 
 res = s.app_entitlements.list_users(req)
@@ -217,6 +221,7 @@ res = s.app_entitlements.list_users(req)
 if res.list_app_entitlement_users_response is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -233,7 +238,7 @@ if res.list_app_entitlement_users_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## update
 
@@ -247,36 +252,14 @@ from sdk.models import operations, shared
 
 s = sdk.SDK(
     security=shared.Security(
-        bearer_auth="",
-        oauth="",
+        bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
+        oauth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
     ),
 )
 
 req = operations.C1APIAppV1AppEntitlementsUpdateRequest(
-    update_app_entitlement_request=shared.UpdateAppEntitlementRequest(
-        app_entitlement=shared.AppEntitlementInput(
-            provision_policy=shared.ProvisionPolicy(
-                connector_provision=shared.ConnectorProvision(),
-                delegated_provision=shared.DelegatedProvision(),
-                manual_provision=shared.ManualProvision(
-                    user_ids=[
-                        'string',
-                    ],
-                ),
-            ),
-            compliance_framework_value_ids=[
-                'string',
-            ],
-            duration_unset=shared.DurationUnset(),
-        ),
-        app_entitlement_expand_mask=shared.AppEntitlementExpandMask(
-            paths=[
-                'string',
-            ],
-        ),
-    ),
-    app_id='string',
-    id='<ID>',
+    app_id='<value>',
+    id='<id>',
 )
 
 res = s.app_entitlements.update(req)
@@ -284,6 +267,7 @@ res = s.app_entitlements.update(req)
 if res.update_app_entitlement_response is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -300,4 +284,4 @@ if res.update_app_entitlement_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |

@@ -11,10 +11,10 @@ from typing import Optional
 class C1APIAppV1AppEntitlementSearchServiceSearchResponse:
     content_type: str = dataclasses.field()
     r"""HTTP response content type for this operation"""
-    raw_response: requests_http.Response = dataclasses.field()
-    r"""Raw HTTP response; suitable for custom response parsing"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
+    raw_response: requests_http.Response = dataclasses.field()
+    r"""Raw HTTP response; suitable for custom response parsing"""
     app_entitlement_search_service_search_response: Optional[shared_appentitlementsearchservicesearchresponse.AppEntitlementSearchServiceSearchResponse] = dataclasses.field(default=None)
     r"""Successful response"""
     

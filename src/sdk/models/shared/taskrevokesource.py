@@ -22,13 +22,14 @@ class TaskRevokeSource:
       - expired
       - nonUsage
     """
-    task_revoke_source_expired: Optional[TaskRevokeSourceExpired] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('expired') }})
+    UNSET='__SPEAKEASY_UNSET__'
+    task_revoke_source_expired: Optional[TaskRevokeSourceExpired] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('expired'), 'exclude': lambda f: f is TaskRevokeSource.UNSET }})
     r"""The TaskRevokeSourceExpired message indicates that the source of the revoke task is due to a grant expiring."""
-    task_revoke_source_non_usage: Optional[TaskRevokeSourceNonUsage] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('nonUsage') }})
+    task_revoke_source_non_usage: Optional[TaskRevokeSourceNonUsage] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('nonUsage'), 'exclude': lambda f: f is TaskRevokeSource.UNSET }})
     r"""The TaskRevokeSourceNonUsage message indicates that the source of the revoke task is due to the grant not being used."""
-    task_revoke_source_request: Optional[TaskRevokeSourceRequest] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('request') }})
+    task_revoke_source_request: Optional[TaskRevokeSourceRequest] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('request'), 'exclude': lambda f: f is TaskRevokeSource.UNSET }})
     r"""The TaskRevokeSourceRequest message indicates that the source of the revoke task was a request."""
-    task_revoke_source_review: Optional[TaskRevokeSourceReview] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('review') }})
+    task_revoke_source_review: Optional[TaskRevokeSourceReview] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('review'), 'exclude': lambda f: f is TaskRevokeSource.UNSET }})
     r"""The TaskRevokeSourceReview message tracks which access review was the source of the specificed revoke ticket."""
     
 

@@ -12,9 +12,9 @@ from typing import Optional
 @dataclasses.dataclass
 class AppResourceTypeView:
     r"""The AppResourceTypeView message."""
-    app_path: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('appPath'), 'exclude': lambda f: f is None }})
-    r"""JSONPATH expression indicating the location of the App object in the  array"""
     app_resource_type: Optional[AppResourceType] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('appResourceType'), 'exclude': lambda f: f is None }})
     r"""The AppResourceType is referenced by an app entitlement defining its resource types. Commonly things like Group or Role."""
+    app_path: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('appPath'), 'exclude': lambda f: f is None }})
+    r"""JSONPATH expression indicating the location of the App object in the  array"""
     
 

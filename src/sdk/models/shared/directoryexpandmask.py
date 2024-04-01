@@ -11,7 +11,8 @@ from typing import List, Optional
 @dataclasses.dataclass
 class DirectoryExpandMask:
     r"""The fields to be included in the directory response."""
-    paths: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('paths') }})
+    UNSET='__SPEAKEASY_UNSET__'
+    paths: Optional[List[str]] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('paths'), 'exclude': lambda f: f is DirectoryExpandMask.UNSET }})
     r"""An array of fields to be included in the directory response."""
     
 

@@ -20,10 +20,10 @@ class C1APITaskV1TaskActionsServiceCommentRequest:
 class C1APITaskV1TaskActionsServiceCommentResponse:
     content_type: str = dataclasses.field()
     r"""HTTP response content type for this operation"""
-    raw_response: requests_http.Response = dataclasses.field()
-    r"""Raw HTTP response; suitable for custom response parsing"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
+    raw_response: requests_http.Response = dataclasses.field()
+    r"""Raw HTTP response; suitable for custom response parsing"""
     task_actions_service_comment_response: Optional[shared_taskactionsservicecommentresponse.TaskActionsServiceCommentResponse] = dataclasses.field(default=None)
     r"""Task actions service comment response returns the task view inluding the expanded array of items that are indicated by the expand mask on the request."""
     

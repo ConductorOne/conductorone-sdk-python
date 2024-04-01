@@ -12,6 +12,7 @@ from typing import Any, Dict, List, Optional
 @dataclasses.dataclass
 class TaskServiceActionResponseExpanded:
     r"""Contains an arbitrary serialized message along with a @type that describes the type of the serialized message."""
+    UNSET='__SPEAKEASY_UNSET__'
     at_type: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('@type'), 'exclude': lambda f: f is None }})
     r"""The type of the serialized message."""
     additional_properties: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'exclude': lambda f: f is None }})
@@ -23,10 +24,11 @@ class TaskServiceActionResponseExpanded:
 @dataclasses.dataclass
 class TaskServiceActionResponse:
     r"""The TaskServiceActionResponse message."""
-    expanded: Optional[List[TaskServiceActionResponseExpanded]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('expanded') }})
-    r"""The expanded field."""
+    UNSET='__SPEAKEASY_UNSET__'
     task_view: Optional[TaskView] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('taskView'), 'exclude': lambda f: f is None }})
     r"""Contains a task and JSONPATH expressions that describe where in the expanded array related objects are located. This view can be used to display a fully-detailed dashboard of task information."""
+    expanded: Optional[List[TaskServiceActionResponseExpanded]] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('expanded'), 'exclude': lambda f: f is TaskServiceActionResponse.UNSET }})
+    r"""The expanded field."""
     ticket_action_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('ticketActionId'), 'exclude': lambda f: f is None }})
     r"""The ticketActionId field."""
     

@@ -19,10 +19,10 @@ class C1APIAppV1AppEntitlementsGetRequest:
 class C1APIAppV1AppEntitlementsGetResponse:
     content_type: str = dataclasses.field()
     r"""HTTP response content type for this operation"""
-    raw_response: requests_http.Response = dataclasses.field()
-    r"""Raw HTTP response; suitable for custom response parsing"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
+    raw_response: requests_http.Response = dataclasses.field()
+    r"""Raw HTTP response; suitable for custom response parsing"""
     get_app_entitlement_response: Optional[shared_getappentitlementresponse.GetAppEntitlementResponse] = dataclasses.field(default=None)
     r"""The get app entitlement response returns an entitlement view containing paths in the expanded array for the objects expanded as indicated by the expand mask in the request."""
     

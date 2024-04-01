@@ -7,7 +7,7 @@ from .provisionpolicy import ProvisionPolicy
 from dataclasses_json import Undefined, dataclass_json
 from datetime import datetime
 from sdk import utils
-from typing import List, Optional
+from typing import Dict, List, Optional
 
 
 @dataclasses.dataclass
@@ -24,6 +24,16 @@ class AppEntitlement:
       - durationUnset
       - durationGrant
     """
+    UNSET='__SPEAKEASY_UNSET__'
+    provision_policy: Optional[ProvisionPolicy] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('provisionerPolicy'), 'exclude': lambda f: f is None }})
+    r"""ProvisionPolicy is a oneOf that indicates how a provision step should be processed.
+
+    This message contains a oneof named typ. Only a single field of the following list may be set at a time:
+      - connector
+      - manual
+      - delegated
+      - webhook
+    """
     alias: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('alias'), 'exclude': lambda f: f is None }})
     r"""The alias of the app entitlement used by Cone. Also exact-match queryable."""
     app_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('appId'), 'exclude': lambda f: f is None }})
@@ -34,7 +44,7 @@ class AppEntitlement:
     r"""The ID of the app resource type that is associated with the app entitlement"""
     certify_policy_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('certifyPolicyId'), 'exclude': lambda f: f is None }})
     r"""The ID of the policy that will be used for certify tickets related to the app entitlement."""
-    compliance_framework_value_ids: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('complianceFrameworkValueIds') }})
+    compliance_framework_value_ids: Optional[List[str]] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('complianceFrameworkValueIds'), 'exclude': lambda f: f is AppEntitlement.UNSET }})
     r"""The IDs of different compliance frameworks associated with this app entitlement ex (SOX, HIPAA, PCI, etc.)"""
     created_at: Optional[datetime] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('createdAt'), 'encoder': utils.datetimeisoformat(True), 'decoder': dateutil.parser.isoparse, 'exclude': lambda f: f is None }})
     deleted_at: Optional[datetime] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('deletedAt'), 'encoder': utils.datetimeisoformat(True), 'decoder': dateutil.parser.isoparse, 'exclude': lambda f: f is None }})
@@ -43,7 +53,7 @@ class AppEntitlement:
     display_name: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('displayName'), 'exclude': lambda f: f is None }})
     r"""The display name of the app entitlement."""
     duration_grant: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('durationGrant'), 'exclude': lambda f: f is None }})
-    duration_unset: Optional[DurationUnset] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('durationUnset') }})
+    duration_unset: Optional[DurationUnset] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('durationUnset'), 'exclude': lambda f: f is AppEntitlement.UNSET }})
     emergency_grant_enabled: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('emergencyGrantEnabled'), 'exclude': lambda f: f is None }})
     r"""This enables tasks to be created in an emergency and use a selected emergency access policy."""
     emergency_grant_policy_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('emergencyGrantPolicyId'), 'exclude': lambda f: f is None }})
@@ -54,24 +64,20 @@ class AppEntitlement:
     r"""The ID of the policy that will be used for grant tickets related to the app entitlement."""
     id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id'), 'exclude': lambda f: f is None }})
     r"""The unique ID for the App Entitlement."""
-    provision_policy: Optional[ProvisionPolicy] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('provisionerPolicy'), 'exclude': lambda f: f is None }})
-    r"""ProvisionPolicy is a oneOf that indicates how a provision step should be processed.
-
-    This message contains a oneof named typ. Only a single field of the following list may be set at a time:
-      - connector
-      - manual
-      - delegated
-    """
+    is_manually_managed: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('isManuallyManaged'), 'exclude': lambda f: f is None }})
+    r"""Flag to indicate if the app entitlement is manually managed."""
     revoke_policy_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('revokePolicyId'), 'exclude': lambda f: f is None }})
     r"""The ID of the policy that will be used for revoke tickets related to the app entitlement"""
     risk_level_value_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('riskLevelValueId'), 'exclude': lambda f: f is None }})
     r"""The riskLevelValueId field."""
     slug: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('slug'), 'exclude': lambda f: f is None }})
     r"""The slug is displayed as an oval next to the name in the frontend of C1, it tells you what permission the entitlement grants. See https://www.conductorone.com/docs/product/manage-access/entitlements/"""
+    source_connector_ids: Optional[Dict[str, str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('sourceConnectorIds'), 'exclude': lambda f: f is None }})
+    r"""Map to tell us which connector the entitlement came from."""
     system_builtin: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('systemBuiltin'), 'exclude': lambda f: f is None }})
     r"""This field indicates if this is a system builtin entitlement."""
     updated_at: Optional[datetime] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('updatedAt'), 'encoder': utils.datetimeisoformat(True), 'decoder': dateutil.parser.isoparse, 'exclude': lambda f: f is None }})
-    user_edited_mask: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('userEditedMask') }})
+    user_edited_mask: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('userEditedMask'), 'exclude': lambda f: f is AppEntitlement.UNSET }})
     
 
 
@@ -85,6 +91,16 @@ class AppEntitlementInput:
       - durationUnset
       - durationGrant
     """
+    UNSET='__SPEAKEASY_UNSET__'
+    provision_policy: Optional[ProvisionPolicy] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('provisionerPolicy'), 'exclude': lambda f: f is None }})
+    r"""ProvisionPolicy is a oneOf that indicates how a provision step should be processed.
+
+    This message contains a oneof named typ. Only a single field of the following list may be set at a time:
+      - connector
+      - manual
+      - delegated
+      - webhook
+    """
     app_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('appId'), 'exclude': lambda f: f is None }})
     r"""The ID of the app that is associated with the app entitlement."""
     app_resource_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('appResourceId'), 'exclude': lambda f: f is None }})
@@ -93,34 +109,30 @@ class AppEntitlementInput:
     r"""The ID of the app resource type that is associated with the app entitlement"""
     certify_policy_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('certifyPolicyId'), 'exclude': lambda f: f is None }})
     r"""The ID of the policy that will be used for certify tickets related to the app entitlement."""
-    compliance_framework_value_ids: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('complianceFrameworkValueIds') }})
+    compliance_framework_value_ids: Optional[List[str]] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('complianceFrameworkValueIds'), 'exclude': lambda f: f is AppEntitlementInput.UNSET }})
     r"""The IDs of different compliance frameworks associated with this app entitlement ex (SOX, HIPAA, PCI, etc.)"""
     description: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('description'), 'exclude': lambda f: f is None }})
     r"""The description of the app entitlement."""
     display_name: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('displayName'), 'exclude': lambda f: f is None }})
     r"""The display name of the app entitlement."""
     duration_grant: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('durationGrant'), 'exclude': lambda f: f is None }})
-    duration_unset: Optional[DurationUnset] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('durationUnset') }})
+    duration_unset: Optional[DurationUnset] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('durationUnset'), 'exclude': lambda f: f is AppEntitlementInput.UNSET }})
     emergency_grant_enabled: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('emergencyGrantEnabled'), 'exclude': lambda f: f is None }})
     r"""This enables tasks to be created in an emergency and use a selected emergency access policy."""
     emergency_grant_policy_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('emergencyGrantPolicyId'), 'exclude': lambda f: f is None }})
     r"""The ID of the policy that will be used for emergency access grant tasks."""
     grant_policy_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('grantPolicyId'), 'exclude': lambda f: f is None }})
     r"""The ID of the policy that will be used for grant tickets related to the app entitlement."""
-    provision_policy: Optional[ProvisionPolicy] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('provisionerPolicy'), 'exclude': lambda f: f is None }})
-    r"""ProvisionPolicy is a oneOf that indicates how a provision step should be processed.
-
-    This message contains a oneof named typ. Only a single field of the following list may be set at a time:
-      - connector
-      - manual
-      - delegated
-    """
+    is_manually_managed: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('isManuallyManaged'), 'exclude': lambda f: f is None }})
+    r"""Flag to indicate if the app entitlement is manually managed."""
     revoke_policy_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('revokePolicyId'), 'exclude': lambda f: f is None }})
     r"""The ID of the policy that will be used for revoke tickets related to the app entitlement"""
     risk_level_value_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('riskLevelValueId'), 'exclude': lambda f: f is None }})
     r"""The riskLevelValueId field."""
     slug: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('slug'), 'exclude': lambda f: f is None }})
     r"""The slug is displayed as an oval next to the name in the frontend of C1, it tells you what permission the entitlement grants. See https://www.conductorone.com/docs/product/manage-access/entitlements/"""
-    user_edited_mask: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('userEditedMask') }})
+    source_connector_ids: Optional[Dict[str, str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('sourceConnectorIds'), 'exclude': lambda f: f is None }})
+    r"""Map to tell us which connector the entitlement came from."""
+    user_edited_mask: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('userEditedMask'), 'exclude': lambda f: f is AppEntitlementInput.UNSET }})
     
 

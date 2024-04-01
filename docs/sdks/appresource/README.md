@@ -18,15 +18,15 @@ from sdk.models import operations, shared
 
 s = sdk.SDK(
     security=shared.Security(
-        bearer_auth="",
-        oauth="",
+        bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
+        oauth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
     ),
 )
 
 req = operations.C1APIAppV1AppResourceServiceGetRequest(
-    app_id='string',
-    app_resource_type_id='string',
-    id='<ID>',
+    app_id='<value>',
+    app_resource_type_id='<value>',
+    id='<id>',
 )
 
 res = s.app_resource.get(req)
@@ -34,6 +34,7 @@ res = s.app_resource.get(req)
 if res.app_resource_service_get_response is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -50,7 +51,7 @@ if res.app_resource_service_get_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## list
 
@@ -64,14 +65,14 @@ from sdk.models import operations, shared
 
 s = sdk.SDK(
     security=shared.Security(
-        bearer_auth="",
-        oauth="",
+        bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
+        oauth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
     ),
 )
 
 req = operations.C1APIAppV1AppResourceServiceListRequest(
-    app_id='string',
-    app_resource_type_id='string',
+    app_id='<value>',
+    app_resource_type_id='<value>',
 )
 
 res = s.app_resource.list(req)
@@ -79,6 +80,7 @@ res = s.app_resource.list(req)
 if res.app_resource_service_list_response is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -95,4 +97,4 @@ if res.app_resource_service_list_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |

@@ -18,10 +18,10 @@ class C1APIAttributeV1AttributesGetAttributeValueRequest:
 class C1APIAttributeV1AttributesGetAttributeValueResponse:
     content_type: str = dataclasses.field()
     r"""HTTP response content type for this operation"""
-    raw_response: requests_http.Response = dataclasses.field()
-    r"""Raw HTTP response; suitable for custom response parsing"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
+    raw_response: requests_http.Response = dataclasses.field()
+    r"""Raw HTTP response; suitable for custom response parsing"""
     get_attribute_value_response: Optional[shared_getattributevalueresponse.GetAttributeValueResponse] = dataclasses.field(default=None)
     r"""GetAttributeValueResponse is the response for getting an attribute value by id."""
     

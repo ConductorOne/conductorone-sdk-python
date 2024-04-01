@@ -12,8 +12,9 @@ from typing import Optional
 @dataclasses.dataclass
 class UpdateAppUsageControlsRequest:
     r"""The UpdateAppUsageControlsRequest message contains the AppUsageControls object to update and the update mask."""
+    UNSET='__SPEAKEASY_UNSET__'
     app_usage_controls: Optional[AppUsageControls] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('appUsageControls'), 'exclude': lambda f: f is None }})
     r"""The AppUsageControls object describes some peripheral configuration for an app."""
-    update_mask: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('updateMask') }})
+    update_mask: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('updateMask'), 'exclude': lambda f: f is UpdateAppUsageControlsRequest.UNSET }})
     
 

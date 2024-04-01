@@ -19,13 +19,13 @@ from sdk.models import operations, shared
 
 s = sdk.SDK(
     security=shared.Security(
-        bearer_auth="",
-        oauth="",
+        bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
+        oauth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
     ),
 )
 
 req = operations.C1APIIamV1RolesGetRequest(
-    role_id='string',
+    role_id='<value>',
 )
 
 res = s.roles.get(req)
@@ -33,6 +33,7 @@ res = s.roles.get(req)
 if res.get_roles_response is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -49,7 +50,7 @@ if res.get_roles_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## list
 
@@ -63,8 +64,8 @@ from sdk.models import operations, shared
 
 s = sdk.SDK(
     security=shared.Security(
-        bearer_auth="",
-        oauth="",
+        bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
+        oauth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
     ),
 )
 
@@ -75,6 +76,7 @@ res = s.roles.list(req)
 if res.list_roles_response is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -91,7 +93,7 @@ if res.list_roles_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## update
 
@@ -105,23 +107,13 @@ from sdk.models import operations, shared
 
 s = sdk.SDK(
     security=shared.Security(
-        bearer_auth="",
-        oauth="",
+        bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
+        oauth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
     ),
 )
 
 req = operations.C1APIIamV1RolesUpdateRequest(
-    update_role_request=shared.UpdateRoleRequest(
-        role=shared.RoleInput(
-            permissions=[
-                'string',
-            ],
-            service_roles=[
-                'string',
-            ],
-        ),
-    ),
-    role_id='string',
+    role_id='<value>',
 )
 
 res = s.roles.update(req)
@@ -129,6 +121,7 @@ res = s.roles.update(req)
 if res.update_roles_response is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -145,4 +138,4 @@ if res.update_roles_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |

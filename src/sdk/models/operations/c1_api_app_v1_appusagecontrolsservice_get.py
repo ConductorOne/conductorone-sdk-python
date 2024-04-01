@@ -18,10 +18,10 @@ class C1APIAppV1AppUsageControlsServiceGetRequest:
 class C1APIAppV1AppUsageControlsServiceGetResponse:
     content_type: str = dataclasses.field()
     r"""HTTP response content type for this operation"""
-    raw_response: requests_http.Response = dataclasses.field()
-    r"""Raw HTTP response; suitable for custom response parsing"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
+    raw_response: requests_http.Response = dataclasses.field()
+    r"""Raw HTTP response; suitable for custom response parsing"""
     get_app_usage_controls_response: Optional[shared_getappusagecontrolsresponse.GetAppUsageControlsResponse] = dataclasses.field(default=None)
     r"""The GetAppUsageControlsResponse message contains the retrieved AppUsageControls object."""
     

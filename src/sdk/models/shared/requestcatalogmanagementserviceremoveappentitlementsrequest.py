@@ -12,7 +12,8 @@ from typing import List, Optional
 @dataclasses.dataclass
 class RequestCatalogManagementServiceRemoveAppEntitlementsRequest:
     r"""The RequestCatalogManagementServiceRemoveAppEntitlementsRequest message is used to remove app entitlements from a request catalog."""
-    app_entitlements: Optional[List[AppEntitlementRef]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('appEntitlements') }})
+    UNSET='__SPEAKEASY_UNSET__'
+    app_entitlements: Optional[List[AppEntitlementRef]] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('appEntitlements'), 'exclude': lambda f: f is RequestCatalogManagementServiceRemoveAppEntitlementsRequest.UNSET }})
     r"""The list of app entitlements to remove from the catalog."""
     
 

@@ -11,7 +11,8 @@ from typing import List, Optional
 @dataclasses.dataclass
 class TaskExpandMask:
     r"""The task expand mask is an array of strings that specifes the related objects the requester wishes to have returned when making a request where the expand mask is part of the input. Use '*' to view all possible responses."""
-    paths: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('paths') }})
+    UNSET='__SPEAKEASY_UNSET__'
+    paths: Optional[List[str]] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('paths'), 'exclude': lambda f: f is TaskExpandMask.UNSET }})
     r"""A list of paths to expand in the response. May be any combination of \\"*\\", \\"access_review_id\\", \\"user_id\\", \\"created_by_user_id\\", \\"app_id\\", \\"app_user_id\\", \\"app_entitlement_ids\\", \\"step_approver_ids\\", \\"identity_user_id\\", and \\"insight_ids\\"."""
     
 

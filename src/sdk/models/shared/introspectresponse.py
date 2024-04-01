@@ -11,13 +11,14 @@ from typing import List, Optional
 @dataclasses.dataclass
 class IntrospectResponse:
     r"""IntrospectResponse contains information about the current user who is authenticated."""
-    features: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('features') }})
+    UNSET='__SPEAKEASY_UNSET__'
+    features: Optional[List[str]] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('features'), 'exclude': lambda f: f is IntrospectResponse.UNSET }})
     r"""The list of feature flags enabled for the tenant the logged in user belongs to."""
-    permissions: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('permissions') }})
+    permissions: Optional[List[str]] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('permissions'), 'exclude': lambda f: f is IntrospectResponse.UNSET }})
     r"""The list of permissions that the current logged in user has."""
     principle_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('principleId'), 'exclude': lambda f: f is None }})
     r"""The principleID of the current logged in user."""
-    roles: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('roles') }})
+    roles: Optional[List[str]] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('roles'), 'exclude': lambda f: f is IntrospectResponse.UNSET }})
     r"""The list of roles that the current logged in user has."""
     user_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('userId'), 'exclude': lambda f: f is None }})
     r"""The userID of the current logged in user."""

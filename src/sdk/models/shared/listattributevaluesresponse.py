@@ -12,7 +12,8 @@ from typing import List, Optional
 @dataclasses.dataclass
 class ListAttributeValuesResponse:
     r"""ListAttributeValuesResponse is the response for listing attribute values for a given AttributeType."""
-    list: Optional[List[AttributeValue]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('list') }})
+    UNSET='__SPEAKEASY_UNSET__'
+    list: Optional[List[AttributeValue]] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('list'), 'exclude': lambda f: f is ListAttributeValuesResponse.UNSET }})
     r"""The list of AttributeValues."""
     next_page_token: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('nextPageToken'), 'exclude': lambda f: f is None }})
     r"""The nextPageToken is shown for the next page if the number of results is larger than the max page size.
