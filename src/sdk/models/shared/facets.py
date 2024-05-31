@@ -13,7 +13,7 @@ from typing import List, Optional
 class Facets:
     r"""Indicates one value of a facet."""
     UNSET='__SPEAKEASY_UNSET__'
-    count: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('count'), 'exclude': lambda f: f is None }})
+    count: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('count'), 'encoder': utils.integerstrencoder(True), 'decoder': utils.integerstrdecoder, 'exclude': lambda f: f is None }})
     r"""The count of items in this facet."""
     facets: Optional[List[FacetCategory]] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('facets'), 'exclude': lambda f: f is Facets.UNSET }})
     r"""The facet being referenced."""

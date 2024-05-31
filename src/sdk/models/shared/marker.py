@@ -7,6 +7,7 @@ from enum import Enum
 from sdk import utils
 from typing import Optional
 
+
 class Severity(str, Enum):
     r"""The severity field."""
     UNKNOWN = 'UNKNOWN'

@@ -9,6 +9,7 @@ from enum import Enum
 from sdk import utils
 from typing import Optional
 
+
 class Outcome(str, Enum):
     r"""The outcome of the certification."""
     CERTIFY_OUTCOME_UNSPECIFIED = 'CERTIFY_OUTCOME_UNSPECIFIED'

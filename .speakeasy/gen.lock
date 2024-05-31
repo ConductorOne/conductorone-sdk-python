@@ -1,31 +1,38 @@
 lockVersion: 2.0.0
 id: caa5cc5d-fe97-4a71-b2f9-77ce0615bbd1
 management:
-  docChecksum: b6ff6fb45ac8e5c76f6df29ba7bcd6f6
+  docChecksum: d0c50fa32e1b75d3d157595adaab042f
   docVersion: 0.1.0-alpha
-  speakeasyVersion: 1.227.0
-  generationVersion: 2.291.0
-  releaseVersion: 0.13.7
-  configChecksum: 5297ce0ebeb0f48296825a1b8eddb20a
+  speakeasyVersion: 1.299.3
+  generationVersion: 2.338.7
+  releaseVersion: 0.14.0
+  configChecksum: 186b69f780ef47c5d778bc020defbc81
   repoURL: https://github.com/ConductorOne/conductorone-sdk-python.git
   repoSubDirectory: .
   installationURL: https://github.com/ConductorOne/conductorone-sdk-python.git
 features:
   python:
+    additionalDependencies: 0.1.0
     additionalProperties: 0.1.0
-    core: 4.5.2
+    core: 4.6.8
+    deprecations: 2.81.1
     globalSecurity: 2.83.5
+    globalSecurityCallbacks: 0.1.0
     globalServerURLs: 2.82.2
     groups: 2.81.2
     inputOutputModels: 2.83.1
-    nameOverrides: 2.81.1
+    nameOverrides: 2.81.2
+    nullables: 0.1.0
     responseFormat: 0.1.0
-    unions: 2.82.6
+    sdkHooks: 0.1.0
+    unions: 2.82.7
 generatedFiles:
   - src/sdk/sdkconfiguration.py
   - src/sdk/apps.py
+  - src/sdk/appaccessrequestsdefaults.py
   - src/sdk/connector.py
   - src/sdk/appentitlements.py
+  - src/sdk/appentitlementsearch.py
   - src/sdk/appentitlementuserbinding.py
   - src/sdk/appentitlementowners.py
   - src/sdk/appowners.py
@@ -47,11 +54,11 @@ generatedFiles:
   - src/sdk/appresourcesearch.py
   - src/sdk/appsearch.py
   - src/sdk/attributesearch.py
-  - src/sdk/appentitlementsearch.py
   - src/sdk/policysearch.py
   - src/sdk/requestcatalogsearch.py
   - src/sdk/tasksearch.py
   - src/sdk/usersearch.py
+  - src/sdk/webhookssearch.py
   - src/sdk/awsexternalidsettings.py
   - src/sdk/sessionsettings.py
   - src/sdk/task.py
@@ -65,12 +72,14 @@ generatedFiles:
   - src/sdk/utils/retries.py
   - src/sdk/utils/utils.py
   - src/sdk/models/errors/sdkerror.py
-  - tests/helpers.py
   - src/sdk/models/operations/c1_api_app_v1_apps_create.py
   - src/sdk/models/operations/c1_api_app_v1_apps_delete.py
   - src/sdk/models/operations/c1_api_app_v1_apps_get.py
   - src/sdk/models/operations/c1_api_app_v1_apps_list.py
   - src/sdk/models/operations/c1_api_app_v1_apps_update.py
+  - src/sdk/models/operations/c1_api_app_v1_appaccessrequestsdefaultsservice_cancelappaccessrequestsdefaults.py
+  - src/sdk/models/operations/c1_api_app_v1_appaccessrequestsdefaultsservice_createappaccessrequestsdefaults.py
+  - src/sdk/models/operations/c1_api_app_v1_appaccessrequestsdefaultsservice_getappaccessrequestsdefaults.py
   - src/sdk/models/operations/c1_api_app_v1_connectorservice_create.py
   - src/sdk/models/operations/c1_api_app_v1_connectorservice_createdelegated.py
   - src/sdk/models/operations/c1_api_app_v1_connectorservice_delete.py
@@ -88,6 +97,8 @@ generatedFiles:
   - src/sdk/models/operations/c1_api_app_v1_appentitlements_listforappuser.py
   - src/sdk/models/operations/c1_api_app_v1_appentitlements_listusers.py
   - src/sdk/models/operations/c1_api_app_v1_appentitlements_update.py
+  - src/sdk/models/operations/c1_api_app_v1_appentitlementsearchservice_search.py
+  - src/sdk/models/operations/c1_api_app_v1_appentitlementsearchservice_searchappentitlementswithexpired.py
   - src/sdk/models/operations/c1_api_app_v1_appentitlementuserbindingservice_listappusersforidentitywithgrant.py
   - src/sdk/models/operations/c1_api_app_v1_appentitlementowners_add.py
   - src/sdk/models/operations/c1_api_app_v1_appentitlementowners_list.py
@@ -118,11 +129,13 @@ generatedFiles:
   - src/sdk/models/operations/c1_api_requestcatalog_v1_requestcatalogmanagementservice_create.py
   - src/sdk/models/operations/c1_api_requestcatalog_v1_requestcatalogmanagementservice_delete.py
   - src/sdk/models/operations/c1_api_requestcatalog_v1_requestcatalogmanagementservice_get.py
+  - src/sdk/models/operations/c1_api_requestcatalog_v1_requestcatalogmanagementservice_getbundleautomation.py
   - src/sdk/models/operations/c1_api_requestcatalog_v1_requestcatalogmanagementservice_list.py
   - src/sdk/models/operations/c1_api_requestcatalog_v1_requestcatalogmanagementservice_listentitlementsforaccess.py
   - src/sdk/models/operations/c1_api_requestcatalog_v1_requestcatalogmanagementservice_listentitlementspercatalog.py
   - src/sdk/models/operations/c1_api_requestcatalog_v1_requestcatalogmanagementservice_removeaccessentitlements.py
   - src/sdk/models/operations/c1_api_requestcatalog_v1_requestcatalogmanagementservice_removeappentitlements.py
+  - src/sdk/models/operations/c1_api_requestcatalog_v1_requestcatalogmanagementservice_setbundleautomation.py
   - src/sdk/models/operations/c1_api_requestcatalog_v1_requestcatalogmanagementservice_update.py
   - src/sdk/models/operations/c1_api_directory_v1_directoryservice_create.py
   - src/sdk/models/operations/c1_api_directory_v1_directoryservice_delete.py
@@ -141,11 +154,11 @@ generatedFiles:
   - src/sdk/models/operations/c1_api_app_v1_appresourcesearch_searchappresourcetypes.py
   - src/sdk/models/operations/c1_api_app_v1_appsearch_search.py
   - src/sdk/models/operations/c1_api_attribute_v1_attributesearch_searchattributevalues.py
-  - src/sdk/models/operations/c1_api_app_v1_appentitlementsearchservice_search.py
   - src/sdk/models/operations/c1_api_policy_v1_policysearch_search.py
   - src/sdk/models/operations/c1_api_requestcatalog_v1_requestcatalogsearchservice_searchentitlements.py
   - src/sdk/models/operations/c1_api_task_v1_tasksearchservice_search.py
   - src/sdk/models/operations/c1_api_user_v1_usersearch_search.py
+  - src/sdk/models/operations/c1_api_webhooks_v1_webhookssearch_search.py
   - src/sdk/models/operations/c1_api_settings_v1_awsexternalidsettings_get.py
   - src/sdk/models/operations/c1_api_settings_v1_sessionsettingsservice_get.py
   - src/sdk/models/operations/c1_api_settings_v1_sessionsettingsservice_update.py
@@ -159,7 +172,12 @@ generatedFiles:
   - src/sdk/models/operations/c1_api_task_v1_taskactionsservice_restart.py
   - src/sdk/models/operations/c1_api_user_v1_userservice_get.py
   - src/sdk/models/operations/c1_api_user_v1_userservice_list.py
+  - src/sdk/models/operations/c1_api_webhooks_v1_webhooksservice_create.py
+  - src/sdk/models/operations/c1_api_webhooks_v1_webhooksservice_delete.py
+  - src/sdk/models/operations/c1_api_webhooks_v1_webhooksservice_get.py
+  - src/sdk/models/operations/c1_api_webhooks_v1_webhooksservice_list.py
   - src/sdk/models/operations/c1_api_webhooks_v1_webhooksservice_test.py
+  - src/sdk/models/operations/c1_api_webhooks_v1_webhooksservice_update.py
   - src/sdk/models/shared/createappresponse.py
   - src/sdk/models/shared/app.py
   - src/sdk/models/shared/user.py
@@ -171,6 +189,8 @@ generatedFiles:
   - src/sdk/models/shared/listappsresponse.py
   - src/sdk/models/shared/updateappresponse.py
   - src/sdk/models/shared/updateapprequest.py
+  - src/sdk/models/shared/appaccessrequestdefaults.py
+  - src/sdk/models/shared/cancelaccessrequestdefaultsrequest.py
   - src/sdk/models/shared/connectorservicecreateresponse.py
   - src/sdk/models/shared/connectorview.py
   - src/sdk/models/shared/connector.py
@@ -200,6 +220,7 @@ generatedFiles:
   - src/sdk/models/shared/appentitlement.py
   - src/sdk/models/shared/provisionpolicy.py
   - src/sdk/models/shared/webhookprovision.py
+  - src/sdk/models/shared/multistep.py
   - src/sdk/models/shared/manualprovision.py
   - src/sdk/models/shared/delegatedprovision.py
   - src/sdk/models/shared/connectorprovision.py
@@ -212,6 +233,17 @@ generatedFiles:
   - src/sdk/models/shared/updateappentitlementresponse.py
   - src/sdk/models/shared/updateappentitlementrequest.py
   - src/sdk/models/shared/appentitlementexpandmask.py
+  - src/sdk/models/shared/appentitlementsearchservicesearchresponse.py
+  - src/sdk/models/shared/facets.py
+  - src/sdk/models/shared/facetcategory.py
+  - src/sdk/models/shared/facetvalueitem.py
+  - src/sdk/models/shared/facetvalue.py
+  - src/sdk/models/shared/facetrangeitem.py
+  - src/sdk/models/shared/facetrange.py
+  - src/sdk/models/shared/appentitlementsearchservicesearchrequest.py
+  - src/sdk/models/shared/appentitlementref.py
+  - src/sdk/models/shared/searchappentitlementswithexpiredresponse.py
+  - src/sdk/models/shared/appentitlementwithexpired.py
   - src/sdk/models/shared/listappusersforidentitywithgrantresponse.py
   - src/sdk/models/shared/appentitlementuserbinding.py
   - src/sdk/models/shared/addappentitlementownerresponse.py
@@ -261,7 +293,6 @@ generatedFiles:
   - src/sdk/models/shared/introspectresponse.py
   - src/sdk/models/shared/requestcatalogmanagementserviceaddaccessentitlementsresponse.py
   - src/sdk/models/shared/requestcatalogmanagementserviceaddaccessentitlementsrequest.py
-  - src/sdk/models/shared/appentitlementref.py
   - src/sdk/models/shared/requestcatalogmanagementserviceaddappentitlementsresponse.py
   - src/sdk/models/shared/requestcatalogmanagementserviceaddappentitlementsrequest.py
   - src/sdk/models/shared/requestcatalogmanagementservicegetresponse.py
@@ -271,6 +302,9 @@ generatedFiles:
   - src/sdk/models/shared/requestcatalogexpandmask.py
   - src/sdk/models/shared/requestcatalogmanagementservicedeleteresponse.py
   - src/sdk/models/shared/requestcatalogmanagementservicedeleterequest.py
+  - src/sdk/models/shared/bundleautomation.py
+  - src/sdk/models/shared/bundleautomationruleentitlement.py
+  - src/sdk/models/shared/bundleautomationlastrunstate.py
   - src/sdk/models/shared/requestcatalogmanagementservicelistresponse.py
   - src/sdk/models/shared/requestcatalogmanagementservicelistentitlementsforaccessresponse.py
   - src/sdk/models/shared/requestcatalogmanagementservicelistentitlementspercatalogresponse.py
@@ -278,6 +312,7 @@ generatedFiles:
   - src/sdk/models/shared/requestcatalogmanagementserviceremoveaccessentitlementsrequest.py
   - src/sdk/models/shared/requestcatalogmanagementserviceremoveappentitlementsresponse.py
   - src/sdk/models/shared/requestcatalogmanagementserviceremoveappentitlementsrequest.py
+  - src/sdk/models/shared/setbundleautomationrequest.py
   - src/sdk/models/shared/requestcatalogmanagementserviceupdaterequest.py
   - src/sdk/models/shared/requestcatalog_input.py
   - src/sdk/models/shared/directoryservicecreateresponse.py
@@ -332,14 +367,6 @@ generatedFiles:
   - src/sdk/models/shared/searchappsrequest.py
   - src/sdk/models/shared/searchattributevaluesresponse.py
   - src/sdk/models/shared/searchattributevaluesrequest.py
-  - src/sdk/models/shared/appentitlementsearchservicesearchresponse.py
-  - src/sdk/models/shared/facets.py
-  - src/sdk/models/shared/facetcategory.py
-  - src/sdk/models/shared/facetvalueitem.py
-  - src/sdk/models/shared/facetvalue.py
-  - src/sdk/models/shared/facetrangeitem.py
-  - src/sdk/models/shared/facetrange.py
-  - src/sdk/models/shared/appentitlementsearchservicesearchrequest.py
   - src/sdk/models/shared/searchpoliciesrequest.py
   - src/sdk/models/shared/policyref.py
   - src/sdk/models/shared/requestcatalogsearchservicesearchentitlementsresponse.py
@@ -386,6 +413,10 @@ generatedFiles:
   - src/sdk/models/shared/searchusersrequest.py
   - src/sdk/models/shared/userref.py
   - src/sdk/models/shared/userexpandmask.py
+  - src/sdk/models/shared/webhookssearchresponse.py
+  - src/sdk/models/shared/webhook.py
+  - src/sdk/models/shared/webhookssearchrequest.py
+  - src/sdk/models/shared/webhookref.py
   - src/sdk/models/shared/getawsexternalidresponse.py
   - src/sdk/models/shared/awsexternalid.py
   - src/sdk/models/shared/getsessionsettingsresponse.py
@@ -409,6 +440,12 @@ generatedFiles:
   - src/sdk/models/shared/taskactionsservicerestartrequest.py
   - src/sdk/models/shared/userservicegetresponse.py
   - src/sdk/models/shared/userservicelistresponse.py
+  - src/sdk/models/shared/webhooksservicecreateresponse.py
+  - src/sdk/models/shared/webhooksservicecreaterequest.py
+  - src/sdk/models/shared/webhooksservicedeleteresponse.py
+  - src/sdk/models/shared/webhooksservicedeleterequest.py
+  - src/sdk/models/shared/webhooksservicegetresponse.py
+  - src/sdk/models/shared/webhooksservicelistresponse.py
   - src/sdk/models/shared/webhooksservicetestresponse.py
   - src/sdk/models/shared/webhookinstance.py
   - src/sdk/models/shared/webhookspec.py
@@ -418,6 +455,9 @@ generatedFiles:
   - src/sdk/models/shared/webhooksourcepolicypostaction.py
   - src/sdk/models/shared/webhooksourceapprovalstep.py
   - src/sdk/models/shared/webhooksservicetestrequest.py
+  - src/sdk/models/shared/webhooksserviceupdateresponse.py
+  - src/sdk/models/shared/webhooksserviceupdaterequest.py
+  - src/sdk/models/shared/webhook_input.py
   - src/sdk/models/shared/security.py
   - src/sdk/models/__init__.py
   - src/sdk/models/errors/__init__.py
@@ -432,6 +472,12 @@ generatedFiles:
   - docs/models/operations/c1apiappv1appslistresponse.md
   - docs/models/operations/c1apiappv1appsupdaterequest.md
   - docs/models/operations/c1apiappv1appsupdateresponse.md
+  - docs/models/operations/c1apiappv1appaccessrequestsdefaultsservicecancelappaccessrequestsdefaultsrequest.md
+  - docs/models/operations/c1apiappv1appaccessrequestsdefaultsservicecancelappaccessrequestsdefaultsresponse.md
+  - docs/models/operations/c1apiappv1appaccessrequestsdefaultsservicecreateappaccessrequestsdefaultsrequest.md
+  - docs/models/operations/c1apiappv1appaccessrequestsdefaultsservicecreateappaccessrequestsdefaultsresponse.md
+  - docs/models/operations/c1apiappv1appaccessrequestsdefaultsservicegetappaccessrequestsdefaultsrequest.md
+  - docs/models/operations/c1apiappv1appaccessrequestsdefaultsservicegetappaccessrequestsdefaultsresponse.md
   - docs/models/operations/c1apiappv1connectorservicecreaterequest.md
   - docs/models/operations/c1apiappv1connectorservicecreateresponse.md
   - docs/models/operations/c1apiappv1connectorservicecreatedelegatedrequest.md
@@ -466,6 +512,9 @@ generatedFiles:
   - docs/models/operations/c1apiappv1appentitlementslistusersresponse.md
   - docs/models/operations/c1apiappv1appentitlementsupdaterequest.md
   - docs/models/operations/c1apiappv1appentitlementsupdateresponse.md
+  - docs/models/operations/c1apiappv1appentitlementsearchservicesearchresponse.md
+  - docs/models/operations/c1apiappv1appentitlementsearchservicesearchappentitlementswithexpiredrequest.md
+  - docs/models/operations/c1apiappv1appentitlementsearchservicesearchappentitlementswithexpiredresponse.md
   - docs/models/operations/c1apiappv1appentitlementuserbindingservicelistappusersforidentitywithgrantrequest.md
   - docs/models/operations/c1apiappv1appentitlementuserbindingservicelistappusersforidentitywithgrantresponse.md
   - docs/models/operations/c1apiappv1appentitlementownersaddrequest.md
@@ -523,6 +572,9 @@ generatedFiles:
   - docs/models/operations/c1apirequestcatalogv1requestcatalogmanagementservicedeleteresponse.md
   - docs/models/operations/c1apirequestcatalogv1requestcatalogmanagementservicegetrequest.md
   - docs/models/operations/c1apirequestcatalogv1requestcatalogmanagementservicegetresponse.md
+  - docs/models/operations/c1apirequestcatalogv1requestcatalogmanagementservicegetbundleautomationrequest.md
+  - docs/models/operations/c1apirequestcatalogv1requestcatalogmanagementservicegetbundleautomationresponse.md
+  - docs/models/operations/c1apirequestcatalogv1requestcatalogmanagementservicelistrequest.md
   - docs/models/operations/c1apirequestcatalogv1requestcatalogmanagementservicelistresponse.md
   - docs/models/operations/c1apirequestcatalogv1requestcatalogmanagementservicelistentitlementsforaccessrequest.md
   - docs/models/operations/c1apirequestcatalogv1requestcatalogmanagementservicelistentitlementsforaccessresponse.md
@@ -532,6 +584,8 @@ generatedFiles:
   - docs/models/operations/c1apirequestcatalogv1requestcatalogmanagementserviceremoveaccessentitlementsresponse.md
   - docs/models/operations/c1apirequestcatalogv1requestcatalogmanagementserviceremoveappentitlementsrequest.md
   - docs/models/operations/c1apirequestcatalogv1requestcatalogmanagementserviceremoveappentitlementsresponse.md
+  - docs/models/operations/c1apirequestcatalogv1requestcatalogmanagementservicesetbundleautomationrequest.md
+  - docs/models/operations/c1apirequestcatalogv1requestcatalogmanagementservicesetbundleautomationresponse.md
   - docs/models/operations/c1apirequestcatalogv1requestcatalogmanagementserviceupdaterequest.md
   - docs/models/operations/c1apirequestcatalogv1requestcatalogmanagementserviceupdateresponse.md
   - docs/models/operations/c1apidirectoryv1directoryservicecreateresponse.md
@@ -561,11 +615,11 @@ generatedFiles:
   - docs/models/operations/c1apiappv1appresourcesearchsearchappresourcetypesresponse.md
   - docs/models/operations/c1apiappv1appsearchsearchresponse.md
   - docs/models/operations/c1apiattributev1attributesearchsearchattributevaluesresponse.md
-  - docs/models/operations/c1apiappv1appentitlementsearchservicesearchresponse.md
   - docs/models/operations/c1apipolicyv1policysearchsearchresponse.md
   - docs/models/operations/c1apirequestcatalogv1requestcatalogsearchservicesearchentitlementsresponse.md
   - docs/models/operations/c1apitaskv1tasksearchservicesearchresponse.md
   - docs/models/operations/c1apiuserv1usersearchsearchresponse.md
+  - docs/models/operations/c1apiwebhooksv1webhookssearchsearchresponse.md
   - docs/models/operations/c1apisettingsv1awsexternalidsettingsgetresponse.md
   - docs/models/operations/c1apisettingsv1sessionsettingsservicegetresponse.md
   - docs/models/operations/c1apisettingsv1sessionsettingsserviceupdateresponse.md
@@ -587,8 +641,17 @@ generatedFiles:
   - docs/models/operations/c1apiuserv1userservicegetresponse.md
   - docs/models/operations/c1apiuserv1userservicelistrequest.md
   - docs/models/operations/c1apiuserv1userservicelistresponse.md
+  - docs/models/operations/c1apiwebhooksv1webhooksservicecreateresponse.md
+  - docs/models/operations/c1apiwebhooksv1webhooksservicedeleterequest.md
+  - docs/models/operations/c1apiwebhooksv1webhooksservicedeleteresponse.md
+  - docs/models/operations/c1apiwebhooksv1webhooksservicegetrequest.md
+  - docs/models/operations/c1apiwebhooksv1webhooksservicegetresponse.md
+  - docs/models/operations/c1apiwebhooksv1webhooksservicelistrequest.md
+  - docs/models/operations/c1apiwebhooksv1webhooksservicelistresponse.md
   - docs/models/operations/c1apiwebhooksv1webhooksservicetestrequest.md
   - docs/models/operations/c1apiwebhooksv1webhooksservicetestresponse.md
+  - docs/models/operations/c1apiwebhooksv1webhooksserviceupdaterequest.md
+  - docs/models/operations/c1apiwebhooksv1webhooksserviceupdateresponse.md
   - docs/models/shared/createappresponse.md
   - docs/models/shared/identitymatching.md
   - docs/models/shared/app.md
@@ -606,6 +669,11 @@ generatedFiles:
   - docs/models/shared/updateappresponse.md
   - docs/models/shared/updateapprequest.md
   - docs/models/shared/appinput.md
+  - docs/models/shared/durationunset.md
+  - docs/models/shared/state.md
+  - docs/models/shared/appaccessrequestdefaults.md
+  - docs/models/shared/cancelaccessrequestdefaultsrequest.md
+  - docs/models/shared/appaccessrequestdefaults1.md
   - docs/models/shared/connectorservicecreateresponseexpanded.md
   - docs/models/shared/connectorservicecreateresponse.md
   - docs/models/shared/connectorview.md
@@ -641,10 +709,11 @@ generatedFiles:
   - docs/models/shared/getappentitlementresponseexpanded.md
   - docs/models/shared/getappentitlementresponse.md
   - docs/models/shared/appentitlementview.md
-  - docs/models/shared/durationunset.md
+  - docs/models/shared/appentitlementdurationunset.md
   - docs/models/shared/appentitlement.md
   - docs/models/shared/provisionpolicy.md
   - docs/models/shared/webhookprovision.md
+  - docs/models/shared/multistep.md
   - docs/models/shared/manualprovision.md
   - docs/models/shared/delegatedprovision.md
   - docs/models/shared/connectorprovision.md
@@ -665,6 +734,18 @@ generatedFiles:
   - docs/models/shared/updateappentitlementrequest.md
   - docs/models/shared/appentitlementexpandmask.md
   - docs/models/shared/appentitlementinput.md
+  - docs/models/shared/expanded.md
+  - docs/models/shared/appentitlementsearchservicesearchresponse.md
+  - docs/models/shared/facets.md
+  - docs/models/shared/facetcategory.md
+  - docs/models/shared/facetvalueitem.md
+  - docs/models/shared/facetvalue.md
+  - docs/models/shared/facetrangeitem.md
+  - docs/models/shared/facetrange.md
+  - docs/models/shared/appentitlementsearchservicesearchrequest.md
+  - docs/models/shared/appentitlementref.md
+  - docs/models/shared/searchappentitlementswithexpiredresponse.md
+  - docs/models/shared/appentitlementwithexpired.md
   - docs/models/shared/listappusersforidentitywithgrantresponse.md
   - docs/models/shared/appentitlementuserbinding.md
   - docs/models/shared/addappentitlementownerresponse.md
@@ -682,7 +763,7 @@ generatedFiles:
   - docs/models/shared/setappownersresponse.md
   - docs/models/shared/setappownersrequest.md
   - docs/models/shared/appreportservicelistresponse.md
-  - docs/models/shared/state.md
+  - docs/models/shared/apppopulationreportstate.md
   - docs/models/shared/apppopulationreport.md
   - docs/models/shared/appactionsservicegeneratereportresponse.md
   - docs/models/shared/appactionsservicegeneratereportrequest.md
@@ -721,7 +802,6 @@ generatedFiles:
   - docs/models/shared/introspectresponse.md
   - docs/models/shared/requestcatalogmanagementserviceaddaccessentitlementsresponse.md
   - docs/models/shared/requestcatalogmanagementserviceaddaccessentitlementsrequest.md
-  - docs/models/shared/appentitlementref.md
   - docs/models/shared/requestcatalogmanagementserviceaddappentitlementsresponse.md
   - docs/models/shared/requestcatalogmanagementserviceaddappentitlementsrequest.md
   - docs/models/shared/requestcatalogmanagementservicegetresponseexpanded.md
@@ -732,6 +812,10 @@ generatedFiles:
   - docs/models/shared/requestcatalogexpandmask.md
   - docs/models/shared/requestcatalogmanagementservicedeleteresponse.md
   - docs/models/shared/requestcatalogmanagementservicedeleterequest.md
+  - docs/models/shared/bundleautomation.md
+  - docs/models/shared/bundleautomationruleentitlement.md
+  - docs/models/shared/bundleautomationlastrunstatestatus.md
+  - docs/models/shared/bundleautomationlastrunstate.md
   - docs/models/shared/requestcatalogmanagementservicelistresponseexpanded.md
   - docs/models/shared/requestcatalogmanagementservicelistresponse.md
   - docs/models/shared/requestcatalogmanagementservicelistentitlementsforaccessresponseexpanded.md
@@ -742,6 +826,7 @@ generatedFiles:
   - docs/models/shared/requestcatalogmanagementserviceremoveaccessentitlementsrequest.md
   - docs/models/shared/requestcatalogmanagementserviceremoveappentitlementsresponse.md
   - docs/models/shared/requestcatalogmanagementserviceremoveappentitlementsrequest.md
+  - docs/models/shared/setbundleautomationrequest.md
   - docs/models/shared/requestcatalogmanagementserviceupdaterequest.md
   - docs/models/shared/requestcataloginput.md
   - docs/models/shared/directoryservicecreateresponseexpanded.md
@@ -803,15 +888,6 @@ generatedFiles:
   - docs/models/shared/searchappsrequest.md
   - docs/models/shared/searchattributevaluesresponse.md
   - docs/models/shared/searchattributevaluesrequest.md
-  - docs/models/shared/expanded.md
-  - docs/models/shared/appentitlementsearchservicesearchresponse.md
-  - docs/models/shared/facets.md
-  - docs/models/shared/facetcategory.md
-  - docs/models/shared/facetvalueitem.md
-  - docs/models/shared/facetvalue.md
-  - docs/models/shared/facetrangeitem.md
-  - docs/models/shared/facetrange.md
-  - docs/models/shared/appentitlementsearchservicesearchrequest.md
   - docs/models/shared/policytypes.md
   - docs/models/shared/searchpoliciesrequest.md
   - docs/models/shared/policyref.md
@@ -862,6 +938,7 @@ generatedFiles:
   - docs/models/shared/deniedaction.md
   - docs/models/shared/approvedaction.md
   - docs/models/shared/acceptinstance.md
+  - docs/models/shared/accounttypes.md
   - docs/models/shared/currentstep.md
   - docs/models/shared/emergencystatus.md
   - docs/models/shared/sortby.md
@@ -880,6 +957,10 @@ generatedFiles:
   - docs/models/shared/searchusersrequest.md
   - docs/models/shared/userref.md
   - docs/models/shared/userexpandmask.md
+  - docs/models/shared/webhookssearchresponse.md
+  - docs/models/shared/webhook.md
+  - docs/models/shared/webhookssearchrequest.md
+  - docs/models/shared/webhookref.md
   - docs/models/shared/getawsexternalidresponse.md
   - docs/models/shared/awsexternalid.md
   - docs/models/shared/getsessionsettingsresponse.md
@@ -913,10 +994,15 @@ generatedFiles:
   - docs/models/shared/userservicegetresponse.md
   - docs/models/shared/userservicelistresponseexpanded.md
   - docs/models/shared/userservicelistresponse.md
+  - docs/models/shared/webhooksservicecreateresponse.md
+  - docs/models/shared/webhooksservicecreaterequest.md
+  - docs/models/shared/webhooksservicedeleteresponse.md
+  - docs/models/shared/webhooksservicedeleterequest.md
+  - docs/models/shared/webhooksservicegetresponse.md
+  - docs/models/shared/webhooksservicelistresponse.md
   - docs/models/shared/webhooksservicetestresponse.md
   - docs/models/shared/webhookinstancestate.md
   - docs/models/shared/webhookinstance.md
-  - docs/models/shared/payload.md
   - docs/models/shared/webhookspec.md
   - docs/models/shared/webhooksource.md
   - docs/models/shared/webhooksourcetest.md
@@ -924,11 +1010,16 @@ generatedFiles:
   - docs/models/shared/webhooksourcepolicypostaction.md
   - docs/models/shared/webhooksourceapprovalstep.md
   - docs/models/shared/webhooksservicetestrequest.md
+  - docs/models/shared/webhooksserviceupdateresponse.md
+  - docs/models/shared/webhooksserviceupdaterequest.md
+  - docs/models/shared/webhookinput.md
   - docs/models/shared/security.md
   - docs/sdks/sdk/README.md
   - docs/sdks/apps/README.md
+  - docs/sdks/appaccessrequestsdefaults/README.md
   - docs/sdks/connector/README.md
   - docs/sdks/appentitlements/README.md
+  - docs/sdks/appentitlementsearch/README.md
   - docs/sdks/appentitlementuserbinding/README.md
   - docs/sdks/appentitlementowners/README.md
   - docs/sdks/appowners/README.md
@@ -950,11 +1041,11 @@ generatedFiles:
   - docs/sdks/appresourcesearch/README.md
   - docs/sdks/appsearch/README.md
   - docs/sdks/attributesearch/README.md
-  - docs/sdks/appentitlementsearch/README.md
   - docs/sdks/policysearch/README.md
   - docs/sdks/requestcatalogsearch/README.md
   - docs/sdks/tasksearch/README.md
   - docs/sdks/usersearch/README.md
+  - docs/sdks/webhookssearch/README.md
   - docs/sdks/awsexternalidsettings/README.md
   - docs/sdks/sessionsettings/README.md
   - docs/sdks/task/README.md

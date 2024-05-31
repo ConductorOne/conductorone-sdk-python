@@ -11,7 +11,7 @@ from typing import Optional
 @dataclasses.dataclass
 class FacetValue:
     r"""A FacetValue message contains count and value of the facet entry."""
-    count: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('count'), 'exclude': lambda f: f is None }})
+    count: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('count'), 'encoder': utils.integerstrencoder(True), 'decoder': utils.integerstrdecoder, 'exclude': lambda f: f is None }})
     r"""The count of the values in this facet."""
     display_name: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('displayName'), 'exclude': lambda f: f is None }})
     r"""The name of this facet."""

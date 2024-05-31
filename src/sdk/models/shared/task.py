@@ -12,6 +12,7 @@ from enum import Enum
 from sdk import utils
 from typing import Any, Dict, List, Optional
 
+
 class Actions(str, Enum):
     TASK_ACTION_TYPE_UNSPECIFIED = 'TASK_ACTION_TYPE_UNSPECIFIED'
     TASK_ACTION_TYPE_CLOSE = 'TASK_ACTION_TYPE_CLOSE'
@@ -46,6 +47,7 @@ class Annotations:
     
 
 
+
 class Processing(str, Enum):
     r"""The processing state of a task as defined by the `processing_enum`"""
     TASK_PROCESSING_TYPE_UNSPECIFIED = 'TASK_PROCESSING_TYPE_UNSPECIFIED'
@@ -53,12 +55,14 @@ class Processing(str, Enum):
     TASK_PROCESSING_TYPE_WAITING = 'TASK_PROCESSING_TYPE_WAITING'
     TASK_PROCESSING_TYPE_DONE = 'TASK_PROCESSING_TYPE_DONE'
 
+
 class Recommendation(str, Enum):
     r"""The recommendation field."""
     INSIGHT_RECOMMENDATION_UNSPECIFIED = 'INSIGHT_RECOMMENDATION_UNSPECIFIED'
     INSIGHT_RECOMMENDATION_APPROVE = 'INSIGHT_RECOMMENDATION_APPROVE'
     INSIGHT_RECOMMENDATION_DENY = 'INSIGHT_RECOMMENDATION_DENY'
     INSIGHT_RECOMMENDATION_REVIEW = 'INSIGHT_RECOMMENDATION_REVIEW'
+
 
 class TaskState(str, Enum):
     r"""The current state of the task as defined by the `state_enum`"""
@@ -106,7 +110,7 @@ class Task:
     r"""The ID of the task."""
     insight_ids: Optional[List[str]] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('insightIds'), 'exclude': lambda f: f is Task.UNSET }})
     r"""The insightIds field."""
-    numeric_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('numericId'), 'exclude': lambda f: f is None }})
+    numeric_id: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('numericId'), 'encoder': utils.integerstrencoder(True), 'decoder': utils.integerstrdecoder, 'exclude': lambda f: f is None }})
     r"""A human-usable numeric ID of a task which can be included in place of the fully qualified task id in path parmeters (but not search queries)."""
     policy_generation_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('policyGenerationId'), 'exclude': lambda f: f is None }})
     r"""The policy generation id refers to the current policy's generation ID. This is changed when the policy is changed on a task."""

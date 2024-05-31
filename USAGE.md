@@ -6,13 +6,12 @@ from sdk.models import shared
 s = sdk.SDK(
     security=shared.Security(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-        oauth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
+        oauth="<YOUR_OAUTH_HERE>",
     ),
 )
 
-req = shared.CreateAppRequest()
 
-res = s.apps.create(req)
+res = s.apps.create(request=shared.CreateAppRequest())
 
 if res.create_app_response is not None:
     # handle response

@@ -12,11 +12,20 @@ from enum import Enum
 from sdk import utils
 from typing import List, Optional
 
+
+class AccountTypes(str, Enum):
+    APP_USER_TYPE_UNSPECIFIED = 'APP_USER_TYPE_UNSPECIFIED'
+    APP_USER_TYPE_USER = 'APP_USER_TYPE_USER'
+    APP_USER_TYPE_SERVICE_ACCOUNT = 'APP_USER_TYPE_SERVICE_ACCOUNT'
+    APP_USER_TYPE_SYSTEM_ACCOUNT = 'APP_USER_TYPE_SYSTEM_ACCOUNT'
+
+
 class CurrentStep(str, Enum):
     r"""Search tasks that have this type of step as the current step."""
     TASK_SEARCH_CURRENT_STEP_UNSPECIFIED = 'TASK_SEARCH_CURRENT_STEP_UNSPECIFIED'
     TASK_SEARCH_CURRENT_STEP_APPROVAL = 'TASK_SEARCH_CURRENT_STEP_APPROVAL'
     TASK_SEARCH_CURRENT_STEP_PROVISION = 'TASK_SEARCH_CURRENT_STEP_PROVISION'
+
 
 class EmergencyStatus(str, Enum):
     r"""Search tasks that are or are not emergency access."""
@@ -25,6 +34,7 @@ class EmergencyStatus(str, Enum):
     NON_EMERGENCY = 'NON_EMERGENCY'
     EMERGENCY = 'EMERGENCY'
 
+
 class SortBy(str, Enum):
     r"""Sort tasks in a specific order."""
     TASK_SEARCH_SORT_BY_UNSPECIFIED = 'TASK_SEARCH_SORT_BY_UNSPECIFIED'
@@ -32,6 +42,7 @@ class SortBy(str, Enum):
     TASK_SEARCH_SORT_BY_RESOURCE = 'TASK_SEARCH_SORT_BY_RESOURCE'
     TASK_SEARCH_SORT_BY_ACCOUNT_OWNER = 'TASK_SEARCH_SORT_BY_ACCOUNT_OWNER'
     TASK_SEARCH_SORT_BY_REVERSE_TICKET_ID = 'TASK_SEARCH_SORT_BY_REVERSE_TICKET_ID'
+
 
 class TaskStates(str, Enum):
     TASK_STATE_UNSPECIFIED = 'TASK_STATE_UNSPECIFIED'
@@ -50,6 +61,8 @@ class TaskSearchRequest:
     r"""Search tasks that belong to any of the access reviews included in this list."""
     account_owner_ids: Optional[List[str]] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('accountOwnerIds'), 'exclude': lambda f: f is TaskSearchRequest.UNSET }})
     r"""Search tasks that have any of these account owners."""
+    account_types: Optional[List[AccountTypes]] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('accountTypes'), 'exclude': lambda f: f is TaskSearchRequest.UNSET }})
+    r"""The accountTypes field."""
     actor_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('actorId'), 'exclude': lambda f: f is None }})
     r"""Search tasks that have this actor ID."""
     app_entitlement_ids: Optional[List[str]] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('appEntitlementIds'), 'exclude': lambda f: f is TaskSearchRequest.UNSET }})

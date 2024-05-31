@@ -5,6 +5,7 @@ import dataclasses
 from .connectorprovision import ConnectorProvision
 from .delegatedprovision import DelegatedProvision
 from .manualprovision import ManualProvision
+from .multistep import MultiStep
 from .webhookprovision import WebhookProvision
 from dataclasses_json import Undefined, dataclass_json
 from sdk import utils
@@ -21,6 +22,7 @@ class ProvisionPolicy:
       - manual
       - delegated
       - webhook
+      - multiStep
     """
     UNSET='__SPEAKEASY_UNSET__'
     connector_provision: Optional[ConnectorProvision] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('connector'), 'exclude': lambda f: f is ProvisionPolicy.UNSET }})
@@ -29,6 +31,8 @@ class ProvisionPolicy:
     r"""This provision step indicates that we should delegate provisioning to the configuration of another app entitlement. This app entitlement does not have to be one from the same app, but MUST be configured as a proxy binding leading into this entitlement."""
     manual_provision: Optional[ManualProvision] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('manual'), 'exclude': lambda f: f is ProvisionPolicy.UNSET }})
     r"""Manual provisioning indicates that a human must intervene for the provisioning of this step."""
+    multi_step: Optional[MultiStep] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('multiStep'), 'exclude': lambda f: f is ProvisionPolicy.UNSET }})
+    r"""MultiStep indicates that this provision step has multiple steps to process."""
     webhook_provision: Optional[WebhookProvision] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('webhook'), 'exclude': lambda f: f is ProvisionPolicy.UNSET }})
     r"""This provision step indicates that a webhook should be called to provision this entitlement."""
     

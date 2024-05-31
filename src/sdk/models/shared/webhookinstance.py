@@ -11,6 +11,7 @@ from enum import Enum
 from sdk import utils
 from typing import Optional
 
+
 class WebhookInstanceState(str, Enum):
     r"""The state field."""
     WEBHOOK_STATE_UNSPECIFIED = 'WEBHOOK_STATE_UNSPECIFIED'

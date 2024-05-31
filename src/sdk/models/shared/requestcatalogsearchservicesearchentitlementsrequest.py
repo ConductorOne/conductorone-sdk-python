@@ -8,6 +8,7 @@ from enum import Enum
 from sdk import utils
 from typing import Optional
 
+
 class GrantedStatus(str, Enum):
     r"""Search entitlements with this granted status for your signed in user."""
     UNSPECIFIED = 'UNSPECIFIED'

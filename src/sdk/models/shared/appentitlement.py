@@ -11,7 +11,7 @@ from typing import Dict, List, Optional
 
 
 @dataclasses.dataclass
-class DurationUnset:
+class AppEntitlementDurationUnset:
     pass
 
 
@@ -33,6 +33,7 @@ class AppEntitlement:
       - manual
       - delegated
       - webhook
+      - multiStep
     """
     alias: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('alias'), 'exclude': lambda f: f is None }})
     r"""The alias of the app entitlement used by Cone. Also exact-match queryable."""
@@ -47,25 +48,31 @@ class AppEntitlement:
     compliance_framework_value_ids: Optional[List[str]] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('complianceFrameworkValueIds'), 'exclude': lambda f: f is AppEntitlement.UNSET }})
     r"""The IDs of different compliance frameworks associated with this app entitlement ex (SOX, HIPAA, PCI, etc.)"""
     created_at: Optional[datetime] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('createdAt'), 'encoder': utils.datetimeisoformat(True), 'decoder': dateutil.parser.isoparse, 'exclude': lambda f: f is None }})
+    default_values_applied: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('defaultValuesApplied'), 'exclude': lambda f: f is None }})
+    r"""Flag to indicate if app-level access request defaults have been applied to the entitlement"""
     deleted_at: Optional[datetime] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('deletedAt'), 'encoder': utils.datetimeisoformat(True), 'decoder': dateutil.parser.isoparse, 'exclude': lambda f: f is None }})
     description: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('description'), 'exclude': lambda f: f is None }})
     r"""The description of the app entitlement."""
     display_name: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('displayName'), 'exclude': lambda f: f is None }})
     r"""The display name of the app entitlement."""
     duration_grant: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('durationGrant'), 'exclude': lambda f: f is None }})
-    duration_unset: Optional[DurationUnset] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('durationUnset'), 'exclude': lambda f: f is AppEntitlement.UNSET }})
+    duration_unset: Optional[AppEntitlementDurationUnset] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('durationUnset'), 'exclude': lambda f: f is AppEntitlement.UNSET }})
     emergency_grant_enabled: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('emergencyGrantEnabled'), 'exclude': lambda f: f is None }})
     r"""This enables tasks to be created in an emergency and use a selected emergency access policy."""
     emergency_grant_policy_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('emergencyGrantPolicyId'), 'exclude': lambda f: f is None }})
     r"""The ID of the policy that will be used for emergency access grant tasks."""
-    grant_count: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('grantCount'), 'exclude': lambda f: f is None }})
+    grant_count: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('grantCount'), 'encoder': utils.integerstrencoder(True), 'decoder': utils.integerstrdecoder, 'exclude': lambda f: f is None }})
     r"""The amount of grants open for this entitlement"""
     grant_policy_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('grantPolicyId'), 'exclude': lambda f: f is None }})
     r"""The ID of the policy that will be used for grant tickets related to the app entitlement."""
     id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id'), 'exclude': lambda f: f is None }})
     r"""The unique ID for the App Entitlement."""
+    is_automation_enabled: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('isAutomationEnabled'), 'exclude': lambda f: f is None }})
+    r"""Flag to indicate whether automation (for adding users to entitlement based on rules) has been enabled."""
     is_manually_managed: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('isManuallyManaged'), 'exclude': lambda f: f is None }})
     r"""Flag to indicate if the app entitlement is manually managed."""
+    override_access_requests_defaults: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('overrideAccessRequestsDefaults'), 'exclude': lambda f: f is None }})
+    r"""Flag to indicate if the app-level access request settings have been overridden for the entitlement"""
     revoke_policy_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('revokePolicyId'), 'exclude': lambda f: f is None }})
     r"""The ID of the policy that will be used for revoke tickets related to the app entitlement"""
     risk_level_value_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('riskLevelValueId'), 'exclude': lambda f: f is None }})
@@ -100,6 +107,7 @@ class AppEntitlementInput:
       - manual
       - delegated
       - webhook
+      - multiStep
     """
     app_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('appId'), 'exclude': lambda f: f is None }})
     r"""The ID of the app that is associated with the app entitlement."""
@@ -111,12 +119,14 @@ class AppEntitlementInput:
     r"""The ID of the policy that will be used for certify tickets related to the app entitlement."""
     compliance_framework_value_ids: Optional[List[str]] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('complianceFrameworkValueIds'), 'exclude': lambda f: f is AppEntitlementInput.UNSET }})
     r"""The IDs of different compliance frameworks associated with this app entitlement ex (SOX, HIPAA, PCI, etc.)"""
+    default_values_applied: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('defaultValuesApplied'), 'exclude': lambda f: f is None }})
+    r"""Flag to indicate if app-level access request defaults have been applied to the entitlement"""
     description: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('description'), 'exclude': lambda f: f is None }})
     r"""The description of the app entitlement."""
     display_name: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('displayName'), 'exclude': lambda f: f is None }})
     r"""The display name of the app entitlement."""
     duration_grant: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('durationGrant'), 'exclude': lambda f: f is None }})
-    duration_unset: Optional[DurationUnset] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('durationUnset'), 'exclude': lambda f: f is AppEntitlementInput.UNSET }})
+    duration_unset: Optional[AppEntitlementDurationUnset] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('durationUnset'), 'exclude': lambda f: f is AppEntitlementInput.UNSET }})
     emergency_grant_enabled: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('emergencyGrantEnabled'), 'exclude': lambda f: f is None }})
     r"""This enables tasks to be created in an emergency and use a selected emergency access policy."""
     emergency_grant_policy_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('emergencyGrantPolicyId'), 'exclude': lambda f: f is None }})
@@ -125,6 +135,8 @@ class AppEntitlementInput:
     r"""The ID of the policy that will be used for grant tickets related to the app entitlement."""
     is_manually_managed: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('isManuallyManaged'), 'exclude': lambda f: f is None }})
     r"""Flag to indicate if the app entitlement is manually managed."""
+    override_access_requests_defaults: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('overrideAccessRequestsDefaults'), 'exclude': lambda f: f is None }})
+    r"""Flag to indicate if the app-level access request settings have been overridden for the entitlement"""
     revoke_policy_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('revokePolicyId'), 'exclude': lambda f: f is None }})
     r"""The ID of the policy that will be used for revoke tickets related to the app entitlement"""
     risk_level_value_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('riskLevelValueId'), 'exclude': lambda f: f is None }})

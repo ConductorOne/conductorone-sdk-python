@@ -22,13 +22,12 @@ from sdk.models import shared
 s = sdk.SDK(
     security=shared.Security(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-        oauth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
+        oauth="<YOUR_OAUTH_HERE>",
     ),
 )
 
-req = shared.CreateAttributeValueRequest()
 
-res = s.attributes.create_attribute_value(req)
+res = s.attributes.create_attribute_value(request=shared.CreateAttributeValueRequest())
 
 if res.create_attribute_value_response is not None:
     # handle response
@@ -50,7 +49,7 @@ if res.create_attribute_value_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 4x-5xx          | */*             |
+| errors.SDKError | 4xx-5xx         | */*             |
 
 ## delete_attribute_value
 
@@ -65,15 +64,14 @@ from sdk.models import operations, shared
 s = sdk.SDK(
     security=shared.Security(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-        oauth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
+        oauth="<YOUR_OAUTH_HERE>",
     ),
 )
 
-req = operations.C1APIAttributeV1AttributesDeleteAttributeValueRequest(
-    id='<id>',
-)
 
-res = s.attributes.delete_attribute_value(req)
+res = s.attributes.delete_attribute_value(request=operations.C1APIAttributeV1AttributesDeleteAttributeValueRequest(
+    id='<id>',
+))
 
 if res.delete_attribute_value_response is not None:
     # handle response
@@ -95,7 +93,7 @@ if res.delete_attribute_value_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 4x-5xx          | */*             |
+| errors.SDKError | 4xx-5xx         | */*             |
 
 ## get_attribute_value
 
@@ -110,15 +108,14 @@ from sdk.models import operations, shared
 s = sdk.SDK(
     security=shared.Security(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-        oauth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
+        oauth="<YOUR_OAUTH_HERE>",
     ),
 )
 
-req = operations.C1APIAttributeV1AttributesGetAttributeValueRequest(
-    id='<id>',
-)
 
-res = s.attributes.get_attribute_value(req)
+res = s.attributes.get_attribute_value(request=operations.C1APIAttributeV1AttributesGetAttributeValueRequest(
+    id='<id>',
+))
 
 if res.get_attribute_value_response is not None:
     # handle response
@@ -140,7 +137,7 @@ if res.get_attribute_value_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 4x-5xx          | */*             |
+| errors.SDKError | 4xx-5xx         | */*             |
 
 ## list_attribute_types
 
@@ -155,13 +152,12 @@ from sdk.models import operations, shared
 s = sdk.SDK(
     security=shared.Security(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-        oauth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
+        oauth="<YOUR_OAUTH_HERE>",
     ),
 )
 
-req = operations.C1APIAttributeV1AttributesListAttributeTypesRequest()
 
-res = s.attributes.list_attribute_types(req)
+res = s.attributes.list_attribute_types(request=operations.C1APIAttributeV1AttributesListAttributeTypesRequest())
 
 if res.list_attribute_types_response is not None:
     # handle response
@@ -183,7 +179,7 @@ if res.list_attribute_types_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 4x-5xx          | */*             |
+| errors.SDKError | 4xx-5xx         | */*             |
 
 ## list_attribute_values
 
@@ -198,15 +194,14 @@ from sdk.models import operations, shared
 s = sdk.SDK(
     security=shared.Security(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-        oauth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
+        oauth="<YOUR_OAUTH_HERE>",
     ),
 )
 
-req = operations.C1APIAttributeV1AttributesListAttributeValuesRequest(
-    attribute_type_id='<value>',
-)
 
-res = s.attributes.list_attribute_values(req)
+res = s.attributes.list_attribute_values(request=operations.C1APIAttributeV1AttributesListAttributeValuesRequest(
+    attribute_type_id='<value>',
+))
 
 if res.list_attribute_values_response is not None:
     # handle response
@@ -228,4 +223,4 @@ if res.list_attribute_values_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 4x-5xx          | */*             |
+| errors.SDKError | 4xx-5xx         | */*             |

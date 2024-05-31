@@ -7,6 +7,7 @@ from enum import Enum
 from sdk import utils
 from typing import Optional
 
+
 class ExternalRefSource(str, Enum):
     r"""The source of the external reference."""
     UNSPECIFIED = 'UNSPECIFIED'

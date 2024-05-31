@@ -10,6 +10,7 @@ from enum import Enum
 from sdk import utils
 from typing import Any, Dict, List, Optional, Union
 
+
 class DirectoryStatus(str, Enum):
     r"""The status of the user in the directory."""
     UNKNOWN = 'UNKNOWN'
@@ -21,6 +22,9 @@ class DirectoryStatus(str, Enum):
 @dataclasses.dataclass
 class User3:
     pass
+
+UserProfile = Union[str, float, 'User3', List[Any], bool]
+
 
 class UserStatus(str, Enum):
     r"""The status of the user in the system."""
@@ -73,7 +77,7 @@ class User:
     r"""A list of ids of the user's managers."""
     manager_sources: Optional[List[UserAttributeMappingSource]] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('managerSources'), 'exclude': lambda f: f is User.UNSET }})
     r"""A list of objects mapped based on managerId attribute mappings configured in the system."""
-    profile: Optional[Dict[str, Union[str, float, User3, List[Any], bool]]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('profile'), 'exclude': lambda f: f is None }})
+    profile: Optional[Dict[str, UserProfile]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('profile'), 'exclude': lambda f: f is None }})
     role_ids: Optional[List[str]] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('roleIds'), 'exclude': lambda f: f is User.UNSET }})
     r"""A list of unique identifiers that maps to ConductorOne’s user roles let you assign users permissions tailored to the work they do in the software."""
     status: Optional[UserStatus] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status'), 'exclude': lambda f: f is None }})
@@ -81,6 +85,8 @@ class User:
     updated_at: Optional[datetime] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('updatedAt'), 'encoder': utils.datetimeisoformat(True), 'decoder': dateutil.parser.isoparse, 'exclude': lambda f: f is None }})
     username: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('username'), 'exclude': lambda f: f is None }})
     r"""This is the user's primary username. Typically sourced from the primary directory."""
+    username_sources: Optional[List[UserAttributeMappingSource]] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('usernameSources'), 'exclude': lambda f: f is User.UNSET }})
+    r"""A list of source data for the usernames attribute."""
     usernames: Optional[List[str]] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('usernames'), 'exclude': lambda f: f is User.UNSET }})
     r"""This is a list of all of the user's usernames from app users."""
     

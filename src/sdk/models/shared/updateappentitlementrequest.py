@@ -23,6 +23,8 @@ class UpdateAppEntitlementRequest:
     """
     app_entitlement_expand_mask: Optional[AppEntitlementExpandMask] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('expandMask'), 'exclude': lambda f: f is None }})
     r"""The app entitlement expand mask allows the user to get additional information when getting responses containing app entitlement views."""
+    override_access_requests_defaults: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('overrideAccessRequestsDefaults'), 'exclude': lambda f: f is None }})
+    r"""Flag to indicate that access request defaults, if any are applied to these entitlements, should be overridden."""
     update_mask: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('updateMask'), 'exclude': lambda f: f is UpdateAppEntitlementRequest.UNSET }})
     
 

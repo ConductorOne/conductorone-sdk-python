@@ -18,13 +18,12 @@ from sdk.models import shared
 s = sdk.SDK(
     security=shared.Security(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-        oauth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
+        oauth="<YOUR_OAUTH_HERE>",
     ),
 )
 
-req = shared.TaskSearchRequest()
 
-res = s.task_search.search(req)
+res = s.task_search.search(request=shared.TaskSearchRequest())
 
 if res.task_search_response is not None:
     # handle response
@@ -46,4 +45,4 @@ if res.task_search_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 4x-5xx          | */*             |
+| errors.SDKError | 4xx-5xx         | */*             |

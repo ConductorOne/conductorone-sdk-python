@@ -7,6 +7,7 @@ from enum import Enum
 from sdk import utils
 from typing import Optional
 
+
 class Status(str, Enum):
     r"""The application user status field."""
     STATUS_UNSPECIFIED = 'STATUS_UNSPECIFIED'

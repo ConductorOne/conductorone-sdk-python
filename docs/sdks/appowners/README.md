@@ -21,16 +21,15 @@ from sdk.models import operations, shared
 s = sdk.SDK(
     security=shared.Security(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-        oauth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
+        oauth="<YOUR_OAUTH_HERE>",
     ),
 )
 
-req = operations.C1APIAppV1AppOwnersAddRequest(
+
+res = s.app_owners.add(request=operations.C1APIAppV1AppOwnersAddRequest(
     app_id='<value>',
     user_id='<value>',
-)
-
-res = s.app_owners.add(req)
+))
 
 if res.add_app_owner_response is not None:
     # handle response
@@ -52,7 +51,7 @@ if res.add_app_owner_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 4x-5xx          | */*             |
+| errors.SDKError | 4xx-5xx         | */*             |
 
 ## list
 
@@ -67,15 +66,14 @@ from sdk.models import operations, shared
 s = sdk.SDK(
     security=shared.Security(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-        oauth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
+        oauth="<YOUR_OAUTH_HERE>",
     ),
 )
 
-req = operations.C1APIAppV1AppOwnersListRequest(
-    app_id='<value>',
-)
 
-res = s.app_owners.list(req)
+res = s.app_owners.list(request=operations.C1APIAppV1AppOwnersListRequest(
+    app_id='<value>',
+))
 
 if res.list_app_owners_response is not None:
     # handle response
@@ -97,7 +95,7 @@ if res.list_app_owners_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 4x-5xx          | */*             |
+| errors.SDKError | 4xx-5xx         | */*             |
 
 ## remove
 
@@ -112,16 +110,15 @@ from sdk.models import operations, shared
 s = sdk.SDK(
     security=shared.Security(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-        oauth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
+        oauth="<YOUR_OAUTH_HERE>",
     ),
 )
 
-req = operations.C1APIAppV1AppOwnersRemoveRequest(
+
+res = s.app_owners.remove(request=operations.C1APIAppV1AppOwnersRemoveRequest(
     app_id='<value>',
     user_id='<value>',
-)
-
-res = s.app_owners.remove(req)
+))
 
 if res.remove_app_owner_response is not None:
     # handle response
@@ -143,7 +140,7 @@ if res.remove_app_owner_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 4x-5xx          | */*             |
+| errors.SDKError | 4xx-5xx         | */*             |
 
 ## set
 
@@ -158,15 +155,14 @@ from sdk.models import operations, shared
 s = sdk.SDK(
     security=shared.Security(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-        oauth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
+        oauth="<YOUR_OAUTH_HERE>",
     ),
 )
 
-req = operations.C1APIAppV1AppOwnersSetRequest(
-    app_id='<value>',
-)
 
-res = s.app_owners.set(req)
+res = s.app_owners.set(request=operations.C1APIAppV1AppOwnersSetRequest(
+    app_id='<value>',
+))
 
 if res.set_app_owners_response is not None:
     # handle response
@@ -188,4 +184,4 @@ if res.set_app_owners_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 4x-5xx          | */*             |
+| errors.SDKError | 4xx-5xx         | */*             |

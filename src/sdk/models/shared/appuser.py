@@ -11,6 +11,7 @@ from enum import Enum
 from sdk import utils
 from typing import Any, Dict, List, Optional, Union
 
+
 class AppUserType(str, Enum):
     r"""The appplication user type. Type can be user, system or service."""
     APP_USER_TYPE_UNSPECIFIED = 'APP_USER_TYPE_UNSPECIFIED'
@@ -22,6 +23,8 @@ class AppUserType(str, Enum):
 @dataclasses.dataclass
 class Three:
     pass
+
+Profile = Union[str, float, 'Three', List[Any], bool]
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
@@ -47,7 +50,7 @@ class AppUser:
     r"""A unique idenditfier of the application user."""
     identity_user_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('identityUserId'), 'exclude': lambda f: f is None }})
     r"""The conductor one user ID of the account owner."""
-    profile: Optional[Dict[str, Union[str, float, Three, List[Any], bool]]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('profile'), 'exclude': lambda f: f is None }})
+    profile: Optional[Dict[str, Profile]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('profile'), 'exclude': lambda f: f is None }})
     updated_at: Optional[datetime] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('updatedAt'), 'encoder': utils.datetimeisoformat(True), 'decoder': dateutil.parser.isoparse, 'exclude': lambda f: f is None }})
     username: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('username'), 'exclude': lambda f: f is None }})
     r"""The username field of the application user."""

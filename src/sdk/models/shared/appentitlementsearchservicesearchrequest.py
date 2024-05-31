@@ -3,6 +3,7 @@
 from __future__ import annotations
 import dataclasses
 from .appentitlementexpandmask import AppEntitlementExpandMask
+from .appentitlementref import AppEntitlementRef
 from dataclasses_json import Undefined, dataclass_json
 from sdk import utils
 from typing import List, Optional
@@ -31,6 +32,8 @@ class AppEntitlementSearchServiceSearchRequest:
     r"""Exclude app entitlements from the results that these app users have granted."""
     include_deleted: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('includeDeleted'), 'exclude': lambda f: f is None }})
     r"""Include deleted app entitlements, this includes app entitlements that have a deleted parent object (app, app resource, app resource type)"""
+    is_automated: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('isAutomated'), 'exclude': lambda f: f is None }})
+    r"""The isAutomated field."""
     only_get_expiring: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('onlyGetExpiring'), 'exclude': lambda f: f is None }})
     r"""Restrict results to only those who have expiring app entitlement user bindings."""
     page_size: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('pageSize'), 'exclude': lambda f: f is None }})
@@ -39,8 +42,12 @@ class AppEntitlementSearchServiceSearchRequest:
     r"""The pageToken field."""
     query: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('query'), 'exclude': lambda f: f is None }})
     r"""Query the app entitlements with a fuzzy search on display name and description."""
+    refs: Optional[List[AppEntitlementRef]] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('refs'), 'exclude': lambda f: f is AppEntitlementSearchServiceSearchRequest.UNSET }})
+    r"""The refs field."""
     resource_ids: Optional[List[str]] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('resourceIds'), 'exclude': lambda f: f is AppEntitlementSearchServiceSearchRequest.UNSET }})
     r"""Search for app entitlements that belongs to these resources."""
+    resource_trait_ids: Optional[List[str]] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('resourceTraitIds'), 'exclude': lambda f: f is AppEntitlementSearchServiceSearchRequest.UNSET }})
+    r"""The resourceTraitIds field."""
     resource_type_ids: Optional[List[str]] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('resourceTypeIds'), 'exclude': lambda f: f is AppEntitlementSearchServiceSearchRequest.UNSET }})
     r"""Search for app entitlements that are for items with resources types that have matching names. Example names are \\"group\\", \\"role\\", and \\"app\\"."""
     risk_level_ids: Optional[List[str]] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('riskLevelIds'), 'exclude': lambda f: f is AppEntitlementSearchServiceSearchRequest.UNSET }})

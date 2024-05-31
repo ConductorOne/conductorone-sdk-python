@@ -38,6 +38,12 @@ if res.app_entitlement_search_service_search_response is not None:
 * [list](docs/sdks/apps/README.md#list) - List
 * [update](docs/sdks/apps/README.md#update) - Update
 
+### [app_access_requests_defaults](docs/sdks/appaccessrequestsdefaults/README.md)
+
+* [cancel_app_access_requests_defaults](docs/sdks/appaccessrequestsdefaults/README.md#cancel_app_access_requests_defaults) - Cancel App Access Requests Defaults
+* [create_app_access_requests_defaults](docs/sdks/appaccessrequestsdefaults/README.md#create_app_access_requests_defaults) - Create App Access Requests Defaults
+* [get_app_access_requests_defaults](docs/sdks/appaccessrequestsdefaults/README.md#get_app_access_requests_defaults) - Get App Access Requests Defaults
+
 ### [connector](docs/sdks/connector/README.md)
 
 * [create](docs/sdks/connector/README.md#create) - Create
@@ -58,8 +64,13 @@ if res.app_entitlement_search_service_search_response is not None:
 * [list](docs/sdks/appentitlements/README.md#list) - List
 * [list_for_app_resource](docs/sdks/appentitlements/README.md#list_for_app_resource) - List For App Resource
 * [list_for_app_user](docs/sdks/appentitlements/README.md#list_for_app_user) - List For App User
-* [list_users](docs/sdks/appentitlements/README.md#list_users) - List Users
+* [~~list_users~~](docs/sdks/appentitlements/README.md#list_users) - List Users :warning: **Deprecated**
 * [update](docs/sdks/appentitlements/README.md#update) - Update
+
+### [app_entitlement_search](docs/sdks/appentitlementsearch/README.md)
+
+* [search](docs/sdks/appentitlementsearch/README.md#search) - Search
+* [search_app_entitlements_with_expired](docs/sdks/appentitlementsearch/README.md#search_app_entitlements_with_expired) - Search App Entitlements With Expired
 
 ### [app_entitlement_user_binding](docs/sdks/appentitlementuserbinding/README.md)
 
@@ -129,11 +140,13 @@ if res.app_entitlement_search_service_search_response is not None:
 * [create](docs/sdks/requestcatalogmanagement/README.md#create) - Create
 * [delete](docs/sdks/requestcatalogmanagement/README.md#delete) - Delete
 * [get](docs/sdks/requestcatalogmanagement/README.md#get) - Get
+* [get_bundle_automation](docs/sdks/requestcatalogmanagement/README.md#get_bundle_automation) - Get Bundle Automation
 * [list](docs/sdks/requestcatalogmanagement/README.md#list) - List
 * [list_entitlements_for_access](docs/sdks/requestcatalogmanagement/README.md#list_entitlements_for_access) - List Entitlements For Access
 * [list_entitlements_per_catalog](docs/sdks/requestcatalogmanagement/README.md#list_entitlements_per_catalog) - List Entitlements Per Catalog
 * [remove_access_entitlements](docs/sdks/requestcatalogmanagement/README.md#remove_access_entitlements) - Remove Access Entitlements
 * [remove_app_entitlements](docs/sdks/requestcatalogmanagement/README.md#remove_app_entitlements) - Remove App Entitlements
+* [set_bundle_automation](docs/sdks/requestcatalogmanagement/README.md#set_bundle_automation) - Set Bundle Automation
 * [update](docs/sdks/requestcatalogmanagement/README.md#update) - Update
 
 ### [directory](docs/sdks/directory/README.md)
@@ -177,10 +190,6 @@ if res.app_entitlement_search_service_search_response is not None:
 
 * [search_attribute_values](docs/sdks/attributesearch/README.md#search_attribute_values) - Search Attribute Values
 
-### [app_entitlement_search](docs/sdks/appentitlementsearch/README.md)
-
-* [search](docs/sdks/appentitlementsearch/README.md#search) - Search
-
 ### [policy_search](docs/sdks/policysearch/README.md)
 
 * [search](docs/sdks/policysearch/README.md#search) - Search
@@ -196,6 +205,10 @@ if res.app_entitlement_search_service_search_response is not None:
 ### [user_search](docs/sdks/usersearch/README.md)
 
 * [search](docs/sdks/usersearch/README.md#search) - Search
+
+### [webhooks_search](docs/sdks/webhookssearch/README.md)
+
+* [search](docs/sdks/webhookssearch/README.md#search) - Search
 
 ### [aws_external_id_settings](docs/sdks/awsexternalidsettings/README.md)
 
@@ -227,7 +240,12 @@ if res.app_entitlement_search_service_search_response is not None:
 
 ### [webhooks](docs/sdks/webhooks/README.md)
 
+* [create](docs/sdks/webhooks/README.md#create) - Create
+* [delete](docs/sdks/webhooks/README.md#delete) - Delete
+* [get](docs/sdks/webhooks/README.md#get) - Get
+* [list](docs/sdks/webhooks/README.md#list) - List
 * [test](docs/sdks/webhooks/README.md#test) - Test
+* [update](docs/sdks/webhooks/README.md#update) - Update
 <!-- End Available Resources and Operations [operations] -->
 
 <!-- No SDK Example Usage -->
@@ -244,7 +262,7 @@ Handling errors in this SDK should largely match your expectations.  All operati
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 4x-5xx          | */*             |
+| errors.SDKError | 4xx-5xx         | */*             |
 
 ### Example
 
@@ -255,15 +273,14 @@ from sdk.models import errors, shared
 s = sdk.SDK(
     security=shared.Security(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-        oauth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
+        oauth="<YOUR_OAUTH_HERE>",
     ),
 )
 
-req = shared.CreateAppRequest()
-
 res = None
 try:
-    res = s.apps.create(req)
+    res = s.apps.create(request=shared.CreateAppRequest())
+
 except errors.SDKError as e:
     # handle exception
     raise(e)
@@ -298,13 +315,12 @@ s = sdk.SDK(
     server_idx=0,
     security=shared.Security(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-        oauth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
+        oauth="<YOUR_OAUTH_HERE>",
     ),
 )
 
-req = shared.CreateAppRequest()
 
-res = s.apps.create(req)
+res = s.apps.create(request=shared.CreateAppRequest())
 
 if res.create_app_response is not None:
     # handle response
@@ -328,13 +344,12 @@ s = sdk.SDK(
     server_url="https://{tenantDomain}.conductor.one",
     security=shared.Security(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-        oauth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
+        oauth="<YOUR_OAUTH_HERE>",
     ),
 )
 
-req = shared.CreateAppRequest()
 
-res = s.apps.create(req)
+res = s.apps.create(request=shared.CreateAppRequest())
 
 if res.create_app_response is not None:
     # handle response
@@ -357,7 +372,7 @@ import requests
 
 http_client = requests.Session()
 http_client.headers.update({'x-custom-header': 'someValue'})
-s = sdk.SDK(client: http_client)
+s = sdk.SDK(client=http_client)
 ```
 <!-- End Custom HTTP Client [http-client] -->
 
@@ -383,13 +398,12 @@ from sdk.models import shared
 s = sdk.SDK(
     security=shared.Security(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-        oauth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
+        oauth="<YOUR_OAUTH_HERE>",
     ),
 )
 
-req = shared.CreateAppRequest()
 
-res = s.apps.create(req)
+res = s.apps.create(request=shared.CreateAppRequest())
 
 if res.create_app_response is not None:
     # handle response

@@ -18,15 +18,14 @@ from sdk.models import operations, shared
 s = sdk.SDK(
     security=shared.Security(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-        oauth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
+        oauth="<YOUR_OAUTH_HERE>",
     ),
 )
 
-req = operations.C1APIAppV1AppReportActionServiceGenerateReportRequest(
-    app_id='<value>',
-)
 
-res = s.app_report_action.generate_report(req)
+res = s.app_report_action.generate_report(request=operations.C1APIAppV1AppReportActionServiceGenerateReportRequest(
+    app_id='<value>',
+))
 
 if res.app_actions_service_generate_report_response is not None:
     # handle response
@@ -48,4 +47,4 @@ if res.app_actions_service_generate_report_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 4x-5xx          | */*             |
+| errors.SDKError | 4xx-5xx         | */*             |

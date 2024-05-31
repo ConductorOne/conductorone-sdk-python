@@ -4,10 +4,12 @@ from __future__ import annotations
 import dataclasses
 from .policypostactions import PolicyPostActions
 from .policysteps import PolicySteps
+from .rule import Rule
 from dataclasses_json import Undefined, dataclass_json
 from enum import Enum
 from sdk import utils
 from typing import Dict, List, Optional
+
 
 class PolicyType(str, Enum):
     r"""The enum of the policy type."""
@@ -36,5 +38,7 @@ class CreatePolicyRequest:
     r"""Actions to occur after a policy finishes. As of now this is only valid on a certify policy to remediate a denied certification immediately."""
     reassign_tasks_to_delegates: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('reassignTasksToDelegates'), 'exclude': lambda f: f is None }})
     r"""Allows reassigning tasks to delegates."""
+    rules: Optional[List[Rule]] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('rules'), 'exclude': lambda f: f is CreatePolicyRequest.UNSET }})
+    r"""The rules field."""
     
 

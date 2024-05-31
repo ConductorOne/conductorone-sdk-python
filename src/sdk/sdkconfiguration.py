@@ -7,7 +7,7 @@ from .utils import utils
 from .utils.retries import RetryConfig
 from dataclasses import dataclass, field
 from sdk.models import shared
-from typing import Callable, Dict, List, Tuple, Union
+from typing import Callable, Dict, List, Optional, Tuple, Union
 
 
 SERVERS = [
@@ -22,19 +22,21 @@ SERVERS = [
 class SDKConfiguration:
     client: requests_http.Session
     security: Union[shared.Security,Callable[[], shared.Security]] = None
-    server_url: str = ''
-    server_idx: int = 0
+    server_url: Optional[str] = ''
+    server_idx: Optional[int] = 0
     server_defaults: List[Dict[str, str]] = field(default_factory=List)
     language: str = 'python'
     openapi_doc_version: str = '0.1.0-alpha'
-    sdk_version: str = '0.13.7'
-    gen_version: str = '2.291.0'
-    user_agent: str = 'speakeasy-sdk/python 0.13.7 2.291.0 0.1.0-alpha openapi'
-    retry_config: RetryConfig = None
-    _hooks: SDKHooks = None
+    sdk_version: str = '0.14.0'
+    gen_version: str = '2.338.7'
+    user_agent: str = 'speakeasy-sdk/python 0.14.0 2.338.7 0.1.0-alpha openapi'
+    retry_config: Optional[RetryConfig] = None
+
+    def __post_init__(self):
+        self._hooks = SDKHooks()
 
     def get_server_details(self) -> Tuple[str, Dict[str, str]]:
-        if self.server_url:
+        if self.server_url is not None and self.server_url != '':
             return utils.remove_suffix(self.server_url, '/'), {}
         if self.server_idx is None:
             self.server_idx = 0

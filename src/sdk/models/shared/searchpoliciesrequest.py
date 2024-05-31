@@ -8,6 +8,7 @@ from enum import Enum
 from sdk import utils
 from typing import List, Optional
 
+
 class PolicyTypes(str, Enum):
     POLICY_TYPE_UNSPECIFIED = 'POLICY_TYPE_UNSPECIFIED'
     POLICY_TYPE_GRANT = 'POLICY_TYPE_GRANT'
@@ -24,6 +25,8 @@ class SearchPoliciesRequest:
     UNSET='__SPEAKEASY_UNSET__'
     display_name: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('displayName'), 'exclude': lambda f: f is None }})
     r"""Search for policies with a case insensitive match on the display name."""
+    include_deleted: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('includeDeleted'), 'exclude': lambda f: f is None }})
+    r"""The includeDeleted field."""
     page_size: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('pageSize'), 'exclude': lambda f: f is None }})
     r"""The pageSize where 0 <= pageSize <= 100. Values < 10 will be set to 10. A value of 0 returns the default page size (currently 25)"""
     page_token: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('pageToken'), 'exclude': lambda f: f is None }})

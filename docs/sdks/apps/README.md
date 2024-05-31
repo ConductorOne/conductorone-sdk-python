@@ -22,13 +22,12 @@ from sdk.models import shared
 s = sdk.SDK(
     security=shared.Security(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-        oauth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
+        oauth="<YOUR_OAUTH_HERE>",
     ),
 )
 
-req = shared.CreateAppRequest()
 
-res = s.apps.create(req)
+res = s.apps.create(request=shared.CreateAppRequest())
 
 if res.create_app_response is not None:
     # handle response
@@ -50,7 +49,7 @@ if res.create_app_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 4x-5xx          | */*             |
+| errors.SDKError | 4xx-5xx         | */*             |
 
 ## delete
 
@@ -65,15 +64,14 @@ from sdk.models import operations, shared
 s = sdk.SDK(
     security=shared.Security(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-        oauth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
+        oauth="<YOUR_OAUTH_HERE>",
     ),
 )
 
-req = operations.C1APIAppV1AppsDeleteRequest(
-    id='<id>',
-)
 
-res = s.apps.delete(req)
+res = s.apps.delete(request=operations.C1APIAppV1AppsDeleteRequest(
+    id='<id>',
+))
 
 if res.delete_app_response is not None:
     # handle response
@@ -95,7 +93,7 @@ if res.delete_app_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 4x-5xx          | */*             |
+| errors.SDKError | 4xx-5xx         | */*             |
 
 ## get
 
@@ -110,15 +108,14 @@ from sdk.models import operations, shared
 s = sdk.SDK(
     security=shared.Security(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-        oauth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
+        oauth="<YOUR_OAUTH_HERE>",
     ),
 )
 
-req = operations.C1APIAppV1AppsGetRequest(
-    id='<id>',
-)
 
-res = s.apps.get(req)
+res = s.apps.get(request=operations.C1APIAppV1AppsGetRequest(
+    id='<id>',
+))
 
 if res.get_app_response is not None:
     # handle response
@@ -140,7 +137,7 @@ if res.get_app_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 4x-5xx          | */*             |
+| errors.SDKError | 4xx-5xx         | */*             |
 
 ## list
 
@@ -155,13 +152,12 @@ from sdk.models import operations, shared
 s = sdk.SDK(
     security=shared.Security(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-        oauth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
+        oauth="<YOUR_OAUTH_HERE>",
     ),
 )
 
-req = operations.C1APIAppV1AppsListRequest()
 
-res = s.apps.list(req)
+res = s.apps.list(request=operations.C1APIAppV1AppsListRequest())
 
 if res.list_apps_response is not None:
     # handle response
@@ -183,7 +179,7 @@ if res.list_apps_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 4x-5xx          | */*             |
+| errors.SDKError | 4xx-5xx         | */*             |
 
 ## update
 
@@ -198,15 +194,14 @@ from sdk.models import operations, shared
 s = sdk.SDK(
     security=shared.Security(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-        oauth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
+        oauth="<YOUR_OAUTH_HERE>",
     ),
 )
 
-req = operations.C1APIAppV1AppsUpdateRequest(
-    id='<id>',
-)
 
-res = s.apps.update(req)
+res = s.apps.update(request=operations.C1APIAppV1AppsUpdateRequest(
+    id='<id>',
+))
 
 if res.update_app_response is not None:
     # handle response
@@ -228,4 +223,4 @@ if res.update_app_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 4x-5xx          | */*             |
+| errors.SDKError | 4xx-5xx         | */*             |

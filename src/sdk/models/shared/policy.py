@@ -12,6 +12,7 @@ from enum import Enum
 from sdk import utils
 from typing import Dict, List, Optional
 
+
 class PolicyPolicyType(str, Enum):
     r"""Indicates the type of this policy. Can also be used to get the value from policySteps."""
     POLICY_TYPE_UNSPECIFIED = 'POLICY_TYPE_UNSPECIFIED'

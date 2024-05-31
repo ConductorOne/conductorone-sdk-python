@@ -9,6 +9,7 @@ from enum import Enum
 from sdk import utils
 from typing import Optional
 
+
 class ConnectorStatusStatus(str, Enum):
     r"""The status of the connector sync."""
     SYNC_STATUS_UNSPECIFIED = 'SYNC_STATUS_UNSPECIFIED'

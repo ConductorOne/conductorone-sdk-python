@@ -10,6 +10,7 @@ from enum import Enum
 from sdk import utils
 from typing import List, Optional
 
+
 class IdentityMatching(str, Enum):
     r"""The identityMatching field."""
     APP_USER_IDENTITY_MATCHING_UNSPECIFIED = 'APP_USER_IDENTITY_MATCHING_UNSPECIFIED'
@@ -56,7 +57,7 @@ class App:
     revoke_policy_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('revokePolicyId'), 'exclude': lambda f: f is None }})
     r"""The ID of the Revoke Policy associated with this App."""
     updated_at: Optional[datetime] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('updatedAt'), 'encoder': utils.datetimeisoformat(True), 'decoder': dateutil.parser.isoparse, 'exclude': lambda f: f is None }})
-    user_count: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('userCount'), 'exclude': lambda f: f is None }})
+    user_count: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('userCount'), 'encoder': utils.integerstrencoder(True), 'decoder': utils.integerstrdecoder, 'exclude': lambda f: f is None }})
     r"""The number of users with grants to this app."""
     
 

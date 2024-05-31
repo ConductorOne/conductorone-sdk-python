@@ -10,7 +10,7 @@ generation:
   auth:
     oAuth2ClientCredentialsEnabled: false
 python:
-  version: 0.13.7
+  version: 0.14.0
   additionalDependencies:
     dependencies: {}
     extraDependencies:
@@ -29,6 +29,8 @@ python:
       webhooks: models/webhooks
   inputModelSuffix: input
   maxMethodParams: 0
+  methodArguments: require-security-and-request
   outputModelSuffix: output
   packageName: openapi
+  projectUrls: {}
   responseFormat: envelope

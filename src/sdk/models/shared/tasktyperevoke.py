@@ -10,6 +10,7 @@ from enum import Enum
 from sdk import utils
 from typing import Optional
 
+
 class TaskTypeRevokeOutcome(str, Enum):
     r"""The outcome of the revoke."""
     REVOKE_OUTCOME_UNSPECIFIED = 'REVOKE_OUTCOME_UNSPECIFIED'

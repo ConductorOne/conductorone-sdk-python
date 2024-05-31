@@ -10,6 +10,7 @@ from enum import Enum
 from sdk import utils
 from typing import Optional
 
+
 class TaskTypeGrantOutcome(str, Enum):
     r"""The outcome of the grant."""
     GRANT_OUTCOME_UNSPECIFIED = 'GRANT_OUTCOME_UNSPECIFIED'

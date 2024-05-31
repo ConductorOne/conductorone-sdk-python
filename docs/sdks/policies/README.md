@@ -22,13 +22,12 @@ from sdk.models import shared
 s = sdk.SDK(
     security=shared.Security(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-        oauth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
+        oauth="<YOUR_OAUTH_HERE>",
     ),
 )
 
-req = shared.CreatePolicyRequest()
 
-res = s.policies.create(req)
+res = s.policies.create(request=shared.CreatePolicyRequest())
 
 if res.create_policy_response is not None:
     # handle response
@@ -50,7 +49,7 @@ if res.create_policy_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 4x-5xx          | */*             |
+| errors.SDKError | 4xx-5xx         | */*             |
 
 ## delete
 
@@ -65,15 +64,14 @@ from sdk.models import operations, shared
 s = sdk.SDK(
     security=shared.Security(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-        oauth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
+        oauth="<YOUR_OAUTH_HERE>",
     ),
 )
 
-req = operations.C1APIPolicyV1PoliciesDeleteRequest(
-    id='<id>',
-)
 
-res = s.policies.delete(req)
+res = s.policies.delete(request=operations.C1APIPolicyV1PoliciesDeleteRequest(
+    id='<id>',
+))
 
 if res.delete_policy_response is not None:
     # handle response
@@ -95,7 +93,7 @@ if res.delete_policy_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 4x-5xx          | */*             |
+| errors.SDKError | 4xx-5xx         | */*             |
 
 ## get
 
@@ -110,15 +108,14 @@ from sdk.models import operations, shared
 s = sdk.SDK(
     security=shared.Security(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-        oauth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
+        oauth="<YOUR_OAUTH_HERE>",
     ),
 )
 
-req = operations.C1APIPolicyV1PoliciesGetRequest(
-    id='<id>',
-)
 
-res = s.policies.get(req)
+res = s.policies.get(request=operations.C1APIPolicyV1PoliciesGetRequest(
+    id='<id>',
+))
 
 if res.get_policy_response is not None:
     # handle response
@@ -140,7 +137,7 @@ if res.get_policy_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 4x-5xx          | */*             |
+| errors.SDKError | 4xx-5xx         | */*             |
 
 ## list
 
@@ -155,13 +152,12 @@ from sdk.models import operations, shared
 s = sdk.SDK(
     security=shared.Security(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-        oauth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
+        oauth="<YOUR_OAUTH_HERE>",
     ),
 )
 
-req = operations.C1APIPolicyV1PoliciesListRequest()
 
-res = s.policies.list(req)
+res = s.policies.list(request=operations.C1APIPolicyV1PoliciesListRequest())
 
 if res.list_policy_response is not None:
     # handle response
@@ -183,7 +179,7 @@ if res.list_policy_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 4x-5xx          | */*             |
+| errors.SDKError | 4xx-5xx         | */*             |
 
 ## update
 
@@ -198,15 +194,14 @@ from sdk.models import operations, shared
 s = sdk.SDK(
     security=shared.Security(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-        oauth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
+        oauth="<YOUR_OAUTH_HERE>",
     ),
 )
 
-req = operations.C1APIPolicyV1PoliciesUpdateRequest(
-    id='<id>',
-)
 
-res = s.policies.update(req)
+res = s.policies.update(request=operations.C1APIPolicyV1PoliciesUpdateRequest(
+    id='<id>',
+))
 
 if res.update_policy_response is not None:
     # handle response
@@ -228,4 +223,4 @@ if res.update_policy_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 4x-5xx          | */*             |
+| errors.SDKError | 4xx-5xx         | */*             |

@@ -49,6 +49,8 @@ class Approval:
     r"""A field indicating whether this step is assigned."""
     require_approval_reason: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('requireApprovalReason'), 'exclude': lambda f: f is None }})
     r"""Configuration to require a reason when approving this step."""
+    require_denial_reason: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('requireDenialReason'), 'exclude': lambda f: f is None }})
+    r"""Configuration to require a reason when denying this step."""
     require_reassignment_reason: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('requireReassignmentReason'), 'exclude': lambda f: f is None }})
     r"""Configuration to require a reason when reassigning this step."""
     

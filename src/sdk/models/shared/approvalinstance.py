@@ -13,6 +13,7 @@ from enum import Enum
 from sdk import utils
 from typing import Optional
 
+
 class ApprovalInstanceState(str, Enum):
     r"""The state of the approval instance"""
     APPROVAL_INSTANCE_STATE_UNSPECIFIED = 'APPROVAL_INSTANCE_STATE_UNSPECIFIED'

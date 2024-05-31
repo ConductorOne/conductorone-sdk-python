@@ -12,6 +12,7 @@ from enum import Enum
 from sdk import utils
 from typing import Optional
 
+
 class ProvisionInstanceState(str, Enum):
     r"""This property indicates the current state of this step."""
     PROVISION_INSTANCE_STATE_UNSPECIFIED = 'PROVISION_INSTANCE_STATE_UNSPECIFIED'

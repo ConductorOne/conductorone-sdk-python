@@ -11,6 +11,7 @@ from enum import Enum
 from sdk import utils
 from typing import Optional
 
+
 class PolicyStepInstanceState(str, Enum):
     r"""The state of the step, which is either active or done."""
     POLICY_STEP_STATE_UNSPECIFIED = 'POLICY_STEP_STATE_UNSPECIFIED'

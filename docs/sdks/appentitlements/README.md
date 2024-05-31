@@ -7,7 +7,7 @@
 * [list](#list) - List
 * [list_for_app_resource](#list_for_app_resource) - List For App Resource
 * [list_for_app_user](#list_for_app_user) - List For App User
-* [list_users](#list_users) - List Users
+* [~~list_users~~](#list_users) - List Users :warning: **Deprecated**
 * [update](#update) - Update
 
 ## get
@@ -23,16 +23,15 @@ from sdk.models import operations, shared
 s = sdk.SDK(
     security=shared.Security(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-        oauth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
+        oauth="<YOUR_OAUTH_HERE>",
     ),
 )
 
-req = operations.C1APIAppV1AppEntitlementsGetRequest(
+
+res = s.app_entitlements.get(request=operations.C1APIAppV1AppEntitlementsGetRequest(
     app_id='<value>',
     id='<id>',
-)
-
-res = s.app_entitlements.get(req)
+))
 
 if res.get_app_entitlement_response is not None:
     # handle response
@@ -54,7 +53,7 @@ if res.get_app_entitlement_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 4x-5xx          | */*             |
+| errors.SDKError | 4xx-5xx         | */*             |
 
 ## list
 
@@ -69,15 +68,14 @@ from sdk.models import operations, shared
 s = sdk.SDK(
     security=shared.Security(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-        oauth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
+        oauth="<YOUR_OAUTH_HERE>",
     ),
 )
 
-req = operations.C1APIAppV1AppEntitlementsListRequest(
-    app_id='<value>',
-)
 
-res = s.app_entitlements.list(req)
+res = s.app_entitlements.list(request=operations.C1APIAppV1AppEntitlementsListRequest(
+    app_id='<value>',
+))
 
 if res.list_app_entitlements_response is not None:
     # handle response
@@ -99,7 +97,7 @@ if res.list_app_entitlements_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 4x-5xx          | */*             |
+| errors.SDKError | 4xx-5xx         | */*             |
 
 ## list_for_app_resource
 
@@ -114,17 +112,16 @@ from sdk.models import operations, shared
 s = sdk.SDK(
     security=shared.Security(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-        oauth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
+        oauth="<YOUR_OAUTH_HERE>",
     ),
 )
 
-req = operations.C1APIAppV1AppEntitlementsListForAppResourceRequest(
+
+res = s.app_entitlements.list_for_app_resource(request=operations.C1APIAppV1AppEntitlementsListForAppResourceRequest(
     app_id='<value>',
     app_resource_id='<value>',
     app_resource_type_id='<value>',
-)
-
-res = s.app_entitlements.list_for_app_resource(req)
+))
 
 if res.list_app_entitlements_response is not None:
     # handle response
@@ -146,7 +143,7 @@ if res.list_app_entitlements_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 4x-5xx          | */*             |
+| errors.SDKError | 4xx-5xx         | */*             |
 
 ## list_for_app_user
 
@@ -161,16 +158,15 @@ from sdk.models import operations, shared
 s = sdk.SDK(
     security=shared.Security(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-        oauth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
+        oauth="<YOUR_OAUTH_HERE>",
     ),
 )
 
-req = operations.C1APIAppV1AppEntitlementsListForAppUserRequest(
+
+res = s.app_entitlements.list_for_app_user(request=operations.C1APIAppV1AppEntitlementsListForAppUserRequest(
     app_id='<value>',
     app_user_id='<value>',
-)
-
-res = s.app_entitlements.list_for_app_user(req)
+))
 
 if res.list_app_entitlements_response is not None:
     # handle response
@@ -192,11 +188,13 @@ if res.list_app_entitlements_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 4x-5xx          | */*             |
+| errors.SDKError | 4xx-5xx         | */*             |
 
-## list_users
+## ~~list_users~~
 
 List the users, as AppEntitlementUsers objects, of an app entitlement.
+
+> :warning: **DEPRECATED**: This will be removed in a future release, please migrate away from it as soon as possible.
 
 ### Example Usage
 
@@ -207,16 +205,15 @@ from sdk.models import operations, shared
 s = sdk.SDK(
     security=shared.Security(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-        oauth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
+        oauth="<YOUR_OAUTH_HERE>",
     ),
 )
 
-req = operations.C1APIAppV1AppEntitlementsListUsersRequest(
+
+res = s.app_entitlements.list_users(request=operations.C1APIAppV1AppEntitlementsListUsersRequest(
     app_entitlement_id='<value>',
     app_id='<value>',
-)
-
-res = s.app_entitlements.list_users(req)
+))
 
 if res.list_app_entitlement_users_response is not None:
     # handle response
@@ -238,7 +235,7 @@ if res.list_app_entitlement_users_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 4x-5xx          | */*             |
+| errors.SDKError | 4xx-5xx         | */*             |
 
 ## update
 
@@ -253,16 +250,15 @@ from sdk.models import operations, shared
 s = sdk.SDK(
     security=shared.Security(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-        oauth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
+        oauth="<YOUR_OAUTH_HERE>",
     ),
 )
 
-req = operations.C1APIAppV1AppEntitlementsUpdateRequest(
+
+res = s.app_entitlements.update(request=operations.C1APIAppV1AppEntitlementsUpdateRequest(
     app_id='<value>',
     id='<id>',
-)
-
-res = s.app_entitlements.update(req)
+))
 
 if res.update_app_entitlement_response is not None:
     # handle response
@@ -284,4 +280,4 @@ if res.update_app_entitlement_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 4x-5xx          | */*             |
+| errors.SDKError | 4xx-5xx         | */*             |

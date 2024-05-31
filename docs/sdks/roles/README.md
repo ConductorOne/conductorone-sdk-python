@@ -20,15 +20,14 @@ from sdk.models import operations, shared
 s = sdk.SDK(
     security=shared.Security(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-        oauth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
+        oauth="<YOUR_OAUTH_HERE>",
     ),
 )
 
-req = operations.C1APIIamV1RolesGetRequest(
-    role_id='<value>',
-)
 
-res = s.roles.get(req)
+res = s.roles.get(request=operations.C1APIIamV1RolesGetRequest(
+    role_id='<value>',
+))
 
 if res.get_roles_response is not None:
     # handle response
@@ -50,7 +49,7 @@ if res.get_roles_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 4x-5xx          | */*             |
+| errors.SDKError | 4xx-5xx         | */*             |
 
 ## list
 
@@ -65,13 +64,12 @@ from sdk.models import operations, shared
 s = sdk.SDK(
     security=shared.Security(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-        oauth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
+        oauth="<YOUR_OAUTH_HERE>",
     ),
 )
 
-req = operations.C1APIIamV1RolesListRequest()
 
-res = s.roles.list(req)
+res = s.roles.list(request=operations.C1APIIamV1RolesListRequest())
 
 if res.list_roles_response is not None:
     # handle response
@@ -93,7 +91,7 @@ if res.list_roles_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 4x-5xx          | */*             |
+| errors.SDKError | 4xx-5xx         | */*             |
 
 ## update
 
@@ -108,15 +106,14 @@ from sdk.models import operations, shared
 s = sdk.SDK(
     security=shared.Security(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-        oauth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
+        oauth="<YOUR_OAUTH_HERE>",
     ),
 )
 
-req = operations.C1APIIamV1RolesUpdateRequest(
-    role_id='<value>',
-)
 
-res = s.roles.update(req)
+res = s.roles.update(request=operations.C1APIIamV1RolesUpdateRequest(
+    role_id='<value>',
+))
 
 if res.update_roles_response is not None:
     # handle response
@@ -138,4 +135,4 @@ if res.update_roles_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 4x-5xx          | */*             |
+| errors.SDKError | 4xx-5xx         | */*             |

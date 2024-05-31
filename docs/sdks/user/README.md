@@ -19,15 +19,14 @@ from sdk.models import operations, shared
 s = sdk.SDK(
     security=shared.Security(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-        oauth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
+        oauth="<YOUR_OAUTH_HERE>",
     ),
 )
 
-req = operations.C1APIUserV1UserServiceGetRequest(
-    id='<id>',
-)
 
-res = s.user.get(req)
+res = s.user.get(request=operations.C1APIUserV1UserServiceGetRequest(
+    id='<id>',
+))
 
 if res.user_service_get_response is not None:
     # handle response
@@ -49,7 +48,7 @@ if res.user_service_get_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 4x-5xx          | */*             |
+| errors.SDKError | 4xx-5xx         | */*             |
 
 ## list
 
@@ -64,13 +63,12 @@ from sdk.models import operations, shared
 s = sdk.SDK(
     security=shared.Security(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-        oauth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
+        oauth="<YOUR_OAUTH_HERE>",
     ),
 )
 
-req = operations.C1APIUserV1UserServiceListRequest()
 
-res = s.user.list(req)
+res = s.user.list(request=operations.C1APIUserV1UserServiceListRequest())
 
 if res.user_service_list_response is not None:
     # handle response
@@ -92,4 +90,4 @@ if res.user_service_list_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 4x-5xx          | */*             |
+| errors.SDKError | 4xx-5xx         | */*             |

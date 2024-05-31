@@ -28,15 +28,14 @@ from sdk.models import operations, shared
 s = sdk.SDK(
     security=shared.Security(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-        oauth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
+        oauth="<YOUR_OAUTH_HERE>",
     ),
 )
 
-req = operations.C1APIAppV1ConnectorServiceCreateRequest(
-    app_id='<value>',
-)
 
-res = s.connector.create(req)
+res = s.connector.create(request=operations.C1APIAppV1ConnectorServiceCreateRequest(
+    app_id='<value>',
+))
 
 if res.connector_service_create_response is not None:
     # handle response
@@ -58,7 +57,7 @@ if res.connector_service_create_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 4x-5xx          | */*             |
+| errors.SDKError | 4xx-5xx         | */*             |
 
 ## create_delegated
 
@@ -73,15 +72,14 @@ from sdk.models import operations, shared
 s = sdk.SDK(
     security=shared.Security(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-        oauth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
+        oauth="<YOUR_OAUTH_HERE>",
     ),
 )
 
-req = operations.C1APIAppV1ConnectorServiceCreateDelegatedRequest(
-    app_id='<value>',
-)
 
-res = s.connector.create_delegated(req)
+res = s.connector.create_delegated(request=operations.C1APIAppV1ConnectorServiceCreateDelegatedRequest(
+    app_id='<value>',
+))
 
 if res.connector_service_create_response is not None:
     # handle response
@@ -103,7 +101,7 @@ if res.connector_service_create_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 4x-5xx          | */*             |
+| errors.SDKError | 4xx-5xx         | */*             |
 
 ## delete
 
@@ -118,16 +116,15 @@ from sdk.models import operations, shared
 s = sdk.SDK(
     security=shared.Security(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-        oauth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
+        oauth="<YOUR_OAUTH_HERE>",
     ),
 )
 
-req = operations.C1APIAppV1ConnectorServiceDeleteRequest(
+
+res = s.connector.delete(request=operations.C1APIAppV1ConnectorServiceDeleteRequest(
     app_id='<value>',
     id='<id>',
-)
-
-res = s.connector.delete(req)
+))
 
 if res.connector_service_delete_response is not None:
     # handle response
@@ -149,7 +146,7 @@ if res.connector_service_delete_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 4x-5xx          | */*             |
+| errors.SDKError | 4xx-5xx         | */*             |
 
 ## force_sync
 
@@ -164,16 +161,15 @@ from sdk.models import operations, shared
 s = sdk.SDK(
     security=shared.Security(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-        oauth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
+        oauth="<YOUR_OAUTH_HERE>",
     ),
 )
 
-req = operations.C1APIAppV1ConnectorServiceForceSyncRequest(
+
+res = s.connector.force_sync(request=operations.C1APIAppV1ConnectorServiceForceSyncRequest(
     app_id='<value>',
     connector_id='<value>',
-)
-
-res = s.connector.force_sync(req)
+))
 
 if res.force_sync_response is not None:
     # handle response
@@ -195,7 +191,7 @@ if res.force_sync_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 4x-5xx          | */*             |
+| errors.SDKError | 4xx-5xx         | */*             |
 
 ## get
 
@@ -210,16 +206,15 @@ from sdk.models import operations, shared
 s = sdk.SDK(
     security=shared.Security(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-        oauth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
+        oauth="<YOUR_OAUTH_HERE>",
     ),
 )
 
-req = operations.C1APIAppV1ConnectorServiceGetRequest(
+
+res = s.connector.get(request=operations.C1APIAppV1ConnectorServiceGetRequest(
     app_id='<value>',
     id='<id>',
-)
-
-res = s.connector.get(req)
+))
 
 if res.connector_service_get_response is not None:
     # handle response
@@ -241,7 +236,7 @@ if res.connector_service_get_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 4x-5xx          | */*             |
+| errors.SDKError | 4xx-5xx         | */*             |
 
 ## get_credentials
 
@@ -256,17 +251,16 @@ from sdk.models import operations, shared
 s = sdk.SDK(
     security=shared.Security(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-        oauth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
+        oauth="<YOUR_OAUTH_HERE>",
     ),
 )
 
-req = operations.C1APIAppV1ConnectorServiceGetCredentialsRequest(
+
+res = s.connector.get_credentials(request=operations.C1APIAppV1ConnectorServiceGetCredentialsRequest(
     app_id='<value>',
     connector_id='<value>',
     id='<id>',
-)
-
-res = s.connector.get_credentials(req)
+))
 
 if res.connector_service_get_credentials_response is not None:
     # handle response
@@ -288,7 +282,7 @@ if res.connector_service_get_credentials_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 4x-5xx          | */*             |
+| errors.SDKError | 4xx-5xx         | */*             |
 
 ## list
 
@@ -303,15 +297,14 @@ from sdk.models import operations, shared
 s = sdk.SDK(
     security=shared.Security(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-        oauth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
+        oauth="<YOUR_OAUTH_HERE>",
     ),
 )
 
-req = operations.C1APIAppV1ConnectorServiceListRequest(
-    app_id='<value>',
-)
 
-res = s.connector.list(req)
+res = s.connector.list(request=operations.C1APIAppV1ConnectorServiceListRequest(
+    app_id='<value>',
+))
 
 if res.connector_service_list_response is not None:
     # handle response
@@ -333,7 +326,7 @@ if res.connector_service_list_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 4x-5xx          | */*             |
+| errors.SDKError | 4xx-5xx         | */*             |
 
 ## revoke_credential
 
@@ -348,17 +341,16 @@ from sdk.models import operations, shared
 s = sdk.SDK(
     security=shared.Security(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-        oauth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
+        oauth="<YOUR_OAUTH_HERE>",
     ),
 )
 
-req = operations.C1APIAppV1ConnectorServiceRevokeCredentialRequest(
+
+res = s.connector.revoke_credential(request=operations.C1APIAppV1ConnectorServiceRevokeCredentialRequest(
     app_id='<value>',
     connector_id='<value>',
     id='<id>',
-)
-
-res = s.connector.revoke_credential(req)
+))
 
 if res.connector_service_revoke_credential_response is not None:
     # handle response
@@ -380,7 +372,7 @@ if res.connector_service_revoke_credential_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 4x-5xx          | */*             |
+| errors.SDKError | 4xx-5xx         | */*             |
 
 ## rotate_credential
 
@@ -395,16 +387,15 @@ from sdk.models import operations, shared
 s = sdk.SDK(
     security=shared.Security(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-        oauth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
+        oauth="<YOUR_OAUTH_HERE>",
     ),
 )
 
-req = operations.C1APIAppV1ConnectorServiceRotateCredentialRequest(
+
+res = s.connector.rotate_credential(request=operations.C1APIAppV1ConnectorServiceRotateCredentialRequest(
     app_id='<value>',
     connector_id='<value>',
-)
-
-res = s.connector.rotate_credential(req)
+))
 
 if res.connector_service_rotate_credential_response is not None:
     # handle response
@@ -426,7 +417,7 @@ if res.connector_service_rotate_credential_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 4x-5xx          | */*             |
+| errors.SDKError | 4xx-5xx         | */*             |
 
 ## update
 
@@ -441,16 +432,15 @@ from sdk.models import operations, shared
 s = sdk.SDK(
     security=shared.Security(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-        oauth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
+        oauth="<YOUR_OAUTH_HERE>",
     ),
 )
 
-req = operations.C1APIAppV1ConnectorServiceUpdateRequest(
+
+res = s.connector.update(request=operations.C1APIAppV1ConnectorServiceUpdateRequest(
     app_id='<value>',
     id='<id>',
-)
-
-res = s.connector.update(req)
+))
 
 if res.connector_service_update_response is not None:
     # handle response
@@ -472,7 +462,7 @@ if res.connector_service_update_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 4x-5xx          | */*             |
+| errors.SDKError | 4xx-5xx         | */*             |
 
 ## update_delegated
 
@@ -487,16 +477,15 @@ from sdk.models import operations, shared
 s = sdk.SDK(
     security=shared.Security(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-        oauth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
+        oauth="<YOUR_OAUTH_HERE>",
     ),
 )
 
-req = operations.C1APIAppV1ConnectorServiceUpdateDelegatedRequest(
+
+res = s.connector.update_delegated(request=operations.C1APIAppV1ConnectorServiceUpdateDelegatedRequest(
     connector_app_id='<value>',
     connector_id='<value>',
-)
-
-res = s.connector.update_delegated(req)
+))
 
 if res.connector_service_update_response is not None:
     # handle response
@@ -518,4 +507,4 @@ if res.connector_service_update_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 4x-5xx          | */*             |
+| errors.SDKError | 4xx-5xx         | */*             |

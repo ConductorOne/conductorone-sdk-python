@@ -21,13 +21,12 @@ from sdk.models import shared
 s = sdk.SDK(
     security=shared.Security(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-        oauth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
+        oauth="<YOUR_OAUTH_HERE>",
     ),
 )
 
-req = shared.DirectoryServiceCreateRequest()
 
-res = s.directory.create(req)
+res = s.directory.create(request=shared.DirectoryServiceCreateRequest())
 
 if res.directory_service_create_response is not None:
     # handle response
@@ -49,7 +48,7 @@ if res.directory_service_create_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 4x-5xx          | */*             |
+| errors.SDKError | 4xx-5xx         | */*             |
 
 ## delete
 
@@ -64,15 +63,14 @@ from sdk.models import operations, shared
 s = sdk.SDK(
     security=shared.Security(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-        oauth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
+        oauth="<YOUR_OAUTH_HERE>",
     ),
 )
 
-req = operations.C1APIDirectoryV1DirectoryServiceDeleteRequest(
-    app_id='<value>',
-)
 
-res = s.directory.delete(req)
+res = s.directory.delete(request=operations.C1APIDirectoryV1DirectoryServiceDeleteRequest(
+    app_id='<value>',
+))
 
 if res.directory_service_delete_response is not None:
     # handle response
@@ -94,7 +92,7 @@ if res.directory_service_delete_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 4x-5xx          | */*             |
+| errors.SDKError | 4xx-5xx         | */*             |
 
 ## get
 
@@ -109,15 +107,14 @@ from sdk.models import operations, shared
 s = sdk.SDK(
     security=shared.Security(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-        oauth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
+        oauth="<YOUR_OAUTH_HERE>",
     ),
 )
 
-req = operations.C1APIDirectoryV1DirectoryServiceGetRequest(
-    app_id='<value>',
-)
 
-res = s.directory.get(req)
+res = s.directory.get(request=operations.C1APIDirectoryV1DirectoryServiceGetRequest(
+    app_id='<value>',
+))
 
 if res.directory_service_get_response is not None:
     # handle response
@@ -139,7 +136,7 @@ if res.directory_service_get_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 4x-5xx          | */*             |
+| errors.SDKError | 4xx-5xx         | */*             |
 
 ## list
 
@@ -154,13 +151,12 @@ from sdk.models import operations, shared
 s = sdk.SDK(
     security=shared.Security(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-        oauth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
+        oauth="<YOUR_OAUTH_HERE>",
     ),
 )
 
-req = operations.C1APIDirectoryV1DirectoryServiceListRequest()
 
-res = s.directory.list(req)
+res = s.directory.list(request=operations.C1APIDirectoryV1DirectoryServiceListRequest())
 
 if res.directory_service_list_response is not None:
     # handle response
@@ -182,4 +178,4 @@ if res.directory_service_list_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 4x-5xx          | */*             |
+| errors.SDKError | 4xx-5xx         | */*             |
