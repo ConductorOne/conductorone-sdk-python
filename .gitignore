@@ -4,3 +4,5 @@ __pycache__/
 /build/
 /dist/
 openapi.egg-info/
+.DS_Store
+src/conductorone_sdk_python.egg-info/

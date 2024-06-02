@@ -37,6 +37,7 @@ class Token:
 
     def __init__(self, client: requests.Session, token_url: str, client_id: str, client_secret: str):
         self.client = client
+        url = urlparse(token_url)
         self.token_url = token_url
         self.client_id = client_id
         self.client_secret = client_secret

@@ -1,6 +1,7 @@
 from .sdk import SDK
 from .tokensource import Token
 import requests 
+import urllib3
 from requests.adapters import HTTPAdapter
 
 class TokenAuth(HTTPAdapter):
@@ -37,8 +38,7 @@ def sdk_with_credentials(client_id: str, client_secret: str, token_url: str = ''
     :type kwargs: dict[str, any]
     """
     client = requests.Session()
-
-    url = client_id.split('@')[1].split('/')[0]
+    url = urllib3.util.parse_url(client_id)
     # If no tenant_domain is provided, use the first part of the url
     if 'tenant_domain' not in kwargs:
         kwargs['tenant_domain'] = url.split('.')[0]

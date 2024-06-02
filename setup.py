@@ -32,7 +32,7 @@ setuptools.setup(
         "six>=1.16.0",
         "typing-inspect>=0.8.0",
         "typing_extensions>=4.3.0",
-        "urllib3>=1.26.12",
+        "urllib3>=1.26.18",
         "python-jose>=3.3.0",
         "PyJWT>=2.8.0",
         "cryptography>=41.0.2",
