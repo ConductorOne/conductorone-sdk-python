@@ -13,21 +13,20 @@ Get a user by ID.
 ### Example Usage
 
 ```python
-import sdk
-from sdk.models import operations, shared
+from openapi import SDK
+from openapi.models import shared
 
-s = sdk.SDK(
+s = SDK(
     security=shared.Security(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-        oauth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
+        oauth="<YOUR_OAUTH_HERE>",
     ),
 )
 
-req = operations.C1APIUserV1UserServiceGetRequest(
-    id='<id>',
-)
 
-res = s.user.get(req)
+res = s.user.get(request={
+    "id": "<id>",
+})
 
 if res.user_service_get_response is not None:
     # handle response
@@ -40,6 +39,7 @@ if res.user_service_get_response is not None:
 | Parameter                                                                                                  | Type                                                                                                       | Required                                                                                                   | Description                                                                                                |
 | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
 | `request`                                                                                                  | [operations.C1APIUserV1UserServiceGetRequest](../../models/operations/c1apiuserv1userservicegetrequest.md) | :heavy_check_mark:                                                                                         | The request object to use for the request.                                                                 |
+| `retries`                                                                                                  | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)                                           | :heavy_minus_sign:                                                                                         | Configuration to override the default retry behavior of the client.                                        |
 
 
 ### Response
@@ -49,7 +49,7 @@ if res.user_service_get_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 4x-5xx          | */*             |
+| errors.SDKError | 4xx-5xx         | */*             |
 
 ## list
 
@@ -58,19 +58,18 @@ List users.
 ### Example Usage
 
 ```python
-import sdk
-from sdk.models import operations, shared
+from openapi import SDK
+from openapi.models import shared
 
-s = sdk.SDK(
+s = SDK(
     security=shared.Security(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-        oauth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
+        oauth="<YOUR_OAUTH_HERE>",
     ),
 )
 
-req = operations.C1APIUserV1UserServiceListRequest()
 
-res = s.user.list(req)
+res = s.user.list()
 
 if res.user_service_list_response is not None:
     # handle response
@@ -83,6 +82,7 @@ if res.user_service_list_response is not None:
 | Parameter                                                                                                    | Type                                                                                                         | Required                                                                                                     | Description                                                                                                  |
 | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ |
 | `request`                                                                                                    | [operations.C1APIUserV1UserServiceListRequest](../../models/operations/c1apiuserv1userservicelistrequest.md) | :heavy_check_mark:                                                                                           | The request object to use for the request.                                                                   |
+| `retries`                                                                                                    | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)                                             | :heavy_minus_sign:                                                                                           | Configuration to override the default retry behavior of the client.                                          |
 
 
 ### Response
@@ -92,4 +92,4 @@ if res.user_service_list_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 4x-5xx          | */*             |
+| errors.SDKError | 4xx-5xx         | */*             |

@@ -16,19 +16,18 @@ Create a policy.
 ### Example Usage
 
 ```python
-import sdk
-from sdk.models import shared
+from openapi import SDK
+from openapi.models import shared
 
-s = sdk.SDK(
+s = SDK(
     security=shared.Security(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-        oauth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
+        oauth="<YOUR_OAUTH_HERE>",
     ),
 )
 
-req = shared.CreatePolicyRequest()
 
-res = s.policies.create(req)
+res = s.policies.create()
 
 if res.create_policy_response is not None:
     # handle response
@@ -41,6 +40,7 @@ if res.create_policy_response is not None:
 | Parameter                                                                | Type                                                                     | Required                                                                 | Description                                                              |
 | ------------------------------------------------------------------------ | ------------------------------------------------------------------------ | ------------------------------------------------------------------------ | ------------------------------------------------------------------------ |
 | `request`                                                                | [shared.CreatePolicyRequest](../../models/shared/createpolicyrequest.md) | :heavy_check_mark:                                                       | The request object to use for the request.                               |
+| `retries`                                                                | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)         | :heavy_minus_sign:                                                       | Configuration to override the default retry behavior of the client.      |
 
 
 ### Response
@@ -50,7 +50,7 @@ if res.create_policy_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 4x-5xx          | */*             |
+| errors.SDKError | 4xx-5xx         | */*             |
 
 ## delete
 
@@ -59,21 +59,20 @@ Delete a policy by ID.
 ### Example Usage
 
 ```python
-import sdk
-from sdk.models import operations, shared
+from openapi import SDK
+from openapi.models import shared
 
-s = sdk.SDK(
+s = SDK(
     security=shared.Security(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-        oauth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
+        oauth="<YOUR_OAUTH_HERE>",
     ),
 )
 
-req = operations.C1APIPolicyV1PoliciesDeleteRequest(
-    id='<id>',
-)
 
-res = s.policies.delete(req)
+res = s.policies.delete(request={
+    "id": "<id>",
+})
 
 if res.delete_policy_response is not None:
     # handle response
@@ -86,6 +85,7 @@ if res.delete_policy_response is not None:
 | Parameter                                                                                                      | Type                                                                                                           | Required                                                                                                       | Description                                                                                                    |
 | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
 | `request`                                                                                                      | [operations.C1APIPolicyV1PoliciesDeleteRequest](../../models/operations/c1apipolicyv1policiesdeleterequest.md) | :heavy_check_mark:                                                                                             | The request object to use for the request.                                                                     |
+| `retries`                                                                                                      | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)                                               | :heavy_minus_sign:                                                                                             | Configuration to override the default retry behavior of the client.                                            |
 
 
 ### Response
@@ -95,7 +95,7 @@ if res.delete_policy_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 4x-5xx          | */*             |
+| errors.SDKError | 4xx-5xx         | */*             |
 
 ## get
 
@@ -104,21 +104,20 @@ Get a policy by ID.
 ### Example Usage
 
 ```python
-import sdk
-from sdk.models import operations, shared
+from openapi import SDK
+from openapi.models import shared
 
-s = sdk.SDK(
+s = SDK(
     security=shared.Security(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-        oauth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
+        oauth="<YOUR_OAUTH_HERE>",
     ),
 )
 
-req = operations.C1APIPolicyV1PoliciesGetRequest(
-    id='<id>',
-)
 
-res = s.policies.get(req)
+res = s.policies.get(request={
+    "id": "<id>",
+})
 
 if res.get_policy_response is not None:
     # handle response
@@ -131,6 +130,7 @@ if res.get_policy_response is not None:
 | Parameter                                                                                                | Type                                                                                                     | Required                                                                                                 | Description                                                                                              |
 | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
 | `request`                                                                                                | [operations.C1APIPolicyV1PoliciesGetRequest](../../models/operations/c1apipolicyv1policiesgetrequest.md) | :heavy_check_mark:                                                                                       | The request object to use for the request.                                                               |
+| `retries`                                                                                                | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)                                         | :heavy_minus_sign:                                                                                       | Configuration to override the default retry behavior of the client.                                      |
 
 
 ### Response
@@ -140,7 +140,7 @@ if res.get_policy_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 4x-5xx          | */*             |
+| errors.SDKError | 4xx-5xx         | */*             |
 
 ## list
 
@@ -149,19 +149,18 @@ List policies.
 ### Example Usage
 
 ```python
-import sdk
-from sdk.models import operations, shared
+from openapi import SDK
+from openapi.models import shared
 
-s = sdk.SDK(
+s = SDK(
     security=shared.Security(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-        oauth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
+        oauth="<YOUR_OAUTH_HERE>",
     ),
 )
 
-req = operations.C1APIPolicyV1PoliciesListRequest()
 
-res = s.policies.list(req)
+res = s.policies.list()
 
 if res.list_policy_response is not None:
     # handle response
@@ -174,6 +173,7 @@ if res.list_policy_response is not None:
 | Parameter                                                                                                  | Type                                                                                                       | Required                                                                                                   | Description                                                                                                |
 | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
 | `request`                                                                                                  | [operations.C1APIPolicyV1PoliciesListRequest](../../models/operations/c1apipolicyv1policieslistrequest.md) | :heavy_check_mark:                                                                                         | The request object to use for the request.                                                                 |
+| `retries`                                                                                                  | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)                                           | :heavy_minus_sign:                                                                                         | Configuration to override the default retry behavior of the client.                                        |
 
 
 ### Response
@@ -183,7 +183,7 @@ if res.list_policy_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 4x-5xx          | */*             |
+| errors.SDKError | 4xx-5xx         | */*             |
 
 ## update
 
@@ -192,21 +192,20 @@ Update a policy by providing a policy object and an update mask.
 ### Example Usage
 
 ```python
-import sdk
-from sdk.models import operations, shared
+from openapi import SDK
+from openapi.models import shared
 
-s = sdk.SDK(
+s = SDK(
     security=shared.Security(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-        oauth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
+        oauth="<YOUR_OAUTH_HERE>",
     ),
 )
 
-req = operations.C1APIPolicyV1PoliciesUpdateRequest(
-    id='<id>',
-)
 
-res = s.policies.update(req)
+res = s.policies.update(request={
+    "id": "<id>",
+})
 
 if res.update_policy_response is not None:
     # handle response
@@ -219,6 +218,7 @@ if res.update_policy_response is not None:
 | Parameter                                                                                                      | Type                                                                                                           | Required                                                                                                       | Description                                                                                                    |
 | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
 | `request`                                                                                                      | [operations.C1APIPolicyV1PoliciesUpdateRequest](../../models/operations/c1apipolicyv1policiesupdaterequest.md) | :heavy_check_mark:                                                                                             | The request object to use for the request.                                                                     |
+| `retries`                                                                                                      | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)                                               | :heavy_minus_sign:                                                                                             | Configuration to override the default retry behavior of the client.                                            |
 
 
 ### Response
@@ -228,4 +228,4 @@ if res.update_policy_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 4x-5xx          | */*             |
+| errors.SDKError | 4xx-5xx         | */*             |

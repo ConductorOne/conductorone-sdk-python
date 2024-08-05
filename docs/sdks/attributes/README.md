@@ -16,19 +16,18 @@ Create a new attribute value.
 ### Example Usage
 
 ```python
-import sdk
-from sdk.models import shared
+from openapi import SDK
+from openapi.models import shared
 
-s = sdk.SDK(
+s = SDK(
     security=shared.Security(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-        oauth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
+        oauth="<YOUR_OAUTH_HERE>",
     ),
 )
 
-req = shared.CreateAttributeValueRequest()
 
-res = s.attributes.create_attribute_value(req)
+res = s.attributes.create_attribute_value()
 
 if res.create_attribute_value_response is not None:
     # handle response
@@ -41,6 +40,7 @@ if res.create_attribute_value_response is not None:
 | Parameter                                                                                | Type                                                                                     | Required                                                                                 | Description                                                                              |
 | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
 | `request`                                                                                | [shared.CreateAttributeValueRequest](../../models/shared/createattributevaluerequest.md) | :heavy_check_mark:                                                                       | The request object to use for the request.                                               |
+| `retries`                                                                                | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)                         | :heavy_minus_sign:                                                                       | Configuration to override the default retry behavior of the client.                      |
 
 
 ### Response
@@ -50,7 +50,7 @@ if res.create_attribute_value_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 4x-5xx          | */*             |
+| errors.SDKError | 4xx-5xx         | */*             |
 
 ## delete_attribute_value
 
@@ -59,21 +59,20 @@ Delete an attribute value by id.
 ### Example Usage
 
 ```python
-import sdk
-from sdk.models import operations, shared
+from openapi import SDK
+from openapi.models import shared
 
-s = sdk.SDK(
+s = SDK(
     security=shared.Security(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-        oauth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
+        oauth="<YOUR_OAUTH_HERE>",
     ),
 )
 
-req = operations.C1APIAttributeV1AttributesDeleteAttributeValueRequest(
-    id='<id>',
-)
 
-res = s.attributes.delete_attribute_value(req)
+res = s.attributes.delete_attribute_value(request={
+    "id": "<id>",
+})
 
 if res.delete_attribute_value_response is not None:
     # handle response
@@ -86,6 +85,7 @@ if res.delete_attribute_value_response is not None:
 | Parameter                                                                                                                                            | Type                                                                                                                                                 | Required                                                                                                                                             | Description                                                                                                                                          |
 | ---------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `request`                                                                                                                                            | [operations.C1APIAttributeV1AttributesDeleteAttributeValueRequest](../../models/operations/c1apiattributev1attributesdeleteattributevaluerequest.md) | :heavy_check_mark:                                                                                                                                   | The request object to use for the request.                                                                                                           |
+| `retries`                                                                                                                                            | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)                                                                                     | :heavy_minus_sign:                                                                                                                                   | Configuration to override the default retry behavior of the client.                                                                                  |
 
 
 ### Response
@@ -95,7 +95,7 @@ if res.delete_attribute_value_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 4x-5xx          | */*             |
+| errors.SDKError | 4xx-5xx         | */*             |
 
 ## get_attribute_value
 
@@ -104,21 +104,20 @@ Get an attribute value by id.
 ### Example Usage
 
 ```python
-import sdk
-from sdk.models import operations, shared
+from openapi import SDK
+from openapi.models import shared
 
-s = sdk.SDK(
+s = SDK(
     security=shared.Security(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-        oauth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
+        oauth="<YOUR_OAUTH_HERE>",
     ),
 )
 
-req = operations.C1APIAttributeV1AttributesGetAttributeValueRequest(
-    id='<id>',
-)
 
-res = s.attributes.get_attribute_value(req)
+res = s.attributes.get_attribute_value(request={
+    "id": "<id>",
+})
 
 if res.get_attribute_value_response is not None:
     # handle response
@@ -131,6 +130,7 @@ if res.get_attribute_value_response is not None:
 | Parameter                                                                                                                                      | Type                                                                                                                                           | Required                                                                                                                                       | Description                                                                                                                                    |
 | ---------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
 | `request`                                                                                                                                      | [operations.C1APIAttributeV1AttributesGetAttributeValueRequest](../../models/operations/c1apiattributev1attributesgetattributevaluerequest.md) | :heavy_check_mark:                                                                                                                             | The request object to use for the request.                                                                                                     |
+| `retries`                                                                                                                                      | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)                                                                               | :heavy_minus_sign:                                                                                                                             | Configuration to override the default retry behavior of the client.                                                                            |
 
 
 ### Response
@@ -140,7 +140,7 @@ if res.get_attribute_value_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 4x-5xx          | */*             |
+| errors.SDKError | 4xx-5xx         | */*             |
 
 ## list_attribute_types
 
@@ -149,19 +149,18 @@ List all attribute types.
 ### Example Usage
 
 ```python
-import sdk
-from sdk.models import operations, shared
+from openapi import SDK
+from openapi.models import shared
 
-s = sdk.SDK(
+s = SDK(
     security=shared.Security(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-        oauth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
+        oauth="<YOUR_OAUTH_HERE>",
     ),
 )
 
-req = operations.C1APIAttributeV1AttributesListAttributeTypesRequest()
 
-res = s.attributes.list_attribute_types(req)
+res = s.attributes.list_attribute_types()
 
 if res.list_attribute_types_response is not None:
     # handle response
@@ -174,6 +173,7 @@ if res.list_attribute_types_response is not None:
 | Parameter                                                                                                                                        | Type                                                                                                                                             | Required                                                                                                                                         | Description                                                                                                                                      |
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `request`                                                                                                                                        | [operations.C1APIAttributeV1AttributesListAttributeTypesRequest](../../models/operations/c1apiattributev1attributeslistattributetypesrequest.md) | :heavy_check_mark:                                                                                                                               | The request object to use for the request.                                                                                                       |
+| `retries`                                                                                                                                        | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)                                                                                 | :heavy_minus_sign:                                                                                                                               | Configuration to override the default retry behavior of the client.                                                                              |
 
 
 ### Response
@@ -183,7 +183,7 @@ if res.list_attribute_types_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 4x-5xx          | */*             |
+| errors.SDKError | 4xx-5xx         | */*             |
 
 ## list_attribute_values
 
@@ -192,21 +192,20 @@ List all attribute values for a given attribute type.
 ### Example Usage
 
 ```python
-import sdk
-from sdk.models import operations, shared
+from openapi import SDK
+from openapi.models import shared
 
-s = sdk.SDK(
+s = SDK(
     security=shared.Security(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-        oauth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
+        oauth="<YOUR_OAUTH_HERE>",
     ),
 )
 
-req = operations.C1APIAttributeV1AttributesListAttributeValuesRequest(
-    attribute_type_id='<value>',
-)
 
-res = s.attributes.list_attribute_values(req)
+res = s.attributes.list_attribute_values(request={
+    "attribute_type_id": "<value>",
+})
 
 if res.list_attribute_values_response is not None:
     # handle response
@@ -219,6 +218,7 @@ if res.list_attribute_values_response is not None:
 | Parameter                                                                                                                                          | Type                                                                                                                                               | Required                                                                                                                                           | Description                                                                                                                                        |
 | -------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `request`                                                                                                                                          | [operations.C1APIAttributeV1AttributesListAttributeValuesRequest](../../models/operations/c1apiattributev1attributeslistattributevaluesrequest.md) | :heavy_check_mark:                                                                                                                                 | The request object to use for the request.                                                                                                         |
+| `retries`                                                                                                                                          | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)                                                                                   | :heavy_minus_sign:                                                                                                                                 | Configuration to override the default retry behavior of the client.                                                                                |
 
 
 ### Response
@@ -228,4 +228,4 @@ if res.list_attribute_values_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 4x-5xx          | */*             |
+| errors.SDKError | 4xx-5xx         | */*             |

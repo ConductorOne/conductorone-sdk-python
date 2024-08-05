@@ -1,0 +1,9 @@
+# C1APIWebhooksV1WebhooksServiceDeleteRequest
+
+
+## Fields
+
+| Field                                                                                                | Type                                                                                                 | Required                                                                                             | Description                                                                                          |
+| ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
+| `id`                                                                                                 | *str*                                                                                                | :heavy_check_mark:                                                                                   | N/A                                                                                                  |
+| `webhooks_service_delete_request`                                                                    | [Optional[shared.WebhooksServiceDeleteRequest]](../../models/shared/webhooksservicedeleterequest.md) | :heavy_minus_sign:                                                                                   | N/A                                                                                                  |

@@ -1,0 +1,9 @@
+# C1APIWebhooksV1WebhooksServiceUpdateRequest
+
+
+## Fields
+
+| Field                                                                                                | Type                                                                                                 | Required                                                                                             | Description                                                                                          |
+| ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
+| `id`                                                                                                 | *str*                                                                                                | :heavy_check_mark:                                                                                   | N/A                                                                                                  |
+| `webhooks_service_update_request`                                                                    | [Optional[shared.WebhooksServiceUpdateRequest]](../../models/shared/webhooksserviceupdaterequest.md) | :heavy_minus_sign:                                                                                   | N/A                                                                                                  |

@@ -8,4 +8,4 @@ Contains an arbitrary serialized message along with a @type that describes the t
 | Field                               | Type                                | Required                            | Description                         |
 | ----------------------------------- | ----------------------------------- | ----------------------------------- | ----------------------------------- |
 | `at_type`                           | *Optional[str]*                     | :heavy_minus_sign:                  | The type of the serialized message. |
-| `additional_properties`             | Dict[str, *Any*]                    | :heavy_minus_sign:                  | N/A                                 |
+| `__pydantic_extra__`                | Dict[str, *Any*]                    | :heavy_minus_sign:                  | N/A                                 |

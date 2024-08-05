@@ -14,4 +14,6 @@ This property indicates the current state of this step.
 | `PROVISION_INSTANCE_STATE_WAITING`                             | PROVISION_INSTANCE_STATE_WAITING                               |
 | `PROVISION_INSTANCE_STATE_WEBHOOK`                             | PROVISION_INSTANCE_STATE_WEBHOOK                               |
 | `PROVISION_INSTANCE_STATE_WEBHOOK_WAITING`                     | PROVISION_INSTANCE_STATE_WEBHOOK_WAITING                       |
+| `PROVISION_INSTANCE_STATE_EXTERNAL_TICKET`                     | PROVISION_INSTANCE_STATE_EXTERNAL_TICKET                       |
+| `PROVISION_INSTANCE_STATE_EXTERNAL_TICKET_WAITING`             | PROVISION_INSTANCE_STATE_EXTERNAL_TICKET_WAITING               |
 | `PROVISION_INSTANCE_STATE_DONE`                                | PROVISION_INSTANCE_STATE_DONE                                  |

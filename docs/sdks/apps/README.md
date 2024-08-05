@@ -16,19 +16,18 @@ Create a new app.
 ### Example Usage
 
 ```python
-import sdk
-from sdk.models import shared
+from openapi import SDK
+from openapi.models import shared
 
-s = sdk.SDK(
+s = SDK(
     security=shared.Security(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-        oauth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
+        oauth="<YOUR_OAUTH_HERE>",
     ),
 )
 
-req = shared.CreateAppRequest()
 
-res = s.apps.create(req)
+res = s.apps.create()
 
 if res.create_app_response is not None:
     # handle response
@@ -38,9 +37,10 @@ if res.create_app_response is not None:
 
 ### Parameters
 
-| Parameter                                                          | Type                                                               | Required                                                           | Description                                                        |
-| ------------------------------------------------------------------ | ------------------------------------------------------------------ | ------------------------------------------------------------------ | ------------------------------------------------------------------ |
-| `request`                                                          | [shared.CreateAppRequest](../../models/shared/createapprequest.md) | :heavy_check_mark:                                                 | The request object to use for the request.                         |
+| Parameter                                                           | Type                                                                | Required                                                            | Description                                                         |
+| ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
+| `request`                                                           | [shared.CreateAppRequest](../../models/shared/createapprequest.md)  | :heavy_check_mark:                                                  | The request object to use for the request.                          |
+| `retries`                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)    | :heavy_minus_sign:                                                  | Configuration to override the default retry behavior of the client. |
 
 
 ### Response
@@ -50,7 +50,7 @@ if res.create_app_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 4x-5xx          | */*             |
+| errors.SDKError | 4xx-5xx         | */*             |
 
 ## delete
 
@@ -59,21 +59,20 @@ Delete an app.
 ### Example Usage
 
 ```python
-import sdk
-from sdk.models import operations, shared
+from openapi import SDK
+from openapi.models import shared
 
-s = sdk.SDK(
+s = SDK(
     security=shared.Security(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-        oauth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
+        oauth="<YOUR_OAUTH_HERE>",
     ),
 )
 
-req = operations.C1APIAppV1AppsDeleteRequest(
-    id='<id>',
-)
 
-res = s.apps.delete(req)
+res = s.apps.delete(request={
+    "id": "<id>",
+})
 
 if res.delete_app_response is not None:
     # handle response
@@ -86,6 +85,7 @@ if res.delete_app_response is not None:
 | Parameter                                                                                        | Type                                                                                             | Required                                                                                         | Description                                                                                      |
 | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ |
 | `request`                                                                                        | [operations.C1APIAppV1AppsDeleteRequest](../../models/operations/c1apiappv1appsdeleterequest.md) | :heavy_check_mark:                                                                               | The request object to use for the request.                                                       |
+| `retries`                                                                                        | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)                                 | :heavy_minus_sign:                                                                               | Configuration to override the default retry behavior of the client.                              |
 
 
 ### Response
@@ -95,7 +95,7 @@ if res.delete_app_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 4x-5xx          | */*             |
+| errors.SDKError | 4xx-5xx         | */*             |
 
 ## get
 
@@ -104,21 +104,20 @@ Get an app by ID.
 ### Example Usage
 
 ```python
-import sdk
-from sdk.models import operations, shared
+from openapi import SDK
+from openapi.models import shared
 
-s = sdk.SDK(
+s = SDK(
     security=shared.Security(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-        oauth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
+        oauth="<YOUR_OAUTH_HERE>",
     ),
 )
 
-req = operations.C1APIAppV1AppsGetRequest(
-    id='<id>',
-)
 
-res = s.apps.get(req)
+res = s.apps.get(request={
+    "id": "<id>",
+})
 
 if res.get_app_response is not None:
     # handle response
@@ -131,6 +130,7 @@ if res.get_app_response is not None:
 | Parameter                                                                                  | Type                                                                                       | Required                                                                                   | Description                                                                                |
 | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ |
 | `request`                                                                                  | [operations.C1APIAppV1AppsGetRequest](../../models/operations/c1apiappv1appsgetrequest.md) | :heavy_check_mark:                                                                         | The request object to use for the request.                                                 |
+| `retries`                                                                                  | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)                           | :heavy_minus_sign:                                                                         | Configuration to override the default retry behavior of the client.                        |
 
 
 ### Response
@@ -140,7 +140,7 @@ if res.get_app_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 4x-5xx          | */*             |
+| errors.SDKError | 4xx-5xx         | */*             |
 
 ## list
 
@@ -149,19 +149,18 @@ List all apps.
 ### Example Usage
 
 ```python
-import sdk
-from sdk.models import operations, shared
+from openapi import SDK
+from openapi.models import shared
 
-s = sdk.SDK(
+s = SDK(
     security=shared.Security(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-        oauth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
+        oauth="<YOUR_OAUTH_HERE>",
     ),
 )
 
-req = operations.C1APIAppV1AppsListRequest()
 
-res = s.apps.list(req)
+res = s.apps.list()
 
 if res.list_apps_response is not None:
     # handle response
@@ -174,6 +173,7 @@ if res.list_apps_response is not None:
 | Parameter                                                                                    | Type                                                                                         | Required                                                                                     | Description                                                                                  |
 | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
 | `request`                                                                                    | [operations.C1APIAppV1AppsListRequest](../../models/operations/c1apiappv1appslistrequest.md) | :heavy_check_mark:                                                                           | The request object to use for the request.                                                   |
+| `retries`                                                                                    | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)                             | :heavy_minus_sign:                                                                           | Configuration to override the default retry behavior of the client.                          |
 
 
 ### Response
@@ -183,7 +183,7 @@ if res.list_apps_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 4x-5xx          | */*             |
+| errors.SDKError | 4xx-5xx         | */*             |
 
 ## update
 
@@ -192,21 +192,20 @@ Update an existing app.
 ### Example Usage
 
 ```python
-import sdk
-from sdk.models import operations, shared
+from openapi import SDK
+from openapi.models import shared
 
-s = sdk.SDK(
+s = SDK(
     security=shared.Security(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-        oauth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
+        oauth="<YOUR_OAUTH_HERE>",
     ),
 )
 
-req = operations.C1APIAppV1AppsUpdateRequest(
-    id='<id>',
-)
 
-res = s.apps.update(req)
+res = s.apps.update(request={
+    "id": "<id>",
+})
 
 if res.update_app_response is not None:
     # handle response
@@ -219,6 +218,7 @@ if res.update_app_response is not None:
 | Parameter                                                                                        | Type                                                                                             | Required                                                                                         | Description                                                                                      |
 | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ |
 | `request`                                                                                        | [operations.C1APIAppV1AppsUpdateRequest](../../models/operations/c1apiappv1appsupdaterequest.md) | :heavy_check_mark:                                                                               | The request object to use for the request.                                                       |
+| `retries`                                                                                        | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)                                 | :heavy_minus_sign:                                                                               | Configuration to override the default retry behavior of the client.                              |
 
 
 ### Response
@@ -228,4 +228,4 @@ if res.update_app_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 4x-5xx          | */*             |
+| errors.SDKError | 4xx-5xx         | */*             |
