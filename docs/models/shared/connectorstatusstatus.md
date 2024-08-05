@@ -11,3 +11,4 @@ The status of the connector sync.
 | `SYNC_STATUS_RUNNING`     | SYNC_STATUS_RUNNING       |
 | `SYNC_STATUS_DONE`        | SYNC_STATUS_DONE          |
 | `SYNC_STATUS_ERROR`       | SYNC_STATUS_ERROR         |
+| `SYNC_STATUS_DISABLED`    | SYNC_STATUS_DISABLED      |

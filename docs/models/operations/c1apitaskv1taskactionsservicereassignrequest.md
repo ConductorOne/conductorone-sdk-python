@@ -1,0 +1,9 @@
+# C1APITaskV1TaskActionsServiceReassignRequest
+
+
+## Fields
+
+| Field                                                                                                          | Type                                                                                                           | Required                                                                                                       | Description                                                                                                    |
+| -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
+| `task_id`                                                                                                      | *str*                                                                                                          | :heavy_check_mark:                                                                                             | N/A                                                                                                            |
+| `task_actions_service_reassign_request`                                                                        | [Optional[shared.TaskActionsServiceReassignRequest]](../../models/shared/taskactionsservicereassignrequest.md) | :heavy_minus_sign:                                                                                             | N/A                                                                                                            |

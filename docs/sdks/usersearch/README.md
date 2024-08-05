@@ -12,19 +12,18 @@ Search users based on filters specified in the request body.
 ### Example Usage
 
 ```python
-import sdk
-from sdk.models import shared
+from openapi import SDK
+from openapi.models import shared
 
-s = sdk.SDK(
+s = SDK(
     security=shared.Security(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-        oauth="Bearer <YOUR_ACCESS_TOKEN_HERE>",
+        oauth="<YOUR_OAUTH_HERE>",
     ),
 )
 
-req = shared.SearchUsersRequest()
 
-res = s.user_search.search(req)
+res = s.user_search.search()
 
 if res.search_users_response is not None:
     # handle response
@@ -37,6 +36,7 @@ if res.search_users_response is not None:
 | Parameter                                                              | Type                                                                   | Required                                                               | Description                                                            |
 | ---------------------------------------------------------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------------- |
 | `request`                                                              | [shared.SearchUsersRequest](../../models/shared/searchusersrequest.md) | :heavy_check_mark:                                                     | The request object to use for the request.                             |
+| `retries`                                                              | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)       | :heavy_minus_sign:                                                     | Configuration to override the default retry behavior of the client.    |
 
 
 ### Response
@@ -46,4 +46,4 @@ if res.search_users_response is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 4x-5xx          | */*             |
+| errors.SDKError | 4xx-5xx         | */*             |
