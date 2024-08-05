@@ -2,16 +2,16 @@ speakeasyVersion: 1.352.2
 sources:
     my-source:
         sourceNamespace: my-source
-        sourceRevisionDigest: sha256:dec56eb86d0828b5cdf6608075c73b47fbcd32905766c9f03bac8dd0ef7119a7
-        sourceBlobDigest: sha256:24e5fe0affe89f382ce828380c20f1ebe9e3550a4d5fbd60c13b1c4ec0d0e638
+        sourceRevisionDigest: sha256:e51a55f101202d27625caa056aceb8344a37fed3854f18ae0057664a28a89c75
+        sourceBlobDigest: sha256:577c2e57f5087193ba5b814463e40347885ee978db7d38cdfeb1de17d95017f0
         tags:
             - latest
 targets:
     conductorone-python:
         source: my-source
         sourceNamespace: my-source
-        sourceRevisionDigest: sha256:dec56eb86d0828b5cdf6608075c73b47fbcd32905766c9f03bac8dd0ef7119a7
-        sourceBlobDigest: sha256:24e5fe0affe89f382ce828380c20f1ebe9e3550a4d5fbd60c13b1c4ec0d0e638
+        sourceRevisionDigest: sha256:e51a55f101202d27625caa056aceb8344a37fed3854f18ae0057664a28a89c75
+        sourceBlobDigest: sha256:577c2e57f5087193ba5b814463e40347885ee978db7d38cdfeb1de17d95017f0
         outLocation: /Users/logan/Dev/work/conductorone-sdk-python
 workflow:
     workflowVersion: 1.0.0
