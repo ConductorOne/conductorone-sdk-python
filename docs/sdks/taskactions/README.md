@@ -17,8 +17,8 @@ Invokes the c1.api.task.v1.TaskActionsService.Approve method.
 ### Example Usage
 
 ```python
-from openapi import SDK
-from openapi.models import shared
+from sdk import SDK
+from sdk.models import shared
 
 s = SDK(
     security=shared.Security(
@@ -62,8 +62,8 @@ Invokes the c1.api.task.v1.TaskActionsService.Comment method.
 ### Example Usage
 
 ```python
-from openapi import SDK
-from openapi.models import shared
+from sdk import SDK
+from sdk.models import shared
 
 s = SDK(
     security=shared.Security(
@@ -107,8 +107,8 @@ Invokes the c1.api.task.v1.TaskActionsService.Deny method.
 ### Example Usage
 
 ```python
-from openapi import SDK
-from openapi.models import shared
+from sdk import SDK
+from sdk.models import shared
 
 s = SDK(
     security=shared.Security(
@@ -152,8 +152,8 @@ Invokes the c1.api.task.v1.TaskActionsService.EscalateToEmergencyAccess method.
 ### Example Usage
 
 ```python
-from openapi import SDK
-from openapi.models import shared
+from sdk import SDK
+from sdk.models import shared
 
 s = SDK(
     security=shared.Security(
@@ -197,8 +197,8 @@ Invokes the c1.api.task.v1.TaskActionsService.Reassign method.
 ### Example Usage
 
 ```python
-from openapi import SDK
-from openapi.models import shared
+from sdk import SDK
+from sdk.models import shared
 
 s = SDK(
     security=shared.Security(
@@ -242,8 +242,8 @@ Invokes the c1.api.task.v1.TaskActionsService.Restart method.
 ### Example Usage
 
 ```python
-from openapi import SDK
-from openapi.models import shared
+from sdk import SDK
+from sdk.models import shared
 
 s = SDK(
     security=shared.Security(

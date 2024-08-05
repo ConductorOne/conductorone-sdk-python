@@ -12,8 +12,8 @@ Invokes the c1.api.systemlog.v1.ExportsSearchService.Search method.
 ### Example Usage
 
 ```python
-from openapi import SDK
-from openapi.models import shared
+from sdk import SDK
+from sdk.models import shared
 
 s = SDK(
     security=shared.Security(

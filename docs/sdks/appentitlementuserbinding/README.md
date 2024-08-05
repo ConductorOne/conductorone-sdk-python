@@ -13,8 +13,8 @@ Returns a list of app users for the identity in the app. If that app user also h
 ### Example Usage
 
 ```python
-from openapi import SDK
-from openapi.models import shared
+from sdk import SDK
+from sdk.models import shared
 
 s = SDK(
     security=shared.Security(
@@ -60,8 +60,8 @@ Invokes the c1.api.app.v1.AppEntitlementUserBindingService.SearchPastGrants meth
 ### Example Usage
 
 ```python
-from openapi import SDK
-from openapi.models import shared
+from sdk import SDK
+from sdk.models import shared
 
 s = SDK(
     security=shared.Security(

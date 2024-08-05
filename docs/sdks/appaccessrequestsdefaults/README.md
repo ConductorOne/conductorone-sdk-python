@@ -14,8 +14,8 @@ Invokes the c1.api.app.v1.AppAccessRequestsDefaultsService.CancelAppAccessReques
 ### Example Usage
 
 ```python
-from openapi import SDK
-from openapi.models import shared
+from sdk import SDK
+from sdk.models import shared
 
 s = SDK(
     security=shared.Security(
@@ -59,8 +59,8 @@ Invokes the c1.api.app.v1.AppAccessRequestsDefaultsService.CreateAppAccessReques
 ### Example Usage
 
 ```python
-from openapi import SDK
-from openapi.models import shared
+from sdk import SDK
+from sdk.models import shared
 
 s = SDK(
     security=shared.Security(
@@ -104,8 +104,8 @@ Invokes the c1.api.app.v1.AppAccessRequestsDefaultsService.GetAppAccessRequestsD
 ### Example Usage
 
 ```python
-from openapi import SDK
-from openapi.models import shared
+from sdk import SDK
+from sdk.models import shared
 
 s = SDK(
     security=shared.Security(

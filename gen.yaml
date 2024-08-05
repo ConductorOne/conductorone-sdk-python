@@ -10,7 +10,7 @@ generation:
   auth:
     oAuth2ClientCredentialsEnabled: false
 python:
-  version: 0.14.0
+  version: 0.14.3
   additionalDependencies:
     dependencies: {}
   author: Speakeasy
@@ -33,6 +33,6 @@ python:
   maxMethodParams: 0
   methodArguments: infer-optional-args
   outputModelSuffix: output
-  packageName: openapi
+  packageName: sdk
   responseFormat: envelope
   templateVersion: v2

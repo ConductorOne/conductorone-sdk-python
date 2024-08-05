@@ -13,8 +13,8 @@ Update an app user by ID. Only the fields specified in the update mask are updat
 ### Example Usage
 
 ```python
-from openapi import SDK
-from openapi.models import shared
+from sdk import SDK
+from sdk.models import shared
 
 s = SDK(
     security=shared.Security(
