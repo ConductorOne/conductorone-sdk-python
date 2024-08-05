@@ -12,8 +12,8 @@ Search users based on filters specified in the request body.
 ### Example Usage
 
 ```python
-from openapi import SDK
-from openapi.models import shared
+from sdk import SDK
+from sdk.models import shared
 
 s = SDK(
     security=shared.Security(

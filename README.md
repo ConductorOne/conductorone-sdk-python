@@ -292,8 +292,8 @@ Handling errors in this SDK should largely match your expectations.  All operati
 ### Example
 
 ```python
-from openapi import SDK
-from openapi.models import errors, shared
+from sdk import SDK
+from sdk.models import errors, shared
 
 s = SDK(
     security=shared.Security(
@@ -333,8 +333,8 @@ You can override the default server globally by passing a server index to the `s
 #### Example
 
 ```python
-from openapi import SDK
-from openapi.models import shared
+from sdk import SDK
+from sdk.models import shared
 
 s = SDK(
     server_idx=0,
@@ -362,8 +362,8 @@ Some of the server options above contain variables. If you want to set the value
 
 The default server can also be overridden globally by passing a URL to the `server_url: str` optional parameter when initializing the SDK client instance. For example:
 ```python
-from openapi import SDK
-from openapi.models import shared
+from sdk import SDK
+from sdk.models import shared
 
 s = SDK(
     server_url="https://{tenantDomain}.conductor.one",
@@ -394,7 +394,7 @@ This allows you to wrap the client with your own custom logic, such as adding cu
 
 For example, you could specify a header for every request that this sdk makes as follows:
 ```python
-from openapi import SDK
+from sdk import SDK
 import httpx
 
 http_client = httpx.Client(headers={"x-custom-header": "someValue"})
@@ -403,8 +403,8 @@ s = SDK(client=http_client)
 
 or you could wrap the client with your own custom logic:
 ```python
-from openapi import SDK
-from openapi.httpclient import AsyncHttpClient
+from sdk import SDK
+from sdk.httpclient import AsyncHttpClient
 import httpx
 
 class CustomClient(AsyncHttpClient):
@@ -482,8 +482,8 @@ This SDK supports the following security schemes globally:
 
 You can set the security parameters through the `security` optional parameter when initializing the SDK client instance. The selected scheme will be used by default to authenticate with the API for all operations that support it. For example:
 ```python
-from openapi import SDK
-from openapi.models import shared
+from sdk import SDK
+from sdk.models import shared
 
 s = SDK(
     security=shared.Security(
@@ -509,8 +509,8 @@ Some of the endpoints in this SDK support retries. If you use the SDK without an
 
 To change the default retry strategy for a single API call, simply provide a `RetryConfig` object to the call:
 ```python
-from openapi import SDK
-from openapi.models import shared
+from sdk import SDK
+from sdk.models import shared
 from sdk.utils import BackoffStrategy, RetryConfig
 
 s = SDK(
@@ -532,8 +532,8 @@ if res.create_app_response is not None:
 
 If you'd like to override the default retry strategy for all operations that support retries, you can use the `retry_config` optional parameter when initializing the SDK:
 ```python
-from openapi import SDK
-from openapi.models import shared
+from sdk import SDK
+from sdk.models import shared
 from sdk.utils import BackoffStrategy, RetryConfig
 
 s = SDK(
@@ -560,11 +560,11 @@ if res.create_app_response is not None:
 To emit debug logs for SDK requests and responses you can pass a logger object directly into your SDK object.
 
 ```python
-from openapi import SDK
+from sdk import SDK
 import logging
 
 logging.basicConfig(level=logging.DEBUG)
-s = SDK(debug_logger=logging.getLogger("openapi"))
+s = SDK(debug_logger=logging.getLogger("sdk"))
 ```
 <!-- End Debugging [debug] -->
 

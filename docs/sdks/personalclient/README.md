@@ -12,8 +12,8 @@ Create creates a new PersonalClient object for the current User.
 ### Example Usage
 
 ```python
-from openapi import SDK
-from openapi.models import shared
+from sdk import SDK
+from sdk.models import shared
 
 s = SDK(
     security=shared.Security(

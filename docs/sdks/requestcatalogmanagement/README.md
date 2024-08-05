@@ -24,8 +24,8 @@ Add visibility bindings (access entitlements) to a catalog.
 ### Example Usage
 
 ```python
-from openapi import SDK
-from openapi.models import shared
+from sdk import SDK
+from sdk.models import shared
 
 s = SDK(
     security=shared.Security(
@@ -69,8 +69,8 @@ Add requestable entitlements to a catalog.
 ### Example Usage
 
 ```python
-from openapi import SDK
-from openapi.models import shared
+from sdk import SDK
+from sdk.models import shared
 
 s = SDK(
     security=shared.Security(
@@ -114,8 +114,8 @@ Creates a new request catalog.
 ### Example Usage
 
 ```python
-from openapi import SDK
-from openapi.models import shared
+from sdk import SDK
+from sdk.models import shared
 
 s = SDK(
     security=shared.Security(
@@ -157,8 +157,8 @@ Delete a catalog.
 ### Example Usage
 
 ```python
-from openapi import SDK
-from openapi.models import shared
+from sdk import SDK
+from sdk.models import shared
 
 s = SDK(
     security=shared.Security(
@@ -202,8 +202,8 @@ Get a catalog.
 ### Example Usage
 
 ```python
-from openapi import SDK
-from openapi.models import shared
+from sdk import SDK
+from sdk.models import shared
 
 s = SDK(
     security=shared.Security(
@@ -247,8 +247,8 @@ Get bundle automation
 ### Example Usage
 
 ```python
-from openapi import SDK
-from openapi.models import shared
+from sdk import SDK
+from sdk.models import shared
 
 s = SDK(
     security=shared.Security(
@@ -292,8 +292,8 @@ Get a list of request catalogs.
 ### Example Usage
 
 ```python
-from openapi import SDK
-from openapi.models import shared
+from sdk import SDK
+from sdk.models import shared
 
 s = SDK(
     security=shared.Security(
@@ -335,8 +335,8 @@ List visibility bindings (access entitlements) for a catalog.
 ### Example Usage
 
 ```python
-from openapi import SDK
-from openapi.models import shared
+from sdk import SDK
+from sdk.models import shared
 
 s = SDK(
     security=shared.Security(
@@ -380,8 +380,8 @@ List entitlements in a catalog that are requestable.
 ### Example Usage
 
 ```python
-from openapi import SDK
-from openapi.models import shared
+from sdk import SDK
+from sdk.models import shared
 
 s = SDK(
     security=shared.Security(
@@ -425,8 +425,8 @@ Remove visibility bindings (access entitlements) to a catalog.
 ### Example Usage
 
 ```python
-from openapi import SDK
-from openapi.models import shared
+from sdk import SDK
+from sdk.models import shared
 
 s = SDK(
     security=shared.Security(
@@ -470,8 +470,8 @@ Remove requestable entitlements from a catalog.
 ### Example Usage
 
 ```python
-from openapi import SDK
-from openapi.models import shared
+from sdk import SDK
+from sdk.models import shared
 
 s = SDK(
     security=shared.Security(
@@ -515,8 +515,8 @@ Invokes the c1.api.requestcatalog.v1.RequestCatalogManagementService.SetBundleAu
 ### Example Usage
 
 ```python
-from openapi import SDK
-from openapi.models import shared
+from sdk import SDK
+from sdk.models import shared
 
 s = SDK(
     security=shared.Security(
@@ -560,8 +560,8 @@ Update a catalog.
 ### Example Usage
 
 ```python
-from openapi import SDK
-from openapi.models import shared
+from sdk import SDK
+from sdk.models import shared
 
 s = SDK(
     security=shared.Security(

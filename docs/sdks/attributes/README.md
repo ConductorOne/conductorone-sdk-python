@@ -16,8 +16,8 @@ Create a new attribute value.
 ### Example Usage
 
 ```python
-from openapi import SDK
-from openapi.models import shared
+from sdk import SDK
+from sdk.models import shared
 
 s = SDK(
     security=shared.Security(
@@ -59,8 +59,8 @@ Delete an attribute value by id.
 ### Example Usage
 
 ```python
-from openapi import SDK
-from openapi.models import shared
+from sdk import SDK
+from sdk.models import shared
 
 s = SDK(
     security=shared.Security(
@@ -104,8 +104,8 @@ Get an attribute value by id.
 ### Example Usage
 
 ```python
-from openapi import SDK
-from openapi.models import shared
+from sdk import SDK
+from sdk.models import shared
 
 s = SDK(
     security=shared.Security(
@@ -149,8 +149,8 @@ List all attribute types.
 ### Example Usage
 
 ```python
-from openapi import SDK
-from openapi.models import shared
+from sdk import SDK
+from sdk.models import shared
 
 s = SDK(
     security=shared.Security(
@@ -192,8 +192,8 @@ List all attribute values for a given attribute type.
 ### Example Usage
 
 ```python
-from openapi import SDK
-from openapi.models import shared
+from sdk import SDK
+from sdk.models import shared
 
 s = SDK(
     security=shared.Security(

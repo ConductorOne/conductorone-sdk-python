@@ -10,10 +10,16 @@ generation:
   auth:
     oAuth2ClientCredentialsEnabled: false
 python:
-  version: 0.14.0
+  version: 0.14.8
   additionalDependencies:
-    dependencies: {}
-  author: Speakeasy
+    dev: {}
+    main:
+      cryptography: '>=43.0.0'
+      pyjwt: '>=2.9.0'
+      python-jose: '>=3.3.0'
+      requests: '>=2.32.3'
+      types-python-jose: '>=3.3.0'
+      types-requests: '>=2.32.0'
   authors:
     - Speakeasy
   clientServerStatusCodesAsErrors: true
@@ -33,6 +39,6 @@ python:
   maxMethodParams: 0
   methodArguments: infer-optional-args
   outputModelSuffix: output
-  packageName: openapi
+  packageName: sdk
   responseFormat: envelope
   templateVersion: v2

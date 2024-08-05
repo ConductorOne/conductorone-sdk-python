@@ -83,4 +83,3 @@ class Token:
         if resp.status_code != 200:
             raise Exception(f"Failed to get token: {resp.status_code}")
         return resp.json().get("access_token")
-    

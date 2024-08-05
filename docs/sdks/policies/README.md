@@ -16,8 +16,8 @@ Create a policy.
 ### Example Usage
 
 ```python
-from openapi import SDK
-from openapi.models import shared
+from sdk import SDK
+from sdk.models import shared
 
 s = SDK(
     security=shared.Security(
@@ -59,8 +59,8 @@ Delete a policy by ID.
 ### Example Usage
 
 ```python
-from openapi import SDK
-from openapi.models import shared
+from sdk import SDK
+from sdk.models import shared
 
 s = SDK(
     security=shared.Security(
@@ -104,8 +104,8 @@ Get a policy by ID.
 ### Example Usage
 
 ```python
-from openapi import SDK
-from openapi.models import shared
+from sdk import SDK
+from sdk.models import shared
 
 s = SDK(
     security=shared.Security(
@@ -149,8 +149,8 @@ List policies.
 ### Example Usage
 
 ```python
-from openapi import SDK
-from openapi.models import shared
+from sdk import SDK
+from sdk.models import shared
 
 s = SDK(
     security=shared.Security(
@@ -192,8 +192,8 @@ Update a policy by providing a policy object and an update mask.
 ### Example Usage
 
 ```python
-from openapi import SDK
-from openapi.models import shared
+from sdk import SDK
+from sdk.models import shared
 
 s = SDK(
     security=shared.Security(

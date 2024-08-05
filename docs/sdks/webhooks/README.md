@@ -17,8 +17,8 @@ Invokes the c1.api.webhooks.v1.WebhooksService.Create method.
 ### Example Usage
 
 ```python
-from openapi import SDK
-from openapi.models import shared
+from sdk import SDK
+from sdk.models import shared
 
 s = SDK(
     security=shared.Security(
@@ -60,8 +60,8 @@ Invokes the c1.api.webhooks.v1.WebhooksService.Delete method.
 ### Example Usage
 
 ```python
-from openapi import SDK
-from openapi.models import shared
+from sdk import SDK
+from sdk.models import shared
 
 s = SDK(
     security=shared.Security(
@@ -105,8 +105,8 @@ Invokes the c1.api.webhooks.v1.WebhooksService.Get method.
 ### Example Usage
 
 ```python
-from openapi import SDK
-from openapi.models import shared
+from sdk import SDK
+from sdk.models import shared
 
 s = SDK(
     security=shared.Security(
@@ -150,8 +150,8 @@ Invokes the c1.api.webhooks.v1.WebhooksService.List method.
 ### Example Usage
 
 ```python
-from openapi import SDK
-from openapi.models import shared
+from sdk import SDK
+from sdk.models import shared
 
 s = SDK(
     security=shared.Security(
@@ -193,8 +193,8 @@ Invokes the c1.api.webhooks.v1.WebhooksService.Test method.
 ### Example Usage
 
 ```python
-from openapi import SDK
-from openapi.models import shared
+from sdk import SDK
+from sdk.models import shared
 
 s = SDK(
     security=shared.Security(
@@ -238,8 +238,8 @@ Invokes the c1.api.webhooks.v1.WebhooksService.Update method.
 ### Example Usage
 
 ```python
-from openapi import SDK
-from openapi.models import shared
+from sdk import SDK
+from sdk.models import shared
 
 s = SDK(
     security=shared.Security(

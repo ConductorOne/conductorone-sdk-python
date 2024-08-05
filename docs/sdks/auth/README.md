@@ -12,8 +12,8 @@ Introspect returns the current user's principle_id, user_id and a list of roles,
 ### Example Usage
 
 ```python
-from openapi import SDK
-from openapi.models import shared
+from sdk import SDK
+from sdk.models import shared
 
 s = SDK(
     security=shared.Security(
