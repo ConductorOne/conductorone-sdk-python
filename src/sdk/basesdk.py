@@ -2,9 +2,9 @@
 
 from .sdkconfiguration import SDKConfiguration
 import httpx
+from sdk import utils
 from sdk._hooks import AfterErrorContext, AfterSuccessContext, BeforeRequestContext
 from sdk.models import errors
-import sdk.utils as utils
 from sdk.utils import RetryConfig, SerializedRequestBody, get_body_content
 from typing import Callable, List, Optional, Tuple
 

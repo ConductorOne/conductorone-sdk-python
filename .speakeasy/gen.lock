@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: caa5cc5d-fe97-4a71-b2f9-77ce0615bbd1
 management:
-  docChecksum: 3fe8a61e7ac132b8426232e80e265c87
+  docChecksum: 7b03e8b076ff3a51cdc645fdb4178221
   docVersion: 0.1.0-alpha
-  speakeasyVersion: 1.352.2
-  generationVersion: 2.385.2
-  releaseVersion: 0.14.8
-  configChecksum: 54d27c909e0c169bb689fa64281138ff
+  speakeasyVersion: 1.354.1
+  generationVersion: 2.386.2
+  releaseVersion: 0.16.0
+  configChecksum: 4b32529134bdafca3ac9e668ee7521e5
   repoURL: https://github.com/ConductorOne/conductorone-sdk-python.git
   repoSubDirectory: .
   installationURL: https://github.com/ConductorOne/conductorone-sdk-python.git
@@ -14,7 +14,7 @@ features:
   python:
     additionalDependencies: 1.0.0
     additionalProperties: 1.0.0
-    core: 5.3.3
+    core: 5.3.4
     defaultEnabledRetries: 0.2.0
     deprecations: 3.0.0
     envVarSecurityUsage: 0.3.1
@@ -79,6 +79,7 @@ generatedFiles:
   - pyproject.toml
   - scripts/compile.sh
   - scripts/publish.sh
+  - src/sdk/__init__.py
   - src/sdk/basesdk.py
   - src/sdk/httpclient.py
   - src/sdk/py.typed

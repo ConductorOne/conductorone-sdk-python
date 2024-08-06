@@ -1,4 +1,1 @@
 .gitignore
-src/sdk/sdkwithcredentials.py
-src/sdk/tokensource.py
-src/sdk/__init__.py

@@ -6,6 +6,7 @@ from .sdkconfiguration import SDKConfiguration
 from .utils.logger import Logger, NoOpLogger
 from .utils.retries import RetryConfig
 import httpx
+from sdk import utils
 from sdk._hooks import SDKHooks
 from sdk.appaccessrequestsdefaults import AppAccessRequestsDefaults
 from sdk.appentitlementowners import AppEntitlementOwners
@@ -47,7 +48,6 @@ from sdk.tasksearch import TaskSearch
 from sdk.types import OptionalNullable, UNSET
 from sdk.user import User
 from sdk.usersearch import UserSearch
-import sdk.utils as utils
 from sdk.webhooks import Webhooks
 from sdk.webhookssearch import WebhooksSearch
 from typing import Callable, Dict, List, Optional, Union
