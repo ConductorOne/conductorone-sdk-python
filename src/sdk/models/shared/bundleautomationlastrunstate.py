@@ -11,23 +11,29 @@ from typing_extensions import Annotated, NotRequired
 
 class BundleAutomationLastRunStateStatus(str, Enum):
     r"""The status field."""
-    BUNDLE_AUTOMATION_RUN_STATUS_UNSPECIFIED = "BUNDLE_AUTOMATION_RUN_STATUS_UNSPECIFIED"
+
+    BUNDLE_AUTOMATION_RUN_STATUS_UNSPECIFIED = (
+        "BUNDLE_AUTOMATION_RUN_STATUS_UNSPECIFIED"
+    )
     BUNDLE_AUTOMATION_RUN_STATUS_SUCCESS = "BUNDLE_AUTOMATION_RUN_STATUS_SUCCESS"
     BUNDLE_AUTOMATION_RUN_STATUS_FAILURE = "BUNDLE_AUTOMATION_RUN_STATUS_FAILURE"
-    BUNDLE_AUTOMATION_RUN_STATUS_IN_PROGRESS = "BUNDLE_AUTOMATION_RUN_STATUS_IN_PROGRESS"
+    BUNDLE_AUTOMATION_RUN_STATUS_IN_PROGRESS = (
+        "BUNDLE_AUTOMATION_RUN_STATUS_IN_PROGRESS"
+    )
+
 
 class BundleAutomationLastRunStateTypedDict(TypedDict):
     r"""The BundleAutomationLastRunState message."""
-    
+
     last_run_at: NotRequired[datetime]
     status: NotRequired[BundleAutomationLastRunStateStatus]
     r"""The status field."""
-    
+
 
 class BundleAutomationLastRunState(BaseModel):
     r"""The BundleAutomationLastRunState message."""
-    
+
     last_run_at: Annotated[Optional[datetime], pydantic.Field(alias="lastRunAt")] = None
+
     status: Optional[BundleAutomationLastRunStateStatus] = None
     r"""The status field."""
-    

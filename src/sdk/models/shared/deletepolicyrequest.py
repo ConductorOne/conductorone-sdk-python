@@ -7,10 +7,7 @@ from typing import TypedDict
 
 class DeletePolicyRequestTypedDict(TypedDict):
     r"""The DeletePolicyRequest message contains the ID of the policy to delete. It uses URL value for input."""
-    
-    
+
 
 class DeletePolicyRequest(BaseModel):
     r"""The DeletePolicyRequest message contains the ID of the policy to delete. It uses URL value for input."""
-    
-    

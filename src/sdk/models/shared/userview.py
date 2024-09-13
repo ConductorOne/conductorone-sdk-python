@@ -10,7 +10,7 @@ from typing_extensions import Annotated, NotRequired
 
 class UserViewTypedDict(TypedDict):
     r"""The UserView object provides a user response object, as well as JSONPATHs to related objects provided by expanders."""
-    
+
     user: NotRequired[UserTypedDict]
     r"""The User object provides all of the details for an user, as well as some configuration."""
     delegated_user_path: NotRequired[str]
@@ -21,19 +21,26 @@ class UserViewTypedDict(TypedDict):
     r"""JSONPATH expression indicating the location of the user objects that managed the current user in the expanded array."""
     roles_path: NotRequired[str]
     r"""JSONPATH expression indicating the location of the roles of the current user in the expanded array."""
-    
+
 
 class UserView(BaseModel):
     r"""The UserView object provides a user response object, as well as JSONPATHs to related objects provided by expanders."""
-    
+
     user: Optional[User] = None
     r"""The User object provides all of the details for an user, as well as some configuration."""
-    delegated_user_path: Annotated[Optional[str], pydantic.Field(alias="delegatedUserPath")] = None
+
+    delegated_user_path: Annotated[
+        Optional[str], pydantic.Field(alias="delegatedUserPath")
+    ] = None
     r"""JSONPATH expression indicating the location of the user objects of delegates of the current user in the expanded array."""
-    directories_path: Annotated[Optional[str], pydantic.Field(alias="directoriesPath")] = None
+
+    directories_path: Annotated[
+        Optional[str], pydantic.Field(alias="directoriesPath")
+    ] = None
     r"""JSONPATH expression indicating the location of directory objects in the expanded array."""
+
     managers_path: Annotated[Optional[str], pydantic.Field(alias="managersPath")] = None
     r"""JSONPATH expression indicating the location of the user objects that managed the current user in the expanded array."""
+
     roles_path: Annotated[Optional[str], pydantic.Field(alias="rolesPath")] = None
     r"""JSONPATH expression indicating the location of the roles of the current user in the expanded array."""
-    

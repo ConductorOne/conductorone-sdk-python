@@ -12,31 +12,34 @@ from typing_extensions import Annotated, NotRequired
 
 class ExpandedTypedDict(TypedDict):
     r"""Contains an arbitrary serialized message along with a @type that describes the type of the serialized message."""
-    
+
     at_type: NotRequired[str]
     r"""The type of the serialized message."""
-    
+
 
 class Expanded(BaseModel):
     r"""Contains an arbitrary serialized message along with a @type that describes the type of the serialized message."""
-    model_config = ConfigDict(populate_by_name=True, arbitrary_types_allowed=True, extra="allow")
-    __pydantic_extra__:  Dict[str, Any] = pydantic.Field(init=False)
-    
+
+    model_config = ConfigDict(
+        populate_by_name=True, arbitrary_types_allowed=True, extra="allow"
+    )
+    __pydantic_extra__: Dict[str, Any] = pydantic.Field(init=False)
+
     at_type: Annotated[Optional[str], pydantic.Field(alias="@type")] = None
     r"""The type of the serialized message."""
-    
+
     @property
     def additional_properties(self):
         return self.__pydantic_extra__
 
     @additional_properties.setter
     def additional_properties(self, value):
-        self.__pydantic_extra__ = value # pyright: ignore[reportIncompatibleVariableOverride]
-    
+        self.__pydantic_extra__ = value  # pyright: ignore[reportIncompatibleVariableOverride]
+
 
 class AppEntitlementSearchServiceSearchResponseTypedDict(TypedDict):
     r"""The AppEntitlementSearchServiceSearchResponse message."""
-    
+
     facets: NotRequired[FacetsTypedDict]
     r"""Indicates one value of a facet."""
     expanded: NotRequired[Nullable[List[ExpandedTypedDict]]]
@@ -45,20 +48,25 @@ class AppEntitlementSearchServiceSearchResponseTypedDict(TypedDict):
     r"""List of app entitlement view objects."""
     next_page_token: NotRequired[str]
     r"""The nextPageToken is shown for the next page if the number of results is larger than the max page size. The server returns one page of results and the nextPageToken until all results are retreived. To retrieve the next page, use the same request and append a pageToken field with the value of nextPageToken shown on the previous page."""
-    
+
 
 class AppEntitlementSearchServiceSearchResponse(BaseModel):
     r"""The AppEntitlementSearchServiceSearchResponse message."""
-    
+
     facets: Optional[Facets] = None
     r"""Indicates one value of a facet."""
+
     expanded: OptionalNullable[List[Expanded]] = UNSET
     r"""List of related objects."""
+
     list: OptionalNullable[List[AppEntitlementView]] = UNSET
     r"""List of app entitlement view objects."""
-    next_page_token: Annotated[Optional[str], pydantic.Field(alias="nextPageToken")] = None
+
+    next_page_token: Annotated[Optional[str], pydantic.Field(alias="nextPageToken")] = (
+        None
+    )
     r"""The nextPageToken is shown for the next page if the number of results is larger than the max page size. The server returns one page of results and the nextPageToken until all results are retreived. To retrieve the next page, use the same request and append a pageToken field with the value of nextPageToken shown on the previous page."""
-    
+
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
         optional_fields = ["Facets", "expanded", "list", "nextPageToken"]
@@ -72,21 +80,19 @@ class AppEntitlementSearchServiceSearchResponse(BaseModel):
         for n, f in self.model_fields.items():
             k = f.alias or n
             val = serialized.get(k)
+            serialized.pop(k, None)
+
+            optional_nullable = k in optional_fields and k in nullable_fields
+            is_set = (
+                self.__pydantic_fields_set__.intersection({n})
+                or k in null_default_fields
+            )  # pylint: disable=no-member
 
             if val is not None and val != UNSET_SENTINEL:
                 m[k] = val
             elif val != UNSET_SENTINEL and (
-                not k in optional_fields
-                or (
-                    k in optional_fields
-                    and k in nullable_fields
-                    and (
-                        self.__pydantic_fields_set__.intersection({n})
-                        or k in null_default_fields
-                    )  # pylint: disable=no-member
-                )
+                not k in optional_fields or (optional_nullable and is_set)
             ):
                 m[k] = val
 
         return m
-        

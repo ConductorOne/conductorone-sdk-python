@@ -1,6 +1,8 @@
 # Apps
 (*apps*)
 
+## Overview
+
 ### Available Operations
 
 * [create](#create) - Create
@@ -26,7 +28,6 @@ s = SDK(
     ),
 )
 
-
 res = s.apps.create()
 
 if res.create_app_response is not None:
@@ -42,15 +43,16 @@ if res.create_app_response is not None:
 | `request`                                                           | [shared.CreateAppRequest](../../models/shared/createapprequest.md)  | :heavy_check_mark:                                                  | The request object to use for the request.                          |
 | `retries`                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)    | :heavy_minus_sign:                                                  | Configuration to override the default retry behavior of the client. |
 
-
 ### Response
 
 **[operations.C1APIAppV1AppsCreateResponse](../../models/operations/c1apiappv1appscreateresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## delete
 
@@ -69,7 +71,6 @@ s = SDK(
     ),
 )
 
-
 res = s.apps.delete(request={
     "id": "<id>",
 })
@@ -87,15 +88,16 @@ if res.delete_app_response is not None:
 | `request`                                                                                        | [operations.C1APIAppV1AppsDeleteRequest](../../models/operations/c1apiappv1appsdeleterequest.md) | :heavy_check_mark:                                                                               | The request object to use for the request.                                                       |
 | `retries`                                                                                        | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)                                 | :heavy_minus_sign:                                                                               | Configuration to override the default retry behavior of the client.                              |
 
-
 ### Response
 
 **[operations.C1APIAppV1AppsDeleteResponse](../../models/operations/c1apiappv1appsdeleteresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get
 
@@ -114,7 +116,6 @@ s = SDK(
     ),
 )
 
-
 res = s.apps.get(request={
     "id": "<id>",
 })
@@ -132,15 +133,16 @@ if res.get_app_response is not None:
 | `request`                                                                                  | [operations.C1APIAppV1AppsGetRequest](../../models/operations/c1apiappv1appsgetrequest.md) | :heavy_check_mark:                                                                         | The request object to use for the request.                                                 |
 | `retries`                                                                                  | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)                           | :heavy_minus_sign:                                                                         | Configuration to override the default retry behavior of the client.                        |
 
-
 ### Response
 
 **[operations.C1APIAppV1AppsGetResponse](../../models/operations/c1apiappv1appsgetresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## list
 
@@ -159,8 +161,7 @@ s = SDK(
     ),
 )
 
-
-res = s.apps.list()
+res = s.apps.list(request={})
 
 if res.list_apps_response is not None:
     # handle response
@@ -175,15 +176,16 @@ if res.list_apps_response is not None:
 | `request`                                                                                    | [operations.C1APIAppV1AppsListRequest](../../models/operations/c1apiappv1appslistrequest.md) | :heavy_check_mark:                                                                           | The request object to use for the request.                                                   |
 | `retries`                                                                                    | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)                             | :heavy_minus_sign:                                                                           | Configuration to override the default retry behavior of the client.                          |
 
-
 ### Response
 
 **[operations.C1APIAppV1AppsListResponse](../../models/operations/c1apiappv1appslistresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## update
 
@@ -202,7 +204,6 @@ s = SDK(
     ),
 )
 
-
 res = s.apps.update(request={
     "id": "<id>",
 })
@@ -220,10 +221,10 @@ if res.update_app_response is not None:
 | `request`                                                                                        | [operations.C1APIAppV1AppsUpdateRequest](../../models/operations/c1apiappv1appsupdaterequest.md) | :heavy_check_mark:                                                                               | The request object to use for the request.                                                       |
 | `retries`                                                                                        | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)                                 | :heavy_minus_sign:                                                                               | Configuration to override the default retry behavior of the client.                              |
 
-
 ### Response
 
 **[operations.C1APIAppV1AppsUpdateResponse](../../models/operations/c1apiappv1appsupdateresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |

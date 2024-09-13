@@ -10,14 +10,15 @@ from typing_extensions import Annotated, NotRequired
 
 class GetAWSExternalIDResponseTypedDict(TypedDict):
     r"""The GetAWSExternalIDResponse message."""
-    
+
     aws_external_id: NotRequired[AWSExternalIDTypedDict]
     r"""The AWSExternalID message."""
-    
+
 
 class GetAWSExternalIDResponse(BaseModel):
     r"""The GetAWSExternalIDResponse message."""
-    
-    aws_external_id: Annotated[Optional[AWSExternalID], pydantic.Field(alias="awsExternalId")] = None
+
+    aws_external_id: Annotated[
+        Optional[AWSExternalID], pydantic.Field(alias="awsExternalId")
+    ] = None
     r"""The AWSExternalID message."""
-    

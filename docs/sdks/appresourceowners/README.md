@@ -1,6 +1,8 @@
 # AppResourceOwners
 (*app_resource_owners*)
 
+## Overview
+
 ### Available Operations
 
 * [list](#list) - List
@@ -22,7 +24,6 @@ s = SDK(
     ),
 )
 
-
 res = s.app_resource_owners.list(request={
     "app_id": "<value>",
     "resource_id": "<value>",
@@ -42,10 +43,10 @@ if res.list_app_resource_owners_response is not None:
 | `request`                                                                                                              | [operations.C1APIAppV1AppResourceOwnersListRequest](../../models/operations/c1apiappv1appresourceownerslistrequest.md) | :heavy_check_mark:                                                                                                     | The request object to use for the request.                                                                             |
 | `retries`                                                                                                              | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)                                                       | :heavy_minus_sign:                                                                                                     | Configuration to override the default retry behavior of the client.                                                    |
 
-
 ### Response
 
 **[operations.C1APIAppV1AppResourceOwnersListResponse](../../models/operations/c1apiappv1appresourceownerslistresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |

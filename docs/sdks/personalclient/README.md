@@ -1,6 +1,8 @@
 # PersonalClient
 (*personal_client*)
 
+## Overview
+
 ### Available Operations
 
 * [create](#create) - Create
@@ -22,7 +24,6 @@ s = SDK(
     ),
 )
 
-
 res = s.personal_client.create()
 
 if res.personal_client_service_create_response is not None:
@@ -38,10 +39,10 @@ if res.personal_client_service_create_response is not None:
 | `request`                                                                                              | [shared.PersonalClientServiceCreateRequest](../../models/shared/personalclientservicecreaterequest.md) | :heavy_check_mark:                                                                                     | The request object to use for the request.                                                             |
 | `retries`                                                                                              | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)                                       | :heavy_minus_sign:                                                                                     | Configuration to override the default retry behavior of the client.                                    |
 
-
 ### Response
 
 **[operations.C1APIIamV1PersonalClientServiceCreateResponse](../../models/operations/c1apiiamv1personalclientservicecreateresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |

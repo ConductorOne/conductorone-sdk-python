@@ -7,10 +7,7 @@ from typing import TypedDict
 
 class RequestCatalogManagementServiceAddAccessEntitlementsResponseTypedDict(TypedDict):
     r"""Empty response with a status code indicating success."""
-    
-    
+
 
 class RequestCatalogManagementServiceAddAccessEntitlementsResponse(BaseModel):
     r"""Empty response with a status code indicating success."""
-    
-    

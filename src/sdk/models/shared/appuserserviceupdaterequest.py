@@ -12,23 +12,29 @@ from typing_extensions import Annotated, NotRequired
 
 class AppUserServiceUpdateRequestTypedDict(TypedDict):
     r"""The AppUserServiceUpdateRequest message contains the app user and the fields to be updated."""
-    
+
     app_user: NotRequired[AppUserInputTypedDict]
     r"""Application User that represents an account in the application."""
     app_user_expand_mask: NotRequired[AppUserExpandMaskTypedDict]
     r"""The AppUserExpandMask message contains a list of paths to expand in the response."""
     update_mask: NotRequired[Nullable[str]]
-    
+
 
 class AppUserServiceUpdateRequest(BaseModel):
     r"""The AppUserServiceUpdateRequest message contains the app user and the fields to be updated."""
-    
+
     app_user: Annotated[Optional[AppUserInput], pydantic.Field(alias="appUser")] = None
     r"""Application User that represents an account in the application."""
-    app_user_expand_mask: Annotated[Optional[AppUserExpandMask], pydantic.Field(alias="expandMask")] = None
+
+    app_user_expand_mask: Annotated[
+        Optional[AppUserExpandMask], pydantic.Field(alias="expandMask")
+    ] = None
     r"""The AppUserExpandMask message contains a list of paths to expand in the response."""
-    update_mask: Annotated[OptionalNullable[str], pydantic.Field(alias="updateMask")] = UNSET
-    
+
+    update_mask: Annotated[
+        OptionalNullable[str], pydantic.Field(alias="updateMask")
+    ] = UNSET
+
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
         optional_fields = ["AppUser", "AppUserExpandMask", "updateMask"]
@@ -42,21 +48,19 @@ class AppUserServiceUpdateRequest(BaseModel):
         for n, f in self.model_fields.items():
             k = f.alias or n
             val = serialized.get(k)
+            serialized.pop(k, None)
+
+            optional_nullable = k in optional_fields and k in nullable_fields
+            is_set = (
+                self.__pydantic_fields_set__.intersection({n})
+                or k in null_default_fields
+            )  # pylint: disable=no-member
 
             if val is not None and val != UNSET_SENTINEL:
                 m[k] = val
             elif val != UNSET_SENTINEL and (
-                not k in optional_fields
-                or (
-                    k in optional_fields
-                    and k in nullable_fields
-                    and (
-                        self.__pydantic_fields_set__.intersection({n})
-                        or k in null_default_fields
-                    )  # pylint: disable=no-member
-                )
+                not k in optional_fields or (optional_nullable and is_set)
             ):
                 m[k] = val
 
         return m
-        

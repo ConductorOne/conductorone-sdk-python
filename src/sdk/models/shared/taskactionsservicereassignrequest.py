@@ -11,7 +11,7 @@ from typing_extensions import Annotated, NotRequired
 
 class TaskActionsServiceReassignRequestTypedDict(TypedDict):
     r"""The TaskActionsServiceReassignRequest message."""
-    
+
     task_expand_mask: NotRequired[TaskExpandMaskTypedDict]
     r"""The task expand mask is an array of strings that specifes the related objects the requester wishes to have returned when making a request where the expand mask is part of the input. Use '*' to view all possible responses."""
     comment: NotRequired[str]
@@ -20,23 +20,37 @@ class TaskActionsServiceReassignRequestTypedDict(TypedDict):
     r"""The newStepUserIds field."""
     policy_step_id: NotRequired[str]
     r"""The policyStepId field."""
-    
+
 
 class TaskActionsServiceReassignRequest(BaseModel):
     r"""The TaskActionsServiceReassignRequest message."""
-    
-    task_expand_mask: Annotated[Optional[TaskExpandMask], pydantic.Field(alias="expandMask")] = None
+
+    task_expand_mask: Annotated[
+        Optional[TaskExpandMask], pydantic.Field(alias="expandMask")
+    ] = None
     r"""The task expand mask is an array of strings that specifes the related objects the requester wishes to have returned when making a request where the expand mask is part of the input. Use '*' to view all possible responses."""
+
     comment: Optional[str] = None
     r"""The comment field."""
-    new_step_user_ids: Annotated[OptionalNullable[List[str]], pydantic.Field(alias="newStepUserIds")] = UNSET
+
+    new_step_user_ids: Annotated[
+        OptionalNullable[List[str]], pydantic.Field(alias="newStepUserIds")
+    ] = UNSET
     r"""The newStepUserIds field."""
-    policy_step_id: Annotated[Optional[str], pydantic.Field(alias="policyStepId")] = None
+
+    policy_step_id: Annotated[Optional[str], pydantic.Field(alias="policyStepId")] = (
+        None
+    )
     r"""The policyStepId field."""
-    
+
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
-        optional_fields = ["TaskExpandMask", "comment", "newStepUserIds", "policyStepId"]
+        optional_fields = [
+            "TaskExpandMask",
+            "comment",
+            "newStepUserIds",
+            "policyStepId",
+        ]
         nullable_fields = ["newStepUserIds"]
         null_default_fields = []
 
@@ -47,21 +61,19 @@ class TaskActionsServiceReassignRequest(BaseModel):
         for n, f in self.model_fields.items():
             k = f.alias or n
             val = serialized.get(k)
+            serialized.pop(k, None)
+
+            optional_nullable = k in optional_fields and k in nullable_fields
+            is_set = (
+                self.__pydantic_fields_set__.intersection({n})
+                or k in null_default_fields
+            )  # pylint: disable=no-member
 
             if val is not None and val != UNSET_SENTINEL:
                 m[k] = val
             elif val != UNSET_SENTINEL and (
-                not k in optional_fields
-                or (
-                    k in optional_fields
-                    and k in nullable_fields
-                    and (
-                        self.__pydantic_fields_set__.intersection({n})
-                        or k in null_default_fields
-                    )  # pylint: disable=no-member
-                )
+                not k in optional_fields or (optional_nullable and is_set)
             ):
                 m[k] = val
 
         return m
-        

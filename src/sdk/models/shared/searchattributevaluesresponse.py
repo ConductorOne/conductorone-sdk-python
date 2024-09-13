@@ -11,7 +11,7 @@ from typing_extensions import Annotated, NotRequired
 
 class SearchAttributeValuesResponseTypedDict(TypedDict):
     r"""SearchAttributeValuesResponse is the response for searching AttributeValues."""
-    
+
     list: NotRequired[Nullable[List[AttributeValueTypedDict]]]
     r"""The list of returned AttributeValues."""
     next_page_token: NotRequired[str]
@@ -19,19 +19,22 @@ class SearchAttributeValuesResponseTypedDict(TypedDict):
     The server returns one page of results and the nextPageToken until all results are retreived.
     To retrieve the next page, use the same request and append a pageToken field with the value of nextPageToken shown on the previous page.
     """
-    
+
 
 class SearchAttributeValuesResponse(BaseModel):
     r"""SearchAttributeValuesResponse is the response for searching AttributeValues."""
-    
+
     list: OptionalNullable[List[AttributeValue]] = UNSET
     r"""The list of returned AttributeValues."""
-    next_page_token: Annotated[Optional[str], pydantic.Field(alias="nextPageToken")] = None
+
+    next_page_token: Annotated[Optional[str], pydantic.Field(alias="nextPageToken")] = (
+        None
+    )
     r"""The nextPageToken is shown for the next page if the number of results is larger than the max page size.
     The server returns one page of results and the nextPageToken until all results are retreived.
     To retrieve the next page, use the same request and append a pageToken field with the value of nextPageToken shown on the previous page.
     """
-    
+
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
         optional_fields = ["list", "nextPageToken"]
@@ -45,21 +48,19 @@ class SearchAttributeValuesResponse(BaseModel):
         for n, f in self.model_fields.items():
             k = f.alias or n
             val = serialized.get(k)
+            serialized.pop(k, None)
+
+            optional_nullable = k in optional_fields and k in nullable_fields
+            is_set = (
+                self.__pydantic_fields_set__.intersection({n})
+                or k in null_default_fields
+            )  # pylint: disable=no-member
 
             if val is not None and val != UNSET_SENTINEL:
                 m[k] = val
             elif val != UNSET_SENTINEL and (
-                not k in optional_fields
-                or (
-                    k in optional_fields
-                    and k in nullable_fields
-                    and (
-                        self.__pydantic_fields_set__.intersection({n})
-                        or k in null_default_fields
-                    )  # pylint: disable=no-member
-                )
+                not k in optional_fields or (optional_nullable and is_set)
             ):
                 m[k] = val
 
         return m
-        

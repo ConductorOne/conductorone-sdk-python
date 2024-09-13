@@ -9,18 +9,18 @@ from typing_extensions import Annotated, NotRequired
 
 class RuleTypedDict(TypedDict):
     r"""The Rule message."""
-    
+
     condition: NotRequired[str]
     r"""The condition field."""
     policy_key: NotRequired[str]
     r"""This is a reference to a list of policy steps from `policy_steps`"""
-    
+
 
 class Rule(BaseModel):
     r"""The Rule message."""
-    
+
     condition: Optional[str] = None
     r"""The condition field."""
+
     policy_key: Annotated[Optional[str], pydantic.Field(alias="policyKey")] = None
     r"""This is a reference to a list of policy steps from `policy_steps`"""
-    

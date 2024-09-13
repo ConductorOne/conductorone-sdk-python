@@ -1,6 +1,8 @@
 # PolicySearch
 (*policy_search*)
 
+## Overview
+
 ### Available Operations
 
 * [search](#search) - Search
@@ -22,7 +24,6 @@ s = SDK(
     ),
 )
 
-
 res = s.policy_search.search()
 
 if res.list_policy_response is not None:
@@ -38,10 +39,10 @@ if res.list_policy_response is not None:
 | `request`                                                                    | [shared.SearchPoliciesRequest](../../models/shared/searchpoliciesrequest.md) | :heavy_check_mark:                                                           | The request object to use for the request.                                   |
 | `retries`                                                                    | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)             | :heavy_minus_sign:                                                           | Configuration to override the default retry behavior of the client.          |
 
-
 ### Response
 
 **[operations.C1APIPolicyV1PolicySearchSearchResponse](../../models/operations/c1apipolicyv1policysearchsearchresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |

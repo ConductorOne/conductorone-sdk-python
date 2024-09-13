@@ -8,14 +8,13 @@ from typing_extensions import NotRequired
 
 class WebhookSpecTypedDict(TypedDict):
     r"""The WebhookSpec message."""
-    
+
     destination: NotRequired[str]
     r"""The destination field."""
-    
+
 
 class WebhookSpec(BaseModel):
     r"""The WebhookSpec message."""
-    
+
     destination: Optional[str] = None
     r"""The destination field."""
-    

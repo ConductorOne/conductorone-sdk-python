@@ -7,10 +7,7 @@ from typing import TypedDict
 
 class ConnectorServiceDeleteResponseTypedDict(TypedDict):
     r"""Empty response body. Status code indicates success."""
-    
-    
+
 
 class ConnectorServiceDeleteResponse(BaseModel):
     r"""Empty response body. Status code indicates success."""
-    
-    

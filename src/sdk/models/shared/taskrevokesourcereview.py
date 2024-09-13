@@ -9,18 +9,22 @@ from typing_extensions import Annotated, NotRequired
 
 class TaskRevokeSourceReviewTypedDict(TypedDict):
     r"""The TaskRevokeSourceReview message tracks which access review was the source of the specificed revoke ticket."""
-    
+
     access_review_id: NotRequired[str]
     r"""The ID of the access review associated with the revoke task."""
     cert_ticket_id: NotRequired[str]
     r"""The ID of the certify ticket that was denied and created this revoke task."""
-    
+
 
 class TaskRevokeSourceReview(BaseModel):
     r"""The TaskRevokeSourceReview message tracks which access review was the source of the specificed revoke ticket."""
-    
-    access_review_id: Annotated[Optional[str], pydantic.Field(alias="accessReviewId")] = None
+
+    access_review_id: Annotated[
+        Optional[str], pydantic.Field(alias="accessReviewId")
+    ] = None
     r"""The ID of the access review associated with the revoke task."""
-    cert_ticket_id: Annotated[Optional[str], pydantic.Field(alias="certTicketId")] = None
+
+    cert_ticket_id: Annotated[Optional[str], pydantic.Field(alias="certTicketId")] = (
+        None
+    )
     r"""The ID of the certify ticket that was denied and created this revoke task."""
-    

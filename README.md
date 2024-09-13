@@ -1,14 +1,43 @@
 # openapi
 
+<!-- Start Summary [summary] -->
+## Summary
+
+ConductorOne API: The ConductorOne API is a HTTP API for managing ConductorOne resources.
+<!-- End Summary [summary] -->
+
+<!-- Start Table of Contents [toc] -->
+## Table of Contents
+
+* [SDK Installation](#sdk-installation)
+* [IDE Support](#ide-support)
+* [SDK Example Usage](#sdk-example-usage)
+* [Available Resources and Operations](#available-resources-and-operations)
+* [Retries](#retries)
+* [Error Handling](#error-handling)
+* [Server Selection](#server-selection)
+* [Custom HTTP Client](#custom-http-client)
+* [Authentication](#authentication)
+* [Debugging](#debugging)
+<!-- End Table of Contents [toc] -->
+
 <!-- Start SDK Installation [installation] -->
 ## SDK Installation
 
-PIP
+The SDK can be installed with either *pip* or *poetry* package managers.
+
+### PIP
+
+*PIP* is the default package installer for Python, enabling easy installation and management of packages from PyPI via the command line.
+
 ```bash
 pip install git+https://github.com/ConductorOne/conductorone-sdk-python.git
 ```
 
-Poetry
+### Poetry
+
+*Poetry* is a modern tool that simplifies dependency management and package publishing by using a single `pyproject.toml` file to handle project metadata and dependencies.
+
 ```bash
 poetry add git+https://github.com/ConductorOne/conductorone-sdk-python.git
 ```
@@ -33,16 +62,21 @@ if res.app_entitlement_search_service_search_response is not None:
 ```
 <!-- End SDK Example Usage -->
 
+<!-- Start IDE Support [idesupport] -->
+## IDE Support
+
+### PyCharm
+
+Generally, the SDK will work well with most IDEs out of the box. However, when using PyCharm, you can enjoy much better integration with Pydantic by installing an additional plugin.
+
+- [PyCharm Pydantic Plugin](https://docs.pydantic.dev/latest/integrations/pycharm/)
+<!-- End IDE Support [idesupport] -->
+
 <!-- Start Available Resources and Operations [operations] -->
 ## Available Resources and Operations
 
-### [apps](docs/sdks/apps/README.md)
-
-* [create](docs/sdks/apps/README.md#create) - Create
-* [delete](docs/sdks/apps/README.md#delete) - Delete
-* [get](docs/sdks/apps/README.md#get) - Get
-* [list](docs/sdks/apps/README.md#list) - List
-* [update](docs/sdks/apps/README.md#update) - Update
+<details open>
+<summary>Available methods</summary>
 
 ### [app_access_requests_defaults](docs/sdks/appaccessrequestsdefaults/README.md)
 
@@ -50,19 +84,24 @@ if res.app_entitlement_search_service_search_response is not None:
 * [create_app_access_requests_defaults](docs/sdks/appaccessrequestsdefaults/README.md#create_app_access_requests_defaults) - Create App Access Requests Defaults
 * [get_app_access_requests_defaults](docs/sdks/appaccessrequestsdefaults/README.md#get_app_access_requests_defaults) - Get App Access Requests Defaults
 
-### [connector](docs/sdks/connector/README.md)
+### [app_entitlement_owners](docs/sdks/appentitlementowners/README.md)
 
-* [create](docs/sdks/connector/README.md#create) - Create
-* [create_delegated](docs/sdks/connector/README.md#create_delegated) - Create Delegated
-* [delete](docs/sdks/connector/README.md#delete) - Delete
-* [force_sync](docs/sdks/connector/README.md#force_sync) - Force Sync
-* [get](docs/sdks/connector/README.md#get) - Get
-* [get_credentials](docs/sdks/connector/README.md#get_credentials) - Get Credentials
-* [list](docs/sdks/connector/README.md#list) - List
-* [revoke_credential](docs/sdks/connector/README.md#revoke_credential) - Revoke Credential
-* [rotate_credential](docs/sdks/connector/README.md#rotate_credential) - Rotate Credential
-* [update](docs/sdks/connector/README.md#update) - Update
-* [update_delegated](docs/sdks/connector/README.md#update_delegated) - Update Delegated
+* [add](docs/sdks/appentitlementowners/README.md#add) - Add
+* [list](docs/sdks/appentitlementowners/README.md#list) - List
+* [remove](docs/sdks/appentitlementowners/README.md#remove) - Remove
+* [set](docs/sdks/appentitlementowners/README.md#set) - Set
+
+### [app_entitlement_search](docs/sdks/appentitlementsearch/README.md)
+
+* [search](docs/sdks/appentitlementsearch/README.md#search) - Search
+* [search_app_entitlements_for_app_user](docs/sdks/appentitlementsearch/README.md#search_app_entitlements_for_app_user) - Search App Entitlements For App User
+* [search_app_entitlements_with_expired](docs/sdks/appentitlementsearch/README.md#search_app_entitlements_with_expired) - Search App Entitlements With Expired
+
+### [app_entitlement_user_binding](docs/sdks/appentitlementuserbinding/README.md)
+
+* [list_app_users_for_identity_with_grant](docs/sdks/appentitlementuserbinding/README.md#list_app_users_for_identity_with_grant) - List App Users For Identity With Grant
+* [search_grant_feed](docs/sdks/appentitlementuserbinding/README.md#search_grant_feed) - Search Grant Feed
+* [search_past_grants](docs/sdks/appentitlementuserbinding/README.md#search_past_grants) - Search Past Grants
 
 ### [app_entitlements](docs/sdks/appentitlements/README.md)
 
@@ -72,23 +111,6 @@ if res.app_entitlement_search_service_search_response is not None:
 * [list_for_app_user](docs/sdks/appentitlements/README.md#list_for_app_user) - List For App User
 * [~~list_users~~](docs/sdks/appentitlements/README.md#list_users) - List Users :warning: **Deprecated**
 * [update](docs/sdks/appentitlements/README.md#update) - Update
-
-### [app_entitlement_search](docs/sdks/appentitlementsearch/README.md)
-
-* [search](docs/sdks/appentitlementsearch/README.md#search) - Search
-* [search_app_entitlements_with_expired](docs/sdks/appentitlementsearch/README.md#search_app_entitlements_with_expired) - Search App Entitlements With Expired
-
-### [app_entitlement_user_binding](docs/sdks/appentitlementuserbinding/README.md)
-
-* [list_app_users_for_identity_with_grant](docs/sdks/appentitlementuserbinding/README.md#list_app_users_for_identity_with_grant) - List App Users For Identity With Grant
-* [search_past_grants](docs/sdks/appentitlementuserbinding/README.md#search_past_grants) - Search Past Grants
-
-### [app_entitlement_owners](docs/sdks/appentitlementowners/README.md)
-
-* [add](docs/sdks/appentitlementowners/README.md#add) - Add
-* [list](docs/sdks/appentitlementowners/README.md#list) - List
-* [remove](docs/sdks/appentitlementowners/README.md#remove) - Remove
-* [set](docs/sdks/appentitlementowners/README.md#set) - Set
 
 ### [app_owners](docs/sdks/appowners/README.md)
 
@@ -105,11 +127,6 @@ if res.app_entitlement_search_service_search_response is not None:
 
 * [generate_report](docs/sdks/appreportaction/README.md#generate_report) - Generate Report
 
-### [app_resource_type](docs/sdks/appresourcetype/README.md)
-
-* [get](docs/sdks/appresourcetype/README.md#get) - Get
-* [list](docs/sdks/appresourcetype/README.md#list) - List
-
 ### [app_resource](docs/sdks/appresource/README.md)
 
 * [get](docs/sdks/appresource/README.md#get) - Get
@@ -119,6 +136,19 @@ if res.app_entitlement_search_service_search_response is not None:
 
 * [list](docs/sdks/appresourceowners/README.md#list) - List
 
+### [app_resource_search](docs/sdks/appresourcesearch/README.md)
+
+* [search_app_resource_types](docs/sdks/appresourcesearch/README.md#search_app_resource_types) - Search App Resource Types
+
+### [app_resource_type](docs/sdks/appresourcetype/README.md)
+
+* [get](docs/sdks/appresourcetype/README.md#get) - Get
+* [list](docs/sdks/appresourcetype/README.md#list) - List
+
+### [app_search](docs/sdks/appsearch/README.md)
+
+* [search](docs/sdks/appsearch/README.md#search) - Search
+
 ### [app_usage_controls](docs/sdks/appusagecontrols/README.md)
 
 * [get](docs/sdks/appusagecontrols/README.md#get) - Get
@@ -127,6 +157,18 @@ if res.app_entitlement_search_service_search_response is not None:
 ### [app_user](docs/sdks/appuser/README.md)
 
 * [update](docs/sdks/appuser/README.md#update) - Update
+
+### [apps](docs/sdks/apps/README.md)
+
+* [create](docs/sdks/apps/README.md#create) - Create
+* [delete](docs/sdks/apps/README.md#delete) - Delete
+* [get](docs/sdks/apps/README.md#get) - Get
+* [list](docs/sdks/apps/README.md#list) - List
+* [update](docs/sdks/apps/README.md#update) - Update
+
+### [attribute_search](docs/sdks/attributesearch/README.md)
+
+* [search_attribute_values](docs/sdks/attributesearch/README.md#search_attribute_values) - Search Attribute Values
 
 ### [attributes](docs/sdks/attributes/README.md)
 
@@ -140,12 +182,71 @@ if res.app_entitlement_search_service_search_response is not None:
 
 * [introspect](docs/sdks/auth/README.md#introspect) - Introspect
 
+### [aws_external_id_settings](docs/sdks/awsexternalidsettings/README.md)
+
+* [get](docs/sdks/awsexternalidsettings/README.md#get) - Get
+
+### [connector](docs/sdks/connector/README.md)
+
+* [create](docs/sdks/connector/README.md#create) - Create
+* [create_delegated](docs/sdks/connector/README.md#create_delegated) - Create Delegated
+* [delete](docs/sdks/connector/README.md#delete) - Delete
+* [force_sync](docs/sdks/connector/README.md#force_sync) - Force Sync
+* [get](docs/sdks/connector/README.md#get) - Get
+* [get_credentials](docs/sdks/connector/README.md#get_credentials) - Get Credentials
+* [list](docs/sdks/connector/README.md#list) - List
+* [revoke_credential](docs/sdks/connector/README.md#revoke_credential) - Revoke Credential
+* [rotate_credential](docs/sdks/connector/README.md#rotate_credential) - Rotate Credential
+* [update](docs/sdks/connector/README.md#update) - Update
+* [update_delegated](docs/sdks/connector/README.md#update_delegated) - Update Delegated
+
+### [directory](docs/sdks/directory/README.md)
+
+* [create](docs/sdks/directory/README.md#create) - Create
+* [delete](docs/sdks/directory/README.md#delete) - Delete
+* [get](docs/sdks/directory/README.md#get) - Get
+* [list](docs/sdks/directory/README.md#list) - List
+
+### [export](docs/sdks/export/README.md)
+
+* [create](docs/sdks/export/README.md#create) - Create
+* [delete](docs/sdks/export/README.md#delete) - Delete
+* [get](docs/sdks/export/README.md#get) - Get
+* [list](docs/sdks/export/README.md#list) - List
+* [list_events](docs/sdks/export/README.md#list_events) - List Events
+* [update](docs/sdks/export/README.md#update) - Update
+
+### [exports_search](docs/sdks/exportssearch/README.md)
+
+* [search](docs/sdks/exportssearch/README.md#search) - Search
+
+### [personal_client](docs/sdks/personalclient/README.md)
+
+* [create](docs/sdks/personalclient/README.md#create) - Create
+
+### [policies](docs/sdks/policies/README.md)
+
+* [create](docs/sdks/policies/README.md#create) - Create
+* [delete](docs/sdks/policies/README.md#delete) - Delete
+* [get](docs/sdks/policies/README.md#get) - Get
+* [list](docs/sdks/policies/README.md#list) - List
+* [update](docs/sdks/policies/README.md#update) - Update
+
+### [policy_search](docs/sdks/policysearch/README.md)
+
+* [search](docs/sdks/policysearch/README.md#search) - Search
+
+### [policy_validate](docs/sdks/policyvalidate/README.md)
+
+* [validate_cel](docs/sdks/policyvalidate/README.md#validate_cel) - Validate Cel
+
 ### [request_catalog_management](docs/sdks/requestcatalogmanagement/README.md)
 
 * [add_access_entitlements](docs/sdks/requestcatalogmanagement/README.md#add_access_entitlements) - Add Access Entitlements
 * [add_app_entitlements](docs/sdks/requestcatalogmanagement/README.md#add_app_entitlements) - Add App Entitlements
 * [create](docs/sdks/requestcatalogmanagement/README.md#create) - Create
 * [delete](docs/sdks/requestcatalogmanagement/README.md#delete) - Delete
+* [force_run_bundle_automation](docs/sdks/requestcatalogmanagement/README.md#force_run_bundle_automation) - Force Run Bundle Automation
 * [get](docs/sdks/requestcatalogmanagement/README.md#get) - Get
 * [get_bundle_automation](docs/sdks/requestcatalogmanagement/README.md#get_bundle_automation) - Get Bundle Automation
 * [list](docs/sdks/requestcatalogmanagement/README.md#list) - List
@@ -156,16 +257,9 @@ if res.app_entitlement_search_service_search_response is not None:
 * [set_bundle_automation](docs/sdks/requestcatalogmanagement/README.md#set_bundle_automation) - Set Bundle Automation
 * [update](docs/sdks/requestcatalogmanagement/README.md#update) - Update
 
-### [directory](docs/sdks/directory/README.md)
+### [request_catalog_search](docs/sdks/requestcatalogsearch/README.md)
 
-* [create](docs/sdks/directory/README.md#create) - Create
-* [delete](docs/sdks/directory/README.md#delete) - Delete
-* [get](docs/sdks/directory/README.md#get) - Get
-* [list](docs/sdks/directory/README.md#list) - List
-
-### [personal_client](docs/sdks/personalclient/README.md)
-
-* [create](docs/sdks/personalclient/README.md#create) - Create
+* [search_entitlements](docs/sdks/requestcatalogsearch/README.md#search_entitlements) - Search Entitlements
 
 ### [roles](docs/sdks/roles/README.md)
 
@@ -173,57 +267,6 @@ if res.app_entitlement_search_service_search_response is not None:
 * [list](docs/sdks/roles/README.md#list) - List
 * [update](docs/sdks/roles/README.md#update) - Update
 
-### [policies](docs/sdks/policies/README.md)
-
-* [create](docs/sdks/policies/README.md#create) - Create
-* [delete](docs/sdks/policies/README.md#delete) - Delete
-* [get](docs/sdks/policies/README.md#get) - Get
-* [list](docs/sdks/policies/README.md#list) - List
-* [update](docs/sdks/policies/README.md#update) - Update
-
-### [policy_validate](docs/sdks/policyvalidate/README.md)
-
-* [validate_cel](docs/sdks/policyvalidate/README.md#validate_cel) - Validate Cel
-
-### [app_resource_search](docs/sdks/appresourcesearch/README.md)
-
-* [search_app_resource_types](docs/sdks/appresourcesearch/README.md#search_app_resource_types) - Search App Resource Types
-
-### [app_search](docs/sdks/appsearch/README.md)
-
-* [search](docs/sdks/appsearch/README.md#search) - Search
-
-### [attribute_search](docs/sdks/attributesearch/README.md)
-
-* [search_attribute_values](docs/sdks/attributesearch/README.md#search_attribute_values) - Search Attribute Values
-
-### [policy_search](docs/sdks/policysearch/README.md)
-
-* [search](docs/sdks/policysearch/README.md#search) - Search
-
-### [request_catalog_search](docs/sdks/requestcatalogsearch/README.md)
-
-* [search_entitlements](docs/sdks/requestcatalogsearch/README.md#search_entitlements) - Search Entitlements
-
-### [exports_search](docs/sdks/exportssearch/README.md)
-
-* [search](docs/sdks/exportssearch/README.md#search) - Search
-
-### [task_search](docs/sdks/tasksearch/README.md)
-
-* [search](docs/sdks/tasksearch/README.md#search) - Search
-
-### [user_search](docs/sdks/usersearch/README.md)
-
-* [search](docs/sdks/usersearch/README.md#search) - Search
-
-### [webhooks_search](docs/sdks/webhookssearch/README.md)
-
-* [search](docs/sdks/webhookssearch/README.md#search) - Search
-
-### [aws_external_id_settings](docs/sdks/awsexternalidsettings/README.md)
-
-* [get](docs/sdks/awsexternalidsettings/README.md#get) - Get
 
 ### [session_settings](docs/sdks/sessionsettings/README.md)
 
@@ -233,14 +276,6 @@ if res.app_entitlement_search_service_search_response is not None:
 ### [system_log](docs/sdks/systemlog/README.md)
 
 * [list_events](docs/sdks/systemlog/README.md#list_events) - List Events
-
-### [export](docs/sdks/export/README.md)
-
-* [create](docs/sdks/export/README.md#create) - Create
-* [delete](docs/sdks/export/README.md#delete) - Delete
-* [get](docs/sdks/export/README.md#get) - Get
-* [list](docs/sdks/export/README.md#list) - List
-* [update](docs/sdks/export/README.md#update) - Update
 
 ### [task](docs/sdks/task/README.md)
 
@@ -255,13 +290,22 @@ if res.app_entitlement_search_service_search_response is not None:
 * [comment](docs/sdks/taskactions/README.md#comment) - Comment
 * [deny](docs/sdks/taskactions/README.md#deny) - Deny
 * [escalate_to_emergency_access](docs/sdks/taskactions/README.md#escalate_to_emergency_access) - Escalate To Emergency Access
+* [hard_reset](docs/sdks/taskactions/README.md#hard_reset) - Hard Reset
 * [reassign](docs/sdks/taskactions/README.md#reassign) - Reassign
 * [restart](docs/sdks/taskactions/README.md#restart) - Restart
+
+### [task_search](docs/sdks/tasksearch/README.md)
+
+* [search](docs/sdks/tasksearch/README.md#search) - Search
 
 ### [user](docs/sdks/user/README.md)
 
 * [get](docs/sdks/user/README.md#get) - Get
 * [list](docs/sdks/user/README.md#list) - List
+
+### [user_search](docs/sdks/usersearch/README.md)
+
+* [search](docs/sdks/usersearch/README.md#search) - Search
 
 ### [webhooks](docs/sdks/webhooks/README.md)
 
@@ -271,6 +315,12 @@ if res.app_entitlement_search_service_search_response is not None:
 * [list](docs/sdks/webhooks/README.md#list) - List
 * [test](docs/sdks/webhooks/README.md#test) - Test
 * [update](docs/sdks/webhooks/README.md#update) - Update
+
+### [webhooks_search](docs/sdks/webhookssearch/README.md)
+
+* [search](docs/sdks/webhookssearch/README.md#search) - Search
+
+</details>
 <!-- End Available Resources and Operations [operations] -->
 
 <!-- No SDK Example Usage -->
@@ -306,14 +356,13 @@ res = None
 try:
     res = s.apps.create()
 
+    if res.create_app_response is not None:
+        # handle response
+        pass
+
 except errors.SDKError as e:
     # handle exception
     raise(e)
-
-if res.create_app_response is not None:
-    # handle response
-    pass
-
 ```
 <!-- End Error Handling [errors] -->
 
@@ -344,7 +393,6 @@ s = SDK(
     ),
 )
 
-
 res = s.apps.create()
 
 if res.create_app_response is not None:
@@ -372,7 +420,6 @@ s = SDK(
         oauth="<YOUR_OAUTH_HERE>",
     ),
 )
-
 
 res = s.apps.create()
 
@@ -492,7 +539,6 @@ s = SDK(
     ),
 )
 
-
 res = s.apps.create()
 
 if res.create_app_response is not None:
@@ -520,7 +566,6 @@ s = SDK(
     ),
 )
 
-
 res = s.apps.create(,
     RetryConfig("backoff", BackoffStrategy(1, 50, 1.1, 100), False))
 
@@ -544,7 +589,6 @@ s = SDK(
     ),
 )
 
-
 res = s.apps.create()
 
 if res.create_app_response is not None:
@@ -557,8 +601,9 @@ if res.create_app_response is not None:
 <!-- Start Debugging [debug] -->
 ## Debugging
 
-To emit debug logs for SDK requests and responses you can pass a logger object directly into your SDK object.
+You can setup your SDK to emit debug logs for SDK requests and responses.
 
+You can pass your own logger class directly into your SDK.
 ```python
 from sdk import SDK
 import logging

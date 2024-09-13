@@ -9,14 +9,13 @@ from typing_extensions import NotRequired
 
 class UpdateAppResponseTypedDict(TypedDict):
     r"""Returns the updated app's new values."""
-    
+
     app: NotRequired[AppTypedDict]
     r"""The App object provides all of the details for an app, as well as some configuration."""
-    
+
 
 class UpdateAppResponse(BaseModel):
     r"""Returns the updated app's new values."""
-    
+
     app: Optional[App] = None
     r"""The App object provides all of the details for an app, as well as some configuration."""
-    

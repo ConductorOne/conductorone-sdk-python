@@ -7,10 +7,7 @@ from typing import TypedDict
 
 class DeleteAttributeValueResponseTypedDict(TypedDict):
     r"""DeleteAttributeValueResponse is the empty response for deleting an attribute value."""
-    
-    
+
 
 class DeleteAttributeValueResponse(BaseModel):
     r"""DeleteAttributeValueResponse is the empty response for deleting an attribute value."""
-    
-    

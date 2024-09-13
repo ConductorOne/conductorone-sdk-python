@@ -2,7 +2,9 @@
 
 from __future__ import annotations
 import httpx
-from sdk.models.shared import searchappresourcetypesresponse as shared_searchappresourcetypesresponse
+from sdk.models.shared import (
+    searchappresourcetypesresponse as shared_searchappresourcetypesresponse,
+)
 from sdk.types import BaseModel
 from typing import Optional, TypedDict
 from typing_extensions import NotRequired
@@ -15,17 +17,23 @@ class C1APIAppV1AppResourceSearchSearchAppResourceTypesResponseTypedDict(TypedDi
     r"""HTTP response status code for this operation"""
     raw_response: httpx.Response
     r"""Raw HTTP response; suitable for custom response parsing"""
-    search_app_resource_types_response: NotRequired[shared_searchappresourcetypesresponse.SearchAppResourceTypesResponseTypedDict]
+    search_app_resource_types_response: NotRequired[
+        shared_searchappresourcetypesresponse.SearchAppResourceTypesResponseTypedDict
+    ]
     r"""The SearchAppResourceTypesResponse message contains a list of results and a nextPageToken if applicable."""
-    
+
 
 class C1APIAppV1AppResourceSearchSearchAppResourceTypesResponse(BaseModel):
     content_type: str
     r"""HTTP response content type for this operation"""
+
     status_code: int
     r"""HTTP response status code for this operation"""
+
     raw_response: httpx.Response
     r"""Raw HTTP response; suitable for custom response parsing"""
-    search_app_resource_types_response: Optional[shared_searchappresourcetypesresponse.SearchAppResourceTypesResponse] = None
+
+    search_app_resource_types_response: Optional[
+        shared_searchappresourcetypesresponse.SearchAppResourceTypesResponse
+    ] = None
     r"""The SearchAppResourceTypesResponse message contains a list of results and a nextPageToken if applicable."""
-    

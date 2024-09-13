@@ -1,6 +1,8 @@
 # Task
 (*task*)
 
+## Overview
+
 ### Available Operations
 
 * [create_grant_task](#create_grant_task) - Create Grant Task
@@ -25,7 +27,6 @@ s = SDK(
     ),
 )
 
-
 res = s.task.create_grant_task()
 
 if res.task_service_create_grant_response is not None:
@@ -41,15 +42,16 @@ if res.task_service_create_grant_response is not None:
 | `request`                                                                                    | [shared.TaskServiceCreateGrantRequest](../../models/shared/taskservicecreategrantrequest.md) | :heavy_check_mark:                                                                           | The request object to use for the request.                                                   |
 | `retries`                                                                                    | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)                             | :heavy_minus_sign:                                                                           | Configuration to override the default retry behavior of the client.                          |
 
-
 ### Response
 
 **[operations.C1APITaskV1TaskServiceCreateGrantTaskResponse](../../models/operations/c1apitaskv1taskservicecreategranttaskresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## create_offboarding_task
 
@@ -68,7 +70,6 @@ s = SDK(
     ),
 )
 
-
 res = s.task.create_offboarding_task()
 
 if res.task_service_create_offboarding_response is not None:
@@ -84,15 +85,16 @@ if res.task_service_create_offboarding_response is not None:
 | `request`                                                                                                | [shared.TaskServiceCreateOffboardingRequest](../../models/shared/taskservicecreateoffboardingrequest.md) | :heavy_check_mark:                                                                                       | The request object to use for the request.                                                               |
 | `retries`                                                                                                | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)                                         | :heavy_minus_sign:                                                                                       | Configuration to override the default retry behavior of the client.                                      |
 
-
 ### Response
 
 **[operations.C1APITaskV1TaskServiceCreateOffboardingTaskResponse](../../models/operations/c1apitaskv1taskservicecreateoffboardingtaskresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## create_revoke_task
 
@@ -111,7 +113,6 @@ s = SDK(
     ),
 )
 
-
 res = s.task.create_revoke_task()
 
 if res.task_service_create_revoke_response is not None:
@@ -127,15 +128,16 @@ if res.task_service_create_revoke_response is not None:
 | `request`                                                                                      | [shared.TaskServiceCreateRevokeRequest](../../models/shared/taskservicecreaterevokerequest.md) | :heavy_check_mark:                                                                             | The request object to use for the request.                                                     |
 | `retries`                                                                                      | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)                               | :heavy_minus_sign:                                                                             | Configuration to override the default retry behavior of the client.                            |
 
-
 ### Response
 
 **[operations.C1APITaskV1TaskServiceCreateRevokeTaskResponse](../../models/operations/c1apitaskv1taskservicecreaterevoketaskresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## get
 
@@ -154,7 +156,6 @@ s = SDK(
     ),
 )
 
-
 res = s.task.get(request={
     "id": "<id>",
 })
@@ -172,10 +173,10 @@ if res.task_service_get_response is not None:
 | `request`                                                                                                  | [operations.C1APITaskV1TaskServiceGetRequest](../../models/operations/c1apitaskv1taskservicegetrequest.md) | :heavy_check_mark:                                                                                         | The request object to use for the request.                                                                 |
 | `retries`                                                                                                  | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)                                           | :heavy_minus_sign:                                                                                         | Configuration to override the default retry behavior of the client.                                        |
 
-
 ### Response
 
 **[operations.C1APITaskV1TaskServiceGetResponse](../../models/operations/c1apitaskv1taskservicegetresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |

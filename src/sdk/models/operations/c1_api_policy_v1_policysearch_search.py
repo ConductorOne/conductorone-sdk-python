@@ -15,17 +15,21 @@ class C1APIPolicyV1PolicySearchSearchResponseTypedDict(TypedDict):
     r"""HTTP response status code for this operation"""
     raw_response: httpx.Response
     r"""Raw HTTP response; suitable for custom response parsing"""
-    list_policy_response: NotRequired[shared_listpolicyresponse.ListPolicyResponseTypedDict]
+    list_policy_response: NotRequired[
+        shared_listpolicyresponse.ListPolicyResponseTypedDict
+    ]
     r"""Successful response"""
-    
+
 
 class C1APIPolicyV1PolicySearchSearchResponse(BaseModel):
     content_type: str
     r"""HTTP response content type for this operation"""
+
     status_code: int
     r"""HTTP response status code for this operation"""
+
     raw_response: httpx.Response
     r"""Raw HTTP response; suitable for custom response parsing"""
+
     list_policy_response: Optional[shared_listpolicyresponse.ListPolicyResponse] = None
     r"""Successful response"""
-    

@@ -9,14 +9,13 @@ from typing_extensions import NotRequired
 
 class WebhooksServiceGetResponseTypedDict(TypedDict):
     r"""The WebhooksServiceGetResponse message."""
-    
+
     webhook: NotRequired[WebhookTypedDict]
     r"""The Webhook message."""
-    
+
 
 class WebhooksServiceGetResponse(BaseModel):
     r"""The WebhooksServiceGetResponse message."""
-    
+
     webhook: Optional[Webhook] = None
     r"""The Webhook message."""
-    

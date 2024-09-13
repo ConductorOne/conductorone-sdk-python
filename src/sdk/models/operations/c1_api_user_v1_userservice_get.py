@@ -11,11 +11,13 @@ from typing_extensions import Annotated, NotRequired
 
 class C1APIUserV1UserServiceGetRequestTypedDict(TypedDict):
     id: str
-    
+
 
 class C1APIUserV1UserServiceGetRequest(BaseModel):
-    id: Annotated[str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))]
-    
+    id: Annotated[
+        str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))
+    ]
+
 
 class C1APIUserV1UserServiceGetResponseTypedDict(TypedDict):
     content_type: str
@@ -24,17 +26,23 @@ class C1APIUserV1UserServiceGetResponseTypedDict(TypedDict):
     r"""HTTP response status code for this operation"""
     raw_response: httpx.Response
     r"""Raw HTTP response; suitable for custom response parsing"""
-    user_service_get_response: NotRequired[shared_userservicegetresponse.UserServiceGetResponseTypedDict]
+    user_service_get_response: NotRequired[
+        shared_userservicegetresponse.UserServiceGetResponseTypedDict
+    ]
     r"""The UserServiceGetResponse returns a user view which has a user including JSONPATHs to the expanded items in the expanded array."""
-    
+
 
 class C1APIUserV1UserServiceGetResponse(BaseModel):
     content_type: str
     r"""HTTP response content type for this operation"""
+
     status_code: int
     r"""HTTP response status code for this operation"""
+
     raw_response: httpx.Response
     r"""Raw HTTP response; suitable for custom response parsing"""
-    user_service_get_response: Optional[shared_userservicegetresponse.UserServiceGetResponse] = None
+
+    user_service_get_response: Optional[
+        shared_userservicegetresponse.UserServiceGetResponse
+    ] = None
     r"""The UserServiceGetResponse returns a user view which has a user including JSONPATHs to the expanded items in the expanded array."""
-    

@@ -7,10 +7,7 @@ from typing import TypedDict
 
 class ConnectorProvisionTypedDict(TypedDict):
     r"""Indicates that a connector should perform the provisioning. This object has no fields."""
-    
-    
+
 
 class ConnectorProvision(BaseModel):
     r"""Indicates that a connector should perform the provisioning. This object has no fields."""
-    
-    

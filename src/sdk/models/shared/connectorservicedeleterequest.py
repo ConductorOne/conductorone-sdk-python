@@ -7,10 +7,7 @@ from typing import TypedDict
 
 class ConnectorServiceDeleteRequestTypedDict(TypedDict):
     r"""ConnectorServiceDeleteRequest is a request for deleting a connector. It uses URL values for input."""
-    
-    
+
 
 class ConnectorServiceDeleteRequest(BaseModel):
     r"""ConnectorServiceDeleteRequest is a request for deleting a connector. It uses URL values for input."""
-    
-    

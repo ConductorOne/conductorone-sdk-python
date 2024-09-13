@@ -7,10 +7,7 @@ from typing import TypedDict
 
 class DeleteAttributeValueRequestTypedDict(TypedDict):
     r"""The DeleteAttributeValueRequest message."""
-    
-    
+
 
 class DeleteAttributeValueRequest(BaseModel):
     r"""The DeleteAttributeValueRequest message."""
-    
-    

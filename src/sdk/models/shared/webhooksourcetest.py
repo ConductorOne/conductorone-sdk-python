@@ -7,10 +7,7 @@ from typing import TypedDict
 
 class WebhookSourceTestTypedDict(TypedDict):
     r"""The WebhookSourceTest message."""
-    
-    
+
 
 class WebhookSourceTest(BaseModel):
     r"""The WebhookSourceTest message."""
-    
-    

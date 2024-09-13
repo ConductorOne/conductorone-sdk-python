@@ -9,14 +9,13 @@ from typing_extensions import NotRequired
 
 class GetAppResponseTypedDict(TypedDict):
     r"""The GetAppResponse message contains the details of the requested app in the app field."""
-    
+
     app: NotRequired[AppTypedDict]
     r"""The App object provides all of the details for an app, as well as some configuration."""
-    
+
 
 class GetAppResponse(BaseModel):
     r"""The GetAppResponse message contains the details of the requested app in the app field."""
-    
+
     app: Optional[App] = None
     r"""The App object provides all of the details for an app, as well as some configuration."""
-    

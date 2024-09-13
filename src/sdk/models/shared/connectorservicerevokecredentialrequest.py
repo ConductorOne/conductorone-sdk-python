@@ -7,10 +7,7 @@ from typing import TypedDict
 
 class ConnectorServiceRevokeCredentialRequestTypedDict(TypedDict):
     r"""ConnectorServiceRevokeCredentialRequest is a request for revoking connector credentials. It uses URL values for input."""
-    
-    
+
 
 class ConnectorServiceRevokeCredentialRequest(BaseModel):
     r"""ConnectorServiceRevokeCredentialRequest is a request for revoking connector credentials. It uses URL values for input."""
-    
-    

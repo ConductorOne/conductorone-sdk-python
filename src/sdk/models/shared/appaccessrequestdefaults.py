@@ -11,21 +11,37 @@ from typing_extensions import Annotated, NotRequired
 
 class DurationUnsetTypedDict(TypedDict):
     pass
-    
+
 
 class DurationUnset(BaseModel):
     pass
-    
+
 
 class State(str, Enum):
     r"""The last applied state of the app access request defaults."""
-    APP_ACCESS_REQUEST_DEFAULTS_LAST_APPLY_STATE_UNSPECIFIED = "APP_ACCESS_REQUEST_DEFAULTS_LAST_APPLY_STATE_UNSPECIFIED"
-    APP_ACCESS_REQUEST_DEFAULTS_LAST_APPLY_STATE_RUNNING = "APP_ACCESS_REQUEST_DEFAULTS_LAST_APPLY_STATE_RUNNING"
-    APP_ACCESS_REQUEST_DEFAULTS_LAST_APPLY_STATE_SUCCESS = "APP_ACCESS_REQUEST_DEFAULTS_LAST_APPLY_STATE_SUCCESS"
-    APP_ACCESS_REQUEST_DEFAULTS_LAST_APPLY_STATE_FAILED = "APP_ACCESS_REQUEST_DEFAULTS_LAST_APPLY_STATE_FAILED"
-    APP_ACCESS_REQUEST_DEFAULTS_LAST_APPLY_STATE_CANCELING = "APP_ACCESS_REQUEST_DEFAULTS_LAST_APPLY_STATE_CANCELING"
-    APP_ACCESS_REQUEST_DEFAULTS_LAST_APPLY_STATE_CANCEL_SUCCESS = "APP_ACCESS_REQUEST_DEFAULTS_LAST_APPLY_STATE_CANCEL_SUCCESS"
-    APP_ACCESS_REQUEST_DEFAULTS_LAST_APPLY_STATE_CANCEL_ERROR = "APP_ACCESS_REQUEST_DEFAULTS_LAST_APPLY_STATE_CANCEL_ERROR"
+
+    APP_ACCESS_REQUEST_DEFAULTS_LAST_APPLY_STATE_UNSPECIFIED = (
+        "APP_ACCESS_REQUEST_DEFAULTS_LAST_APPLY_STATE_UNSPECIFIED"
+    )
+    APP_ACCESS_REQUEST_DEFAULTS_LAST_APPLY_STATE_RUNNING = (
+        "APP_ACCESS_REQUEST_DEFAULTS_LAST_APPLY_STATE_RUNNING"
+    )
+    APP_ACCESS_REQUEST_DEFAULTS_LAST_APPLY_STATE_SUCCESS = (
+        "APP_ACCESS_REQUEST_DEFAULTS_LAST_APPLY_STATE_SUCCESS"
+    )
+    APP_ACCESS_REQUEST_DEFAULTS_LAST_APPLY_STATE_FAILED = (
+        "APP_ACCESS_REQUEST_DEFAULTS_LAST_APPLY_STATE_FAILED"
+    )
+    APP_ACCESS_REQUEST_DEFAULTS_LAST_APPLY_STATE_CANCELING = (
+        "APP_ACCESS_REQUEST_DEFAULTS_LAST_APPLY_STATE_CANCELING"
+    )
+    APP_ACCESS_REQUEST_DEFAULTS_LAST_APPLY_STATE_CANCEL_SUCCESS = (
+        "APP_ACCESS_REQUEST_DEFAULTS_LAST_APPLY_STATE_CANCEL_SUCCESS"
+    )
+    APP_ACCESS_REQUEST_DEFAULTS_LAST_APPLY_STATE_CANCEL_ERROR = (
+        "APP_ACCESS_REQUEST_DEFAULTS_LAST_APPLY_STATE_CANCEL_ERROR"
+    )
+
 
 class AppAccessRequestDefaultsTypedDict(TypedDict):
     r"""The AppAccessRequestDefaults message.
@@ -35,7 +51,7 @@ class AppAccessRequestDefaultsTypedDict(TypedDict):
     - durationGrant
 
     """
-    
+
     app_id: NotRequired[str]
     r"""The app id for the app access request rule"""
     catalog_ids: NotRequired[Nullable[List[str]]]
@@ -54,7 +70,7 @@ class AppAccessRequestDefaultsTypedDict(TypedDict):
     r"""The app resource type ids for which the app access request defaults are applied."""
     state: NotRequired[State]
     r"""The last applied state of the app access request defaults."""
-    
+
 
 class AppAccessRequestDefaults(BaseModel):
     r"""The AppAccessRequestDefaults message.
@@ -64,29 +80,65 @@ class AppAccessRequestDefaults(BaseModel):
     - durationGrant
 
     """
-    
+
     app_id: Annotated[Optional[str], pydantic.Field(alias="appId")] = None
     r"""The app id for the app access request rule"""
-    catalog_ids: Annotated[OptionalNullable[List[str]], pydantic.Field(alias="catalogIds")] = UNSET
+
+    catalog_ids: Annotated[
+        OptionalNullable[List[str]], pydantic.Field(alias="catalogIds")
+    ] = UNSET
     r"""The request catalog ids for the app access request rule."""
-    defaults_enabled: Annotated[Optional[bool], pydantic.Field(alias="defaultsEnabled")] = None
+
+    defaults_enabled: Annotated[
+        Optional[bool], pydantic.Field(alias="defaultsEnabled")
+    ] = None
     r"""If true the app level request configuration will be applied to specified resource types."""
-    duration_grant: Annotated[Optional[str], pydantic.Field(alias="durationGrant")] = None
-    duration_unset: Annotated[OptionalNullable[DurationUnset], pydantic.Field(alias="durationUnset")] = UNSET
-    emergency_grant_enabled: Annotated[Optional[bool], pydantic.Field(alias="emergencyGrantEnabled")] = None
+
+    duration_grant: Annotated[Optional[str], pydantic.Field(alias="durationGrant")] = (
+        None
+    )
+
+    duration_unset: Annotated[
+        OptionalNullable[DurationUnset], pydantic.Field(alias="durationUnset")
+    ] = UNSET
+
+    emergency_grant_enabled: Annotated[
+        Optional[bool], pydantic.Field(alias="emergencyGrantEnabled")
+    ] = None
     r"""If emergency grants are enabled for this app access request rule."""
-    emergency_grant_policy_id: Annotated[Optional[str], pydantic.Field(alias="emergencyGrantPolicyId")] = None
+
+    emergency_grant_policy_id: Annotated[
+        Optional[str], pydantic.Field(alias="emergencyGrantPolicyId")
+    ] = None
     r"""The policy id for the emergency grant policy."""
-    request_policy_id: Annotated[Optional[str], pydantic.Field(alias="requestPolicyId")] = None
+
+    request_policy_id: Annotated[
+        Optional[str], pydantic.Field(alias="requestPolicyId")
+    ] = None
     r"""The requestPolicyId field."""
-    resource_type_ids: Annotated[OptionalNullable[List[str]], pydantic.Field(alias="resourceTypeIds")] = UNSET
+
+    resource_type_ids: Annotated[
+        OptionalNullable[List[str]], pydantic.Field(alias="resourceTypeIds")
+    ] = UNSET
     r"""The app resource type ids for which the app access request defaults are applied."""
+
     state: Optional[State] = None
     r"""The last applied state of the app access request defaults."""
-    
+
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
-        optional_fields = ["appId", "catalogIds", "defaultsEnabled", "durationGrant", "durationUnset", "emergencyGrantEnabled", "emergencyGrantPolicyId", "requestPolicyId", "resourceTypeIds", "state"]
+        optional_fields = [
+            "appId",
+            "catalogIds",
+            "defaultsEnabled",
+            "durationGrant",
+            "durationUnset",
+            "emergencyGrantEnabled",
+            "emergencyGrantPolicyId",
+            "requestPolicyId",
+            "resourceTypeIds",
+            "state",
+        ]
         nullable_fields = ["catalogIds", "durationUnset", "resourceTypeIds"]
         null_default_fields = []
 
@@ -97,24 +149,23 @@ class AppAccessRequestDefaults(BaseModel):
         for n, f in self.model_fields.items():
             k = f.alias or n
             val = serialized.get(k)
+            serialized.pop(k, None)
+
+            optional_nullable = k in optional_fields and k in nullable_fields
+            is_set = (
+                self.__pydantic_fields_set__.intersection({n})
+                or k in null_default_fields
+            )  # pylint: disable=no-member
 
             if val is not None and val != UNSET_SENTINEL:
                 m[k] = val
             elif val != UNSET_SENTINEL and (
-                not k in optional_fields
-                or (
-                    k in optional_fields
-                    and k in nullable_fields
-                    and (
-                        self.__pydantic_fields_set__.intersection({n})
-                        or k in null_default_fields
-                    )  # pylint: disable=no-member
-                )
+                not k in optional_fields or (optional_nullable and is_set)
             ):
                 m[k] = val
 
         return m
-        
+
 
 class AppAccessRequestDefaults1TypedDict(TypedDict):
     r"""The AppAccessRequestDefaults message.
@@ -124,7 +175,7 @@ class AppAccessRequestDefaults1TypedDict(TypedDict):
     - durationGrant
 
     """
-    
+
     catalog_ids: NotRequired[Nullable[List[str]]]
     r"""The request catalog ids for the app access request rule."""
     defaults_enabled: NotRequired[bool]
@@ -141,7 +192,7 @@ class AppAccessRequestDefaults1TypedDict(TypedDict):
     r"""The app resource type ids for which the app access request defaults are applied."""
     state: NotRequired[State]
     r"""The last applied state of the app access request defaults."""
-    
+
 
 class AppAccessRequestDefaults1(BaseModel):
     r"""The AppAccessRequestDefaults message.
@@ -151,27 +202,61 @@ class AppAccessRequestDefaults1(BaseModel):
     - durationGrant
 
     """
-    
-    catalog_ids: Annotated[OptionalNullable[List[str]], pydantic.Field(alias="catalogIds")] = UNSET
+
+    catalog_ids: Annotated[
+        OptionalNullable[List[str]], pydantic.Field(alias="catalogIds")
+    ] = UNSET
     r"""The request catalog ids for the app access request rule."""
-    defaults_enabled: Annotated[Optional[bool], pydantic.Field(alias="defaultsEnabled")] = None
+
+    defaults_enabled: Annotated[
+        Optional[bool], pydantic.Field(alias="defaultsEnabled")
+    ] = None
     r"""If true the app level request configuration will be applied to specified resource types."""
-    duration_grant: Annotated[Optional[str], pydantic.Field(alias="durationGrant")] = None
-    duration_unset: Annotated[OptionalNullable[DurationUnset], pydantic.Field(alias="durationUnset")] = UNSET
-    emergency_grant_enabled: Annotated[Optional[bool], pydantic.Field(alias="emergencyGrantEnabled")] = None
+
+    duration_grant: Annotated[Optional[str], pydantic.Field(alias="durationGrant")] = (
+        None
+    )
+
+    duration_unset: Annotated[
+        OptionalNullable[DurationUnset], pydantic.Field(alias="durationUnset")
+    ] = UNSET
+
+    emergency_grant_enabled: Annotated[
+        Optional[bool], pydantic.Field(alias="emergencyGrantEnabled")
+    ] = None
     r"""If emergency grants are enabled for this app access request rule."""
-    emergency_grant_policy_id: Annotated[Optional[str], pydantic.Field(alias="emergencyGrantPolicyId")] = None
+
+    emergency_grant_policy_id: Annotated[
+        Optional[str], pydantic.Field(alias="emergencyGrantPolicyId")
+    ] = None
     r"""The policy id for the emergency grant policy."""
-    request_policy_id: Annotated[Optional[str], pydantic.Field(alias="requestPolicyId")] = None
+
+    request_policy_id: Annotated[
+        Optional[str], pydantic.Field(alias="requestPolicyId")
+    ] = None
     r"""The requestPolicyId field."""
-    resource_type_ids: Annotated[OptionalNullable[List[str]], pydantic.Field(alias="resourceTypeIds")] = UNSET
+
+    resource_type_ids: Annotated[
+        OptionalNullable[List[str]], pydantic.Field(alias="resourceTypeIds")
+    ] = UNSET
     r"""The app resource type ids for which the app access request defaults are applied."""
+
     state: Optional[State] = None
     r"""The last applied state of the app access request defaults."""
-    
+
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
-        optional_fields = ["catalogIds", "defaultsEnabled", "durationGrant", "durationUnset", "emergencyGrantEnabled", "emergencyGrantPolicyId", "requestPolicyId", "resourceTypeIds", "state"]
+        optional_fields = [
+            "catalogIds",
+            "defaultsEnabled",
+            "durationGrant",
+            "durationUnset",
+            "emergencyGrantEnabled",
+            "emergencyGrantPolicyId",
+            "requestPolicyId",
+            "resourceTypeIds",
+            "state",
+        ]
         nullable_fields = ["catalogIds", "durationUnset", "resourceTypeIds"]
         null_default_fields = []
 
@@ -182,21 +267,19 @@ class AppAccessRequestDefaults1(BaseModel):
         for n, f in self.model_fields.items():
             k = f.alias or n
             val = serialized.get(k)
+            serialized.pop(k, None)
+
+            optional_nullable = k in optional_fields and k in nullable_fields
+            is_set = (
+                self.__pydantic_fields_set__.intersection({n})
+                or k in null_default_fields
+            )  # pylint: disable=no-member
 
             if val is not None and val != UNSET_SENTINEL:
                 m[k] = val
             elif val != UNSET_SENTINEL and (
-                not k in optional_fields
-                or (
-                    k in optional_fields
-                    and k in nullable_fields
-                    and (
-                        self.__pydantic_fields_set__.intersection({n})
-                        or k in null_default_fields
-                    )  # pylint: disable=no-member
-                )
+                not k in optional_fields or (optional_nullable and is_set)
             ):
                 m[k] = val
 
         return m
-        

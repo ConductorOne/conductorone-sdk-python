@@ -2,7 +2,9 @@
 
 from __future__ import annotations
 import httpx
-from sdk.models.shared import webhooksservicelistresponse as shared_webhooksservicelistresponse
+from sdk.models.shared import (
+    webhooksservicelistresponse as shared_webhooksservicelistresponse,
+)
 from sdk.types import BaseModel
 from sdk.utils import FieldMetadata, QueryParamMetadata
 from typing import Optional, TypedDict
@@ -12,12 +14,19 @@ from typing_extensions import Annotated, NotRequired
 class C1APIWebhooksV1WebhooksServiceListRequestTypedDict(TypedDict):
     page_size: NotRequired[int]
     page_token: NotRequired[str]
-    
+
 
 class C1APIWebhooksV1WebhooksServiceListRequest(BaseModel):
-    page_size: Annotated[Optional[int], FieldMetadata(query=QueryParamMetadata(style="form", explode=True))] = None
-    page_token: Annotated[Optional[str], FieldMetadata(query=QueryParamMetadata(style="form", explode=True))] = None
-    
+    page_size: Annotated[
+        Optional[int],
+        FieldMetadata(query=QueryParamMetadata(style="form", explode=True)),
+    ] = None
+
+    page_token: Annotated[
+        Optional[str],
+        FieldMetadata(query=QueryParamMetadata(style="form", explode=True)),
+    ] = None
+
 
 class C1APIWebhooksV1WebhooksServiceListResponseTypedDict(TypedDict):
     content_type: str
@@ -26,17 +35,23 @@ class C1APIWebhooksV1WebhooksServiceListResponseTypedDict(TypedDict):
     r"""HTTP response status code for this operation"""
     raw_response: httpx.Response
     r"""Raw HTTP response; suitable for custom response parsing"""
-    webhooks_service_list_response: NotRequired[shared_webhooksservicelistresponse.WebhooksServiceListResponseTypedDict]
+    webhooks_service_list_response: NotRequired[
+        shared_webhooksservicelistresponse.WebhooksServiceListResponseTypedDict
+    ]
     r"""Successful response"""
-    
+
 
 class C1APIWebhooksV1WebhooksServiceListResponse(BaseModel):
     content_type: str
     r"""HTTP response content type for this operation"""
+
     status_code: int
     r"""HTTP response status code for this operation"""
+
     raw_response: httpx.Response
     r"""Raw HTTP response; suitable for custom response parsing"""
-    webhooks_service_list_response: Optional[shared_webhooksservicelistresponse.WebhooksServiceListResponse] = None
+
+    webhooks_service_list_response: Optional[
+        shared_webhooksservicelistresponse.WebhooksServiceListResponse
+    ] = None
     r"""Successful response"""
-    

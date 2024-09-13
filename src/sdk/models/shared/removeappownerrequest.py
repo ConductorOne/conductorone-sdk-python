@@ -7,10 +7,7 @@ from typing import TypedDict
 
 class RemoveAppOwnerRequestTypedDict(TypedDict):
     r"""RemoveAppOwnerRequest is the request body for removing an app owner. It uses URL values for input."""
-    
-    
+
 
 class RemoveAppOwnerRequest(BaseModel):
     r"""RemoveAppOwnerRequest is the request body for removing an app owner. It uses URL values for input."""
-    
-    

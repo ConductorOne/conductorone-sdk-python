@@ -15,10 +15,12 @@ from typing_extensions import Annotated, NotRequired
 
 class WaitInstanceState(str, Enum):
     r"""The state field."""
+
     WAIT_INSTANCE_STATE_UNSPECIFIED = "WAIT_INSTANCE_STATE_UNSPECIFIED"
     WAIT_INSTANCE_STATE_WAITING = "WAIT_INSTANCE_STATE_WAITING"
     WAIT_INSTANCE_STATE_COMPLETED = "WAIT_INSTANCE_STATE_COMPLETED"
     WAIT_INSTANCE_STATE_TIMED_OUT = "WAIT_INSTANCE_STATE_TIMED_OUT"
+
 
 class WaitInstanceTypedDict(TypedDict):
     r"""Used by the policy engine to describe an instantiated wait step.
@@ -32,7 +34,7 @@ class WaitInstanceTypedDict(TypedDict):
     - timedOut
 
     """
-    
+
     condition_succeeded: NotRequired[Nullable[ConditionSucceededTypedDict]]
     r"""The ConditionSucceeded message."""
     condition_timed_out: NotRequired[Nullable[ConditionTimedOutTypedDict]]
@@ -50,7 +52,7 @@ class WaitInstanceTypedDict(TypedDict):
     r"""The state field."""
     timeout: NotRequired[datetime]
     timeout_duration: NotRequired[str]
-    
+
 
 class WaitInstance(BaseModel):
     r"""Used by the policy engine to describe an instantiated wait step.
@@ -64,29 +66,67 @@ class WaitInstance(BaseModel):
     - timedOut
 
     """
-    
-    condition_succeeded: Annotated[OptionalNullable[ConditionSucceeded], pydantic.Field(alias="succeeded")] = UNSET
+
+    condition_succeeded: Annotated[
+        OptionalNullable[ConditionSucceeded], pydantic.Field(alias="succeeded")
+    ] = UNSET
     r"""The ConditionSucceeded message."""
-    condition_timed_out: Annotated[OptionalNullable[ConditionTimedOut], pydantic.Field(alias="timedOut")] = UNSET
+
+    condition_timed_out: Annotated[
+        OptionalNullable[ConditionTimedOut], pydantic.Field(alias="timedOut")
+    ] = UNSET
     r"""The ConditionTimedOut message."""
-    wait_condition_instance: Annotated[OptionalNullable[WaitConditionInstance], pydantic.Field(alias="condition")] = UNSET
+
+    wait_condition_instance: Annotated[
+        OptionalNullable[WaitConditionInstance], pydantic.Field(alias="condition")
+    ] = UNSET
     r"""Used by the policy engine to describe an instantiated condition to wait on."""
-    comment_on_first_wait: Annotated[Optional[str], pydantic.Field(alias="commentOnFirstWait")] = None
+
+    comment_on_first_wait: Annotated[
+        Optional[str], pydantic.Field(alias="commentOnFirstWait")
+    ] = None
     r"""The comment to post on first failed check."""
-    comment_on_timeout: Annotated[Optional[str], pydantic.Field(alias="commentOnTimeout")] = None
+
+    comment_on_timeout: Annotated[
+        Optional[str], pydantic.Field(alias="commentOnTimeout")
+    ] = None
     r"""The comment to post if we timeout."""
+
     name: Optional[str] = None
     r"""The name field."""
-    started_waiting_at: Annotated[Optional[datetime], pydantic.Field(alias="startedWaitingAt")] = None
+
+    started_waiting_at: Annotated[
+        Optional[datetime], pydantic.Field(alias="startedWaitingAt")
+    ] = None
+
     state: Optional[WaitInstanceState] = None
     r"""The state field."""
+
     timeout: Optional[datetime] = None
-    timeout_duration: Annotated[Optional[str], pydantic.Field(alias="timeoutDuration")] = None
-    
+
+    timeout_duration: Annotated[
+        Optional[str], pydantic.Field(alias="timeoutDuration")
+    ] = None
+
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
-        optional_fields = ["ConditionSucceeded", "ConditionTimedOut", "WaitConditionInstance", "commentOnFirstWait", "commentOnTimeout", "name", "startedWaitingAt", "state", "timeout", "timeoutDuration"]
-        nullable_fields = ["ConditionSucceeded", "ConditionTimedOut", "WaitConditionInstance"]
+        optional_fields = [
+            "ConditionSucceeded",
+            "ConditionTimedOut",
+            "WaitConditionInstance",
+            "commentOnFirstWait",
+            "commentOnTimeout",
+            "name",
+            "startedWaitingAt",
+            "state",
+            "timeout",
+            "timeoutDuration",
+        ]
+        nullable_fields = [
+            "ConditionSucceeded",
+            "ConditionTimedOut",
+            "WaitConditionInstance",
+        ]
         null_default_fields = []
 
         serialized = handler(self)
@@ -96,21 +136,19 @@ class WaitInstance(BaseModel):
         for n, f in self.model_fields.items():
             k = f.alias or n
             val = serialized.get(k)
+            serialized.pop(k, None)
+
+            optional_nullable = k in optional_fields and k in nullable_fields
+            is_set = (
+                self.__pydantic_fields_set__.intersection({n})
+                or k in null_default_fields
+            )  # pylint: disable=no-member
 
             if val is not None and val != UNSET_SENTINEL:
                 m[k] = val
             elif val != UNSET_SENTINEL and (
-                not k in optional_fields
-                or (
-                    k in optional_fields
-                    and k in nullable_fields
-                    and (
-                        self.__pydantic_fields_set__.intersection({n})
-                        or k in null_default_fields
-                    )  # pylint: disable=no-member
-                )
+                not k in optional_fields or (optional_nullable and is_set)
             ):
                 m[k] = val
 
         return m
-        

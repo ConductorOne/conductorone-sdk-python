@@ -8,14 +8,13 @@ from typing_extensions import NotRequired
 
 class ValidatePolicyCELRequestTypedDict(TypedDict):
     r"""The ValidatePolicyCELRequest message."""
-    
+
     cel: NotRequired[str]
     r"""The cel field."""
-    
+
 
 class ValidatePolicyCELRequest(BaseModel):
     r"""The ValidatePolicyCELRequest message."""
-    
+
     cel: Optional[str] = None
     r"""The cel field."""
-    

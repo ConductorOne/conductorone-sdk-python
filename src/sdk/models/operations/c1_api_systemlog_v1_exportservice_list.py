@@ -2,7 +2,9 @@
 
 from __future__ import annotations
 import httpx
-from sdk.models.shared import exportservicelistresponse as shared_exportservicelistresponse
+from sdk.models.shared import (
+    exportservicelistresponse as shared_exportservicelistresponse,
+)
 from sdk.types import BaseModel
 from sdk.utils import FieldMetadata, QueryParamMetadata
 from typing import Optional, TypedDict
@@ -12,12 +14,19 @@ from typing_extensions import Annotated, NotRequired
 class C1APISystemlogV1ExportServiceListRequestTypedDict(TypedDict):
     page_size: NotRequired[int]
     page_token: NotRequired[str]
-    
+
 
 class C1APISystemlogV1ExportServiceListRequest(BaseModel):
-    page_size: Annotated[Optional[int], FieldMetadata(query=QueryParamMetadata(style="form", explode=True))] = None
-    page_token: Annotated[Optional[str], FieldMetadata(query=QueryParamMetadata(style="form", explode=True))] = None
-    
+    page_size: Annotated[
+        Optional[int],
+        FieldMetadata(query=QueryParamMetadata(style="form", explode=True)),
+    ] = None
+
+    page_token: Annotated[
+        Optional[str],
+        FieldMetadata(query=QueryParamMetadata(style="form", explode=True)),
+    ] = None
+
 
 class C1APISystemlogV1ExportServiceListResponseTypedDict(TypedDict):
     content_type: str
@@ -26,17 +35,23 @@ class C1APISystemlogV1ExportServiceListResponseTypedDict(TypedDict):
     r"""HTTP response status code for this operation"""
     raw_response: httpx.Response
     r"""Raw HTTP response; suitable for custom response parsing"""
-    export_service_list_response: NotRequired[shared_exportservicelistresponse.ExportServiceListResponseTypedDict]
+    export_service_list_response: NotRequired[
+        shared_exportservicelistresponse.ExportServiceListResponseTypedDict
+    ]
     r"""Successful response"""
-    
+
 
 class C1APISystemlogV1ExportServiceListResponse(BaseModel):
     content_type: str
     r"""HTTP response content type for this operation"""
+
     status_code: int
     r"""HTTP response status code for this operation"""
+
     raw_response: httpx.Response
     r"""Raw HTTP response; suitable for custom response parsing"""
-    export_service_list_response: Optional[shared_exportservicelistresponse.ExportServiceListResponse] = None
+
+    export_service_list_response: Optional[
+        shared_exportservicelistresponse.ExportServiceListResponse
+    ] = None
     r"""Successful response"""
-    

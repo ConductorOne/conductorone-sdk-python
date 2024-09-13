@@ -7,10 +7,7 @@ from typing import TypedDict
 
 class WebhooksServiceDeleteRequestTypedDict(TypedDict):
     r"""The WebhooksServiceDeleteRequest message."""
-    
-    
+
 
 class WebhooksServiceDeleteRequest(BaseModel):
     r"""The WebhooksServiceDeleteRequest message."""
-    
-    

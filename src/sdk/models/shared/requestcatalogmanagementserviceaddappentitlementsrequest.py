@@ -5,26 +5,40 @@ from .appentitlementref import AppEntitlementRef, AppEntitlementRefTypedDict
 import pydantic
 from pydantic import model_serializer
 from sdk.types import BaseModel, Nullable, OptionalNullable, UNSET, UNSET_SENTINEL
-from typing import List, TypedDict
+from typing import List, Optional, TypedDict
 from typing_extensions import Annotated, NotRequired
 
 
 class RequestCatalogManagementServiceAddAppEntitlementsRequestTypedDict(TypedDict):
     r"""The RequestCatalogManagementServiceAddAppEntitlementsRequest object is used to add app requestable app entitlements to a request catalog."""
-    
+
     app_entitlements: NotRequired[Nullable[List[AppEntitlementRefTypedDict]]]
     r"""List of entitlements to add to the request catalog."""
-    
+    create_requests: NotRequired[bool]
+    r"""Whether or not to create requests for newly added entitlements for users in the catalog.
+    By default, this is false and no requests are created.
+    """
+
 
 class RequestCatalogManagementServiceAddAppEntitlementsRequest(BaseModel):
     r"""The RequestCatalogManagementServiceAddAppEntitlementsRequest object is used to add app requestable app entitlements to a request catalog."""
-    
-    app_entitlements: Annotated[OptionalNullable[List[AppEntitlementRef]], pydantic.Field(alias="appEntitlements")] = UNSET
+
+    app_entitlements: Annotated[
+        OptionalNullable[List[AppEntitlementRef]],
+        pydantic.Field(alias="appEntitlements"),
+    ] = UNSET
     r"""List of entitlements to add to the request catalog."""
-    
+
+    create_requests: Annotated[
+        Optional[bool], pydantic.Field(alias="createRequests")
+    ] = None
+    r"""Whether or not to create requests for newly added entitlements for users in the catalog.
+    By default, this is false and no requests are created.
+    """
+
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
-        optional_fields = ["appEntitlements"]
+        optional_fields = ["appEntitlements", "createRequests"]
         nullable_fields = ["appEntitlements"]
         null_default_fields = []
 
@@ -35,21 +49,19 @@ class RequestCatalogManagementServiceAddAppEntitlementsRequest(BaseModel):
         for n, f in self.model_fields.items():
             k = f.alias or n
             val = serialized.get(k)
+            serialized.pop(k, None)
+
+            optional_nullable = k in optional_fields and k in nullable_fields
+            is_set = (
+                self.__pydantic_fields_set__.intersection({n})
+                or k in null_default_fields
+            )  # pylint: disable=no-member
 
             if val is not None and val != UNSET_SENTINEL:
                 m[k] = val
             elif val != UNSET_SENTINEL and (
-                not k in optional_fields
-                or (
-                    k in optional_fields
-                    and k in nullable_fields
-                    and (
-                        self.__pydantic_fields_set__.intersection({n})
-                        or k in null_default_fields
-                    )  # pylint: disable=no-member
-                )
+                not k in optional_fields or (optional_nullable and is_set)
             ):
                 m[k] = val
 
         return m
-        

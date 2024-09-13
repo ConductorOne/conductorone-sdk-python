@@ -12,7 +12,7 @@ from typing_extensions import Annotated, NotRequired
 
 class FacetRangeTypedDict(TypedDict):
     r"""The FacetRange message."""
-    
+
     count: NotRequired[int]
     r"""The count of items in the range."""
     display_name: NotRequired[str]
@@ -23,19 +23,37 @@ class FacetRangeTypedDict(TypedDict):
     r"""The icon of the range."""
     to: NotRequired[int]
     r"""The ending value of the range."""
-    
+
 
 class FacetRange(BaseModel):
     r"""The FacetRange message."""
-    
-    count: Annotated[Optional[int], BeforeValidator(validate_int), PlainSerializer(serialize_int(True))] = None
+
+    count: Annotated[
+        Optional[int],
+        BeforeValidator(validate_int),
+        PlainSerializer(serialize_int(True)),
+    ] = None
     r"""The count of items in the range."""
+
     display_name: Annotated[Optional[str], pydantic.Field(alias="displayName")] = None
     r"""The display name of the range."""
-    from_: Annotated[Annotated[Optional[int], BeforeValidator(validate_int), PlainSerializer(serialize_int(True))], pydantic.Field(alias="from")] = None
+
+    from_: Annotated[
+        Annotated[
+            Optional[int],
+            BeforeValidator(validate_int),
+            PlainSerializer(serialize_int(True)),
+        ],
+        pydantic.Field(alias="from"),
+    ] = None
     r"""The starting value of the range."""
+
     icon_url: Annotated[Optional[str], pydantic.Field(alias="iconUrl")] = None
     r"""The icon of the range."""
-    to: Annotated[Optional[int], BeforeValidator(validate_int), PlainSerializer(serialize_int(True))] = None
+
+    to: Annotated[
+        Optional[int],
+        BeforeValidator(validate_int),
+        PlainSerializer(serialize_int(True)),
+    ] = None
     r"""The ending value of the range."""
-    

@@ -2,7 +2,9 @@
 
 from __future__ import annotations
 import httpx
-from sdk.models.shared import taskservicecreategrantresponse as shared_taskservicecreategrantresponse
+from sdk.models.shared import (
+    taskservicecreategrantresponse as shared_taskservicecreategrantresponse,
+)
 from sdk.types import BaseModel
 from typing import Optional, TypedDict
 from typing_extensions import NotRequired
@@ -15,17 +17,23 @@ class C1APITaskV1TaskServiceCreateGrantTaskResponseTypedDict(TypedDict):
     r"""HTTP response status code for this operation"""
     raw_response: httpx.Response
     r"""Raw HTTP response; suitable for custom response parsing"""
-    task_service_create_grant_response: NotRequired[shared_taskservicecreategrantresponse.TaskServiceCreateGrantResponseTypedDict]
+    task_service_create_grant_response: NotRequired[
+        shared_taskservicecreategrantresponse.TaskServiceCreateGrantResponseTypedDict
+    ]
     r"""The TaskServiceCreateGrantResponse returns a task view which has a task including JSONPATHs to the expanded items in the expanded array."""
-    
+
 
 class C1APITaskV1TaskServiceCreateGrantTaskResponse(BaseModel):
     content_type: str
     r"""HTTP response content type for this operation"""
+
     status_code: int
     r"""HTTP response status code for this operation"""
+
     raw_response: httpx.Response
     r"""Raw HTTP response; suitable for custom response parsing"""
-    task_service_create_grant_response: Optional[shared_taskservicecreategrantresponse.TaskServiceCreateGrantResponse] = None
+
+    task_service_create_grant_response: Optional[
+        shared_taskservicecreategrantresponse.TaskServiceCreateGrantResponse
+    ] = None
     r"""The TaskServiceCreateGrantResponse returns a task view which has a task including JSONPATHs to the expanded items in the expanded array."""
-    

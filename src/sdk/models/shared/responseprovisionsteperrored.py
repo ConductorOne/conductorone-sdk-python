@@ -8,14 +8,13 @@ from typing_extensions import NotRequired
 
 class ResponseProvisionStepErroredTypedDict(TypedDict):
     r"""The ResponseProvisionStepErrored message."""
-    
+
     comment: NotRequired[str]
     r"""optional comment"""
-    
+
 
 class ResponseProvisionStepErrored(BaseModel):
     r"""The ResponseProvisionStepErrored message."""
-    
+
     comment: Optional[str] = None
     r"""optional comment"""
-    

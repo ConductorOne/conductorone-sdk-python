@@ -3,9 +3,10 @@
 from .basesdk import BaseSDK
 from .httpclient import AsyncHttpClient, HttpClient
 from .sdkconfiguration import SDKConfiguration
-from .utils.logger import Logger, NoOpLogger
+from .utils.logger import Logger, get_default_logger
 from .utils.retries import RetryConfig
 import httpx
+from sdk import utils
 from sdk._hooks import SDKHooks
 from sdk.appaccessrequestsdefaults import AppAccessRequestsDefaults
 from sdk.appentitlementowners import AppEntitlementOwners
@@ -47,13 +48,14 @@ from sdk.tasksearch import TaskSearch
 from sdk.types import OptionalNullable, UNSET
 from sdk.user import User
 from sdk.usersearch import UserSearch
-import sdk.utils as utils
 from sdk.webhooks import Webhooks
 from sdk.webhookssearch import WebhooksSearch
 from typing import Callable, Dict, List, Optional, Union
 
+
 class SDK(BaseSDK):
     r"""ConductorOne API: The ConductorOne API is a HTTP API for managing ConductorOne resources."""
+
     apps: Apps
     app_access_requests_defaults: AppAccessRequestsDefaults
     connector: Connector
@@ -94,6 +96,7 @@ class SDK(BaseSDK):
     task_actions: TaskActions
     user: User
     webhooks: Webhooks
+
     def __init__(
         self,
         security: Union[shared.Security, Callable[[], shared.Security]],
@@ -105,7 +108,7 @@ class SDK(BaseSDK):
         async_client: Optional[AsyncHttpClient] = None,
         retry_config: OptionalNullable[RetryConfig] = UNSET,
         timeout_ms: Optional[int] = None,
-        debug_logger: Optional[Logger] = None
+        debug_logger: Optional[Logger] = None,
     ) -> None:
         r"""Instantiates the SDK configuring it with the provided parameters.
 
@@ -130,7 +133,7 @@ class SDK(BaseSDK):
             async_client = httpx.AsyncClient()
 
         if debug_logger is None:
-            debug_logger = NoOpLogger()
+            debug_logger = get_default_logger()
 
         assert issubclass(
             type(async_client), AsyncHttpClient
@@ -144,24 +147,28 @@ class SDK(BaseSDK):
                 "tenantDomain": tenant_domain or "example",
             },
         ]
-    
 
-        BaseSDK.__init__(self, SDKConfiguration(
-            client=client,
-            async_client=async_client,
-            security=security,
-            server_url=server_url,
-            server_idx=server_idx,
-            server_defaults=server_defaults,
-            retry_config=retry_config,
-            timeout_ms=timeout_ms,
-            debug_logger=debug_logger
-        ))
+        BaseSDK.__init__(
+            self,
+            SDKConfiguration(
+                client=client,
+                async_client=async_client,
+                security=security,
+                server_url=server_url,
+                server_idx=server_idx,
+                server_defaults=server_defaults,
+                retry_config=retry_config,
+                timeout_ms=timeout_ms,
+                debug_logger=debug_logger,
+            ),
+        )
 
         hooks = SDKHooks()
 
         current_server_url, *_ = self.sdk_configuration.get_server_details()
-        server_url, self.sdk_configuration.client = hooks.sdk_init(current_server_url, self.sdk_configuration.client)
+        server_url, self.sdk_configuration.client = hooks.sdk_init(
+            current_server_url, self.sdk_configuration.client
+        )
         if current_server_url != server_url:
             self.sdk_configuration.server_url = server_url
 
@@ -170,14 +177,17 @@ class SDK(BaseSDK):
 
         self._init_sdks()
 
-
     def _init_sdks(self):
         self.apps = Apps(self.sdk_configuration)
-        self.app_access_requests_defaults = AppAccessRequestsDefaults(self.sdk_configuration)
+        self.app_access_requests_defaults = AppAccessRequestsDefaults(
+            self.sdk_configuration
+        )
         self.connector = Connector(self.sdk_configuration)
         self.app_entitlements = AppEntitlements(self.sdk_configuration)
         self.app_entitlement_search = AppEntitlementSearch(self.sdk_configuration)
-        self.app_entitlement_user_binding = AppEntitlementUserBinding(self.sdk_configuration)
+        self.app_entitlement_user_binding = AppEntitlementUserBinding(
+            self.sdk_configuration
+        )
         self.app_entitlement_owners = AppEntitlementOwners(self.sdk_configuration)
         self.app_owners = AppOwners(self.sdk_configuration)
         self.app_report = AppReport(self.sdk_configuration)
@@ -189,7 +199,9 @@ class SDK(BaseSDK):
         self.app_user = AppUser(self.sdk_configuration)
         self.attributes = Attributes(self.sdk_configuration)
         self.auth = Auth(self.sdk_configuration)
-        self.request_catalog_management = RequestCatalogManagement(self.sdk_configuration)
+        self.request_catalog_management = RequestCatalogManagement(
+            self.sdk_configuration
+        )
         self.directory = Directory(self.sdk_configuration)
         self.personal_client = PersonalClient(self.sdk_configuration)
         self.roles = Roles(self.sdk_configuration)
@@ -212,4 +224,3 @@ class SDK(BaseSDK):
         self.task_actions = TaskActions(self.sdk_configuration)
         self.user = User(self.sdk_configuration)
         self.webhooks = Webhooks(self.sdk_configuration)
-    

@@ -2,30 +2,40 @@
 
 from __future__ import annotations
 import httpx
-from sdk.models.shared import searchpastgrantsresponse as shared_searchpastgrantsresponse
+from sdk.models.shared import (
+    searchpastgrantsresponse as shared_searchpastgrantsresponse,
+)
 from sdk.types import BaseModel
 from typing import Optional, TypedDict
 from typing_extensions import NotRequired
 
 
-class C1APIAppV1AppEntitlementUserBindingServiceSearchPastGrantsResponseTypedDict(TypedDict):
+class C1APIAppV1AppEntitlementUserBindingServiceSearchPastGrantsResponseTypedDict(
+    TypedDict
+):
     content_type: str
     r"""HTTP response content type for this operation"""
     status_code: int
     r"""HTTP response status code for this operation"""
     raw_response: httpx.Response
     r"""Raw HTTP response; suitable for custom response parsing"""
-    search_past_grants_response: NotRequired[shared_searchpastgrantsresponse.SearchPastGrantsResponseTypedDict]
-    r"""The SearchPastGrantsRequest message contains a list of results and a nextPageToken if applicable."""
-    
+    search_past_grants_response: NotRequired[
+        shared_searchpastgrantsresponse.SearchPastGrantsResponseTypedDict
+    ]
+    r"""The SearchPastGrantsResponse message contains a list of past grants and a nextPageToken if applicable."""
+
 
 class C1APIAppV1AppEntitlementUserBindingServiceSearchPastGrantsResponse(BaseModel):
     content_type: str
     r"""HTTP response content type for this operation"""
+
     status_code: int
     r"""HTTP response status code for this operation"""
+
     raw_response: httpx.Response
     r"""Raw HTTP response; suitable for custom response parsing"""
-    search_past_grants_response: Optional[shared_searchpastgrantsresponse.SearchPastGrantsResponse] = None
-    r"""The SearchPastGrantsRequest message contains a list of results and a nextPageToken if applicable."""
-    
+
+    search_past_grants_response: Optional[
+        shared_searchpastgrantsresponse.SearchPastGrantsResponse
+    ] = None
+    r"""The SearchPastGrantsResponse message contains a list of past grants and a nextPageToken if applicable."""

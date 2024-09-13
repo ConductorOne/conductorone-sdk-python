@@ -2,7 +2,9 @@
 
 from __future__ import annotations
 import httpx
-from sdk.models.shared import getawsexternalidresponse as shared_getawsexternalidresponse
+from sdk.models.shared import (
+    getawsexternalidresponse as shared_getawsexternalidresponse,
+)
 from sdk.types import BaseModel
 from typing import Optional, TypedDict
 from typing_extensions import NotRequired
@@ -15,17 +17,23 @@ class C1APISettingsV1AWSExternalIDSettingsGetResponseTypedDict(TypedDict):
     r"""HTTP response status code for this operation"""
     raw_response: httpx.Response
     r"""Raw HTTP response; suitable for custom response parsing"""
-    get_aws_external_id_response: NotRequired[shared_getawsexternalidresponse.GetAWSExternalIDResponseTypedDict]
+    get_aws_external_id_response: NotRequired[
+        shared_getawsexternalidresponse.GetAWSExternalIDResponseTypedDict
+    ]
     r"""Successful response"""
-    
+
 
 class C1APISettingsV1AWSExternalIDSettingsGetResponse(BaseModel):
     content_type: str
     r"""HTTP response content type for this operation"""
+
     status_code: int
     r"""HTTP response status code for this operation"""
+
     raw_response: httpx.Response
     r"""Raw HTTP response; suitable for custom response parsing"""
-    get_aws_external_id_response: Optional[shared_getawsexternalidresponse.GetAWSExternalIDResponse] = None
+
+    get_aws_external_id_response: Optional[
+        shared_getawsexternalidresponse.GetAWSExternalIDResponse
+    ] = None
     r"""Successful response"""
-    

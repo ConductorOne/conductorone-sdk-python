@@ -8,14 +8,13 @@ from typing_extensions import NotRequired
 
 class ResponseProvisionStepCompleteTypedDict(TypedDict):
     r"""The ResponseProvisionStepComplete message."""
-    
+
     comment: NotRequired[str]
     r"""optional comment"""
-    
+
 
 class ResponseProvisionStepComplete(BaseModel):
     r"""The ResponseProvisionStepComplete message."""
-    
+
     comment: Optional[str] = None
     r"""optional comment"""
-    

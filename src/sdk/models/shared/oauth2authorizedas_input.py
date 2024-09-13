@@ -7,10 +7,7 @@ from typing import TypedDict
 
 class OAuth2AuthorizedAsInputTypedDict(TypedDict):
     r"""OAuth2AuthorizedAs tracks the user that OAuthed with the connector."""
-    
-    
+
 
 class OAuth2AuthorizedAsInput(BaseModel):
     r"""OAuth2AuthorizedAs tracks the user that OAuthed with the connector."""
-    
-    

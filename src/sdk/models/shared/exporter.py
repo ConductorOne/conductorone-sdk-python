@@ -13,10 +13,12 @@ from typing_extensions import Annotated, NotRequired
 
 class ExporterState(str, Enum):
     r"""The state field."""
+
     EXPORT_STATE_UNSPECIFIED = "EXPORT_STATE_UNSPECIFIED"
     EXPORT_STATE_EXPORTING = "EXPORT_STATE_EXPORTING"
     EXPORT_STATE_WAITING = "EXPORT_STATE_WAITING"
     EXPORT_STATE_ERROR = "EXPORT_STATE_ERROR"
+
 
 class ExporterTypedDict(TypedDict):
     r"""The Exporter message.
@@ -25,7 +27,7 @@ class ExporterTypedDict(TypedDict):
     - datasource
 
     """
-    
+
     export_to_datasource: NotRequired[Nullable[ExportToDatasourceTypedDict]]
     r"""The ExportToDatasource message."""
     created_at: NotRequired[datetime]
@@ -39,7 +41,7 @@ class ExporterTypedDict(TypedDict):
     updated_at: NotRequired[datetime]
     watermark_event_id: NotRequired[str]
     r"""we've synchorized this far"""
-    
+
 
 class Exporter(BaseModel):
     r"""The Exporter message.
@@ -48,24 +50,44 @@ class Exporter(BaseModel):
     - datasource
 
     """
-    
-    export_to_datasource: Annotated[OptionalNullable[ExportToDatasource], pydantic.Field(alias="datasource")] = UNSET
+
+    export_to_datasource: Annotated[
+        OptionalNullable[ExportToDatasource], pydantic.Field(alias="datasource")
+    ] = UNSET
     r"""The ExportToDatasource message."""
+
     created_at: Annotated[Optional[datetime], pydantic.Field(alias="createdAt")] = None
+
     deleted_at: Annotated[Optional[datetime], pydantic.Field(alias="deletedAt")] = None
+
     display_name: Annotated[Optional[str], pydantic.Field(alias="displayName")] = None
     r"""The displayName field."""
+
     export_id: Annotated[Optional[str], pydantic.Field(alias="exportId")] = None
     r"""The exportId field."""
+
     state: Optional[ExporterState] = None
     r"""The state field."""
+
     updated_at: Annotated[Optional[datetime], pydantic.Field(alias="updatedAt")] = None
-    watermark_event_id: Annotated[Optional[str], pydantic.Field(alias="watermarkEventId")] = None
+
+    watermark_event_id: Annotated[
+        Optional[str], pydantic.Field(alias="watermarkEventId")
+    ] = None
     r"""we've synchorized this far"""
-    
+
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
-        optional_fields = ["ExportToDatasource", "createdAt", "deletedAt", "displayName", "exportId", "state", "updatedAt", "watermarkEventId"]
+        optional_fields = [
+            "ExportToDatasource",
+            "createdAt",
+            "deletedAt",
+            "displayName",
+            "exportId",
+            "state",
+            "updatedAt",
+            "watermarkEventId",
+        ]
         nullable_fields = ["ExportToDatasource"]
         null_default_fields = []
 
@@ -76,21 +98,19 @@ class Exporter(BaseModel):
         for n, f in self.model_fields.items():
             k = f.alias or n
             val = serialized.get(k)
+            serialized.pop(k, None)
+
+            optional_nullable = k in optional_fields and k in nullable_fields
+            is_set = (
+                self.__pydantic_fields_set__.intersection({n})
+                or k in null_default_fields
+            )  # pylint: disable=no-member
 
             if val is not None and val != UNSET_SENTINEL:
                 m[k] = val
             elif val != UNSET_SENTINEL and (
-                not k in optional_fields
-                or (
-                    k in optional_fields
-                    and k in nullable_fields
-                    and (
-                        self.__pydantic_fields_set__.intersection({n})
-                        or k in null_default_fields
-                    )  # pylint: disable=no-member
-                )
+                not k in optional_fields or (optional_nullable and is_set)
             ):
                 m[k] = val
 
         return m
-        

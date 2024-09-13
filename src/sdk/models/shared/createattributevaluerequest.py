@@ -9,18 +9,20 @@ from typing_extensions import Annotated, NotRequired
 
 class CreateAttributeValueRequestTypedDict(TypedDict):
     r"""The CreateAttributeValueRequest message."""
-    
+
     attribute_type_id: NotRequired[str]
     r"""The attributeTypeId field."""
     value: NotRequired[str]
     r"""The value field."""
-    
+
 
 class CreateAttributeValueRequest(BaseModel):
     r"""The CreateAttributeValueRequest message."""
-    
-    attribute_type_id: Annotated[Optional[str], pydantic.Field(alias="attributeTypeId")] = None
+
+    attribute_type_id: Annotated[
+        Optional[str], pydantic.Field(alias="attributeTypeId")
+    ] = None
     r"""The attributeTypeId field."""
+
     value: Optional[str] = None
     r"""The value field."""
-    

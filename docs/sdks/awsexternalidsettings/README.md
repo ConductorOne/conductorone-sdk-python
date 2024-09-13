@@ -1,6 +1,8 @@
 # AWSExternalIDSettings
 (*aws_external_id_settings*)
 
+## Overview
+
 ### Available Operations
 
 * [get](#get) - Get
@@ -22,7 +24,6 @@ s = SDK(
     ),
 )
 
-
 res = s.aws_external_id_settings.get()
 
 if res.get_aws_external_id_response is not None:
@@ -37,10 +38,10 @@ if res.get_aws_external_id_response is not None:
 | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
 | `retries`                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)    | :heavy_minus_sign:                                                  | Configuration to override the default retry behavior of the client. |
 
-
 ### Response
 
 **[operations.C1APISettingsV1AWSExternalIDSettingsGetResponse](../../models/operations/c1apisettingsv1awsexternalidsettingsgetresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |

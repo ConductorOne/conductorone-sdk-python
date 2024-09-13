@@ -10,12 +10,13 @@ from typing_extensions import Annotated, NotRequired
 
 class ConditionTimedOutTypedDict(TypedDict):
     r"""The ConditionTimedOut message."""
-    
+
     timed_out_at: NotRequired[datetime]
-    
+
 
 class ConditionTimedOut(BaseModel):
     r"""The ConditionTimedOut message."""
-    
-    timed_out_at: Annotated[Optional[datetime], pydantic.Field(alias="timedOutAt")] = None
-    
+
+    timed_out_at: Annotated[Optional[datetime], pydantic.Field(alias="timedOutAt")] = (
+        None
+    )

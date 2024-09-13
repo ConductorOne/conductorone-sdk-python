@@ -9,17 +9,17 @@ from typing_extensions import NotRequired
 
 class AppEntitlementExpandMaskTypedDict(TypedDict):
     r"""The app entitlement expand mask allows the user to get additional information when getting responses containing app entitlement views."""
-    
+
     paths: NotRequired[Nullable[List[str]]]
     r"""Array of strings to describe which items to expand on the return value. Can be any combination of \"*\", \"app_id\", \"app_resource_type_id\", or \"app_resource_id\"."""
-    
+
 
 class AppEntitlementExpandMask(BaseModel):
     r"""The app entitlement expand mask allows the user to get additional information when getting responses containing app entitlement views."""
-    
+
     paths: OptionalNullable[List[str]] = UNSET
     r"""Array of strings to describe which items to expand on the return value. Can be any combination of \"*\", \"app_id\", \"app_resource_type_id\", or \"app_resource_id\"."""
-    
+
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
         optional_fields = ["paths"]
@@ -33,21 +33,19 @@ class AppEntitlementExpandMask(BaseModel):
         for n, f in self.model_fields.items():
             k = f.alias or n
             val = serialized.get(k)
+            serialized.pop(k, None)
+
+            optional_nullable = k in optional_fields and k in nullable_fields
+            is_set = (
+                self.__pydantic_fields_set__.intersection({n})
+                or k in null_default_fields
+            )  # pylint: disable=no-member
 
             if val is not None and val != UNSET_SENTINEL:
                 m[k] = val
             elif val != UNSET_SENTINEL and (
-                not k in optional_fields
-                or (
-                    k in optional_fields
-                    and k in nullable_fields
-                    and (
-                        self.__pydantic_fields_set__.intersection({n})
-                        or k in null_default_fields
-                    )  # pylint: disable=no-member
-                )
+                not k in optional_fields or (optional_nullable and is_set)
             ):
                 m[k] = val
 
         return m
-        

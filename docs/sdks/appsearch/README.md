@@ -1,6 +1,8 @@
 # AppSearch
 (*app_search*)
 
+## Overview
+
 ### Available Operations
 
 * [search](#search) - Search
@@ -22,7 +24,6 @@ s = SDK(
     ),
 )
 
-
 res = s.app_search.search()
 
 if res.search_apps_response is not None:
@@ -38,10 +39,10 @@ if res.search_apps_response is not None:
 | `request`                                                            | [shared.SearchAppsRequest](../../models/shared/searchappsrequest.md) | :heavy_check_mark:                                                   | The request object to use for the request.                           |
 | `retries`                                                            | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)     | :heavy_minus_sign:                                                   | Configuration to override the default retry behavior of the client.  |
 
-
 ### Response
 
 **[operations.C1APIAppV1AppSearchSearchResponse](../../models/operations/c1apiappv1appsearchsearchresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |

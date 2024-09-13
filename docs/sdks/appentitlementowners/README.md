@@ -1,6 +1,8 @@
 # AppEntitlementOwners
 (*app_entitlement_owners*)
 
+## Overview
+
 ### Available Operations
 
 * [add](#add) - Add
@@ -25,7 +27,6 @@ s = SDK(
     ),
 )
 
-
 res = s.app_entitlement_owners.add(request={
     "app_id": "<value>",
     "entitlement_id": "<value>",
@@ -44,15 +45,16 @@ if res.add_app_entitlement_owner_response is not None:
 | `request`                                                                                                                  | [operations.C1APIAppV1AppEntitlementOwnersAddRequest](../../models/operations/c1apiappv1appentitlementownersaddrequest.md) | :heavy_check_mark:                                                                                                         | The request object to use for the request.                                                                                 |
 | `retries`                                                                                                                  | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)                                                           | :heavy_minus_sign:                                                                                                         | Configuration to override the default retry behavior of the client.                                                        |
 
-
 ### Response
 
 **[operations.C1APIAppV1AppEntitlementOwnersAddResponse](../../models/operations/c1apiappv1appentitlementownersaddresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## list
 
@@ -70,7 +72,6 @@ s = SDK(
         oauth="<YOUR_OAUTH_HERE>",
     ),
 )
-
 
 res = s.app_entitlement_owners.list(request={
     "app_id": "<value>",
@@ -90,15 +91,16 @@ if res.list_app_entitlement_owners_response is not None:
 | `request`                                                                                                                    | [operations.C1APIAppV1AppEntitlementOwnersListRequest](../../models/operations/c1apiappv1appentitlementownerslistrequest.md) | :heavy_check_mark:                                                                                                           | The request object to use for the request.                                                                                   |
 | `retries`                                                                                                                    | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)                                                             | :heavy_minus_sign:                                                                                                           | Configuration to override the default retry behavior of the client.                                                          |
 
-
 ### Response
 
 **[operations.C1APIAppV1AppEntitlementOwnersListResponse](../../models/operations/c1apiappv1appentitlementownerslistresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## remove
 
@@ -116,7 +118,6 @@ s = SDK(
         oauth="<YOUR_OAUTH_HERE>",
     ),
 )
-
 
 res = s.app_entitlement_owners.remove(request={
     "app_id": "<value>",
@@ -137,15 +138,16 @@ if res.remove_app_entitlement_owner_response is not None:
 | `request`                                                                                                                        | [operations.C1APIAppV1AppEntitlementOwnersRemoveRequest](../../models/operations/c1apiappv1appentitlementownersremoverequest.md) | :heavy_check_mark:                                                                                                               | The request object to use for the request.                                                                                       |
 | `retries`                                                                                                                        | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)                                                                 | :heavy_minus_sign:                                                                                                               | Configuration to override the default retry behavior of the client.                                                              |
 
-
 ### Response
 
 **[operations.C1APIAppV1AppEntitlementOwnersRemoveResponse](../../models/operations/c1apiappv1appentitlementownersremoveresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## set
 
@@ -163,7 +165,6 @@ s = SDK(
         oauth="<YOUR_OAUTH_HERE>",
     ),
 )
-
 
 res = s.app_entitlement_owners.set(request={
     "app_id": "<value>",
@@ -183,10 +184,10 @@ if res.set_app_entitlement_owners_response is not None:
 | `request`                                                                                                                  | [operations.C1APIAppV1AppEntitlementOwnersSetRequest](../../models/operations/c1apiappv1appentitlementownerssetrequest.md) | :heavy_check_mark:                                                                                                         | The request object to use for the request.                                                                                 |
 | `retries`                                                                                                                  | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)                                                           | :heavy_minus_sign:                                                                                                         | Configuration to override the default retry behavior of the client.                                                        |
 
-
 ### Response
 
 **[operations.C1APIAppV1AppEntitlementOwnersSetResponse](../../models/operations/c1apiappv1appentitlementownerssetresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |

@@ -12,22 +12,24 @@ from typing_extensions import Annotated, NotRequired
 
 class AppEntitlementWithExpiredTypedDict(TypedDict):
     r"""The AppEntitlementWithExpired message."""
-    
+
     app_user: NotRequired[AppUserTypedDict]
     r"""Application User that represents an account in the application."""
     user: NotRequired[UserTypedDict]
     r"""The User object provides all of the details for an user, as well as some configuration."""
     discovered: NotRequired[datetime]
     expired: NotRequired[datetime]
-    
+
 
 class AppEntitlementWithExpired(BaseModel):
     r"""The AppEntitlementWithExpired message."""
-    
+
     app_user: Annotated[Optional[AppUser], pydantic.Field(alias="appUser")] = None
     r"""Application User that represents an account in the application."""
+
     user: Optional[User] = None
     r"""The User object provides all of the details for an user, as well as some configuration."""
+
     discovered: Optional[datetime] = None
+
     expired: Optional[datetime] = None
-    

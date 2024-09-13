@@ -9,14 +9,13 @@ from typing_extensions import Annotated, NotRequired
 
 class WebhookProvisionTypedDict(TypedDict):
     r"""This provision step indicates that a webhook should be called to provision this entitlement."""
-    
+
     webhook_id: NotRequired[str]
     r"""The ID of the webhook to call for provisioning."""
-    
+
 
 class WebhookProvision(BaseModel):
     r"""This provision step indicates that a webhook should be called to provision this entitlement."""
-    
+
     webhook_id: Annotated[Optional[str], pydantic.Field(alias="webhookId")] = None
     r"""The ID of the webhook to call for provisioning."""
-    

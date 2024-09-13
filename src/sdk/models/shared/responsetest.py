@@ -8,18 +8,17 @@ from typing_extensions import NotRequired
 
 class ResponseTestTypedDict(TypedDict):
     r"""The ResponseTest message."""
-    
+
     version: NotRequired[str]
     r"""version contains the constant value \"v1\". Future versions of the Webhook Response
     will use a different string.
     """
-    
+
 
 class ResponseTest(BaseModel):
     r"""The ResponseTest message."""
-    
+
     version: Optional[str] = None
     r"""version contains the constant value \"v1\". Future versions of the Webhook Response
     will use a different string.
     """
-    

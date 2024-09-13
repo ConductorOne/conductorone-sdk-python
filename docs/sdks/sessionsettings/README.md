@@ -1,6 +1,8 @@
 # SessionSettings
 (*session_settings*)
 
+## Overview
+
 ### Available Operations
 
 * [get](#get) - Get
@@ -23,7 +25,6 @@ s = SDK(
     ),
 )
 
-
 res = s.session_settings.get()
 
 if res.get_session_settings_response is not None:
@@ -38,15 +39,16 @@ if res.get_session_settings_response is not None:
 | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
 | `retries`                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)    | :heavy_minus_sign:                                                  | Configuration to override the default retry behavior of the client. |
 
-
 ### Response
 
 **[operations.C1APISettingsV1SessionSettingsServiceGetResponse](../../models/operations/c1apisettingsv1sessionsettingsservicegetresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## update
 
@@ -65,7 +67,6 @@ s = SDK(
     ),
 )
 
-
 res = s.session_settings.update()
 
 if res.update_session_settings_response is not None:
@@ -81,10 +82,10 @@ if res.update_session_settings_response is not None:
 | `request`                                                                                  | [shared.UpdateSessionSettingsRequest](../../models/shared/updatesessionsettingsrequest.md) | :heavy_check_mark:                                                                         | The request object to use for the request.                                                 |
 | `retries`                                                                                  | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)                           | :heavy_minus_sign:                                                                         | Configuration to override the default retry behavior of the client.                        |
 
-
 ### Response
 
 **[operations.C1APISettingsV1SessionSettingsServiceUpdateResponse](../../models/operations/c1apisettingsv1sessionsettingsserviceupdateresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |

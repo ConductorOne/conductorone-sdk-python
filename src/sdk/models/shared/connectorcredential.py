@@ -10,7 +10,7 @@ from typing_extensions import Annotated, NotRequired
 
 class ConnectorCredentialTypedDict(TypedDict):
     r"""ConnectorCredential is used by a connector to authenticate with conductor one."""
-    
+
     app_id: NotRequired[str]
     r"""The appId of the app the connector is attached to."""
     client_id: NotRequired[str]
@@ -26,24 +26,36 @@ class ConnectorCredentialTypedDict(TypedDict):
     r"""The id of the ConnectorCredential."""
     last_used_at: NotRequired[datetime]
     updated_at: NotRequired[datetime]
-    
+
 
 class ConnectorCredential(BaseModel):
     r"""ConnectorCredential is used by a connector to authenticate with conductor one."""
-    
+
     app_id: Annotated[Optional[str], pydantic.Field(alias="appId")] = None
     r"""The appId of the app the connector is attached to."""
+
     client_id: Annotated[Optional[str], pydantic.Field(alias="clientId")] = None
     r"""The client id of the ConnectorCredential."""
+
     connector_id: Annotated[Optional[str], pydantic.Field(alias="connectorId")] = None
     r"""The connectorId of the connector the credential is associated with."""
+
     created_at: Annotated[Optional[datetime], pydantic.Field(alias="createdAt")] = None
+
     deleted_at: Annotated[Optional[datetime], pydantic.Field(alias="deletedAt")] = None
+
     display_name: Annotated[Optional[str], pydantic.Field(alias="displayName")] = None
     r"""The display name of the ConnectorCredential."""
-    expires_time: Annotated[Optional[datetime], pydantic.Field(alias="expiresTime")] = None
+
+    expires_time: Annotated[Optional[datetime], pydantic.Field(alias="expiresTime")] = (
+        None
+    )
+
     id: Optional[str] = None
     r"""The id of the ConnectorCredential."""
-    last_used_at: Annotated[Optional[datetime], pydantic.Field(alias="lastUsedAt")] = None
+
+    last_used_at: Annotated[Optional[datetime], pydantic.Field(alias="lastUsedAt")] = (
+        None
+    )
+
     updated_at: Annotated[Optional[datetime], pydantic.Field(alias="updatedAt")] = None
-    

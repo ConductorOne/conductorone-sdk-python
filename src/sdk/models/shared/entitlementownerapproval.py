@@ -10,25 +10,31 @@ from typing_extensions import Annotated, NotRequired
 
 class EntitlementOwnerApprovalTypedDict(TypedDict):
     r"""The entitlement owner approval allows configuration of the approval step when the target approvers are the entitlement owners."""
-    
+
     allow_self_approval: NotRequired[bool]
     r"""Configuration to allow self approval if the target user is an entitlement owner during this step."""
     fallback: NotRequired[bool]
     r"""Configuration to allow a fallback if the entitlement owner cannot be identified."""
     fallback_user_ids: NotRequired[Nullable[List[str]]]
     r"""Configuration to specific which users to fallback to if fallback is enabled and the entitlement owner cannot be identified."""
-    
+
 
 class EntitlementOwnerApproval(BaseModel):
     r"""The entitlement owner approval allows configuration of the approval step when the target approvers are the entitlement owners."""
-    
-    allow_self_approval: Annotated[Optional[bool], pydantic.Field(alias="allowSelfApproval")] = None
+
+    allow_self_approval: Annotated[
+        Optional[bool], pydantic.Field(alias="allowSelfApproval")
+    ] = None
     r"""Configuration to allow self approval if the target user is an entitlement owner during this step."""
+
     fallback: Optional[bool] = None
     r"""Configuration to allow a fallback if the entitlement owner cannot be identified."""
-    fallback_user_ids: Annotated[OptionalNullable[List[str]], pydantic.Field(alias="fallbackUserIds")] = UNSET
+
+    fallback_user_ids: Annotated[
+        OptionalNullable[List[str]], pydantic.Field(alias="fallbackUserIds")
+    ] = UNSET
     r"""Configuration to specific which users to fallback to if fallback is enabled and the entitlement owner cannot be identified."""
-    
+
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
         optional_fields = ["allowSelfApproval", "fallback", "fallbackUserIds"]
@@ -42,21 +48,19 @@ class EntitlementOwnerApproval(BaseModel):
         for n, f in self.model_fields.items():
             k = f.alias or n
             val = serialized.get(k)
+            serialized.pop(k, None)
+
+            optional_nullable = k in optional_fields and k in nullable_fields
+            is_set = (
+                self.__pydantic_fields_set__.intersection({n})
+                or k in null_default_fields
+            )  # pylint: disable=no-member
 
             if val is not None and val != UNSET_SENTINEL:
                 m[k] = val
             elif val != UNSET_SENTINEL and (
-                not k in optional_fields
-                or (
-                    k in optional_fields
-                    and k in nullable_fields
-                    and (
-                        self.__pydantic_fields_set__.intersection({n})
-                        or k in null_default_fields
-                    )  # pylint: disable=no-member
-                )
+                not k in optional_fields or (optional_nullable and is_set)
             ):
                 m[k] = val
 
         return m
-        

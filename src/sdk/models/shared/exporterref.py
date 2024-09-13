@@ -9,14 +9,13 @@ from typing_extensions import Annotated, NotRequired
 
 class ExporterRefTypedDict(TypedDict):
     r"""The ExporterRef message."""
-    
+
     export_id: NotRequired[str]
     r"""The exportId field."""
-    
+
 
 class ExporterRef(BaseModel):
     r"""The ExporterRef message."""
-    
+
     export_id: Annotated[Optional[str], pydantic.Field(alias="exportId")] = None
     r"""The exportId field."""
-    

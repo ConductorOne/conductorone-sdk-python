@@ -10,18 +10,20 @@ from typing_extensions import Annotated, NotRequired
 
 class DirectoryServiceCreateRequestTypedDict(TypedDict):
     r"""Uplevel an app into a full directory."""
-    
+
     directory_expand_mask: NotRequired[DirectoryExpandMaskTypedDict]
     r"""The fields to be included in the directory response."""
     app_id: NotRequired[str]
     r"""The AppID to make into a directory, providing identities and more for the C1 app."""
-    
+
 
 class DirectoryServiceCreateRequest(BaseModel):
     r"""Uplevel an app into a full directory."""
-    
-    directory_expand_mask: Annotated[Optional[DirectoryExpandMask], pydantic.Field(alias="expandMask")] = None
+
+    directory_expand_mask: Annotated[
+        Optional[DirectoryExpandMask], pydantic.Field(alias="expandMask")
+    ] = None
     r"""The fields to be included in the directory response."""
+
     app_id: Annotated[Optional[str], pydantic.Field(alias="appId")] = None
     r"""The AppID to make into a directory, providing identities and more for the C1 app."""
-    

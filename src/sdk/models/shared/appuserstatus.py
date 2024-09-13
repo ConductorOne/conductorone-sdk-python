@@ -9,25 +9,27 @@ from typing_extensions import NotRequired
 
 class Status(str, Enum):
     r"""The application user status field."""
+
     STATUS_UNSPECIFIED = "STATUS_UNSPECIFIED"
     STATUS_ENABLED = "STATUS_ENABLED"
     STATUS_DISABLED = "STATUS_DISABLED"
     STATUS_DELETED = "STATUS_DELETED"
 
+
 class AppUserStatusTypedDict(TypedDict):
     r"""The satus of the applicaiton user."""
-    
+
     details: NotRequired[str]
     r"""The details of applicaiton user status."""
     status: NotRequired[Status]
     r"""The application user status field."""
-    
+
 
 class AppUserStatus(BaseModel):
     r"""The satus of the applicaiton user."""
-    
+
     details: Optional[str] = None
     r"""The details of applicaiton user status."""
+
     status: Optional[Status] = None
     r"""The application user status field."""
-    

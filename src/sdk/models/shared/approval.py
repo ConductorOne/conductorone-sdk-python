@@ -3,9 +3,13 @@
 from __future__ import annotations
 from .appgroupapproval import AppGroupApproval, AppGroupApprovalTypedDict
 from .appownerapproval import AppOwnerApproval, AppOwnerApprovalTypedDict
-from .entitlementownerapproval import EntitlementOwnerApproval, EntitlementOwnerApprovalTypedDict
+from .entitlementownerapproval import (
+    EntitlementOwnerApproval,
+    EntitlementOwnerApprovalTypedDict,
+)
 from .expressionapproval import ExpressionApproval, ExpressionApprovalTypedDict
 from .managerapproval import ManagerApproval, ManagerApprovalTypedDict
+from .resourceownerapproval import ResourceOwnerApproval, ResourceOwnerApprovalTypedDict
 from .selfapproval import SelfApproval, SelfApprovalTypedDict
 from .userapproval import UserApproval, UserApprovalTypedDict
 from .webhookapproval import WebhookApproval, WebhookApprovalTypedDict
@@ -28,9 +32,10 @@ class ApprovalTypedDict(TypedDict):
     - entitlementOwners
     - expression
     - webhook
+    - resourceOwners
 
     """
-    
+
     app_group_approval: NotRequired[Nullable[AppGroupApprovalTypedDict]]
     r"""The AppGroupApproval object provides the configuration for setting a group as the approvers of an approval policy step."""
     app_owner_approval: NotRequired[Nullable[AppOwnerApprovalTypedDict]]
@@ -41,6 +46,8 @@ class ApprovalTypedDict(TypedDict):
     r"""The ExpressionApproval message."""
     manager_approval: NotRequired[Nullable[ManagerApprovalTypedDict]]
     r"""The manager approval object provides configuration options for approval when the target of the approval is the manager of the user in the task."""
+    resource_owner_approval: NotRequired[Nullable[ResourceOwnerApprovalTypedDict]]
+    r"""The resource owner approval allows configuration of the approval step when the target approvers are the resource owners."""
     self_approval: NotRequired[Nullable[SelfApprovalTypedDict]]
     r"""The self approval object describes the configuration of a policy step that needs to be approved by the target of the request."""
     user_approval: NotRequired[Nullable[UserApprovalTypedDict]]
@@ -57,7 +64,7 @@ class ApprovalTypedDict(TypedDict):
     r"""Configuration to require a reason when denying this step."""
     require_reassignment_reason: NotRequired[bool]
     r"""Configuration to require a reason when reassigning this step."""
-    
+
 
 class Approval(BaseModel):
     r"""The Approval message.
@@ -71,40 +78,108 @@ class Approval(BaseModel):
     - entitlementOwners
     - expression
     - webhook
+    - resourceOwners
 
     """
-    
-    app_group_approval: Annotated[OptionalNullable[AppGroupApproval], pydantic.Field(alias="group")] = UNSET
+
+    app_group_approval: Annotated[
+        OptionalNullable[AppGroupApproval], pydantic.Field(alias="group")
+    ] = UNSET
     r"""The AppGroupApproval object provides the configuration for setting a group as the approvers of an approval policy step."""
-    app_owner_approval: Annotated[OptionalNullable[AppOwnerApproval], pydantic.Field(alias="appOwners")] = UNSET
+
+    app_owner_approval: Annotated[
+        OptionalNullable[AppOwnerApproval], pydantic.Field(alias="appOwners")
+    ] = UNSET
     r"""App owner approval provides the configuration for an approval step when the app owner is the target."""
-    entitlement_owner_approval: Annotated[OptionalNullable[EntitlementOwnerApproval], pydantic.Field(alias="entitlementOwners")] = UNSET
+
+    entitlement_owner_approval: Annotated[
+        OptionalNullable[EntitlementOwnerApproval],
+        pydantic.Field(alias="entitlementOwners"),
+    ] = UNSET
     r"""The entitlement owner approval allows configuration of the approval step when the target approvers are the entitlement owners."""
-    expression_approval: Annotated[OptionalNullable[ExpressionApproval], pydantic.Field(alias="expression")] = UNSET
+
+    expression_approval: Annotated[
+        OptionalNullable[ExpressionApproval], pydantic.Field(alias="expression")
+    ] = UNSET
     r"""The ExpressionApproval message."""
-    manager_approval: Annotated[OptionalNullable[ManagerApproval], pydantic.Field(alias="manager")] = UNSET
+
+    manager_approval: Annotated[
+        OptionalNullable[ManagerApproval], pydantic.Field(alias="manager")
+    ] = UNSET
     r"""The manager approval object provides configuration options for approval when the target of the approval is the manager of the user in the task."""
-    self_approval: Annotated[OptionalNullable[SelfApproval], pydantic.Field(alias="self")] = UNSET
+
+    resource_owner_approval: Annotated[
+        OptionalNullable[ResourceOwnerApproval], pydantic.Field(alias="resourceOwners")
+    ] = UNSET
+    r"""The resource owner approval allows configuration of the approval step when the target approvers are the resource owners."""
+
+    self_approval: Annotated[
+        OptionalNullable[SelfApproval], pydantic.Field(alias="self")
+    ] = UNSET
     r"""The self approval object describes the configuration of a policy step that needs to be approved by the target of the request."""
-    user_approval: Annotated[OptionalNullable[UserApproval], pydantic.Field(alias="users")] = UNSET
+
+    user_approval: Annotated[
+        OptionalNullable[UserApproval], pydantic.Field(alias="users")
+    ] = UNSET
     r"""The user approval object describes the approval configuration of a policy step that needs to be approved by a specific list of users."""
-    webhook_approval: Annotated[OptionalNullable[WebhookApproval], pydantic.Field(alias="webhook")] = UNSET
+
+    webhook_approval: Annotated[
+        OptionalNullable[WebhookApproval], pydantic.Field(alias="webhook")
+    ] = UNSET
     r"""The WebhookApproval message."""
-    allow_reassignment: Annotated[Optional[bool], pydantic.Field(alias="allowReassignment")] = None
+
+    allow_reassignment: Annotated[
+        Optional[bool], pydantic.Field(alias="allowReassignment")
+    ] = None
     r"""Configuration to allow reassignment by reviewers during this step."""
+
     assigned: Optional[bool] = None
     r"""A field indicating whether this step is assigned."""
-    require_approval_reason: Annotated[Optional[bool], pydantic.Field(alias="requireApprovalReason")] = None
+
+    require_approval_reason: Annotated[
+        Optional[bool], pydantic.Field(alias="requireApprovalReason")
+    ] = None
     r"""Configuration to require a reason when approving this step."""
-    require_denial_reason: Annotated[Optional[bool], pydantic.Field(alias="requireDenialReason")] = None
+
+    require_denial_reason: Annotated[
+        Optional[bool], pydantic.Field(alias="requireDenialReason")
+    ] = None
     r"""Configuration to require a reason when denying this step."""
-    require_reassignment_reason: Annotated[Optional[bool], pydantic.Field(alias="requireReassignmentReason")] = None
+
+    require_reassignment_reason: Annotated[
+        Optional[bool], pydantic.Field(alias="requireReassignmentReason")
+    ] = None
     r"""Configuration to require a reason when reassigning this step."""
-    
+
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
-        optional_fields = ["AppGroupApproval", "AppOwnerApproval", "EntitlementOwnerApproval", "ExpressionApproval", "ManagerApproval", "SelfApproval", "UserApproval", "WebhookApproval", "allowReassignment", "assigned", "requireApprovalReason", "requireDenialReason", "requireReassignmentReason"]
-        nullable_fields = ["AppGroupApproval", "AppOwnerApproval", "EntitlementOwnerApproval", "ExpressionApproval", "ManagerApproval", "SelfApproval", "UserApproval", "WebhookApproval"]
+        optional_fields = [
+            "AppGroupApproval",
+            "AppOwnerApproval",
+            "EntitlementOwnerApproval",
+            "ExpressionApproval",
+            "ManagerApproval",
+            "ResourceOwnerApproval",
+            "SelfApproval",
+            "UserApproval",
+            "WebhookApproval",
+            "allowReassignment",
+            "assigned",
+            "requireApprovalReason",
+            "requireDenialReason",
+            "requireReassignmentReason",
+        ]
+        nullable_fields = [
+            "AppGroupApproval",
+            "AppOwnerApproval",
+            "EntitlementOwnerApproval",
+            "ExpressionApproval",
+            "ManagerApproval",
+            "ResourceOwnerApproval",
+            "SelfApproval",
+            "UserApproval",
+            "WebhookApproval",
+        ]
         null_default_fields = []
 
         serialized = handler(self)
@@ -114,21 +189,19 @@ class Approval(BaseModel):
         for n, f in self.model_fields.items():
             k = f.alias or n
             val = serialized.get(k)
+            serialized.pop(k, None)
+
+            optional_nullable = k in optional_fields and k in nullable_fields
+            is_set = (
+                self.__pydantic_fields_set__.intersection({n})
+                or k in null_default_fields
+            )  # pylint: disable=no-member
 
             if val is not None and val != UNSET_SENTINEL:
                 m[k] = val
             elif val != UNSET_SENTINEL and (
-                not k in optional_fields
-                or (
-                    k in optional_fields
-                    and k in nullable_fields
-                    and (
-                        self.__pydantic_fields_set__.intersection({n})
-                        or k in null_default_fields
-                    )  # pylint: disable=no-member
-                )
+                not k in optional_fields or (optional_nullable and is_set)
             ):
                 m[k] = val
 
         return m
-        

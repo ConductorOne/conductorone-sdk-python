@@ -10,7 +10,7 @@ from typing_extensions import Annotated, NotRequired
 
 class WebhookTypedDict(TypedDict):
     r"""The Webhook message."""
-    
+
     created_at: NotRequired[datetime]
     deleted_at: NotRequired[datetime]
     description: NotRequired[str]
@@ -22,20 +22,25 @@ class WebhookTypedDict(TypedDict):
     updated_at: NotRequired[datetime]
     url: NotRequired[str]
     r"""The url field."""
-    
+
 
 class Webhook(BaseModel):
     r"""The Webhook message."""
-    
+
     created_at: Annotated[Optional[datetime], pydantic.Field(alias="createdAt")] = None
+
     deleted_at: Annotated[Optional[datetime], pydantic.Field(alias="deletedAt")] = None
+
     description: Optional[str] = None
     r"""The description field."""
+
     display_name: Annotated[Optional[str], pydantic.Field(alias="displayName")] = None
     r"""The displayName field."""
+
     id: Optional[str] = None
     r"""The id field."""
+
     updated_at: Annotated[Optional[datetime], pydantic.Field(alias="updatedAt")] = None
+
     url: Optional[str] = None
     r"""The url field."""
-    

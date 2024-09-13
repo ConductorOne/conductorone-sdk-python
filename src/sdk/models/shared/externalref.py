@@ -10,27 +10,32 @@ from typing_extensions import Annotated, NotRequired
 
 class ExternalRefSource(str, Enum):
     r"""The source of the external reference."""
+
     UNSPECIFIED = "UNSPECIFIED"
     JIRA = "JIRA"
 
+
 class ExternalRefTypedDict(TypedDict):
     r"""A reference to an external source. This value is unused currently, but may be brought back."""
-    
+
     external_ref_source: NotRequired[ExternalRefSource]
     r"""The source of the external reference."""
     name: NotRequired[str]
     r"""The name of the external reference."""
     url: NotRequired[str]
     r"""The URL to the external reference."""
-    
+
 
 class ExternalRef(BaseModel):
     r"""A reference to an external source. This value is unused currently, but may be brought back."""
-    
-    external_ref_source: Annotated[Optional[ExternalRefSource], pydantic.Field(alias="externalRefSource")] = None
+
+    external_ref_source: Annotated[
+        Optional[ExternalRefSource], pydantic.Field(alias="externalRefSource")
+    ] = None
     r"""The source of the external reference."""
+
     name: Optional[str] = None
     r"""The name of the external reference."""
+
     url: Optional[str] = None
     r"""The URL to the external reference."""
-    

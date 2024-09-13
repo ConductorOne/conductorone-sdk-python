@@ -1,6 +1,8 @@
 # SystemLog
 (*system_log*)
 
+## Overview
+
 ### Available Operations
 
 * [list_events](#list_events) - List Events
@@ -25,7 +27,6 @@ s = SDK(
     ),
 )
 
-
 res = s.system_log.list_events()
 
 if res.system_log_service_list_events_response is not None:
@@ -41,10 +42,10 @@ if res.system_log_service_list_events_response is not None:
 | `request`                                                                                            | [shared.SystemLogServiceListEventsRequest](../../models/shared/systemlogservicelisteventsrequest.md) | :heavy_check_mark:                                                                                   | The request object to use for the request.                                                           |
 | `retries`                                                                                            | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)                                     | :heavy_minus_sign:                                                                                   | Configuration to override the default retry behavior of the client.                                  |
 
-
 ### Response
 
 **[operations.C1APISystemlogV1SystemLogServiceListEventsResponse](../../models/operations/c1apisystemlogv1systemlogservicelisteventsresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |

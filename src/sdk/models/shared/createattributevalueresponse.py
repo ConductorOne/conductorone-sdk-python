@@ -10,14 +10,15 @@ from typing_extensions import Annotated, NotRequired
 
 class CreateAttributeValueResponseTypedDict(TypedDict):
     r"""CreateAttributeValueResponse is the response for creating an attribute value."""
-    
+
     attribute_value: NotRequired[AttributeValueTypedDict]
     r"""AttributeValue is the value of an attribute of a defined type."""
-    
+
 
 class CreateAttributeValueResponse(BaseModel):
     r"""CreateAttributeValueResponse is the response for creating an attribute value."""
-    
-    attribute_value: Annotated[Optional[AttributeValue], pydantic.Field(alias="value")] = None
+
+    attribute_value: Annotated[
+        Optional[AttributeValue], pydantic.Field(alias="value")
+    ] = None
     r"""AttributeValue is the value of an attribute of a defined type."""
-    

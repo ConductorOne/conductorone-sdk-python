@@ -5,7 +5,10 @@ from .approval import Approval, ApprovalTypedDict
 from .approvedaction import ApprovedAction, ApprovedActionTypedDict
 from .deniedaction import DeniedAction, DeniedActionTypedDict
 from .reassignedaction import ReassignedAction, ReassignedActionTypedDict
-from .reassignedbyerroraction import ReassignedByErrorAction, ReassignedByErrorActionTypedDict
+from .reassignedbyerroraction import (
+    ReassignedByErrorAction,
+    ReassignedByErrorActionTypedDict,
+)
 from .restartaction import RestartAction, RestartActionTypedDict
 from enum import Enum
 import pydantic
@@ -17,11 +20,15 @@ from typing_extensions import Annotated, NotRequired
 
 class ApprovalInstanceState(str, Enum):
     r"""The state of the approval instance"""
+
     APPROVAL_INSTANCE_STATE_UNSPECIFIED = "APPROVAL_INSTANCE_STATE_UNSPECIFIED"
     APPROVAL_INSTANCE_STATE_INIT = "APPROVAL_INSTANCE_STATE_INIT"
-    APPROVAL_INSTANCE_STATE_SENDING_NOTIFICATIONS = "APPROVAL_INSTANCE_STATE_SENDING_NOTIFICATIONS"
+    APPROVAL_INSTANCE_STATE_SENDING_NOTIFICATIONS = (
+        "APPROVAL_INSTANCE_STATE_SENDING_NOTIFICATIONS"
+    )
     APPROVAL_INSTANCE_STATE_WAITING = "APPROVAL_INSTANCE_STATE_WAITING"
     APPROVAL_INSTANCE_STATE_DONE = "APPROVAL_INSTANCE_STATE_DONE"
+
 
 class ApprovalInstanceTypedDict(TypedDict):
     r"""The approval instance object describes the way a policy step should be approved as well as its outcomes and state.
@@ -34,7 +41,7 @@ class ApprovalInstanceTypedDict(TypedDict):
     - reassignedByError
 
     """
-    
+
     approval: NotRequired[Nullable[ApprovalTypedDict]]
     r"""The Approval message.
 
@@ -47,6 +54,7 @@ class ApprovalInstanceTypedDict(TypedDict):
     - entitlementOwners
     - expression
     - webhook
+    - resourceOwners
 
     """
     approved_action: NotRequired[Nullable[ApprovedActionTypedDict]]
@@ -61,7 +69,7 @@ class ApprovalInstanceTypedDict(TypedDict):
     r"""The restart action describes the outcome of policy steps for when the task was restarted. This can be applied to multiple steps since restart skips all pending next steps."""
     state: NotRequired[ApprovalInstanceState]
     r"""The state of the approval instance"""
-    
+
 
 class ApprovalInstance(BaseModel):
     r"""The approval instance object describes the way a policy step should be approved as well as its outcomes and state.
@@ -74,7 +82,7 @@ class ApprovalInstance(BaseModel):
     - reassignedByError
 
     """
-    
+
     approval: OptionalNullable[Approval] = UNSET
     r"""The Approval message.
 
@@ -87,25 +95,58 @@ class ApprovalInstance(BaseModel):
     - entitlementOwners
     - expression
     - webhook
+    - resourceOwners
 
     """
-    approved_action: Annotated[OptionalNullable[ApprovedAction], pydantic.Field(alias="approved")] = UNSET
+
+    approved_action: Annotated[
+        OptionalNullable[ApprovedAction], pydantic.Field(alias="approved")
+    ] = UNSET
     r"""The approved action indicates that the approvalinstance had an outcome of approved."""
-    denied_action: Annotated[OptionalNullable[DeniedAction], pydantic.Field(alias="denied")] = UNSET
+
+    denied_action: Annotated[
+        OptionalNullable[DeniedAction], pydantic.Field(alias="denied")
+    ] = UNSET
     r"""The denied action indicates that the c1.api.policy.v1.ApprovalInstance had an outcome of denied."""
-    reassigned_action: Annotated[OptionalNullable[ReassignedAction], pydantic.Field(alias="reassigned")] = UNSET
+
+    reassigned_action: Annotated[
+        OptionalNullable[ReassignedAction], pydantic.Field(alias="reassigned")
+    ] = UNSET
     r"""The ReassignedAction object describes the outcome of a policy step that has been reassigned."""
-    reassigned_by_error_action: Annotated[OptionalNullable[ReassignedByErrorAction], pydantic.Field(alias="reassignedByError")] = UNSET
+
+    reassigned_by_error_action: Annotated[
+        OptionalNullable[ReassignedByErrorAction],
+        pydantic.Field(alias="reassignedByError"),
+    ] = UNSET
     r"""The ReassignedByErrorAction object describes the outcome of a policy step that has been reassigned because it had an error provisioning."""
-    restart_action: Annotated[OptionalNullable[RestartAction], pydantic.Field(alias="restarted")] = UNSET
+
+    restart_action: Annotated[
+        OptionalNullable[RestartAction], pydantic.Field(alias="restarted")
+    ] = UNSET
     r"""The restart action describes the outcome of policy steps for when the task was restarted. This can be applied to multiple steps since restart skips all pending next steps."""
+
     state: Optional[ApprovalInstanceState] = None
     r"""The state of the approval instance"""
-    
+
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
-        optional_fields = ["Approval", "ApprovedAction", "DeniedAction", "ReassignedAction", "ReassignedByErrorAction", "RestartAction", "state"]
-        nullable_fields = ["Approval", "ApprovedAction", "DeniedAction", "ReassignedAction", "ReassignedByErrorAction", "RestartAction"]
+        optional_fields = [
+            "Approval",
+            "ApprovedAction",
+            "DeniedAction",
+            "ReassignedAction",
+            "ReassignedByErrorAction",
+            "RestartAction",
+            "state",
+        ]
+        nullable_fields = [
+            "Approval",
+            "ApprovedAction",
+            "DeniedAction",
+            "ReassignedAction",
+            "ReassignedByErrorAction",
+            "RestartAction",
+        ]
         null_default_fields = []
 
         serialized = handler(self)
@@ -115,21 +156,19 @@ class ApprovalInstance(BaseModel):
         for n, f in self.model_fields.items():
             k = f.alias or n
             val = serialized.get(k)
+            serialized.pop(k, None)
+
+            optional_nullable = k in optional_fields and k in nullable_fields
+            is_set = (
+                self.__pydantic_fields_set__.intersection({n})
+                or k in null_default_fields
+            )  # pylint: disable=no-member
 
             if val is not None and val != UNSET_SENTINEL:
                 m[k] = val
             elif val != UNSET_SENTINEL and (
-                not k in optional_fields
-                or (
-                    k in optional_fields
-                    and k in nullable_fields
-                    and (
-                        self.__pydantic_fields_set__.intersection({n})
-                        or k in null_default_fields
-                    )  # pylint: disable=no-member
-                )
+                not k in optional_fields or (optional_nullable and is_set)
             ):
                 m[k] = val
 
         return m
-        

@@ -9,14 +9,13 @@ from typing_extensions import NotRequired
 
 class UpdatePolicyResponseTypedDict(TypedDict):
     r"""The UpdatePolicyResponse message contains the updated policy object."""
-    
+
     policy: NotRequired[PolicyTypedDict]
     r"""A policy describes the behavior of the ConductorOne system when processing a task. You can describe the type, approvers, fallback behavior, and escalation processes."""
-    
+
 
 class UpdatePolicyResponse(BaseModel):
     r"""The UpdatePolicyResponse message contains the updated policy object."""
-    
+
     policy: Optional[Policy] = None
     r"""A policy describes the behavior of the ConductorOne system when processing a task. You can describe the type, approvers, fallback behavior, and escalation processes."""
-    

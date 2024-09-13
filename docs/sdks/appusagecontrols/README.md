@@ -1,6 +1,8 @@
 # AppUsageControls
 (*app_usage_controls*)
 
+## Overview
+
 ### Available Operations
 
 * [get](#get) - Get
@@ -23,7 +25,6 @@ s = SDK(
     ),
 )
 
-
 res = s.app_usage_controls.get(request={
     "app_id": "<value>",
 })
@@ -41,15 +42,16 @@ if res.get_app_usage_controls_response is not None:
 | `request`                                                                                                                        | [operations.C1APIAppV1AppUsageControlsServiceGetRequest](../../models/operations/c1apiappv1appusagecontrolsservicegetrequest.md) | :heavy_check_mark:                                                                                                               | The request object to use for the request.                                                                                       |
 | `retries`                                                                                                                        | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)                                                                 | :heavy_minus_sign:                                                                                                               | Configuration to override the default retry behavior of the client.                                                              |
 
-
 ### Response
 
 **[operations.C1APIAppV1AppUsageControlsServiceGetResponse](../../models/operations/c1apiappv1appusagecontrolsservicegetresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## update
 
@@ -68,7 +70,6 @@ s = SDK(
     ),
 )
 
-
 res = s.app_usage_controls.update(request={
     "app_id": "<value>",
 })
@@ -86,10 +87,10 @@ if res.update_app_usage_controls_response is not None:
 | `request`                                                                                                                              | [operations.C1APIAppV1AppUsageControlsServiceUpdateRequest](../../models/operations/c1apiappv1appusagecontrolsserviceupdaterequest.md) | :heavy_check_mark:                                                                                                                     | The request object to use for the request.                                                                                             |
 | `retries`                                                                                                                              | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)                                                                       | :heavy_minus_sign:                                                                                                                     | Configuration to override the default retry behavior of the client.                                                                    |
 
-
 ### Response
 
 **[operations.C1APIAppV1AppUsageControlsServiceUpdateResponse](../../models/operations/c1apiappv1appusagecontrolsserviceupdateresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |

@@ -7,10 +7,7 @@ from typing import TypedDict
 
 class WebhooksServiceDeleteResponseTypedDict(TypedDict):
     r"""Empty response body. Status code indicates success."""
-    
-    
+
 
 class WebhooksServiceDeleteResponse(BaseModel):
     r"""Empty response body. Status code indicates success."""
-    
-    

@@ -2,7 +2,9 @@
 
 from __future__ import annotations
 import httpx
-from sdk.models.shared import appresourceservicelistresponse as shared_appresourceservicelistresponse
+from sdk.models.shared import (
+    appresourceservicelistresponse as shared_appresourceservicelistresponse,
+)
 from sdk.types import BaseModel
 from sdk.utils import FieldMetadata, PathParamMetadata, QueryParamMetadata
 from typing import Optional, TypedDict
@@ -14,14 +16,27 @@ class C1APIAppV1AppResourceServiceListRequestTypedDict(TypedDict):
     app_resource_type_id: str
     page_size: NotRequired[int]
     page_token: NotRequired[str]
-    
+
 
 class C1APIAppV1AppResourceServiceListRequest(BaseModel):
-    app_id: Annotated[str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))]
-    app_resource_type_id: Annotated[str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))]
-    page_size: Annotated[Optional[int], FieldMetadata(query=QueryParamMetadata(style="form", explode=True))] = None
-    page_token: Annotated[Optional[str], FieldMetadata(query=QueryParamMetadata(style="form", explode=True))] = None
-    
+    app_id: Annotated[
+        str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))
+    ]
+
+    app_resource_type_id: Annotated[
+        str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))
+    ]
+
+    page_size: Annotated[
+        Optional[int],
+        FieldMetadata(query=QueryParamMetadata(style="form", explode=True)),
+    ] = None
+
+    page_token: Annotated[
+        Optional[str],
+        FieldMetadata(query=QueryParamMetadata(style="form", explode=True)),
+    ] = None
+
 
 class C1APIAppV1AppResourceServiceListResponseTypedDict(TypedDict):
     content_type: str
@@ -30,17 +45,23 @@ class C1APIAppV1AppResourceServiceListResponseTypedDict(TypedDict):
     r"""HTTP response status code for this operation"""
     raw_response: httpx.Response
     r"""Raw HTTP response; suitable for custom response parsing"""
-    app_resource_service_list_response: NotRequired[shared_appresourceservicelistresponse.AppResourceServiceListResponseTypedDict]
+    app_resource_service_list_response: NotRequired[
+        shared_appresourceservicelistresponse.AppResourceServiceListResponseTypedDict
+    ]
     r"""The AppResourceServiceListResponse message contains a list of results and a nextPageToken if applicable."""
-    
+
 
 class C1APIAppV1AppResourceServiceListResponse(BaseModel):
     content_type: str
     r"""HTTP response content type for this operation"""
+
     status_code: int
     r"""HTTP response status code for this operation"""
+
     raw_response: httpx.Response
     r"""Raw HTTP response; suitable for custom response parsing"""
-    app_resource_service_list_response: Optional[shared_appresourceservicelistresponse.AppResourceServiceListResponse] = None
+
+    app_resource_service_list_response: Optional[
+        shared_appresourceservicelistresponse.AppResourceServiceListResponse
+    ] = None
     r"""The AppResourceServiceListResponse message contains a list of results and a nextPageToken if applicable."""
-    

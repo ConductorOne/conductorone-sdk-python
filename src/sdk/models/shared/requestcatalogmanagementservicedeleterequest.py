@@ -7,10 +7,7 @@ from typing import TypedDict
 
 class RequestCatalogManagementServiceDeleteRequestTypedDict(TypedDict):
     r"""Delete a request catalog by Id. It uses URL value for input."""
-    
-    
+
 
 class RequestCatalogManagementServiceDeleteRequest(BaseModel):
     r"""Delete a request catalog by Id. It uses URL value for input."""
-    
-    

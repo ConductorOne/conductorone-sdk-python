@@ -10,7 +10,7 @@ from typing_extensions import Annotated, NotRequired
 
 class AppEntitlementUserBindingTypedDict(TypedDict):
     r"""The AppEntitlementUserBinding represents the relationship that gives an app user access to an app entitlement"""
-    
+
     app_entitlement_id: NotRequired[str]
     r"""The ID of the app entitlement that the app user has access to"""
     app_id: NotRequired[str]
@@ -20,18 +20,26 @@ class AppEntitlementUserBindingTypedDict(TypedDict):
     created_at: NotRequired[datetime]
     deleted_at: NotRequired[datetime]
     deprovision_at: NotRequired[datetime]
-    
+
 
 class AppEntitlementUserBinding(BaseModel):
     r"""The AppEntitlementUserBinding represents the relationship that gives an app user access to an app entitlement"""
-    
-    app_entitlement_id: Annotated[Optional[str], pydantic.Field(alias="appEntitlementId")] = None
+
+    app_entitlement_id: Annotated[
+        Optional[str], pydantic.Field(alias="appEntitlementId")
+    ] = None
     r"""The ID of the app entitlement that the app user has access to"""
+
     app_id: Annotated[Optional[str], pydantic.Field(alias="appId")] = None
     r"""The ID of the app associated with the app entitlement"""
+
     app_user_id: Annotated[Optional[str], pydantic.Field(alias="appUserId")] = None
     r"""The ID of the app user that has access to the app entitlement"""
+
     created_at: Annotated[Optional[datetime], pydantic.Field(alias="createdAt")] = None
+
     deleted_at: Annotated[Optional[datetime], pydantic.Field(alias="deletedAt")] = None
-    deprovision_at: Annotated[Optional[datetime], pydantic.Field(alias="deprovisionAt")] = None
-    
+
+    deprovision_at: Annotated[
+        Optional[datetime], pydantic.Field(alias="deprovisionAt")
+    ] = None

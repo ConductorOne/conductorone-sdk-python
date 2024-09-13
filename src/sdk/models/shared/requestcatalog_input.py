@@ -11,7 +11,7 @@ from typing_extensions import Annotated, NotRequired
 
 class RequestCatalogInputTypedDict(TypedDict):
     r"""The RequestCatalog is used for managing which entitlements are requestable, and who can request them."""
-    
+
     access_entitlements: NotRequired[Nullable[List[AppEntitlementInputTypedDict]]]
     r"""An array of app entitlements that, if the user has, can view the contents of this catalog."""
     app_ids: NotRequired[Nullable[List[str]]]
@@ -30,33 +30,62 @@ class RequestCatalogInputTypedDict(TypedDict):
     r"""Whether all the entitlements in the catalog can be requests at once. Your tenant must have the bundles feature to use this."""
     visible_to_everyone: NotRequired[bool]
     r"""If this is true, the access entitlement requirement is ignored."""
-    
+
 
 class RequestCatalogInput(BaseModel):
     r"""The RequestCatalog is used for managing which entitlements are requestable, and who can request them."""
-    
-    access_entitlements: Annotated[OptionalNullable[List[AppEntitlementInput]], pydantic.Field(alias="accessEntitlements")] = UNSET
+
+    access_entitlements: Annotated[
+        OptionalNullable[List[AppEntitlementInput]],
+        pydantic.Field(alias="accessEntitlements"),
+    ] = UNSET
     r"""An array of app entitlements that, if the user has, can view the contents of this catalog."""
-    app_ids: Annotated[OptionalNullable[List[str]], pydantic.Field(alias="appIds")] = UNSET
+
+    app_ids: Annotated[OptionalNullable[List[str]], pydantic.Field(alias="appIds")] = (
+        UNSET
+    )
     r"""The Apps contained in this request catalog."""
-    created_by_user_id: Annotated[Optional[str], pydantic.Field(alias="createdByUserId")] = None
+
+    created_by_user_id: Annotated[
+        Optional[str], pydantic.Field(alias="createdByUserId")
+    ] = None
     r"""The id of the user this request catalog was created by."""
+
     description: Optional[str] = None
     r"""The description of the request catalog."""
+
     display_name: Annotated[Optional[str], pydantic.Field(alias="displayName")] = None
     r"""The display name of the request catalog."""
+
     id: Optional[str] = None
     r"""The id of the request catalog."""
+
     published: Optional[bool] = None
     r"""Whether or not this catalog is published."""
-    request_bundle: Annotated[Optional[bool], pydantic.Field(alias="requestBundle")] = None
+
+    request_bundle: Annotated[Optional[bool], pydantic.Field(alias="requestBundle")] = (
+        None
+    )
     r"""Whether all the entitlements in the catalog can be requests at once. Your tenant must have the bundles feature to use this."""
-    visible_to_everyone: Annotated[Optional[bool], pydantic.Field(alias="visibleToEveryone")] = None
+
+    visible_to_everyone: Annotated[
+        Optional[bool], pydantic.Field(alias="visibleToEveryone")
+    ] = None
     r"""If this is true, the access entitlement requirement is ignored."""
-    
+
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
-        optional_fields = ["accessEntitlements", "appIds", "createdByUserId", "description", "displayName", "id", "published", "requestBundle", "visibleToEveryone"]
+        optional_fields = [
+            "accessEntitlements",
+            "appIds",
+            "createdByUserId",
+            "description",
+            "displayName",
+            "id",
+            "published",
+            "requestBundle",
+            "visibleToEveryone",
+        ]
         nullable_fields = ["accessEntitlements", "appIds"]
         null_default_fields = []
 
@@ -67,21 +96,19 @@ class RequestCatalogInput(BaseModel):
         for n, f in self.model_fields.items():
             k = f.alias or n
             val = serialized.get(k)
+            serialized.pop(k, None)
+
+            optional_nullable = k in optional_fields and k in nullable_fields
+            is_set = (
+                self.__pydantic_fields_set__.intersection({n})
+                or k in null_default_fields
+            )  # pylint: disable=no-member
 
             if val is not None and val != UNSET_SENTINEL:
                 m[k] = val
             elif val != UNSET_SENTINEL and (
-                not k in optional_fields
-                or (
-                    k in optional_fields
-                    and k in nullable_fields
-                    and (
-                        self.__pydantic_fields_set__.intersection({n})
-                        or k in null_default_fields
-                    )  # pylint: disable=no-member
-                )
+                not k in optional_fields or (optional_nullable and is_set)
             ):
                 m[k] = val
 
         return m
-        

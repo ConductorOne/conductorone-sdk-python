@@ -12,12 +12,19 @@ from typing_extensions import Annotated, NotRequired
 class C1APIUserV1UserServiceListRequestTypedDict(TypedDict):
     page_size: NotRequired[int]
     page_token: NotRequired[str]
-    
+
 
 class C1APIUserV1UserServiceListRequest(BaseModel):
-    page_size: Annotated[Optional[int], FieldMetadata(query=QueryParamMetadata(style="form", explode=True))] = None
-    page_token: Annotated[Optional[str], FieldMetadata(query=QueryParamMetadata(style="form", explode=True))] = None
-    
+    page_size: Annotated[
+        Optional[int],
+        FieldMetadata(query=QueryParamMetadata(style="form", explode=True)),
+    ] = None
+
+    page_token: Annotated[
+        Optional[str],
+        FieldMetadata(query=QueryParamMetadata(style="form", explode=True)),
+    ] = None
+
 
 class C1APIUserV1UserServiceListResponseTypedDict(TypedDict):
     content_type: str
@@ -26,17 +33,23 @@ class C1APIUserV1UserServiceListResponseTypedDict(TypedDict):
     r"""HTTP response status code for this operation"""
     raw_response: httpx.Response
     r"""Raw HTTP response; suitable for custom response parsing"""
-    user_service_list_response: NotRequired[shared_userservicelistresponse.UserServiceListResponseTypedDict]
+    user_service_list_response: NotRequired[
+        shared_userservicelistresponse.UserServiceListResponseTypedDict
+    ]
     r"""The UserServiceListResponse message contains a list of results and a nextPageToken if applicable."""
-    
+
 
 class C1APIUserV1UserServiceListResponse(BaseModel):
     content_type: str
     r"""HTTP response content type for this operation"""
+
     status_code: int
     r"""HTTP response status code for this operation"""
+
     raw_response: httpx.Response
     r"""Raw HTTP response; suitable for custom response parsing"""
-    user_service_list_response: Optional[shared_userservicelistresponse.UserServiceListResponse] = None
+
+    user_service_list_response: Optional[
+        shared_userservicelistresponse.UserServiceListResponse
+    ] = None
     r"""The UserServiceListResponse message contains a list of results and a nextPageToken if applicable."""
-    

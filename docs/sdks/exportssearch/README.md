@@ -1,6 +1,8 @@
 # ExportsSearch
 (*exports_search*)
 
+## Overview
+
 ### Available Operations
 
 * [search](#search) - Search
@@ -22,7 +24,6 @@ s = SDK(
     ),
 )
 
-
 res = s.exports_search.search()
 
 if res.exports_search_service_search_response is not None:
@@ -38,10 +39,10 @@ if res.exports_search_service_search_response is not None:
 | `request`                                                                                            | [shared.ExportsSearchServiceSearchRequest](../../models/shared/exportssearchservicesearchrequest.md) | :heavy_check_mark:                                                                                   | The request object to use for the request.                                                           |
 | `retries`                                                                                            | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)                                     | :heavy_minus_sign:                                                                                   | Configuration to override the default retry behavior of the client.                                  |
 
-
 ### Response
 
 **[operations.C1APISystemlogV1ExportsSearchServiceSearchResponse](../../models/operations/c1apisystemlogv1exportssearchservicesearchresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |

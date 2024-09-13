@@ -15,17 +15,21 @@ class C1APITaskV1TaskSearchServiceSearchResponseTypedDict(TypedDict):
     r"""HTTP response status code for this operation"""
     raw_response: httpx.Response
     r"""Raw HTTP response; suitable for custom response parsing"""
-    task_search_response: NotRequired[shared_tasksearchresponse.TaskSearchResponseTypedDict]
+    task_search_response: NotRequired[
+        shared_tasksearchresponse.TaskSearchResponseTypedDict
+    ]
     r"""The TaskSearchResponse message contains a list of results and a nextPageToken if applicable."""
-    
+
 
 class C1APITaskV1TaskSearchServiceSearchResponse(BaseModel):
     content_type: str
     r"""HTTP response content type for this operation"""
+
     status_code: int
     r"""HTTP response status code for this operation"""
+
     raw_response: httpx.Response
     r"""Raw HTTP response; suitable for custom response parsing"""
+
     task_search_response: Optional[shared_tasksearchresponse.TaskSearchResponse] = None
     r"""The TaskSearchResponse message contains a list of results and a nextPageToken if applicable."""
-    

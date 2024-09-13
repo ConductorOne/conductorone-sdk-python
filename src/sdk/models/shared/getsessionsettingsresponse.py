@@ -10,14 +10,15 @@ from typing_extensions import Annotated, NotRequired
 
 class GetSessionSettingsResponseTypedDict(TypedDict):
     r"""The GetSessionSettingsResponse message."""
-    
+
     session_settings: NotRequired[SessionSettingsTypedDict]
     r"""The SessionSettings message."""
-    
+
 
 class GetSessionSettingsResponse(BaseModel):
     r"""The GetSessionSettingsResponse message."""
-    
-    session_settings: Annotated[Optional[SessionSettings], pydantic.Field(alias="sessionSettings")] = None
+
+    session_settings: Annotated[
+        Optional[SessionSettings], pydantic.Field(alias="sessionSettings")
+    ] = None
     r"""The SessionSettings message."""
-    

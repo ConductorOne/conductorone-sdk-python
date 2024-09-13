@@ -10,15 +10,17 @@ from typing_extensions import Annotated, NotRequired
 
 class Severity(str, Enum):
     r"""The severity field."""
+
     UNKNOWN = "UNKNOWN"
     HINT = "HINT"
     INFO = "INFO"
     WARNING = "WARNING"
     ERROR = "ERROR"
 
+
 class MarkerTypedDict(TypedDict):
     r"""The Marker message."""
-    
+
     end_column: NotRequired[int]
     r"""The endColumn field."""
     end_line_number: NotRequired[int]
@@ -31,21 +33,29 @@ class MarkerTypedDict(TypedDict):
     r"""The startColumn field."""
     start_line_number: NotRequired[int]
     r"""The startLineNumber field."""
-    
+
 
 class Marker(BaseModel):
     r"""The Marker message."""
-    
+
     end_column: Annotated[Optional[int], pydantic.Field(alias="endColumn")] = None
     r"""The endColumn field."""
-    end_line_number: Annotated[Optional[int], pydantic.Field(alias="endLineNumber")] = None
+
+    end_line_number: Annotated[Optional[int], pydantic.Field(alias="endLineNumber")] = (
+        None
+    )
     r"""The endLineNumber field."""
+
     message: Optional[str] = None
     r"""The message field."""
+
     severity: Optional[Severity] = None
     r"""The severity field."""
+
     start_column: Annotated[Optional[int], pydantic.Field(alias="startColumn")] = None
     r"""The startColumn field."""
-    start_line_number: Annotated[Optional[int], pydantic.Field(alias="startLineNumber")] = None
+
+    start_line_number: Annotated[
+        Optional[int], pydantic.Field(alias="startLineNumber")
+    ] = None
     r"""The startLineNumber field."""
-    

@@ -8,18 +8,18 @@ from typing_extensions import NotRequired
 
 class AttributeTypeTypedDict(TypedDict):
     r"""AttributeType defines the type of an attribute."""
-    
+
     id: NotRequired[str]
     r"""The ID of the AttributeType."""
     name: NotRequired[str]
     r"""The name of the AttributeType."""
-    
+
 
 class AttributeType(BaseModel):
     r"""AttributeType defines the type of an attribute."""
-    
+
     id: Optional[str] = None
     r"""The ID of the AttributeType."""
+
     name: Optional[str] = None
     r"""The name of the AttributeType."""
-    

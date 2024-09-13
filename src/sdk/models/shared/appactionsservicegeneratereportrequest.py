@@ -7,10 +7,7 @@ from typing import TypedDict
 
 class AppActionsServiceGenerateReportRequestTypedDict(TypedDict):
     r"""Empty request body. Just placeholder for the generate app report request which uses URL values for input."""
-    
-    
+
 
 class AppActionsServiceGenerateReportRequest(BaseModel):
     r"""Empty request body. Just placeholder for the generate app report request which uses URL values for input."""
-    
-    

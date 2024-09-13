@@ -10,16 +10,20 @@ from typing_extensions import Annotated, NotRequired
 
 class CancelledActionTypedDict(TypedDict):
     r"""The outcome of a provision instance that is cancelled."""
-    
+
     cancelled_at: NotRequired[datetime]
     cancelled_by_user_id: NotRequired[str]
     r"""The userID, usually the system, that cancells a provision instance."""
-    
+
 
 class CancelledAction(BaseModel):
     r"""The outcome of a provision instance that is cancelled."""
-    
-    cancelled_at: Annotated[Optional[datetime], pydantic.Field(alias="cancelledAt")] = None
-    cancelled_by_user_id: Annotated[Optional[str], pydantic.Field(alias="cancelledByUserId")] = None
+
+    cancelled_at: Annotated[Optional[datetime], pydantic.Field(alias="cancelledAt")] = (
+        None
+    )
+
+    cancelled_by_user_id: Annotated[
+        Optional[str], pydantic.Field(alias="cancelledByUserId")
+    ] = None
     r"""The userID, usually the system, that cancells a provision instance."""
-    

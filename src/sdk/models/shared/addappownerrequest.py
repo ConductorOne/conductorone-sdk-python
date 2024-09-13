@@ -7,10 +7,7 @@ from typing import TypedDict
 
 class AddAppOwnerRequestTypedDict(TypedDict):
     r"""Empty request body. Just placeholder for the add app owner request which uses URL values for input."""
-    
-    
+
 
 class AddAppOwnerRequest(BaseModel):
     r"""Empty request body. Just placeholder for the add app owner request which uses URL values for input."""
-    
-    

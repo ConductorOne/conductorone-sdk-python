@@ -10,20 +10,22 @@ from typing_extensions import Annotated, NotRequired
 
 class DirectoryTypedDict(TypedDict):
     r"""This object indicates that an app is also a directory."""
-    
+
     app_id: NotRequired[str]
     r"""The ID of the app associated with the directory."""
     created_at: NotRequired[datetime]
     deleted_at: NotRequired[datetime]
     updated_at: NotRequired[datetime]
-    
+
 
 class Directory(BaseModel):
     r"""This object indicates that an app is also a directory."""
-    
+
     app_id: Annotated[Optional[str], pydantic.Field(alias="appId")] = None
     r"""The ID of the app associated with the directory."""
+
     created_at: Annotated[Optional[datetime], pydantic.Field(alias="createdAt")] = None
+
     deleted_at: Annotated[Optional[datetime], pydantic.Field(alias="deletedAt")] = None
+
     updated_at: Annotated[Optional[datetime], pydantic.Field(alias="updatedAt")] = None
-    

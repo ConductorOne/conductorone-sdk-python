@@ -10,18 +10,20 @@ from typing_extensions import Annotated, NotRequired
 
 class AppResourceTypeViewTypedDict(TypedDict):
     r"""The AppResourceTypeView message."""
-    
+
     app_resource_type: NotRequired[AppResourceTypeTypedDict]
     r"""The AppResourceType is referenced by an app entitlement defining its resource types. Commonly things like Group or Role."""
     app_path: NotRequired[str]
     r"""JSONPATH expression indicating the location of the App object in the  array"""
-    
+
 
 class AppResourceTypeView(BaseModel):
     r"""The AppResourceTypeView message."""
-    
-    app_resource_type: Annotated[Optional[AppResourceType], pydantic.Field(alias="appResourceType")] = None
+
+    app_resource_type: Annotated[
+        Optional[AppResourceType], pydantic.Field(alias="appResourceType")
+    ] = None
     r"""The AppResourceType is referenced by an app entitlement defining its resource types. Commonly things like Group or Role."""
+
     app_path: Annotated[Optional[str], pydantic.Field(alias="appPath")] = None
     r"""JSONPATH expression indicating the location of the App object in the  array"""
-    

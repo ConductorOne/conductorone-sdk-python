@@ -7,10 +7,7 @@ from typing import TypedDict
 
 class ConnectorServiceRevokeCredentialResponseTypedDict(TypedDict):
     r"""Empty response body. Status code indicates success."""
-    
-    
+
 
 class ConnectorServiceRevokeCredentialResponse(BaseModel):
     r"""Empty response body. Status code indicates success."""
-    
-    
