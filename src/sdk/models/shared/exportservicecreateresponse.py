@@ -9,7 +9,7 @@ from typing_extensions import NotRequired
 
 class ExportServiceCreateResponseTypedDict(TypedDict):
     r"""The ExportServiceCreateResponse message."""
-    
+
     exporter: NotRequired[ExporterTypedDict]
     r"""The Exporter message.
 
@@ -17,11 +17,11 @@ class ExportServiceCreateResponseTypedDict(TypedDict):
     - datasource
 
     """
-    
+
 
 class ExportServiceCreateResponse(BaseModel):
     r"""The ExportServiceCreateResponse message."""
-    
+
     exporter: Optional[Exporter] = None
     r"""The Exporter message.
 
@@ -29,4 +29,3 @@ class ExportServiceCreateResponse(BaseModel):
     - datasource
 
     """
-    

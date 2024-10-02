@@ -7,10 +7,7 @@ from typing import TypedDict
 
 class RemoveAppOwnerResponseTypedDict(TypedDict):
     r"""Empty response with a status code indicating success."""
-    
-    
+
 
 class RemoveAppOwnerResponse(BaseModel):
     r"""Empty response with a status code indicating success."""
-    
-    

@@ -15,17 +15,21 @@ class C1APIAuthV1AuthIntrospectResponseTypedDict(TypedDict):
     r"""HTTP response status code for this operation"""
     raw_response: httpx.Response
     r"""Raw HTTP response; suitable for custom response parsing"""
-    introspect_response: NotRequired[shared_introspectresponse.IntrospectResponseTypedDict]
+    introspect_response: NotRequired[
+        shared_introspectresponse.IntrospectResponseTypedDict
+    ]
     r"""IntrospectResponse contains information about the current user who is authenticated."""
-    
+
 
 class C1APIAuthV1AuthIntrospectResponse(BaseModel):
     content_type: str
     r"""HTTP response content type for this operation"""
+
     status_code: int
     r"""HTTP response status code for this operation"""
+
     raw_response: httpx.Response
     r"""Raw HTTP response; suitable for custom response parsing"""
+
     introspect_response: Optional[shared_introspectresponse.IntrospectResponse] = None
     r"""IntrospectResponse contains information about the current user who is authenticated."""
-    

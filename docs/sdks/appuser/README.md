@@ -1,6 +1,8 @@
 # AppUser
 (*app_user*)
 
+## Overview
+
 ### Available Operations
 
 * [update](#update) - Update
@@ -23,10 +25,9 @@ s = SDK(
     ),
 )
 
-
 res = s.app_user.update(request={
-    "app_user_app_id": "<value>",
-    "app_user_id": "<value>",
+    "app_user_app_id": "<id>",
+    "app_user_id": "<id>",
 })
 
 if res.app_user_service_update_response is not None:
@@ -42,12 +43,12 @@ if res.app_user_service_update_response is not None:
 | `request`                                                                                                            | [operations.C1APIAppV1AppUserServiceUpdateRequest](../../models/operations/c1apiappv1appuserserviceupdaterequest.md) | :heavy_check_mark:                                                                                                   | The request object to use for the request.                                                                           |
 | `retries`                                                                                                            | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)                                                     | :heavy_minus_sign:                                                                                                   | Configuration to override the default retry behavior of the client.                                                  |
 
-
 ### Response
 
 **[operations.C1APIAppV1AppUserServiceUpdateResponse](../../models/operations/c1apiappv1appuserserviceupdateresponse.md)**
+
 ### Errors
 
-| Error Object    | Status Code     | Content Type    |
+| Error Type      | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 4xx-5xx         | */*             |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |

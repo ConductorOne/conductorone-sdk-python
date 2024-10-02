@@ -2,32 +2,39 @@
 
 from __future__ import annotations
 from enum import Enum
+from pydantic.functional_validators import PlainValidator
+from sdk import utils
 from sdk.types import BaseModel
+from sdk.utils import validate_open_enum
 from typing import Optional, TypedDict
-from typing_extensions import NotRequired
+from typing_extensions import Annotated, NotRequired
 
 
-class Status(str, Enum):
+class Status(str, Enum, metaclass=utils.OpenEnumMeta):
     r"""The application user status field."""
+
     STATUS_UNSPECIFIED = "STATUS_UNSPECIFIED"
     STATUS_ENABLED = "STATUS_ENABLED"
     STATUS_DISABLED = "STATUS_DISABLED"
     STATUS_DELETED = "STATUS_DELETED"
 
+
 class AppUserStatusTypedDict(TypedDict):
     r"""The satus of the applicaiton user."""
-    
+
     details: NotRequired[str]
     r"""The details of applicaiton user status."""
     status: NotRequired[Status]
     r"""The application user status field."""
-    
+
 
 class AppUserStatus(BaseModel):
     r"""The satus of the applicaiton user."""
-    
+
     details: Optional[str] = None
     r"""The details of applicaiton user status."""
-    status: Optional[Status] = None
+
+    status: Annotated[Optional[Status], PlainValidator(validate_open_enum(False))] = (
+        None
+    )
     r"""The application user status field."""
-    

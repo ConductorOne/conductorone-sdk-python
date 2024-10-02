@@ -9,12 +9,13 @@ from typing_extensions import Annotated, NotRequired
 
 class SessionSettingsTypedDict(TypedDict):
     r"""The SessionSettings message."""
-    
+
     max_session_length: NotRequired[str]
-    
+
 
 class SessionSettings(BaseModel):
     r"""The SessionSettings message."""
-    
-    max_session_length: Annotated[Optional[str], pydantic.Field(alias="maxSessionLength")] = None
-    
+
+    max_session_length: Annotated[
+        Optional[str], pydantic.Field(alias="maxSessionLength")
+    ] = None

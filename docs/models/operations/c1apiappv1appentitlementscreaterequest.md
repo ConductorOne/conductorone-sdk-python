@@ -1,0 +1,9 @@
+# C1APIAppV1AppEntitlementsCreateRequest
+
+
+## Fields
+
+| Field                                                                                              | Type                                                                                               | Required                                                                                           | Description                                                                                        |
+| -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
+| `app_id`                                                                                           | *str*                                                                                              | :heavy_check_mark:                                                                                 | N/A                                                                                                |
+| `create_app_entitlement_request`                                                                   | [Optional[shared.CreateAppEntitlementRequest]](../../models/shared/createappentitlementrequest.md) | :heavy_minus_sign:                                                                                 | N/A                                                                                                |

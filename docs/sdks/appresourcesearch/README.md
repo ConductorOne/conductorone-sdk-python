@@ -1,6 +1,8 @@
 # AppResourceSearch
 (*app_resource_search*)
 
+## Overview
+
 ### Available Operations
 
 * [search_app_resource_types](#search_app_resource_types) - Search App Resource Types
@@ -22,7 +24,6 @@ s = SDK(
     ),
 )
 
-
 res = s.app_resource_search.search_app_resource_types()
 
 if res.search_app_resource_types_response is not None:
@@ -38,12 +39,12 @@ if res.search_app_resource_types_response is not None:
 | `request`                                                                                    | [shared.SearchAppResourceTypesRequest](../../models/shared/searchappresourcetypesrequest.md) | :heavy_check_mark:                                                                           | The request object to use for the request.                                                   |
 | `retries`                                                                                    | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)                             | :heavy_minus_sign:                                                                           | Configuration to override the default retry behavior of the client.                          |
 
-
 ### Response
 
 **[operations.C1APIAppV1AppResourceSearchSearchAppResourceTypesResponse](../../models/operations/c1apiappv1appresourcesearchsearchappresourcetypesresponse.md)**
+
 ### Errors
 
-| Error Object    | Status Code     | Content Type    |
+| Error Type      | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 4xx-5xx         | */*             |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |

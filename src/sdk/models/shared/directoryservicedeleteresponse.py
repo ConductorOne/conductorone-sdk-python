@@ -7,10 +7,7 @@ from typing import TypedDict
 
 class DirectoryServiceDeleteResponseTypedDict(TypedDict):
     r"""Empty response with a status code indicating success."""
-    
-    
+
 
 class DirectoryServiceDeleteResponse(BaseModel):
     r"""Empty response with a status code indicating success."""
-    
-    

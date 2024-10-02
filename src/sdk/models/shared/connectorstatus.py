@@ -4,22 +4,27 @@ from __future__ import annotations
 from datetime import datetime
 from enum import Enum
 import pydantic
+from pydantic.functional_validators import PlainValidator
+from sdk import utils
 from sdk.types import BaseModel
+from sdk.utils import validate_open_enum
 from typing import Optional, TypedDict
 from typing_extensions import Annotated, NotRequired
 
 
-class ConnectorStatusStatus(str, Enum):
+class ConnectorStatusStatus(str, Enum, metaclass=utils.OpenEnumMeta):
     r"""The status of the connector sync."""
+
     SYNC_STATUS_UNSPECIFIED = "SYNC_STATUS_UNSPECIFIED"
     SYNC_STATUS_RUNNING = "SYNC_STATUS_RUNNING"
     SYNC_STATUS_DONE = "SYNC_STATUS_DONE"
     SYNC_STATUS_ERROR = "SYNC_STATUS_ERROR"
     SYNC_STATUS_DISABLED = "SYNC_STATUS_DISABLED"
 
+
 class ConnectorStatusTypedDict(TypedDict):
     r"""The status field on the connector is used to track the status of the connectors sync, and when syncing last started, completed, or caused the connector to update."""
-    
+
     completed_at: NotRequired[datetime]
     last_error: NotRequired[str]
     r"""The last error encountered by the connector."""
@@ -27,16 +32,23 @@ class ConnectorStatusTypedDict(TypedDict):
     status: NotRequired[ConnectorStatusStatus]
     r"""The status of the connector sync."""
     updated_at: NotRequired[datetime]
-    
+
 
 class ConnectorStatus(BaseModel):
     r"""The status field on the connector is used to track the status of the connectors sync, and when syncing last started, completed, or caused the connector to update."""
-    
-    completed_at: Annotated[Optional[datetime], pydantic.Field(alias="completedAt")] = None
+
+    completed_at: Annotated[Optional[datetime], pydantic.Field(alias="completedAt")] = (
+        None
+    )
+
     last_error: Annotated[Optional[str], pydantic.Field(alias="lastError")] = None
     r"""The last error encountered by the connector."""
+
     started_at: Annotated[Optional[datetime], pydantic.Field(alias="startedAt")] = None
-    status: Optional[ConnectorStatusStatus] = None
+
+    status: Annotated[
+        Optional[ConnectorStatusStatus], PlainValidator(validate_open_enum(False))
+    ] = None
     r"""The status of the connector sync."""
+
     updated_at: Annotated[Optional[datetime], pydantic.Field(alias="updatedAt")] = None
-    

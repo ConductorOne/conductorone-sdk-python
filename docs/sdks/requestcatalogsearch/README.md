@@ -1,6 +1,8 @@
 # RequestCatalogSearch
 (*request_catalog_search*)
 
+## Overview
+
 ### Available Operations
 
 * [search_entitlements](#search_entitlements) - Search Entitlements
@@ -22,7 +24,6 @@ s = SDK(
     ),
 )
 
-
 res = s.request_catalog_search.search_entitlements()
 
 if res.request_catalog_search_service_search_entitlements_response is not None:
@@ -38,12 +39,12 @@ if res.request_catalog_search_service_search_entitlements_response is not None:
 | `request`                                                                                                                                  | [shared.RequestCatalogSearchServiceSearchEntitlementsRequest](../../models/shared/requestcatalogsearchservicesearchentitlementsrequest.md) | :heavy_check_mark:                                                                                                                         | The request object to use for the request.                                                                                                 |
 | `retries`                                                                                                                                  | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)                                                                           | :heavy_minus_sign:                                                                                                                         | Configuration to override the default retry behavior of the client.                                                                        |
 
-
 ### Response
 
 **[operations.C1APIRequestcatalogV1RequestCatalogSearchServiceSearchEntitlementsResponse](../../models/operations/c1apirequestcatalogv1requestcatalogsearchservicesearchentitlementsresponse.md)**
+
 ### Errors
 
-| Error Object    | Status Code     | Content Type    |
+| Error Type      | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 4xx-5xx         | */*             |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |

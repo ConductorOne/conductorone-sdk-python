@@ -9,16 +9,21 @@ from .waitinstance import WaitInstance, WaitInstanceTypedDict
 from enum import Enum
 import pydantic
 from pydantic import model_serializer
+from pydantic.functional_validators import PlainValidator
+from sdk import utils
 from sdk.types import BaseModel, Nullable, OptionalNullable, UNSET, UNSET_SENTINEL
+from sdk.utils import validate_open_enum
 from typing import Optional, TypedDict
 from typing_extensions import Annotated, NotRequired
 
 
-class PolicyStepInstanceState(str, Enum):
+class PolicyStepInstanceState(str, Enum, metaclass=utils.OpenEnumMeta):
     r"""The state of the step, which is either active or done."""
+
     POLICY_STEP_STATE_UNSPECIFIED = "POLICY_STEP_STATE_UNSPECIFIED"
     POLICY_STEP_STATE_ACTIVE = "POLICY_STEP_STATE_ACTIVE"
     POLICY_STEP_STATE_DONE = "POLICY_STEP_STATE_DONE"
+
 
 class PolicyStepInstanceTypedDict(TypedDict):
     r"""The policy step instance includes a reference to an instance of a policy step that tracks state and has a unique ID.
@@ -31,7 +36,7 @@ class PolicyStepInstanceTypedDict(TypedDict):
     - wait
 
     """
-    
+
     accept_instance: NotRequired[Nullable[AcceptInstanceTypedDict]]
     r"""This policy step indicates that a ticket should have an approved outcome. This is a terminal approval state and is used to explicitly define the end of approval steps.
     The instance is just a marker for it being copied into an active policy.
@@ -79,7 +84,7 @@ class PolicyStepInstanceTypedDict(TypedDict):
     r"""The policy generation id refers to the version of the policy that this step was created from."""
     state: NotRequired[PolicyStepInstanceState]
     r"""The state of the step, which is either active or done."""
-    
+
 
 class PolicyStepInstance(BaseModel):
     r"""The policy step instance includes a reference to an instance of a policy step that tracks state and has a unique ID.
@@ -92,12 +97,17 @@ class PolicyStepInstance(BaseModel):
     - wait
 
     """
-    
-    accept_instance: Annotated[OptionalNullable[AcceptInstance], pydantic.Field(alias="accept")] = UNSET
+
+    accept_instance: Annotated[
+        OptionalNullable[AcceptInstance], pydantic.Field(alias="accept")
+    ] = UNSET
     r"""This policy step indicates that a ticket should have an approved outcome. This is a terminal approval state and is used to explicitly define the end of approval steps.
     The instance is just a marker for it being copied into an active policy.
     """
-    approval_instance: Annotated[OptionalNullable[ApprovalInstance], pydantic.Field(alias="approval")] = UNSET
+
+    approval_instance: Annotated[
+        OptionalNullable[ApprovalInstance], pydantic.Field(alias="approval")
+    ] = UNSET
     r"""The approval instance object describes the way a policy step should be approved as well as its outcomes and state.
 
     This message contains a oneof named outcome. Only a single field of the following list may be set at a time:
@@ -108,7 +118,10 @@ class PolicyStepInstance(BaseModel):
     - reassignedByError
 
     """
-    provision_instance: Annotated[OptionalNullable[ProvisionInstance], pydantic.Field(alias="provision")] = UNSET
+
+    provision_instance: Annotated[
+        OptionalNullable[ProvisionInstance], pydantic.Field(alias="provision")
+    ] = UNSET
     r"""A provision instance describes the specific configuration of an executing provision policy step including actions taken and notification id.
 
     This message contains a oneof named outcome. Only a single field of the following list may be set at a time:
@@ -118,11 +131,17 @@ class PolicyStepInstance(BaseModel):
     - reassignedByError
 
     """
-    reject_instance: Annotated[OptionalNullable[RejectInstance], pydantic.Field(alias="reject")] = UNSET
+
+    reject_instance: Annotated[
+        OptionalNullable[RejectInstance], pydantic.Field(alias="reject")
+    ] = UNSET
     r"""This policy step indicates that a ticket should have a denied outcome. This is a terminal approval state and is used to explicitly define the end of approval steps.
     The instance is just a marker for it being copied into an active policy.
     """
-    wait_instance: Annotated[OptionalNullable[WaitInstance], pydantic.Field(alias="wait")] = UNSET
+
+    wait_instance: Annotated[
+        OptionalNullable[WaitInstance], pydantic.Field(alias="wait")
+    ] = UNSET
     r"""Used by the policy engine to describe an instantiated wait step.
 
     This message contains a oneof named until. Only a single field of the following list may be set at a time:
@@ -134,17 +153,39 @@ class PolicyStepInstance(BaseModel):
     - timedOut
 
     """
+
     id: Optional[str] = None
     r"""The ID of the PolicyStepInstance. This is required by many action submission endpoints to indicate what step you're approving."""
-    policy_generation_id: Annotated[Optional[str], pydantic.Field(alias="policyGenerationId")] = None
+
+    policy_generation_id: Annotated[
+        Optional[str], pydantic.Field(alias="policyGenerationId")
+    ] = None
     r"""The policy generation id refers to the version of the policy that this step was created from."""
-    state: Optional[PolicyStepInstanceState] = None
+
+    state: Annotated[
+        Optional[PolicyStepInstanceState], PlainValidator(validate_open_enum(False))
+    ] = None
     r"""The state of the step, which is either active or done."""
-    
+
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
-        optional_fields = ["AcceptInstance", "ApprovalInstance", "ProvisionInstance", "RejectInstance", "WaitInstance", "id", "policyGenerationId", "state"]
-        nullable_fields = ["AcceptInstance", "ApprovalInstance", "ProvisionInstance", "RejectInstance", "WaitInstance"]
+        optional_fields = [
+            "AcceptInstance",
+            "ApprovalInstance",
+            "ProvisionInstance",
+            "RejectInstance",
+            "WaitInstance",
+            "id",
+            "policyGenerationId",
+            "state",
+        ]
+        nullable_fields = [
+            "AcceptInstance",
+            "ApprovalInstance",
+            "ProvisionInstance",
+            "RejectInstance",
+            "WaitInstance",
+        ]
         null_default_fields = []
 
         serialized = handler(self)
@@ -154,21 +195,19 @@ class PolicyStepInstance(BaseModel):
         for n, f in self.model_fields.items():
             k = f.alias or n
             val = serialized.get(k)
+            serialized.pop(k, None)
+
+            optional_nullable = k in optional_fields and k in nullable_fields
+            is_set = (
+                self.__pydantic_fields_set__.intersection({n})
+                or k in null_default_fields
+            )  # pylint: disable=no-member
 
             if val is not None and val != UNSET_SENTINEL:
                 m[k] = val
             elif val != UNSET_SENTINEL and (
-                not k in optional_fields
-                or (
-                    k in optional_fields
-                    and k in nullable_fields
-                    and (
-                        self.__pydantic_fields_set__.intersection({n})
-                        or k in null_default_fields
-                    )  # pylint: disable=no-member
-                )
+                not k in optional_fields or (optional_nullable and is_set)
             ):
                 m[k] = val
 
         return m
-        

@@ -9,14 +9,13 @@ from typing_extensions import Annotated, NotRequired
 
 class AWSExternalIDTypedDict(TypedDict):
     r"""The AWSExternalID message."""
-    
+
     external_id: NotRequired[str]
     r"""The externalId field."""
-    
+
 
 class AWSExternalID(BaseModel):
     r"""The AWSExternalID message."""
-    
+
     external_id: Annotated[Optional[str], pydantic.Field(alias="externalId")] = None
     r"""The externalId field."""
-    

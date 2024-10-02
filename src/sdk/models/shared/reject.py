@@ -9,14 +9,15 @@ from typing_extensions import Annotated, NotRequired
 
 class RejectTypedDict(TypedDict):
     r"""This policy step indicates that a ticket should have a denied outcome. This is a terminal approval state and is used to explicitly define the end of approval steps."""
-    
+
     reject_message: NotRequired[str]
     r"""An optional message to include in the comments when a task is automatically rejected."""
-    
+
 
 class Reject(BaseModel):
     r"""This policy step indicates that a ticket should have a denied outcome. This is a terminal approval state and is used to explicitly define the end of approval steps."""
-    
-    reject_message: Annotated[Optional[str], pydantic.Field(alias="rejectMessage")] = None
+
+    reject_message: Annotated[Optional[str], pydantic.Field(alias="rejectMessage")] = (
+        None
+    )
     r"""An optional message to include in the comments when a task is automatically rejected."""
-    

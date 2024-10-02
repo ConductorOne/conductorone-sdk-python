@@ -10,7 +10,7 @@ from typing_extensions import Annotated, NotRequired
 
 class AppUserViewTypedDict(TypedDict):
     r"""The AppUserView contains an app user as well as paths for apps, identity users, and last usage in expanded arrays."""
-    
+
     app_user: NotRequired[AppUserTypedDict]
     r"""Application User that represents an account in the application."""
     app_path: NotRequired[str]
@@ -19,17 +19,23 @@ class AppUserViewTypedDict(TypedDict):
     r"""JSONPATH expression indicating where the identity user is expanded in expanded arrays indicated in the request."""
     last_usage_path: NotRequired[str]
     r"""JSONPATH expression indicating where the last usage information is expanded in expanded arrays indicated in the request."""
-    
+
 
 class AppUserView(BaseModel):
     r"""The AppUserView contains an app user as well as paths for apps, identity users, and last usage in expanded arrays."""
-    
+
     app_user: Annotated[Optional[AppUser], pydantic.Field(alias="appUser")] = None
     r"""Application User that represents an account in the application."""
+
     app_path: Annotated[Optional[str], pydantic.Field(alias="appPath")] = None
     r"""JSONPATH expression indicating where the app is expanded in expanded arrays indicated in the request."""
-    identity_user_path: Annotated[Optional[str], pydantic.Field(alias="identityUserPath")] = None
+
+    identity_user_path: Annotated[
+        Optional[str], pydantic.Field(alias="identityUserPath")
+    ] = None
     r"""JSONPATH expression indicating where the identity user is expanded in expanded arrays indicated in the request."""
-    last_usage_path: Annotated[Optional[str], pydantic.Field(alias="lastUsagePath")] = None
+
+    last_usage_path: Annotated[Optional[str], pydantic.Field(alias="lastUsagePath")] = (
+        None
+    )
     r"""JSONPATH expression indicating where the last usage information is expanded in expanded arrays indicated in the request."""
-    

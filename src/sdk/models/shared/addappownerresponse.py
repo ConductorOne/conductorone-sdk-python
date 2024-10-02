@@ -7,10 +7,7 @@ from typing import TypedDict
 
 class AddAppOwnerResponseTypedDict(TypedDict):
     r"""Empty response with a status code indicating success"""
-    
-    
+
 
 class AddAppOwnerResponse(BaseModel):
     r"""Empty response with a status code indicating success"""
-    
-    

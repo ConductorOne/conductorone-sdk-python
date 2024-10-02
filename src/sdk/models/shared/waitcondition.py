@@ -8,14 +8,13 @@ from typing_extensions import NotRequired
 
 class WaitConditionTypedDict(TypedDict):
     r"""The WaitCondition message."""
-    
+
     condition: NotRequired[str]
     r"""The condition that has to be true for this wait condition to continue."""
-    
+
 
 class WaitCondition(BaseModel):
     r"""The WaitCondition message."""
-    
+
     condition: Optional[str] = None
     r"""The condition that has to be true for this wait condition to continue."""
-    

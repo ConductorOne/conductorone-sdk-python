@@ -3,22 +3,27 @@
 from __future__ import annotations
 from enum import Enum
 import pydantic
+from pydantic.functional_validators import PlainValidator
+from sdk import utils
 from sdk.types import BaseModel
+from sdk.utils import validate_open_enum
 from typing import Optional, TypedDict
 from typing_extensions import Annotated, NotRequired
 
 
-class Severity(str, Enum):
+class Severity(str, Enum, metaclass=utils.OpenEnumMeta):
     r"""The severity field."""
+
     UNKNOWN = "UNKNOWN"
     HINT = "HINT"
     INFO = "INFO"
     WARNING = "WARNING"
     ERROR = "ERROR"
 
+
 class MarkerTypedDict(TypedDict):
     r"""The Marker message."""
-    
+
     end_column: NotRequired[int]
     r"""The endColumn field."""
     end_line_number: NotRequired[int]
@@ -31,21 +36,31 @@ class MarkerTypedDict(TypedDict):
     r"""The startColumn field."""
     start_line_number: NotRequired[int]
     r"""The startLineNumber field."""
-    
+
 
 class Marker(BaseModel):
     r"""The Marker message."""
-    
+
     end_column: Annotated[Optional[int], pydantic.Field(alias="endColumn")] = None
     r"""The endColumn field."""
-    end_line_number: Annotated[Optional[int], pydantic.Field(alias="endLineNumber")] = None
+
+    end_line_number: Annotated[Optional[int], pydantic.Field(alias="endLineNumber")] = (
+        None
+    )
     r"""The endLineNumber field."""
+
     message: Optional[str] = None
     r"""The message field."""
-    severity: Optional[Severity] = None
+
+    severity: Annotated[
+        Optional[Severity], PlainValidator(validate_open_enum(False))
+    ] = None
     r"""The severity field."""
+
     start_column: Annotated[Optional[int], pydantic.Field(alias="startColumn")] = None
     r"""The startColumn field."""
-    start_line_number: Annotated[Optional[int], pydantic.Field(alias="startLineNumber")] = None
+
+    start_line_number: Annotated[
+        Optional[int], pydantic.Field(alias="startLineNumber")
+    ] = None
     r"""The startLineNumber field."""
-    

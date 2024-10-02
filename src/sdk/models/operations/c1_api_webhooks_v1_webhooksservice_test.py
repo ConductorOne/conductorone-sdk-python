@@ -2,7 +2,10 @@
 
 from __future__ import annotations
 import httpx
-from sdk.models.shared import webhooksservicetestrequest as shared_webhooksservicetestrequest, webhooksservicetestresponse as shared_webhooksservicetestresponse
+from sdk.models.shared import (
+    webhooksservicetestrequest as shared_webhooksservicetestrequest,
+    webhooksservicetestresponse as shared_webhooksservicetestresponse,
+)
 from sdk.types import BaseModel
 from sdk.utils import FieldMetadata, PathParamMetadata, RequestMetadata
 from typing import Optional, TypedDict
@@ -11,13 +14,21 @@ from typing_extensions import Annotated, NotRequired
 
 class C1APIWebhooksV1WebhooksServiceTestRequestTypedDict(TypedDict):
     id: str
-    webhooks_service_test_request: NotRequired[shared_webhooksservicetestrequest.WebhooksServiceTestRequestTypedDict]
-    
+    webhooks_service_test_request: NotRequired[
+        shared_webhooksservicetestrequest.WebhooksServiceTestRequestTypedDict
+    ]
+
 
 class C1APIWebhooksV1WebhooksServiceTestRequest(BaseModel):
-    id: Annotated[str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))]
-    webhooks_service_test_request: Annotated[Optional[shared_webhooksservicetestrequest.WebhooksServiceTestRequest], FieldMetadata(request=RequestMetadata(media_type="application/json"))] = None
-    
+    id: Annotated[
+        str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))
+    ]
+
+    webhooks_service_test_request: Annotated[
+        Optional[shared_webhooksservicetestrequest.WebhooksServiceTestRequest],
+        FieldMetadata(request=RequestMetadata(media_type="application/json")),
+    ] = None
+
 
 class C1APIWebhooksV1WebhooksServiceTestResponseTypedDict(TypedDict):
     content_type: str
@@ -26,17 +37,23 @@ class C1APIWebhooksV1WebhooksServiceTestResponseTypedDict(TypedDict):
     r"""HTTP response status code for this operation"""
     raw_response: httpx.Response
     r"""Raw HTTP response; suitable for custom response parsing"""
-    webhooks_service_test_response: NotRequired[shared_webhooksservicetestresponse.WebhooksServiceTestResponseTypedDict]
+    webhooks_service_test_response: NotRequired[
+        shared_webhooksservicetestresponse.WebhooksServiceTestResponseTypedDict
+    ]
     r"""Successful response"""
-    
+
 
 class C1APIWebhooksV1WebhooksServiceTestResponse(BaseModel):
     content_type: str
     r"""HTTP response content type for this operation"""
+
     status_code: int
     r"""HTTP response status code for this operation"""
+
     raw_response: httpx.Response
     r"""Raw HTTP response; suitable for custom response parsing"""
-    webhooks_service_test_response: Optional[shared_webhooksservicetestresponse.WebhooksServiceTestResponse] = None
+
+    webhooks_service_test_response: Optional[
+        shared_webhooksservicetestresponse.WebhooksServiceTestResponse
+    ] = None
     r"""Successful response"""
-    

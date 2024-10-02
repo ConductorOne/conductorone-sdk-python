@@ -8,14 +8,13 @@ from typing_extensions import NotRequired
 
 class ResponsePolicyApprovalStepApproveTypedDict(TypedDict):
     r"""The ResponsePolicyApprovalStepApprove message."""
-    
+
     comment: NotRequired[str]
     r"""optional comment"""
-    
+
 
 class ResponsePolicyApprovalStepApprove(BaseModel):
     r"""The ResponsePolicyApprovalStepApprove message."""
-    
+
     comment: Optional[str] = None
     r"""optional comment"""
-    

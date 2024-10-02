@@ -2,7 +2,10 @@
 
 from __future__ import annotations
 import httpx
-from sdk.models.shared import connectorservicecreaterequest as shared_connectorservicecreaterequest, connectorservicecreateresponse as shared_connectorservicecreateresponse
+from sdk.models.shared import (
+    connectorservicecreaterequest as shared_connectorservicecreaterequest,
+    connectorservicecreateresponse as shared_connectorservicecreateresponse,
+)
 from sdk.types import BaseModel
 from sdk.utils import FieldMetadata, PathParamMetadata, RequestMetadata
 from typing import Optional, TypedDict
@@ -11,13 +14,21 @@ from typing_extensions import Annotated, NotRequired
 
 class C1APIAppV1ConnectorServiceCreateRequestTypedDict(TypedDict):
     app_id: str
-    connector_service_create_request: NotRequired[shared_connectorservicecreaterequest.ConnectorServiceCreateRequestTypedDict]
-    
+    connector_service_create_request: NotRequired[
+        shared_connectorservicecreaterequest.ConnectorServiceCreateRequestTypedDict
+    ]
+
 
 class C1APIAppV1ConnectorServiceCreateRequest(BaseModel):
-    app_id: Annotated[str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))]
-    connector_service_create_request: Annotated[Optional[shared_connectorservicecreaterequest.ConnectorServiceCreateRequest], FieldMetadata(request=RequestMetadata(media_type="application/json"))] = None
-    
+    app_id: Annotated[
+        str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))
+    ]
+
+    connector_service_create_request: Annotated[
+        Optional[shared_connectorservicecreaterequest.ConnectorServiceCreateRequest],
+        FieldMetadata(request=RequestMetadata(media_type="application/json")),
+    ] = None
+
 
 class C1APIAppV1ConnectorServiceCreateResponseTypedDict(TypedDict):
     content_type: str
@@ -26,17 +37,23 @@ class C1APIAppV1ConnectorServiceCreateResponseTypedDict(TypedDict):
     r"""HTTP response status code for this operation"""
     raw_response: httpx.Response
     r"""Raw HTTP response; suitable for custom response parsing"""
-    connector_service_create_response: NotRequired[shared_connectorservicecreateresponse.ConnectorServiceCreateResponseTypedDict]
+    connector_service_create_response: NotRequired[
+        shared_connectorservicecreateresponse.ConnectorServiceCreateResponseTypedDict
+    ]
     r"""The ConnectorServiceCreateResponse is the response returned from creating a connector."""
-    
+
 
 class C1APIAppV1ConnectorServiceCreateResponse(BaseModel):
     content_type: str
     r"""HTTP response content type for this operation"""
+
     status_code: int
     r"""HTTP response status code for this operation"""
+
     raw_response: httpx.Response
     r"""Raw HTTP response; suitable for custom response parsing"""
-    connector_service_create_response: Optional[shared_connectorservicecreateresponse.ConnectorServiceCreateResponse] = None
+
+    connector_service_create_response: Optional[
+        shared_connectorservicecreateresponse.ConnectorServiceCreateResponse
+    ] = None
     r"""The ConnectorServiceCreateResponse is the response returned from creating a connector."""
-    

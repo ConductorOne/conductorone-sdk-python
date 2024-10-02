@@ -1,0 +1,9 @@
+# C1APIIamV1PersonalClientServiceUpdateRequest
+
+
+## Fields
+
+| Field                                                                                                            | Type                                                                                                             | Required                                                                                                         | Description                                                                                                      |
+| ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
+| `id`                                                                                                             | *str*                                                                                                            | :heavy_check_mark:                                                                                               | N/A                                                                                                              |
+| `personal_client_service_update_request`                                                                         | [Optional[shared.PersonalClientServiceUpdateRequest]](../../models/shared/personalclientserviceupdaterequest.md) | :heavy_minus_sign:                                                                                               | N/A                                                                                                              |

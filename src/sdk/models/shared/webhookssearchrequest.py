@@ -11,7 +11,7 @@ from typing_extensions import Annotated, NotRequired
 
 class WebhooksSearchRequestTypedDict(TypedDict):
     r"""The WebhooksSearchRequest message."""
-    
+
     page_size: NotRequired[int]
     r"""The pageSize field."""
     page_token: NotRequired[str]
@@ -20,20 +20,23 @@ class WebhooksSearchRequestTypedDict(TypedDict):
     r"""The query field."""
     refs: NotRequired[Nullable[List[WebhookRefTypedDict]]]
     r"""The refs field."""
-    
+
 
 class WebhooksSearchRequest(BaseModel):
     r"""The WebhooksSearchRequest message."""
-    
+
     page_size: Annotated[Optional[int], pydantic.Field(alias="pageSize")] = None
     r"""The pageSize field."""
+
     page_token: Annotated[Optional[str], pydantic.Field(alias="pageToken")] = None
     r"""The pageToken field."""
+
     query: Optional[str] = None
     r"""The query field."""
+
     refs: OptionalNullable[List[WebhookRef]] = UNSET
     r"""The refs field."""
-    
+
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
         optional_fields = ["pageSize", "pageToken", "query", "refs"]
@@ -47,21 +50,19 @@ class WebhooksSearchRequest(BaseModel):
         for n, f in self.model_fields.items():
             k = f.alias or n
             val = serialized.get(k)
+            serialized.pop(k, None)
+
+            optional_nullable = k in optional_fields and k in nullable_fields
+            is_set = (
+                self.__pydantic_fields_set__.intersection({n})
+                or k in null_default_fields
+            )  # pylint: disable=no-member
 
             if val is not None and val != UNSET_SENTINEL:
                 m[k] = val
             elif val != UNSET_SENTINEL and (
-                not k in optional_fields
-                or (
-                    k in optional_fields
-                    and k in nullable_fields
-                    and (
-                        self.__pydantic_fields_set__.intersection({n})
-                        or k in null_default_fields
-                    )  # pylint: disable=no-member
-                )
+                not k in optional_fields or (optional_nullable and is_set)
             ):
                 m[k] = val
 
         return m
-        

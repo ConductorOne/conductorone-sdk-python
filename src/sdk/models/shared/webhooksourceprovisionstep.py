@@ -9,14 +9,13 @@ from typing_extensions import Annotated, NotRequired
 
 class WebhookSourceProvisionStepTypedDict(TypedDict):
     r"""The WebhookSourceProvisionStep message."""
-    
+
     ticket_id: NotRequired[str]
     r"""The ticketId field."""
-    
+
 
 class WebhookSourceProvisionStep(BaseModel):
     r"""The WebhookSourceProvisionStep message."""
-    
+
     ticket_id: Annotated[Optional[str], pydantic.Field(alias="ticketId")] = None
     r"""The ticketId field."""
-    

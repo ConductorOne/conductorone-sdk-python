@@ -7,10 +7,7 @@ from typing import TypedDict
 
 class AppUserStatusInputTypedDict(TypedDict):
     r"""The satus of the applicaiton user."""
-    
-    
+
 
 class AppUserStatusInput(BaseModel):
     r"""The satus of the applicaiton user."""
-    
-    

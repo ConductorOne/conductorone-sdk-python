@@ -11,45 +11,53 @@ from typing_extensions import Annotated, NotRequired
 
 class AppResourceServiceGetResponseExpandedTypedDict(TypedDict):
     r"""Contains an arbitrary serialized message along with a @type that describes the type of the serialized message."""
-    
+
     at_type: NotRequired[str]
     r"""The type of the serialized message."""
-    
+
 
 class AppResourceServiceGetResponseExpanded(BaseModel):
     r"""Contains an arbitrary serialized message along with a @type that describes the type of the serialized message."""
-    model_config = ConfigDict(populate_by_name=True, arbitrary_types_allowed=True, extra="allow")
-    __pydantic_extra__:  Dict[str, Any] = pydantic.Field(init=False)
-    
+
+    model_config = ConfigDict(
+        populate_by_name=True, arbitrary_types_allowed=True, extra="allow"
+    )
+    __pydantic_extra__: Dict[str, Any] = pydantic.Field(init=False)
+
     at_type: Annotated[Optional[str], pydantic.Field(alias="@type")] = None
     r"""The type of the serialized message."""
-    
+
     @property
     def additional_properties(self):
         return self.__pydantic_extra__
 
     @additional_properties.setter
     def additional_properties(self, value):
-        self.__pydantic_extra__ = value # pyright: ignore[reportIncompatibleVariableOverride]
-    
+        self.__pydantic_extra__ = value  # pyright: ignore[reportIncompatibleVariableOverride]
+
 
 class AppResourceServiceGetResponseTypedDict(TypedDict):
     r"""The app resource service get response contains the app resource view and array of expanded items indicated by the request's expand mask."""
-    
+
     app_resource_view: NotRequired[AppResourceViewTypedDict]
     r"""The app resource view returns an app resource with paths for items in the expand mask filled in when this response is returned and a request expand mask has \"*\" or \"app_id\" or \"resource_type_id\"."""
-    expanded: NotRequired[Nullable[List[AppResourceServiceGetResponseExpandedTypedDict]]]
+    expanded: NotRequired[
+        Nullable[List[AppResourceServiceGetResponseExpandedTypedDict]]
+    ]
     r"""List of serialized related objects."""
-    
+
 
 class AppResourceServiceGetResponse(BaseModel):
     r"""The app resource service get response contains the app resource view and array of expanded items indicated by the request's expand mask."""
-    
-    app_resource_view: Annotated[Optional[AppResourceView], pydantic.Field(alias="appResourceView")] = None
+
+    app_resource_view: Annotated[
+        Optional[AppResourceView], pydantic.Field(alias="appResourceView")
+    ] = None
     r"""The app resource view returns an app resource with paths for items in the expand mask filled in when this response is returned and a request expand mask has \"*\" or \"app_id\" or \"resource_type_id\"."""
+
     expanded: OptionalNullable[List[AppResourceServiceGetResponseExpanded]] = UNSET
     r"""List of serialized related objects."""
-    
+
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
         optional_fields = ["AppResourceView", "expanded"]
@@ -63,21 +71,19 @@ class AppResourceServiceGetResponse(BaseModel):
         for n, f in self.model_fields.items():
             k = f.alias or n
             val = serialized.get(k)
+            serialized.pop(k, None)
+
+            optional_nullable = k in optional_fields and k in nullable_fields
+            is_set = (
+                self.__pydantic_fields_set__.intersection({n})
+                or k in null_default_fields
+            )  # pylint: disable=no-member
 
             if val is not None and val != UNSET_SENTINEL:
                 m[k] = val
             elif val != UNSET_SENTINEL and (
-                not k in optional_fields
-                or (
-                    k in optional_fields
-                    and k in nullable_fields
-                    and (
-                        self.__pydantic_fields_set__.intersection({n})
-                        or k in null_default_fields
-                    )  # pylint: disable=no-member
-                )
+                not k in optional_fields or (optional_nullable and is_set)
             ):
                 m[k] = val
 
         return m
-        

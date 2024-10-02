@@ -11,45 +11,53 @@ from typing_extensions import Annotated, NotRequired
 
 class ConnectorServiceUpdateResponseExpandedTypedDict(TypedDict):
     r"""Contains an arbitrary serialized message along with a @type that describes the type of the serialized message."""
-    
+
     at_type: NotRequired[str]
     r"""The type of the serialized message."""
-    
+
 
 class ConnectorServiceUpdateResponseExpanded(BaseModel):
     r"""Contains an arbitrary serialized message along with a @type that describes the type of the serialized message."""
-    model_config = ConfigDict(populate_by_name=True, arbitrary_types_allowed=True, extra="allow")
-    __pydantic_extra__:  Dict[str, Any] = pydantic.Field(init=False)
-    
+
+    model_config = ConfigDict(
+        populate_by_name=True, arbitrary_types_allowed=True, extra="allow"
+    )
+    __pydantic_extra__: Dict[str, Any] = pydantic.Field(init=False)
+
     at_type: Annotated[Optional[str], pydantic.Field(alias="@type")] = None
     r"""The type of the serialized message."""
-    
+
     @property
     def additional_properties(self):
         return self.__pydantic_extra__
 
     @additional_properties.setter
     def additional_properties(self, value):
-        self.__pydantic_extra__ = value # pyright: ignore[reportIncompatibleVariableOverride]
-    
+        self.__pydantic_extra__ = value  # pyright: ignore[reportIncompatibleVariableOverride]
+
 
 class ConnectorServiceUpdateResponseTypedDict(TypedDict):
     r"""ConnectorServiceUpdateResponse is the response returned by the update method."""
-    
+
     connector_view: NotRequired[ConnectorViewTypedDict]
     r"""The ConnectorView object provides a connector response object, as well as JSONPATHs to related objects provided by expanders."""
-    expanded: NotRequired[Nullable[List[ConnectorServiceUpdateResponseExpandedTypedDict]]]
+    expanded: NotRequired[
+        Nullable[List[ConnectorServiceUpdateResponseExpandedTypedDict]]
+    ]
     r"""The array of expanded items indicated by the request."""
-    
+
 
 class ConnectorServiceUpdateResponse(BaseModel):
     r"""ConnectorServiceUpdateResponse is the response returned by the update method."""
-    
-    connector_view: Annotated[Optional[ConnectorView], pydantic.Field(alias="connectorView")] = None
+
+    connector_view: Annotated[
+        Optional[ConnectorView], pydantic.Field(alias="connectorView")
+    ] = None
     r"""The ConnectorView object provides a connector response object, as well as JSONPATHs to related objects provided by expanders."""
+
     expanded: OptionalNullable[List[ConnectorServiceUpdateResponseExpanded]] = UNSET
     r"""The array of expanded items indicated by the request."""
-    
+
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
         optional_fields = ["ConnectorView", "expanded"]
@@ -63,21 +71,19 @@ class ConnectorServiceUpdateResponse(BaseModel):
         for n, f in self.model_fields.items():
             k = f.alias or n
             val = serialized.get(k)
+            serialized.pop(k, None)
+
+            optional_nullable = k in optional_fields and k in nullable_fields
+            is_set = (
+                self.__pydantic_fields_set__.intersection({n})
+                or k in null_default_fields
+            )  # pylint: disable=no-member
 
             if val is not None and val != UNSET_SENTINEL:
                 m[k] = val
             elif val != UNSET_SENTINEL and (
-                not k in optional_fields
-                or (
-                    k in optional_fields
-                    and k in nullable_fields
-                    and (
-                        self.__pydantic_fields_set__.intersection({n})
-                        or k in null_default_fields
-                    )  # pylint: disable=no-member
-                )
+                not k in optional_fields or (optional_nullable and is_set)
             ):
                 m[k] = val
 
         return m
-        

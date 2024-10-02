@@ -2,7 +2,9 @@
 
 from __future__ import annotations
 import httpx
-from sdk.models.shared import listattributevaluesresponse as shared_listattributevaluesresponse
+from sdk.models.shared import (
+    listattributevaluesresponse as shared_listattributevaluesresponse,
+)
 from sdk.types import BaseModel
 from sdk.utils import FieldMetadata, PathParamMetadata, QueryParamMetadata
 from typing import Optional, TypedDict
@@ -13,13 +15,23 @@ class C1APIAttributeV1AttributesListAttributeValuesRequestTypedDict(TypedDict):
     attribute_type_id: str
     page_size: NotRequired[int]
     page_token: NotRequired[str]
-    
+
 
 class C1APIAttributeV1AttributesListAttributeValuesRequest(BaseModel):
-    attribute_type_id: Annotated[str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))]
-    page_size: Annotated[Optional[int], FieldMetadata(query=QueryParamMetadata(style="form", explode=True))] = None
-    page_token: Annotated[Optional[str], FieldMetadata(query=QueryParamMetadata(style="form", explode=True))] = None
-    
+    attribute_type_id: Annotated[
+        str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))
+    ]
+
+    page_size: Annotated[
+        Optional[int],
+        FieldMetadata(query=QueryParamMetadata(style="form", explode=True)),
+    ] = None
+
+    page_token: Annotated[
+        Optional[str],
+        FieldMetadata(query=QueryParamMetadata(style="form", explode=True)),
+    ] = None
+
 
 class C1APIAttributeV1AttributesListAttributeValuesResponseTypedDict(TypedDict):
     content_type: str
@@ -28,17 +40,23 @@ class C1APIAttributeV1AttributesListAttributeValuesResponseTypedDict(TypedDict):
     r"""HTTP response status code for this operation"""
     raw_response: httpx.Response
     r"""Raw HTTP response; suitable for custom response parsing"""
-    list_attribute_values_response: NotRequired[shared_listattributevaluesresponse.ListAttributeValuesResponseTypedDict]
+    list_attribute_values_response: NotRequired[
+        shared_listattributevaluesresponse.ListAttributeValuesResponseTypedDict
+    ]
     r"""ListAttributeValuesResponse is the response for listing attribute values for a given AttributeType."""
-    
+
 
 class C1APIAttributeV1AttributesListAttributeValuesResponse(BaseModel):
     content_type: str
     r"""HTTP response content type for this operation"""
+
     status_code: int
     r"""HTTP response status code for this operation"""
+
     raw_response: httpx.Response
     r"""Raw HTTP response; suitable for custom response parsing"""
-    list_attribute_values_response: Optional[shared_listattributevaluesresponse.ListAttributeValuesResponse] = None
+
+    list_attribute_values_response: Optional[
+        shared_listattributevaluesresponse.ListAttributeValuesResponse
+    ] = None
     r"""ListAttributeValuesResponse is the response for listing attribute values for a given AttributeType."""
-    

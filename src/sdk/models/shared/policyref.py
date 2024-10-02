@@ -8,14 +8,13 @@ from typing_extensions import NotRequired
 
 class PolicyRefTypedDict(TypedDict):
     r"""The PolicyRef message."""
-    
+
     id: NotRequired[str]
     r"""The id field."""
-    
+
 
 class PolicyRef(BaseModel):
     r"""The PolicyRef message."""
-    
+
     id: Optional[str] = None
     r"""The id field."""
-    

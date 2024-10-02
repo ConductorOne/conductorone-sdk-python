@@ -7,10 +7,7 @@ from typing import TypedDict
 
 class SetAppOwnersResponseTypedDict(TypedDict):
     r"""The empty response message for setting the app owners."""
-    
-    
+
 
 class SetAppOwnersResponse(BaseModel):
     r"""The empty response message for setting the app owners."""
-    
-    

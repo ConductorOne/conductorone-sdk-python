@@ -16,7 +16,7 @@ class WaitTypedDict(TypedDict):
     - condition
 
     """
-    
+
     wait_condition: NotRequired[Nullable[WaitConditionTypedDict]]
     r"""The WaitCondition message."""
     comment_on_first_wait: NotRequired[str]
@@ -26,7 +26,7 @@ class WaitTypedDict(TypedDict):
     name: NotRequired[str]
     r"""The name of our condition to show on the task details page"""
     timeout_duration: NotRequired[str]
-    
+
 
 class Wait(BaseModel):
     r"""Define a Wait step for a policy to wait on a condition to be met.
@@ -35,20 +35,38 @@ class Wait(BaseModel):
     - condition
 
     """
-    
-    wait_condition: Annotated[OptionalNullable[WaitCondition], pydantic.Field(alias="condition")] = UNSET
+
+    wait_condition: Annotated[
+        OptionalNullable[WaitCondition], pydantic.Field(alias="condition")
+    ] = UNSET
     r"""The WaitCondition message."""
-    comment_on_first_wait: Annotated[Optional[str], pydantic.Field(alias="commentOnFirstWait")] = None
+
+    comment_on_first_wait: Annotated[
+        Optional[str], pydantic.Field(alias="commentOnFirstWait")
+    ] = None
     r"""The comment to post on first failed check."""
-    comment_on_timeout: Annotated[Optional[str], pydantic.Field(alias="commentOnTimeout")] = None
+
+    comment_on_timeout: Annotated[
+        Optional[str], pydantic.Field(alias="commentOnTimeout")
+    ] = None
     r"""The comment to post if we timeout."""
+
     name: Optional[str] = None
     r"""The name of our condition to show on the task details page"""
-    timeout_duration: Annotated[Optional[str], pydantic.Field(alias="timeoutDuration")] = None
-    
+
+    timeout_duration: Annotated[
+        Optional[str], pydantic.Field(alias="timeoutDuration")
+    ] = None
+
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
-        optional_fields = ["WaitCondition", "commentOnFirstWait", "commentOnTimeout", "name", "timeoutDuration"]
+        optional_fields = [
+            "WaitCondition",
+            "commentOnFirstWait",
+            "commentOnTimeout",
+            "name",
+            "timeoutDuration",
+        ]
         nullable_fields = ["WaitCondition"]
         null_default_fields = []
 
@@ -59,21 +77,19 @@ class Wait(BaseModel):
         for n, f in self.model_fields.items():
             k = f.alias or n
             val = serialized.get(k)
+            serialized.pop(k, None)
+
+            optional_nullable = k in optional_fields and k in nullable_fields
+            is_set = (
+                self.__pydantic_fields_set__.intersection({n})
+                or k in null_default_fields
+            )  # pylint: disable=no-member
 
             if val is not None and val != UNSET_SENTINEL:
                 m[k] = val
             elif val != UNSET_SENTINEL and (
-                not k in optional_fields
-                or (
-                    k in optional_fields
-                    and k in nullable_fields
-                    and (
-                        self.__pydantic_fields_set__.intersection({n})
-                        or k in null_default_fields
-                    )  # pylint: disable=no-member
-                )
+                not k in optional_fields or (optional_nullable and is_set)
             ):
                 m[k] = val
 
         return m
-        

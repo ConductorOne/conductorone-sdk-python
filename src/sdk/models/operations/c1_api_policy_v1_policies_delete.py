@@ -2,7 +2,10 @@
 
 from __future__ import annotations
 import httpx
-from sdk.models.shared import deletepolicyrequest as shared_deletepolicyrequest, deletepolicyresponse as shared_deletepolicyresponse
+from sdk.models.shared import (
+    deletepolicyrequest as shared_deletepolicyrequest,
+    deletepolicyresponse as shared_deletepolicyresponse,
+)
 from sdk.types import BaseModel
 from sdk.utils import FieldMetadata, PathParamMetadata, RequestMetadata
 from typing import Optional, TypedDict
@@ -11,13 +14,21 @@ from typing_extensions import Annotated, NotRequired
 
 class C1APIPolicyV1PoliciesDeleteRequestTypedDict(TypedDict):
     id: str
-    delete_policy_request: NotRequired[shared_deletepolicyrequest.DeletePolicyRequestTypedDict]
-    
+    delete_policy_request: NotRequired[
+        shared_deletepolicyrequest.DeletePolicyRequestTypedDict
+    ]
+
 
 class C1APIPolicyV1PoliciesDeleteRequest(BaseModel):
-    id: Annotated[str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))]
-    delete_policy_request: Annotated[Optional[shared_deletepolicyrequest.DeletePolicyRequest], FieldMetadata(request=RequestMetadata(media_type="application/json"))] = None
-    
+    id: Annotated[
+        str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))
+    ]
+
+    delete_policy_request: Annotated[
+        Optional[shared_deletepolicyrequest.DeletePolicyRequest],
+        FieldMetadata(request=RequestMetadata(media_type="application/json")),
+    ] = None
+
 
 class C1APIPolicyV1PoliciesDeleteResponseTypedDict(TypedDict):
     content_type: str
@@ -26,17 +37,23 @@ class C1APIPolicyV1PoliciesDeleteResponseTypedDict(TypedDict):
     r"""HTTP response status code for this operation"""
     raw_response: httpx.Response
     r"""Raw HTTP response; suitable for custom response parsing"""
-    delete_policy_response: NotRequired[shared_deletepolicyresponse.DeletePolicyResponseTypedDict]
+    delete_policy_response: NotRequired[
+        shared_deletepolicyresponse.DeletePolicyResponseTypedDict
+    ]
     r"""Empty response with a status code indicating success."""
-    
+
 
 class C1APIPolicyV1PoliciesDeleteResponse(BaseModel):
     content_type: str
     r"""HTTP response content type for this operation"""
+
     status_code: int
     r"""HTTP response status code for this operation"""
+
     raw_response: httpx.Response
     r"""Raw HTTP response; suitable for custom response parsing"""
-    delete_policy_response: Optional[shared_deletepolicyresponse.DeletePolicyResponse] = None
+
+    delete_policy_response: Optional[
+        shared_deletepolicyresponse.DeletePolicyResponse
+    ] = None
     r"""Empty response with a status code indicating success."""
-    

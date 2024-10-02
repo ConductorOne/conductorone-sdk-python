@@ -1,14 +1,107 @@
 # AppEntitlements
 (*app_entitlements*)
 
+## Overview
+
 ### Available Operations
 
+* [create](#create) - Create
+* [delete](#delete) - Delete
 * [get](#get) - Get
 * [list](#list) - List
 * [list_for_app_resource](#list_for_app_resource) - List For App Resource
 * [list_for_app_user](#list_for_app_user) - List For App User
 * [~~list_users~~](#list_users) - List Users :warning: **Deprecated**
 * [update](#update) - Update
+
+## create
+
+Invokes the c1.api.app.v1.AppEntitlements.Create method.
+
+### Example Usage
+
+```python
+from sdk import SDK
+from sdk.models import shared
+
+s = SDK(
+    security=shared.Security(
+        bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
+        oauth="<YOUR_OAUTH_HERE>",
+    ),
+)
+
+res = s.app_entitlements.create(request={
+    "app_id": "<id>",
+})
+
+if res.create_app_entitlement_response is not None:
+    # handle response
+    pass
+
+```
+
+### Parameters
+
+| Parameter                                                                                                              | Type                                                                                                                   | Required                                                                                                               | Description                                                                                                            |
+| ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
+| `request`                                                                                                              | [operations.C1APIAppV1AppEntitlementsCreateRequest](../../models/operations/c1apiappv1appentitlementscreaterequest.md) | :heavy_check_mark:                                                                                                     | The request object to use for the request.                                                                             |
+| `retries`                                                                                                              | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)                                                       | :heavy_minus_sign:                                                                                                     | Configuration to override the default retry behavior of the client.                                                    |
+
+### Response
+
+**[operations.C1APIAppV1AppEntitlementsCreateResponse](../../models/operations/c1apiappv1appentitlementscreateresponse.md)**
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
+
+## delete
+
+Invokes the c1.api.app.v1.AppEntitlements.Delete method.
+
+### Example Usage
+
+```python
+from sdk import SDK
+from sdk.models import shared
+
+s = SDK(
+    security=shared.Security(
+        bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
+        oauth="<YOUR_OAUTH_HERE>",
+    ),
+)
+
+res = s.app_entitlements.delete(request={
+    "app_id": "<id>",
+    "id": "<id>",
+})
+
+if res.delete_app_entitlement_response is not None:
+    # handle response
+    pass
+
+```
+
+### Parameters
+
+| Parameter                                                                                                              | Type                                                                                                                   | Required                                                                                                               | Description                                                                                                            |
+| ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
+| `request`                                                                                                              | [operations.C1APIAppV1AppEntitlementsDeleteRequest](../../models/operations/c1apiappv1appentitlementsdeleterequest.md) | :heavy_check_mark:                                                                                                     | The request object to use for the request.                                                                             |
+| `retries`                                                                                                              | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)                                                       | :heavy_minus_sign:                                                                                                     | Configuration to override the default retry behavior of the client.                                                    |
+
+### Response
+
+**[operations.C1APIAppV1AppEntitlementsDeleteResponse](../../models/operations/c1apiappv1appentitlementsdeleteresponse.md)**
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
 
 ## get
 
@@ -27,9 +120,8 @@ s = SDK(
     ),
 )
 
-
 res = s.app_entitlements.get(request={
-    "app_id": "<value>",
+    "app_id": "<id>",
     "id": "<id>",
 })
 
@@ -46,15 +138,15 @@ if res.get_app_entitlement_response is not None:
 | `request`                                                                                                        | [operations.C1APIAppV1AppEntitlementsGetRequest](../../models/operations/c1apiappv1appentitlementsgetrequest.md) | :heavy_check_mark:                                                                                               | The request object to use for the request.                                                                       |
 | `retries`                                                                                                        | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)                                                 | :heavy_minus_sign:                                                                                               | Configuration to override the default retry behavior of the client.                                              |
 
-
 ### Response
 
 **[operations.C1APIAppV1AppEntitlementsGetResponse](../../models/operations/c1apiappv1appentitlementsgetresponse.md)**
+
 ### Errors
 
-| Error Object    | Status Code     | Content Type    |
+| Error Type      | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 4xx-5xx         | */*             |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
 
 ## list
 
@@ -73,9 +165,8 @@ s = SDK(
     ),
 )
 
-
 res = s.app_entitlements.list(request={
-    "app_id": "<value>",
+    "app_id": "<id>",
 })
 
 if res.list_app_entitlements_response is not None:
@@ -91,15 +182,15 @@ if res.list_app_entitlements_response is not None:
 | `request`                                                                                                          | [operations.C1APIAppV1AppEntitlementsListRequest](../../models/operations/c1apiappv1appentitlementslistrequest.md) | :heavy_check_mark:                                                                                                 | The request object to use for the request.                                                                         |
 | `retries`                                                                                                          | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)                                                   | :heavy_minus_sign:                                                                                                 | Configuration to override the default retry behavior of the client.                                                |
 
-
 ### Response
 
 **[operations.C1APIAppV1AppEntitlementsListResponse](../../models/operations/c1apiappv1appentitlementslistresponse.md)**
+
 ### Errors
 
-| Error Object    | Status Code     | Content Type    |
+| Error Type      | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 4xx-5xx         | */*             |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
 
 ## list_for_app_resource
 
@@ -118,11 +209,10 @@ s = SDK(
     ),
 )
 
-
 res = s.app_entitlements.list_for_app_resource(request={
-    "app_id": "<value>",
-    "app_resource_id": "<value>",
-    "app_resource_type_id": "<value>",
+    "app_id": "<id>",
+    "app_resource_id": "<id>",
+    "app_resource_type_id": "<id>",
 })
 
 if res.list_app_entitlements_response is not None:
@@ -138,15 +228,15 @@ if res.list_app_entitlements_response is not None:
 | `request`                                                                                                                                      | [operations.C1APIAppV1AppEntitlementsListForAppResourceRequest](../../models/operations/c1apiappv1appentitlementslistforappresourcerequest.md) | :heavy_check_mark:                                                                                                                             | The request object to use for the request.                                                                                                     |
 | `retries`                                                                                                                                      | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)                                                                               | :heavy_minus_sign:                                                                                                                             | Configuration to override the default retry behavior of the client.                                                                            |
 
-
 ### Response
 
 **[operations.C1APIAppV1AppEntitlementsListForAppResourceResponse](../../models/operations/c1apiappv1appentitlementslistforappresourceresponse.md)**
+
 ### Errors
 
-| Error Object    | Status Code     | Content Type    |
+| Error Type      | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 4xx-5xx         | */*             |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
 
 ## list_for_app_user
 
@@ -165,10 +255,9 @@ s = SDK(
     ),
 )
 
-
 res = s.app_entitlements.list_for_app_user(request={
-    "app_id": "<value>",
-    "app_user_id": "<value>",
+    "app_id": "<id>",
+    "app_user_id": "<id>",
 })
 
 if res.list_app_entitlements_response is not None:
@@ -184,15 +273,15 @@ if res.list_app_entitlements_response is not None:
 | `request`                                                                                                                              | [operations.C1APIAppV1AppEntitlementsListForAppUserRequest](../../models/operations/c1apiappv1appentitlementslistforappuserrequest.md) | :heavy_check_mark:                                                                                                                     | The request object to use for the request.                                                                                             |
 | `retries`                                                                                                                              | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)                                                                       | :heavy_minus_sign:                                                                                                                     | Configuration to override the default retry behavior of the client.                                                                    |
 
-
 ### Response
 
 **[operations.C1APIAppV1AppEntitlementsListForAppUserResponse](../../models/operations/c1apiappv1appentitlementslistforappuserresponse.md)**
+
 ### Errors
 
-| Error Object    | Status Code     | Content Type    |
+| Error Type      | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 4xx-5xx         | */*             |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
 
 ## ~~list_users~~
 
@@ -213,10 +302,9 @@ s = SDK(
     ),
 )
 
-
 res = s.app_entitlements.list_users(request={
-    "app_entitlement_id": "<value>",
-    "app_id": "<value>",
+    "app_entitlement_id": "<id>",
+    "app_id": "<id>",
 })
 
 if res.list_app_entitlement_users_response is not None:
@@ -232,15 +320,15 @@ if res.list_app_entitlement_users_response is not None:
 | `request`                                                                                                                    | [operations.C1APIAppV1AppEntitlementsListUsersRequest](../../models/operations/c1apiappv1appentitlementslistusersrequest.md) | :heavy_check_mark:                                                                                                           | The request object to use for the request.                                                                                   |
 | `retries`                                                                                                                    | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)                                                             | :heavy_minus_sign:                                                                                                           | Configuration to override the default retry behavior of the client.                                                          |
 
-
 ### Response
 
 **[operations.C1APIAppV1AppEntitlementsListUsersResponse](../../models/operations/c1apiappv1appentitlementslistusersresponse.md)**
+
 ### Errors
 
-| Error Object    | Status Code     | Content Type    |
+| Error Type      | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 4xx-5xx         | */*             |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
 
 ## update
 
@@ -259,9 +347,8 @@ s = SDK(
     ),
 )
 
-
 res = s.app_entitlements.update(request={
-    "app_id": "<value>",
+    "app_id": "<id>",
     "id": "<id>",
 })
 
@@ -278,12 +365,12 @@ if res.update_app_entitlement_response is not None:
 | `request`                                                                                                              | [operations.C1APIAppV1AppEntitlementsUpdateRequest](../../models/operations/c1apiappv1appentitlementsupdaterequest.md) | :heavy_check_mark:                                                                                                     | The request object to use for the request.                                                                             |
 | `retries`                                                                                                              | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)                                                       | :heavy_minus_sign:                                                                                                     | Configuration to override the default retry behavior of the client.                                                    |
 
-
 ### Response
 
 **[operations.C1APIAppV1AppEntitlementsUpdateResponse](../../models/operations/c1apiappv1appentitlementsupdateresponse.md)**
+
 ### Errors
 
-| Error Object    | Status Code     | Content Type    |
+| Error Type      | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 4xx-5xx         | */*             |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |

@@ -1,6 +1,8 @@
 # UserSearch
 (*user_search*)
 
+## Overview
+
 ### Available Operations
 
 * [search](#search) - Search
@@ -22,7 +24,6 @@ s = SDK(
     ),
 )
 
-
 res = s.user_search.search()
 
 if res.search_users_response is not None:
@@ -38,12 +39,12 @@ if res.search_users_response is not None:
 | `request`                                                              | [shared.SearchUsersRequest](../../models/shared/searchusersrequest.md) | :heavy_check_mark:                                                     | The request object to use for the request.                             |
 | `retries`                                                              | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)       | :heavy_minus_sign:                                                     | Configuration to override the default retry behavior of the client.    |
 
-
 ### Response
 
 **[operations.C1APIUserV1UserSearchSearchResponse](../../models/operations/c1apiuserv1usersearchsearchresponse.md)**
+
 ### Errors
 
-| Error Object    | Status Code     | Content Type    |
+| Error Type      | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 4xx-5xx         | */*             |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |

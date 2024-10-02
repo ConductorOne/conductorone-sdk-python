@@ -7,10 +7,7 @@ from typing import TypedDict
 
 class AddAppEntitlementOwnerResponseTypedDict(TypedDict):
     r"""The empty response message for adding an app entitlement owner."""
-    
-    
+
 
 class AddAppEntitlementOwnerResponse(BaseModel):
     r"""The empty response message for adding an app entitlement owner."""
-    
-    

@@ -7,10 +7,7 @@ from typing import TypedDict
 
 class PayloadTestTypedDict(TypedDict):
     r"""The PayloadTest message."""
-    
-    
+
 
 class PayloadTest(BaseModel):
     r"""The PayloadTest message."""
-    
-    

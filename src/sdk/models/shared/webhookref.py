@@ -8,14 +8,13 @@ from typing_extensions import NotRequired
 
 class WebhookRefTypedDict(TypedDict):
     r"""The WebhookRef message."""
-    
+
     id: NotRequired[str]
     r"""The id field."""
-    
+
 
 class WebhookRef(BaseModel):
     r"""The WebhookRef message."""
-    
+
     id: Optional[str] = None
     r"""The id field."""
-    

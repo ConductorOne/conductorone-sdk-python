@@ -8,14 +8,13 @@ from typing_extensions import NotRequired
 
 class TaskRefTypedDict(TypedDict):
     r"""This object references a task by ID."""
-    
+
     id: NotRequired[str]
     r"""The ID of the referenced Task"""
-    
+
 
 class TaskRef(BaseModel):
     r"""This object references a task by ID."""
-    
+
     id: Optional[str] = None
     r"""The ID of the referenced Task"""
-    

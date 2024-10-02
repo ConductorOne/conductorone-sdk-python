@@ -7,10 +7,7 @@ from typing import TypedDict
 
 class RequestCatalogManagementServiceDeleteResponseTypedDict(TypedDict):
     r"""Empty response with a status code indicating success."""
-    
-    
+
 
 class RequestCatalogManagementServiceDeleteResponse(BaseModel):
     r"""Empty response with a status code indicating success."""
-    
-    

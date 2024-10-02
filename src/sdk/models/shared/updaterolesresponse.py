@@ -9,14 +9,13 @@ from typing_extensions import NotRequired
 
 class UpdateRolesResponseTypedDict(TypedDict):
     r"""UpdateRolesResponse is the response message containing the updated role."""
-    
+
     role: NotRequired[RoleTypedDict]
     r"""Role is a role that can be assigned to a user in ConductorOne."""
-    
+
 
 class UpdateRolesResponse(BaseModel):
     r"""UpdateRolesResponse is the response message containing the updated role."""
-    
+
     role: Optional[Role] = None
     r"""Role is a role that can be assigned to a user in ConductorOne."""
-    

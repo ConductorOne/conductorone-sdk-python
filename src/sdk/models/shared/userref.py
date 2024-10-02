@@ -8,14 +8,13 @@ from typing_extensions import NotRequired
 
 class UserRefTypedDict(TypedDict):
     r"""A reference to a user."""
-    
+
     id: NotRequired[str]
     r"""The id of the user."""
-    
+
 
 class UserRef(BaseModel):
     r"""A reference to a user."""
-    
+
     id: Optional[str] = None
     r"""The id of the user."""
-    

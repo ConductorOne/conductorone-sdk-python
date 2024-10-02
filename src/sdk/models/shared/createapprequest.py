@@ -10,7 +10,7 @@ from typing_extensions import Annotated, NotRequired
 
 class CreateAppRequestTypedDict(TypedDict):
     r"""The CreateAppRequest message is used to create a new app."""
-    
+
     certify_policy_id: NotRequired[str]
     r"""Creates the app with this certify policy."""
     description: NotRequired[str]
@@ -25,29 +25,51 @@ class CreateAppRequestTypedDict(TypedDict):
     r"""Creates the app with this array of owners."""
     revoke_policy_id: NotRequired[str]
     r"""Creates the app with this revoke policy."""
-    
+
 
 class CreateAppRequest(BaseModel):
     r"""The CreateAppRequest message is used to create a new app."""
-    
-    certify_policy_id: Annotated[Optional[str], pydantic.Field(alias="certifyPolicyId")] = None
+
+    certify_policy_id: Annotated[
+        Optional[str], pydantic.Field(alias="certifyPolicyId")
+    ] = None
     r"""Creates the app with this certify policy."""
+
     description: Optional[str] = None
     r"""Creates the app with this description."""
+
     display_name: Annotated[Optional[str], pydantic.Field(alias="displayName")] = None
     r"""Creates the app with this display name."""
-    grant_policy_id: Annotated[Optional[str], pydantic.Field(alias="grantPolicyId")] = None
+
+    grant_policy_id: Annotated[Optional[str], pydantic.Field(alias="grantPolicyId")] = (
+        None
+    )
     r"""Creates the app with this grant policy."""
-    monthly_cost_usd: Annotated[Optional[int], pydantic.Field(alias="monthlyCostUsd")] = None
+
+    monthly_cost_usd: Annotated[
+        Optional[int], pydantic.Field(alias="monthlyCostUsd")
+    ] = None
     r"""Creates the app with this monthly cost per seat."""
+
     owners: OptionalNullable[List[str]] = UNSET
     r"""Creates the app with this array of owners."""
-    revoke_policy_id: Annotated[Optional[str], pydantic.Field(alias="revokePolicyId")] = None
+
+    revoke_policy_id: Annotated[
+        Optional[str], pydantic.Field(alias="revokePolicyId")
+    ] = None
     r"""Creates the app with this revoke policy."""
-    
+
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
-        optional_fields = ["certifyPolicyId", "description", "displayName", "grantPolicyId", "monthlyCostUsd", "owners", "revokePolicyId"]
+        optional_fields = [
+            "certifyPolicyId",
+            "description",
+            "displayName",
+            "grantPolicyId",
+            "monthlyCostUsd",
+            "owners",
+            "revokePolicyId",
+        ]
         nullable_fields = ["owners"]
         null_default_fields = []
 
@@ -58,21 +80,19 @@ class CreateAppRequest(BaseModel):
         for n, f in self.model_fields.items():
             k = f.alias or n
             val = serialized.get(k)
+            serialized.pop(k, None)
+
+            optional_nullable = k in optional_fields and k in nullable_fields
+            is_set = (
+                self.__pydantic_fields_set__.intersection({n})
+                or k in null_default_fields
+            )  # pylint: disable=no-member
 
             if val is not None and val != UNSET_SENTINEL:
                 m[k] = val
             elif val != UNSET_SENTINEL and (
-                not k in optional_fields
-                or (
-                    k in optional_fields
-                    and k in nullable_fields
-                    and (
-                        self.__pydantic_fields_set__.intersection({n})
-                        or k in null_default_fields
-                    )  # pylint: disable=no-member
-                )
+                not k in optional_fields or (optional_nullable and is_set)
             ):
                 m[k] = val
 
         return m
-        

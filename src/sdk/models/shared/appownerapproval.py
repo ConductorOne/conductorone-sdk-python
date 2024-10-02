@@ -9,14 +9,15 @@ from typing_extensions import Annotated, NotRequired
 
 class AppOwnerApprovalTypedDict(TypedDict):
     r"""App owner approval provides the configuration for an approval step when the app owner is the target."""
-    
+
     allow_self_approval: NotRequired[bool]
     r"""Configuration that allows a user to self approve if they are an app owner during this approval step."""
-    
+
 
 class AppOwnerApproval(BaseModel):
     r"""App owner approval provides the configuration for an approval step when the app owner is the target."""
-    
-    allow_self_approval: Annotated[Optional[bool], pydantic.Field(alias="allowSelfApproval")] = None
+
+    allow_self_approval: Annotated[
+        Optional[bool], pydantic.Field(alias="allowSelfApproval")
+    ] = None
     r"""Configuration that allows a user to self approve if they are an app owner during this approval step."""
-    

@@ -7,10 +7,7 @@ from typing import TypedDict
 
 class CancelAccessRequestDefaultsRequestTypedDict(TypedDict):
     r"""The CancelAccessRequestDefaultsRequest message."""
-    
-    
+
 
 class CancelAccessRequestDefaultsRequest(BaseModel):
     r"""The CancelAccessRequestDefaultsRequest message."""
-    
-    

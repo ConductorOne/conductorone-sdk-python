@@ -9,18 +9,18 @@ from typing_extensions import Annotated, NotRequired
 
 class AppEntitlementRefTypedDict(TypedDict):
     r"""The AppEntitlementRef message."""
-    
+
     app_id: NotRequired[str]
     r"""The appId field."""
     id: NotRequired[str]
     r"""The id field."""
-    
+
 
 class AppEntitlementRef(BaseModel):
     r"""The AppEntitlementRef message."""
-    
+
     app_id: Annotated[Optional[str], pydantic.Field(alias="appId")] = None
     r"""The appId field."""
+
     id: Optional[str] = None
     r"""The id field."""
-    

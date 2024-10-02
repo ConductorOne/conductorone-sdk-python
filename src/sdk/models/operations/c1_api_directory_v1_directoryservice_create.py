@@ -2,7 +2,9 @@
 
 from __future__ import annotations
 import httpx
-from sdk.models.shared import directoryservicecreateresponse as shared_directoryservicecreateresponse
+from sdk.models.shared import (
+    directoryservicecreateresponse as shared_directoryservicecreateresponse,
+)
 from sdk.types import BaseModel
 from typing import Optional, TypedDict
 from typing_extensions import NotRequired
@@ -15,17 +17,23 @@ class C1APIDirectoryV1DirectoryServiceCreateResponseTypedDict(TypedDict):
     r"""HTTP response status code for this operation"""
     raw_response: httpx.Response
     r"""Raw HTTP response; suitable for custom response parsing"""
-    directory_service_create_response: NotRequired[shared_directoryservicecreateresponse.DirectoryServiceCreateResponseTypedDict]
+    directory_service_create_response: NotRequired[
+        shared_directoryservicecreateresponse.DirectoryServiceCreateResponseTypedDict
+    ]
     r"""The DirectoryServiceCreateResponse message."""
-    
+
 
 class C1APIDirectoryV1DirectoryServiceCreateResponse(BaseModel):
     content_type: str
     r"""HTTP response content type for this operation"""
+
     status_code: int
     r"""HTTP response status code for this operation"""
+
     raw_response: httpx.Response
     r"""Raw HTTP response; suitable for custom response parsing"""
-    directory_service_create_response: Optional[shared_directoryservicecreateresponse.DirectoryServiceCreateResponse] = None
+
+    directory_service_create_response: Optional[
+        shared_directoryservicecreateresponse.DirectoryServiceCreateResponse
+    ] = None
     r"""The DirectoryServiceCreateResponse message."""
-    

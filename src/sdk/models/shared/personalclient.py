@@ -11,7 +11,7 @@ from typing_extensions import Annotated, NotRequired
 
 class PersonalClientTypedDict(TypedDict):
     r"""The PersonalClient message contains information about a presonal client credential."""
-    
+
     allow_source_cidr: NotRequired[Nullable[List[str]]]
     r"""If set, only allows the CIDRs in the array to use the credential."""
     client_id: NotRequired[str]
@@ -33,36 +33,66 @@ class PersonalClientTypedDict(TypedDict):
     updated_at: NotRequired[datetime]
     user_id: NotRequired[str]
     r"""The ID of the user that this credential is created for."""
-    
+
 
 class PersonalClient(BaseModel):
     r"""The PersonalClient message contains information about a presonal client credential."""
-    
-    allow_source_cidr: Annotated[OptionalNullable[List[str]], pydantic.Field(alias="allowSourceCidr")] = UNSET
+
+    allow_source_cidr: Annotated[
+        OptionalNullable[List[str]], pydantic.Field(alias="allowSourceCidr")
+    ] = UNSET
     r"""If set, only allows the CIDRs in the array to use the credential."""
+
     client_id: Annotated[Optional[str], pydantic.Field(alias="clientId")] = None
     r"""The clientID of the credential."""
+
     created_at: Annotated[Optional[datetime], pydantic.Field(alias="createdAt")] = None
+
     deleted_at: Annotated[Optional[datetime], pydantic.Field(alias="deletedAt")] = None
+
     display_name: Annotated[Optional[str], pydantic.Field(alias="displayName")] = None
     r"""The display name of the personal client credential."""
-    expires_time: Annotated[Optional[datetime], pydantic.Field(alias="expiresTime")] = None
+
+    expires_time: Annotated[Optional[datetime], pydantic.Field(alias="expiresTime")] = (
+        None
+    )
+
     id: Optional[str] = None
     r"""The unique ID of the personal client credential."""
-    last_used_at: Annotated[Optional[datetime], pydantic.Field(alias="lastUsedAt")] = None
-    scoped_roles: Annotated[OptionalNullable[List[str]], pydantic.Field(alias="scopedRoles")] = UNSET
+
+    last_used_at: Annotated[Optional[datetime], pydantic.Field(alias="lastUsedAt")] = (
+        None
+    )
+
+    scoped_roles: Annotated[
+        OptionalNullable[List[str]], pydantic.Field(alias="scopedRoles")
+    ] = UNSET
     r"""scoped_roles provides a list of IAM Roles
     that this OAuth2 Client's API permissions
     are reduced to. The permissions granted to OAuth2 Client
     are AND'ed against the owning User's own permissions.
     """
+
     updated_at: Annotated[Optional[datetime], pydantic.Field(alias="updatedAt")] = None
+
     user_id: Annotated[Optional[str], pydantic.Field(alias="userId")] = None
     r"""The ID of the user that this credential is created for."""
-    
+
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
-        optional_fields = ["allowSourceCidr", "clientId", "createdAt", "deletedAt", "displayName", "expiresTime", "id", "lastUsedAt", "scopedRoles", "updatedAt", "userId"]
+        optional_fields = [
+            "allowSourceCidr",
+            "clientId",
+            "createdAt",
+            "deletedAt",
+            "displayName",
+            "expiresTime",
+            "id",
+            "lastUsedAt",
+            "scopedRoles",
+            "updatedAt",
+            "userId",
+        ]
         nullable_fields = ["allowSourceCidr", "scopedRoles"]
         null_default_fields = []
 
@@ -73,21 +103,19 @@ class PersonalClient(BaseModel):
         for n, f in self.model_fields.items():
             k = f.alias or n
             val = serialized.get(k)
+            serialized.pop(k, None)
+
+            optional_nullable = k in optional_fields and k in nullable_fields
+            is_set = (
+                self.__pydantic_fields_set__.intersection({n})
+                or k in null_default_fields
+            )  # pylint: disable=no-member
 
             if val is not None and val != UNSET_SENTINEL:
                 m[k] = val
             elif val != UNSET_SENTINEL and (
-                not k in optional_fields
-                or (
-                    k in optional_fields
-                    and k in nullable_fields
-                    and (
-                        self.__pydantic_fields_set__.intersection({n})
-                        or k in null_default_fields
-                    )  # pylint: disable=no-member
-                )
+                not k in optional_fields or (optional_nullable and is_set)
             ):
                 m[k] = val
 
         return m
-        

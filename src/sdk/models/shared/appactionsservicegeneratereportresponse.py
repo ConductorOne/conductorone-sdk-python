@@ -7,10 +7,7 @@ from typing import TypedDict
 
 class AppActionsServiceGenerateReportResponseTypedDict(TypedDict):
     r"""Empty response body. Status code indicates success."""
-    
-    
+
 
 class AppActionsServiceGenerateReportResponse(BaseModel):
     r"""Empty response body. Status code indicates success."""
-    
-    

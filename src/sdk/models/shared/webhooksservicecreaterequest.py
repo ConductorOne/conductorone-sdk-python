@@ -9,22 +9,23 @@ from typing_extensions import Annotated, NotRequired
 
 class WebhooksServiceCreateRequestTypedDict(TypedDict):
     r"""The WebhooksServiceCreateRequest message."""
-    
+
     description: NotRequired[str]
     r"""The description field."""
     display_name: NotRequired[str]
     r"""The displayName field."""
     url: NotRequired[str]
     r"""The url field."""
-    
+
 
 class WebhooksServiceCreateRequest(BaseModel):
     r"""The WebhooksServiceCreateRequest message."""
-    
+
     description: Optional[str] = None
     r"""The description field."""
+
     display_name: Annotated[Optional[str], pydantic.Field(alias="displayName")] = None
     r"""The displayName field."""
+
     url: Optional[str] = None
     r"""The url field."""
-    

@@ -11,7 +11,6 @@ s = SDK(
     ),
 )
 
-
 res = s.apps.create()
 
 if res.create_app_response is not None:

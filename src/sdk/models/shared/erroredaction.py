@@ -10,20 +10,21 @@ from typing_extensions import Annotated, NotRequired
 
 class ErroredActionTypedDict(TypedDict):
     r"""The outcome of a provision instance that has errored."""
-    
+
     description: NotRequired[str]
     r"""The description of a provision instance that has errored."""
     error_code: NotRequired[str]
     r"""The error code of a provision instance that has errored. This is only PEC-1 for now, but more will be added in the future."""
     errored_at: NotRequired[datetime]
-    
+
 
 class ErroredAction(BaseModel):
     r"""The outcome of a provision instance that has errored."""
-    
+
     description: Optional[str] = None
     r"""The description of a provision instance that has errored."""
+
     error_code: Annotated[Optional[str], pydantic.Field(alias="errorCode")] = None
     r"""The error code of a provision instance that has errored. This is only PEC-1 for now, but more will be added in the future."""
+
     errored_at: Annotated[Optional[datetime], pydantic.Field(alias="erroredAt")] = None
-    

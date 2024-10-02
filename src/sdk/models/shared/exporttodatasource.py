@@ -3,35 +3,43 @@
 from __future__ import annotations
 from enum import Enum
 import pydantic
+from pydantic.functional_validators import PlainValidator
+from sdk import utils
 from sdk.types import BaseModel
+from sdk.utils import validate_open_enum
 from typing import Optional, TypedDict
 from typing_extensions import Annotated, NotRequired
 
 
-class Format(str, Enum):
+class Format(str, Enum, metaclass=utils.OpenEnumMeta):
     r"""The format field."""
+
     EXPORT_FORMAT_UNSPECIFIED = "EXPORT_FORMAT_UNSPECIFIED"
     EXPORT_FORMAT_OCSF_JSON_ZSTD = "EXPORT_FORMAT_OCSF_JSON_ZSTD"
     EXPORT_FORMAT_OCSF_JSON_GZIP = "EXPORT_FORMAT_OCSF_JSON_GZIP"
 
+
 class ExportToDatasourceTypedDict(TypedDict):
     r"""The ExportToDatasource message."""
-    
+
     datasource_id: NotRequired[str]
     r"""The datasourceId field."""
     format: NotRequired[Format]
     r"""The format field."""
     prefix: NotRequired[str]
     r"""The prefix field."""
-    
+
 
 class ExportToDatasource(BaseModel):
     r"""The ExportToDatasource message."""
-    
+
     datasource_id: Annotated[Optional[str], pydantic.Field(alias="datasourceId")] = None
     r"""The datasourceId field."""
-    format: Optional[Format] = None
+
+    format: Annotated[Optional[Format], PlainValidator(validate_open_enum(False))] = (
+        None
+    )
     r"""The format field."""
+
     prefix: Optional[str] = None
     r"""The prefix field."""
-    

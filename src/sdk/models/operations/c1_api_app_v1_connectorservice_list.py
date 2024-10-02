@@ -2,7 +2,9 @@
 
 from __future__ import annotations
 import httpx
-from sdk.models.shared import connectorservicelistresponse as shared_connectorservicelistresponse
+from sdk.models.shared import (
+    connectorservicelistresponse as shared_connectorservicelistresponse,
+)
 from sdk.types import BaseModel
 from sdk.utils import FieldMetadata, PathParamMetadata, QueryParamMetadata
 from typing import Optional, TypedDict
@@ -13,13 +15,23 @@ class C1APIAppV1ConnectorServiceListRequestTypedDict(TypedDict):
     app_id: str
     page_size: NotRequired[int]
     page_token: NotRequired[str]
-    
+
 
 class C1APIAppV1ConnectorServiceListRequest(BaseModel):
-    app_id: Annotated[str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))]
-    page_size: Annotated[Optional[int], FieldMetadata(query=QueryParamMetadata(style="form", explode=True))] = None
-    page_token: Annotated[Optional[str], FieldMetadata(query=QueryParamMetadata(style="form", explode=True))] = None
-    
+    app_id: Annotated[
+        str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))
+    ]
+
+    page_size: Annotated[
+        Optional[int],
+        FieldMetadata(query=QueryParamMetadata(style="form", explode=True)),
+    ] = None
+
+    page_token: Annotated[
+        Optional[str],
+        FieldMetadata(query=QueryParamMetadata(style="form", explode=True)),
+    ] = None
+
 
 class C1APIAppV1ConnectorServiceListResponseTypedDict(TypedDict):
     content_type: str
@@ -28,17 +40,23 @@ class C1APIAppV1ConnectorServiceListResponseTypedDict(TypedDict):
     r"""HTTP response status code for this operation"""
     raw_response: httpx.Response
     r"""Raw HTTP response; suitable for custom response parsing"""
-    connector_service_list_response: NotRequired[shared_connectorservicelistresponse.ConnectorServiceListResponseTypedDict]
+    connector_service_list_response: NotRequired[
+        shared_connectorservicelistresponse.ConnectorServiceListResponseTypedDict
+    ]
     r"""The ConnectorServiceListResponse message contains a list of results and a nextPageToken if applicable"""
-    
+
 
 class C1APIAppV1ConnectorServiceListResponse(BaseModel):
     content_type: str
     r"""HTTP response content type for this operation"""
+
     status_code: int
     r"""HTTP response status code for this operation"""
+
     raw_response: httpx.Response
     r"""Raw HTTP response; suitable for custom response parsing"""
-    connector_service_list_response: Optional[shared_connectorservicelistresponse.ConnectorServiceListResponse] = None
+
+    connector_service_list_response: Optional[
+        shared_connectorservicelistresponse.ConnectorServiceListResponse
+    ] = None
     r"""The ConnectorServiceListResponse message contains a list of results and a nextPageToken if applicable"""
-    

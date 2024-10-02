@@ -10,7 +10,7 @@ from typing_extensions import Annotated, NotRequired
 
 class SearchAttributeValuesRequestTypedDict(TypedDict):
     r"""Search Attributes by a few properties."""
-    
+
     attribute_type_ids: NotRequired[Nullable[List[str]]]
     r"""The attribute type ids for what type of attributes to search for."""
     exclude_ids: NotRequired[Nullable[List[str]]]
@@ -25,29 +25,47 @@ class SearchAttributeValuesRequestTypedDict(TypedDict):
     r"""Query the attributes with a fuzzy search on display name and description."""
     value: NotRequired[str]
     r"""Search for attributes with a case insensitive match on the attribute value which is the attribute name."""
-    
+
 
 class SearchAttributeValuesRequest(BaseModel):
     r"""Search Attributes by a few properties."""
-    
-    attribute_type_ids: Annotated[OptionalNullable[List[str]], pydantic.Field(alias="attributeTypeIds")] = UNSET
+
+    attribute_type_ids: Annotated[
+        OptionalNullable[List[str]], pydantic.Field(alias="attributeTypeIds")
+    ] = UNSET
     r"""The attribute type ids for what type of attributes to search for."""
-    exclude_ids: Annotated[OptionalNullable[List[str]], pydantic.Field(alias="excludeIds")] = UNSET
+
+    exclude_ids: Annotated[
+        OptionalNullable[List[str]], pydantic.Field(alias="excludeIds")
+    ] = UNSET
     r"""Exclude attributes with these ids from the search results."""
+
     ids: OptionalNullable[List[str]] = UNSET
     r"""Include attributes with these ids in the search results."""
+
     page_size: Annotated[Optional[int], pydantic.Field(alias="pageSize")] = None
     r"""The pageSize where 0 <= pageSize <= 100. Values < 10 will be set to 10. A value of 0 returns the default page size (currently 25)"""
+
     page_token: Annotated[Optional[str], pydantic.Field(alias="pageToken")] = None
     r"""The pageToken field."""
+
     query: Optional[str] = None
     r"""Query the attributes with a fuzzy search on display name and description."""
+
     value: Optional[str] = None
     r"""Search for attributes with a case insensitive match on the attribute value which is the attribute name."""
-    
+
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
-        optional_fields = ["attributeTypeIds", "excludeIds", "ids", "pageSize", "pageToken", "query", "value"]
+        optional_fields = [
+            "attributeTypeIds",
+            "excludeIds",
+            "ids",
+            "pageSize",
+            "pageToken",
+            "query",
+            "value",
+        ]
         nullable_fields = ["attributeTypeIds", "excludeIds", "ids"]
         null_default_fields = []
 
@@ -58,21 +76,19 @@ class SearchAttributeValuesRequest(BaseModel):
         for n, f in self.model_fields.items():
             k = f.alias or n
             val = serialized.get(k)
+            serialized.pop(k, None)
+
+            optional_nullable = k in optional_fields and k in nullable_fields
+            is_set = (
+                self.__pydantic_fields_set__.intersection({n})
+                or k in null_default_fields
+            )  # pylint: disable=no-member
 
             if val is not None and val != UNSET_SENTINEL:
                 m[k] = val
             elif val != UNSET_SENTINEL and (
-                not k in optional_fields
-                or (
-                    k in optional_fields
-                    and k in nullable_fields
-                    and (
-                        self.__pydantic_fields_set__.intersection({n})
-                        or k in null_default_fields
-                    )  # pylint: disable=no-member
-                )
+                not k in optional_fields or (optional_nullable and is_set)
             ):
                 m[k] = val
 
         return m
-        

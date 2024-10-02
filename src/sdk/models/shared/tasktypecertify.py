@@ -4,13 +4,17 @@ from __future__ import annotations
 from datetime import datetime
 from enum import Enum
 import pydantic
+from pydantic.functional_validators import PlainValidator
+from sdk import utils
 from sdk.types import BaseModel
+from sdk.utils import validate_open_enum
 from typing import Optional, TypedDict
 from typing_extensions import Annotated, NotRequired
 
 
-class Outcome(str, Enum):
+class Outcome(str, Enum, metaclass=utils.OpenEnumMeta):
     r"""The outcome of the certification."""
+
     CERTIFY_OUTCOME_UNSPECIFIED = "CERTIFY_OUTCOME_UNSPECIFIED"
     CERTIFY_OUTCOME_CERTIFIED = "CERTIFY_OUTCOME_CERTIFIED"
     CERTIFY_OUTCOME_DECERTIFIED = "CERTIFY_OUTCOME_DECERTIFIED"
@@ -18,9 +22,10 @@ class Outcome(str, Enum):
     CERTIFY_OUTCOME_CANCELLED = "CERTIFY_OUTCOME_CANCELLED"
     CERTIFY_OUTCOME_WAIT_TIMED_OUT = "CERTIFY_OUTCOME_WAIT_TIMED_OUT"
 
+
 class TaskTypeCertifyTypedDict(TypedDict):
     r"""The TaskTypeCertify message indicates that a task is a certify task and all related details."""
-    
+
     access_review_id: NotRequired[str]
     r"""The ID of the access review."""
     access_review_selection: NotRequired[str]
@@ -36,24 +41,42 @@ class TaskTypeCertifyTypedDict(TypedDict):
     outcome: NotRequired[Outcome]
     r"""The outcome of the certification."""
     outcome_time: NotRequired[datetime]
-    
+
 
 class TaskTypeCertify(BaseModel):
     r"""The TaskTypeCertify message indicates that a task is a certify task and all related details."""
-    
-    access_review_id: Annotated[Optional[str], pydantic.Field(alias="accessReviewId")] = None
+
+    access_review_id: Annotated[
+        Optional[str], pydantic.Field(alias="accessReviewId")
+    ] = None
     r"""The ID of the access review."""
-    access_review_selection: Annotated[Optional[str], pydantic.Field(alias="accessReviewSelection")] = None
+
+    access_review_selection: Annotated[
+        Optional[str], pydantic.Field(alias="accessReviewSelection")
+    ] = None
     r"""The ID of the specific access review object that owns this certify task. This is also set on a revoke task if the revoke task is created from the denied outcome of a certify task."""
-    app_entitlement_id: Annotated[Optional[str], pydantic.Field(alias="appEntitlementId")] = None
+
+    app_entitlement_id: Annotated[
+        Optional[str], pydantic.Field(alias="appEntitlementId")
+    ] = None
     r"""The ID of the app entitlement."""
+
     app_id: Annotated[Optional[str], pydantic.Field(alias="appId")] = None
     r"""The ID of the app."""
+
     app_user_id: Annotated[Optional[str], pydantic.Field(alias="appUserId")] = None
     r"""The ID of the app user."""
-    identity_user_id: Annotated[Optional[str], pydantic.Field(alias="identityUserId")] = None
+
+    identity_user_id: Annotated[
+        Optional[str], pydantic.Field(alias="identityUserId")
+    ] = None
     r"""The ID of the user."""
-    outcome: Optional[Outcome] = None
+
+    outcome: Annotated[Optional[Outcome], PlainValidator(validate_open_enum(False))] = (
+        None
+    )
     r"""The outcome of the certification."""
-    outcome_time: Annotated[Optional[datetime], pydantic.Field(alias="outcomeTime")] = None
-    
+
+    outcome_time: Annotated[Optional[datetime], pydantic.Field(alias="outcomeTime")] = (
+        None
+    )

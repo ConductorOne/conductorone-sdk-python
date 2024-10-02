@@ -2,7 +2,10 @@
 
 from __future__ import annotations
 import httpx
-from sdk.models.shared import setappentitlementownersrequest as shared_setappentitlementownersrequest, setappentitlementownersresponse as shared_setappentitlementownersresponse
+from sdk.models.shared import (
+    setappentitlementownersrequest as shared_setappentitlementownersrequest,
+    setappentitlementownersresponse as shared_setappentitlementownersresponse,
+)
 from sdk.types import BaseModel
 from sdk.utils import FieldMetadata, PathParamMetadata, RequestMetadata
 from typing import Optional, TypedDict
@@ -12,14 +15,25 @@ from typing_extensions import Annotated, NotRequired
 class C1APIAppV1AppEntitlementOwnersSetRequestTypedDict(TypedDict):
     app_id: str
     entitlement_id: str
-    set_app_entitlement_owners_request: NotRequired[shared_setappentitlementownersrequest.SetAppEntitlementOwnersRequestTypedDict]
-    
+    set_app_entitlement_owners_request: NotRequired[
+        shared_setappentitlementownersrequest.SetAppEntitlementOwnersRequestTypedDict
+    ]
+
 
 class C1APIAppV1AppEntitlementOwnersSetRequest(BaseModel):
-    app_id: Annotated[str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))]
-    entitlement_id: Annotated[str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))]
-    set_app_entitlement_owners_request: Annotated[Optional[shared_setappentitlementownersrequest.SetAppEntitlementOwnersRequest], FieldMetadata(request=RequestMetadata(media_type="application/json"))] = None
-    
+    app_id: Annotated[
+        str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))
+    ]
+
+    entitlement_id: Annotated[
+        str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))
+    ]
+
+    set_app_entitlement_owners_request: Annotated[
+        Optional[shared_setappentitlementownersrequest.SetAppEntitlementOwnersRequest],
+        FieldMetadata(request=RequestMetadata(media_type="application/json")),
+    ] = None
+
 
 class C1APIAppV1AppEntitlementOwnersSetResponseTypedDict(TypedDict):
     content_type: str
@@ -28,17 +42,23 @@ class C1APIAppV1AppEntitlementOwnersSetResponseTypedDict(TypedDict):
     r"""HTTP response status code for this operation"""
     raw_response: httpx.Response
     r"""Raw HTTP response; suitable for custom response parsing"""
-    set_app_entitlement_owners_response: NotRequired[shared_setappentitlementownersresponse.SetAppEntitlementOwnersResponseTypedDict]
+    set_app_entitlement_owners_response: NotRequired[
+        shared_setappentitlementownersresponse.SetAppEntitlementOwnersResponseTypedDict
+    ]
     r"""The empty response message for setting the app entitlement owners."""
-    
+
 
 class C1APIAppV1AppEntitlementOwnersSetResponse(BaseModel):
     content_type: str
     r"""HTTP response content type for this operation"""
+
     status_code: int
     r"""HTTP response status code for this operation"""
+
     raw_response: httpx.Response
     r"""Raw HTTP response; suitable for custom response parsing"""
-    set_app_entitlement_owners_response: Optional[shared_setappentitlementownersresponse.SetAppEntitlementOwnersResponse] = None
+
+    set_app_entitlement_owners_response: Optional[
+        shared_setappentitlementownersresponse.SetAppEntitlementOwnersResponse
+    ] = None
     r"""The empty response message for setting the app entitlement owners."""
-    

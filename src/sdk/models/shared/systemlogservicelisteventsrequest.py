@@ -4,20 +4,25 @@ from __future__ import annotations
 from datetime import datetime
 from enum import Enum
 import pydantic
+from pydantic.functional_validators import PlainValidator
+from sdk import utils
 from sdk.types import BaseModel
+from sdk.utils import validate_open_enum
 from typing import Optional, TypedDict
 from typing_extensions import Annotated, NotRequired
 
 
-class SortDirection(str, Enum):
+class SortDirection(str, Enum, metaclass=utils.OpenEnumMeta):
     r"""The sortDirection field."""
+
     SORT_DIRECTION_UNSPECIFIED = "SORT_DIRECTION_UNSPECIFIED"
     SORT_DIRECTION_ASC = "SORT_DIRECTION_ASC"
     SORT_DIRECTION_DESC = "SORT_DIRECTION_DESC"
 
+
 class SystemLogServiceListEventsRequestTypedDict(TypedDict):
     r"""The SystemLogServiceListEventsRequest message."""
-    
+
     page_size: NotRequired[int]
     r"""The pageSize field."""
     page_token: NotRequired[str]
@@ -28,19 +33,28 @@ class SystemLogServiceListEventsRequestTypedDict(TypedDict):
     sort_direction: NotRequired[SortDirection]
     r"""The sortDirection field."""
     until: NotRequired[datetime]
-    
+
 
 class SystemLogServiceListEventsRequest(BaseModel):
     r"""The SystemLogServiceListEventsRequest message."""
-    
+
     page_size: Annotated[Optional[int], pydantic.Field(alias="pageSize")] = None
     r"""The pageSize field."""
+
     page_token: Annotated[Optional[str], pydantic.Field(alias="pageToken")] = None
     r"""The pageToken field."""
+
     since: Optional[datetime] = None
-    since_event_uid: Annotated[Optional[str], pydantic.Field(alias="sinceEventUid")] = None
+
+    since_event_uid: Annotated[Optional[str], pydantic.Field(alias="sinceEventUid")] = (
+        None
+    )
     r"""The sinceEventUid field."""
-    sort_direction: Annotated[Optional[SortDirection], pydantic.Field(alias="sortDirection")] = None
+
+    sort_direction: Annotated[
+        Annotated[Optional[SortDirection], PlainValidator(validate_open_enum(False))],
+        pydantic.Field(alias="sortDirection"),
+    ] = None
     r"""The sortDirection field."""
+
     until: Optional[datetime] = None
-    

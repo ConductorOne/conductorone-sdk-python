@@ -7,10 +7,7 @@ from typing import TypedDict
 
 class TaskTypeOffboardingInputTypedDict(TypedDict):
     r"""The TaskTypeOffboarding message."""
-    
-    
+
 
 class TaskTypeOffboardingInput(BaseModel):
     r"""The TaskTypeOffboarding message."""
-    
-    

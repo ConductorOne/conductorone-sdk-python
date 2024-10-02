@@ -7,10 +7,7 @@ from typing import TypedDict
 
 class ConnectorServiceRotateCredentialRequestTypedDict(TypedDict):
     r"""ConnectorServiceRotateCredentialRequest is a request for rotating connector credentials. It uses URL values for input."""
-    
-    
+
 
 class ConnectorServiceRotateCredentialRequest(BaseModel):
     r"""ConnectorServiceRotateCredentialRequest is a request for rotating connector credentials. It uses URL values for input."""
-    
-    

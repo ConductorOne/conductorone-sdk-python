@@ -23,7 +23,7 @@ class PolicyStepTypedDict(TypedDict):
     - wait
 
     """
-    
+
     accept: NotRequired[Nullable[AcceptTypedDict]]
     r"""This policy step indicates that a ticket should have an approved outcome. This is a terminal approval state and is used to explicitly define the end of approval steps."""
     approval: NotRequired[Nullable[ApprovalTypedDict]]
@@ -38,6 +38,7 @@ class PolicyStepTypedDict(TypedDict):
     - entitlementOwners
     - expression
     - webhook
+    - resourceOwners
 
     """
     provision: NotRequired[Nullable[ProvisionTypedDict]]
@@ -51,7 +52,7 @@ class PolicyStepTypedDict(TypedDict):
     - condition
 
     """
-    
+
 
 class PolicyStep(BaseModel):
     r"""The PolicyStep message.
@@ -64,9 +65,10 @@ class PolicyStep(BaseModel):
     - wait
 
     """
-    
+
     accept: OptionalNullable[Accept] = UNSET
     r"""This policy step indicates that a ticket should have an approved outcome. This is a terminal approval state and is used to explicitly define the end of approval steps."""
+
     approval: OptionalNullable[Approval] = UNSET
     r"""The Approval message.
 
@@ -79,12 +81,16 @@ class PolicyStep(BaseModel):
     - entitlementOwners
     - expression
     - webhook
+    - resourceOwners
 
     """
+
     provision: OptionalNullable[Provision] = UNSET
     r"""The provision step references a provision policy for this step."""
+
     reject: OptionalNullable[Reject] = UNSET
     r"""This policy step indicates that a ticket should have a denied outcome. This is a terminal approval state and is used to explicitly define the end of approval steps."""
+
     wait: OptionalNullable[Wait] = UNSET
     r"""Define a Wait step for a policy to wait on a condition to be met.
 
@@ -92,7 +98,7 @@ class PolicyStep(BaseModel):
     - condition
 
     """
-    
+
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
         optional_fields = ["Accept", "Approval", "Provision", "Reject", "Wait"]
@@ -106,21 +112,19 @@ class PolicyStep(BaseModel):
         for n, f in self.model_fields.items():
             k = f.alias or n
             val = serialized.get(k)
+            serialized.pop(k, None)
+
+            optional_nullable = k in optional_fields and k in nullable_fields
+            is_set = (
+                self.__pydantic_fields_set__.intersection({n})
+                or k in null_default_fields
+            )  # pylint: disable=no-member
 
             if val is not None and val != UNSET_SENTINEL:
                 m[k] = val
             elif val != UNSET_SENTINEL and (
-                not k in optional_fields
-                or (
-                    k in optional_fields
-                    and k in nullable_fields
-                    and (
-                        self.__pydantic_fields_set__.intersection({n})
-                        or k in null_default_fields
-                    )  # pylint: disable=no-member
-                )
+                not k in optional_fields or (optional_nullable and is_set)
             ):
                 m[k] = val
 
         return m
-        

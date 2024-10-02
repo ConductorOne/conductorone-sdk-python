@@ -11,19 +11,24 @@ from typing_extensions import Annotated, NotRequired
 
 class UpdateAppUsageControlsRequestTypedDict(TypedDict):
     r"""The UpdateAppUsageControlsRequest message contains the AppUsageControls object to update and the update mask."""
-    
+
     app_usage_controls: NotRequired[AppUsageControlsTypedDict]
     r"""The AppUsageControls object describes some peripheral configuration for an app."""
     update_mask: NotRequired[Nullable[str]]
-    
+
 
 class UpdateAppUsageControlsRequest(BaseModel):
     r"""The UpdateAppUsageControlsRequest message contains the AppUsageControls object to update and the update mask."""
-    
-    app_usage_controls: Annotated[Optional[AppUsageControls], pydantic.Field(alias="appUsageControls")] = None
+
+    app_usage_controls: Annotated[
+        Optional[AppUsageControls], pydantic.Field(alias="appUsageControls")
+    ] = None
     r"""The AppUsageControls object describes some peripheral configuration for an app."""
-    update_mask: Annotated[OptionalNullable[str], pydantic.Field(alias="updateMask")] = UNSET
-    
+
+    update_mask: Annotated[
+        OptionalNullable[str], pydantic.Field(alias="updateMask")
+    ] = UNSET
+
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
         optional_fields = ["AppUsageControls", "updateMask"]
@@ -37,21 +42,19 @@ class UpdateAppUsageControlsRequest(BaseModel):
         for n, f in self.model_fields.items():
             k = f.alias or n
             val = serialized.get(k)
+            serialized.pop(k, None)
+
+            optional_nullable = k in optional_fields and k in nullable_fields
+            is_set = (
+                self.__pydantic_fields_set__.intersection({n})
+                or k in null_default_fields
+            )  # pylint: disable=no-member
 
             if val is not None and val != UNSET_SENTINEL:
                 m[k] = val
             elif val != UNSET_SENTINEL and (
-                not k in optional_fields
-                or (
-                    k in optional_fields
-                    and k in nullable_fields
-                    and (
-                        self.__pydantic_fields_set__.intersection({n})
-                        or k in null_default_fields
-                    )  # pylint: disable=no-member
-                )
+                not k in optional_fields or (optional_nullable and is_set)
             ):
                 m[k] = val
 
         return m
-        

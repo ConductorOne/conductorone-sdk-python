@@ -9,14 +9,13 @@ from typing_extensions import Annotated, NotRequired
 
 class WebhookApprovalTypedDict(TypedDict):
     r"""The WebhookApproval message."""
-    
+
     webhook_id: NotRequired[str]
     r"""The ID of the webhook to call for approval."""
-    
+
 
 class WebhookApproval(BaseModel):
     r"""The WebhookApproval message."""
-    
+
     webhook_id: Annotated[Optional[str], pydantic.Field(alias="webhookId")] = None
     r"""The ID of the webhook to call for approval."""
-    

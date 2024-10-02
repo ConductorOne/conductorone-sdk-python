@@ -6,13 +6,17 @@ from .webhookspec import WebhookSpec, WebhookSpecTypedDict
 from datetime import datetime
 from enum import Enum
 import pydantic
+from pydantic.functional_validators import PlainValidator
+from sdk import utils
 from sdk.types import BaseModel
+from sdk.utils import validate_open_enum
 from typing import Optional, TypedDict
 from typing_extensions import Annotated, NotRequired
 
 
-class WebhookInstanceState(str, Enum):
+class WebhookInstanceState(str, Enum, metaclass=utils.OpenEnumMeta):
     r"""The state field."""
+
     WEBHOOK_STATE_UNSPECIFIED = "WEBHOOK_STATE_UNSPECIFIED"
     WEBHOOK_STATE_PENDING = "WEBHOOK_STATE_PENDING"
     WEBHOOK_STATE_RUNNING = "WEBHOOK_STATE_RUNNING"
@@ -22,9 +26,10 @@ class WebhookInstanceState(str, Enum):
     WEBHOOK_STATE_SUCCESS = "WEBHOOK_STATE_SUCCESS"
     WEBHOOK_STATE_FATAL_ERROR = "WEBHOOK_STATE_FATAL_ERROR"
 
+
 class WebhookInstanceTypedDict(TypedDict):
     r"""The WebhookInstance message."""
-    
+
     webhook_source: NotRequired[WebhookSourceTypedDict]
     r"""The WebhookSource message.
 
@@ -50,12 +55,14 @@ class WebhookInstanceTypedDict(TypedDict):
     updated_at: NotRequired[datetime]
     webhook_id: NotRequired[str]
     r"""The webhookId field."""
-    
+
 
 class WebhookInstance(BaseModel):
     r"""The WebhookInstance message."""
-    
-    webhook_source: Annotated[Optional[WebhookSource], pydantic.Field(alias="source")] = None
+
+    webhook_source: Annotated[
+        Optional[WebhookSource], pydantic.Field(alias="source")
+    ] = None
     r"""The WebhookSource message.
 
     This message contains a oneof named source. Only a single field of the following list may be set at a time:
@@ -65,19 +72,34 @@ class WebhookInstance(BaseModel):
     - provisionStep
 
     """
+
     webhook_spec: Annotated[Optional[WebhookSpec], pydantic.Field(alias="spec")] = None
     r"""The WebhookSpec message."""
+
     attempts: Optional[int] = None
     r"""The attempts field."""
-    completed_at: Annotated[Optional[datetime], pydantic.Field(alias="completedAt")] = None
+
+    completed_at: Annotated[Optional[datetime], pydantic.Field(alias="completedAt")] = (
+        None
+    )
+
     created_at: Annotated[Optional[datetime], pydantic.Field(alias="createdAt")] = None
+
     expires_at: Annotated[Optional[datetime], pydantic.Field(alias="expiresAt")] = None
+
     id: Optional[str] = None
     r"""The id field."""
-    last_attempted_at: Annotated[Optional[datetime], pydantic.Field(alias="lastAttemptedAt")] = None
-    state: Optional[WebhookInstanceState] = None
+
+    last_attempted_at: Annotated[
+        Optional[datetime], pydantic.Field(alias="lastAttemptedAt")
+    ] = None
+
+    state: Annotated[
+        Optional[WebhookInstanceState], PlainValidator(validate_open_enum(False))
+    ] = None
     r"""The state field."""
+
     updated_at: Annotated[Optional[datetime], pydantic.Field(alias="updatedAt")] = None
+
     webhook_id: Annotated[Optional[str], pydantic.Field(alias="webhookId")] = None
     r"""The webhookId field."""
-    

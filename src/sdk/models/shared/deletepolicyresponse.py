@@ -7,10 +7,7 @@ from typing import TypedDict
 
 class DeletePolicyResponseTypedDict(TypedDict):
     r"""Empty response with a status code indicating success."""
-    
-    
+
 
 class DeletePolicyResponse(BaseModel):
     r"""Empty response with a status code indicating success."""
-    
-    

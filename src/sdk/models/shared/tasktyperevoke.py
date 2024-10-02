@@ -5,13 +5,17 @@ from .taskrevokesource import TaskRevokeSource, TaskRevokeSourceTypedDict
 from datetime import datetime
 from enum import Enum
 import pydantic
+from pydantic.functional_validators import PlainValidator
+from sdk import utils
 from sdk.types import BaseModel
+from sdk.utils import validate_open_enum
 from typing import Optional, TypedDict
 from typing_extensions import Annotated, NotRequired
 
 
-class TaskTypeRevokeOutcome(str, Enum):
+class TaskTypeRevokeOutcome(str, Enum, metaclass=utils.OpenEnumMeta):
     r"""The outcome of the revoke."""
+
     REVOKE_OUTCOME_UNSPECIFIED = "REVOKE_OUTCOME_UNSPECIFIED"
     REVOKE_OUTCOME_REVOKED = "REVOKE_OUTCOME_REVOKED"
     REVOKE_OUTCOME_DENIED = "REVOKE_OUTCOME_DENIED"
@@ -19,9 +23,10 @@ class TaskTypeRevokeOutcome(str, Enum):
     REVOKE_OUTCOME_CANCELLED = "REVOKE_OUTCOME_CANCELLED"
     REVOKE_OUTCOME_WAIT_TIMED_OUT = "REVOKE_OUTCOME_WAIT_TIMED_OUT"
 
+
 class TaskTypeRevokeTypedDict(TypedDict):
     r"""The TaskTypeRevoke message indicates that a task is a revoke task and all related details."""
-    
+
     task_revoke_source: NotRequired[TaskRevokeSourceTypedDict]
     r"""The TaskRevokeSource message indicates the source of the revoke task is one of expired, nonUsage, request, or review.
 
@@ -43,12 +48,14 @@ class TaskTypeRevokeTypedDict(TypedDict):
     outcome: NotRequired[TaskTypeRevokeOutcome]
     r"""The outcome of the revoke."""
     outcome_time: NotRequired[datetime]
-    
+
 
 class TaskTypeRevoke(BaseModel):
     r"""The TaskTypeRevoke message indicates that a task is a revoke task and all related details."""
-    
-    task_revoke_source: Annotated[Optional[TaskRevokeSource], pydantic.Field(alias="source")] = None
+
+    task_revoke_source: Annotated[
+        Optional[TaskRevokeSource], pydantic.Field(alias="source")
+    ] = None
     r"""The TaskRevokeSource message indicates the source of the revoke task is one of expired, nonUsage, request, or review.
 
     This message contains a oneof named origin. Only a single field of the following list may be set at a time:
@@ -58,15 +65,28 @@ class TaskTypeRevoke(BaseModel):
     - nonUsage
 
     """
-    app_entitlement_id: Annotated[Optional[str], pydantic.Field(alias="appEntitlementId")] = None
+
+    app_entitlement_id: Annotated[
+        Optional[str], pydantic.Field(alias="appEntitlementId")
+    ] = None
     r"""The ID of the app entitlement."""
+
     app_id: Annotated[Optional[str], pydantic.Field(alias="appId")] = None
     r"""The ID of the app."""
+
     app_user_id: Annotated[Optional[str], pydantic.Field(alias="appUserId")] = None
     r"""The ID of the app user."""
-    identity_user_id: Annotated[Optional[str], pydantic.Field(alias="identityUserId")] = None
+
+    identity_user_id: Annotated[
+        Optional[str], pydantic.Field(alias="identityUserId")
+    ] = None
     r"""The ID of the user."""
-    outcome: Optional[TaskTypeRevokeOutcome] = None
+
+    outcome: Annotated[
+        Optional[TaskTypeRevokeOutcome], PlainValidator(validate_open_enum(False))
+    ] = None
     r"""The outcome of the revoke."""
-    outcome_time: Annotated[Optional[datetime], pydantic.Field(alias="outcomeTime")] = None
-    
+
+    outcome_time: Annotated[Optional[datetime], pydantic.Field(alias="outcomeTime")] = (
+        None
+    )

@@ -1,6 +1,8 @@
 # AttributeSearch
 (*attribute_search*)
 
+## Overview
+
 ### Available Operations
 
 * [search_attribute_values](#search_attribute_values) - Search Attribute Values
@@ -22,7 +24,6 @@ s = SDK(
     ),
 )
 
-
 res = s.attribute_search.search_attribute_values()
 
 if res.search_attribute_values_response is not None:
@@ -38,12 +39,12 @@ if res.search_attribute_values_response is not None:
 | `request`                                                                                  | [shared.SearchAttributeValuesRequest](../../models/shared/searchattributevaluesrequest.md) | :heavy_check_mark:                                                                         | The request object to use for the request.                                                 |
 | `retries`                                                                                  | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)                           | :heavy_minus_sign:                                                                         | Configuration to override the default retry behavior of the client.                        |
 
-
 ### Response
 
 **[operations.C1APIAttributeV1AttributeSearchSearchAttributeValuesResponse](../../models/operations/c1apiattributev1attributesearchsearchattributevaluesresponse.md)**
+
 ### Errors
 
-| Error Object    | Status Code     | Content Type    |
+| Error Type      | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 4xx-5xx         | */*             |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |

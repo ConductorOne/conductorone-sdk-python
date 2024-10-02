@@ -10,9 +10,26 @@ from typing_extensions import Annotated
 class SecurityTypedDict(TypedDict):
     bearer_auth: str
     oauth: str
-    
+
 
 class Security(BaseModel):
-    bearer_auth: Annotated[str, FieldMetadata(security=SecurityMetadata(scheme=True, scheme_type="http", sub_type="bearer", field_name="Authorization"))]
-    oauth: Annotated[str, FieldMetadata(security=SecurityMetadata(scheme=True, scheme_type="oauth2", field_name="Authorization"))]
-    
+    bearer_auth: Annotated[
+        str,
+        FieldMetadata(
+            security=SecurityMetadata(
+                scheme=True,
+                scheme_type="http",
+                sub_type="bearer",
+                field_name="Authorization",
+            )
+        ),
+    ]
+
+    oauth: Annotated[
+        str,
+        FieldMetadata(
+            security=SecurityMetadata(
+                scheme=True, scheme_type="oauth2", field_name="Authorization"
+            )
+        ),
+    ]

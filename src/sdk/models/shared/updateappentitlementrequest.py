@@ -2,7 +2,10 @@
 
 from __future__ import annotations
 from .appentitlement import AppEntitlementInput, AppEntitlementInputTypedDict
-from .appentitlementexpandmask import AppEntitlementExpandMask, AppEntitlementExpandMaskTypedDict
+from .appentitlementexpandmask import (
+    AppEntitlementExpandMask,
+    AppEntitlementExpandMaskTypedDict,
+)
 import pydantic
 from pydantic import model_serializer
 from sdk.types import BaseModel, Nullable, OptionalNullable, UNSET, UNSET_SENTINEL
@@ -12,7 +15,7 @@ from typing_extensions import Annotated, NotRequired
 
 class UpdateAppEntitlementRequestTypedDict(TypedDict):
     r"""The UpdateAppEntitlementRequest message contains the app entitlement and the fields to be updated."""
-    
+
     app_entitlement: NotRequired[AppEntitlementInputTypedDict]
     r"""The app entitlement represents one permission in a downstream App (SAAS) that can be granted. For example, GitHub Read vs GitHub Write.
 
@@ -26,12 +29,14 @@ class UpdateAppEntitlementRequestTypedDict(TypedDict):
     override_access_requests_defaults: NotRequired[bool]
     r"""Flag to indicate that access request defaults, if any are applied to these entitlements, should be overridden."""
     update_mask: NotRequired[Nullable[str]]
-    
+
 
 class UpdateAppEntitlementRequest(BaseModel):
     r"""The UpdateAppEntitlementRequest message contains the app entitlement and the fields to be updated."""
-    
-    app_entitlement: Annotated[Optional[AppEntitlementInput], pydantic.Field(alias="entitlement")] = None
+
+    app_entitlement: Annotated[
+        Optional[AppEntitlementInput], pydantic.Field(alias="entitlement")
+    ] = None
     r"""The app entitlement represents one permission in a downstream App (SAAS) that can be granted. For example, GitHub Read vs GitHub Write.
 
     This message contains a oneof named max_grant_duration. Only a single field of the following list may be set at a time:
@@ -39,15 +44,29 @@ class UpdateAppEntitlementRequest(BaseModel):
     - durationGrant
 
     """
-    app_entitlement_expand_mask: Annotated[Optional[AppEntitlementExpandMask], pydantic.Field(alias="expandMask")] = None
+
+    app_entitlement_expand_mask: Annotated[
+        Optional[AppEntitlementExpandMask], pydantic.Field(alias="expandMask")
+    ] = None
     r"""The app entitlement expand mask allows the user to get additional information when getting responses containing app entitlement views."""
-    override_access_requests_defaults: Annotated[Optional[bool], pydantic.Field(alias="overrideAccessRequestsDefaults")] = None
+
+    override_access_requests_defaults: Annotated[
+        Optional[bool], pydantic.Field(alias="overrideAccessRequestsDefaults")
+    ] = None
     r"""Flag to indicate that access request defaults, if any are applied to these entitlements, should be overridden."""
-    update_mask: Annotated[OptionalNullable[str], pydantic.Field(alias="updateMask")] = UNSET
-    
+
+    update_mask: Annotated[
+        OptionalNullable[str], pydantic.Field(alias="updateMask")
+    ] = UNSET
+
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
-        optional_fields = ["AppEntitlement", "AppEntitlementExpandMask", "overrideAccessRequestsDefaults", "updateMask"]
+        optional_fields = [
+            "AppEntitlement",
+            "AppEntitlementExpandMask",
+            "overrideAccessRequestsDefaults",
+            "updateMask",
+        ]
         nullable_fields = ["updateMask"]
         null_default_fields = []
 
@@ -58,21 +77,19 @@ class UpdateAppEntitlementRequest(BaseModel):
         for n, f in self.model_fields.items():
             k = f.alias or n
             val = serialized.get(k)
+            serialized.pop(k, None)
+
+            optional_nullable = k in optional_fields and k in nullable_fields
+            is_set = (
+                self.__pydantic_fields_set__.intersection({n})
+                or k in null_default_fields
+            )  # pylint: disable=no-member
 
             if val is not None and val != UNSET_SENTINEL:
                 m[k] = val
             elif val != UNSET_SENTINEL and (
-                not k in optional_fields
-                or (
-                    k in optional_fields
-                    and k in nullable_fields
-                    and (
-                        self.__pydantic_fields_set__.intersection({n})
-                        or k in null_default_fields
-                    )  # pylint: disable=no-member
-                )
+                not k in optional_fields or (optional_nullable and is_set)
             ):
                 m[k] = val
 
         return m
-        

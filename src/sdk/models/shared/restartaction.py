@@ -10,20 +10,25 @@ from typing_extensions import Annotated, NotRequired
 
 class RestartActionTypedDict(TypedDict):
     r"""The restart action describes the outcome of policy steps for when the task was restarted. This can be applied to multiple steps since restart skips all pending next steps."""
-    
+
     old_policy_step_id: NotRequired[str]
     r"""The step ID that was restarted. Potentially multiple \"history\" steps will reference this ID to indicate by what step they were restarted."""
     restarted_at: NotRequired[datetime]
     user_id: NotRequired[str]
     r"""The user that submitted the restart action."""
-    
+
 
 class RestartAction(BaseModel):
     r"""The restart action describes the outcome of policy steps for when the task was restarted. This can be applied to multiple steps since restart skips all pending next steps."""
-    
-    old_policy_step_id: Annotated[Optional[str], pydantic.Field(alias="oldPolicyStepId")] = None
+
+    old_policy_step_id: Annotated[
+        Optional[str], pydantic.Field(alias="oldPolicyStepId")
+    ] = None
     r"""The step ID that was restarted. Potentially multiple \"history\" steps will reference this ID to indicate by what step they were restarted."""
-    restarted_at: Annotated[Optional[datetime], pydantic.Field(alias="restartedAt")] = None
+
+    restarted_at: Annotated[Optional[datetime], pydantic.Field(alias="restartedAt")] = (
+        None
+    )
+
     user_id: Annotated[Optional[str], pydantic.Field(alias="userId")] = None
     r"""The user that submitted the restart action."""
-    

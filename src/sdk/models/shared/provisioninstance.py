@@ -5,27 +5,45 @@ from .cancelledaction import CancelledAction, CancelledActionTypedDict
 from .completedaction import CompletedAction, CompletedActionTypedDict
 from .erroredaction import ErroredAction, ErroredActionTypedDict
 from .provision import Provision, ProvisionTypedDict
-from .reassignedbyerroraction import ReassignedByErrorAction, ReassignedByErrorActionTypedDict
+from .reassignedbyerroraction import (
+    ReassignedByErrorAction,
+    ReassignedByErrorActionTypedDict,
+)
 from enum import Enum
 import pydantic
 from pydantic import model_serializer
+from pydantic.functional_validators import PlainValidator
+from sdk import utils
 from sdk.types import BaseModel, Nullable, OptionalNullable, UNSET, UNSET_SENTINEL
+from sdk.utils import validate_open_enum
 from typing import Optional, TypedDict
 from typing_extensions import Annotated, NotRequired
 
 
-class ProvisionInstanceState(str, Enum):
+class ProvisionInstanceState(str, Enum, metaclass=utils.OpenEnumMeta):
     r"""This property indicates the current state of this step."""
+
     PROVISION_INSTANCE_STATE_UNSPECIFIED = "PROVISION_INSTANCE_STATE_UNSPECIFIED"
     PROVISION_INSTANCE_STATE_INIT = "PROVISION_INSTANCE_STATE_INIT"
-    PROVISION_INSTANCE_STATE_CREATE_CONNECTOR_ACTIONS_FOR_TARGET = "PROVISION_INSTANCE_STATE_CREATE_CONNECTOR_ACTIONS_FOR_TARGET"
-    PROVISION_INSTANCE_STATE_SENDING_NOTIFICATIONS = "PROVISION_INSTANCE_STATE_SENDING_NOTIFICATIONS"
+    PROVISION_INSTANCE_STATE_CREATE_CONNECTOR_ACTIONS_FOR_TARGET = (
+        "PROVISION_INSTANCE_STATE_CREATE_CONNECTOR_ACTIONS_FOR_TARGET"
+    )
+    PROVISION_INSTANCE_STATE_SENDING_NOTIFICATIONS = (
+        "PROVISION_INSTANCE_STATE_SENDING_NOTIFICATIONS"
+    )
     PROVISION_INSTANCE_STATE_WAITING = "PROVISION_INSTANCE_STATE_WAITING"
     PROVISION_INSTANCE_STATE_WEBHOOK = "PROVISION_INSTANCE_STATE_WEBHOOK"
-    PROVISION_INSTANCE_STATE_WEBHOOK_WAITING = "PROVISION_INSTANCE_STATE_WEBHOOK_WAITING"
-    PROVISION_INSTANCE_STATE_EXTERNAL_TICKET = "PROVISION_INSTANCE_STATE_EXTERNAL_TICKET"
-    PROVISION_INSTANCE_STATE_EXTERNAL_TICKET_WAITING = "PROVISION_INSTANCE_STATE_EXTERNAL_TICKET_WAITING"
+    PROVISION_INSTANCE_STATE_WEBHOOK_WAITING = (
+        "PROVISION_INSTANCE_STATE_WEBHOOK_WAITING"
+    )
+    PROVISION_INSTANCE_STATE_EXTERNAL_TICKET = (
+        "PROVISION_INSTANCE_STATE_EXTERNAL_TICKET"
+    )
+    PROVISION_INSTANCE_STATE_EXTERNAL_TICKET_WAITING = (
+        "PROVISION_INSTANCE_STATE_EXTERNAL_TICKET_WAITING"
+    )
     PROVISION_INSTANCE_STATE_DONE = "PROVISION_INSTANCE_STATE_DONE"
+
 
 class ProvisionInstanceTypedDict(TypedDict):
     r"""A provision instance describes the specific configuration of an executing provision policy step including actions taken and notification id.
@@ -37,7 +55,7 @@ class ProvisionInstanceTypedDict(TypedDict):
     - reassignedByError
 
     """
-    
+
     cancelled_action: NotRequired[Nullable[CancelledActionTypedDict]]
     r"""The outcome of a provision instance that is cancelled."""
     completed_action: NotRequired[Nullable[CompletedActionTypedDict]]
@@ -52,7 +70,7 @@ class ProvisionInstanceTypedDict(TypedDict):
     r"""This indicates the notification id for this step."""
     state: NotRequired[ProvisionInstanceState]
     r"""This property indicates the current state of this step."""
-    
+
 
 class ProvisionInstance(BaseModel):
     r"""A provision instance describes the specific configuration of an executing provision policy step including actions taken and notification id.
@@ -64,26 +82,59 @@ class ProvisionInstance(BaseModel):
     - reassignedByError
 
     """
-    
-    cancelled_action: Annotated[OptionalNullable[CancelledAction], pydantic.Field(alias="cancelled")] = UNSET
+
+    cancelled_action: Annotated[
+        OptionalNullable[CancelledAction], pydantic.Field(alias="cancelled")
+    ] = UNSET
     r"""The outcome of a provision instance that is cancelled."""
-    completed_action: Annotated[OptionalNullable[CompletedAction], pydantic.Field(alias="completed")] = UNSET
+
+    completed_action: Annotated[
+        OptionalNullable[CompletedAction], pydantic.Field(alias="completed")
+    ] = UNSET
     r"""The outcome of a provision instance that has been completed succesfully."""
-    errored_action: Annotated[OptionalNullable[ErroredAction], pydantic.Field(alias="errored")] = UNSET
+
+    errored_action: Annotated[
+        OptionalNullable[ErroredAction], pydantic.Field(alias="errored")
+    ] = UNSET
     r"""The outcome of a provision instance that has errored."""
+
     provision: OptionalNullable[Provision] = UNSET
     r"""The provision step references a provision policy for this step."""
-    reassigned_by_error_action: Annotated[OptionalNullable[ReassignedByErrorAction], pydantic.Field(alias="reassignedByError")] = UNSET
+
+    reassigned_by_error_action: Annotated[
+        OptionalNullable[ReassignedByErrorAction],
+        pydantic.Field(alias="reassignedByError"),
+    ] = UNSET
     r"""The ReassignedByErrorAction object describes the outcome of a policy step that has been reassigned because it had an error provisioning."""
-    notification_id: Annotated[Optional[str], pydantic.Field(alias="notificationId")] = None
+
+    notification_id: Annotated[
+        Optional[str], pydantic.Field(alias="notificationId")
+    ] = None
     r"""This indicates the notification id for this step."""
-    state: Optional[ProvisionInstanceState] = None
+
+    state: Annotated[
+        Optional[ProvisionInstanceState], PlainValidator(validate_open_enum(False))
+    ] = None
     r"""This property indicates the current state of this step."""
-    
+
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
-        optional_fields = ["CancelledAction", "CompletedAction", "ErroredAction", "Provision", "ReassignedByErrorAction", "notificationId", "state"]
-        nullable_fields = ["CancelledAction", "CompletedAction", "ErroredAction", "Provision", "ReassignedByErrorAction"]
+        optional_fields = [
+            "CancelledAction",
+            "CompletedAction",
+            "ErroredAction",
+            "Provision",
+            "ReassignedByErrorAction",
+            "notificationId",
+            "state",
+        ]
+        nullable_fields = [
+            "CancelledAction",
+            "CompletedAction",
+            "ErroredAction",
+            "Provision",
+            "ReassignedByErrorAction",
+        ]
         null_default_fields = []
 
         serialized = handler(self)
@@ -93,21 +144,19 @@ class ProvisionInstance(BaseModel):
         for n, f in self.model_fields.items():
             k = f.alias or n
             val = serialized.get(k)
+            serialized.pop(k, None)
+
+            optional_nullable = k in optional_fields and k in nullable_fields
+            is_set = (
+                self.__pydantic_fields_set__.intersection({n})
+                or k in null_default_fields
+            )  # pylint: disable=no-member
 
             if val is not None and val != UNSET_SENTINEL:
                 m[k] = val
             elif val != UNSET_SENTINEL and (
-                not k in optional_fields
-                or (
-                    k in optional_fields
-                    and k in nullable_fields
-                    and (
-                        self.__pydantic_fields_set__.intersection({n})
-                        or k in null_default_fields
-                    )  # pylint: disable=no-member
-                )
+                not k in optional_fields or (optional_nullable and is_set)
             ):
                 m[k] = val
 
         return m
-        

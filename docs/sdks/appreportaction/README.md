@@ -1,6 +1,8 @@
 # AppReportAction
 (*app_report_action*)
 
+## Overview
+
 ### Available Operations
 
 * [generate_report](#generate_report) - Generate Report
@@ -22,9 +24,8 @@ s = SDK(
     ),
 )
 
-
 res = s.app_report_action.generate_report(request={
-    "app_id": "<value>",
+    "app_id": "<id>",
 })
 
 if res.app_actions_service_generate_report_response is not None:
@@ -40,12 +41,12 @@ if res.app_actions_service_generate_report_response is not None:
 | `request`                                                                                                                                            | [operations.C1APIAppV1AppReportActionServiceGenerateReportRequest](../../models/operations/c1apiappv1appreportactionservicegeneratereportrequest.md) | :heavy_check_mark:                                                                                                                                   | The request object to use for the request.                                                                                                           |
 | `retries`                                                                                                                                            | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)                                                                                     | :heavy_minus_sign:                                                                                                                                   | Configuration to override the default retry behavior of the client.                                                                                  |
 
-
 ### Response
 
 **[operations.C1APIAppV1AppReportActionServiceGenerateReportResponse](../../models/operations/c1apiappv1appreportactionservicegeneratereportresponse.md)**
+
 ### Errors
 
-| Error Object    | Status Code     | Content Type    |
+| Error Type      | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 4xx-5xx         | */*             |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |

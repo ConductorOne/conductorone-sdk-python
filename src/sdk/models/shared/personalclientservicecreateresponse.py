@@ -10,18 +10,20 @@ from typing_extensions import Annotated, NotRequired
 
 class PersonalClientServiceCreateResponseTypedDict(TypedDict):
     r"""The PersonalClientServiceCreateResponse message contains the created personal client and client secret."""
-    
+
     personal_client: NotRequired[PersonalClientTypedDict]
     r"""The PersonalClient message contains information about a presonal client credential."""
     client_secret: NotRequired[str]
     r"""The client secret that corresponds to the personal client. Make sure to save this, because it cannot be returned or queried again."""
-    
+
 
 class PersonalClientServiceCreateResponse(BaseModel):
     r"""The PersonalClientServiceCreateResponse message contains the created personal client and client secret."""
-    
-    personal_client: Annotated[Optional[PersonalClient], pydantic.Field(alias="client")] = None
+
+    personal_client: Annotated[
+        Optional[PersonalClient], pydantic.Field(alias="client")
+    ] = None
     r"""The PersonalClient message contains information about a presonal client credential."""
+
     client_secret: Annotated[Optional[str], pydantic.Field(alias="clientSecret")] = None
     r"""The client secret that corresponds to the personal client. Make sure to save this, because it cannot be returned or queried again."""
-    

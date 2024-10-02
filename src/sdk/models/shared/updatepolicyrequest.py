@@ -11,19 +11,22 @@ from typing_extensions import Annotated, NotRequired
 
 class UpdatePolicyRequestTypedDict(TypedDict):
     r"""The UpdatePolicyRequest message contains the policy object to update and a field mask to indicate which fields to update. It uses URL value for input."""
-    
+
     policy: NotRequired[PolicyInputTypedDict]
     r"""A policy describes the behavior of the ConductorOne system when processing a task. You can describe the type, approvers, fallback behavior, and escalation processes."""
     update_mask: NotRequired[Nullable[str]]
-    
+
 
 class UpdatePolicyRequest(BaseModel):
     r"""The UpdatePolicyRequest message contains the policy object to update and a field mask to indicate which fields to update. It uses URL value for input."""
-    
+
     policy: Optional[PolicyInput] = None
     r"""A policy describes the behavior of the ConductorOne system when processing a task. You can describe the type, approvers, fallback behavior, and escalation processes."""
-    update_mask: Annotated[OptionalNullable[str], pydantic.Field(alias="updateMask")] = UNSET
-    
+
+    update_mask: Annotated[
+        OptionalNullable[str], pydantic.Field(alias="updateMask")
+    ] = UNSET
+
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
         optional_fields = ["Policy", "updateMask"]
@@ -37,21 +40,19 @@ class UpdatePolicyRequest(BaseModel):
         for n, f in self.model_fields.items():
             k = f.alias or n
             val = serialized.get(k)
+            serialized.pop(k, None)
+
+            optional_nullable = k in optional_fields and k in nullable_fields
+            is_set = (
+                self.__pydantic_fields_set__.intersection({n})
+                or k in null_default_fields
+            )  # pylint: disable=no-member
 
             if val is not None and val != UNSET_SENTINEL:
                 m[k] = val
             elif val != UNSET_SENTINEL and (
-                not k in optional_fields
-                or (
-                    k in optional_fields
-                    and k in nullable_fields
-                    and (
-                        self.__pydantic_fields_set__.intersection({n})
-                        or k in null_default_fields
-                    )  # pylint: disable=no-member
-                )
+                not k in optional_fields or (optional_nullable and is_set)
             ):
                 m[k] = val
 
         return m
-        

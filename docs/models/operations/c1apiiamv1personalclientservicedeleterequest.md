@@ -1,0 +1,9 @@
+# C1APIIamV1PersonalClientServiceDeleteRequest
+
+
+## Fields
+
+| Field                                                                                                            | Type                                                                                                             | Required                                                                                                         | Description                                                                                                      |
+| ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
+| `id`                                                                                                             | *str*                                                                                                            | :heavy_check_mark:                                                                                               | N/A                                                                                                              |
+| `personal_client_service_delete_request`                                                                         | [Optional[shared.PersonalClientServiceDeleteRequest]](../../models/shared/personalclientservicedeleterequest.md) | :heavy_minus_sign:                                                                                               | N/A                                                                                                              |

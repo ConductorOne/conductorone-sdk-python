@@ -11,7 +11,7 @@ from typing_extensions import Annotated, NotRequired
 
 class RoleTypedDict(TypedDict):
     r"""Role is a role that can be assigned to a user in ConductorOne."""
-    
+
     created_at: NotRequired[datetime]
     deleted_at: NotRequired[datetime]
     display_name: NotRequired[str]
@@ -24,33 +24,63 @@ class RoleTypedDict(TypedDict):
     r"""The list of permissions this role has."""
     service_roles: NotRequired[Nullable[List[str]]]
     r"""The list of serviceRoles that this role has."""
+    system_api_only: NotRequired[bool]
+    r"""This Role is intended for API keys usage only, and the user interface may not function as expected."""
     system_builtin: NotRequired[bool]
     r"""The system builtin field. If this field is set, the role is not editable."""
     updated_at: NotRequired[datetime]
-    
+
 
 class Role(BaseModel):
     r"""Role is a role that can be assigned to a user in ConductorOne."""
-    
+
     created_at: Annotated[Optional[datetime], pydantic.Field(alias="createdAt")] = None
+
     deleted_at: Annotated[Optional[datetime], pydantic.Field(alias="deletedAt")] = None
+
     display_name: Annotated[Optional[str], pydantic.Field(alias="displayName")] = None
     r"""The display name of the role."""
+
     id: Optional[str] = None
     r"""The id of the role."""
+
     name: Optional[str] = None
     r"""The internal name of the role."""
+
     permissions: OptionalNullable[List[str]] = UNSET
     r"""The list of permissions this role has."""
-    service_roles: Annotated[OptionalNullable[List[str]], pydantic.Field(alias="serviceRoles")] = UNSET
+
+    service_roles: Annotated[
+        OptionalNullable[List[str]], pydantic.Field(alias="serviceRoles")
+    ] = UNSET
     r"""The list of serviceRoles that this role has."""
-    system_builtin: Annotated[Optional[bool], pydantic.Field(alias="systemBuiltin")] = None
+
+    system_api_only: Annotated[
+        Optional[bool], pydantic.Field(alias="systemApiOnly")
+    ] = None
+    r"""This Role is intended for API keys usage only, and the user interface may not function as expected."""
+
+    system_builtin: Annotated[Optional[bool], pydantic.Field(alias="systemBuiltin")] = (
+        None
+    )
     r"""The system builtin field. If this field is set, the role is not editable."""
+
     updated_at: Annotated[Optional[datetime], pydantic.Field(alias="updatedAt")] = None
-    
+
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
-        optional_fields = ["createdAt", "deletedAt", "displayName", "id", "name", "permissions", "serviceRoles", "systemBuiltin", "updatedAt"]
+        optional_fields = [
+            "createdAt",
+            "deletedAt",
+            "displayName",
+            "id",
+            "name",
+            "permissions",
+            "serviceRoles",
+            "systemApiOnly",
+            "systemBuiltin",
+            "updatedAt",
+        ]
         nullable_fields = ["permissions", "serviceRoles"]
         null_default_fields = []
 
@@ -61,21 +91,19 @@ class Role(BaseModel):
         for n, f in self.model_fields.items():
             k = f.alias or n
             val = serialized.get(k)
+            serialized.pop(k, None)
+
+            optional_nullable = k in optional_fields and k in nullable_fields
+            is_set = (
+                self.__pydantic_fields_set__.intersection({n})
+                or k in null_default_fields
+            )  # pylint: disable=no-member
 
             if val is not None and val != UNSET_SENTINEL:
                 m[k] = val
             elif val != UNSET_SENTINEL and (
-                not k in optional_fields
-                or (
-                    k in optional_fields
-                    and k in nullable_fields
-                    and (
-                        self.__pydantic_fields_set__.intersection({n})
-                        or k in null_default_fields
-                    )  # pylint: disable=no-member
-                )
+                not k in optional_fields or (optional_nullable and is_set)
             ):
                 m[k] = val
 
         return m
-        

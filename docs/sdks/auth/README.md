@@ -1,6 +1,8 @@
 # Auth
 (*auth*)
 
+## Overview
+
 ### Available Operations
 
 * [introspect](#introspect) - Introspect
@@ -22,7 +24,6 @@ s = SDK(
     ),
 )
 
-
 res = s.auth.introspect()
 
 if res.introspect_response is not None:
@@ -37,12 +38,12 @@ if res.introspect_response is not None:
 | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
 | `retries`                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)    | :heavy_minus_sign:                                                  | Configuration to override the default retry behavior of the client. |
 
-
 ### Response
 
 **[operations.C1APIAuthV1AuthIntrospectResponse](../../models/operations/c1apiauthv1authintrospectresponse.md)**
+
 ### Errors
 
-| Error Object    | Status Code     | Content Type    |
+| Error Type      | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 4xx-5xx         | */*             |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |

@@ -10,12 +10,13 @@ from typing_extensions import Annotated, NotRequired
 
 class ConditionSucceededTypedDict(TypedDict):
     r"""The ConditionSucceeded message."""
-    
+
     succeeded_at: NotRequired[datetime]
-    
+
 
 class ConditionSucceeded(BaseModel):
     r"""The ConditionSucceeded message."""
-    
-    succeeded_at: Annotated[Optional[datetime], pydantic.Field(alias="succeededAt")] = None
-    
+
+    succeeded_at: Annotated[Optional[datetime], pydantic.Field(alias="succeededAt")] = (
+        None
+    )

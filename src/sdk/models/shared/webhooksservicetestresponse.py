@@ -10,14 +10,15 @@ from typing_extensions import Annotated, NotRequired
 
 class WebhooksServiceTestResponseTypedDict(TypedDict):
     r"""The WebhooksServiceTestResponse message."""
-    
+
     webhook_instance: NotRequired[WebhookInstanceTypedDict]
     r"""The WebhookInstance message."""
-    
+
 
 class WebhooksServiceTestResponse(BaseModel):
     r"""The WebhooksServiceTestResponse message."""
-    
-    webhook_instance: Annotated[Optional[WebhookInstance], pydantic.Field(alias="webhook")] = None
+
+    webhook_instance: Annotated[
+        Optional[WebhookInstance], pydantic.Field(alias="webhook")
+    ] = None
     r"""The WebhookInstance message."""
-    

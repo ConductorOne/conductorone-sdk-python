@@ -2,32 +2,99 @@
 
 from __future__ import annotations
 from .appuser import AppUser, AppUserTypedDict
+from .grantreason import GrantReason, GrantReasonTypedDict
 from .user import User, UserTypedDict
 from datetime import datetime
 import pydantic
-from sdk.types import BaseModel
-from typing import Optional, TypedDict
+from pydantic import model_serializer
+from sdk.types import BaseModel, Nullable, OptionalNullable, UNSET, UNSET_SENTINEL
+from typing import List, Optional, TypedDict
 from typing_extensions import Annotated, NotRequired
 
 
 class AppEntitlementWithExpiredTypedDict(TypedDict):
     r"""The AppEntitlementWithExpired message."""
-    
+
     app_user: NotRequired[AppUserTypedDict]
     r"""Application User that represents an account in the application."""
     user: NotRequired[UserTypedDict]
     r"""The User object provides all of the details for an user, as well as some configuration."""
+    app_entitlement_id: NotRequired[str]
+    r"""The appEntitlementId field."""
+    app_id: NotRequired[str]
+    r"""The appId field."""
+    app_user_id: NotRequired[str]
+    r"""The appUserId field."""
     discovered: NotRequired[datetime]
     expired: NotRequired[datetime]
-    
+    grant_reasons: NotRequired[Nullable[List[GrantReasonTypedDict]]]
+    r"""The grantReasons field."""
+
 
 class AppEntitlementWithExpired(BaseModel):
     r"""The AppEntitlementWithExpired message."""
-    
+
     app_user: Annotated[Optional[AppUser], pydantic.Field(alias="appUser")] = None
     r"""Application User that represents an account in the application."""
+
     user: Optional[User] = None
     r"""The User object provides all of the details for an user, as well as some configuration."""
+
+    app_entitlement_id: Annotated[
+        Optional[str], pydantic.Field(alias="appEntitlementId")
+    ] = None
+    r"""The appEntitlementId field."""
+
+    app_id: Annotated[Optional[str], pydantic.Field(alias="appId")] = None
+    r"""The appId field."""
+
+    app_user_id: Annotated[Optional[str], pydantic.Field(alias="appUserId")] = None
+    r"""The appUserId field."""
+
     discovered: Optional[datetime] = None
+
     expired: Optional[datetime] = None
-    
+
+    grant_reasons: Annotated[
+        OptionalNullable[List[GrantReason]], pydantic.Field(alias="grantReasons")
+    ] = UNSET
+    r"""The grantReasons field."""
+
+    @model_serializer(mode="wrap")
+    def serialize_model(self, handler):
+        optional_fields = [
+            "AppUser",
+            "User",
+            "appEntitlementId",
+            "appId",
+            "appUserId",
+            "discovered",
+            "expired",
+            "grantReasons",
+        ]
+        nullable_fields = ["grantReasons"]
+        null_default_fields = []
+
+        serialized = handler(self)
+
+        m = {}
+
+        for n, f in self.model_fields.items():
+            k = f.alias or n
+            val = serialized.get(k)
+            serialized.pop(k, None)
+
+            optional_nullable = k in optional_fields and k in nullable_fields
+            is_set = (
+                self.__pydantic_fields_set__.intersection({n})
+                or k in null_default_fields
+            )  # pylint: disable=no-member
+
+            if val is not None and val != UNSET_SENTINEL:
+                m[k] = val
+            elif val != UNSET_SENTINEL and (
+                not k in optional_fields or (optional_nullable and is_set)
+            ):
+                m[k] = val
+
+        return m

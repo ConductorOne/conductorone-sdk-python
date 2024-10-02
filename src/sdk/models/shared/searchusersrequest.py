@@ -17,9 +17,10 @@ class UserStatuses(str, Enum):
     DISABLED = "DISABLED"
     DELETED = "DELETED"
 
+
 class SearchUsersRequestTypedDict(TypedDict):
     r"""Search for users based on some filters."""
-    
+
     user_expand_mask: NotRequired[UserExpandMaskTypedDict]
     r"""The user expand mask is used to indicate which related objects should be expanded in the response.
     The supported paths are 'role_ids', 'manager_ids', 'delegated_user_id', 'directory_ids', and '*'.
@@ -42,37 +43,65 @@ class SearchUsersRequestTypedDict(TypedDict):
     r"""Search for users that have any of the role IDs on this list."""
     user_statuses: NotRequired[Nullable[List[UserStatuses]]]
     r"""Search for users that have any of the statuses on this list. This can only be ENABLED, DISABLED, and DELETED"""
-    
+
 
 class SearchUsersRequest(BaseModel):
     r"""Search for users based on some filters."""
-    
-    user_expand_mask: Annotated[Optional[UserExpandMask], pydantic.Field(alias="expandMask")] = None
+
+    user_expand_mask: Annotated[
+        Optional[UserExpandMask], pydantic.Field(alias="expandMask")
+    ] = None
     r"""The user expand mask is used to indicate which related objects should be expanded in the response.
     The supported paths are 'role_ids', 'manager_ids', 'delegated_user_id', 'directory_ids', and '*'.
     """
+
     email: Optional[str] = None
     r"""Search for users based on their email (exact match)."""
-    exclude_ids: Annotated[OptionalNullable[List[str]], pydantic.Field(alias="excludeIds")] = UNSET
+
+    exclude_ids: Annotated[
+        OptionalNullable[List[str]], pydantic.Field(alias="excludeIds")
+    ] = UNSET
     r"""An array of users IDs to exclude from the results."""
+
     ids: OptionalNullable[List[str]] = UNSET
     r"""Deprecated. Use refs array instead."""
+
     page_size: Annotated[Optional[int], pydantic.Field(alias="pageSize")] = None
     r"""The pageSize where 0 <= pageSize <= 100. Values < 10 will be set to 10. A value of 0 returns the default page size (currently 25)"""
+
     page_token: Annotated[Optional[str], pydantic.Field(alias="pageToken")] = None
     r"""The pageToken field."""
+
     query: Optional[str] = None
     r"""Query the apps with a fuzzy search on display name and emails."""
+
     refs: OptionalNullable[List[UserRef]] = UNSET
     r"""An array of user refs to restrict the return values to by ID."""
-    role_ids: Annotated[OptionalNullable[List[str]], pydantic.Field(alias="roleIds")] = UNSET
+
+    role_ids: Annotated[
+        OptionalNullable[List[str]], pydantic.Field(alias="roleIds")
+    ] = UNSET
     r"""Search for users that have any of the role IDs on this list."""
-    user_statuses: Annotated[OptionalNullable[List[UserStatuses]], pydantic.Field(alias="userStatuses")] = UNSET
+
+    user_statuses: Annotated[
+        OptionalNullable[List[UserStatuses]], pydantic.Field(alias="userStatuses")
+    ] = UNSET
     r"""Search for users that have any of the statuses on this list. This can only be ENABLED, DISABLED, and DELETED"""
-    
+
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
-        optional_fields = ["UserExpandMask", "email", "excludeIds", "ids", "pageSize", "pageToken", "query", "refs", "roleIds", "userStatuses"]
+        optional_fields = [
+            "UserExpandMask",
+            "email",
+            "excludeIds",
+            "ids",
+            "pageSize",
+            "pageToken",
+            "query",
+            "refs",
+            "roleIds",
+            "userStatuses",
+        ]
         nullable_fields = ["excludeIds", "ids", "refs", "roleIds", "userStatuses"]
         null_default_fields = []
 
@@ -83,21 +112,19 @@ class SearchUsersRequest(BaseModel):
         for n, f in self.model_fields.items():
             k = f.alias or n
             val = serialized.get(k)
+            serialized.pop(k, None)
+
+            optional_nullable = k in optional_fields and k in nullable_fields
+            is_set = (
+                self.__pydantic_fields_set__.intersection({n})
+                or k in null_default_fields
+            )  # pylint: disable=no-member
 
             if val is not None and val != UNSET_SENTINEL:
                 m[k] = val
             elif val != UNSET_SENTINEL and (
-                not k in optional_fields
-                or (
-                    k in optional_fields
-                    and k in nullable_fields
-                    and (
-                        self.__pydantic_fields_set__.intersection({n})
-                        or k in null_default_fields
-                    )  # pylint: disable=no-member
-                )
+                not k in optional_fields or (optional_nullable and is_set)
             ):
                 m[k] = val
 
         return m
-        

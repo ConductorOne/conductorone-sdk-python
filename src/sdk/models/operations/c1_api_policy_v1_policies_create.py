@@ -15,17 +15,23 @@ class C1APIPolicyV1PoliciesCreateResponseTypedDict(TypedDict):
     r"""HTTP response status code for this operation"""
     raw_response: httpx.Response
     r"""Raw HTTP response; suitable for custom response parsing"""
-    create_policy_response: NotRequired[shared_createpolicyresponse.CreatePolicyResponseTypedDict]
+    create_policy_response: NotRequired[
+        shared_createpolicyresponse.CreatePolicyResponseTypedDict
+    ]
     r"""The CreatePolicyResponse message contains the created policy object."""
-    
+
 
 class C1APIPolicyV1PoliciesCreateResponse(BaseModel):
     content_type: str
     r"""HTTP response content type for this operation"""
+
     status_code: int
     r"""HTTP response status code for this operation"""
+
     raw_response: httpx.Response
     r"""Raw HTTP response; suitable for custom response parsing"""
-    create_policy_response: Optional[shared_createpolicyresponse.CreatePolicyResponse] = None
+
+    create_policy_response: Optional[
+        shared_createpolicyresponse.CreatePolicyResponse
+    ] = None
     r"""The CreatePolicyResponse message contains the created policy object."""
-    

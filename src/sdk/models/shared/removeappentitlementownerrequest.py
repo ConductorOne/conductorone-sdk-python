@@ -7,10 +7,7 @@ from typing import TypedDict
 
 class RemoveAppEntitlementOwnerRequestTypedDict(TypedDict):
     r"""The request message for removing an app entitlement owner."""
-    
-    
+
 
 class RemoveAppEntitlementOwnerRequest(BaseModel):
     r"""The request message for removing an app entitlement owner."""
-    
-    

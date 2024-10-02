@@ -7,10 +7,7 @@ from typing import TypedDict
 
 class DeleteAppRequestTypedDict(TypedDict):
     r"""Empty request body"""
-    
-    
+
 
 class DeleteAppRequest(BaseModel):
     r"""Empty request body"""
-    
-    

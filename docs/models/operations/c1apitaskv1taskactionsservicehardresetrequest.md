@@ -1,0 +1,9 @@
+# C1APITaskV1TaskActionsServiceHardResetRequest
+
+
+## Fields
+
+| Field                                                                                                            | Type                                                                                                             | Required                                                                                                         | Description                                                                                                      |
+| ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
+| `task_id`                                                                                                        | *str*                                                                                                            | :heavy_check_mark:                                                                                               | N/A                                                                                                              |
+| `task_actions_service_hard_reset_request`                                                                        | [Optional[shared.TaskActionsServiceHardResetRequest]](../../models/shared/taskactionsservicehardresetrequest.md) | :heavy_minus_sign:                                                                                               | N/A                                                                                                              |

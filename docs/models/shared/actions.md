@@ -26,3 +26,4 @@
 | `TASK_ACTION_TYPE_SET_INSIGHTS_AND_RECOMMENDATION`               | TASK_ACTION_TYPE_SET_INSIGHTS_AND_RECOMMENDATION                 |
 | `TASK_ACTION_TYPE_SET_ANALYSIS_ID`                               | TASK_ACTION_TYPE_SET_ANALYSIS_ID                                 |
 | `TASK_ACTION_TYPE_RECALCULATE_APPROVERS_LIST`                    | TASK_ACTION_TYPE_RECALCULATE_APPROVERS_LIST                      |
+| `TASK_ACTION_TYPE_PROCESS_NOW`                                   | TASK_ACTION_TYPE_PROCESS_NOW                                     |

@@ -4,30 +4,42 @@ from __future__ import annotations
 from datetime import datetime
 from enum import Enum
 import pydantic
+from pydantic.functional_validators import PlainValidator
+from sdk import utils
 from sdk.types import BaseModel
+from sdk.utils import validate_open_enum
 from typing import Optional, TypedDict
 from typing_extensions import Annotated, NotRequired
 
 
-class BundleAutomationLastRunStateStatus(str, Enum):
+class BundleAutomationLastRunStateStatus(str, Enum, metaclass=utils.OpenEnumMeta):
     r"""The status field."""
-    BUNDLE_AUTOMATION_RUN_STATUS_UNSPECIFIED = "BUNDLE_AUTOMATION_RUN_STATUS_UNSPECIFIED"
+
+    BUNDLE_AUTOMATION_RUN_STATUS_UNSPECIFIED = (
+        "BUNDLE_AUTOMATION_RUN_STATUS_UNSPECIFIED"
+    )
     BUNDLE_AUTOMATION_RUN_STATUS_SUCCESS = "BUNDLE_AUTOMATION_RUN_STATUS_SUCCESS"
     BUNDLE_AUTOMATION_RUN_STATUS_FAILURE = "BUNDLE_AUTOMATION_RUN_STATUS_FAILURE"
-    BUNDLE_AUTOMATION_RUN_STATUS_IN_PROGRESS = "BUNDLE_AUTOMATION_RUN_STATUS_IN_PROGRESS"
+    BUNDLE_AUTOMATION_RUN_STATUS_IN_PROGRESS = (
+        "BUNDLE_AUTOMATION_RUN_STATUS_IN_PROGRESS"
+    )
+
 
 class BundleAutomationLastRunStateTypedDict(TypedDict):
     r"""The BundleAutomationLastRunState message."""
-    
+
     last_run_at: NotRequired[datetime]
     status: NotRequired[BundleAutomationLastRunStateStatus]
     r"""The status field."""
-    
+
 
 class BundleAutomationLastRunState(BaseModel):
     r"""The BundleAutomationLastRunState message."""
-    
+
     last_run_at: Annotated[Optional[datetime], pydantic.Field(alias="lastRunAt")] = None
-    status: Optional[BundleAutomationLastRunStateStatus] = None
+
+    status: Annotated[
+        Optional[BundleAutomationLastRunStateStatus],
+        PlainValidator(validate_open_enum(False)),
+    ] = None
     r"""The status field."""
-    

@@ -7,10 +7,7 @@ from typing import TypedDict
 
 class ExportServiceDeleteRequestTypedDict(TypedDict):
     r"""The ExportServiceDeleteRequest message."""
-    
-    
+
 
 class ExportServiceDeleteRequest(BaseModel):
     r"""The ExportServiceDeleteRequest message."""
-    
-    
