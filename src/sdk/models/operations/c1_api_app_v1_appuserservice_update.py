@@ -2,24 +2,38 @@
 
 from __future__ import annotations
 import httpx
-from sdk.models.shared import appuserserviceupdaterequest as shared_appuserserviceupdaterequest, appuserserviceupdateresponse as shared_appuserserviceupdateresponse
+from sdk.models.shared import (
+    appuserserviceupdaterequest as shared_appuserserviceupdaterequest,
+    appuserserviceupdateresponse as shared_appuserserviceupdateresponse,
+)
 from sdk.types import BaseModel
 from sdk.utils import FieldMetadata, PathParamMetadata, RequestMetadata
-from typing import Optional, TypedDict
-from typing_extensions import Annotated, NotRequired
+from typing import Optional
+from typing_extensions import Annotated, NotRequired, TypedDict
 
 
 class C1APIAppV1AppUserServiceUpdateRequestTypedDict(TypedDict):
     app_user_app_id: str
     app_user_id: str
-    app_user_service_update_request: NotRequired[shared_appuserserviceupdaterequest.AppUserServiceUpdateRequestTypedDict]
-    
+    app_user_service_update_request: NotRequired[
+        shared_appuserserviceupdaterequest.AppUserServiceUpdateRequestTypedDict
+    ]
+
 
 class C1APIAppV1AppUserServiceUpdateRequest(BaseModel):
-    app_user_app_id: Annotated[str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))]
-    app_user_id: Annotated[str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))]
-    app_user_service_update_request: Annotated[Optional[shared_appuserserviceupdaterequest.AppUserServiceUpdateRequest], FieldMetadata(request=RequestMetadata(media_type="application/json"))] = None
-    
+    app_user_app_id: Annotated[
+        str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))
+    ]
+
+    app_user_id: Annotated[
+        str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))
+    ]
+
+    app_user_service_update_request: Annotated[
+        Optional[shared_appuserserviceupdaterequest.AppUserServiceUpdateRequest],
+        FieldMetadata(request=RequestMetadata(media_type="application/json")),
+    ] = None
+
 
 class C1APIAppV1AppUserServiceUpdateResponseTypedDict(TypedDict):
     content_type: str
@@ -28,17 +42,23 @@ class C1APIAppV1AppUserServiceUpdateResponseTypedDict(TypedDict):
     r"""HTTP response status code for this operation"""
     raw_response: httpx.Response
     r"""Raw HTTP response; suitable for custom response parsing"""
-    app_user_service_update_response: NotRequired[shared_appuserserviceupdateresponse.AppUserServiceUpdateResponseTypedDict]
+    app_user_service_update_response: NotRequired[
+        shared_appuserserviceupdateresponse.AppUserServiceUpdateResponseTypedDict
+    ]
     r"""Successful response"""
-    
+
 
 class C1APIAppV1AppUserServiceUpdateResponse(BaseModel):
     content_type: str
     r"""HTTP response content type for this operation"""
+
     status_code: int
     r"""HTTP response status code for this operation"""
+
     raw_response: httpx.Response
     r"""Raw HTTP response; suitable for custom response parsing"""
-    app_user_service_update_response: Optional[shared_appuserserviceupdateresponse.AppUserServiceUpdateResponse] = None
+
+    app_user_service_update_response: Optional[
+        shared_appuserserviceupdateresponse.AppUserServiceUpdateResponse
+    ] = None
     r"""Successful response"""
-    

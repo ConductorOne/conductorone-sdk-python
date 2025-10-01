@@ -2,41 +2,60 @@
 
 from __future__ import annotations
 import httpx
-from sdk.models.shared import requestcatalogmanagementservicelistresponse as shared_requestcatalogmanagementservicelistresponse
+from sdk.models.shared import (
+    requestcatalogmanagementservicelistresponse as shared_requestcatalogmanagementservicelistresponse,
+)
 from sdk.types import BaseModel
 from sdk.utils import FieldMetadata, QueryParamMetadata
-from typing import Optional, TypedDict
-from typing_extensions import Annotated, NotRequired
+from typing import Optional
+from typing_extensions import Annotated, NotRequired, TypedDict
 
 
-class C1APIRequestcatalogV1RequestCatalogManagementServiceListRequestTypedDict(TypedDict):
+class C1APIRequestcatalogV1RequestCatalogManagementServiceListRequestTypedDict(
+    TypedDict
+):
     page_size: NotRequired[int]
     page_token: NotRequired[str]
-    
+
 
 class C1APIRequestcatalogV1RequestCatalogManagementServiceListRequest(BaseModel):
-    page_size: Annotated[Optional[int], FieldMetadata(query=QueryParamMetadata(style="form", explode=True))] = None
-    page_token: Annotated[Optional[str], FieldMetadata(query=QueryParamMetadata(style="form", explode=True))] = None
-    
+    page_size: Annotated[
+        Optional[int],
+        FieldMetadata(query=QueryParamMetadata(style="form", explode=True)),
+    ] = None
 
-class C1APIRequestcatalogV1RequestCatalogManagementServiceListResponseTypedDict(TypedDict):
+    page_token: Annotated[
+        Optional[str],
+        FieldMetadata(query=QueryParamMetadata(style="form", explode=True)),
+    ] = None
+
+
+class C1APIRequestcatalogV1RequestCatalogManagementServiceListResponseTypedDict(
+    TypedDict
+):
     content_type: str
     r"""HTTP response content type for this operation"""
     status_code: int
     r"""HTTP response status code for this operation"""
     raw_response: httpx.Response
     r"""Raw HTTP response; suitable for custom response parsing"""
-    request_catalog_management_service_list_response: NotRequired[shared_requestcatalogmanagementservicelistresponse.RequestCatalogManagementServiceListResponseTypedDict]
+    request_catalog_management_service_list_response: NotRequired[
+        shared_requestcatalogmanagementservicelistresponse.RequestCatalogManagementServiceListResponseTypedDict
+    ]
     r"""Successful response"""
-    
+
 
 class C1APIRequestcatalogV1RequestCatalogManagementServiceListResponse(BaseModel):
     content_type: str
     r"""HTTP response content type for this operation"""
+
     status_code: int
     r"""HTTP response status code for this operation"""
+
     raw_response: httpx.Response
     r"""Raw HTTP response; suitable for custom response parsing"""
-    request_catalog_management_service_list_response: Optional[shared_requestcatalogmanagementservicelistresponse.RequestCatalogManagementServiceListResponse] = None
+
+    request_catalog_management_service_list_response: Optional[
+        shared_requestcatalogmanagementservicelistresponse.RequestCatalogManagementServiceListResponse
+    ] = None
     r"""Successful response"""
-    

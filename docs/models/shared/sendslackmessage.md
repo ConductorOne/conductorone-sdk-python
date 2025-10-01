@@ -1,0 +1,17 @@
+# SendSlackMessage
+
+The SendSlackMessage message.
+
+This message contains a oneof named channel. Only a single field of the following list may be set at a time:
+  - channelName
+  - channelNameCel
+
+
+
+## Fields
+
+| Field                                                                                                                                                     | Type                                                                                                                                                      | Required                                                                                                                                                  | Description                                                                                                                                               |
+| --------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `body`                                                                                                                                                    | *Optional[str]*                                                                                                                                           | :heavy_minus_sign:                                                                                                                                        | The body field.                                                                                                                                           |
+| `channel_name`                                                                                                                                            | *OptionalNullable[str]*                                                                                                                                   | :heavy_minus_sign:                                                                                                                                        | The channelName field.<br/>This field is part of the `channel` oneof.<br/>See the documentation for `c1.api.automations.v1.SendSlackMessage` for more details. |
+| `channel_name_cel`                                                                                                                                        | *OptionalNullable[str]*                                                                                                                                   | :heavy_minus_sign:                                                                                                                                        | The channelNameCel field.<br/>This field is part of the `channel` oneof.<br/>See the documentation for `c1.api.automations.v1.SendSlackMessage` for more details. |

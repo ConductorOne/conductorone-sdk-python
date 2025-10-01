@@ -4,13 +4,13 @@ from __future__ import annotations
 from datetime import datetime
 import pydantic
 from sdk.types import BaseModel
-from typing import Optional, TypedDict
-from typing_extensions import Annotated, NotRequired
+from typing import Optional
+from typing_extensions import Annotated, NotRequired, TypedDict
 
 
 class AppEntitlementUserBindingHistoryTypedDict(TypedDict):
     r"""The AppEntitlementUserBindingHistory message."""
-    
+
     app_entitlement_id: NotRequired[str]
     r"""The ID of the app entitlement that the app user has access to"""
     app_id: NotRequired[str]
@@ -19,17 +19,22 @@ class AppEntitlementUserBindingHistoryTypedDict(TypedDict):
     r"""The ID of the app user that has access to the app entitlement"""
     granted_at: NotRequired[datetime]
     revoked_at: NotRequired[datetime]
-    
+
 
 class AppEntitlementUserBindingHistory(BaseModel):
     r"""The AppEntitlementUserBindingHistory message."""
-    
-    app_entitlement_id: Annotated[Optional[str], pydantic.Field(alias="appEntitlementId")] = None
+
+    app_entitlement_id: Annotated[
+        Optional[str], pydantic.Field(alias="appEntitlementId")
+    ] = None
     r"""The ID of the app entitlement that the app user has access to"""
+
     app_id: Annotated[Optional[str], pydantic.Field(alias="appId")] = None
     r"""The ID of the app associated with the app entitlement"""
+
     app_user_id: Annotated[Optional[str], pydantic.Field(alias="appUserId")] = None
     r"""The ID of the app user that has access to the app entitlement"""
+
     granted_at: Annotated[Optional[datetime], pydantic.Field(alias="grantedAt")] = None
+
     revoked_at: Annotated[Optional[datetime], pydantic.Field(alias="revokedAt")] = None
-    

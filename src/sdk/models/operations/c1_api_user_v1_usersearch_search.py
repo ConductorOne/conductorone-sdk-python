@@ -4,8 +4,8 @@ from __future__ import annotations
 import httpx
 from sdk.models.shared import searchusersresponse as shared_searchusersresponse
 from sdk.types import BaseModel
-from typing import Optional, TypedDict
-from typing_extensions import NotRequired
+from typing import Callable, Optional
+from typing_extensions import NotRequired, TypedDict
 
 
 class C1APIUserV1UserSearchSearchResponseTypedDict(TypedDict):
@@ -15,17 +15,25 @@ class C1APIUserV1UserSearchSearchResponseTypedDict(TypedDict):
     r"""HTTP response status code for this operation"""
     raw_response: httpx.Response
     r"""Raw HTTP response; suitable for custom response parsing"""
-    search_users_response: NotRequired[shared_searchusersresponse.SearchUsersResponseTypedDict]
+    search_users_response: NotRequired[
+        shared_searchusersresponse.SearchUsersResponseTypedDict
+    ]
     r"""Successful response"""
-    
+
 
 class C1APIUserV1UserSearchSearchResponse(BaseModel):
+    next: Callable[[], Optional[C1APIUserV1UserSearchSearchResponse]]
+
     content_type: str
     r"""HTTP response content type for this operation"""
+
     status_code: int
     r"""HTTP response status code for this operation"""
+
     raw_response: httpx.Response
     r"""Raw HTTP response; suitable for custom response parsing"""
-    search_users_response: Optional[shared_searchusersresponse.SearchUsersResponse] = None
+
+    search_users_response: Optional[shared_searchusersresponse.SearchUsersResponse] = (
+        None
+    )
     r"""Successful response"""
-    

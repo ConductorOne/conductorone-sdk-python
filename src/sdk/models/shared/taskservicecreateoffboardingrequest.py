@@ -4,28 +4,33 @@ from __future__ import annotations
 from .taskexpandmask import TaskExpandMask, TaskExpandMaskTypedDict
 import pydantic
 from sdk.types import BaseModel
-from typing import Optional, TypedDict
-from typing_extensions import Annotated, NotRequired
+from typing import Optional
+from typing_extensions import Annotated, NotRequired, TypedDict
 
 
 class TaskServiceCreateOffboardingRequestTypedDict(TypedDict):
     r"""The TaskServiceCreateOffboardingRequest message."""
-    
+
     task_expand_mask: NotRequired[TaskExpandMaskTypedDict]
     r"""The task expand mask is an array of strings that specifes the related objects the requester wishes to have returned when making a request where the expand mask is part of the input. Use '*' to view all possible responses."""
     description: NotRequired[str]
     r"""The description field."""
     subject_user_id: NotRequired[str]
     r"""The subjectUserId field."""
-    
+
 
 class TaskServiceCreateOffboardingRequest(BaseModel):
     r"""The TaskServiceCreateOffboardingRequest message."""
-    
-    task_expand_mask: Annotated[Optional[TaskExpandMask], pydantic.Field(alias="expandMask")] = None
+
+    task_expand_mask: Annotated[
+        Optional[TaskExpandMask], pydantic.Field(alias="expandMask")
+    ] = None
     r"""The task expand mask is an array of strings that specifes the related objects the requester wishes to have returned when making a request where the expand mask is part of the input. Use '*' to view all possible responses."""
+
     description: Optional[str] = None
     r"""The description field."""
-    subject_user_id: Annotated[Optional[str], pydantic.Field(alias="subjectUserId")] = None
+
+    subject_user_id: Annotated[Optional[str], pydantic.Field(alias="subjectUserId")] = (
+        None
+    )
     r"""The subjectUserId field."""
-    

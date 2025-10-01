@@ -4,18 +4,19 @@ from __future__ import annotations
 from datetime import datetime
 import pydantic
 from sdk.types import BaseModel
-from typing import Optional, TypedDict
-from typing_extensions import Annotated, NotRequired
+from typing import Optional
+from typing_extensions import Annotated, NotRequired, TypedDict
 
 
 class ConditionTimedOutTypedDict(TypedDict):
     r"""The ConditionTimedOut message."""
-    
+
     timed_out_at: NotRequired[datetime]
-    
+
 
 class ConditionTimedOut(BaseModel):
     r"""The ConditionTimedOut message."""
-    
-    timed_out_at: Annotated[Optional[datetime], pydantic.Field(alias="timedOutAt")] = None
-    
+
+    timed_out_at: Annotated[Optional[datetime], pydantic.Field(alias="timedOutAt")] = (
+        None
+    )

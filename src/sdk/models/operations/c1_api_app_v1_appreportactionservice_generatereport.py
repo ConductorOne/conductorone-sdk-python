@@ -2,22 +2,35 @@
 
 from __future__ import annotations
 import httpx
-from sdk.models.shared import appactionsservicegeneratereportrequest as shared_appactionsservicegeneratereportrequest, appactionsservicegeneratereportresponse as shared_appactionsservicegeneratereportresponse
+from sdk.models.shared import (
+    appactionsservicegeneratereportrequest as shared_appactionsservicegeneratereportrequest,
+    appactionsservicegeneratereportresponse as shared_appactionsservicegeneratereportresponse,
+)
 from sdk.types import BaseModel
 from sdk.utils import FieldMetadata, PathParamMetadata, RequestMetadata
-from typing import Optional, TypedDict
-from typing_extensions import Annotated, NotRequired
+from typing import Optional
+from typing_extensions import Annotated, NotRequired, TypedDict
 
 
 class C1APIAppV1AppReportActionServiceGenerateReportRequestTypedDict(TypedDict):
     app_id: str
-    app_actions_service_generate_report_request: NotRequired[shared_appactionsservicegeneratereportrequest.AppActionsServiceGenerateReportRequestTypedDict]
-    
+    app_actions_service_generate_report_request: NotRequired[
+        shared_appactionsservicegeneratereportrequest.AppActionsServiceGenerateReportRequestTypedDict
+    ]
+
 
 class C1APIAppV1AppReportActionServiceGenerateReportRequest(BaseModel):
-    app_id: Annotated[str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))]
-    app_actions_service_generate_report_request: Annotated[Optional[shared_appactionsservicegeneratereportrequest.AppActionsServiceGenerateReportRequest], FieldMetadata(request=RequestMetadata(media_type="application/json"))] = None
-    
+    app_id: Annotated[
+        str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))
+    ]
+
+    app_actions_service_generate_report_request: Annotated[
+        Optional[
+            shared_appactionsservicegeneratereportrequest.AppActionsServiceGenerateReportRequest
+        ],
+        FieldMetadata(request=RequestMetadata(media_type="application/json")),
+    ] = None
+
 
 class C1APIAppV1AppReportActionServiceGenerateReportResponseTypedDict(TypedDict):
     content_type: str
@@ -26,17 +39,23 @@ class C1APIAppV1AppReportActionServiceGenerateReportResponseTypedDict(TypedDict)
     r"""HTTP response status code for this operation"""
     raw_response: httpx.Response
     r"""Raw HTTP response; suitable for custom response parsing"""
-    app_actions_service_generate_report_response: NotRequired[shared_appactionsservicegeneratereportresponse.AppActionsServiceGenerateReportResponseTypedDict]
+    app_actions_service_generate_report_response: NotRequired[
+        shared_appactionsservicegeneratereportresponse.AppActionsServiceGenerateReportResponseTypedDict
+    ]
     r"""Empty response body. Status code indicates success."""
-    
+
 
 class C1APIAppV1AppReportActionServiceGenerateReportResponse(BaseModel):
     content_type: str
     r"""HTTP response content type for this operation"""
+
     status_code: int
     r"""HTTP response status code for this operation"""
+
     raw_response: httpx.Response
     r"""Raw HTTP response; suitable for custom response parsing"""
-    app_actions_service_generate_report_response: Optional[shared_appactionsservicegeneratereportresponse.AppActionsServiceGenerateReportResponse] = None
+
+    app_actions_service_generate_report_response: Optional[
+        shared_appactionsservicegeneratereportresponse.AppActionsServiceGenerateReportResponse
+    ] = None
     r"""Empty response body. Status code indicates success."""
-    

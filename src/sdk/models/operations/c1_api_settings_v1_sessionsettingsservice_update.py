@@ -2,10 +2,12 @@
 
 from __future__ import annotations
 import httpx
-from sdk.models.shared import updatesessionsettingsresponse as shared_updatesessionsettingsresponse
+from sdk.models.shared import (
+    updatesessionsettingsresponse as shared_updatesessionsettingsresponse,
+)
 from sdk.types import BaseModel
-from typing import Optional, TypedDict
-from typing_extensions import NotRequired
+from typing import Optional
+from typing_extensions import NotRequired, TypedDict
 
 
 class C1APISettingsV1SessionSettingsServiceUpdateResponseTypedDict(TypedDict):
@@ -15,17 +17,23 @@ class C1APISettingsV1SessionSettingsServiceUpdateResponseTypedDict(TypedDict):
     r"""HTTP response status code for this operation"""
     raw_response: httpx.Response
     r"""Raw HTTP response; suitable for custom response parsing"""
-    update_session_settings_response: NotRequired[shared_updatesessionsettingsresponse.UpdateSessionSettingsResponseTypedDict]
+    update_session_settings_response: NotRequired[
+        shared_updatesessionsettingsresponse.UpdateSessionSettingsResponseTypedDict
+    ]
     r"""Successful response"""
-    
+
 
 class C1APISettingsV1SessionSettingsServiceUpdateResponse(BaseModel):
     content_type: str
     r"""HTTP response content type for this operation"""
+
     status_code: int
     r"""HTTP response status code for this operation"""
+
     raw_response: httpx.Response
     r"""Raw HTTP response; suitable for custom response parsing"""
-    update_session_settings_response: Optional[shared_updatesessionsettingsresponse.UpdateSessionSettingsResponse] = None
+
+    update_session_settings_response: Optional[
+        shared_updatesessionsettingsresponse.UpdateSessionSettingsResponse
+    ] = None
     r"""Successful response"""
-    

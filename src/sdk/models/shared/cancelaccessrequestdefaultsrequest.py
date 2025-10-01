@@ -2,15 +2,12 @@
 
 from __future__ import annotations
 from sdk.types import BaseModel
-from typing import TypedDict
+from typing_extensions import TypedDict
 
 
 class CancelAccessRequestDefaultsRequestTypedDict(TypedDict):
     r"""The CancelAccessRequestDefaultsRequest message."""
-    
-    
+
 
 class CancelAccessRequestDefaultsRequest(BaseModel):
     r"""The CancelAccessRequestDefaultsRequest message."""
-    
-    

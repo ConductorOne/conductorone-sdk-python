@@ -2,20 +2,19 @@
 
 from __future__ import annotations
 from sdk.types import BaseModel
-from typing import Optional, TypedDict
-from typing_extensions import NotRequired
+from typing import Optional
+from typing_extensions import NotRequired, TypedDict
 
 
 class TaskRefTypedDict(TypedDict):
     r"""This object references a task by ID."""
-    
+
     id: NotRequired[str]
     r"""The ID of the referenced Task"""
-    
+
 
 class TaskRef(BaseModel):
     r"""This object references a task by ID."""
-    
+
     id: Optional[str] = None
     r"""The ID of the referenced Task"""
-    

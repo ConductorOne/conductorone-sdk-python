@@ -3,13 +3,15 @@
 from __future__ import annotations
 from .tasktypecertify_input import TaskTypeCertifyInput, TaskTypeCertifyInputTypedDict
 from .tasktypegrant_input import TaskTypeGrantInput, TaskTypeGrantInputTypedDict
-from .tasktypeoffboarding_input import TaskTypeOffboardingInput, TaskTypeOffboardingInputTypedDict
+from .tasktypeoffboarding_input import (
+    TaskTypeOffboardingInput,
+    TaskTypeOffboardingInputTypedDict,
+)
 from .tasktyperevoke_input import TaskTypeRevokeInput, TaskTypeRevokeInputTypedDict
 import pydantic
 from pydantic import model_serializer
 from sdk.types import BaseModel, Nullable, OptionalNullable, UNSET, UNSET_SENTINEL
-from typing import TypedDict
-from typing_extensions import Annotated, NotRequired
+from typing_extensions import Annotated, NotRequired, TypedDict
 
 
 class TaskTypeInputTypedDict(TypedDict):
@@ -22,7 +24,7 @@ class TaskTypeInputTypedDict(TypedDict):
     - offboarding
 
     """
-    
+
     task_type_certify: NotRequired[Nullable[TaskTypeCertifyInputTypedDict]]
     r"""The TaskTypeCertify message indicates that a task is a certify task and all related details."""
     task_type_grant: NotRequired[Nullable[TaskTypeGrantInputTypedDict]]
@@ -31,7 +33,7 @@ class TaskTypeInputTypedDict(TypedDict):
     r"""The TaskTypeOffboarding message."""
     task_type_revoke: NotRequired[Nullable[TaskTypeRevokeInputTypedDict]]
     r"""The TaskTypeRevoke message indicates that a task is a revoke task and all related details."""
-    
+
 
 class TaskTypeInput(BaseModel):
     r"""Task Type provides configuration for the type of task: certify, grant, or revoke
@@ -43,44 +45,63 @@ class TaskTypeInput(BaseModel):
     - offboarding
 
     """
-    
-    task_type_certify: Annotated[OptionalNullable[TaskTypeCertifyInput], pydantic.Field(alias="certify")] = UNSET
+
+    task_type_certify: Annotated[
+        OptionalNullable[TaskTypeCertifyInput], pydantic.Field(alias="certify")
+    ] = UNSET
     r"""The TaskTypeCertify message indicates that a task is a certify task and all related details."""
-    task_type_grant: Annotated[OptionalNullable[TaskTypeGrantInput], pydantic.Field(alias="grant")] = UNSET
+
+    task_type_grant: Annotated[
+        OptionalNullable[TaskTypeGrantInput], pydantic.Field(alias="grant")
+    ] = UNSET
     r"""The TaskTypeGrant message indicates that a task is a grant task and all related details."""
-    task_type_offboarding: Annotated[OptionalNullable[TaskTypeOffboardingInput], pydantic.Field(alias="offboarding")] = UNSET
+
+    task_type_offboarding: Annotated[
+        OptionalNullable[TaskTypeOffboardingInput], pydantic.Field(alias="offboarding")
+    ] = UNSET
     r"""The TaskTypeOffboarding message."""
-    task_type_revoke: Annotated[OptionalNullable[TaskTypeRevokeInput], pydantic.Field(alias="revoke")] = UNSET
+
+    task_type_revoke: Annotated[
+        OptionalNullable[TaskTypeRevokeInput], pydantic.Field(alias="revoke")
+    ] = UNSET
     r"""The TaskTypeRevoke message indicates that a task is a revoke task and all related details."""
-    
+
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
-        optional_fields = ["TaskTypeCertify", "TaskTypeGrant", "TaskTypeOffboarding", "TaskTypeRevoke"]
-        nullable_fields = ["TaskTypeCertify", "TaskTypeGrant", "TaskTypeOffboarding", "TaskTypeRevoke"]
+        optional_fields = [
+            "TaskTypeCertify",
+            "TaskTypeGrant",
+            "TaskTypeOffboarding",
+            "TaskTypeRevoke",
+        ]
+        nullable_fields = [
+            "TaskTypeCertify",
+            "TaskTypeGrant",
+            "TaskTypeOffboarding",
+            "TaskTypeRevoke",
+        ]
         null_default_fields = []
 
         serialized = handler(self)
 
         m = {}
 
-        for n, f in self.model_fields.items():
+        for n, f in type(self).model_fields.items():
             k = f.alias or n
             val = serialized.get(k)
+            serialized.pop(k, None)
+
+            optional_nullable = k in optional_fields and k in nullable_fields
+            is_set = (
+                self.__pydantic_fields_set__.intersection({n})
+                or k in null_default_fields
+            )  # pylint: disable=no-member
 
             if val is not None and val != UNSET_SENTINEL:
                 m[k] = val
             elif val != UNSET_SENTINEL and (
-                not k in optional_fields
-                or (
-                    k in optional_fields
-                    and k in nullable_fields
-                    and (
-                        self.__pydantic_fields_set__.intersection({n})
-                        or k in null_default_fields
-                    )  # pylint: disable=no-member
-                )
+                not k in optional_fields or (optional_nullable and is_set)
             ):
                 m[k] = val
 
         return m
-        

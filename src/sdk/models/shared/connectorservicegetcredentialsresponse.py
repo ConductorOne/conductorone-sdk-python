@@ -4,20 +4,21 @@ from __future__ import annotations
 from .connectorcredential import ConnectorCredential, ConnectorCredentialTypedDict
 import pydantic
 from sdk.types import BaseModel
-from typing import Optional, TypedDict
-from typing_extensions import Annotated, NotRequired
+from typing import Optional
+from typing_extensions import Annotated, NotRequired, TypedDict
 
 
 class ConnectorServiceGetCredentialsResponseTypedDict(TypedDict):
     r"""ConnectorServiceGetCredentialsResponse is the response returned by the get method."""
-    
+
     connector_credential: NotRequired[ConnectorCredentialTypedDict]
     r"""ConnectorCredential is used by a connector to authenticate with conductor one."""
-    
+
 
 class ConnectorServiceGetCredentialsResponse(BaseModel):
     r"""ConnectorServiceGetCredentialsResponse is the response returned by the get method."""
-    
-    connector_credential: Annotated[Optional[ConnectorCredential], pydantic.Field(alias="credential")] = None
+
+    connector_credential: Annotated[
+        Optional[ConnectorCredential], pydantic.Field(alias="credential")
+    ] = None
     r"""ConnectorCredential is used by a connector to authenticate with conductor one."""
-    

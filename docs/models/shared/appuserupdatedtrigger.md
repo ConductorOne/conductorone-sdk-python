@@ -1,0 +1,17 @@
+# AppUserUpdatedTrigger
+
+The AppUserUpdatedTrigger message.
+
+This message contains a oneof named app_identifier. Only a single field of the following list may be set at a time:
+  - appId
+  - appIdCel
+
+
+
+## Fields
+
+| Field                                                                                                                                                           | Type                                                                                                                                                            | Required                                                                                                                                                        | Description                                                                                                                                                     |
+| --------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `app_id`                                                                                                                                                        | *OptionalNullable[str]*                                                                                                                                         | :heavy_minus_sign:                                                                                                                                              | The appId field.<br/>This field is part of the `app_identifier` oneof.<br/>See the documentation for `c1.api.automations.v1.AppUserUpdatedTrigger` for more details. |
+| `app_id_cel`                                                                                                                                                    | *OptionalNullable[str]*                                                                                                                                         | :heavy_minus_sign:                                                                                                                                              | The appIdCel field.<br/>This field is part of the `app_identifier` oneof.<br/>See the documentation for `c1.api.automations.v1.AppUserUpdatedTrigger` for more details. |
+| `condition`                                                                                                                                                     | *Optional[str]*                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                              | The condition field.                                                                                                                                            |

@@ -2,15 +2,12 @@
 
 from __future__ import annotations
 from sdk.types import BaseModel
-from typing import TypedDict
+from typing_extensions import TypedDict
 
 
 class RemoveAppEntitlementOwnerResponseTypedDict(TypedDict):
     r"""The empty response message for removing an app entitlement owner."""
-    
-    
+
 
 class RemoveAppEntitlementOwnerResponse(BaseModel):
     r"""The empty response message for removing an app entitlement owner."""
-    
-    

@@ -4,13 +4,13 @@ from __future__ import annotations
 import pydantic
 from pydantic import model_serializer
 from sdk.types import BaseModel, Nullable, OptionalNullable, UNSET, UNSET_SENTINEL
-from typing import List, Optional, TypedDict
-from typing_extensions import Annotated, NotRequired
+from typing import List, Optional
+from typing_extensions import Annotated, NotRequired, TypedDict
 
 
 class PersonalClientServiceCreateRequestTypedDict(TypedDict):
     r"""The PersonalClientServiceCreateRequest message contains the fields for creating a new personal client."""
-    
+
     allow_source_cidr: NotRequired[Nullable[List[str]]]
     r"""A list of CIDRs to restrict this credential to."""
     display_name: NotRequired[str]
@@ -18,19 +18,26 @@ class PersonalClientServiceCreateRequestTypedDict(TypedDict):
     expires: NotRequired[str]
     scoped_roles: NotRequired[Nullable[List[str]]]
     r"""The list of roles to restrict the credential to."""
-    
+
 
 class PersonalClientServiceCreateRequest(BaseModel):
     r"""The PersonalClientServiceCreateRequest message contains the fields for creating a new personal client."""
-    
-    allow_source_cidr: Annotated[OptionalNullable[List[str]], pydantic.Field(alias="allowSourceCidr")] = UNSET
+
+    allow_source_cidr: Annotated[
+        OptionalNullable[List[str]], pydantic.Field(alias="allowSourceCidr")
+    ] = UNSET
     r"""A list of CIDRs to restrict this credential to."""
+
     display_name: Annotated[Optional[str], pydantic.Field(alias="displayName")] = None
     r"""The display name for the new personal client."""
+
     expires: Optional[str] = None
-    scoped_roles: Annotated[OptionalNullable[List[str]], pydantic.Field(alias="scopedRoles")] = UNSET
+
+    scoped_roles: Annotated[
+        OptionalNullable[List[str]], pydantic.Field(alias="scopedRoles")
+    ] = UNSET
     r"""The list of roles to restrict the credential to."""
-    
+
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
         optional_fields = ["allowSourceCidr", "displayName", "expires", "scopedRoles"]
@@ -41,24 +48,22 @@ class PersonalClientServiceCreateRequest(BaseModel):
 
         m = {}
 
-        for n, f in self.model_fields.items():
+        for n, f in type(self).model_fields.items():
             k = f.alias or n
             val = serialized.get(k)
+            serialized.pop(k, None)
+
+            optional_nullable = k in optional_fields and k in nullable_fields
+            is_set = (
+                self.__pydantic_fields_set__.intersection({n})
+                or k in null_default_fields
+            )  # pylint: disable=no-member
 
             if val is not None and val != UNSET_SENTINEL:
                 m[k] = val
             elif val != UNSET_SENTINEL and (
-                not k in optional_fields
-                or (
-                    k in optional_fields
-                    and k in nullable_fields
-                    and (
-                        self.__pydantic_fields_set__.intersection({n})
-                        or k in null_default_fields
-                    )  # pylint: disable=no-member
-                )
+                not k in optional_fields or (optional_nullable and is_set)
             ):
                 m[k] = val
 
         return m
-        

@@ -2,15 +2,12 @@
 
 from __future__ import annotations
 from sdk.types import BaseModel
-from typing import TypedDict
+from typing_extensions import TypedDict
 
 
 class RequestCatalogManagementServiceDeleteRequestTypedDict(TypedDict):
     r"""Delete a request catalog by Id. It uses URL value for input."""
-    
-    
+
 
 class RequestCatalogManagementServiceDeleteRequest(BaseModel):
     r"""Delete a request catalog by Id. It uses URL value for input."""
-    
-    

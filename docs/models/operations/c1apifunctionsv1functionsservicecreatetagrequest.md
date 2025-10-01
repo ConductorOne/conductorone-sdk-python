@@ -1,0 +1,9 @@
+# C1APIFunctionsV1FunctionsServiceCreateTagRequest
+
+
+## Fields
+
+| Field                                                                                                        | Type                                                                                                         | Required                                                                                                     | Description                                                                                                  |
+| ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ |
+| `functions_service_create_tag_request`                                                                       | [Optional[shared.FunctionsServiceCreateTagRequest]](../../models/shared/functionsservicecreatetagrequest.md) | :heavy_minus_sign:                                                                                           | N/A                                                                                                          |
+| `function_id`                                                                                                | *str*                                                                                                        | :heavy_check_mark:                                                                                           | N/A                                                                                                          |

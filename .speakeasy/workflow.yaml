@@ -10,3 +10,9 @@ targets:
     conductorone-python:
         target: python
         source: my-source
+        codeSamples:
+            registry:
+                location: registry.speakeasyapi.dev/conductor-one/conductorone/my-source-python-code-samples
+            labelOverride:
+                fixedValue: Python (SDK)
+            blocking: false

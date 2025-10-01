@@ -4,20 +4,21 @@ from __future__ import annotations
 from .attributevalue import AttributeValue, AttributeValueTypedDict
 import pydantic
 from sdk.types import BaseModel
-from typing import Optional, TypedDict
-from typing_extensions import Annotated, NotRequired
+from typing import Optional
+from typing_extensions import Annotated, NotRequired, TypedDict
 
 
 class GetAttributeValueResponseTypedDict(TypedDict):
     r"""GetAttributeValueResponse is the response for getting an attribute value by id."""
-    
+
     attribute_value: NotRequired[AttributeValueTypedDict]
     r"""AttributeValue is the value of an attribute of a defined type."""
-    
+
 
 class GetAttributeValueResponse(BaseModel):
     r"""GetAttributeValueResponse is the response for getting an attribute value by id."""
-    
-    attribute_value: Annotated[Optional[AttributeValue], pydantic.Field(alias="value")] = None
+
+    attribute_value: Annotated[
+        Optional[AttributeValue], pydantic.Field(alias="value")
+    ] = None
     r"""AttributeValue is the value of an attribute of a defined type."""
-    

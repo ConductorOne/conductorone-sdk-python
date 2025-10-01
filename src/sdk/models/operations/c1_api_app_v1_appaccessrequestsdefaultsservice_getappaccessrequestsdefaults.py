@@ -2,39 +2,57 @@
 
 from __future__ import annotations
 import httpx
-from sdk.models.shared import appaccessrequestdefaults as shared_appaccessrequestdefaults
+from sdk.models.shared import (
+    appaccessrequestdefaults as shared_appaccessrequestdefaults,
+)
 from sdk.types import BaseModel
 from sdk.utils import FieldMetadata, PathParamMetadata
-from typing import Optional, TypedDict
-from typing_extensions import Annotated, NotRequired
+from typing import Optional
+from typing_extensions import Annotated, NotRequired, TypedDict
 
 
-class C1APIAppV1AppAccessRequestsDefaultsServiceGetAppAccessRequestsDefaultsRequestTypedDict(TypedDict):
+class C1APIAppV1AppAccessRequestsDefaultsServiceGetAppAccessRequestsDefaultsRequestTypedDict(
+    TypedDict
+):
     app_id: str
-    
 
-class C1APIAppV1AppAccessRequestsDefaultsServiceGetAppAccessRequestsDefaultsRequest(BaseModel):
-    app_id: Annotated[str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))]
-    
 
-class C1APIAppV1AppAccessRequestsDefaultsServiceGetAppAccessRequestsDefaultsResponseTypedDict(TypedDict):
+class C1APIAppV1AppAccessRequestsDefaultsServiceGetAppAccessRequestsDefaultsRequest(
+    BaseModel
+):
+    app_id: Annotated[
+        str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))
+    ]
+
+
+class C1APIAppV1AppAccessRequestsDefaultsServiceGetAppAccessRequestsDefaultsResponseTypedDict(
+    TypedDict
+):
     content_type: str
     r"""HTTP response content type for this operation"""
     status_code: int
     r"""HTTP response status code for this operation"""
     raw_response: httpx.Response
     r"""Raw HTTP response; suitable for custom response parsing"""
-    app_access_request_defaults: NotRequired[shared_appaccessrequestdefaults.AppAccessRequestDefaultsTypedDict]
+    app_access_request_defaults: NotRequired[
+        shared_appaccessrequestdefaults.AppAccessRequestDefaultsTypedDict
+    ]
     r"""Successful response"""
-    
 
-class C1APIAppV1AppAccessRequestsDefaultsServiceGetAppAccessRequestsDefaultsResponse(BaseModel):
+
+class C1APIAppV1AppAccessRequestsDefaultsServiceGetAppAccessRequestsDefaultsResponse(
+    BaseModel
+):
     content_type: str
     r"""HTTP response content type for this operation"""
+
     status_code: int
     r"""HTTP response status code for this operation"""
+
     raw_response: httpx.Response
     r"""Raw HTTP response; suitable for custom response parsing"""
-    app_access_request_defaults: Optional[shared_appaccessrequestdefaults.AppAccessRequestDefaults] = None
+
+    app_access_request_defaults: Optional[
+        shared_appaccessrequestdefaults.AppAccessRequestDefaults
+    ] = None
     r"""Successful response"""
-    

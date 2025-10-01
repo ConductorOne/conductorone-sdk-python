@@ -2,24 +2,41 @@
 
 from __future__ import annotations
 from .provisionpolicy import ProvisionPolicy, ProvisionPolicyTypedDict
+from .provisionpolicy_input import ProvisionPolicyInput, ProvisionPolicyInputTypedDict
 from datetime import datetime
+from enum import Enum
 import pydantic
 from pydantic import model_serializer
 from pydantic.functional_serializers import PlainSerializer
-from pydantic.functional_validators import BeforeValidator
+from pydantic.functional_validators import BeforeValidator, PlainValidator
+from sdk import utils
 from sdk.types import BaseModel, Nullable, OptionalNullable, UNSET, UNSET_SENTINEL
-from sdk.utils import serialize_int, validate_int
-from typing import Dict, List, Optional, TypedDict
-from typing_extensions import Annotated, NotRequired
+from sdk.utils import serialize_int, validate_int, validate_open_enum
+from typing import Dict, List, Optional
+from typing_extensions import Annotated, NotRequired, TypedDict
 
 
 class AppEntitlementDurationUnsetTypedDict(TypedDict):
     pass
-    
+
 
 class AppEntitlementDurationUnset(BaseModel):
     pass
-    
+
+
+class Purpose(str, Enum, metaclass=utils.OpenEnumMeta):
+    r"""The purpose field."""
+
+    APP_ENTITLEMENT_PURPOSE_VALUE_UNSPECIFIED = (
+        "APP_ENTITLEMENT_PURPOSE_VALUE_UNSPECIFIED"
+    )
+    APP_ENTITLEMENT_PURPOSE_VALUE_ASSIGNMENT = (
+        "APP_ENTITLEMENT_PURPOSE_VALUE_ASSIGNMENT"
+    )
+    APP_ENTITLEMENT_PURPOSE_VALUE_PERMISSION = (
+        "APP_ENTITLEMENT_PURPOSE_VALUE_PERMISSION"
+    )
+
 
 class AppEntitlementTypedDict(TypedDict):
     r"""The app entitlement represents one permission in a downstream App (SAAS) that can be granted. For example, GitHub Read vs GitHub Write.
@@ -29,7 +46,7 @@ class AppEntitlementTypedDict(TypedDict):
     - durationGrant
 
     """
-    
+
     provision_policy: NotRequired[ProvisionPolicyTypedDict]
     r"""ProvisionPolicy is a oneOf that indicates how a provision step should be processed.
 
@@ -40,6 +57,20 @@ class AppEntitlementTypedDict(TypedDict):
     - webhook
     - multiStep
     - externalTicket
+    - unconfigured
+
+    """
+    provision_policy1: NotRequired[ProvisionPolicyTypedDict]
+    r"""ProvisionPolicy is a oneOf that indicates how a provision step should be processed.
+
+    This message contains a oneof named typ. Only a single field of the following list may be set at a time:
+    - connector
+    - manual
+    - delegated
+    - webhook
+    - multiStep
+    - externalTicket
+    - unconfigured
 
     """
     alias: NotRequired[str]
@@ -78,21 +109,27 @@ class AppEntitlementTypedDict(TypedDict):
     r"""Flag to indicate whether automation (for adding users to entitlement based on rules) has been enabled."""
     is_manually_managed: NotRequired[bool]
     r"""Flag to indicate if the app entitlement is manually managed."""
+    match_baton_id: NotRequired[str]
+    r"""The matchBatonId field."""
     override_access_requests_defaults: NotRequired[bool]
     r"""Flag to indicate if the app-level access request settings have been overridden for the entitlement"""
+    purpose: NotRequired[Purpose]
+    r"""The purpose field."""
+    request_schema_id: NotRequired[str]
+    r"""The ID of the request schema associated with this app entitlement."""
     revoke_policy_id: NotRequired[str]
     r"""The ID of the policy that will be used for revoke tickets related to the app entitlement"""
     risk_level_value_id: NotRequired[str]
     r"""The riskLevelValueId field."""
     slug: NotRequired[str]
-    r"""The slug is displayed as an oval next to the name in the frontend of C1, it tells you what permission the entitlement grants. See https://www.conductorone.com/docs/product/manage-access/entitlements/"""
+    r"""The slug is displayed as an oval next to the name in the frontend of C1, it tells you what permission the entitlement grants. See https://www.conductorone.com/docs/product/admin/entitlements/"""
     source_connector_ids: NotRequired[Dict[str, str]]
     r"""Map to tell us which connector the entitlement came from."""
     system_builtin: NotRequired[bool]
     r"""This field indicates if this is a system builtin entitlement."""
     updated_at: NotRequired[datetime]
     user_edited_mask: NotRequired[Nullable[str]]
-    
+
 
 class AppEntitlement(BaseModel):
     r"""The app entitlement represents one permission in a downstream App (SAAS) that can be granted. For example, GitHub Read vs GitHub Write.
@@ -102,8 +139,10 @@ class AppEntitlement(BaseModel):
     - durationGrant
 
     """
-    
-    provision_policy: Annotated[Optional[ProvisionPolicy], pydantic.Field(alias="provisionerPolicy")] = None
+
+    provision_policy: Annotated[
+        Optional[ProvisionPolicy], pydantic.Field(alias="deprovisionerPolicy")
+    ] = None
     r"""ProvisionPolicy is a oneOf that indicates how a provision step should be processed.
 
     This message contains a oneof named typ. Only a single field of the following list may be set at a time:
@@ -113,90 +152,231 @@ class AppEntitlement(BaseModel):
     - webhook
     - multiStep
     - externalTicket
+    - unconfigured
 
     """
+
+    provision_policy1: Annotated[
+        Optional[ProvisionPolicy], pydantic.Field(alias="provisionerPolicy")
+    ] = None
+    r"""ProvisionPolicy is a oneOf that indicates how a provision step should be processed.
+
+    This message contains a oneof named typ. Only a single field of the following list may be set at a time:
+    - connector
+    - manual
+    - delegated
+    - webhook
+    - multiStep
+    - externalTicket
+    - unconfigured
+
+    """
+
     alias: Optional[str] = None
     r"""The alias of the app entitlement used by Cone. Also exact-match queryable."""
+
     app_id: Annotated[Optional[str], pydantic.Field(alias="appId")] = None
     r"""The ID of the app that is associated with the app entitlement."""
-    app_resource_id: Annotated[Optional[str], pydantic.Field(alias="appResourceId")] = None
+
+    app_resource_id: Annotated[Optional[str], pydantic.Field(alias="appResourceId")] = (
+        None
+    )
     r"""The ID of the app resource that is associated with the app entitlement"""
-    app_resource_type_id: Annotated[Optional[str], pydantic.Field(alias="appResourceTypeId")] = None
+
+    app_resource_type_id: Annotated[
+        Optional[str], pydantic.Field(alias="appResourceTypeId")
+    ] = None
     r"""The ID of the app resource type that is associated with the app entitlement"""
-    certify_policy_id: Annotated[Optional[str], pydantic.Field(alias="certifyPolicyId")] = None
+
+    certify_policy_id: Annotated[
+        Optional[str], pydantic.Field(alias="certifyPolicyId")
+    ] = None
     r"""The ID of the policy that will be used for certify tickets related to the app entitlement."""
-    compliance_framework_value_ids: Annotated[OptionalNullable[List[str]], pydantic.Field(alias="complianceFrameworkValueIds")] = UNSET
+
+    compliance_framework_value_ids: Annotated[
+        OptionalNullable[List[str]], pydantic.Field(alias="complianceFrameworkValueIds")
+    ] = UNSET
     r"""The IDs of different compliance frameworks associated with this app entitlement ex (SOX, HIPAA, PCI, etc.)"""
+
     created_at: Annotated[Optional[datetime], pydantic.Field(alias="createdAt")] = None
-    default_values_applied: Annotated[Optional[bool], pydantic.Field(alias="defaultValuesApplied")] = None
+
+    default_values_applied: Annotated[
+        Optional[bool], pydantic.Field(alias="defaultValuesApplied")
+    ] = None
     r"""Flag to indicate if app-level access request defaults have been applied to the entitlement"""
+
     deleted_at: Annotated[Optional[datetime], pydantic.Field(alias="deletedAt")] = None
+
     description: Optional[str] = None
     r"""The description of the app entitlement."""
+
     display_name: Annotated[Optional[str], pydantic.Field(alias="displayName")] = None
     r"""The display name of the app entitlement."""
-    duration_grant: Annotated[Optional[str], pydantic.Field(alias="durationGrant")] = None
-    duration_unset: Annotated[OptionalNullable[AppEntitlementDurationUnset], pydantic.Field(alias="durationUnset")] = UNSET
-    emergency_grant_enabled: Annotated[Optional[bool], pydantic.Field(alias="emergencyGrantEnabled")] = None
+
+    duration_grant: Annotated[Optional[str], pydantic.Field(alias="durationGrant")] = (
+        None
+    )
+
+    duration_unset: Annotated[
+        OptionalNullable[AppEntitlementDurationUnset],
+        pydantic.Field(alias="durationUnset"),
+    ] = UNSET
+
+    emergency_grant_enabled: Annotated[
+        Optional[bool], pydantic.Field(alias="emergencyGrantEnabled")
+    ] = None
     r"""This enables tasks to be created in an emergency and use a selected emergency access policy."""
-    emergency_grant_policy_id: Annotated[Optional[str], pydantic.Field(alias="emergencyGrantPolicyId")] = None
+
+    emergency_grant_policy_id: Annotated[
+        Optional[str], pydantic.Field(alias="emergencyGrantPolicyId")
+    ] = None
     r"""The ID of the policy that will be used for emergency access grant tasks."""
-    grant_count: Annotated[Annotated[Optional[int], BeforeValidator(validate_int), PlainSerializer(serialize_int(True))], pydantic.Field(alias="grantCount")] = None
+
+    grant_count: Annotated[
+        Annotated[
+            Optional[int],
+            BeforeValidator(validate_int),
+            PlainSerializer(serialize_int(True)),
+        ],
+        pydantic.Field(alias="grantCount"),
+    ] = None
     r"""The amount of grants open for this entitlement"""
-    grant_policy_id: Annotated[Optional[str], pydantic.Field(alias="grantPolicyId")] = None
+
+    grant_policy_id: Annotated[Optional[str], pydantic.Field(alias="grantPolicyId")] = (
+        None
+    )
     r"""The ID of the policy that will be used for grant tickets related to the app entitlement."""
+
     id: Optional[str] = None
     r"""The unique ID for the App Entitlement."""
-    is_automation_enabled: Annotated[Optional[bool], pydantic.Field(alias="isAutomationEnabled")] = None
+
+    is_automation_enabled: Annotated[
+        Optional[bool], pydantic.Field(alias="isAutomationEnabled")
+    ] = None
     r"""Flag to indicate whether automation (for adding users to entitlement based on rules) has been enabled."""
-    is_manually_managed: Annotated[Optional[bool], pydantic.Field(alias="isManuallyManaged")] = None
+
+    is_manually_managed: Annotated[
+        Optional[bool], pydantic.Field(alias="isManuallyManaged")
+    ] = None
     r"""Flag to indicate if the app entitlement is manually managed."""
-    override_access_requests_defaults: Annotated[Optional[bool], pydantic.Field(alias="overrideAccessRequestsDefaults")] = None
+
+    match_baton_id: Annotated[Optional[str], pydantic.Field(alias="matchBatonId")] = (
+        None
+    )
+    r"""The matchBatonId field."""
+
+    override_access_requests_defaults: Annotated[
+        Optional[bool], pydantic.Field(alias="overrideAccessRequestsDefaults")
+    ] = None
     r"""Flag to indicate if the app-level access request settings have been overridden for the entitlement"""
-    revoke_policy_id: Annotated[Optional[str], pydantic.Field(alias="revokePolicyId")] = None
+
+    purpose: Annotated[Optional[Purpose], PlainValidator(validate_open_enum(False))] = (
+        None
+    )
+    r"""The purpose field."""
+
+    request_schema_id: Annotated[
+        Optional[str], pydantic.Field(alias="requestSchemaId")
+    ] = None
+    r"""The ID of the request schema associated with this app entitlement."""
+
+    revoke_policy_id: Annotated[
+        Optional[str], pydantic.Field(alias="revokePolicyId")
+    ] = None
     r"""The ID of the policy that will be used for revoke tickets related to the app entitlement"""
-    risk_level_value_id: Annotated[Optional[str], pydantic.Field(alias="riskLevelValueId")] = None
+
+    risk_level_value_id: Annotated[
+        Optional[str], pydantic.Field(alias="riskLevelValueId")
+    ] = None
     r"""The riskLevelValueId field."""
+
     slug: Optional[str] = None
-    r"""The slug is displayed as an oval next to the name in the frontend of C1, it tells you what permission the entitlement grants. See https://www.conductorone.com/docs/product/manage-access/entitlements/"""
-    source_connector_ids: Annotated[Optional[Dict[str, str]], pydantic.Field(alias="sourceConnectorIds")] = None
+    r"""The slug is displayed as an oval next to the name in the frontend of C1, it tells you what permission the entitlement grants. See https://www.conductorone.com/docs/product/admin/entitlements/"""
+
+    source_connector_ids: Annotated[
+        Optional[Dict[str, str]], pydantic.Field(alias="sourceConnectorIds")
+    ] = None
     r"""Map to tell us which connector the entitlement came from."""
-    system_builtin: Annotated[Optional[bool], pydantic.Field(alias="systemBuiltin")] = None
+
+    system_builtin: Annotated[Optional[bool], pydantic.Field(alias="systemBuiltin")] = (
+        None
+    )
     r"""This field indicates if this is a system builtin entitlement."""
+
     updated_at: Annotated[Optional[datetime], pydantic.Field(alias="updatedAt")] = None
-    user_edited_mask: Annotated[OptionalNullable[str], pydantic.Field(alias="userEditedMask")] = UNSET
-    
+
+    user_edited_mask: Annotated[
+        OptionalNullable[str], pydantic.Field(alias="userEditedMask")
+    ] = UNSET
+
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
-        optional_fields = ["ProvisionPolicy", "alias", "appId", "appResourceId", "appResourceTypeId", "certifyPolicyId", "complianceFrameworkValueIds", "createdAt", "defaultValuesApplied", "deletedAt", "description", "displayName", "durationGrant", "durationUnset", "emergencyGrantEnabled", "emergencyGrantPolicyId", "grantCount", "grantPolicyId", "id", "isAutomationEnabled", "isManuallyManaged", "overrideAccessRequestsDefaults", "revokePolicyId", "riskLevelValueId", "slug", "sourceConnectorIds", "systemBuiltin", "updatedAt", "userEditedMask"]
-        nullable_fields = ["complianceFrameworkValueIds", "durationUnset", "userEditedMask"]
+        optional_fields = [
+            "ProvisionPolicy",
+            "ProvisionPolicy1",
+            "alias",
+            "appId",
+            "appResourceId",
+            "appResourceTypeId",
+            "certifyPolicyId",
+            "complianceFrameworkValueIds",
+            "createdAt",
+            "defaultValuesApplied",
+            "deletedAt",
+            "description",
+            "displayName",
+            "durationGrant",
+            "durationUnset",
+            "emergencyGrantEnabled",
+            "emergencyGrantPolicyId",
+            "grantCount",
+            "grantPolicyId",
+            "id",
+            "isAutomationEnabled",
+            "isManuallyManaged",
+            "matchBatonId",
+            "overrideAccessRequestsDefaults",
+            "purpose",
+            "requestSchemaId",
+            "revokePolicyId",
+            "riskLevelValueId",
+            "slug",
+            "sourceConnectorIds",
+            "systemBuiltin",
+            "updatedAt",
+            "userEditedMask",
+        ]
+        nullable_fields = [
+            "complianceFrameworkValueIds",
+            "durationUnset",
+            "userEditedMask",
+        ]
         null_default_fields = []
 
         serialized = handler(self)
 
         m = {}
 
-        for n, f in self.model_fields.items():
+        for n, f in type(self).model_fields.items():
             k = f.alias or n
             val = serialized.get(k)
+            serialized.pop(k, None)
+
+            optional_nullable = k in optional_fields and k in nullable_fields
+            is_set = (
+                self.__pydantic_fields_set__.intersection({n})
+                or k in null_default_fields
+            )  # pylint: disable=no-member
 
             if val is not None and val != UNSET_SENTINEL:
                 m[k] = val
             elif val != UNSET_SENTINEL and (
-                not k in optional_fields
-                or (
-                    k in optional_fields
-                    and k in nullable_fields
-                    and (
-                        self.__pydantic_fields_set__.intersection({n})
-                        or k in null_default_fields
-                    )  # pylint: disable=no-member
-                )
+                not k in optional_fields or (optional_nullable and is_set)
             ):
                 m[k] = val
 
         return m
-        
+
 
 class AppEntitlementInputTypedDict(TypedDict):
     r"""The app entitlement represents one permission in a downstream App (SAAS) that can be granted. For example, GitHub Read vs GitHub Write.
@@ -206,8 +386,8 @@ class AppEntitlementInputTypedDict(TypedDict):
     - durationGrant
 
     """
-    
-    provision_policy: NotRequired[ProvisionPolicyTypedDict]
+
+    provision_policy: NotRequired[ProvisionPolicyInputTypedDict]
     r"""ProvisionPolicy is a oneOf that indicates how a provision step should be processed.
 
     This message contains a oneof named typ. Only a single field of the following list may be set at a time:
@@ -217,8 +397,24 @@ class AppEntitlementInputTypedDict(TypedDict):
     - webhook
     - multiStep
     - externalTicket
+    - unconfigured
 
     """
+    provision_policy1: NotRequired[ProvisionPolicyInputTypedDict]
+    r"""ProvisionPolicy is a oneOf that indicates how a provision step should be processed.
+
+    This message contains a oneof named typ. Only a single field of the following list may be set at a time:
+    - connector
+    - manual
+    - delegated
+    - webhook
+    - multiStep
+    - externalTicket
+    - unconfigured
+
+    """
+    alias: NotRequired[str]
+    r"""The alias of the app entitlement used by Cone. Also exact-match queryable."""
     app_id: NotRequired[str]
     r"""The ID of the app that is associated with the app entitlement."""
     app_resource_id: NotRequired[str]
@@ -245,18 +441,24 @@ class AppEntitlementInputTypedDict(TypedDict):
     r"""The ID of the policy that will be used for grant tickets related to the app entitlement."""
     is_manually_managed: NotRequired[bool]
     r"""Flag to indicate if the app entitlement is manually managed."""
+    match_baton_id: NotRequired[str]
+    r"""The matchBatonId field."""
     override_access_requests_defaults: NotRequired[bool]
     r"""Flag to indicate if the app-level access request settings have been overridden for the entitlement"""
+    purpose: NotRequired[Purpose]
+    r"""The purpose field."""
+    request_schema_id: NotRequired[str]
+    r"""The ID of the request schema associated with this app entitlement."""
     revoke_policy_id: NotRequired[str]
     r"""The ID of the policy that will be used for revoke tickets related to the app entitlement"""
     risk_level_value_id: NotRequired[str]
     r"""The riskLevelValueId field."""
     slug: NotRequired[str]
-    r"""The slug is displayed as an oval next to the name in the frontend of C1, it tells you what permission the entitlement grants. See https://www.conductorone.com/docs/product/manage-access/entitlements/"""
+    r"""The slug is displayed as an oval next to the name in the frontend of C1, it tells you what permission the entitlement grants. See https://www.conductorone.com/docs/product/admin/entitlements/"""
     source_connector_ids: NotRequired[Dict[str, str]]
     r"""Map to tell us which connector the entitlement came from."""
     user_edited_mask: NotRequired[Nullable[str]]
-    
+
 
 class AppEntitlementInput(BaseModel):
     r"""The app entitlement represents one permission in a downstream App (SAAS) that can be granted. For example, GitHub Read vs GitHub Write.
@@ -266,8 +468,10 @@ class AppEntitlementInput(BaseModel):
     - durationGrant
 
     """
-    
-    provision_policy: Annotated[Optional[ProvisionPolicy], pydantic.Field(alias="provisionerPolicy")] = None
+
+    provision_policy: Annotated[
+        Optional[ProvisionPolicyInput], pydantic.Field(alias="deprovisionerPolicy")
+    ] = None
     r"""ProvisionPolicy is a oneOf that indicates how a provision step should be processed.
 
     This message contains a oneof named typ. Only a single field of the following list may be set at a time:
@@ -277,74 +481,191 @@ class AppEntitlementInput(BaseModel):
     - webhook
     - multiStep
     - externalTicket
+    - unconfigured
 
     """
+
+    provision_policy1: Annotated[
+        Optional[ProvisionPolicyInput], pydantic.Field(alias="provisionerPolicy")
+    ] = None
+    r"""ProvisionPolicy is a oneOf that indicates how a provision step should be processed.
+
+    This message contains a oneof named typ. Only a single field of the following list may be set at a time:
+    - connector
+    - manual
+    - delegated
+    - webhook
+    - multiStep
+    - externalTicket
+    - unconfigured
+
+    """
+
+    alias: Optional[str] = None
+    r"""The alias of the app entitlement used by Cone. Also exact-match queryable."""
+
     app_id: Annotated[Optional[str], pydantic.Field(alias="appId")] = None
     r"""The ID of the app that is associated with the app entitlement."""
-    app_resource_id: Annotated[Optional[str], pydantic.Field(alias="appResourceId")] = None
+
+    app_resource_id: Annotated[Optional[str], pydantic.Field(alias="appResourceId")] = (
+        None
+    )
     r"""The ID of the app resource that is associated with the app entitlement"""
-    app_resource_type_id: Annotated[Optional[str], pydantic.Field(alias="appResourceTypeId")] = None
+
+    app_resource_type_id: Annotated[
+        Optional[str], pydantic.Field(alias="appResourceTypeId")
+    ] = None
     r"""The ID of the app resource type that is associated with the app entitlement"""
-    certify_policy_id: Annotated[Optional[str], pydantic.Field(alias="certifyPolicyId")] = None
+
+    certify_policy_id: Annotated[
+        Optional[str], pydantic.Field(alias="certifyPolicyId")
+    ] = None
     r"""The ID of the policy that will be used for certify tickets related to the app entitlement."""
-    compliance_framework_value_ids: Annotated[OptionalNullable[List[str]], pydantic.Field(alias="complianceFrameworkValueIds")] = UNSET
+
+    compliance_framework_value_ids: Annotated[
+        OptionalNullable[List[str]], pydantic.Field(alias="complianceFrameworkValueIds")
+    ] = UNSET
     r"""The IDs of different compliance frameworks associated with this app entitlement ex (SOX, HIPAA, PCI, etc.)"""
-    default_values_applied: Annotated[Optional[bool], pydantic.Field(alias="defaultValuesApplied")] = None
+
+    default_values_applied: Annotated[
+        Optional[bool], pydantic.Field(alias="defaultValuesApplied")
+    ] = None
     r"""Flag to indicate if app-level access request defaults have been applied to the entitlement"""
+
     description: Optional[str] = None
     r"""The description of the app entitlement."""
+
     display_name: Annotated[Optional[str], pydantic.Field(alias="displayName")] = None
     r"""The display name of the app entitlement."""
-    duration_grant: Annotated[Optional[str], pydantic.Field(alias="durationGrant")] = None
-    duration_unset: Annotated[OptionalNullable[AppEntitlementDurationUnset], pydantic.Field(alias="durationUnset")] = UNSET
-    emergency_grant_enabled: Annotated[Optional[bool], pydantic.Field(alias="emergencyGrantEnabled")] = None
+
+    duration_grant: Annotated[Optional[str], pydantic.Field(alias="durationGrant")] = (
+        None
+    )
+
+    duration_unset: Annotated[
+        OptionalNullable[AppEntitlementDurationUnset],
+        pydantic.Field(alias="durationUnset"),
+    ] = UNSET
+
+    emergency_grant_enabled: Annotated[
+        Optional[bool], pydantic.Field(alias="emergencyGrantEnabled")
+    ] = None
     r"""This enables tasks to be created in an emergency and use a selected emergency access policy."""
-    emergency_grant_policy_id: Annotated[Optional[str], pydantic.Field(alias="emergencyGrantPolicyId")] = None
+
+    emergency_grant_policy_id: Annotated[
+        Optional[str], pydantic.Field(alias="emergencyGrantPolicyId")
+    ] = None
     r"""The ID of the policy that will be used for emergency access grant tasks."""
-    grant_policy_id: Annotated[Optional[str], pydantic.Field(alias="grantPolicyId")] = None
+
+    grant_policy_id: Annotated[Optional[str], pydantic.Field(alias="grantPolicyId")] = (
+        None
+    )
     r"""The ID of the policy that will be used for grant tickets related to the app entitlement."""
-    is_manually_managed: Annotated[Optional[bool], pydantic.Field(alias="isManuallyManaged")] = None
+
+    is_manually_managed: Annotated[
+        Optional[bool], pydantic.Field(alias="isManuallyManaged")
+    ] = None
     r"""Flag to indicate if the app entitlement is manually managed."""
-    override_access_requests_defaults: Annotated[Optional[bool], pydantic.Field(alias="overrideAccessRequestsDefaults")] = None
+
+    match_baton_id: Annotated[Optional[str], pydantic.Field(alias="matchBatonId")] = (
+        None
+    )
+    r"""The matchBatonId field."""
+
+    override_access_requests_defaults: Annotated[
+        Optional[bool], pydantic.Field(alias="overrideAccessRequestsDefaults")
+    ] = None
     r"""Flag to indicate if the app-level access request settings have been overridden for the entitlement"""
-    revoke_policy_id: Annotated[Optional[str], pydantic.Field(alias="revokePolicyId")] = None
+
+    purpose: Annotated[Optional[Purpose], PlainValidator(validate_open_enum(False))] = (
+        None
+    )
+    r"""The purpose field."""
+
+    request_schema_id: Annotated[
+        Optional[str], pydantic.Field(alias="requestSchemaId")
+    ] = None
+    r"""The ID of the request schema associated with this app entitlement."""
+
+    revoke_policy_id: Annotated[
+        Optional[str], pydantic.Field(alias="revokePolicyId")
+    ] = None
     r"""The ID of the policy that will be used for revoke tickets related to the app entitlement"""
-    risk_level_value_id: Annotated[Optional[str], pydantic.Field(alias="riskLevelValueId")] = None
+
+    risk_level_value_id: Annotated[
+        Optional[str], pydantic.Field(alias="riskLevelValueId")
+    ] = None
     r"""The riskLevelValueId field."""
+
     slug: Optional[str] = None
-    r"""The slug is displayed as an oval next to the name in the frontend of C1, it tells you what permission the entitlement grants. See https://www.conductorone.com/docs/product/manage-access/entitlements/"""
-    source_connector_ids: Annotated[Optional[Dict[str, str]], pydantic.Field(alias="sourceConnectorIds")] = None
+    r"""The slug is displayed as an oval next to the name in the frontend of C1, it tells you what permission the entitlement grants. See https://www.conductorone.com/docs/product/admin/entitlements/"""
+
+    source_connector_ids: Annotated[
+        Optional[Dict[str, str]], pydantic.Field(alias="sourceConnectorIds")
+    ] = None
     r"""Map to tell us which connector the entitlement came from."""
-    user_edited_mask: Annotated[OptionalNullable[str], pydantic.Field(alias="userEditedMask")] = UNSET
-    
+
+    user_edited_mask: Annotated[
+        OptionalNullable[str], pydantic.Field(alias="userEditedMask")
+    ] = UNSET
+
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
-        optional_fields = ["ProvisionPolicy", "appId", "appResourceId", "appResourceTypeId", "certifyPolicyId", "complianceFrameworkValueIds", "defaultValuesApplied", "description", "displayName", "durationGrant", "durationUnset", "emergencyGrantEnabled", "emergencyGrantPolicyId", "grantPolicyId", "isManuallyManaged", "overrideAccessRequestsDefaults", "revokePolicyId", "riskLevelValueId", "slug", "sourceConnectorIds", "userEditedMask"]
-        nullable_fields = ["complianceFrameworkValueIds", "durationUnset", "userEditedMask"]
+        optional_fields = [
+            "ProvisionPolicy",
+            "ProvisionPolicy1",
+            "alias",
+            "appId",
+            "appResourceId",
+            "appResourceTypeId",
+            "certifyPolicyId",
+            "complianceFrameworkValueIds",
+            "defaultValuesApplied",
+            "description",
+            "displayName",
+            "durationGrant",
+            "durationUnset",
+            "emergencyGrantEnabled",
+            "emergencyGrantPolicyId",
+            "grantPolicyId",
+            "isManuallyManaged",
+            "matchBatonId",
+            "overrideAccessRequestsDefaults",
+            "purpose",
+            "requestSchemaId",
+            "revokePolicyId",
+            "riskLevelValueId",
+            "slug",
+            "sourceConnectorIds",
+            "userEditedMask",
+        ]
+        nullable_fields = [
+            "complianceFrameworkValueIds",
+            "durationUnset",
+            "userEditedMask",
+        ]
         null_default_fields = []
 
         serialized = handler(self)
 
         m = {}
 
-        for n, f in self.model_fields.items():
+        for n, f in type(self).model_fields.items():
             k = f.alias or n
             val = serialized.get(k)
+            serialized.pop(k, None)
+
+            optional_nullable = k in optional_fields and k in nullable_fields
+            is_set = (
+                self.__pydantic_fields_set__.intersection({n})
+                or k in null_default_fields
+            )  # pylint: disable=no-member
 
             if val is not None and val != UNSET_SENTINEL:
                 m[k] = val
             elif val != UNSET_SENTINEL and (
-                not k in optional_fields
-                or (
-                    k in optional_fields
-                    and k in nullable_fields
-                    and (
-                        self.__pydantic_fields_set__.intersection({n})
-                        or k in null_default_fields
-                    )  # pylint: disable=no-member
-                )
+                not k in optional_fields or (optional_nullable and is_set)
             ):
                 m[k] = val
 
         return m
-        

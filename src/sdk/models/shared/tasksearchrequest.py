@@ -8,46 +8,74 @@ from datetime import datetime
 from enum import Enum
 import pydantic
 from pydantic import model_serializer
+from pydantic.functional_validators import PlainValidator
+from sdk import utils
 from sdk.types import BaseModel, Nullable, OptionalNullable, UNSET, UNSET_SENTINEL
-from typing import List, Optional, TypedDict
-from typing_extensions import Annotated, NotRequired
+from sdk.utils import validate_open_enum
+from typing import List, Optional
+from typing_extensions import Annotated, NotRequired, TypedDict
 
 
-class AccountTypes(str, Enum):
+class AccountTypes(str, Enum, metaclass=utils.OpenEnumMeta):
     APP_USER_TYPE_UNSPECIFIED = "APP_USER_TYPE_UNSPECIFIED"
     APP_USER_TYPE_USER = "APP_USER_TYPE_USER"
     APP_USER_TYPE_SERVICE_ACCOUNT = "APP_USER_TYPE_SERVICE_ACCOUNT"
     APP_USER_TYPE_SYSTEM_ACCOUNT = "APP_USER_TYPE_SYSTEM_ACCOUNT"
 
-class CurrentStep(str, Enum):
+
+class CurrentStep(str, Enum, metaclass=utils.OpenEnumMeta):
     r"""Search tasks that have this type of step as the current step."""
+
     TASK_SEARCH_CURRENT_STEP_UNSPECIFIED = "TASK_SEARCH_CURRENT_STEP_UNSPECIFIED"
     TASK_SEARCH_CURRENT_STEP_APPROVAL = "TASK_SEARCH_CURRENT_STEP_APPROVAL"
     TASK_SEARCH_CURRENT_STEP_PROVISION = "TASK_SEARCH_CURRENT_STEP_PROVISION"
 
-class EmergencyStatus(str, Enum):
+
+class EmergencyStatus(str, Enum, metaclass=utils.OpenEnumMeta):
     r"""Search tasks that are or are not emergency access."""
+
     UNSPECIFIED = "UNSPECIFIED"
     ALL = "ALL"
     NON_EMERGENCY = "NON_EMERGENCY"
     EMERGENCY = "EMERGENCY"
 
-class SortBy(str, Enum):
+
+class SortBy(str, Enum, metaclass=utils.OpenEnumMeta):
     r"""Sort tasks in a specific order."""
+
     TASK_SEARCH_SORT_BY_UNSPECIFIED = "TASK_SEARCH_SORT_BY_UNSPECIFIED"
     TASK_SEARCH_SORT_BY_ACCOUNT = "TASK_SEARCH_SORT_BY_ACCOUNT"
     TASK_SEARCH_SORT_BY_RESOURCE = "TASK_SEARCH_SORT_BY_RESOURCE"
     TASK_SEARCH_SORT_BY_ACCOUNT_OWNER = "TASK_SEARCH_SORT_BY_ACCOUNT_OWNER"
     TASK_SEARCH_SORT_BY_REVERSE_TICKET_ID = "TASK_SEARCH_SORT_BY_REVERSE_TICKET_ID"
+    TASK_SEARCH_SORT_BY_TICKET_ID = "TASK_SEARCH_SORT_BY_TICKET_ID"
+    TASK_SEARCH_SORT_BY_CREATED_AT = "TASK_SEARCH_SORT_BY_CREATED_AT"
+    TASK_SEARCH_SORT_BY_REVERSE_CREATED_AT = "TASK_SEARCH_SORT_BY_REVERSE_CREATED_AT"
 
-class TaskStates(str, Enum):
+
+class StepApprovalTypes(str, Enum, metaclass=utils.OpenEnumMeta):
+    STEP_APPROVAL_TYPE_UNSPECIFIED = "STEP_APPROVAL_TYPE_UNSPECIFIED"
+    STEP_APPROVAL_TYPE_USERS = "STEP_APPROVAL_TYPE_USERS"
+    STEP_APPROVAL_TYPE_MANAGER = "STEP_APPROVAL_TYPE_MANAGER"
+    STEP_APPROVAL_TYPE_APP_OWNERS = "STEP_APPROVAL_TYPE_APP_OWNERS"
+    STEP_APPROVAL_TYPE_GROUP = "STEP_APPROVAL_TYPE_GROUP"
+    STEP_APPROVAL_TYPE_SELF = "STEP_APPROVAL_TYPE_SELF"
+    STEP_APPROVAL_TYPE_ENTITLEMENT_OWNERS = "STEP_APPROVAL_TYPE_ENTITLEMENT_OWNERS"
+    STEP_APPROVAL_TYPE_EXPRESSION = "STEP_APPROVAL_TYPE_EXPRESSION"
+    STEP_APPROVAL_TYPE_WEBHOOK = "STEP_APPROVAL_TYPE_WEBHOOK"
+    STEP_APPROVAL_TYPE_RESOURCE_OWNERS = "STEP_APPROVAL_TYPE_RESOURCE_OWNERS"
+    STEP_APPROVAL_TYPE_AGENT = "STEP_APPROVAL_TYPE_AGENT"
+
+
+class TaskStates(str, Enum, metaclass=utils.OpenEnumMeta):
     TASK_STATE_UNSPECIFIED = "TASK_STATE_UNSPECIFIED"
     TASK_STATE_OPEN = "TASK_STATE_OPEN"
     TASK_STATE_CLOSED = "TASK_STATE_CLOSED"
 
+
 class TaskSearchRequestTypedDict(TypedDict):
     r"""Search for tasks based on a plethora filters."""
-    
+
     task_expand_mask: NotRequired[TaskExpandMaskTypedDict]
     r"""The task expand mask is an array of strings that specifes the related objects the requester wishes to have returned when making a request where the expand mask is part of the input. Use '*' to view all possible responses."""
     access_review_ids: NotRequired[Nullable[List[str]]]
@@ -68,6 +96,8 @@ class TaskSearchRequestTypedDict(TypedDict):
     r"""Search tasks that have any of these app users as subjects."""
     application_ids: NotRequired[Nullable[List[str]]]
     r"""Search tasks that have any of these apps as targets."""
+    assigned_or_step_approver_user_id: NotRequired[str]
+    r"""Search tasks that are currently assigned to this user, or that are closed and were previously approved by this user."""
     assignees_in_ids: NotRequired[Nullable[List[str]]]
     r"""Search tasks by  List of UserIDs which are currently assigned these Tasks"""
     created_after: NotRequired[datetime]
@@ -78,6 +108,8 @@ class TaskSearchRequestTypedDict(TypedDict):
     r"""Search tasks that are or are not emergency access."""
     exclude_app_entitlement_ids: NotRequired[Nullable[List[str]]]
     r"""Search tasks that do not have any of these app entitlement IDs."""
+    exclude_app_resource_type_ids: NotRequired[Nullable[List[str]]]
+    r"""Search tasks that do not have any of these app resource type IDs."""
     exclude_ids: NotRequired[Nullable[List[str]]]
     r"""Exclude Specific TaskIDs from this serach result."""
     include_deleted: NotRequired[bool]
@@ -87,6 +119,8 @@ class TaskSearchRequestTypedDict(TypedDict):
     older_than_duration: NotRequired[str]
     opener_ids: NotRequired[Nullable[List[str]]]
     r"""Search tasks that were created by any of the users in this array."""
+    opener_or_subject_user_id: NotRequired[str]
+    r"""Search tasks that were opened by this user, or that the user is the subject of."""
     page_size: NotRequired[int]
     r"""The pageSize where 0 <= pageSize <= 100. Values < 10 will be set to 10. A value of 0 returns the default page size (currently 25)"""
     page_token: NotRequired[str]
@@ -99,103 +133,281 @@ class TaskSearchRequestTypedDict(TypedDict):
     r"""Query tasks by display name, description, or numeric ID."""
     sort_by: NotRequired[SortBy]
     r"""Sort tasks in a specific order."""
+    step_approval_types: NotRequired[Nullable[List[StepApprovalTypes]]]
+    r"""Search tasks that have a current policy step of this type"""
     subject_ids: NotRequired[Nullable[List[str]]]
     r"""Search tasks where these users are the subject."""
     task_states: NotRequired[Nullable[List[TaskStates]]]
     r"""Search tasks with this task state."""
     task_types: NotRequired[Nullable[List[TaskTypeInputTypedDict]]]
     r"""Search tasks with this task type. This is a oneOf, and needs an object, which can be empty, to sort."""
-    
+    user_employment_statuses: NotRequired[Nullable[List[str]]]
+    r"""The userEmploymentStatuses field."""
+
 
 class TaskSearchRequest(BaseModel):
     r"""Search for tasks based on a plethora filters."""
-    
-    task_expand_mask: Annotated[Optional[TaskExpandMask], pydantic.Field(alias="expandMask")] = None
+
+    task_expand_mask: Annotated[
+        Optional[TaskExpandMask], pydantic.Field(alias="expandMask")
+    ] = None
     r"""The task expand mask is an array of strings that specifes the related objects the requester wishes to have returned when making a request where the expand mask is part of the input. Use '*' to view all possible responses."""
-    access_review_ids: Annotated[OptionalNullable[List[str]], pydantic.Field(alias="accessReviewIds")] = UNSET
+
+    access_review_ids: Annotated[
+        OptionalNullable[List[str]], pydantic.Field(alias="accessReviewIds")
+    ] = UNSET
     r"""Search tasks that belong to any of the access reviews included in this list."""
-    account_owner_ids: Annotated[OptionalNullable[List[str]], pydantic.Field(alias="accountOwnerIds")] = UNSET
+
+    account_owner_ids: Annotated[
+        OptionalNullable[List[str]], pydantic.Field(alias="accountOwnerIds")
+    ] = UNSET
     r"""Search tasks that have any of these account owners."""
-    account_types: Annotated[OptionalNullable[List[AccountTypes]], pydantic.Field(alias="accountTypes")] = UNSET
+
+    account_types: Annotated[
+        OptionalNullable[
+            List[Annotated[AccountTypes, PlainValidator(validate_open_enum(False))]]
+        ],
+        pydantic.Field(alias="accountTypes"),
+    ] = UNSET
     r"""The accountTypes field."""
+
     actor_id: Annotated[Optional[str], pydantic.Field(alias="actorId")] = None
     r"""Search tasks that have this actor ID."""
-    app_entitlement_ids: Annotated[OptionalNullable[List[str]], pydantic.Field(alias="appEntitlementIds")] = UNSET
+
+    app_entitlement_ids: Annotated[
+        OptionalNullable[List[str]], pydantic.Field(alias="appEntitlementIds")
+    ] = UNSET
     r"""Search tasks that have any of these app entitlement IDs."""
-    app_resource_ids: Annotated[OptionalNullable[List[str]], pydantic.Field(alias="appResourceIds")] = UNSET
+
+    app_resource_ids: Annotated[
+        OptionalNullable[List[str]], pydantic.Field(alias="appResourceIds")
+    ] = UNSET
     r"""Search tasks that have any of these app resource IDs."""
-    app_resource_type_ids: Annotated[OptionalNullable[List[str]], pydantic.Field(alias="appResourceTypeIds")] = UNSET
+
+    app_resource_type_ids: Annotated[
+        OptionalNullable[List[str]], pydantic.Field(alias="appResourceTypeIds")
+    ] = UNSET
     r"""Search tasks that have any of these app resource type IDs."""
-    app_user_subject_ids: Annotated[OptionalNullable[List[str]], pydantic.Field(alias="appUserSubjectIds")] = UNSET
+
+    app_user_subject_ids: Annotated[
+        OptionalNullable[List[str]], pydantic.Field(alias="appUserSubjectIds")
+    ] = UNSET
     r"""Search tasks that have any of these app users as subjects."""
-    application_ids: Annotated[OptionalNullable[List[str]], pydantic.Field(alias="applicationIds")] = UNSET
+
+    application_ids: Annotated[
+        OptionalNullable[List[str]], pydantic.Field(alias="applicationIds")
+    ] = UNSET
     r"""Search tasks that have any of these apps as targets."""
-    assignees_in_ids: Annotated[OptionalNullable[List[str]], pydantic.Field(alias="assigneesInIds")] = UNSET
+
+    assigned_or_step_approver_user_id: Annotated[
+        Optional[str], pydantic.Field(alias="assignedOrStepApproverUserId")
+    ] = None
+    r"""Search tasks that are currently assigned to this user, or that are closed and were previously approved by this user."""
+
+    assignees_in_ids: Annotated[
+        OptionalNullable[List[str]], pydantic.Field(alias="assigneesInIds")
+    ] = UNSET
     r"""Search tasks by  List of UserIDs which are currently assigned these Tasks"""
-    created_after: Annotated[Optional[datetime], pydantic.Field(alias="createdAfter")] = None
-    created_before: Annotated[Optional[datetime], pydantic.Field(alias="createdBefore")] = None
-    current_step: Annotated[Optional[CurrentStep], pydantic.Field(alias="currentStep")] = None
+
+    created_after: Annotated[
+        Optional[datetime], pydantic.Field(alias="createdAfter")
+    ] = None
+
+    created_before: Annotated[
+        Optional[datetime], pydantic.Field(alias="createdBefore")
+    ] = None
+
+    current_step: Annotated[
+        Annotated[Optional[CurrentStep], PlainValidator(validate_open_enum(False))],
+        pydantic.Field(alias="currentStep"),
+    ] = None
     r"""Search tasks that have this type of step as the current step."""
-    emergency_status: Annotated[Optional[EmergencyStatus], pydantic.Field(alias="emergencyStatus")] = None
+
+    emergency_status: Annotated[
+        Annotated[Optional[EmergencyStatus], PlainValidator(validate_open_enum(False))],
+        pydantic.Field(alias="emergencyStatus"),
+    ] = None
     r"""Search tasks that are or are not emergency access."""
-    exclude_app_entitlement_ids: Annotated[OptionalNullable[List[str]], pydantic.Field(alias="excludeAppEntitlementIds")] = UNSET
+
+    exclude_app_entitlement_ids: Annotated[
+        OptionalNullable[List[str]], pydantic.Field(alias="excludeAppEntitlementIds")
+    ] = UNSET
     r"""Search tasks that do not have any of these app entitlement IDs."""
-    exclude_ids: Annotated[OptionalNullable[List[str]], pydantic.Field(alias="excludeIds")] = UNSET
+
+    exclude_app_resource_type_ids: Annotated[
+        OptionalNullable[List[str]], pydantic.Field(alias="excludeAppResourceTypeIds")
+    ] = UNSET
+    r"""Search tasks that do not have any of these app resource type IDs."""
+
+    exclude_ids: Annotated[
+        OptionalNullable[List[str]], pydantic.Field(alias="excludeIds")
+    ] = UNSET
     r"""Exclude Specific TaskIDs from this serach result."""
-    include_deleted: Annotated[Optional[bool], pydantic.Field(alias="includeDeleted")] = None
+
+    include_deleted: Annotated[
+        Optional[bool], pydantic.Field(alias="includeDeleted")
+    ] = None
     r"""Whether or not to include deleted tasks."""
-    my_work_user_ids: Annotated[OptionalNullable[List[str]], pydantic.Field(alias="myWorkUserIds")] = UNSET
+
+    my_work_user_ids: Annotated[
+        OptionalNullable[List[str]], pydantic.Field(alias="myWorkUserIds")
+    ] = UNSET
     r"""Search tasks where the user would see this task in the My Work section"""
-    older_than_duration: Annotated[Optional[str], pydantic.Field(alias="olderThanDuration")] = None
-    opener_ids: Annotated[OptionalNullable[List[str]], pydantic.Field(alias="openerIds")] = UNSET
+
+    older_than_duration: Annotated[
+        Optional[str], pydantic.Field(alias="olderThanDuration")
+    ] = None
+
+    opener_ids: Annotated[
+        OptionalNullable[List[str]], pydantic.Field(alias="openerIds")
+    ] = UNSET
     r"""Search tasks that were created by any of the users in this array."""
+
+    opener_or_subject_user_id: Annotated[
+        Optional[str], pydantic.Field(alias="openerOrSubjectUserId")
+    ] = None
+    r"""Search tasks that were opened by this user, or that the user is the subject of."""
+
     page_size: Annotated[Optional[int], pydantic.Field(alias="pageSize")] = None
     r"""The pageSize where 0 <= pageSize <= 100. Values < 10 will be set to 10. A value of 0 returns the default page size (currently 25)"""
+
     page_token: Annotated[Optional[str], pydantic.Field(alias="pageToken")] = None
     r"""The pageToken field."""
-    previously_acted_on_ids: Annotated[OptionalNullable[List[str]], pydantic.Field(alias="previouslyActedOnIds")] = UNSET
+
+    previously_acted_on_ids: Annotated[
+        OptionalNullable[List[str]], pydantic.Field(alias="previouslyActedOnIds")
+    ] = UNSET
     r"""Search tasks that were acted on by any of these users."""
+
     query: Optional[str] = None
     r"""Fuzzy search tasks by display name or description. Also can search by numeric ID."""
+
     refs: OptionalNullable[List[TaskRef]] = UNSET
     r"""Query tasks by display name, description, or numeric ID."""
-    sort_by: Annotated[Optional[SortBy], pydantic.Field(alias="sortBy")] = None
+
+    sort_by: Annotated[
+        Annotated[Optional[SortBy], PlainValidator(validate_open_enum(False))],
+        pydantic.Field(alias="sortBy"),
+    ] = None
     r"""Sort tasks in a specific order."""
-    subject_ids: Annotated[OptionalNullable[List[str]], pydantic.Field(alias="subjectIds")] = UNSET
+
+    step_approval_types: Annotated[
+        OptionalNullable[
+            List[
+                Annotated[StepApprovalTypes, PlainValidator(validate_open_enum(False))]
+            ]
+        ],
+        pydantic.Field(alias="stepApprovalTypes"),
+    ] = UNSET
+    r"""Search tasks that have a current policy step of this type"""
+
+    subject_ids: Annotated[
+        OptionalNullable[List[str]], pydantic.Field(alias="subjectIds")
+    ] = UNSET
     r"""Search tasks where these users are the subject."""
-    task_states: Annotated[OptionalNullable[List[TaskStates]], pydantic.Field(alias="taskStates")] = UNSET
+
+    task_states: Annotated[
+        OptionalNullable[
+            List[Annotated[TaskStates, PlainValidator(validate_open_enum(False))]]
+        ],
+        pydantic.Field(alias="taskStates"),
+    ] = UNSET
     r"""Search tasks with this task state."""
-    task_types: Annotated[OptionalNullable[List[TaskTypeInput]], pydantic.Field(alias="taskTypes")] = UNSET
+
+    task_types: Annotated[
+        OptionalNullable[List[TaskTypeInput]], pydantic.Field(alias="taskTypes")
+    ] = UNSET
     r"""Search tasks with this task type. This is a oneOf, and needs an object, which can be empty, to sort."""
-    
+
+    user_employment_statuses: Annotated[
+        OptionalNullable[List[str]], pydantic.Field(alias="userEmploymentStatuses")
+    ] = UNSET
+    r"""The userEmploymentStatuses field."""
+
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
-        optional_fields = ["TaskExpandMask", "accessReviewIds", "accountOwnerIds", "accountTypes", "actorId", "appEntitlementIds", "appResourceIds", "appResourceTypeIds", "appUserSubjectIds", "applicationIds", "assigneesInIds", "createdAfter", "createdBefore", "currentStep", "emergencyStatus", "excludeAppEntitlementIds", "excludeIds", "includeDeleted", "myWorkUserIds", "olderThanDuration", "openerIds", "pageSize", "pageToken", "previouslyActedOnIds", "query", "refs", "sortBy", "subjectIds", "taskStates", "taskTypes"]
-        nullable_fields = ["accessReviewIds", "accountOwnerIds", "accountTypes", "appEntitlementIds", "appResourceIds", "appResourceTypeIds", "appUserSubjectIds", "applicationIds", "assigneesInIds", "excludeAppEntitlementIds", "excludeIds", "myWorkUserIds", "openerIds", "previouslyActedOnIds", "refs", "subjectIds", "taskStates", "taskTypes"]
+        optional_fields = [
+            "TaskExpandMask",
+            "accessReviewIds",
+            "accountOwnerIds",
+            "accountTypes",
+            "actorId",
+            "appEntitlementIds",
+            "appResourceIds",
+            "appResourceTypeIds",
+            "appUserSubjectIds",
+            "applicationIds",
+            "assignedOrStepApproverUserId",
+            "assigneesInIds",
+            "createdAfter",
+            "createdBefore",
+            "currentStep",
+            "emergencyStatus",
+            "excludeAppEntitlementIds",
+            "excludeAppResourceTypeIds",
+            "excludeIds",
+            "includeDeleted",
+            "myWorkUserIds",
+            "olderThanDuration",
+            "openerIds",
+            "openerOrSubjectUserId",
+            "pageSize",
+            "pageToken",
+            "previouslyActedOnIds",
+            "query",
+            "refs",
+            "sortBy",
+            "stepApprovalTypes",
+            "subjectIds",
+            "taskStates",
+            "taskTypes",
+            "userEmploymentStatuses",
+        ]
+        nullable_fields = [
+            "accessReviewIds",
+            "accountOwnerIds",
+            "accountTypes",
+            "appEntitlementIds",
+            "appResourceIds",
+            "appResourceTypeIds",
+            "appUserSubjectIds",
+            "applicationIds",
+            "assigneesInIds",
+            "excludeAppEntitlementIds",
+            "excludeAppResourceTypeIds",
+            "excludeIds",
+            "myWorkUserIds",
+            "openerIds",
+            "previouslyActedOnIds",
+            "refs",
+            "stepApprovalTypes",
+            "subjectIds",
+            "taskStates",
+            "taskTypes",
+            "userEmploymentStatuses",
+        ]
         null_default_fields = []
 
         serialized = handler(self)
 
         m = {}
 
-        for n, f in self.model_fields.items():
+        for n, f in type(self).model_fields.items():
             k = f.alias or n
             val = serialized.get(k)
+            serialized.pop(k, None)
+
+            optional_nullable = k in optional_fields and k in nullable_fields
+            is_set = (
+                self.__pydantic_fields_set__.intersection({n})
+                or k in null_default_fields
+            )  # pylint: disable=no-member
 
             if val is not None and val != UNSET_SENTINEL:
                 m[k] = val
             elif val != UNSET_SENTINEL and (
-                not k in optional_fields
-                or (
-                    k in optional_fields
-                    and k in nullable_fields
-                    and (
-                        self.__pydantic_fields_set__.intersection({n})
-                        or k in null_default_fields
-                    )  # pylint: disable=no-member
-                )
+                not k in optional_fields or (optional_nullable and is_set)
             ):
                 m[k] = val
 
         return m
-        

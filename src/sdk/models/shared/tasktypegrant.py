@@ -5,13 +5,17 @@ from .taskgrantsource import TaskGrantSource, TaskGrantSourceTypedDict
 from datetime import datetime
 from enum import Enum
 import pydantic
+from pydantic.functional_validators import PlainValidator
+from sdk import utils
 from sdk.types import BaseModel
-from typing import Optional, TypedDict
-from typing_extensions import Annotated, NotRequired
+from sdk.utils import validate_open_enum
+from typing import Optional
+from typing_extensions import Annotated, NotRequired, TypedDict
 
 
-class TaskTypeGrantOutcome(str, Enum):
+class TaskTypeGrantOutcome(str, Enum, metaclass=utils.OpenEnumMeta):
     r"""The outcome of the grant."""
+
     GRANT_OUTCOME_UNSPECIFIED = "GRANT_OUTCOME_UNSPECIFIED"
     GRANT_OUTCOME_GRANTED = "GRANT_OUTCOME_GRANTED"
     GRANT_OUTCOME_DENIED = "GRANT_OUTCOME_DENIED"
@@ -19,9 +23,10 @@ class TaskTypeGrantOutcome(str, Enum):
     GRANT_OUTCOME_CANCELLED = "GRANT_OUTCOME_CANCELLED"
     GRANT_OUTCOME_WAIT_TIMED_OUT = "GRANT_OUTCOME_WAIT_TIMED_OUT"
 
+
 class TaskTypeGrantTypedDict(TypedDict):
     r"""The TaskTypeGrant message indicates that a task is a grant task and all related details."""
-    
+
     task_grant_source: NotRequired[TaskGrantSourceTypedDict]
     r"""The TaskGrantSource message tracks which external URL was the source of the specificed grant ticket."""
     app_entitlement_id: NotRequired[str]
@@ -36,23 +41,41 @@ class TaskTypeGrantTypedDict(TypedDict):
     outcome: NotRequired[TaskTypeGrantOutcome]
     r"""The outcome of the grant."""
     outcome_time: NotRequired[datetime]
-    
+
 
 class TaskTypeGrant(BaseModel):
     r"""The TaskTypeGrant message indicates that a task is a grant task and all related details."""
-    
-    task_grant_source: Annotated[Optional[TaskGrantSource], pydantic.Field(alias="source")] = None
+
+    task_grant_source: Annotated[
+        Optional[TaskGrantSource], pydantic.Field(alias="source")
+    ] = None
     r"""The TaskGrantSource message tracks which external URL was the source of the specificed grant ticket."""
-    app_entitlement_id: Annotated[Optional[str], pydantic.Field(alias="appEntitlementId")] = None
+
+    app_entitlement_id: Annotated[
+        Optional[str], pydantic.Field(alias="appEntitlementId")
+    ] = None
     r"""The ID of the app entitlement."""
+
     app_id: Annotated[Optional[str], pydantic.Field(alias="appId")] = None
     r"""The ID of the app."""
+
     app_user_id: Annotated[Optional[str], pydantic.Field(alias="appUserId")] = None
     r"""The ID of the app user."""
-    grant_duration: Annotated[Optional[str], pydantic.Field(alias="grantDuration")] = None
-    identity_user_id: Annotated[Optional[str], pydantic.Field(alias="identityUserId")] = None
+
+    grant_duration: Annotated[Optional[str], pydantic.Field(alias="grantDuration")] = (
+        None
+    )
+
+    identity_user_id: Annotated[
+        Optional[str], pydantic.Field(alias="identityUserId")
+    ] = None
     r"""The ID of the user."""
-    outcome: Optional[TaskTypeGrantOutcome] = None
+
+    outcome: Annotated[
+        Optional[TaskTypeGrantOutcome], PlainValidator(validate_open_enum(False))
+    ] = None
     r"""The outcome of the grant."""
-    outcome_time: Annotated[Optional[datetime], pydantic.Field(alias="outcomeTime")] = None
-    
+
+    outcome_time: Annotated[Optional[datetime], pydantic.Field(alias="outcomeTime")] = (
+        None
+    )

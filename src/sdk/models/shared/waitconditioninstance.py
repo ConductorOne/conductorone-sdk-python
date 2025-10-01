@@ -2,20 +2,19 @@
 
 from __future__ import annotations
 from sdk.types import BaseModel
-from typing import Optional, TypedDict
-from typing_extensions import NotRequired
+from typing import Optional
+from typing_extensions import NotRequired, TypedDict
 
 
 class WaitConditionInstanceTypedDict(TypedDict):
     r"""Used by the policy engine to describe an instantiated condition to wait on."""
-    
+
     condition: NotRequired[str]
     r"""The condition that has to be true for this wait condition instance to continue."""
-    
+
 
 class WaitConditionInstance(BaseModel):
     r"""Used by the policy engine to describe an instantiated condition to wait on."""
-    
+
     condition: Optional[str] = None
     r"""The condition that has to be true for this wait condition instance to continue."""
-    

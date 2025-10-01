@@ -1,12 +1,15 @@
 # Directory
 (*directory*)
 
+## Overview
+
 ### Available Operations
 
 * [create](#create) - Create
 * [delete](#delete) - Delete
 * [get](#get) - Get
 * [list](#list) - List
+* [update](#update) - Update
 
 ## create
 
@@ -14,23 +17,25 @@ Create a directory.
 
 ### Example Usage
 
+<!-- UsageSnippet language="python" operationID="c1.api.directory.v1.DirectoryService.Create" method="post" path="/api/v1/directories" -->
 ```python
 from sdk import SDK
 from sdk.models import shared
 
-s = SDK(
+
+with SDK(
     security=shared.Security(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-)
+) as s_client:
 
+    res = s_client.directory.create()
 
-res = s.directory.create()
+    assert res.directory_service_create_response is not None
 
-if res.directory_service_create_response is not None:
-    # handle response
-    pass
+    # Handle response
+    print(res.directory_service_create_response)
 
 ```
 
@@ -41,15 +46,15 @@ if res.directory_service_create_response is not None:
 | `request`                                                                                    | [shared.DirectoryServiceCreateRequest](../../models/shared/directoryservicecreaterequest.md) | :heavy_check_mark:                                                                           | The request object to use for the request.                                                   |
 | `retries`                                                                                    | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)                             | :heavy_minus_sign:                                                                           | Configuration to override the default retry behavior of the client.                          |
 
-
 ### Response
 
 **[operations.C1APIDirectoryV1DirectoryServiceCreateResponse](../../models/operations/c1apidirectoryv1directoryservicecreateresponse.md)**
+
 ### Errors
 
-| Error Object    | Status Code     | Content Type    |
+| Error Type      | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 4xx-5xx         | */*             |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
 
 ## delete
 
@@ -57,25 +62,27 @@ Delete a directory by app_id.
 
 ### Example Usage
 
+<!-- UsageSnippet language="python" operationID="c1.api.directory.v1.DirectoryService.Delete" method="delete" path="/api/v1/directories/{app_id}" -->
 ```python
 from sdk import SDK
 from sdk.models import shared
 
-s = SDK(
+
+with SDK(
     security=shared.Security(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-)
+) as s_client:
 
+    res = s_client.directory.delete(request={
+        "app_id": "<id>",
+    })
 
-res = s.directory.delete(request={
-    "app_id": "<value>",
-})
+    assert res.directory_service_delete_response is not None
 
-if res.directory_service_delete_response is not None:
-    # handle response
-    pass
+    # Handle response
+    print(res.directory_service_delete_response)
 
 ```
 
@@ -86,15 +93,15 @@ if res.directory_service_delete_response is not None:
 | `request`                                                                                                                            | [operations.C1APIDirectoryV1DirectoryServiceDeleteRequest](../../models/operations/c1apidirectoryv1directoryservicedeleterequest.md) | :heavy_check_mark:                                                                                                                   | The request object to use for the request.                                                                                           |
 | `retries`                                                                                                                            | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)                                                                     | :heavy_minus_sign:                                                                                                                   | Configuration to override the default retry behavior of the client.                                                                  |
 
-
 ### Response
 
 **[operations.C1APIDirectoryV1DirectoryServiceDeleteResponse](../../models/operations/c1apidirectoryv1directoryservicedeleteresponse.md)**
+
 ### Errors
 
-| Error Object    | Status Code     | Content Type    |
+| Error Type      | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 4xx-5xx         | */*             |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
 
 ## get
 
@@ -102,25 +109,27 @@ Get a directory by app_id.
 
 ### Example Usage
 
+<!-- UsageSnippet language="python" operationID="c1.api.directory.v1.DirectoryService.Get" method="get" path="/api/v1/directories/{app_id}" -->
 ```python
 from sdk import SDK
 from sdk.models import shared
 
-s = SDK(
+
+with SDK(
     security=shared.Security(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-)
+) as s_client:
 
+    res = s_client.directory.get(request={
+        "app_id": "<id>",
+    })
 
-res = s.directory.get(request={
-    "app_id": "<value>",
-})
+    assert res.directory_service_get_response is not None
 
-if res.directory_service_get_response is not None:
-    # handle response
-    pass
+    # Handle response
+    print(res.directory_service_get_response)
 
 ```
 
@@ -131,15 +140,15 @@ if res.directory_service_get_response is not None:
 | `request`                                                                                                                      | [operations.C1APIDirectoryV1DirectoryServiceGetRequest](../../models/operations/c1apidirectoryv1directoryservicegetrequest.md) | :heavy_check_mark:                                                                                                             | The request object to use for the request.                                                                                     |
 | `retries`                                                                                                                      | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)                                                               | :heavy_minus_sign:                                                                                                             | Configuration to override the default retry behavior of the client.                                                            |
 
-
 ### Response
 
 **[operations.C1APIDirectoryV1DirectoryServiceGetResponse](../../models/operations/c1apidirectoryv1directoryservicegetresponse.md)**
+
 ### Errors
 
-| Error Object    | Status Code     | Content Type    |
+| Error Type      | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 4xx-5xx         | */*             |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
 
 ## list
 
@@ -147,23 +156,25 @@ List directories.
 
 ### Example Usage
 
+<!-- UsageSnippet language="python" operationID="c1.api.directory.v1.DirectoryService.List" method="get" path="/api/v1/directories" -->
 ```python
 from sdk import SDK
 from sdk.models import shared
 
-s = SDK(
+
+with SDK(
     security=shared.Security(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-)
+) as s_client:
 
+    res = s_client.directory.list()
 
-res = s.directory.list()
+    assert res.directory_service_list_response is not None
 
-if res.directory_service_list_response is not None:
-    # handle response
-    pass
+    # Handle response
+    print(res.directory_service_list_response)
 
 ```
 
@@ -174,12 +185,59 @@ if res.directory_service_list_response is not None:
 | `request`                                                                                                                        | [operations.C1APIDirectoryV1DirectoryServiceListRequest](../../models/operations/c1apidirectoryv1directoryservicelistrequest.md) | :heavy_check_mark:                                                                                                               | The request object to use for the request.                                                                                       |
 | `retries`                                                                                                                        | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)                                                                 | :heavy_minus_sign:                                                                                                               | Configuration to override the default retry behavior of the client.                                                              |
 
-
 ### Response
 
 **[operations.C1APIDirectoryV1DirectoryServiceListResponse](../../models/operations/c1apidirectoryv1directoryservicelistresponse.md)**
+
 ### Errors
 
-| Error Object    | Status Code     | Content Type    |
+| Error Type      | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 4xx-5xx         | */*             |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
+
+## update
+
+Update a directory by app_id.
+
+### Example Usage
+
+<!-- UsageSnippet language="python" operationID="c1.api.directory.v1.DirectoryService.Update" method="put" path="/api/v1/directories/{app_id}" -->
+```python
+from sdk import SDK
+from sdk.models import shared
+
+
+with SDK(
+    security=shared.Security(
+        bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
+        oauth="<YOUR_OAUTH_HERE>",
+    ),
+) as s_client:
+
+    res = s_client.directory.update(request={
+        "app_id": "<id>",
+    })
+
+    assert res.directory_service_update_response is not None
+
+    # Handle response
+    print(res.directory_service_update_response)
+
+```
+
+### Parameters
+
+| Parameter                                                                                                                            | Type                                                                                                                                 | Required                                                                                                                             | Description                                                                                                                          |
+| ------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                            | [operations.C1APIDirectoryV1DirectoryServiceUpdateRequest](../../models/operations/c1apidirectoryv1directoryserviceupdaterequest.md) | :heavy_check_mark:                                                                                                                   | The request object to use for the request.                                                                                           |
+| `retries`                                                                                                                            | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)                                                                     | :heavy_minus_sign:                                                                                                                   | Configuration to override the default retry behavior of the client.                                                                  |
+
+### Response
+
+**[operations.C1APIDirectoryV1DirectoryServiceUpdateResponse](../../models/operations/c1apidirectoryv1directoryserviceupdateresponse.md)**
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |

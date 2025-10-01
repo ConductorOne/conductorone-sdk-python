@@ -2,15 +2,12 @@
 
 from __future__ import annotations
 from sdk.types import BaseModel
-from typing import TypedDict
+from typing_extensions import TypedDict
 
 
 class DeleteAttributeValueResponseTypedDict(TypedDict):
     r"""DeleteAttributeValueResponse is the empty response for deleting an attribute value."""
-    
-    
+
 
 class DeleteAttributeValueResponse(BaseModel):
     r"""DeleteAttributeValueResponse is the empty response for deleting an attribute value."""
-    
-    

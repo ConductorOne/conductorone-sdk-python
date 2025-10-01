@@ -2,15 +2,12 @@
 
 from __future__ import annotations
 from sdk.types import BaseModel
-from typing import TypedDict
+from typing_extensions import TypedDict
 
 
 class SetAppEntitlementOwnersResponseTypedDict(TypedDict):
     r"""The empty response message for setting the app entitlement owners."""
-    
-    
+
 
 class SetAppEntitlementOwnersResponse(BaseModel):
     r"""The empty response message for setting the app entitlement owners."""
-    
-    

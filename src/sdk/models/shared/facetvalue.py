@@ -6,13 +6,13 @@ from pydantic.functional_serializers import PlainSerializer
 from pydantic.functional_validators import BeforeValidator
 from sdk.types import BaseModel
 from sdk.utils import serialize_int, validate_int
-from typing import Optional, TypedDict
-from typing_extensions import Annotated, NotRequired
+from typing import Optional
+from typing_extensions import Annotated, NotRequired, TypedDict
 
 
 class FacetValueTypedDict(TypedDict):
     r"""A FacetValue message contains count and value of the facet entry."""
-    
+
     count: NotRequired[int]
     r"""The count of the values in this facet."""
     display_name: NotRequired[str]
@@ -21,17 +21,23 @@ class FacetValueTypedDict(TypedDict):
     r"""The icon for this facet."""
     value: NotRequired[str]
     r"""The value of this facet."""
-    
+
 
 class FacetValue(BaseModel):
     r"""A FacetValue message contains count and value of the facet entry."""
-    
-    count: Annotated[Optional[int], BeforeValidator(validate_int), PlainSerializer(serialize_int(True))] = None
+
+    count: Annotated[
+        Optional[int],
+        BeforeValidator(validate_int),
+        PlainSerializer(serialize_int(True)),
+    ] = None
     r"""The count of the values in this facet."""
+
     display_name: Annotated[Optional[str], pydantic.Field(alias="displayName")] = None
     r"""The name of this facet."""
+
     icon_url: Annotated[Optional[str], pydantic.Field(alias="iconUrl")] = None
     r"""The icon for this facet."""
+
     value: Optional[str] = None
     r"""The value of this facet."""
-    

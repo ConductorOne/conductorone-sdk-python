@@ -2,22 +2,33 @@
 
 from __future__ import annotations
 import httpx
-from sdk.models.shared import webhooksservicedeleterequest as shared_webhooksservicedeleterequest, webhooksservicedeleteresponse as shared_webhooksservicedeleteresponse
+from sdk.models.shared import (
+    webhooksservicedeleterequest as shared_webhooksservicedeleterequest,
+    webhooksservicedeleteresponse as shared_webhooksservicedeleteresponse,
+)
 from sdk.types import BaseModel
 from sdk.utils import FieldMetadata, PathParamMetadata, RequestMetadata
-from typing import Optional, TypedDict
-from typing_extensions import Annotated, NotRequired
+from typing import Optional
+from typing_extensions import Annotated, NotRequired, TypedDict
 
 
 class C1APIWebhooksV1WebhooksServiceDeleteRequestTypedDict(TypedDict):
     id: str
-    webhooks_service_delete_request: NotRequired[shared_webhooksservicedeleterequest.WebhooksServiceDeleteRequestTypedDict]
-    
+    webhooks_service_delete_request: NotRequired[
+        shared_webhooksservicedeleterequest.WebhooksServiceDeleteRequestTypedDict
+    ]
+
 
 class C1APIWebhooksV1WebhooksServiceDeleteRequest(BaseModel):
-    id: Annotated[str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))]
-    webhooks_service_delete_request: Annotated[Optional[shared_webhooksservicedeleterequest.WebhooksServiceDeleteRequest], FieldMetadata(request=RequestMetadata(media_type="application/json"))] = None
-    
+    id: Annotated[
+        str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))
+    ]
+
+    webhooks_service_delete_request: Annotated[
+        Optional[shared_webhooksservicedeleterequest.WebhooksServiceDeleteRequest],
+        FieldMetadata(request=RequestMetadata(media_type="application/json")),
+    ] = None
+
 
 class C1APIWebhooksV1WebhooksServiceDeleteResponseTypedDict(TypedDict):
     content_type: str
@@ -26,17 +37,23 @@ class C1APIWebhooksV1WebhooksServiceDeleteResponseTypedDict(TypedDict):
     r"""HTTP response status code for this operation"""
     raw_response: httpx.Response
     r"""Raw HTTP response; suitable for custom response parsing"""
-    webhooks_service_delete_response: NotRequired[shared_webhooksservicedeleteresponse.WebhooksServiceDeleteResponseTypedDict]
+    webhooks_service_delete_response: NotRequired[
+        shared_webhooksservicedeleteresponse.WebhooksServiceDeleteResponseTypedDict
+    ]
     r"""Empty response body. Status code indicates success."""
-    
+
 
 class C1APIWebhooksV1WebhooksServiceDeleteResponse(BaseModel):
     content_type: str
     r"""HTTP response content type for this operation"""
+
     status_code: int
     r"""HTTP response status code for this operation"""
+
     raw_response: httpx.Response
     r"""Raw HTTP response; suitable for custom response parsing"""
-    webhooks_service_delete_response: Optional[shared_webhooksservicedeleteresponse.WebhooksServiceDeleteResponse] = None
+
+    webhooks_service_delete_response: Optional[
+        shared_webhooksservicedeleteresponse.WebhooksServiceDeleteResponse
+    ] = None
     r"""Empty response body. Status code indicates success."""
-    

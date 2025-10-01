@@ -2,15 +2,12 @@
 
 from __future__ import annotations
 from sdk.types import BaseModel
-from typing import TypedDict
+from typing_extensions import TypedDict
 
 
 class TaskTypeCertifyInputTypedDict(TypedDict):
     r"""The TaskTypeCertify message indicates that a task is a certify task and all related details."""
-    
-    
+
 
 class TaskTypeCertifyInput(BaseModel):
     r"""The TaskTypeCertify message indicates that a task is a certify task and all related details."""
-    
-    

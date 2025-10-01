@@ -1,0 +1,9 @@
+# C1APIRequestcatalogV1RequestCatalogManagementServiceDeleteBundleAutomationRequest
+
+
+## Fields
+
+| Field                                                                                                  | Type                                                                                                   | Required                                                                                               | Description                                                                                            |
+| ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ |
+| `delete_bundle_automation_request`                                                                     | [Optional[shared.DeleteBundleAutomationRequest]](../../models/shared/deletebundleautomationrequest.md) | :heavy_minus_sign:                                                                                     | N/A                                                                                                    |
+| `request_catalog_id`                                                                                   | *str*                                                                                                  | :heavy_check_mark:                                                                                     | N/A                                                                                                    |

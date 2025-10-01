@@ -3,20 +3,21 @@
 from __future__ import annotations
 import pydantic
 from sdk.types import BaseModel
-from typing import Optional, TypedDict
-from typing_extensions import Annotated, NotRequired
+from typing import Optional
+from typing_extensions import Annotated, NotRequired, TypedDict
 
 
 class AppOwnerApprovalTypedDict(TypedDict):
     r"""App owner approval provides the configuration for an approval step when the app owner is the target."""
-    
+
     allow_self_approval: NotRequired[bool]
     r"""Configuration that allows a user to self approve if they are an app owner during this approval step."""
-    
+
 
 class AppOwnerApproval(BaseModel):
     r"""App owner approval provides the configuration for an approval step when the app owner is the target."""
-    
-    allow_self_approval: Annotated[Optional[bool], pydantic.Field(alias="allowSelfApproval")] = None
+
+    allow_self_approval: Annotated[
+        Optional[bool], pydantic.Field(alias="allowSelfApproval")
+    ] = None
     r"""Configuration that allows a user to self approve if they are an app owner during this approval step."""
-    

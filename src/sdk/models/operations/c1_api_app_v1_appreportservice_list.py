@@ -2,24 +2,36 @@
 
 from __future__ import annotations
 import httpx
-from sdk.models.shared import appreportservicelistresponse as shared_appreportservicelistresponse
+from sdk.models.shared import (
+    appreportservicelistresponse as shared_appreportservicelistresponse,
+)
 from sdk.types import BaseModel
 from sdk.utils import FieldMetadata, PathParamMetadata, QueryParamMetadata
-from typing import Optional, TypedDict
-from typing_extensions import Annotated, NotRequired
+from typing import Optional
+from typing_extensions import Annotated, NotRequired, TypedDict
 
 
 class C1APIAppV1AppReportServiceListRequestTypedDict(TypedDict):
     app_id: str
     page_size: NotRequired[int]
     page_token: NotRequired[str]
-    
+
 
 class C1APIAppV1AppReportServiceListRequest(BaseModel):
-    app_id: Annotated[str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))]
-    page_size: Annotated[Optional[int], FieldMetadata(query=QueryParamMetadata(style="form", explode=True))] = None
-    page_token: Annotated[Optional[str], FieldMetadata(query=QueryParamMetadata(style="form", explode=True))] = None
-    
+    app_id: Annotated[
+        str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))
+    ]
+
+    page_size: Annotated[
+        Optional[int],
+        FieldMetadata(query=QueryParamMetadata(style="form", explode=True)),
+    ] = None
+
+    page_token: Annotated[
+        Optional[str],
+        FieldMetadata(query=QueryParamMetadata(style="form", explode=True)),
+    ] = None
+
 
 class C1APIAppV1AppReportServiceListResponseTypedDict(TypedDict):
     content_type: str
@@ -28,17 +40,23 @@ class C1APIAppV1AppReportServiceListResponseTypedDict(TypedDict):
     r"""HTTP response status code for this operation"""
     raw_response: httpx.Response
     r"""Raw HTTP response; suitable for custom response parsing"""
-    app_report_service_list_response: NotRequired[shared_appreportservicelistresponse.AppReportServiceListResponseTypedDict]
+    app_report_service_list_response: NotRequired[
+        shared_appreportservicelistresponse.AppReportServiceListResponseTypedDict
+    ]
     r"""The AppReportServiceListResponse message contains a list of results and a nextPageToken if applicable."""
-    
+
 
 class C1APIAppV1AppReportServiceListResponse(BaseModel):
     content_type: str
     r"""HTTP response content type for this operation"""
+
     status_code: int
     r"""HTTP response status code for this operation"""
+
     raw_response: httpx.Response
     r"""Raw HTTP response; suitable for custom response parsing"""
-    app_report_service_list_response: Optional[shared_appreportservicelistresponse.AppReportServiceListResponse] = None
+
+    app_report_service_list_response: Optional[
+        shared_appreportservicelistresponse.AppReportServiceListResponse
+    ] = None
     r"""The AppReportServiceListResponse message contains a list of results and a nextPageToken if applicable."""
-    

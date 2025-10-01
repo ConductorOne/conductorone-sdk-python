@@ -2,24 +2,36 @@
 
 from __future__ import annotations
 import httpx
-from sdk.models.shared import forcesyncrequest as shared_forcesyncrequest, forcesyncresponse as shared_forcesyncresponse
+from sdk.models.shared import (
+    forcesyncrequest as shared_forcesyncrequest,
+    forcesyncresponse as shared_forcesyncresponse,
+)
 from sdk.types import BaseModel
 from sdk.utils import FieldMetadata, PathParamMetadata, RequestMetadata
-from typing import Optional, TypedDict
-from typing_extensions import Annotated, NotRequired
+from typing import Optional
+from typing_extensions import Annotated, NotRequired, TypedDict
 
 
 class C1APIAppV1ConnectorServiceForceSyncRequestTypedDict(TypedDict):
     app_id: str
     connector_id: str
     force_sync_request: NotRequired[shared_forcesyncrequest.ForceSyncRequestTypedDict]
-    
+
 
 class C1APIAppV1ConnectorServiceForceSyncRequest(BaseModel):
-    app_id: Annotated[str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))]
-    connector_id: Annotated[str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))]
-    force_sync_request: Annotated[Optional[shared_forcesyncrequest.ForceSyncRequest], FieldMetadata(request=RequestMetadata(media_type="application/json"))] = None
-    
+    app_id: Annotated[
+        str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))
+    ]
+
+    connector_id: Annotated[
+        str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))
+    ]
+
+    force_sync_request: Annotated[
+        Optional[shared_forcesyncrequest.ForceSyncRequest],
+        FieldMetadata(request=RequestMetadata(media_type="application/json")),
+    ] = None
+
 
 class C1APIAppV1ConnectorServiceForceSyncResponseTypedDict(TypedDict):
     content_type: str
@@ -28,17 +40,21 @@ class C1APIAppV1ConnectorServiceForceSyncResponseTypedDict(TypedDict):
     r"""HTTP response status code for this operation"""
     raw_response: httpx.Response
     r"""Raw HTTP response; suitable for custom response parsing"""
-    force_sync_response: NotRequired[shared_forcesyncresponse.ForceSyncResponseTypedDict]
+    force_sync_response: NotRequired[
+        shared_forcesyncresponse.ForceSyncResponseTypedDict
+    ]
     r"""Successful response"""
-    
+
 
 class C1APIAppV1ConnectorServiceForceSyncResponse(BaseModel):
     content_type: str
     r"""HTTP response content type for this operation"""
+
     status_code: int
     r"""HTTP response status code for this operation"""
+
     raw_response: httpx.Response
     r"""Raw HTTP response; suitable for custom response parsing"""
+
     force_sync_response: Optional[shared_forcesyncresponse.ForceSyncResponse] = None
     r"""Successful response"""
-    

@@ -1,6 +1,8 @@
 # TaskSearch
 (*task_search*)
 
+## Overview
+
 ### Available Operations
 
 * [search](#search) - Search
@@ -11,23 +13,25 @@ Search tasks based on filters specified in the request body.
 
 ### Example Usage
 
+<!-- UsageSnippet language="python" operationID="c1.api.task.v1.TaskSearchService.Search" method="post" path="/api/v1/search/tasks" -->
 ```python
 from sdk import SDK
 from sdk.models import shared
 
-s = SDK(
+
+with SDK(
     security=shared.Security(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-)
+) as s_client:
 
+    res = s_client.task_search.search()
 
-res = s.task_search.search()
+    assert res.task_search_response is not None
 
-if res.task_search_response is not None:
-    # handle response
-    pass
+    # Handle response
+    print(res.task_search_response)
 
 ```
 
@@ -38,12 +42,12 @@ if res.task_search_response is not None:
 | `request`                                                            | [shared.TaskSearchRequest](../../models/shared/tasksearchrequest.md) | :heavy_check_mark:                                                   | The request object to use for the request.                           |
 | `retries`                                                            | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)     | :heavy_minus_sign:                                                   | Configuration to override the default retry behavior of the client.  |
 
-
 ### Response
 
 **[operations.C1APITaskV1TaskSearchServiceSearchResponse](../../models/operations/c1apitaskv1tasksearchservicesearchresponse.md)**
+
 ### Errors
 
-| Error Object    | Status Code     | Content Type    |
+| Error Type      | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 4xx-5xx         | */*             |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |

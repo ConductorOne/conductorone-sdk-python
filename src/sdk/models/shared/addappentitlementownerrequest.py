@@ -3,20 +3,19 @@
 from __future__ import annotations
 import pydantic
 from sdk.types import BaseModel
-from typing import Optional, TypedDict
-from typing_extensions import Annotated, NotRequired
+from typing import Optional
+from typing_extensions import Annotated, NotRequired, TypedDict
 
 
 class AddAppEntitlementOwnerRequestTypedDict(TypedDict):
     r"""The request message for adding an app entitlement owner."""
-    
+
     user_id: NotRequired[str]
     r"""The user_id field for the user to add as an owner of the app entitlement."""
-    
+
 
 class AddAppEntitlementOwnerRequest(BaseModel):
     r"""The request message for adding an app entitlement owner."""
-    
+
     user_id: Annotated[Optional[str], pydantic.Field(alias="userId")] = None
     r"""The user_id field for the user to add as an owner of the app entitlement."""
-    

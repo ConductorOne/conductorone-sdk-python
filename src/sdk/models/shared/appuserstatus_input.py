@@ -2,15 +2,12 @@
 
 from __future__ import annotations
 from sdk.types import BaseModel
-from typing import TypedDict
+from typing_extensions import TypedDict
 
 
 class AppUserStatusInputTypedDict(TypedDict):
     r"""The satus of the applicaiton user."""
-    
-    
+
 
 class AppUserStatusInput(BaseModel):
     r"""The satus of the applicaiton user."""
-    
-    

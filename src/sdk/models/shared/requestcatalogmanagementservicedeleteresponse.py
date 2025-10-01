@@ -2,15 +2,12 @@
 
 from __future__ import annotations
 from sdk.types import BaseModel
-from typing import TypedDict
+from typing_extensions import TypedDict
 
 
 class RequestCatalogManagementServiceDeleteResponseTypedDict(TypedDict):
     r"""Empty response with a status code indicating success."""
-    
-    
+
 
 class RequestCatalogManagementServiceDeleteResponse(BaseModel):
     r"""Empty response with a status code indicating success."""
-    
-    

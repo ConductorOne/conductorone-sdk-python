@@ -1,15 +1,14 @@
 # Outcome
 
-The outcome of the certification.
+The outcome field.
 
 
 ## Values
 
-| Name                             | Value                            |
-| -------------------------------- | -------------------------------- |
-| `CERTIFY_OUTCOME_UNSPECIFIED`    | CERTIFY_OUTCOME_UNSPECIFIED      |
-| `CERTIFY_OUTCOME_CERTIFIED`      | CERTIFY_OUTCOME_CERTIFIED        |
-| `CERTIFY_OUTCOME_DECERTIFIED`    | CERTIFY_OUTCOME_DECERTIFIED      |
-| `CERTIFY_OUTCOME_ERROR`          | CERTIFY_OUTCOME_ERROR            |
-| `CERTIFY_OUTCOME_CANCELLED`      | CERTIFY_OUTCOME_CANCELLED        |
-| `CERTIFY_OUTCOME_WAIT_TIMED_OUT` | CERTIFY_OUTCOME_WAIT_TIMED_OUT   |
+| Name                                 | Value                                |
+| ------------------------------------ | ------------------------------------ |
+| `ACCESS_REQUEST_OUTCOME_UNSPECIFIED` | ACCESS_REQUEST_OUTCOME_UNSPECIFIED   |
+| `ACCESS_REQUEST_OUTCOME_APPROVED`    | ACCESS_REQUEST_OUTCOME_APPROVED      |
+| `ACCESS_REQUEST_OUTCOME_DENIED`      | ACCESS_REQUEST_OUTCOME_DENIED        |
+| `ACCESS_REQUEST_OUTCOME_ERROR`       | ACCESS_REQUEST_OUTCOME_ERROR         |
+| `ACCESS_REQUEST_OUTCOME_CANCELLED`   | ACCESS_REQUEST_OUTCOME_CANCELLED     |

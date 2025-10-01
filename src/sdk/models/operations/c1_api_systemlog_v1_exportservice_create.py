@@ -2,10 +2,12 @@
 
 from __future__ import annotations
 import httpx
-from sdk.models.shared import exportservicecreateresponse as shared_exportservicecreateresponse
+from sdk.models.shared import (
+    exportservicecreateresponse as shared_exportservicecreateresponse,
+)
 from sdk.types import BaseModel
-from typing import Optional, TypedDict
-from typing_extensions import NotRequired
+from typing import Optional
+from typing_extensions import NotRequired, TypedDict
 
 
 class C1APISystemlogV1ExportServiceCreateResponseTypedDict(TypedDict):
@@ -15,17 +17,23 @@ class C1APISystemlogV1ExportServiceCreateResponseTypedDict(TypedDict):
     r"""HTTP response status code for this operation"""
     raw_response: httpx.Response
     r"""Raw HTTP response; suitable for custom response parsing"""
-    export_service_create_response: NotRequired[shared_exportservicecreateresponse.ExportServiceCreateResponseTypedDict]
+    export_service_create_response: NotRequired[
+        shared_exportservicecreateresponse.ExportServiceCreateResponseTypedDict
+    ]
     r"""Successful response"""
-    
+
 
 class C1APISystemlogV1ExportServiceCreateResponse(BaseModel):
     content_type: str
     r"""HTTP response content type for this operation"""
+
     status_code: int
     r"""HTTP response status code for this operation"""
+
     raw_response: httpx.Response
     r"""Raw HTTP response; suitable for custom response parsing"""
-    export_service_create_response: Optional[shared_exportservicecreateresponse.ExportServiceCreateResponse] = None
+
+    export_service_create_response: Optional[
+        shared_exportservicecreateresponse.ExportServiceCreateResponse
+    ] = None
     r"""Successful response"""
-    

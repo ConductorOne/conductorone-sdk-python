@@ -2,20 +2,19 @@
 
 from __future__ import annotations
 from sdk.types import BaseModel
-from typing import Optional, TypedDict
-from typing_extensions import NotRequired
+from typing import Optional
+from typing_extensions import NotRequired, TypedDict
 
 
 class ResponsePolicyApprovalStepApproveTypedDict(TypedDict):
     r"""The ResponsePolicyApprovalStepApprove message."""
-    
+
     comment: NotRequired[str]
     r"""optional comment"""
-    
+
 
 class ResponsePolicyApprovalStepApprove(BaseModel):
     r"""The ResponsePolicyApprovalStepApprove message."""
-    
+
     comment: Optional[str] = None
     r"""optional comment"""
-    

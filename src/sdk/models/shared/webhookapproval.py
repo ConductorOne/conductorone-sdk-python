@@ -3,20 +3,19 @@
 from __future__ import annotations
 import pydantic
 from sdk.types import BaseModel
-from typing import Optional, TypedDict
-from typing_extensions import Annotated, NotRequired
+from typing import Optional
+from typing_extensions import Annotated, NotRequired, TypedDict
 
 
 class WebhookApprovalTypedDict(TypedDict):
     r"""The WebhookApproval message."""
-    
+
     webhook_id: NotRequired[str]
     r"""The ID of the webhook to call for approval."""
-    
+
 
 class WebhookApproval(BaseModel):
     r"""The WebhookApproval message."""
-    
+
     webhook_id: Annotated[Optional[str], pydantic.Field(alias="webhookId")] = None
     r"""The ID of the webhook to call for approval."""
-    

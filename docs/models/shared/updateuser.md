@@ -1,0 +1,24 @@
+# UpdateUser
+
+The UpdateUser message.
+
+This message contains a oneof named user. Only a single field of the following list may be set at a time:
+  - userIdCel
+  - userRef
+
+
+This message contains a oneof named user_status. Only a single field of the following list may be set at a time:
+  - userStatusEnum
+  - userStatusCel
+
+
+
+## Fields
+
+| Field                                                                                                                                                   | Type                                                                                                                                                    | Required                                                                                                                                                | Description                                                                                                                                             |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `user_ref`                                                                                                                                              | [Optional[shared.UserRef]](../../models/shared/userref.md)                                                                                              | :heavy_minus_sign:                                                                                                                                      | A reference to a user.                                                                                                                                  |
+| `use_subject_user`                                                                                                                                      | *Optional[bool]*                                                                                                                                        | :heavy_minus_sign:                                                                                                                                      | If true, the step will use the subject user of the automation as the subject.                                                                           |
+| `user_id_cel`                                                                                                                                           | *OptionalNullable[str]*                                                                                                                                 | :heavy_minus_sign:                                                                                                                                      | The userIdCel field.<br/>This field is part of the `user` oneof.<br/>See the documentation for `c1.api.automations.v1.UpdateUser` for more details.     |
+| `user_status_cel`                                                                                                                                       | *OptionalNullable[str]*                                                                                                                                 | :heavy_minus_sign:                                                                                                                                      | The userStatusCel field.<br/>This field is part of the `user_status` oneof.<br/>See the documentation for `c1.api.automations.v1.UpdateUser` for more details. |
+| `user_status_enum`                                                                                                                                      | [OptionalNullable[shared.UserStatusEnum]](../../models/shared/userstatusenum.md)                                                                        | :heavy_minus_sign:                                                                                                                                      | The userStatusEnum field.<br/>This field is part of the `user_status` oneof.<br/>See the documentation for `c1.api.automations.v1.UpdateUser` for more details. |

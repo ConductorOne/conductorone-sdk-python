@@ -2,10 +2,12 @@
 
 from __future__ import annotations
 import httpx
-from sdk.models.shared import appentitlementsearchservicesearchresponse as shared_appentitlementsearchservicesearchresponse
+from sdk.models.shared import (
+    appentitlementsearchservicesearchresponse as shared_appentitlementsearchservicesearchresponse,
+)
 from sdk.types import BaseModel
-from typing import Optional, TypedDict
-from typing_extensions import NotRequired
+from typing import Callable, Optional
+from typing_extensions import NotRequired, TypedDict
 
 
 class C1APIAppV1AppEntitlementSearchServiceSearchResponseTypedDict(TypedDict):
@@ -15,17 +17,25 @@ class C1APIAppV1AppEntitlementSearchServiceSearchResponseTypedDict(TypedDict):
     r"""HTTP response status code for this operation"""
     raw_response: httpx.Response
     r"""Raw HTTP response; suitable for custom response parsing"""
-    app_entitlement_search_service_search_response: NotRequired[shared_appentitlementsearchservicesearchresponse.AppEntitlementSearchServiceSearchResponseTypedDict]
+    app_entitlement_search_service_search_response: NotRequired[
+        shared_appentitlementsearchservicesearchresponse.AppEntitlementSearchServiceSearchResponseTypedDict
+    ]
     r"""Successful response"""
-    
+
 
 class C1APIAppV1AppEntitlementSearchServiceSearchResponse(BaseModel):
+    next: Callable[[], Optional[C1APIAppV1AppEntitlementSearchServiceSearchResponse]]
+
     content_type: str
     r"""HTTP response content type for this operation"""
+
     status_code: int
     r"""HTTP response status code for this operation"""
+
     raw_response: httpx.Response
     r"""Raw HTTP response; suitable for custom response parsing"""
-    app_entitlement_search_service_search_response: Optional[shared_appentitlementsearchservicesearchresponse.AppEntitlementSearchServiceSearchResponse] = None
+
+    app_entitlement_search_service_search_response: Optional[
+        shared_appentitlementsearchservicesearchresponse.AppEntitlementSearchServiceSearchResponse
+    ] = None
     r"""Successful response"""
-    

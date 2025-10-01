@@ -8,5 +8,5 @@ The WebhooksServiceCreateRequest message.
 | Field                  | Type                   | Required               | Description            |
 | ---------------------- | ---------------------- | ---------------------- | ---------------------- |
 | `description`          | *Optional[str]*        | :heavy_minus_sign:     | The description field. |
-| `display_name`         | *Optional[str]*        | :heavy_minus_sign:     | The displayName field. |
-| `url`                  | *Optional[str]*        | :heavy_minus_sign:     | The url field.         |
+| `display_name`         | *str*                  | :heavy_check_mark:     | The displayName field. |
+| `url`                  | *str*                  | :heavy_check_mark:     | The url field.         |

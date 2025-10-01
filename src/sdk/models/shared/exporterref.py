@@ -3,20 +3,19 @@
 from __future__ import annotations
 import pydantic
 from sdk.types import BaseModel
-from typing import Optional, TypedDict
-from typing_extensions import Annotated, NotRequired
+from typing import Optional
+from typing_extensions import Annotated, NotRequired, TypedDict
 
 
 class ExporterRefTypedDict(TypedDict):
     r"""The ExporterRef message."""
-    
+
     export_id: NotRequired[str]
     r"""The exportId field."""
-    
+
 
 class ExporterRef(BaseModel):
     r"""The ExporterRef message."""
-    
+
     export_id: Annotated[Optional[str], pydantic.Field(alias="exportId")] = None
     r"""The exportId field."""
-    

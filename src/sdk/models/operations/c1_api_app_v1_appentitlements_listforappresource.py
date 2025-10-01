@@ -2,11 +2,13 @@
 
 from __future__ import annotations
 import httpx
-from sdk.models.shared import listappentitlementsresponse as shared_listappentitlementsresponse
+from sdk.models.shared import (
+    listappentitlementsresponse as shared_listappentitlementsresponse,
+)
 from sdk.types import BaseModel
 from sdk.utils import FieldMetadata, PathParamMetadata, QueryParamMetadata
-from typing import Optional, TypedDict
-from typing_extensions import Annotated, NotRequired
+from typing import Optional
+from typing_extensions import Annotated, NotRequired, TypedDict
 
 
 class C1APIAppV1AppEntitlementsListForAppResourceRequestTypedDict(TypedDict):
@@ -15,15 +17,31 @@ class C1APIAppV1AppEntitlementsListForAppResourceRequestTypedDict(TypedDict):
     app_resource_type_id: str
     page_size: NotRequired[int]
     page_token: NotRequired[str]
-    
+
 
 class C1APIAppV1AppEntitlementsListForAppResourceRequest(BaseModel):
-    app_id: Annotated[str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))]
-    app_resource_id: Annotated[str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))]
-    app_resource_type_id: Annotated[str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))]
-    page_size: Annotated[Optional[int], FieldMetadata(query=QueryParamMetadata(style="form", explode=True))] = None
-    page_token: Annotated[Optional[str], FieldMetadata(query=QueryParamMetadata(style="form", explode=True))] = None
-    
+    app_id: Annotated[
+        str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))
+    ]
+
+    app_resource_id: Annotated[
+        str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))
+    ]
+
+    app_resource_type_id: Annotated[
+        str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))
+    ]
+
+    page_size: Annotated[
+        Optional[int],
+        FieldMetadata(query=QueryParamMetadata(style="form", explode=True)),
+    ] = None
+
+    page_token: Annotated[
+        Optional[str],
+        FieldMetadata(query=QueryParamMetadata(style="form", explode=True)),
+    ] = None
+
 
 class C1APIAppV1AppEntitlementsListForAppResourceResponseTypedDict(TypedDict):
     content_type: str
@@ -32,17 +50,23 @@ class C1APIAppV1AppEntitlementsListForAppResourceResponseTypedDict(TypedDict):
     r"""HTTP response status code for this operation"""
     raw_response: httpx.Response
     r"""Raw HTTP response; suitable for custom response parsing"""
-    list_app_entitlements_response: NotRequired[shared_listappentitlementsresponse.ListAppEntitlementsResponseTypedDict]
+    list_app_entitlements_response: NotRequired[
+        shared_listappentitlementsresponse.ListAppEntitlementsResponseTypedDict
+    ]
     r"""The ListAppEntitlementsResponse message contains a list of results and a nextPageToken if applicable."""
-    
+
 
 class C1APIAppV1AppEntitlementsListForAppResourceResponse(BaseModel):
     content_type: str
     r"""HTTP response content type for this operation"""
+
     status_code: int
     r"""HTTP response status code for this operation"""
+
     raw_response: httpx.Response
     r"""Raw HTTP response; suitable for custom response parsing"""
-    list_app_entitlements_response: Optional[shared_listappentitlementsresponse.ListAppEntitlementsResponse] = None
+
+    list_app_entitlements_response: Optional[
+        shared_listappentitlementsresponse.ListAppEntitlementsResponse
+    ] = None
     r"""The ListAppEntitlementsResponse message contains a list of results and a nextPageToken if applicable."""
-    

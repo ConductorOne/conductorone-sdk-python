@@ -3,13 +3,13 @@
 from __future__ import annotations
 from .exporter import Exporter, ExporterTypedDict
 from sdk.types import BaseModel
-from typing import Optional, TypedDict
-from typing_extensions import NotRequired
+from typing import Optional
+from typing_extensions import NotRequired, TypedDict
 
 
 class ExportServiceUpdateResponseTypedDict(TypedDict):
     r"""The ExportServiceUpdateResponse message."""
-    
+
     exporter: NotRequired[ExporterTypedDict]
     r"""The Exporter message.
 
@@ -17,11 +17,11 @@ class ExportServiceUpdateResponseTypedDict(TypedDict):
     - datasource
 
     """
-    
+
 
 class ExportServiceUpdateResponse(BaseModel):
     r"""The ExportServiceUpdateResponse message."""
-    
+
     exporter: Optional[Exporter] = None
     r"""The Exporter message.
 
@@ -29,4 +29,3 @@ class ExportServiceUpdateResponse(BaseModel):
     - datasource
 
     """
-    

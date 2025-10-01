@@ -4,18 +4,19 @@ from __future__ import annotations
 from datetime import datetime
 import pydantic
 from sdk.types import BaseModel
-from typing import Optional, TypedDict
-from typing_extensions import Annotated, NotRequired
+from typing import Optional
+from typing_extensions import Annotated, NotRequired, TypedDict
 
 
 class ConditionSucceededTypedDict(TypedDict):
     r"""The ConditionSucceeded message."""
-    
+
     succeeded_at: NotRequired[datetime]
-    
+
 
 class ConditionSucceeded(BaseModel):
     r"""The ConditionSucceeded message."""
-    
-    succeeded_at: Annotated[Optional[datetime], pydantic.Field(alias="succeededAt")] = None
-    
+
+    succeeded_at: Annotated[Optional[datetime], pydantic.Field(alias="succeededAt")] = (
+        None
+    )

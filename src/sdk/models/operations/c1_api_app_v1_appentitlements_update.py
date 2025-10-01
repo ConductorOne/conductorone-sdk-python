@@ -2,24 +2,38 @@
 
 from __future__ import annotations
 import httpx
-from sdk.models.shared import updateappentitlementrequest as shared_updateappentitlementrequest, updateappentitlementresponse as shared_updateappentitlementresponse
+from sdk.models.shared import (
+    updateappentitlementrequest as shared_updateappentitlementrequest,
+    updateappentitlementresponse as shared_updateappentitlementresponse,
+)
 from sdk.types import BaseModel
 from sdk.utils import FieldMetadata, PathParamMetadata, RequestMetadata
-from typing import Optional, TypedDict
-from typing_extensions import Annotated, NotRequired
+from typing import Optional
+from typing_extensions import Annotated, NotRequired, TypedDict
 
 
 class C1APIAppV1AppEntitlementsUpdateRequestTypedDict(TypedDict):
     app_id: str
     id: str
-    update_app_entitlement_request: NotRequired[shared_updateappentitlementrequest.UpdateAppEntitlementRequestTypedDict]
-    
+    update_app_entitlement_request: NotRequired[
+        shared_updateappentitlementrequest.UpdateAppEntitlementRequestTypedDict
+    ]
+
 
 class C1APIAppV1AppEntitlementsUpdateRequest(BaseModel):
-    app_id: Annotated[str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))]
-    id: Annotated[str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))]
-    update_app_entitlement_request: Annotated[Optional[shared_updateappentitlementrequest.UpdateAppEntitlementRequest], FieldMetadata(request=RequestMetadata(media_type="application/json"))] = None
-    
+    app_id: Annotated[
+        str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))
+    ]
+
+    id: Annotated[
+        str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))
+    ]
+
+    update_app_entitlement_request: Annotated[
+        Optional[shared_updateappentitlementrequest.UpdateAppEntitlementRequest],
+        FieldMetadata(request=RequestMetadata(media_type="application/json")),
+    ] = None
+
 
 class C1APIAppV1AppEntitlementsUpdateResponseTypedDict(TypedDict):
     content_type: str
@@ -28,17 +42,23 @@ class C1APIAppV1AppEntitlementsUpdateResponseTypedDict(TypedDict):
     r"""HTTP response status code for this operation"""
     raw_response: httpx.Response
     r"""Raw HTTP response; suitable for custom response parsing"""
-    update_app_entitlement_response: NotRequired[shared_updateappentitlementresponse.UpdateAppEntitlementResponseTypedDict]
+    update_app_entitlement_response: NotRequired[
+        shared_updateappentitlementresponse.UpdateAppEntitlementResponseTypedDict
+    ]
     r"""Successful response"""
-    
+
 
 class C1APIAppV1AppEntitlementsUpdateResponse(BaseModel):
     content_type: str
     r"""HTTP response content type for this operation"""
+
     status_code: int
     r"""HTTP response status code for this operation"""
+
     raw_response: httpx.Response
     r"""Raw HTTP response; suitable for custom response parsing"""
-    update_app_entitlement_response: Optional[shared_updateappentitlementresponse.UpdateAppEntitlementResponse] = None
+
+    update_app_entitlement_response: Optional[
+        shared_updateappentitlementresponse.UpdateAppEntitlementResponse
+    ] = None
     r"""Successful response"""
-    

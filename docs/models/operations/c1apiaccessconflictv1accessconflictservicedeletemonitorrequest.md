@@ -1,0 +1,9 @@
+# C1APIAccessconflictV1AccessConflictServiceDeleteMonitorRequest
+
+
+## Fields
+
+| Field                                                                                                | Type                                                                                                 | Required                                                                                             | Description                                                                                          |
+| ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
+| `conflict_monitor_delete_request`                                                                    | [Optional[shared.ConflictMonitorDeleteRequest]](../../models/shared/conflictmonitordeleterequest.md) | :heavy_minus_sign:                                                                                   | N/A                                                                                                  |
+| `id`                                                                                                 | *str*                                                                                                | :heavy_check_mark:                                                                                   | N/A                                                                                                  |

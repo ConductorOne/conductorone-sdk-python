@@ -2,15 +2,12 @@
 
 from __future__ import annotations
 from sdk.types import BaseModel
-from typing import TypedDict
+from typing_extensions import TypedDict
 
 
 class TaskTypeOffboardingInputTypedDict(TypedDict):
     r"""The TaskTypeOffboarding message."""
-    
-    
+
 
 class TaskTypeOffboardingInput(BaseModel):
     r"""The TaskTypeOffboarding message."""
-    
-    

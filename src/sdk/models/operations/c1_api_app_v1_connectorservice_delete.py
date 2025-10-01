@@ -2,24 +2,38 @@
 
 from __future__ import annotations
 import httpx
-from sdk.models.shared import connectorservicedeleterequest as shared_connectorservicedeleterequest, connectorservicedeleteresponse as shared_connectorservicedeleteresponse
+from sdk.models.shared import (
+    connectorservicedeleterequest as shared_connectorservicedeleterequest,
+    connectorservicedeleteresponse as shared_connectorservicedeleteresponse,
+)
 from sdk.types import BaseModel
 from sdk.utils import FieldMetadata, PathParamMetadata, RequestMetadata
-from typing import Optional, TypedDict
-from typing_extensions import Annotated, NotRequired
+from typing import Optional
+from typing_extensions import Annotated, NotRequired, TypedDict
 
 
 class C1APIAppV1ConnectorServiceDeleteRequestTypedDict(TypedDict):
     app_id: str
     id: str
-    connector_service_delete_request: NotRequired[shared_connectorservicedeleterequest.ConnectorServiceDeleteRequestTypedDict]
-    
+    connector_service_delete_request: NotRequired[
+        shared_connectorservicedeleterequest.ConnectorServiceDeleteRequestTypedDict
+    ]
+
 
 class C1APIAppV1ConnectorServiceDeleteRequest(BaseModel):
-    app_id: Annotated[str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))]
-    id: Annotated[str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))]
-    connector_service_delete_request: Annotated[Optional[shared_connectorservicedeleterequest.ConnectorServiceDeleteRequest], FieldMetadata(request=RequestMetadata(media_type="application/json"))] = None
-    
+    app_id: Annotated[
+        str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))
+    ]
+
+    id: Annotated[
+        str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))
+    ]
+
+    connector_service_delete_request: Annotated[
+        Optional[shared_connectorservicedeleterequest.ConnectorServiceDeleteRequest],
+        FieldMetadata(request=RequestMetadata(media_type="application/json")),
+    ] = None
+
 
 class C1APIAppV1ConnectorServiceDeleteResponseTypedDict(TypedDict):
     content_type: str
@@ -28,17 +42,23 @@ class C1APIAppV1ConnectorServiceDeleteResponseTypedDict(TypedDict):
     r"""HTTP response status code for this operation"""
     raw_response: httpx.Response
     r"""Raw HTTP response; suitable for custom response parsing"""
-    connector_service_delete_response: NotRequired[shared_connectorservicedeleteresponse.ConnectorServiceDeleteResponseTypedDict]
+    connector_service_delete_response: NotRequired[
+        shared_connectorservicedeleteresponse.ConnectorServiceDeleteResponseTypedDict
+    ]
     r"""Empty response body. Status code indicates success."""
-    
+
 
 class C1APIAppV1ConnectorServiceDeleteResponse(BaseModel):
     content_type: str
     r"""HTTP response content type for this operation"""
+
     status_code: int
     r"""HTTP response status code for this operation"""
+
     raw_response: httpx.Response
     r"""Raw HTTP response; suitable for custom response parsing"""
-    connector_service_delete_response: Optional[shared_connectorservicedeleteresponse.ConnectorServiceDeleteResponse] = None
+
+    connector_service_delete_response: Optional[
+        shared_connectorservicedeleteresponse.ConnectorServiceDeleteResponse
+    ] = None
     r"""Empty response body. Status code indicates success."""
-    

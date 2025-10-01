@@ -1,0 +1,9 @@
+# C1APITaskV1TaskActionsServiceCloseRequest
+
+
+## Fields
+
+| Field                                                                                                    | Type                                                                                                     | Required                                                                                                 | Description                                                                                              |
+| -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
+| `task_actions_service_close_request`                                                                     | [Optional[shared.TaskActionsServiceCloseRequest]](../../models/shared/taskactionsservicecloserequest.md) | :heavy_minus_sign:                                                                                       | N/A                                                                                                      |
+| `task_id`                                                                                                | *str*                                                                                                    | :heavy_check_mark:                                                                                       | N/A                                                                                                      |

@@ -2,15 +2,12 @@
 
 from __future__ import annotations
 from sdk.types import BaseModel
-from typing import TypedDict
+from typing_extensions import TypedDict
 
 
 class DeleteAppRequestTypedDict(TypedDict):
     r"""Empty request body"""
-    
-    
+
 
 class DeleteAppRequest(BaseModel):
     r"""Empty request body"""
-    
-    

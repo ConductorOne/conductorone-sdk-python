@@ -2,20 +2,19 @@
 
 from __future__ import annotations
 from sdk.types import BaseModel
-from typing import Optional, TypedDict
-from typing_extensions import NotRequired
+from typing import Optional
+from typing_extensions import NotRequired, TypedDict
 
 
 class WaitConditionTypedDict(TypedDict):
     r"""The WaitCondition message."""
-    
+
     condition: NotRequired[str]
     r"""The condition that has to be true for this wait condition to continue."""
-    
+
 
 class WaitCondition(BaseModel):
     r"""The WaitCondition message."""
-    
+
     condition: Optional[str] = None
     r"""The condition that has to be true for this wait condition to continue."""
-    

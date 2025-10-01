@@ -2,10 +2,10 @@
 
 from __future__ import annotations
 import httpx
-from sdk.models.shared import listpolicyresponse as shared_listpolicyresponse
+from sdk.models.shared import searchpoliciesresponse as shared_searchpoliciesresponse
 from sdk.types import BaseModel
-from typing import Optional, TypedDict
-from typing_extensions import NotRequired
+from typing import Callable, Optional
+from typing_extensions import NotRequired, TypedDict
 
 
 class C1APIPolicyV1PolicySearchSearchResponseTypedDict(TypedDict):
@@ -15,17 +15,25 @@ class C1APIPolicyV1PolicySearchSearchResponseTypedDict(TypedDict):
     r"""HTTP response status code for this operation"""
     raw_response: httpx.Response
     r"""Raw HTTP response; suitable for custom response parsing"""
-    list_policy_response: NotRequired[shared_listpolicyresponse.ListPolicyResponseTypedDict]
+    search_policies_response: NotRequired[
+        shared_searchpoliciesresponse.SearchPoliciesResponseTypedDict
+    ]
     r"""Successful response"""
-    
+
 
 class C1APIPolicyV1PolicySearchSearchResponse(BaseModel):
+    next: Callable[[], Optional[C1APIPolicyV1PolicySearchSearchResponse]]
+
     content_type: str
     r"""HTTP response content type for this operation"""
+
     status_code: int
     r"""HTTP response status code for this operation"""
+
     raw_response: httpx.Response
     r"""Raw HTTP response; suitable for custom response parsing"""
-    list_policy_response: Optional[shared_listpolicyresponse.ListPolicyResponse] = None
+
+    search_policies_response: Optional[
+        shared_searchpoliciesresponse.SearchPoliciesResponse
+    ] = None
     r"""Successful response"""
-    

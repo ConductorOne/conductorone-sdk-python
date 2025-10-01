@@ -1,0 +1,11 @@
+# C1APIAppV1ConnectorServicePauseSyncResponse
+
+
+## Fields
+
+| Field                                                                          | Type                                                                           | Required                                                                       | Description                                                                    |
+| ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ |
+| `content_type`                                                                 | *str*                                                                          | :heavy_check_mark:                                                             | HTTP response content type for this operation                                  |
+| `pause_sync_response`                                                          | [Optional[shared.PauseSyncResponse]](../../models/shared/pausesyncresponse.md) | :heavy_minus_sign:                                                             | Successful response                                                            |
+| `status_code`                                                                  | *int*                                                                          | :heavy_check_mark:                                                             | HTTP response status code for this operation                                   |
+| `raw_response`                                                                 | [httpx.Response](https://www.python-httpx.org/api/#response)                   | :heavy_check_mark:                                                             | Raw HTTP response; suitable for custom response parsing                        |

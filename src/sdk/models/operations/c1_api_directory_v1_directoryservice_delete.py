@@ -2,22 +2,33 @@
 
 from __future__ import annotations
 import httpx
-from sdk.models.shared import directoryservicedeleterequest as shared_directoryservicedeleterequest, directoryservicedeleteresponse as shared_directoryservicedeleteresponse
+from sdk.models.shared import (
+    directoryservicedeleterequest as shared_directoryservicedeleterequest,
+    directoryservicedeleteresponse as shared_directoryservicedeleteresponse,
+)
 from sdk.types import BaseModel
 from sdk.utils import FieldMetadata, PathParamMetadata, RequestMetadata
-from typing import Optional, TypedDict
-from typing_extensions import Annotated, NotRequired
+from typing import Optional
+from typing_extensions import Annotated, NotRequired, TypedDict
 
 
 class C1APIDirectoryV1DirectoryServiceDeleteRequestTypedDict(TypedDict):
     app_id: str
-    directory_service_delete_request: NotRequired[shared_directoryservicedeleterequest.DirectoryServiceDeleteRequestTypedDict]
-    
+    directory_service_delete_request: NotRequired[
+        shared_directoryservicedeleterequest.DirectoryServiceDeleteRequestTypedDict
+    ]
+
 
 class C1APIDirectoryV1DirectoryServiceDeleteRequest(BaseModel):
-    app_id: Annotated[str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))]
-    directory_service_delete_request: Annotated[Optional[shared_directoryservicedeleterequest.DirectoryServiceDeleteRequest], FieldMetadata(request=RequestMetadata(media_type="application/json"))] = None
-    
+    app_id: Annotated[
+        str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))
+    ]
+
+    directory_service_delete_request: Annotated[
+        Optional[shared_directoryservicedeleterequest.DirectoryServiceDeleteRequest],
+        FieldMetadata(request=RequestMetadata(media_type="application/json")),
+    ] = None
+
 
 class C1APIDirectoryV1DirectoryServiceDeleteResponseTypedDict(TypedDict):
     content_type: str
@@ -26,17 +37,23 @@ class C1APIDirectoryV1DirectoryServiceDeleteResponseTypedDict(TypedDict):
     r"""HTTP response status code for this operation"""
     raw_response: httpx.Response
     r"""Raw HTTP response; suitable for custom response parsing"""
-    directory_service_delete_response: NotRequired[shared_directoryservicedeleteresponse.DirectoryServiceDeleteResponseTypedDict]
+    directory_service_delete_response: NotRequired[
+        shared_directoryservicedeleteresponse.DirectoryServiceDeleteResponseTypedDict
+    ]
     r"""Empty response with a status code indicating success."""
-    
+
 
 class C1APIDirectoryV1DirectoryServiceDeleteResponse(BaseModel):
     content_type: str
     r"""HTTP response content type for this operation"""
+
     status_code: int
     r"""HTTP response status code for this operation"""
+
     raw_response: httpx.Response
     r"""Raw HTTP response; suitable for custom response parsing"""
-    directory_service_delete_response: Optional[shared_directoryservicedeleteresponse.DirectoryServiceDeleteResponse] = None
+
+    directory_service_delete_response: Optional[
+        shared_directoryservicedeleteresponse.DirectoryServiceDeleteResponse
+    ] = None
     r"""Empty response with a status code indicating success."""
-    

@@ -5,17 +5,19 @@ import httpx
 from sdk.models.shared import taskservicegetresponse as shared_taskservicegetresponse
 from sdk.types import BaseModel
 from sdk.utils import FieldMetadata, PathParamMetadata
-from typing import Optional, TypedDict
-from typing_extensions import Annotated, NotRequired
+from typing import Optional
+from typing_extensions import Annotated, NotRequired, TypedDict
 
 
 class C1APITaskV1TaskServiceGetRequestTypedDict(TypedDict):
     id: str
-    
+
 
 class C1APITaskV1TaskServiceGetRequest(BaseModel):
-    id: Annotated[str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))]
-    
+    id: Annotated[
+        str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))
+    ]
+
 
 class C1APITaskV1TaskServiceGetResponseTypedDict(TypedDict):
     content_type: str
@@ -24,17 +26,23 @@ class C1APITaskV1TaskServiceGetResponseTypedDict(TypedDict):
     r"""HTTP response status code for this operation"""
     raw_response: httpx.Response
     r"""Raw HTTP response; suitable for custom response parsing"""
-    task_service_get_response: NotRequired[shared_taskservicegetresponse.TaskServiceGetResponseTypedDict]
+    task_service_get_response: NotRequired[
+        shared_taskservicegetresponse.TaskServiceGetResponseTypedDict
+    ]
     r"""The TaskServiceGetResponse returns a task view which has a task including JSONPATHs to the expanded items in the expanded array."""
-    
+
 
 class C1APITaskV1TaskServiceGetResponse(BaseModel):
     content_type: str
     r"""HTTP response content type for this operation"""
+
     status_code: int
     r"""HTTP response status code for this operation"""
+
     raw_response: httpx.Response
     r"""Raw HTTP response; suitable for custom response parsing"""
-    task_service_get_response: Optional[shared_taskservicegetresponse.TaskServiceGetResponse] = None
+
+    task_service_get_response: Optional[
+        shared_taskservicegetresponse.TaskServiceGetResponse
+    ] = None
     r"""The TaskServiceGetResponse returns a task view which has a task including JSONPATHs to the expanded items in the expanded array."""
-    

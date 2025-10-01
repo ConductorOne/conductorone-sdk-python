@@ -2,24 +2,38 @@
 
 from __future__ import annotations
 import httpx
-from sdk.models.shared import addappownerrequest as shared_addappownerrequest, addappownerresponse as shared_addappownerresponse
+from sdk.models.shared import (
+    addappownerrequest as shared_addappownerrequest,
+    addappownerresponse as shared_addappownerresponse,
+)
 from sdk.types import BaseModel
 from sdk.utils import FieldMetadata, PathParamMetadata, RequestMetadata
-from typing import Optional, TypedDict
-from typing_extensions import Annotated, NotRequired
+from typing import Optional
+from typing_extensions import Annotated, NotRequired, TypedDict
 
 
 class C1APIAppV1AppOwnersAddRequestTypedDict(TypedDict):
     app_id: str
     user_id: str
-    add_app_owner_request: NotRequired[shared_addappownerrequest.AddAppOwnerRequestTypedDict]
-    
+    add_app_owner_request: NotRequired[
+        shared_addappownerrequest.AddAppOwnerRequestTypedDict
+    ]
+
 
 class C1APIAppV1AppOwnersAddRequest(BaseModel):
-    app_id: Annotated[str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))]
-    user_id: Annotated[str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))]
-    add_app_owner_request: Annotated[Optional[shared_addappownerrequest.AddAppOwnerRequest], FieldMetadata(request=RequestMetadata(media_type="application/json"))] = None
-    
+    app_id: Annotated[
+        str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))
+    ]
+
+    user_id: Annotated[
+        str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))
+    ]
+
+    add_app_owner_request: Annotated[
+        Optional[shared_addappownerrequest.AddAppOwnerRequest],
+        FieldMetadata(request=RequestMetadata(media_type="application/json")),
+    ] = None
+
 
 class C1APIAppV1AppOwnersAddResponseTypedDict(TypedDict):
     content_type: str
@@ -28,17 +42,23 @@ class C1APIAppV1AppOwnersAddResponseTypedDict(TypedDict):
     r"""HTTP response status code for this operation"""
     raw_response: httpx.Response
     r"""Raw HTTP response; suitable for custom response parsing"""
-    add_app_owner_response: NotRequired[shared_addappownerresponse.AddAppOwnerResponseTypedDict]
+    add_app_owner_response: NotRequired[
+        shared_addappownerresponse.AddAppOwnerResponseTypedDict
+    ]
     r"""Empty response with a status code indicating success"""
-    
+
 
 class C1APIAppV1AppOwnersAddResponse(BaseModel):
     content_type: str
     r"""HTTP response content type for this operation"""
+
     status_code: int
     r"""HTTP response status code for this operation"""
+
     raw_response: httpx.Response
     r"""Raw HTTP response; suitable for custom response parsing"""
-    add_app_owner_response: Optional[shared_addappownerresponse.AddAppOwnerResponse] = None
+
+    add_app_owner_response: Optional[shared_addappownerresponse.AddAppOwnerResponse] = (
+        None
+    )
     r"""Empty response with a status code indicating success"""
-    

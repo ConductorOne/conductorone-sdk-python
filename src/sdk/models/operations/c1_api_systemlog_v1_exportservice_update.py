@@ -2,22 +2,33 @@
 
 from __future__ import annotations
 import httpx
-from sdk.models.shared import exportserviceupdaterequest as shared_exportserviceupdaterequest, exportserviceupdateresponse as shared_exportserviceupdateresponse
+from sdk.models.shared import (
+    exportserviceupdaterequest as shared_exportserviceupdaterequest,
+    exportserviceupdateresponse as shared_exportserviceupdateresponse,
+)
 from sdk.types import BaseModel
 from sdk.utils import FieldMetadata, PathParamMetadata, RequestMetadata
-from typing import Optional, TypedDict
-from typing_extensions import Annotated, NotRequired
+from typing import Optional
+from typing_extensions import Annotated, NotRequired, TypedDict
 
 
 class C1APISystemlogV1ExportServiceUpdateRequestTypedDict(TypedDict):
     export_id: str
-    export_service_update_request: NotRequired[shared_exportserviceupdaterequest.ExportServiceUpdateRequestTypedDict]
-    
+    export_service_update_request: NotRequired[
+        shared_exportserviceupdaterequest.ExportServiceUpdateRequestTypedDict
+    ]
+
 
 class C1APISystemlogV1ExportServiceUpdateRequest(BaseModel):
-    export_id: Annotated[str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))]
-    export_service_update_request: Annotated[Optional[shared_exportserviceupdaterequest.ExportServiceUpdateRequest], FieldMetadata(request=RequestMetadata(media_type="application/json"))] = None
-    
+    export_id: Annotated[
+        str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))
+    ]
+
+    export_service_update_request: Annotated[
+        Optional[shared_exportserviceupdaterequest.ExportServiceUpdateRequest],
+        FieldMetadata(request=RequestMetadata(media_type="application/json")),
+    ] = None
+
 
 class C1APISystemlogV1ExportServiceUpdateResponseTypedDict(TypedDict):
     content_type: str
@@ -26,17 +37,23 @@ class C1APISystemlogV1ExportServiceUpdateResponseTypedDict(TypedDict):
     r"""HTTP response status code for this operation"""
     raw_response: httpx.Response
     r"""Raw HTTP response; suitable for custom response parsing"""
-    export_service_update_response: NotRequired[shared_exportserviceupdateresponse.ExportServiceUpdateResponseTypedDict]
+    export_service_update_response: NotRequired[
+        shared_exportserviceupdateresponse.ExportServiceUpdateResponseTypedDict
+    ]
     r"""Successful response"""
-    
+
 
 class C1APISystemlogV1ExportServiceUpdateResponse(BaseModel):
     content_type: str
     r"""HTTP response content type for this operation"""
+
     status_code: int
     r"""HTTP response status code for this operation"""
+
     raw_response: httpx.Response
     r"""Raw HTTP response; suitable for custom response parsing"""
-    export_service_update_response: Optional[shared_exportserviceupdateresponse.ExportServiceUpdateResponse] = None
+
+    export_service_update_response: Optional[
+        shared_exportserviceupdateresponse.ExportServiceUpdateResponse
+    ] = None
     r"""Successful response"""
-    

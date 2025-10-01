@@ -1,6 +1,8 @@
 # SystemLog
 (*system_log*)
 
+## Overview
+
 ### Available Operations
 
 * [list_events](#list_events) - List Events
@@ -14,23 +16,25 @@ ListEvents pulls Events from the ConductorOne system.
 
 ### Example Usage
 
+<!-- UsageSnippet language="python" operationID="c1.api.systemlog.v1.SystemLogService.ListEvents" method="post" path="/api/v1/systemlog/events" -->
 ```python
 from sdk import SDK
 from sdk.models import shared
 
-s = SDK(
+
+with SDK(
     security=shared.Security(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-)
+) as s_client:
 
+    res = s_client.system_log.list_events()
 
-res = s.system_log.list_events()
+    assert res.system_log_service_list_events_response is not None
 
-if res.system_log_service_list_events_response is not None:
-    # handle response
-    pass
+    # Handle response
+    print(res.system_log_service_list_events_response)
 
 ```
 
@@ -41,12 +45,12 @@ if res.system_log_service_list_events_response is not None:
 | `request`                                                                                            | [shared.SystemLogServiceListEventsRequest](../../models/shared/systemlogservicelisteventsrequest.md) | :heavy_check_mark:                                                                                   | The request object to use for the request.                                                           |
 | `retries`                                                                                            | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)                                     | :heavy_minus_sign:                                                                                   | Configuration to override the default retry behavior of the client.                                  |
 
-
 ### Response
 
 **[operations.C1APISystemlogV1SystemLogServiceListEventsResponse](../../models/operations/c1apisystemlogv1systemlogservicelisteventsresponse.md)**
+
 ### Errors
 
-| Error Object    | Status Code     | Content Type    |
+| Error Type      | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 4xx-5xx         | */*             |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |

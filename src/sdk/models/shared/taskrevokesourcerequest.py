@@ -3,20 +3,21 @@
 from __future__ import annotations
 import pydantic
 from sdk.types import BaseModel
-from typing import Optional, TypedDict
-from typing_extensions import Annotated, NotRequired
+from typing import Optional
+from typing_extensions import Annotated, NotRequired, TypedDict
 
 
 class TaskRevokeSourceRequestTypedDict(TypedDict):
     r"""The TaskRevokeSourceRequest message indicates that the source of the revoke task was a request."""
-    
+
     request_user_id: NotRequired[str]
     r"""The ID of the user who initiated the revoke request."""
-    
+
 
 class TaskRevokeSourceRequest(BaseModel):
     r"""The TaskRevokeSourceRequest message indicates that the source of the revoke task was a request."""
-    
-    request_user_id: Annotated[Optional[str], pydantic.Field(alias="requestUserId")] = None
+
+    request_user_id: Annotated[Optional[str], pydantic.Field(alias="requestUserId")] = (
+        None
+    )
     r"""The ID of the user who initiated the revoke request."""
-    

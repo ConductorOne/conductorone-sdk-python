@@ -4,13 +4,13 @@ from __future__ import annotations
 from datetime import datetime
 import pydantic
 from sdk.types import BaseModel
-from typing import Optional, TypedDict
-from typing_extensions import Annotated, NotRequired
+from typing import Optional
+from typing_extensions import Annotated, NotRequired, TypedDict
 
 
 class ReassignedByErrorActionTypedDict(TypedDict):
     r"""The ReassignedByErrorAction object describes the outcome of a policy step that has been reassigned because it had an error provisioning."""
-    
+
     description: NotRequired[str]
     r"""The description of the error with more details on why this was reassigned."""
     error_code: NotRequired[str]
@@ -21,19 +21,27 @@ class ReassignedByErrorActionTypedDict(TypedDict):
     new_policy_step_id: NotRequired[str]
     r"""The ID of the policy step that was created by this reassignment."""
     reassigned_at: NotRequired[datetime]
-    
+
 
 class ReassignedByErrorAction(BaseModel):
     r"""The ReassignedByErrorAction object describes the outcome of a policy step that has been reassigned because it had an error provisioning."""
-    
+
     description: Optional[str] = None
     r"""The description of the error with more details on why this was reassigned."""
+
     error_code: Annotated[Optional[str], pydantic.Field(alias="errorCode")] = None
     r"""Additional information about the error, like http status codes or error messages from SDKs."""
+
     error_user_id: Annotated[Optional[str], pydantic.Field(alias="errorUserId")] = None
     r"""The UserID of the user who reassigned this due to an error. This will exclusively be the System's UserID."""
+
     errored_at: Annotated[Optional[datetime], pydantic.Field(alias="erroredAt")] = None
-    new_policy_step_id: Annotated[Optional[str], pydantic.Field(alias="newPolicyStepId")] = None
+
+    new_policy_step_id: Annotated[
+        Optional[str], pydantic.Field(alias="newPolicyStepId")
+    ] = None
     r"""The ID of the policy step that was created by this reassignment."""
-    reassigned_at: Annotated[Optional[datetime], pydantic.Field(alias="reassignedAt")] = None
-    
+
+    reassigned_at: Annotated[
+        Optional[datetime], pydantic.Field(alias="reassignedAt")
+    ] = None

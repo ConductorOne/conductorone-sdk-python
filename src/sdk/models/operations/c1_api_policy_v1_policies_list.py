@@ -5,19 +5,26 @@ import httpx
 from sdk.models.shared import listpolicyresponse as shared_listpolicyresponse
 from sdk.types import BaseModel
 from sdk.utils import FieldMetadata, QueryParamMetadata
-from typing import Optional, TypedDict
-from typing_extensions import Annotated, NotRequired
+from typing import Optional
+from typing_extensions import Annotated, NotRequired, TypedDict
 
 
 class C1APIPolicyV1PoliciesListRequestTypedDict(TypedDict):
     page_size: NotRequired[int]
     page_token: NotRequired[str]
-    
+
 
 class C1APIPolicyV1PoliciesListRequest(BaseModel):
-    page_size: Annotated[Optional[int], FieldMetadata(query=QueryParamMetadata(style="form", explode=True))] = None
-    page_token: Annotated[Optional[str], FieldMetadata(query=QueryParamMetadata(style="form", explode=True))] = None
-    
+    page_size: Annotated[
+        Optional[int],
+        FieldMetadata(query=QueryParamMetadata(style="form", explode=True)),
+    ] = None
+
+    page_token: Annotated[
+        Optional[str],
+        FieldMetadata(query=QueryParamMetadata(style="form", explode=True)),
+    ] = None
+
 
 class C1APIPolicyV1PoliciesListResponseTypedDict(TypedDict):
     content_type: str
@@ -26,17 +33,21 @@ class C1APIPolicyV1PoliciesListResponseTypedDict(TypedDict):
     r"""HTTP response status code for this operation"""
     raw_response: httpx.Response
     r"""Raw HTTP response; suitable for custom response parsing"""
-    list_policy_response: NotRequired[shared_listpolicyresponse.ListPolicyResponseTypedDict]
+    list_policy_response: NotRequired[
+        shared_listpolicyresponse.ListPolicyResponseTypedDict
+    ]
     r"""Successful response"""
-    
+
 
 class C1APIPolicyV1PoliciesListResponse(BaseModel):
     content_type: str
     r"""HTTP response content type for this operation"""
+
     status_code: int
     r"""HTTP response status code for this operation"""
+
     raw_response: httpx.Response
     r"""Raw HTTP response; suitable for custom response parsing"""
+
     list_policy_response: Optional[shared_listpolicyresponse.ListPolicyResponse] = None
     r"""Successful response"""
-    

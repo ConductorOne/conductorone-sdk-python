@@ -2,22 +2,35 @@
 
 from __future__ import annotations
 import httpx
-from sdk.models.shared import taskactionsservicecommentrequest as shared_taskactionsservicecommentrequest, taskactionsservicecommentresponse as shared_taskactionsservicecommentresponse
+from sdk.models.shared import (
+    taskactionsservicecommentrequest as shared_taskactionsservicecommentrequest,
+    taskactionsservicecommentresponse as shared_taskactionsservicecommentresponse,
+)
 from sdk.types import BaseModel
 from sdk.utils import FieldMetadata, PathParamMetadata, RequestMetadata
-from typing import Optional, TypedDict
-from typing_extensions import Annotated, NotRequired
+from typing import Optional
+from typing_extensions import Annotated, NotRequired, TypedDict
 
 
 class C1APITaskV1TaskActionsServiceCommentRequestTypedDict(TypedDict):
     task_id: str
-    task_actions_service_comment_request: NotRequired[shared_taskactionsservicecommentrequest.TaskActionsServiceCommentRequestTypedDict]
-    
+    task_actions_service_comment_request: NotRequired[
+        shared_taskactionsservicecommentrequest.TaskActionsServiceCommentRequestTypedDict
+    ]
+
 
 class C1APITaskV1TaskActionsServiceCommentRequest(BaseModel):
-    task_id: Annotated[str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))]
-    task_actions_service_comment_request: Annotated[Optional[shared_taskactionsservicecommentrequest.TaskActionsServiceCommentRequest], FieldMetadata(request=RequestMetadata(media_type="application/json"))] = None
-    
+    task_id: Annotated[
+        str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))
+    ]
+
+    task_actions_service_comment_request: Annotated[
+        Optional[
+            shared_taskactionsservicecommentrequest.TaskActionsServiceCommentRequest
+        ],
+        FieldMetadata(request=RequestMetadata(media_type="application/json")),
+    ] = None
+
 
 class C1APITaskV1TaskActionsServiceCommentResponseTypedDict(TypedDict):
     content_type: str
@@ -26,17 +39,23 @@ class C1APITaskV1TaskActionsServiceCommentResponseTypedDict(TypedDict):
     r"""HTTP response status code for this operation"""
     raw_response: httpx.Response
     r"""Raw HTTP response; suitable for custom response parsing"""
-    task_actions_service_comment_response: NotRequired[shared_taskactionsservicecommentresponse.TaskActionsServiceCommentResponseTypedDict]
+    task_actions_service_comment_response: NotRequired[
+        shared_taskactionsservicecommentresponse.TaskActionsServiceCommentResponseTypedDict
+    ]
     r"""Task actions service comment response returns the task view inluding the expanded array of items that are indicated by the expand mask on the request."""
-    
+
 
 class C1APITaskV1TaskActionsServiceCommentResponse(BaseModel):
     content_type: str
     r"""HTTP response content type for this operation"""
+
     status_code: int
     r"""HTTP response status code for this operation"""
+
     raw_response: httpx.Response
     r"""Raw HTTP response; suitable for custom response parsing"""
-    task_actions_service_comment_response: Optional[shared_taskactionsservicecommentresponse.TaskActionsServiceCommentResponse] = None
+
+    task_actions_service_comment_response: Optional[
+        shared_taskactionsservicecommentresponse.TaskActionsServiceCommentResponse
+    ] = None
     r"""Task actions service comment response returns the task view inluding the expanded array of items that are indicated by the expand mask on the request."""
-    

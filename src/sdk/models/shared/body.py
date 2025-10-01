@@ -4,37 +4,40 @@ from __future__ import annotations
 import pydantic
 from pydantic import ConfigDict
 from sdk.types import BaseModel
-from typing import Any, Dict, Optional, TypedDict
-from typing_extensions import Annotated, NotRequired
+from typing import Any, Dict, Optional
+from typing_extensions import Annotated, NotRequired, TypedDict
 
 
 class PayloadTypedDict(TypedDict):
     r"""Contains an arbitrary serialized message along with a @type that describes the type of the serialized message."""
-    
+
     at_type: NotRequired[str]
     r"""The type of the serialized message."""
-    
+
 
 class Payload(BaseModel):
     r"""Contains an arbitrary serialized message along with a @type that describes the type of the serialized message."""
-    model_config = ConfigDict(populate_by_name=True, arbitrary_types_allowed=True, extra="allow")
-    __pydantic_extra__:  Dict[str, Any] = pydantic.Field(init=False)
-    
+
+    model_config = ConfigDict(
+        populate_by_name=True, arbitrary_types_allowed=True, extra="allow"
+    )
+    __pydantic_extra__: Dict[str, Any] = pydantic.Field(init=False)
+
     at_type: Annotated[Optional[str], pydantic.Field(alias="@type")] = None
     r"""The type of the serialized message."""
-    
+
     @property
     def additional_properties(self):
         return self.__pydantic_extra__
 
     @additional_properties.setter
     def additional_properties(self, value):
-        self.__pydantic_extra__ = value # pyright: ignore[reportIncompatibleVariableOverride]
-    
+        self.__pydantic_extra__ = value  # pyright: ignore[reportIncompatibleVariableOverride]
+
 
 class BodyTypedDict(TypedDict):
     r"""The Body message."""
-    
+
     callback_url: NotRequired[str]
     r"""If your receiver returns HTTP Status Code 202 Accepted, it MUST send its resposne to this URL as a POST
     message body.
@@ -66,11 +69,11 @@ class BodyTypedDict(TypedDict):
 
     This value will match the \"Webhook-Id\" header.
     """
-    
+
 
 class Body(BaseModel):
     r"""The Body message."""
-    
+
     callback_url: Annotated[Optional[str], pydantic.Field(alias="callbackUrl")] = None
     r"""If your receiver returns HTTP Status Code 202 Accepted, it MUST send its resposne to this URL as a POST
     message body.
@@ -79,6 +82,7 @@ class Body(BaseModel):
 
     This value will match the \"Webhook-Callback-Url\" header.
     """
+
     event: Optional[str] = None
     r"""The type of event that triggered this Webhook.
 
@@ -90,16 +94,18 @@ class Body(BaseModel):
     - \"c1.webhooks.v1.PayloadPolicyPostAction\" 
     - \"c1.webhooks.v1.PayloadProvisionStep\" 
     """
+
     payload: Optional[Payload] = None
     r"""Contains an arbitrary serialized message along with a @type that describes the type of the serialized message."""
+
     version: Optional[str] = None
     r"""version contains the constant value \"v1\". Future versions of the Webhook body will use a different string.
 
     This value will match the \"Webhook-Version\" header.
     """
+
     webhook_id: Annotated[Optional[str], pydantic.Field(alias="webhookId")] = None
     r"""Unique ID for this Webhook. Your receiver should only process this ID once.
 
     This value will match the \"Webhook-Id\" header.
     """
-    
