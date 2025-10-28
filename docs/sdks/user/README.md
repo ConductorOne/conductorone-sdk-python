@@ -8,6 +8,7 @@
 * [get](#get) - Get
 * [get_user_profile_types](#get_user_profile_types) - Get User Profile Types
 * [list](#list) - List
+* [set_expiring_user_delegation_binding_by_admin](#set_expiring_user_delegation_binding_by_admin) - Set Expiring User Delegation Binding By Admin
 
 ## get
 
@@ -141,6 +142,53 @@ with SDK(
 ### Response
 
 **[operations.C1APIUserV1UserServiceListResponse](../../models/operations/c1apiuserv1userservicelistresponse.md)**
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
+
+## set_expiring_user_delegation_binding_by_admin
+
+Invokes the c1.api.user.v1.UserService.SetExpiringUserDelegationBindingByAdmin method.
+
+### Example Usage
+
+<!-- UsageSnippet language="python" operationID="c1.api.user.v1.UserService.SetExpiringUserDelegationBindingByAdmin" method="post" path="/api/v1/users/{user_id}/set-delegation-by-admin" -->
+```python
+from sdk import SDK
+from sdk.models import shared
+
+
+with SDK(
+    security=shared.Security(
+        bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
+        oauth="<YOUR_OAUTH_HERE>",
+    ),
+) as s_client:
+
+    res = s_client.user.set_expiring_user_delegation_binding_by_admin(request={
+        "user_id": "<id>",
+    })
+
+    assert res.set_expiring_user_delegation_binding_by_admin_response is not None
+
+    # Handle response
+    print(res.set_expiring_user_delegation_binding_by_admin_response)
+
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                          | Type                                                                                                                                                                               | Required                                                                                                                                                                           | Description                                                                                                                                                                        |
+| ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `request`                                                                                                                                                                          | [operations.C1APIUserV1UserServiceSetExpiringUserDelegationBindingByAdminRequest](../../models/operations/c1apiuserv1userservicesetexpiringuserdelegationbindingbyadminrequest.md) | :heavy_check_mark:                                                                                                                                                                 | The request object to use for the request.                                                                                                                                         |
+| `retries`                                                                                                                                                                          | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)                                                                                                                   | :heavy_minus_sign:                                                                                                                                                                 | Configuration to override the default retry behavior of the client.                                                                                                                |
+
+### Response
+
+**[operations.C1APIUserV1UserServiceSetExpiringUserDelegationBindingByAdminResponse](../../models/operations/c1apiuserv1userservicesetexpiringuserdelegationbindingbyadminresponse.md)**
 
 ### Errors
 

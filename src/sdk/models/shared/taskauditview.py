@@ -5,6 +5,14 @@ from .taskauditaccessrequestoutcome import (
     TaskAuditAccessRequestOutcome,
     TaskAuditAccessRequestOutcomeTypedDict,
 )
+from .taskauditaccountlifecycleactioncreated import (
+    TaskAuditAccountLifecycleActionCreated,
+    TaskAuditAccountLifecycleActionCreatedTypedDict,
+)
+from .taskauditaccountlifecycleactionfailed import (
+    TaskAuditAccountLifecycleActionFailed,
+    TaskAuditAccountLifecycleActionFailedTypedDict,
+)
 from .taskauditactionsubmitted import (
     TaskAuditActionSubmitted,
     TaskAuditActionSubmittedTypedDict,
@@ -93,6 +101,10 @@ from .taskauditpolicychanged import (
 from .taskauditpolicyevaluationstep import (
     TaskAuditPolicyEvaluationStep,
     TaskAuditPolicyEvaluationStepTypedDict,
+)
+from .taskauditpolicyprovisioncancelled import (
+    TaskAuditPolicyProvisionCancelled,
+    TaskAuditPolicyProvisionCancelledTypedDict,
 )
 from .taskauditpolicyprovisionerror import (
     TaskAuditPolicyProvisionError,
@@ -283,6 +295,9 @@ class TaskAuditViewTypedDict(TypedDict):
     - grantDurationUpdated
     - waitStepUntilTime
     - webhookApprovalFatalError
+    - accountLifecycleActionCreated
+    - accountLifecycleActionFailed
+    - provisionCancelled
 
     """
 
@@ -290,6 +305,14 @@ class TaskAuditViewTypedDict(TypedDict):
         Nullable[TaskAuditAccessRequestOutcomeTypedDict]
     ]
     r"""The TaskAuditAccessRequestOutcome message."""
+    task_audit_account_lifecycle_action_created: NotRequired[
+        Nullable[TaskAuditAccountLifecycleActionCreatedTypedDict]
+    ]
+    r"""The TaskAuditAccountLifecycleActionCreated message."""
+    task_audit_account_lifecycle_action_failed: NotRequired[
+        Nullable[TaskAuditAccountLifecycleActionFailedTypedDict]
+    ]
+    r"""The TaskAuditAccountLifecycleActionFailed message."""
     task_audit_action_submitted: NotRequired[
         Nullable[TaskAuditActionSubmittedTypedDict]
     ]
@@ -387,6 +410,10 @@ class TaskAuditViewTypedDict(TypedDict):
         Nullable[TaskAuditPolicyEvaluationStepTypedDict]
     ]
     r"""The TaskAuditPolicyEvaluationStep message."""
+    task_audit_policy_provision_cancelled: NotRequired[
+        Nullable[TaskAuditPolicyProvisionCancelledTypedDict]
+    ]
+    r"""The TaskAuditPolicyProvisionCancelled message."""
     task_audit_policy_provision_error: NotRequired[
         Nullable[TaskAuditPolicyProvisionErrorTypedDict]
     ]
@@ -548,6 +575,9 @@ class TaskAuditView(BaseModel):
     - grantDurationUpdated
     - waitStepUntilTime
     - webhookApprovalFatalError
+    - accountLifecycleActionCreated
+    - accountLifecycleActionFailed
+    - provisionCancelled
 
     """
 
@@ -556,6 +586,18 @@ class TaskAuditView(BaseModel):
         pydantic.Field(alias="accessRequestOutcome"),
     ] = UNSET
     r"""The TaskAuditAccessRequestOutcome message."""
+
+    task_audit_account_lifecycle_action_created: Annotated[
+        OptionalNullable[TaskAuditAccountLifecycleActionCreated],
+        pydantic.Field(alias="accountLifecycleActionCreated"),
+    ] = UNSET
+    r"""The TaskAuditAccountLifecycleActionCreated message."""
+
+    task_audit_account_lifecycle_action_failed: Annotated[
+        OptionalNullable[TaskAuditAccountLifecycleActionFailed],
+        pydantic.Field(alias="accountLifecycleActionFailed"),
+    ] = UNSET
+    r"""The TaskAuditAccountLifecycleActionFailed message."""
 
     task_audit_action_submitted: Annotated[
         OptionalNullable[TaskAuditActionSubmitted],
@@ -713,6 +755,12 @@ class TaskAuditView(BaseModel):
         pydantic.Field(alias="policyEvaluationStep"),
     ] = UNSET
     r"""The TaskAuditPolicyEvaluationStep message."""
+
+    task_audit_policy_provision_cancelled: Annotated[
+        OptionalNullable[TaskAuditPolicyProvisionCancelled],
+        pydantic.Field(alias="provisionCancelled"),
+    ] = UNSET
+    r"""The TaskAuditPolicyProvisionCancelled message."""
 
     task_audit_policy_provision_error: Annotated[
         OptionalNullable[TaskAuditPolicyProvisionError],
@@ -902,6 +950,8 @@ class TaskAuditView(BaseModel):
     def serialize_model(self, handler):
         optional_fields = [
             "TaskAuditAccessRequestOutcome",
+            "TaskAuditAccountLifecycleActionCreated",
+            "TaskAuditAccountLifecycleActionFailed",
             "TaskAuditActionSubmitted",
             "TaskAuditApprovalAutoAcceptedByPolicy",
             "TaskAuditApprovalAutoRejectedByPolicy",
@@ -928,6 +978,7 @@ class TaskAuditView(BaseModel):
             "TaskAuditPolicyApprovalReassigned",
             "TaskAuditPolicyChanged",
             "TaskAuditPolicyEvaluationStep",
+            "TaskAuditPolicyProvisionCancelled",
             "TaskAuditPolicyProvisionError",
             "TaskAuditPolicyProvisionReassigned",
             "TaskAuditReassignedToDelegate",
@@ -965,6 +1016,8 @@ class TaskAuditView(BaseModel):
         ]
         nullable_fields = [
             "TaskAuditAccessRequestOutcome",
+            "TaskAuditAccountLifecycleActionCreated",
+            "TaskAuditAccountLifecycleActionFailed",
             "TaskAuditActionSubmitted",
             "TaskAuditApprovalAutoAcceptedByPolicy",
             "TaskAuditApprovalAutoRejectedByPolicy",
@@ -990,6 +1043,7 @@ class TaskAuditView(BaseModel):
             "TaskAuditPolicyApprovalReassigned",
             "TaskAuditPolicyChanged",
             "TaskAuditPolicyEvaluationStep",
+            "TaskAuditPolicyProvisionCancelled",
             "TaskAuditPolicyProvisionError",
             "TaskAuditPolicyProvisionReassigned",
             "TaskAuditReassignedToDelegate",

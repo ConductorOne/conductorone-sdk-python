@@ -43,6 +43,12 @@ class ProvisionInstanceState(str, Enum, metaclass=utils.OpenEnumMeta):
     PROVISION_INSTANCE_STATE_EXTERNAL_TICKET_WAITING = (
         "PROVISION_INSTANCE_STATE_EXTERNAL_TICKET_WAITING"
     )
+    PROVISION_INSTANCE_STATE_ACCOUNT_LIFECYCLE_ACTIONS = (
+        "PROVISION_INSTANCE_STATE_ACCOUNT_LIFECYCLE_ACTIONS"
+    )
+    PROVISION_INSTANCE_STATE_ACCOUNT_LIFECYCLE_ACTIONS_WAITING = (
+        "PROVISION_INSTANCE_STATE_ACCOUNT_LIFECYCLE_ACTIONS_WAITING"
+    )
     PROVISION_INSTANCE_STATE_DONE = "PROVISION_INSTANCE_STATE_DONE"
 
 
@@ -70,6 +76,8 @@ class ProvisionInstanceTypedDict(TypedDict):
     r"""The ReassignedByErrorAction object describes the outcome of a policy step that has been reassigned because it had an error provisioning."""
     skipped_action: NotRequired[Nullable[SkippedActionTypedDict]]
     r"""The SkippedAction object describes the outcome of a policy step that has been skipped."""
+    baton_action_invocation_id: NotRequired[str]
+    r"""This indicates the account lifecycle action id for this step."""
     external_ticket_id: NotRequired[str]
     r"""This indicates the external ticket id for this step."""
     external_ticket_provisioner_config_id: NotRequired[str]
@@ -125,6 +133,11 @@ class ProvisionInstance(BaseModel):
     ] = UNSET
     r"""The SkippedAction object describes the outcome of a policy step that has been skipped."""
 
+    baton_action_invocation_id: Annotated[
+        Optional[str], pydantic.Field(alias="batonActionInvocationId")
+    ] = None
+    r"""This indicates the account lifecycle action id for this step."""
+
     external_ticket_id: Annotated[
         Optional[str], pydantic.Field(alias="externalTicketId")
     ] = None
@@ -162,6 +175,7 @@ class ProvisionInstance(BaseModel):
             "Provision",
             "ReassignedByErrorAction",
             "SkippedAction",
+            "batonActionInvocationId",
             "externalTicketId",
             "externalTicketProvisionerConfigId",
             "notificationId",

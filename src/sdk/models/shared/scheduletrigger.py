@@ -13,11 +13,15 @@ class ScheduleTriggerTypedDict(TypedDict):
 
     advanced: NotRequired[bool]
     r"""The advanced field."""
+    condition: NotRequired[str]
+    r"""The condition field."""
     cron_spec: NotRequired[str]
     r"""The cronSpec field."""
     skip_if_true_cel: NotRequired[str]
     r"""The skipIfTrueCel field."""
     start: NotRequired[datetime]
+    timezone: NotRequired[str]
+    r"""The timezone field."""
 
 
 class ScheduleTrigger(BaseModel):
@@ -26,12 +30,22 @@ class ScheduleTrigger(BaseModel):
     advanced: Optional[bool] = None
     r"""The advanced field."""
 
+    condition: Optional[str] = None
+    r"""The condition field."""
+
     cron_spec: Annotated[Optional[str], pydantic.Field(alias="cronSpec")] = None
     r"""The cronSpec field."""
 
     skip_if_true_cel: Annotated[
-        Optional[str], pydantic.Field(alias="skipIfTrueCel")
+        Optional[str],
+        pydantic.Field(
+            deprecated="warning: ** DEPRECATED ** - This will be removed in a future release, please migrate away from it as soon as possible.",
+            alias="skipIfTrueCel",
+        ),
     ] = None
     r"""The skipIfTrueCel field."""
 
     start: Optional[datetime] = None
+
+    timezone: Optional[str] = None
+    r"""The timezone field."""

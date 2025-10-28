@@ -17,6 +17,8 @@ class TaskViewTypedDict(TypedDict):
     r"""JSONPATH expression indicating the location of the AccessReview object in the expanded array"""
     app_path: NotRequired[str]
     r"""JSONPATH expression indicating the location of the App object in the expanded array"""
+    app_user_last_usage_path: NotRequired[str]
+    r"""JSONPATH expression indicating the location of the AppUser last usage timestamp in the expanded array"""
     app_user_path: NotRequired[str]
     r"""JSONPATH expression indicating the location of the AppUser object in the expanded array"""
     created_by_user_path: NotRequired[str]
@@ -46,6 +48,11 @@ class TaskView(BaseModel):
 
     app_path: Annotated[Optional[str], pydantic.Field(alias="appPath")] = None
     r"""JSONPATH expression indicating the location of the App object in the expanded array"""
+
+    app_user_last_usage_path: Annotated[
+        Optional[str], pydantic.Field(alias="appUserLastUsagePath")
+    ] = None
+    r"""JSONPATH expression indicating the location of the AppUser last usage timestamp in the expanded array"""
 
     app_user_path: Annotated[Optional[str], pydantic.Field(alias="appUserPath")] = None
     r"""JSONPATH expression indicating the location of the AppUser object in the expanded array"""

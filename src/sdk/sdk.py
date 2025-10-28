@@ -60,6 +60,7 @@ if TYPE_CHECKING:
     from sdk.policyvalidate import PolicyValidate
     from sdk.requestcatalogmanagement import RequestCatalogManagement
     from sdk.requestcatalogsearch import RequestCatalogSearch
+    from sdk.requestschema import RequestSchema
     from sdk.roles import Roles
     from sdk.sessionsettings import SessionSettings
     from sdk.stepupprovider import StepUpProvider
@@ -112,6 +113,7 @@ class SDK(BaseSDK):
     policies: "Policies"
     account_provision_policy_test: "AccountProvisionPolicyTest"
     policy_validate: "PolicyValidate"
+    request_schema: "RequestSchema"
     app_resource_search: "AppResourceSearch"
     app_search: "AppSearch"
     attribute_search: "AttributeSearch"
@@ -191,6 +193,7 @@ class SDK(BaseSDK):
             "AccountProvisionPolicyTest",
         ),
         "policy_validate": ("sdk.policyvalidate", "PolicyValidate"),
+        "request_schema": ("sdk.requestschema", "RequestSchema"),
         "app_resource_search": ("sdk.appresourcesearch", "AppResourceSearch"),
         "app_search": ("sdk.appsearch", "AppSearch"),
         "attribute_search": ("sdk.attributesearch", "AttributeSearch"),

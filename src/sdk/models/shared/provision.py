@@ -23,6 +23,7 @@ class ProvisionTypedDict(TypedDict):
     - multiStep
     - externalTicket
     - unconfigured
+    - action
 
     """
     provision_target: NotRequired[ProvisionTargetTypedDict]
@@ -47,6 +48,7 @@ class Provision(BaseModel):
     - multiStep
     - externalTicket
     - unconfigured
+    - action
 
     """
 

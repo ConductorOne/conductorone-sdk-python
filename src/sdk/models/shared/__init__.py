@@ -13,6 +13,10 @@ import sys
 if TYPE_CHECKING:
     from .accept import Accept, AcceptTypedDict
     from .acceptinstance import AcceptInstance, AcceptInstanceTypedDict
+    from .accessconflicttrigger import (
+        AccessConflictTrigger,
+        AccessConflictTriggerTypedDict,
+    )
     from .accountfilter import AccountFilter, AccountFilterTypedDict, AccountType
     from .accountincontext import AccountInContext, AccountInContextTypedDict
     from .accountlifecycleaction import (
@@ -21,6 +25,7 @@ if TYPE_CHECKING:
     )
     from .accountprovision import AccountProvision, AccountProvisionTypedDict
     from .accountref import AccountRef, AccountRefTypedDict
+    from .actionprovision import ActionProvision, ActionProvisionTypedDict
     from .addappentitlementownerrequest import (
         AddAppEntitlementOwnerRequest,
         AddAppEntitlementOwnerRequestTypedDict,
@@ -447,6 +452,8 @@ if TYPE_CHECKING:
         ConflictMonitorDeleteResponse,
         ConflictMonitorDeleteResponseTypedDict,
     )
+    from .conflictmonitorref import ConflictMonitorRef, ConflictMonitorRefTypedDict
+    from .conflictmonitorrefs import ConflictMonitorRefs, ConflictMonitorRefsTypedDict
     from .conflictmonitorupdaterequest import (
         ConflictMonitorUpdateRequest,
         ConflictMonitorUpdateRequestTypedDict,
@@ -713,6 +720,14 @@ if TYPE_CHECKING:
         DeleteAppOwnersResponseTypedDict,
     )
     from .deleteapprequest import DeleteAppRequest, DeleteAppRequestTypedDict
+    from .deleteappresourceownersrequest import (
+        DeleteAppResourceOwnersRequest,
+        DeleteAppResourceOwnersRequestTypedDict,
+    )
+    from .deleteappresourceownersresponse import (
+        DeleteAppResourceOwnersResponse,
+        DeleteAppResourceOwnersResponseTypedDict,
+    )
     from .deleteappresponse import DeleteAppResponse, DeleteAppResponseTypedDict
     from .deleteattributevaluerequest import (
         DeleteAttributeValueRequest,
@@ -870,6 +885,10 @@ if TYPE_CHECKING:
         ExecuteAutomationResponse,
         ExecuteAutomationResponseTypedDict,
     )
+    from .expiringuserdelegationbinding import (
+        ExpiringUserDelegationBinding,
+        ExpiringUserDelegationBindingTypedDict,
+    )
     from .exporter import Exporter, ExporterState, ExporterTypedDict
     from .exporter_input import ExporterInput, ExporterInputTypedDict
     from .exporterref import ExporterRef, ExporterRefTypedDict
@@ -946,6 +965,8 @@ if TYPE_CHECKING:
     from .field_input import FieldInput, FieldInputTypedDict
     from .fieldgroup import FieldGroup, FieldGroupTypedDict
     from .fieldrelationship import FieldRelationship, FieldRelationshipTypedDict
+    from .filefield import FileField, FileFieldTypedDict
+    from .fileinputfield import FileInputField, FileInputFieldTypedDict
     from .fixed32rules import Fixed32Rules, Fixed32RulesTypedDict
     from .fixed64rules import Fixed64Rules, Fixed64RulesTypedDict
     from .floatrules import FloatRules, FloatRulesTypedDict
@@ -1160,6 +1181,10 @@ if TYPE_CHECKING:
     from .listappownersresponse import (
         ListAppOwnersResponse,
         ListAppOwnersResponseTypedDict,
+    )
+    from .listappresourceowneridsresponse import (
+        ListAppResourceOwnerIDsResponse,
+        ListAppResourceOwnerIDsResponseTypedDict,
     )
     from .listappresourceownersresponse import (
         ListAppResourceOwnersResponse,
@@ -1506,6 +1531,59 @@ if TYPE_CHECKING:
         RequestCatalogSearchServiceSearchEntitlementsResponseTypedDict,
     )
     from .requestcatalogview import RequestCatalogView, RequestCatalogViewTypedDict
+    from .requestschema import RequestSchema, RequestSchemaTypedDict
+    from .requestschemaservicecreateentitlementbindingrequest import (
+        RequestSchemaServiceCreateEntitlementBindingRequest,
+        RequestSchemaServiceCreateEntitlementBindingRequestTypedDict,
+    )
+    from .requestschemaservicecreateentitlementbindingresponse import (
+        RequestSchemaServiceCreateEntitlementBindingResponse,
+        RequestSchemaServiceCreateEntitlementBindingResponseTypedDict,
+    )
+    from .requestschemaservicecreaterequest import (
+        RequestSchemaServiceCreateRequest,
+        RequestSchemaServiceCreateRequestTypedDict,
+    )
+    from .requestschemaservicecreateresponse import (
+        RequestSchemaServiceCreateResponse,
+        RequestSchemaServiceCreateResponseTypedDict,
+    )
+    from .requestschemaservicedeleterequest import (
+        RequestSchemaServiceDeleteRequest,
+        RequestSchemaServiceDeleteRequestTypedDict,
+    )
+    from .requestschemaservicedeleteresponse import (
+        RequestSchemaServiceDeleteResponse,
+        RequestSchemaServiceDeleteResponseTypedDict,
+    )
+    from .requestschemaservicefindbindingforappentitlementrequest import (
+        RequestSchemaServiceFindBindingForAppEntitlementRequest,
+        RequestSchemaServiceFindBindingForAppEntitlementRequestTypedDict,
+    )
+    from .requestschemaservicefindbindingforappentitlementresponse import (
+        RequestSchemaServiceFindBindingForAppEntitlementResponse,
+        RequestSchemaServiceFindBindingForAppEntitlementResponseTypedDict,
+    )
+    from .requestschemaservicegetresponse import (
+        RequestSchemaServiceGetResponse,
+        RequestSchemaServiceGetResponseTypedDict,
+    )
+    from .requestschemaserviceremoveentitlementbindingrequest import (
+        RequestSchemaServiceRemoveEntitlementBindingRequest,
+        RequestSchemaServiceRemoveEntitlementBindingRequestTypedDict,
+    )
+    from .requestschemaserviceremoveentitlementbindingresponse import (
+        RequestSchemaServiceRemoveEntitlementBindingResponse,
+        RequestSchemaServiceRemoveEntitlementBindingResponseTypedDict,
+    )
+    from .requestschemaserviceupdaterequest import (
+        RequestSchemaServiceUpdateRequest,
+        RequestSchemaServiceUpdateRequestTypedDict,
+    )
+    from .requestschemaserviceupdateresponse import (
+        RequestSchemaServiceUpdateResponse,
+        RequestSchemaServiceUpdateResponseTypedDict,
+    )
     from .requiredtogether import RequiredTogether, RequiredTogetherTypedDict
     from .resourceownerapproval import (
         ResourceOwnerApproval,
@@ -1575,6 +1653,10 @@ if TYPE_CHECKING:
     from .runimmediately import RunImmediately, RunImmediatelyTypedDict
     from .savetovault import SaveToVault, SaveToVaultTypedDict
     from .scheduletrigger import ScheduleTrigger, ScheduleTriggerTypedDict
+    from .scheduletriggerappuser import (
+        ScheduleTriggerAppUser,
+        ScheduleTriggerAppUserTypedDict,
+    )
     from .searchappentitlementswithexpiredresponse import (
         SearchAppEntitlementsWithExpiredResponse,
         SearchAppEntitlementsWithExpiredResponseTypedDict,
@@ -1717,9 +1799,25 @@ if TYPE_CHECKING:
         SetAppOwnersResponse,
         SetAppOwnersResponseTypedDict,
     )
+    from .setappresourceownersrequest import (
+        SetAppResourceOwnersRequest,
+        SetAppResourceOwnersRequestTypedDict,
+    )
+    from .setappresourceownersresponse import (
+        SetAppResourceOwnersResponse,
+        SetAppResourceOwnersResponseTypedDict,
+    )
     from .setbundleautomationrequest import (
         SetBundleAutomationRequest,
         SetBundleAutomationRequestTypedDict,
+    )
+    from .setexpiringuserdelegationbindingbyadminrequest import (
+        SetExpiringUserDelegationBindingByAdminRequest,
+        SetExpiringUserDelegationBindingByAdminRequestTypedDict,
+    )
+    from .setexpiringuserdelegationbindingbyadminresponse import (
+        SetExpiringUserDelegationBindingByAdminResponse,
+        SetExpiringUserDelegationBindingByAdminResponseTypedDict,
     )
     from .sfixed32rules import SFixed32Rules, SFixed32RulesTypedDict
     from .sfixed64rules import SFixed64Rules, SFixed64RulesTypedDict
@@ -1884,6 +1982,14 @@ if TYPE_CHECKING:
         TaskAuditAccessRequestOutcome,
         TaskAuditAccessRequestOutcomeTypedDict,
     )
+    from .taskauditaccountlifecycleactioncreated import (
+        TaskAuditAccountLifecycleActionCreated,
+        TaskAuditAccountLifecycleActionCreatedTypedDict,
+    )
+    from .taskauditaccountlifecycleactionfailed import (
+        TaskAuditAccountLifecycleActionFailed,
+        TaskAuditAccountLifecycleActionFailedTypedDict,
+    )
     from .taskauditactionsubmitted import (
         TaskAuditActionSubmitted,
         TaskAuditActionSubmittedTypedDict,
@@ -1993,6 +2099,10 @@ if TYPE_CHECKING:
     from .taskauditpolicyevaluationstep import (
         TaskAuditPolicyEvaluationStep,
         TaskAuditPolicyEvaluationStepTypedDict,
+    )
+    from .taskauditpolicyprovisioncancelled import (
+        TaskAuditPolicyProvisionCancelled,
+        TaskAuditPolicyProvisionCancelledTypedDict,
     )
     from .taskauditpolicyprovisionerror import (
         TaskAuditPolicyProvisionError,
@@ -2133,8 +2243,11 @@ if TYPE_CHECKING:
     )
     from .tasksearchrequest import (
         AccountTypes,
+        CertifyOutcomes,
         CurrentStep,
         EmergencyStatus,
+        GrantOutcomes,
+        RevokeOutcomes,
         SortBy,
         StepApprovalTypes,
         TaskSearchRequest,
@@ -2503,6 +2616,8 @@ __all__ = [
     "AcceptInstance",
     "AcceptInstanceTypedDict",
     "AcceptTypedDict",
+    "AccessConflictTrigger",
+    "AccessConflictTriggerTypedDict",
     "AccountFilter",
     "AccountFilterTypedDict",
     "AccountInContext",
@@ -2515,6 +2630,8 @@ __all__ = [
     "AccountRefTypedDict",
     "AccountType",
     "AccountTypes",
+    "ActionProvision",
+    "ActionProvisionTypedDict",
     "ActionType",
     "Actions",
     "AddAppEntitlementOwnerRequest",
@@ -2794,6 +2911,7 @@ __all__ = [
     "CancelAccessRequestDefaultsRequestTypedDict",
     "CancelledAction",
     "CancelledActionTypedDict",
+    "CertifyOutcomes",
     "CheckboxField",
     "CheckboxField1",
     "CheckboxField1TypedDict",
@@ -2823,6 +2941,10 @@ __all__ = [
     "ConflictMonitorDeleteRequestTypedDict",
     "ConflictMonitorDeleteResponse",
     "ConflictMonitorDeleteResponseTypedDict",
+    "ConflictMonitorRef",
+    "ConflictMonitorRefTypedDict",
+    "ConflictMonitorRefs",
+    "ConflictMonitorRefsTypedDict",
     "ConflictMonitorTypedDict",
     "ConflictMonitorUpdateRequest",
     "ConflictMonitorUpdateRequestTypedDict",
@@ -2989,6 +3111,10 @@ __all__ = [
     "DeleteAppOwnersResponseTypedDict",
     "DeleteAppRequest",
     "DeleteAppRequestTypedDict",
+    "DeleteAppResourceOwnersRequest",
+    "DeleteAppResourceOwnersRequestTypedDict",
+    "DeleteAppResourceOwnersResponse",
+    "DeleteAppResourceOwnersResponseTypedDict",
     "DeleteAppResponse",
     "DeleteAppResponseTypedDict",
     "DeleteAttributeValueRequest",
@@ -3110,6 +3236,8 @@ __all__ = [
     "ExecutionStepStates",
     "Expanded",
     "ExpandedTypedDict",
+    "ExpiringUserDelegationBinding",
+    "ExpiringUserDelegationBindingTypedDict",
     "ExportServiceCreateRequest",
     "ExportServiceCreateRequestTypedDict",
     "ExportServiceCreateResponse",
@@ -3174,6 +3302,10 @@ __all__ = [
     "FieldRulesTypedDict",
     "FieldT",
     "FieldTTypedDict",
+    "FileField",
+    "FileFieldTypedDict",
+    "FileInputField",
+    "FileInputFieldTypedDict",
     "Fixed32Rules",
     "Fixed32RulesTypedDict",
     "Fixed64Rules",
@@ -3298,6 +3430,7 @@ __all__ = [
     "GrantFoundTrigger",
     "GrantFoundTriggerTypedDict",
     "GrantJustificationType",
+    "GrantOutcomes",
     "GrantReason",
     "GrantReasonTypedDict",
     "GrantSourceFilter",
@@ -3333,6 +3466,8 @@ __all__ = [
     "ListAppOwnerIDsResponseTypedDict",
     "ListAppOwnersResponse",
     "ListAppOwnersResponseTypedDict",
+    "ListAppResourceOwnerIDsResponse",
+    "ListAppResourceOwnerIDsResponseTypedDict",
     "ListAppResourceOwnersResponse",
     "ListAppResourceOwnersResponseTypedDict",
     "ListAppUsersForIdentityWithGrantResponse",
@@ -3597,6 +3732,34 @@ __all__ = [
     "RequestCatalogTypedDict",
     "RequestCatalogView",
     "RequestCatalogViewTypedDict",
+    "RequestSchema",
+    "RequestSchemaServiceCreateEntitlementBindingRequest",
+    "RequestSchemaServiceCreateEntitlementBindingRequestTypedDict",
+    "RequestSchemaServiceCreateEntitlementBindingResponse",
+    "RequestSchemaServiceCreateEntitlementBindingResponseTypedDict",
+    "RequestSchemaServiceCreateRequest",
+    "RequestSchemaServiceCreateRequestTypedDict",
+    "RequestSchemaServiceCreateResponse",
+    "RequestSchemaServiceCreateResponseTypedDict",
+    "RequestSchemaServiceDeleteRequest",
+    "RequestSchemaServiceDeleteRequestTypedDict",
+    "RequestSchemaServiceDeleteResponse",
+    "RequestSchemaServiceDeleteResponseTypedDict",
+    "RequestSchemaServiceFindBindingForAppEntitlementRequest",
+    "RequestSchemaServiceFindBindingForAppEntitlementRequestTypedDict",
+    "RequestSchemaServiceFindBindingForAppEntitlementResponse",
+    "RequestSchemaServiceFindBindingForAppEntitlementResponseTypedDict",
+    "RequestSchemaServiceGetResponse",
+    "RequestSchemaServiceGetResponseTypedDict",
+    "RequestSchemaServiceRemoveEntitlementBindingRequest",
+    "RequestSchemaServiceRemoveEntitlementBindingRequestTypedDict",
+    "RequestSchemaServiceRemoveEntitlementBindingResponse",
+    "RequestSchemaServiceRemoveEntitlementBindingResponseTypedDict",
+    "RequestSchemaServiceUpdateRequest",
+    "RequestSchemaServiceUpdateRequestTypedDict",
+    "RequestSchemaServiceUpdateResponse",
+    "RequestSchemaServiceUpdateResponseTypedDict",
+    "RequestSchemaTypedDict",
     "RequiredTogether",
     "RequiredTogetherTypedDict",
     "ResourceOwnerApproval",
@@ -3634,6 +3797,7 @@ __all__ = [
     "ResumeSyncRequestTypedDict",
     "ResumeSyncResponse",
     "ResumeSyncResponseTypedDict",
+    "RevokeOutcomes",
     "Role",
     "RoleInput",
     "RoleInputTypedDict",
@@ -3659,6 +3823,8 @@ __all__ = [
     "SaveToVault",
     "SaveToVaultTypedDict",
     "ScheduleTrigger",
+    "ScheduleTriggerAppUser",
+    "ScheduleTriggerAppUserTypedDict",
     "ScheduleTriggerTypedDict",
     "SearchAppEntitlementsWithExpiredResponse",
     "SearchAppEntitlementsWithExpiredResponseTypedDict",
@@ -3751,8 +3917,16 @@ __all__ = [
     "SetAppOwnersRequestTypedDict",
     "SetAppOwnersResponse",
     "SetAppOwnersResponseTypedDict",
+    "SetAppResourceOwnersRequest",
+    "SetAppResourceOwnersRequestTypedDict",
+    "SetAppResourceOwnersResponse",
+    "SetAppResourceOwnersResponseTypedDict",
     "SetBundleAutomationRequest",
     "SetBundleAutomationRequestTypedDict",
+    "SetExpiringUserDelegationBindingByAdminRequest",
+    "SetExpiringUserDelegationBindingByAdminRequestTypedDict",
+    "SetExpiringUserDelegationBindingByAdminResponse",
+    "SetExpiringUserDelegationBindingByAdminResponseTypedDict",
     "Severity",
     "SkippedAction",
     "SkippedActionTypedDict",
@@ -3867,6 +4041,10 @@ __all__ = [
     "TaskActionsServiceUpdateRequestDataRequestTypedDict",
     "TaskAuditAccessRequestOutcome",
     "TaskAuditAccessRequestOutcomeTypedDict",
+    "TaskAuditAccountLifecycleActionCreated",
+    "TaskAuditAccountLifecycleActionCreatedTypedDict",
+    "TaskAuditAccountLifecycleActionFailed",
+    "TaskAuditAccountLifecycleActionFailedTypedDict",
     "TaskAuditActionSubmitted",
     "TaskAuditActionSubmittedTypedDict",
     "TaskAuditApprovalAutoAcceptedByPolicy",
@@ -3929,6 +4107,8 @@ __all__ = [
     "TaskAuditPolicyChangedTypedDict",
     "TaskAuditPolicyEvaluationStep",
     "TaskAuditPolicyEvaluationStepTypedDict",
+    "TaskAuditPolicyProvisionCancelled",
+    "TaskAuditPolicyProvisionCancelledTypedDict",
     "TaskAuditPolicyProvisionError",
     "TaskAuditPolicyProvisionErrorTypedDict",
     "TaskAuditPolicyProvisionReassigned",
@@ -4273,6 +4453,8 @@ _dynamic_imports: dict[str, str] = {
     "AcceptTypedDict": ".accept",
     "AcceptInstance": ".acceptinstance",
     "AcceptInstanceTypedDict": ".acceptinstance",
+    "AccessConflictTrigger": ".accessconflicttrigger",
+    "AccessConflictTriggerTypedDict": ".accessconflicttrigger",
     "AccountFilter": ".accountfilter",
     "AccountFilterTypedDict": ".accountfilter",
     "AccountType": ".accountfilter",
@@ -4284,6 +4466,8 @@ _dynamic_imports: dict[str, str] = {
     "AccountProvisionTypedDict": ".accountprovision",
     "AccountRef": ".accountref",
     "AccountRefTypedDict": ".accountref",
+    "ActionProvision": ".actionprovision",
+    "ActionProvisionTypedDict": ".actionprovision",
     "AddAppEntitlementOwnerRequest": ".addappentitlementownerrequest",
     "AddAppEntitlementOwnerRequestTypedDict": ".addappentitlementownerrequest",
     "AddAppEntitlementOwnerResponse": ".addappentitlementownerresponse",
@@ -4602,6 +4786,10 @@ _dynamic_imports: dict[str, str] = {
     "ConflictMonitorDeleteRequestTypedDict": ".conflictmonitordeleterequest",
     "ConflictMonitorDeleteResponse": ".conflictmonitordeleteresponse",
     "ConflictMonitorDeleteResponseTypedDict": ".conflictmonitordeleteresponse",
+    "ConflictMonitorRef": ".conflictmonitorref",
+    "ConflictMonitorRefTypedDict": ".conflictmonitorref",
+    "ConflictMonitorRefs": ".conflictmonitorrefs",
+    "ConflictMonitorRefsTypedDict": ".conflictmonitorrefs",
     "ConflictMonitorUpdateRequest": ".conflictmonitorupdaterequest",
     "ConflictMonitorUpdateRequestTypedDict": ".conflictmonitorupdaterequest",
     "Config": ".connector",
@@ -4769,6 +4957,10 @@ _dynamic_imports: dict[str, str] = {
     "DeleteAppOwnersResponseTypedDict": ".deleteappownersresponse",
     "DeleteAppRequest": ".deleteapprequest",
     "DeleteAppRequestTypedDict": ".deleteapprequest",
+    "DeleteAppResourceOwnersRequest": ".deleteappresourceownersrequest",
+    "DeleteAppResourceOwnersRequestTypedDict": ".deleteappresourceownersrequest",
+    "DeleteAppResourceOwnersResponse": ".deleteappresourceownersresponse",
+    "DeleteAppResourceOwnersResponseTypedDict": ".deleteappresourceownersresponse",
     "DeleteAppResponse": ".deleteappresponse",
     "DeleteAppResponseTypedDict": ".deleteappresponse",
     "DeleteAttributeValueRequest": ".deleteattributevaluerequest",
@@ -4878,6 +5070,8 @@ _dynamic_imports: dict[str, str] = {
     "ExecuteAutomationRequestTypedDict": ".executeautomationrequest",
     "ExecuteAutomationResponse": ".executeautomationresponse",
     "ExecuteAutomationResponseTypedDict": ".executeautomationresponse",
+    "ExpiringUserDelegationBinding": ".expiringuserdelegationbinding",
+    "ExpiringUserDelegationBindingTypedDict": ".expiringuserdelegationbinding",
     "Exporter": ".exporter",
     "ExporterState": ".exporter",
     "ExporterTypedDict": ".exporter",
@@ -4941,6 +5135,10 @@ _dynamic_imports: dict[str, str] = {
     "FieldGroupTypedDict": ".fieldgroup",
     "FieldRelationship": ".fieldrelationship",
     "FieldRelationshipTypedDict": ".fieldrelationship",
+    "FileField": ".filefield",
+    "FileFieldTypedDict": ".filefield",
+    "FileInputField": ".fileinputfield",
+    "FileInputFieldTypedDict": ".fileinputfield",
     "Fixed32Rules": ".fixed32rules",
     "Fixed32RulesTypedDict": ".fixed32rules",
     "Fixed64Rules": ".fixed64rules",
@@ -5098,6 +5296,8 @@ _dynamic_imports: dict[str, str] = {
     "ListAppOwnerIDsResponseTypedDict": ".listappowneridsresponse",
     "ListAppOwnersResponse": ".listappownersresponse",
     "ListAppOwnersResponseTypedDict": ".listappownersresponse",
+    "ListAppResourceOwnerIDsResponse": ".listappresourceowneridsresponse",
+    "ListAppResourceOwnerIDsResponseTypedDict": ".listappresourceowneridsresponse",
     "ListAppResourceOwnersResponse": ".listappresourceownersresponse",
     "ListAppResourceOwnersResponseTypedDict": ".listappresourceownersresponse",
     "ListAppsResponse": ".listappsresponse",
@@ -5344,6 +5544,34 @@ _dynamic_imports: dict[str, str] = {
     "RequestCatalogSearchServiceSearchEntitlementsResponseTypedDict": ".requestcatalogsearchservicesearchentitlementsresponse",
     "RequestCatalogView": ".requestcatalogview",
     "RequestCatalogViewTypedDict": ".requestcatalogview",
+    "RequestSchema": ".requestschema",
+    "RequestSchemaTypedDict": ".requestschema",
+    "RequestSchemaServiceCreateEntitlementBindingRequest": ".requestschemaservicecreateentitlementbindingrequest",
+    "RequestSchemaServiceCreateEntitlementBindingRequestTypedDict": ".requestschemaservicecreateentitlementbindingrequest",
+    "RequestSchemaServiceCreateEntitlementBindingResponse": ".requestschemaservicecreateentitlementbindingresponse",
+    "RequestSchemaServiceCreateEntitlementBindingResponseTypedDict": ".requestschemaservicecreateentitlementbindingresponse",
+    "RequestSchemaServiceCreateRequest": ".requestschemaservicecreaterequest",
+    "RequestSchemaServiceCreateRequestTypedDict": ".requestschemaservicecreaterequest",
+    "RequestSchemaServiceCreateResponse": ".requestschemaservicecreateresponse",
+    "RequestSchemaServiceCreateResponseTypedDict": ".requestschemaservicecreateresponse",
+    "RequestSchemaServiceDeleteRequest": ".requestschemaservicedeleterequest",
+    "RequestSchemaServiceDeleteRequestTypedDict": ".requestschemaservicedeleterequest",
+    "RequestSchemaServiceDeleteResponse": ".requestschemaservicedeleteresponse",
+    "RequestSchemaServiceDeleteResponseTypedDict": ".requestschemaservicedeleteresponse",
+    "RequestSchemaServiceFindBindingForAppEntitlementRequest": ".requestschemaservicefindbindingforappentitlementrequest",
+    "RequestSchemaServiceFindBindingForAppEntitlementRequestTypedDict": ".requestschemaservicefindbindingforappentitlementrequest",
+    "RequestSchemaServiceFindBindingForAppEntitlementResponse": ".requestschemaservicefindbindingforappentitlementresponse",
+    "RequestSchemaServiceFindBindingForAppEntitlementResponseTypedDict": ".requestschemaservicefindbindingforappentitlementresponse",
+    "RequestSchemaServiceGetResponse": ".requestschemaservicegetresponse",
+    "RequestSchemaServiceGetResponseTypedDict": ".requestschemaservicegetresponse",
+    "RequestSchemaServiceRemoveEntitlementBindingRequest": ".requestschemaserviceremoveentitlementbindingrequest",
+    "RequestSchemaServiceRemoveEntitlementBindingRequestTypedDict": ".requestschemaserviceremoveentitlementbindingrequest",
+    "RequestSchemaServiceRemoveEntitlementBindingResponse": ".requestschemaserviceremoveentitlementbindingresponse",
+    "RequestSchemaServiceRemoveEntitlementBindingResponseTypedDict": ".requestschemaserviceremoveentitlementbindingresponse",
+    "RequestSchemaServiceUpdateRequest": ".requestschemaserviceupdaterequest",
+    "RequestSchemaServiceUpdateRequestTypedDict": ".requestschemaserviceupdaterequest",
+    "RequestSchemaServiceUpdateResponse": ".requestschemaserviceupdateresponse",
+    "RequestSchemaServiceUpdateResponseTypedDict": ".requestschemaserviceupdateresponse",
     "RequiredTogether": ".requiredtogether",
     "RequiredTogetherTypedDict": ".requiredtogether",
     "ResourceOwnerApproval": ".resourceownerapproval",
@@ -5398,6 +5626,8 @@ _dynamic_imports: dict[str, str] = {
     "SaveToVaultTypedDict": ".savetovault",
     "ScheduleTrigger": ".scheduletrigger",
     "ScheduleTriggerTypedDict": ".scheduletrigger",
+    "ScheduleTriggerAppUser": ".scheduletriggerappuser",
+    "ScheduleTriggerAppUserTypedDict": ".scheduletriggerappuser",
     "SearchAppEntitlementsWithExpiredResponse": ".searchappentitlementswithexpiredresponse",
     "SearchAppEntitlementsWithExpiredResponseTypedDict": ".searchappentitlementswithexpiredresponse",
     "SearchAppResourcesRequest": ".searchappresourcesrequest",
@@ -5496,8 +5726,16 @@ _dynamic_imports: dict[str, str] = {
     "SetAppOwnersRequestTypedDict": ".setappownersrequest",
     "SetAppOwnersResponse": ".setappownersresponse",
     "SetAppOwnersResponseTypedDict": ".setappownersresponse",
+    "SetAppResourceOwnersRequest": ".setappresourceownersrequest",
+    "SetAppResourceOwnersRequestTypedDict": ".setappresourceownersrequest",
+    "SetAppResourceOwnersResponse": ".setappresourceownersresponse",
+    "SetAppResourceOwnersResponseTypedDict": ".setappresourceownersresponse",
     "SetBundleAutomationRequest": ".setbundleautomationrequest",
     "SetBundleAutomationRequestTypedDict": ".setbundleautomationrequest",
+    "SetExpiringUserDelegationBindingByAdminRequest": ".setexpiringuserdelegationbindingbyadminrequest",
+    "SetExpiringUserDelegationBindingByAdminRequestTypedDict": ".setexpiringuserdelegationbindingbyadminrequest",
+    "SetExpiringUserDelegationBindingByAdminResponse": ".setexpiringuserdelegationbindingbyadminresponse",
+    "SetExpiringUserDelegationBindingByAdminResponseTypedDict": ".setexpiringuserdelegationbindingbyadminresponse",
     "SFixed32Rules": ".sfixed32rules",
     "SFixed32RulesTypedDict": ".sfixed32rules",
     "SFixed64Rules": ".sfixed64rules",
@@ -5628,6 +5866,10 @@ _dynamic_imports: dict[str, str] = {
     "Outcome": ".taskauditaccessrequestoutcome",
     "TaskAuditAccessRequestOutcome": ".taskauditaccessrequestoutcome",
     "TaskAuditAccessRequestOutcomeTypedDict": ".taskauditaccessrequestoutcome",
+    "TaskAuditAccountLifecycleActionCreated": ".taskauditaccountlifecycleactioncreated",
+    "TaskAuditAccountLifecycleActionCreatedTypedDict": ".taskauditaccountlifecycleactioncreated",
+    "TaskAuditAccountLifecycleActionFailed": ".taskauditaccountlifecycleactionfailed",
+    "TaskAuditAccountLifecycleActionFailedTypedDict": ".taskauditaccountlifecycleactionfailed",
     "TaskAuditActionSubmitted": ".taskauditactionsubmitted",
     "TaskAuditActionSubmittedTypedDict": ".taskauditactionsubmitted",
     "TaskAuditApprovalAutoAcceptedByPolicy": ".taskauditapprovalautoacceptedbypolicy",
@@ -5690,6 +5932,8 @@ _dynamic_imports: dict[str, str] = {
     "TaskAuditPolicyChangedTypedDict": ".taskauditpolicychanged",
     "TaskAuditPolicyEvaluationStep": ".taskauditpolicyevaluationstep",
     "TaskAuditPolicyEvaluationStepTypedDict": ".taskauditpolicyevaluationstep",
+    "TaskAuditPolicyProvisionCancelled": ".taskauditpolicyprovisioncancelled",
+    "TaskAuditPolicyProvisionCancelledTypedDict": ".taskauditpolicyprovisioncancelled",
     "TaskAuditPolicyProvisionError": ".taskauditpolicyprovisionerror",
     "TaskAuditPolicyProvisionErrorTypedDict": ".taskauditpolicyprovisionerror",
     "TaskAuditPolicyProvisionReassigned": ".taskauditpolicyprovisionreassigned",
@@ -5772,8 +6016,11 @@ _dynamic_imports: dict[str, str] = {
     "TaskRevokeSourceReview": ".taskrevokesourcereview",
     "TaskRevokeSourceReviewTypedDict": ".taskrevokesourcereview",
     "AccountTypes": ".tasksearchrequest",
+    "CertifyOutcomes": ".tasksearchrequest",
     "CurrentStep": ".tasksearchrequest",
     "EmergencyStatus": ".tasksearchrequest",
+    "GrantOutcomes": ".tasksearchrequest",
+    "RevokeOutcomes": ".tasksearchrequest",
     "SortBy": ".tasksearchrequest",
     "StepApprovalTypes": ".tasksearchrequest",
     "TaskSearchRequest": ".tasksearchrequest",

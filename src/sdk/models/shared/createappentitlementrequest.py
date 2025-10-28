@@ -63,6 +63,7 @@ class CreateAppEntitlementRequestTypedDict(TypedDict):
     - multiStep
     - externalTicket
     - unconfigured
+    - action
 
     """
     alias: NotRequired[str]
@@ -133,6 +134,7 @@ class CreateAppEntitlementRequest(BaseModel):
     - multiStep
     - externalTicket
     - unconfigured
+    - action
 
     """
 

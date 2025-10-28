@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 from .boolfield import BoolField, BoolFieldTypedDict
+from .filefield import FileField, FileFieldTypedDict
 from .int64field import Int64Field, Int64FieldTypedDict
 from .stringfield import StringField, StringFieldTypedDict
 from .stringslicefield import StringSliceField, StringSliceFieldTypedDict
@@ -20,6 +21,7 @@ class FieldInputTypedDict(TypedDict):
     - boolField
     - stringSliceField
     - int64Field
+    - fileField
 
     """
 
@@ -32,6 +34,17 @@ class FieldInputTypedDict(TypedDict):
 
     This message contains a oneof named _rules. Only a single field of the following list may be set at a time:
     - rules
+
+    """
+    file_field: NotRequired[Nullable[FileFieldTypedDict]]
+    r"""The FileField message.
+
+    This message contains a oneof named view. Only a single field of the following list may be set at a time:
+    - fileInputField
+
+
+    This message contains a oneof named _max_file_size. Only a single field of the following list may be set at a time:
+    - maxFileSize
 
     """
     int64_field: NotRequired[Nullable[Int64FieldTypedDict]]
@@ -89,6 +102,7 @@ class FieldInput(BaseModel):
     - boolField
     - stringSliceField
     - int64Field
+    - fileField
 
     """
 
@@ -103,6 +117,20 @@ class FieldInput(BaseModel):
 
     This message contains a oneof named _rules. Only a single field of the following list may be set at a time:
     - rules
+
+    """
+
+    file_field: Annotated[
+        OptionalNullable[FileField], pydantic.Field(alias="fileField")
+    ] = UNSET
+    r"""The FileField message.
+
+    This message contains a oneof named view. Only a single field of the following list may be set at a time:
+    - fileInputField
+
+
+    This message contains a oneof named _max_file_size. Only a single field of the following list may be set at a time:
+    - maxFileSize
 
     """
 
@@ -167,6 +195,7 @@ class FieldInput(BaseModel):
     def serialize_model(self, handler):
         optional_fields = [
             "BoolField",
+            "FileField",
             "Int64Field",
             "StringField",
             "StringSliceField",
@@ -174,7 +203,13 @@ class FieldInput(BaseModel):
             "displayName",
             "name",
         ]
-        nullable_fields = ["BoolField", "Int64Field", "StringField", "StringSliceField"]
+        nullable_fields = [
+            "BoolField",
+            "FileField",
+            "Int64Field",
+            "StringField",
+            "StringSliceField",
+        ]
         null_default_fields = []
 
         serialized = handler(self)

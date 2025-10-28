@@ -220,8 +220,11 @@ if res.app_entitlement_search_service_search_response is not None:
 ### [app_resource_owners](docs/sdks/appresourceowners/README.md)
 
 * [add](docs/sdks/appresourceowners/README.md#add) - Add
+* [delete](docs/sdks/appresourceowners/README.md#delete) - Delete
 * [list](docs/sdks/appresourceowners/README.md#list) - List
+* [list_owner_i_ds](docs/sdks/appresourceowners/README.md#list_owner_i_ds) - List Owner I Ds
 * [remove](docs/sdks/appresourceowners/README.md#remove) - Remove
+* [set](docs/sdks/appresourceowners/README.md#set) - Set
 
 ### [app_resource_search](docs/sdks/appresourcesearch/README.md)
 
@@ -436,12 +439,21 @@ if res.app_entitlement_search_service_search_response is not None:
 
 * [search_entitlements](docs/sdks/requestcatalogsearch/README.md#search_entitlements) - Search Entitlements
 
+### [request_schema](docs/sdks/requestschema/README.md)
+
+* [create](docs/sdks/requestschema/README.md#create) - Create
+* [create_entitlement_binding](docs/sdks/requestschema/README.md#create_entitlement_binding) - Create Entitlement Binding
+* [delete](docs/sdks/requestschema/README.md#delete) - Delete
+* [find_binding_for_app_entitlement](docs/sdks/requestschema/README.md#find_binding_for_app_entitlement) - Find Binding For App Entitlement
+* [get](docs/sdks/requestschema/README.md#get) - Get
+* [remove_entitlement_binding](docs/sdks/requestschema/README.md#remove_entitlement_binding) - Remove Entitlement Binding
+* [update](docs/sdks/requestschema/README.md#update) - Update
+
 ### [roles](docs/sdks/roles/README.md)
 
 * [get](docs/sdks/roles/README.md#get) - Get
 * [list](docs/sdks/roles/README.md#list) - List
 * [update](docs/sdks/roles/README.md#update) - Update
-
 
 ### [session_settings](docs/sdks/sessionsettings/README.md)
 
@@ -505,6 +517,7 @@ if res.app_entitlement_search_service_search_response is not None:
 * [get](docs/sdks/user/README.md#get) - Get
 * [get_user_profile_types](docs/sdks/user/README.md#get_user_profile_types) - Get User Profile Types
 * [list](docs/sdks/user/README.md#list) - List
+* [set_expiring_user_delegation_binding_by_admin](docs/sdks/user/README.md#set_expiring_user_delegation_binding_by_admin) - Set Expiring User Delegation Binding By Admin
 
 ### [user_search](docs/sdks/usersearch/README.md)
 

@@ -58,6 +58,7 @@ class AppEntitlementTypedDict(TypedDict):
     - multiStep
     - externalTicket
     - unconfigured
+    - action
 
     """
     provision_policy1: NotRequired[ProvisionPolicyTypedDict]
@@ -71,6 +72,7 @@ class AppEntitlementTypedDict(TypedDict):
     - multiStep
     - externalTicket
     - unconfigured
+    - action
 
     """
     alias: NotRequired[str]
@@ -153,6 +155,7 @@ class AppEntitlement(BaseModel):
     - multiStep
     - externalTicket
     - unconfigured
+    - action
 
     """
 
@@ -169,6 +172,7 @@ class AppEntitlement(BaseModel):
     - multiStep
     - externalTicket
     - unconfigured
+    - action
 
     """
 
@@ -398,6 +402,7 @@ class AppEntitlementInputTypedDict(TypedDict):
     - multiStep
     - externalTicket
     - unconfigured
+    - action
 
     """
     provision_policy1: NotRequired[ProvisionPolicyInputTypedDict]
@@ -411,6 +416,7 @@ class AppEntitlementInputTypedDict(TypedDict):
     - multiStep
     - externalTicket
     - unconfigured
+    - action
 
     """
     alias: NotRequired[str]
@@ -482,6 +488,7 @@ class AppEntitlementInput(BaseModel):
     - multiStep
     - externalTicket
     - unconfigured
+    - action
 
     """
 
@@ -498,6 +505,7 @@ class AppEntitlementInput(BaseModel):
     - multiStep
     - externalTicket
     - unconfigured
+    - action
 
     """
 

@@ -23,6 +23,15 @@ class AccountTypes(str, Enum, metaclass=utils.OpenEnumMeta):
     APP_USER_TYPE_SYSTEM_ACCOUNT = "APP_USER_TYPE_SYSTEM_ACCOUNT"
 
 
+class CertifyOutcomes(str, Enum, metaclass=utils.OpenEnumMeta):
+    CERTIFY_OUTCOME_UNSPECIFIED = "CERTIFY_OUTCOME_UNSPECIFIED"
+    CERTIFY_OUTCOME_CERTIFIED = "CERTIFY_OUTCOME_CERTIFIED"
+    CERTIFY_OUTCOME_DECERTIFIED = "CERTIFY_OUTCOME_DECERTIFIED"
+    CERTIFY_OUTCOME_ERROR = "CERTIFY_OUTCOME_ERROR"
+    CERTIFY_OUTCOME_CANCELLED = "CERTIFY_OUTCOME_CANCELLED"
+    CERTIFY_OUTCOME_WAIT_TIMED_OUT = "CERTIFY_OUTCOME_WAIT_TIMED_OUT"
+
+
 class CurrentStep(str, Enum, metaclass=utils.OpenEnumMeta):
     r"""Search tasks that have this type of step as the current step."""
 
@@ -40,6 +49,24 @@ class EmergencyStatus(str, Enum, metaclass=utils.OpenEnumMeta):
     EMERGENCY = "EMERGENCY"
 
 
+class GrantOutcomes(str, Enum, metaclass=utils.OpenEnumMeta):
+    GRANT_OUTCOME_UNSPECIFIED = "GRANT_OUTCOME_UNSPECIFIED"
+    GRANT_OUTCOME_GRANTED = "GRANT_OUTCOME_GRANTED"
+    GRANT_OUTCOME_DENIED = "GRANT_OUTCOME_DENIED"
+    GRANT_OUTCOME_ERROR = "GRANT_OUTCOME_ERROR"
+    GRANT_OUTCOME_CANCELLED = "GRANT_OUTCOME_CANCELLED"
+    GRANT_OUTCOME_WAIT_TIMED_OUT = "GRANT_OUTCOME_WAIT_TIMED_OUT"
+
+
+class RevokeOutcomes(str, Enum, metaclass=utils.OpenEnumMeta):
+    REVOKE_OUTCOME_UNSPECIFIED = "REVOKE_OUTCOME_UNSPECIFIED"
+    REVOKE_OUTCOME_REVOKED = "REVOKE_OUTCOME_REVOKED"
+    REVOKE_OUTCOME_DENIED = "REVOKE_OUTCOME_DENIED"
+    REVOKE_OUTCOME_ERROR = "REVOKE_OUTCOME_ERROR"
+    REVOKE_OUTCOME_CANCELLED = "REVOKE_OUTCOME_CANCELLED"
+    REVOKE_OUTCOME_WAIT_TIMED_OUT = "REVOKE_OUTCOME_WAIT_TIMED_OUT"
+
+
 class SortBy(str, Enum, metaclass=utils.OpenEnumMeta):
     r"""Sort tasks in a specific order."""
 
@@ -51,6 +78,9 @@ class SortBy(str, Enum, metaclass=utils.OpenEnumMeta):
     TASK_SEARCH_SORT_BY_TICKET_ID = "TASK_SEARCH_SORT_BY_TICKET_ID"
     TASK_SEARCH_SORT_BY_CREATED_AT = "TASK_SEARCH_SORT_BY_CREATED_AT"
     TASK_SEARCH_SORT_BY_REVERSE_CREATED_AT = "TASK_SEARCH_SORT_BY_REVERSE_CREATED_AT"
+    TASK_SEARCH_SORT_BY_APP_RESOURCE_ID_AND_APP_ENTITLEMENT = (
+        "TASK_SEARCH_SORT_BY_APP_RESOURCE_ID_AND_APP_ENTITLEMENT"
+    )
 
 
 class StepApprovalTypes(str, Enum, metaclass=utils.OpenEnumMeta):
@@ -100,6 +130,8 @@ class TaskSearchRequestTypedDict(TypedDict):
     r"""Search tasks that are currently assigned to this user, or that are closed and were previously approved by this user."""
     assignees_in_ids: NotRequired[Nullable[List[str]]]
     r"""Search tasks by  List of UserIDs which are currently assigned these Tasks"""
+    certify_outcomes: NotRequired[Nullable[List[CertifyOutcomes]]]
+    r"""Search tasks by certify outcome"""
     created_after: NotRequired[datetime]
     created_before: NotRequired[datetime]
     current_step: NotRequired[CurrentStep]
@@ -112,6 +144,9 @@ class TaskSearchRequestTypedDict(TypedDict):
     r"""Search tasks that do not have any of these app resource type IDs."""
     exclude_ids: NotRequired[Nullable[List[str]]]
     r"""Exclude Specific TaskIDs from this serach result."""
+    grant_outcomes: NotRequired[Nullable[List[GrantOutcomes]]]
+    r"""Search tasks by grant outcome"""
+    include_acted_after: NotRequired[datetime]
     include_deleted: NotRequired[bool]
     r"""Whether or not to include deleted tasks."""
     my_work_user_ids: NotRequired[Nullable[List[str]]]
@@ -121,6 +156,8 @@ class TaskSearchRequestTypedDict(TypedDict):
     r"""Search tasks that were created by any of the users in this array."""
     opener_or_subject_user_id: NotRequired[str]
     r"""Search tasks that were opened by this user, or that the user is the subject of."""
+    outcome_after: NotRequired[datetime]
+    outcome_before: NotRequired[datetime]
     page_size: NotRequired[int]
     r"""The pageSize where 0 <= pageSize <= 100. Values < 10 will be set to 10. A value of 0 returns the default page size (currently 25)"""
     page_token: NotRequired[str]
@@ -131,6 +168,8 @@ class TaskSearchRequestTypedDict(TypedDict):
     r"""Fuzzy search tasks by display name or description. Also can search by numeric ID."""
     refs: NotRequired[Nullable[List[TaskRefTypedDict]]]
     r"""Query tasks by display name, description, or numeric ID."""
+    revoke_outcomes: NotRequired[Nullable[List[RevokeOutcomes]]]
+    r"""Search tasks by revoke outcome"""
     sort_by: NotRequired[SortBy]
     r"""Sort tasks in a specific order."""
     step_approval_types: NotRequired[Nullable[List[StepApprovalTypes]]]
@@ -209,6 +248,14 @@ class TaskSearchRequest(BaseModel):
     ] = UNSET
     r"""Search tasks by  List of UserIDs which are currently assigned these Tasks"""
 
+    certify_outcomes: Annotated[
+        OptionalNullable[
+            List[Annotated[CertifyOutcomes, PlainValidator(validate_open_enum(False))]]
+        ],
+        pydantic.Field(alias="certifyOutcomes"),
+    ] = UNSET
+    r"""Search tasks by certify outcome"""
+
     created_after: Annotated[
         Optional[datetime], pydantic.Field(alias="createdAfter")
     ] = None
@@ -244,6 +291,18 @@ class TaskSearchRequest(BaseModel):
     ] = UNSET
     r"""Exclude Specific TaskIDs from this serach result."""
 
+    grant_outcomes: Annotated[
+        OptionalNullable[
+            List[Annotated[GrantOutcomes, PlainValidator(validate_open_enum(False))]]
+        ],
+        pydantic.Field(alias="grantOutcomes"),
+    ] = UNSET
+    r"""Search tasks by grant outcome"""
+
+    include_acted_after: Annotated[
+        Optional[datetime], pydantic.Field(alias="includeActedAfter")
+    ] = None
+
     include_deleted: Annotated[
         Optional[bool], pydantic.Field(alias="includeDeleted")
     ] = None
@@ -268,6 +327,14 @@ class TaskSearchRequest(BaseModel):
     ] = None
     r"""Search tasks that were opened by this user, or that the user is the subject of."""
 
+    outcome_after: Annotated[
+        Optional[datetime], pydantic.Field(alias="outcomeAfter")
+    ] = None
+
+    outcome_before: Annotated[
+        Optional[datetime], pydantic.Field(alias="outcomeBefore")
+    ] = None
+
     page_size: Annotated[Optional[int], pydantic.Field(alias="pageSize")] = None
     r"""The pageSize where 0 <= pageSize <= 100. Values < 10 will be set to 10. A value of 0 returns the default page size (currently 25)"""
 
@@ -284,6 +351,14 @@ class TaskSearchRequest(BaseModel):
 
     refs: OptionalNullable[List[TaskRef]] = UNSET
     r"""Query tasks by display name, description, or numeric ID."""
+
+    revoke_outcomes: Annotated[
+        OptionalNullable[
+            List[Annotated[RevokeOutcomes, PlainValidator(validate_open_enum(False))]]
+        ],
+        pydantic.Field(alias="revokeOutcomes"),
+    ] = UNSET
+    r"""Search tasks by revoke outcome"""
 
     sort_by: Annotated[
         Annotated[Optional[SortBy], PlainValidator(validate_open_enum(False))],
@@ -339,6 +414,7 @@ class TaskSearchRequest(BaseModel):
             "applicationIds",
             "assignedOrStepApproverUserId",
             "assigneesInIds",
+            "certifyOutcomes",
             "createdAfter",
             "createdBefore",
             "currentStep",
@@ -346,16 +422,21 @@ class TaskSearchRequest(BaseModel):
             "excludeAppEntitlementIds",
             "excludeAppResourceTypeIds",
             "excludeIds",
+            "grantOutcomes",
+            "includeActedAfter",
             "includeDeleted",
             "myWorkUserIds",
             "olderThanDuration",
             "openerIds",
             "openerOrSubjectUserId",
+            "outcomeAfter",
+            "outcomeBefore",
             "pageSize",
             "pageToken",
             "previouslyActedOnIds",
             "query",
             "refs",
+            "revokeOutcomes",
             "sortBy",
             "stepApprovalTypes",
             "subjectIds",
@@ -373,13 +454,16 @@ class TaskSearchRequest(BaseModel):
             "appUserSubjectIds",
             "applicationIds",
             "assigneesInIds",
+            "certifyOutcomes",
             "excludeAppEntitlementIds",
             "excludeAppResourceTypeIds",
             "excludeIds",
+            "grantOutcomes",
             "myWorkUserIds",
             "openerIds",
             "previouslyActedOnIds",
             "refs",
+            "revokeOutcomes",
             "stepApprovalTypes",
             "subjectIds",
             "taskStates",

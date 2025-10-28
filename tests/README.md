@@ -5,9 +5,19 @@ This directory contains end-to-end tests that exercise the generated SDK against
 ## Setup
 
 1. Install dependencies:
+
+Using **uv** (recommended):
+```bash
+uv sync --dev
+```
+
+Using **Poetry**:
 ```bash
 poetry install --with dev
-# or
+```
+
+Using **pip**:
+```bash
 pip install -e ".[dev]"
 ```
 
@@ -26,32 +36,34 @@ cp env.example .env.local
 
 Run all tests:
 ```bash
-pytest
+uv run pytest
+# or
+poetry run pytest
 ```
 
 Run a specific test file:
 ```bash
-pytest tests/test_apps.py
+uv run pytest tests/test_apps.py
 ```
 
 Run a specific test class:
 ```bash
-pytest tests/test_apps.py::TestApps
+uv run pytest tests/test_apps.py::TestApps
 ```
 
 Run a specific test method:
 ```bash
-pytest tests/test_apps.py::TestApps::test_list_should_return_status_200_and_valid_response
+uv run pytest tests/test_apps.py::TestApps::test_list_should_return_status_200_and_valid_response
 ```
 
 Run with verbose output:
 ```bash
-pytest -v
+uv run pytest -v
 ```
 
-Run with coverage:
+Run with coverage (requires pytest-cov):
 ```bash
-pytest --cov=src/sdk
+uv run pytest --cov=src/sdk
 ```
 
 ## Required environment variables

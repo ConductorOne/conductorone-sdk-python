@@ -84,7 +84,7 @@ class AppResourceOwners(BaseSDK):
                 config=self.sdk_configuration,
                 base_url=base_url or "",
                 operation_id="c1.api.app.v1.AppResourceOwners.Add",
-                oauth2_scopes=[],
+                oauth2_scopes=None,
                 security_source=self.sdk_configuration.security,
             ),
             request=req,
@@ -184,7 +184,7 @@ class AppResourceOwners(BaseSDK):
                 config=self.sdk_configuration,
                 base_url=base_url or "",
                 operation_id="c1.api.app.v1.AppResourceOwners.Add",
-                oauth2_scopes=[],
+                oauth2_scopes=None,
                 security_source=self.sdk_configuration.security,
             ),
             request=req,
@@ -196,6 +196,206 @@ class AppResourceOwners(BaseSDK):
             return operations.C1APIAppV1AppResourceOwnersAddResponse(
                 add_app_resource_owner_response=unmarshal_json_response(
                     Optional[shared.AddAppResourceOwnerResponse], http_res
+                ),
+                status_code=http_res.status_code,
+                content_type=http_res.headers.get("Content-Type") or "",
+                raw_response=http_res,
+            )
+        if utils.match_response(http_res, "4XX", "*"):
+            http_res_text = await utils.stream_to_text_async(http_res)
+            raise errors.SDKError("API error occurred", http_res, http_res_text)
+        if utils.match_response(http_res, "5XX", "*"):
+            http_res_text = await utils.stream_to_text_async(http_res)
+            raise errors.SDKError("API error occurred", http_res, http_res_text)
+
+        raise errors.SDKError("Unexpected response received", http_res)
+
+    def delete(
+        self,
+        *,
+        request: Union[
+            operations.C1APIAppV1AppResourceOwnersDeleteRequest,
+            operations.C1APIAppV1AppResourceOwnersDeleteRequestTypedDict,
+        ],
+        retries: OptionalNullable[utils.RetryConfig] = UNSET,
+        server_url: Optional[str] = None,
+        timeout_ms: Optional[int] = None,
+        http_headers: Optional[Mapping[str, str]] = None,
+    ) -> operations.C1APIAppV1AppResourceOwnersDeleteResponse:
+        r"""Delete
+
+        Delete deletes the owners from a given app resource.
+
+        :param request: The request object to send.
+        :param retries: Override the default retry configuration for this method
+        :param server_url: Override the default server URL for this method
+        :param timeout_ms: Override the default request timeout configuration for this method in milliseconds
+        :param http_headers: Additional headers to set or replace on requests.
+        """
+        base_url = None
+        url_variables = None
+        if timeout_ms is None:
+            timeout_ms = self.sdk_configuration.timeout_ms
+
+        if server_url is not None:
+            base_url = server_url
+        else:
+            base_url = self._get_url(base_url, url_variables)
+
+        if not isinstance(request, BaseModel):
+            request = utils.unmarshal(
+                request, operations.C1APIAppV1AppResourceOwnersDeleteRequest
+            )
+        request = cast(operations.C1APIAppV1AppResourceOwnersDeleteRequest, request)
+
+        req = self._build_request(
+            method="DELETE",
+            path="/api/v1/apps/{app_id}/resource_types/{resource_type_id}/resource/{resource_id}/ownerids",
+            base_url=base_url,
+            url_variables=url_variables,
+            request=request,
+            request_body_required=False,
+            request_has_path_params=True,
+            request_has_query_params=True,
+            user_agent_header="user-agent",
+            accept_header_value="application/json",
+            http_headers=http_headers,
+            security=self.sdk_configuration.security,
+            get_serialized_body=lambda: utils.serialize_request_body(
+                request.delete_app_resource_owners_request,
+                False,
+                True,
+                "json",
+                Optional[shared.DeleteAppResourceOwnersRequest],
+            ),
+            timeout_ms=timeout_ms,
+        )
+
+        if retries == UNSET:
+            if self.sdk_configuration.retry_config is not UNSET:
+                retries = self.sdk_configuration.retry_config
+
+        retry_config = None
+        if isinstance(retries, utils.RetryConfig):
+            retry_config = (retries, ["429", "500", "502", "503", "504"])
+
+        http_res = self.do_request(
+            hook_ctx=HookContext(
+                config=self.sdk_configuration,
+                base_url=base_url or "",
+                operation_id="c1.api.app.v1.AppResourceOwners.Delete",
+                oauth2_scopes=None,
+                security_source=self.sdk_configuration.security,
+            ),
+            request=req,
+            error_status_codes=["4XX", "5XX"],
+            retry_config=retry_config,
+        )
+
+        if utils.match_response(http_res, "200", "application/json"):
+            return operations.C1APIAppV1AppResourceOwnersDeleteResponse(
+                delete_app_resource_owners_response=unmarshal_json_response(
+                    Optional[shared.DeleteAppResourceOwnersResponse], http_res
+                ),
+                status_code=http_res.status_code,
+                content_type=http_res.headers.get("Content-Type") or "",
+                raw_response=http_res,
+            )
+        if utils.match_response(http_res, "4XX", "*"):
+            http_res_text = utils.stream_to_text(http_res)
+            raise errors.SDKError("API error occurred", http_res, http_res_text)
+        if utils.match_response(http_res, "5XX", "*"):
+            http_res_text = utils.stream_to_text(http_res)
+            raise errors.SDKError("API error occurred", http_res, http_res_text)
+
+        raise errors.SDKError("Unexpected response received", http_res)
+
+    async def delete_async(
+        self,
+        *,
+        request: Union[
+            operations.C1APIAppV1AppResourceOwnersDeleteRequest,
+            operations.C1APIAppV1AppResourceOwnersDeleteRequestTypedDict,
+        ],
+        retries: OptionalNullable[utils.RetryConfig] = UNSET,
+        server_url: Optional[str] = None,
+        timeout_ms: Optional[int] = None,
+        http_headers: Optional[Mapping[str, str]] = None,
+    ) -> operations.C1APIAppV1AppResourceOwnersDeleteResponse:
+        r"""Delete
+
+        Delete deletes the owners from a given app resource.
+
+        :param request: The request object to send.
+        :param retries: Override the default retry configuration for this method
+        :param server_url: Override the default server URL for this method
+        :param timeout_ms: Override the default request timeout configuration for this method in milliseconds
+        :param http_headers: Additional headers to set or replace on requests.
+        """
+        base_url = None
+        url_variables = None
+        if timeout_ms is None:
+            timeout_ms = self.sdk_configuration.timeout_ms
+
+        if server_url is not None:
+            base_url = server_url
+        else:
+            base_url = self._get_url(base_url, url_variables)
+
+        if not isinstance(request, BaseModel):
+            request = utils.unmarshal(
+                request, operations.C1APIAppV1AppResourceOwnersDeleteRequest
+            )
+        request = cast(operations.C1APIAppV1AppResourceOwnersDeleteRequest, request)
+
+        req = self._build_request_async(
+            method="DELETE",
+            path="/api/v1/apps/{app_id}/resource_types/{resource_type_id}/resource/{resource_id}/ownerids",
+            base_url=base_url,
+            url_variables=url_variables,
+            request=request,
+            request_body_required=False,
+            request_has_path_params=True,
+            request_has_query_params=True,
+            user_agent_header="user-agent",
+            accept_header_value="application/json",
+            http_headers=http_headers,
+            security=self.sdk_configuration.security,
+            get_serialized_body=lambda: utils.serialize_request_body(
+                request.delete_app_resource_owners_request,
+                False,
+                True,
+                "json",
+                Optional[shared.DeleteAppResourceOwnersRequest],
+            ),
+            timeout_ms=timeout_ms,
+        )
+
+        if retries == UNSET:
+            if self.sdk_configuration.retry_config is not UNSET:
+                retries = self.sdk_configuration.retry_config
+
+        retry_config = None
+        if isinstance(retries, utils.RetryConfig):
+            retry_config = (retries, ["429", "500", "502", "503", "504"])
+
+        http_res = await self.do_request_async(
+            hook_ctx=HookContext(
+                config=self.sdk_configuration,
+                base_url=base_url or "",
+                operation_id="c1.api.app.v1.AppResourceOwners.Delete",
+                oauth2_scopes=None,
+                security_source=self.sdk_configuration.security,
+            ),
+            request=req,
+            error_status_codes=["4XX", "5XX"],
+            retry_config=retry_config,
+        )
+
+        if utils.match_response(http_res, "200", "application/json"):
+            return operations.C1APIAppV1AppResourceOwnersDeleteResponse(
+                delete_app_resource_owners_response=unmarshal_json_response(
+                    Optional[shared.DeleteAppResourceOwnersResponse], http_res
                 ),
                 status_code=http_res.status_code,
                 content_type=http_res.headers.get("Content-Type") or "",
@@ -277,7 +477,7 @@ class AppResourceOwners(BaseSDK):
                 config=self.sdk_configuration,
                 base_url=base_url or "",
                 operation_id="c1.api.app.v1.AppResourceOwners.List",
-                oauth2_scopes=[],
+                oauth2_scopes=None,
                 security_source=self.sdk_configuration.security,
             ),
             request=req,
@@ -370,7 +570,7 @@ class AppResourceOwners(BaseSDK):
                 config=self.sdk_configuration,
                 base_url=base_url or "",
                 operation_id="c1.api.app.v1.AppResourceOwners.List",
-                oauth2_scopes=[],
+                oauth2_scopes=None,
                 security_source=self.sdk_configuration.security,
             ),
             request=req,
@@ -382,6 +582,196 @@ class AppResourceOwners(BaseSDK):
             return operations.C1APIAppV1AppResourceOwnersListResponse(
                 list_app_resource_owners_response=unmarshal_json_response(
                     Optional[shared.ListAppResourceOwnersResponse], http_res
+                ),
+                status_code=http_res.status_code,
+                content_type=http_res.headers.get("Content-Type") or "",
+                raw_response=http_res,
+            )
+        if utils.match_response(http_res, "4XX", "*"):
+            http_res_text = await utils.stream_to_text_async(http_res)
+            raise errors.SDKError("API error occurred", http_res, http_res_text)
+        if utils.match_response(http_res, "5XX", "*"):
+            http_res_text = await utils.stream_to_text_async(http_res)
+            raise errors.SDKError("API error occurred", http_res, http_res_text)
+
+        raise errors.SDKError("Unexpected response received", http_res)
+
+    def list_owner_i_ds(
+        self,
+        *,
+        request: Union[
+            operations.C1APIAppV1AppResourceOwnersListOwnerIDsRequest,
+            operations.C1APIAppV1AppResourceOwnersListOwnerIDsRequestTypedDict,
+        ],
+        retries: OptionalNullable[utils.RetryConfig] = UNSET,
+        server_url: Optional[str] = None,
+        timeout_ms: Optional[int] = None,
+        http_headers: Optional[Mapping[str, str]] = None,
+    ) -> operations.C1APIAppV1AppResourceOwnersListOwnerIDsResponse:
+        r"""List Owner I Ds
+
+        ListOwnerIDs lists owner IDs for a given app resource.
+
+        :param request: The request object to send.
+        :param retries: Override the default retry configuration for this method
+        :param server_url: Override the default server URL for this method
+        :param timeout_ms: Override the default request timeout configuration for this method in milliseconds
+        :param http_headers: Additional headers to set or replace on requests.
+        """
+        base_url = None
+        url_variables = None
+        if timeout_ms is None:
+            timeout_ms = self.sdk_configuration.timeout_ms
+
+        if server_url is not None:
+            base_url = server_url
+        else:
+            base_url = self._get_url(base_url, url_variables)
+
+        if not isinstance(request, BaseModel):
+            request = utils.unmarshal(
+                request, operations.C1APIAppV1AppResourceOwnersListOwnerIDsRequest
+            )
+        request = cast(
+            operations.C1APIAppV1AppResourceOwnersListOwnerIDsRequest, request
+        )
+
+        req = self._build_request(
+            method="GET",
+            path="/api/v1/apps/{app_id}/resource_types/{resource_type_id}/resource/{resource_id}/ownerids",
+            base_url=base_url,
+            url_variables=url_variables,
+            request=request,
+            request_body_required=False,
+            request_has_path_params=True,
+            request_has_query_params=True,
+            user_agent_header="user-agent",
+            accept_header_value="application/json",
+            http_headers=http_headers,
+            security=self.sdk_configuration.security,
+            timeout_ms=timeout_ms,
+        )
+
+        if retries == UNSET:
+            if self.sdk_configuration.retry_config is not UNSET:
+                retries = self.sdk_configuration.retry_config
+
+        retry_config = None
+        if isinstance(retries, utils.RetryConfig):
+            retry_config = (retries, ["429", "500", "502", "503", "504"])
+
+        http_res = self.do_request(
+            hook_ctx=HookContext(
+                config=self.sdk_configuration,
+                base_url=base_url or "",
+                operation_id="c1.api.app.v1.AppResourceOwners.ListOwnerIDs",
+                oauth2_scopes=None,
+                security_source=self.sdk_configuration.security,
+            ),
+            request=req,
+            error_status_codes=["4XX", "5XX"],
+            retry_config=retry_config,
+        )
+
+        if utils.match_response(http_res, "200", "application/json"):
+            return operations.C1APIAppV1AppResourceOwnersListOwnerIDsResponse(
+                list_app_resource_owner_i_ds_response=unmarshal_json_response(
+                    Optional[shared.ListAppResourceOwnerIDsResponse], http_res
+                ),
+                status_code=http_res.status_code,
+                content_type=http_res.headers.get("Content-Type") or "",
+                raw_response=http_res,
+            )
+        if utils.match_response(http_res, "4XX", "*"):
+            http_res_text = utils.stream_to_text(http_res)
+            raise errors.SDKError("API error occurred", http_res, http_res_text)
+        if utils.match_response(http_res, "5XX", "*"):
+            http_res_text = utils.stream_to_text(http_res)
+            raise errors.SDKError("API error occurred", http_res, http_res_text)
+
+        raise errors.SDKError("Unexpected response received", http_res)
+
+    async def list_owner_i_ds_async(
+        self,
+        *,
+        request: Union[
+            operations.C1APIAppV1AppResourceOwnersListOwnerIDsRequest,
+            operations.C1APIAppV1AppResourceOwnersListOwnerIDsRequestTypedDict,
+        ],
+        retries: OptionalNullable[utils.RetryConfig] = UNSET,
+        server_url: Optional[str] = None,
+        timeout_ms: Optional[int] = None,
+        http_headers: Optional[Mapping[str, str]] = None,
+    ) -> operations.C1APIAppV1AppResourceOwnersListOwnerIDsResponse:
+        r"""List Owner I Ds
+
+        ListOwnerIDs lists owner IDs for a given app resource.
+
+        :param request: The request object to send.
+        :param retries: Override the default retry configuration for this method
+        :param server_url: Override the default server URL for this method
+        :param timeout_ms: Override the default request timeout configuration for this method in milliseconds
+        :param http_headers: Additional headers to set or replace on requests.
+        """
+        base_url = None
+        url_variables = None
+        if timeout_ms is None:
+            timeout_ms = self.sdk_configuration.timeout_ms
+
+        if server_url is not None:
+            base_url = server_url
+        else:
+            base_url = self._get_url(base_url, url_variables)
+
+        if not isinstance(request, BaseModel):
+            request = utils.unmarshal(
+                request, operations.C1APIAppV1AppResourceOwnersListOwnerIDsRequest
+            )
+        request = cast(
+            operations.C1APIAppV1AppResourceOwnersListOwnerIDsRequest, request
+        )
+
+        req = self._build_request_async(
+            method="GET",
+            path="/api/v1/apps/{app_id}/resource_types/{resource_type_id}/resource/{resource_id}/ownerids",
+            base_url=base_url,
+            url_variables=url_variables,
+            request=request,
+            request_body_required=False,
+            request_has_path_params=True,
+            request_has_query_params=True,
+            user_agent_header="user-agent",
+            accept_header_value="application/json",
+            http_headers=http_headers,
+            security=self.sdk_configuration.security,
+            timeout_ms=timeout_ms,
+        )
+
+        if retries == UNSET:
+            if self.sdk_configuration.retry_config is not UNSET:
+                retries = self.sdk_configuration.retry_config
+
+        retry_config = None
+        if isinstance(retries, utils.RetryConfig):
+            retry_config = (retries, ["429", "500", "502", "503", "504"])
+
+        http_res = await self.do_request_async(
+            hook_ctx=HookContext(
+                config=self.sdk_configuration,
+                base_url=base_url or "",
+                operation_id="c1.api.app.v1.AppResourceOwners.ListOwnerIDs",
+                oauth2_scopes=None,
+                security_source=self.sdk_configuration.security,
+            ),
+            request=req,
+            error_status_codes=["4XX", "5XX"],
+            retry_config=retry_config,
+        )
+
+        if utils.match_response(http_res, "200", "application/json"):
+            return operations.C1APIAppV1AppResourceOwnersListOwnerIDsResponse(
+                list_app_resource_owner_i_ds_response=unmarshal_json_response(
+                    Optional[shared.ListAppResourceOwnerIDsResponse], http_res
                 ),
                 status_code=http_res.status_code,
                 content_type=http_res.headers.get("Content-Type") or "",
@@ -470,7 +860,7 @@ class AppResourceOwners(BaseSDK):
                 config=self.sdk_configuration,
                 base_url=base_url or "",
                 operation_id="c1.api.app.v1.AppResourceOwners.Remove",
-                oauth2_scopes=[],
+                oauth2_scopes=None,
                 security_source=self.sdk_configuration.security,
             ),
             request=req,
@@ -570,7 +960,7 @@ class AppResourceOwners(BaseSDK):
                 config=self.sdk_configuration,
                 base_url=base_url or "",
                 operation_id="c1.api.app.v1.AppResourceOwners.Remove",
-                oauth2_scopes=[],
+                oauth2_scopes=None,
                 security_source=self.sdk_configuration.security,
             ),
             request=req,
@@ -582,6 +972,206 @@ class AppResourceOwners(BaseSDK):
             return operations.C1APIAppV1AppResourceOwnersRemoveResponse(
                 remove_app_resource_owner_response=unmarshal_json_response(
                     Optional[shared.RemoveAppResourceOwnerResponse], http_res
+                ),
+                status_code=http_res.status_code,
+                content_type=http_res.headers.get("Content-Type") or "",
+                raw_response=http_res,
+            )
+        if utils.match_response(http_res, "4XX", "*"):
+            http_res_text = await utils.stream_to_text_async(http_res)
+            raise errors.SDKError("API error occurred", http_res, http_res_text)
+        if utils.match_response(http_res, "5XX", "*"):
+            http_res_text = await utils.stream_to_text_async(http_res)
+            raise errors.SDKError("API error occurred", http_res, http_res_text)
+
+        raise errors.SDKError("Unexpected response received", http_res)
+
+    def set(
+        self,
+        *,
+        request: Union[
+            operations.C1APIAppV1AppResourceOwnersSetRequest,
+            operations.C1APIAppV1AppResourceOwnersSetRequestTypedDict,
+        ],
+        retries: OptionalNullable[utils.RetryConfig] = UNSET,
+        server_url: Optional[str] = None,
+        timeout_ms: Optional[int] = None,
+        http_headers: Optional[Mapping[str, str]] = None,
+    ) -> operations.C1APIAppV1AppResourceOwnersSetResponse:
+        r"""Set
+
+        Sets the owners for a given app resource to the specified list of users.
+
+        :param request: The request object to send.
+        :param retries: Override the default retry configuration for this method
+        :param server_url: Override the default server URL for this method
+        :param timeout_ms: Override the default request timeout configuration for this method in milliseconds
+        :param http_headers: Additional headers to set or replace on requests.
+        """
+        base_url = None
+        url_variables = None
+        if timeout_ms is None:
+            timeout_ms = self.sdk_configuration.timeout_ms
+
+        if server_url is not None:
+            base_url = server_url
+        else:
+            base_url = self._get_url(base_url, url_variables)
+
+        if not isinstance(request, BaseModel):
+            request = utils.unmarshal(
+                request, operations.C1APIAppV1AppResourceOwnersSetRequest
+            )
+        request = cast(operations.C1APIAppV1AppResourceOwnersSetRequest, request)
+
+        req = self._build_request(
+            method="PUT",
+            path="/api/v1/apps/{app_id}/resource_types/{resource_type_id}/resource/{resource_id}/owners",
+            base_url=base_url,
+            url_variables=url_variables,
+            request=request,
+            request_body_required=False,
+            request_has_path_params=True,
+            request_has_query_params=True,
+            user_agent_header="user-agent",
+            accept_header_value="application/json",
+            http_headers=http_headers,
+            security=self.sdk_configuration.security,
+            get_serialized_body=lambda: utils.serialize_request_body(
+                request.set_app_resource_owners_request,
+                False,
+                True,
+                "json",
+                Optional[shared.SetAppResourceOwnersRequest],
+            ),
+            timeout_ms=timeout_ms,
+        )
+
+        if retries == UNSET:
+            if self.sdk_configuration.retry_config is not UNSET:
+                retries = self.sdk_configuration.retry_config
+
+        retry_config = None
+        if isinstance(retries, utils.RetryConfig):
+            retry_config = (retries, ["429", "500", "502", "503", "504"])
+
+        http_res = self.do_request(
+            hook_ctx=HookContext(
+                config=self.sdk_configuration,
+                base_url=base_url or "",
+                operation_id="c1.api.app.v1.AppResourceOwners.Set",
+                oauth2_scopes=None,
+                security_source=self.sdk_configuration.security,
+            ),
+            request=req,
+            error_status_codes=["4XX", "5XX"],
+            retry_config=retry_config,
+        )
+
+        if utils.match_response(http_res, "200", "application/json"):
+            return operations.C1APIAppV1AppResourceOwnersSetResponse(
+                set_app_resource_owners_response=unmarshal_json_response(
+                    Optional[shared.SetAppResourceOwnersResponse], http_res
+                ),
+                status_code=http_res.status_code,
+                content_type=http_res.headers.get("Content-Type") or "",
+                raw_response=http_res,
+            )
+        if utils.match_response(http_res, "4XX", "*"):
+            http_res_text = utils.stream_to_text(http_res)
+            raise errors.SDKError("API error occurred", http_res, http_res_text)
+        if utils.match_response(http_res, "5XX", "*"):
+            http_res_text = utils.stream_to_text(http_res)
+            raise errors.SDKError("API error occurred", http_res, http_res_text)
+
+        raise errors.SDKError("Unexpected response received", http_res)
+
+    async def set_async(
+        self,
+        *,
+        request: Union[
+            operations.C1APIAppV1AppResourceOwnersSetRequest,
+            operations.C1APIAppV1AppResourceOwnersSetRequestTypedDict,
+        ],
+        retries: OptionalNullable[utils.RetryConfig] = UNSET,
+        server_url: Optional[str] = None,
+        timeout_ms: Optional[int] = None,
+        http_headers: Optional[Mapping[str, str]] = None,
+    ) -> operations.C1APIAppV1AppResourceOwnersSetResponse:
+        r"""Set
+
+        Sets the owners for a given app resource to the specified list of users.
+
+        :param request: The request object to send.
+        :param retries: Override the default retry configuration for this method
+        :param server_url: Override the default server URL for this method
+        :param timeout_ms: Override the default request timeout configuration for this method in milliseconds
+        :param http_headers: Additional headers to set or replace on requests.
+        """
+        base_url = None
+        url_variables = None
+        if timeout_ms is None:
+            timeout_ms = self.sdk_configuration.timeout_ms
+
+        if server_url is not None:
+            base_url = server_url
+        else:
+            base_url = self._get_url(base_url, url_variables)
+
+        if not isinstance(request, BaseModel):
+            request = utils.unmarshal(
+                request, operations.C1APIAppV1AppResourceOwnersSetRequest
+            )
+        request = cast(operations.C1APIAppV1AppResourceOwnersSetRequest, request)
+
+        req = self._build_request_async(
+            method="PUT",
+            path="/api/v1/apps/{app_id}/resource_types/{resource_type_id}/resource/{resource_id}/owners",
+            base_url=base_url,
+            url_variables=url_variables,
+            request=request,
+            request_body_required=False,
+            request_has_path_params=True,
+            request_has_query_params=True,
+            user_agent_header="user-agent",
+            accept_header_value="application/json",
+            http_headers=http_headers,
+            security=self.sdk_configuration.security,
+            get_serialized_body=lambda: utils.serialize_request_body(
+                request.set_app_resource_owners_request,
+                False,
+                True,
+                "json",
+                Optional[shared.SetAppResourceOwnersRequest],
+            ),
+            timeout_ms=timeout_ms,
+        )
+
+        if retries == UNSET:
+            if self.sdk_configuration.retry_config is not UNSET:
+                retries = self.sdk_configuration.retry_config
+
+        retry_config = None
+        if isinstance(retries, utils.RetryConfig):
+            retry_config = (retries, ["429", "500", "502", "503", "504"])
+
+        http_res = await self.do_request_async(
+            hook_ctx=HookContext(
+                config=self.sdk_configuration,
+                base_url=base_url or "",
+                operation_id="c1.api.app.v1.AppResourceOwners.Set",
+                oauth2_scopes=None,
+                security_source=self.sdk_configuration.security,
+            ),
+            request=req,
+            error_status_codes=["4XX", "5XX"],
+            retry_config=retry_config,
+        )
+
+        if utils.match_response(http_res, "200", "application/json"):
+            return operations.C1APIAppV1AppResourceOwnersSetResponse(
+                set_app_resource_owners_response=unmarshal_json_response(
+                    Optional[shared.SetAppResourceOwnersResponse], http_res
                 ),
                 status_code=http_res.status_code,
                 content_type=http_res.headers.get("Content-Type") or "",
