@@ -10,3 +10,6 @@ __pycache__/
 /build/
 /dist/
 openapi.egg-info/
+.env
+.env.local
+.env.*.local

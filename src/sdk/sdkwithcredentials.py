@@ -1,21 +1,8 @@
 from .sdk import SDK
 from .tokensource import Token
-import requests 
-from requests.adapters import HTTPAdapter
-
-class TokenAuth(HTTPAdapter):
-    """A Transport Adapter that handles Token authentication."""
-
-    def __init__(self, token):
-        self.token = token
-        super().__init__()
-
-    def add_headers(self, request, **kwargs):
-        """Add headers to a request before sending."""
-        request.headers['Authorization'] = f'Bearer {self.token}'
-
-
-
+from .models import shared
+import httpx
+import requests
 
 def sdk_with_credentials(client_id: str, client_secret: str, token_url: str = '', **kwargs) -> SDK:
     """Instantiates the SDK configuring it with the provided kwargs and an authed client.
@@ -36,8 +23,6 @@ def sdk_with_credentials(client_id: str, client_secret: str, token_url: str = ''
     :param kwargs: Additional arguments to pass to the SDK constructor
     :type kwargs: dict[str, any]
     """
-    client = requests.Session()
-
     url = client_id.split('@')[1].split('/')[0]
     # If no tenant_domain is provided, use the first part of the url
     if 'tenant_domain' not in kwargs:
@@ -46,13 +31,16 @@ def sdk_with_credentials(client_id: str, client_secret: str, token_url: str = ''
         # If no token_url is provided, use the url in the client_id
         token_url = 'https://' + url
 
-    token_instance = Token(client, token_url, client_id, client_secret)
+    # Create requests client for token request (Token class expects requests.Session)
+    temp_client = requests.Session()
+    token_instance = Token(temp_client, token_url, client_id, client_secret)
     token = token_instance.get_token()
+    temp_client.close()
 
-    # Instantiate the custom Transport Adapter
-    auth = TokenAuth(token)
+    if not token:
+        raise Exception("Failed to get access token from OAuth response")
 
-    # Mount it for https usage
-    client.mount('https://', auth)
+    # Create Security object with the bearer token
+    security = shared.Security(bearer_auth=token, oauth=token)
 
-    return SDK(client=client, **kwargs)
+    return SDK(security=security, **kwargs)
