@@ -1,7 +1,6 @@
 from .sdk import SDK
 from .tokensource import Token
 from .models import shared
-import httpx
 import requests
 
 def sdk_with_credentials(client_id: str, client_secret: str, token_url: str = '', **kwargs) -> SDK:
