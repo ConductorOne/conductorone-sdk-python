@@ -14,12 +14,10 @@ class AppEntitlementSearch(BaseSDK):
     def search(
         self,
         *,
-        request: Optional[
-            Union[
-                shared.AppEntitlementSearchServiceSearchRequest,
-                shared.AppEntitlementSearchServiceSearchRequestTypedDict,
-            ]
-        ] = None,
+        request: Union[
+            shared.AppEntitlementSearchServiceSearchRequest,
+            shared.AppEntitlementSearchServiceSearchRequestTypedDict,
+        ],
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -47,11 +45,9 @@ class AppEntitlementSearch(BaseSDK):
 
         if not isinstance(request, BaseModel):
             request = utils.unmarshal(
-                request, Optional[shared.AppEntitlementSearchServiceSearchRequest]
+                request, shared.AppEntitlementSearchServiceSearchRequest
             )
-        request = cast(
-            Optional[shared.AppEntitlementSearchServiceSearchRequest], request
-        )
+        request = cast(shared.AppEntitlementSearchServiceSearchRequest, request)
 
         req = self._build_request(
             method="POST",
@@ -59,7 +55,7 @@ class AppEntitlementSearch(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=False,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -69,9 +65,9 @@ class AppEntitlementSearch(BaseSDK):
             get_serialized_body=lambda: utils.serialize_request_body(
                 request,
                 False,
-                True,
+                False,
                 "json",
-                Optional[shared.AppEntitlementSearchServiceSearchRequest],
+                shared.AppEntitlementSearchServiceSearchRequest,
             ),
             timeout_ms=timeout_ms,
         )
@@ -164,12 +160,10 @@ class AppEntitlementSearch(BaseSDK):
     async def search_async(
         self,
         *,
-        request: Optional[
-            Union[
-                shared.AppEntitlementSearchServiceSearchRequest,
-                shared.AppEntitlementSearchServiceSearchRequestTypedDict,
-            ]
-        ] = None,
+        request: Union[
+            shared.AppEntitlementSearchServiceSearchRequest,
+            shared.AppEntitlementSearchServiceSearchRequestTypedDict,
+        ],
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -197,11 +191,9 @@ class AppEntitlementSearch(BaseSDK):
 
         if not isinstance(request, BaseModel):
             request = utils.unmarshal(
-                request, Optional[shared.AppEntitlementSearchServiceSearchRequest]
+                request, shared.AppEntitlementSearchServiceSearchRequest
             )
-        request = cast(
-            Optional[shared.AppEntitlementSearchServiceSearchRequest], request
-        )
+        request = cast(shared.AppEntitlementSearchServiceSearchRequest, request)
 
         req = self._build_request_async(
             method="POST",
@@ -209,7 +201,7 @@ class AppEntitlementSearch(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=False,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -219,9 +211,9 @@ class AppEntitlementSearch(BaseSDK):
             get_serialized_body=lambda: utils.serialize_request_body(
                 request,
                 False,
-                True,
+                False,
                 "json",
-                Optional[shared.AppEntitlementSearchServiceSearchRequest],
+                shared.AppEntitlementSearchServiceSearchRequest,
             ),
             timeout_ms=timeout_ms,
         )
@@ -702,12 +694,10 @@ class AppEntitlementSearch(BaseSDK):
     def search_grants(
         self,
         *,
-        request: Optional[
-            Union[
-                shared.AppEntitlementSearchServiceSearchGrantsRequest,
-                shared.AppEntitlementSearchServiceSearchGrantsRequestTypedDict,
-            ]
-        ] = None,
+        request: Union[
+            shared.AppEntitlementSearchServiceSearchGrantsRequest,
+            shared.AppEntitlementSearchServiceSearchGrantsRequestTypedDict,
+        ],
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -735,11 +725,9 @@ class AppEntitlementSearch(BaseSDK):
 
         if not isinstance(request, BaseModel):
             request = utils.unmarshal(
-                request, Optional[shared.AppEntitlementSearchServiceSearchGrantsRequest]
+                request, shared.AppEntitlementSearchServiceSearchGrantsRequest
             )
-        request = cast(
-            Optional[shared.AppEntitlementSearchServiceSearchGrantsRequest], request
-        )
+        request = cast(shared.AppEntitlementSearchServiceSearchGrantsRequest, request)
 
         req = self._build_request(
             method="POST",
@@ -747,7 +735,7 @@ class AppEntitlementSearch(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=False,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -757,9 +745,9 @@ class AppEntitlementSearch(BaseSDK):
             get_serialized_body=lambda: utils.serialize_request_body(
                 request,
                 False,
-                True,
+                False,
                 "json",
-                Optional[shared.AppEntitlementSearchServiceSearchGrantsRequest],
+                shared.AppEntitlementSearchServiceSearchGrantsRequest,
             ),
             timeout_ms=timeout_ms,
         )
@@ -807,12 +795,10 @@ class AppEntitlementSearch(BaseSDK):
     async def search_grants_async(
         self,
         *,
-        request: Optional[
-            Union[
-                shared.AppEntitlementSearchServiceSearchGrantsRequest,
-                shared.AppEntitlementSearchServiceSearchGrantsRequestTypedDict,
-            ]
-        ] = None,
+        request: Union[
+            shared.AppEntitlementSearchServiceSearchGrantsRequest,
+            shared.AppEntitlementSearchServiceSearchGrantsRequestTypedDict,
+        ],
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -840,11 +826,9 @@ class AppEntitlementSearch(BaseSDK):
 
         if not isinstance(request, BaseModel):
             request = utils.unmarshal(
-                request, Optional[shared.AppEntitlementSearchServiceSearchGrantsRequest]
+                request, shared.AppEntitlementSearchServiceSearchGrantsRequest
             )
-        request = cast(
-            Optional[shared.AppEntitlementSearchServiceSearchGrantsRequest], request
-        )
+        request = cast(shared.AppEntitlementSearchServiceSearchGrantsRequest, request)
 
         req = self._build_request_async(
             method="POST",
@@ -852,7 +836,7 @@ class AppEntitlementSearch(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=False,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -862,9 +846,9 @@ class AppEntitlementSearch(BaseSDK):
             get_serialized_body=lambda: utils.serialize_request_body(
                 request,
                 False,
-                True,
+                False,
                 "json",
-                Optional[shared.AppEntitlementSearchServiceSearchGrantsRequest],
+                shared.AppEntitlementSearchServiceSearchGrantsRequest,
             ),
             timeout_ms=timeout_ms,
         )

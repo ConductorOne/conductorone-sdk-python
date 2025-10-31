@@ -4,9 +4,10 @@ from __future__ import annotations
 from .userref import UserRef, UserRefTypedDict
 from enum import Enum
 import pydantic
-from pydantic import model_serializer
+from pydantic import field_serializer, model_serializer
 from pydantic.functional_validators import PlainValidator
 from sdk import utils
+from sdk.models import shared
 from sdk.types import BaseModel, Nullable, OptionalNullable, UNSET, UNSET_SENTINEL
 from sdk.utils import validate_open_enum
 from typing import Optional
@@ -108,6 +109,15 @@ class UpdateUser(BaseModel):
     This field is part of the `user_status` oneof.
     See the documentation for `c1.api.automations.v1.UpdateUser` for more details.
     """
+
+    @field_serializer("user_status_enum")
+    def serialize_user_status_enum(self, value):
+        if isinstance(value, str):
+            try:
+                return Nullable[shared.UserStatusEnum](value)
+            except ValueError:
+                return value
+        return value
 
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):

@@ -659,6 +659,7 @@ if TYPE_CHECKING:
         CreatePolicyResponseTypedDict,
     )
     from .createrevoketasks import CreateRevokeTasks, CreateRevokeTasksTypedDict
+    from .createrevoketasksv2 import CreateRevokeTasksV2, CreateRevokeTasksV2TypedDict
     from .createrisklevelattributevaluerequest import (
         CreateRiskLevelAttributeValueRequest,
         CreateRiskLevelAttributeValueRequestTypedDict,
@@ -868,7 +869,31 @@ if TYPE_CHECKING:
     )
     from .emailnotifications import EmailNotifications, EmailNotificationsTypedDict
     from .encrypteddata import EncryptedData, EncryptedDataTypedDict
+    from .entitlementexclusioncriteria import (
+        EntitlementExclusionCriteria,
+        EntitlementExclusionCriteriaTypedDict,
+    )
+    from .entitlementexclusionlist import (
+        EntitlementExclusionList,
+        EntitlementExclusionListTypedDict,
+    )
+    from .entitlementexclusionnone import (
+        EntitlementExclusionNone,
+        EntitlementExclusionNoneTypedDict,
+    )
     from .entitlementfilter import EntitlementFilter, EntitlementFilterTypedDict
+    from .entitlementinclusionall import (
+        EntitlementInclusionAll,
+        EntitlementInclusionAllTypedDict,
+    )
+    from .entitlementinclusioncriteria import (
+        EntitlementInclusionCriteria,
+        EntitlementInclusionCriteriaTypedDict,
+    )
+    from .entitlementinclusionlist import (
+        EntitlementInclusionList,
+        EntitlementInclusionListTypedDict,
+    )
     from .entitlementownerapproval import (
         EntitlementOwnerApproval,
         EntitlementOwnerApprovalTypedDict,
@@ -1847,6 +1872,7 @@ if TYPE_CHECKING:
     from .stringmapfield import StringMapField, StringMapFieldTypedDict
     from .stringrules import StringRules, StringRulesTypedDict, WellKnownRegex
     from .stringslicefield import StringSliceField, StringSliceFieldTypedDict
+    from .syncconfig import SyncConfig, SyncConfigTypedDict
     from .systemlogservicelisteventsrequest import (
         SortDirection,
         SystemLogServiceListEventsRequest,
@@ -3072,6 +3098,8 @@ __all__ = [
     "CreatePolicyResponseTypedDict",
     "CreateRevokeTasks",
     "CreateRevokeTasksTypedDict",
+    "CreateRevokeTasksV2",
+    "CreateRevokeTasksV2TypedDict",
     "CreateRiskLevelAttributeValueRequest",
     "CreateRiskLevelAttributeValueRequestTypedDict",
     "CreateRiskLevelAttributeValueResponse",
@@ -3214,9 +3242,21 @@ __all__ = [
     "EncryptedData",
     "EncryptedDataTypedDict",
     "EnrollmentBehavior",
+    "EntitlementExclusionCriteria",
+    "EntitlementExclusionCriteriaTypedDict",
+    "EntitlementExclusionList",
+    "EntitlementExclusionListTypedDict",
+    "EntitlementExclusionNone",
+    "EntitlementExclusionNoneTypedDict",
     "EntitlementFilter",
     "EntitlementFilterTypedDict",
     "EntitlementGroup",
+    "EntitlementInclusionAll",
+    "EntitlementInclusionAllTypedDict",
+    "EntitlementInclusionCriteria",
+    "EntitlementInclusionCriteriaTypedDict",
+    "EntitlementInclusionList",
+    "EntitlementInclusionListTypedDict",
     "EntitlementOwnerApproval",
     "EntitlementOwnerApprovalTypedDict",
     "EnumRules",
@@ -3962,6 +4002,8 @@ __all__ = [
     "StringRulesTypedDict",
     "StringSliceField",
     "StringSliceFieldTypedDict",
+    "SyncConfig",
+    "SyncConfigTypedDict",
     "SystemLogServiceListEventsRequest",
     "SystemLogServiceListEventsRequestTypedDict",
     "SystemLogServiceListEventsResponse",
@@ -4920,6 +4962,8 @@ _dynamic_imports: dict[str, str] = {
     "CreatePolicyResponseTypedDict": ".createpolicyresponse",
     "CreateRevokeTasks": ".createrevoketasks",
     "CreateRevokeTasksTypedDict": ".createrevoketasks",
+    "CreateRevokeTasksV2": ".createrevoketasksv2",
+    "CreateRevokeTasksV2TypedDict": ".createrevoketasksv2",
     "CreateRiskLevelAttributeValueRequest": ".createrisklevelattributevaluerequest",
     "CreateRiskLevelAttributeValueRequestTypedDict": ".createrisklevelattributevaluerequest",
     "CreateRiskLevelAttributeValueResponse": ".createrisklevelattributevalueresponse",
@@ -5054,8 +5098,20 @@ _dynamic_imports: dict[str, str] = {
     "EmailNotificationsTypedDict": ".emailnotifications",
     "EncryptedData": ".encrypteddata",
     "EncryptedDataTypedDict": ".encrypteddata",
+    "EntitlementExclusionCriteria": ".entitlementexclusioncriteria",
+    "EntitlementExclusionCriteriaTypedDict": ".entitlementexclusioncriteria",
+    "EntitlementExclusionList": ".entitlementexclusionlist",
+    "EntitlementExclusionListTypedDict": ".entitlementexclusionlist",
+    "EntitlementExclusionNone": ".entitlementexclusionnone",
+    "EntitlementExclusionNoneTypedDict": ".entitlementexclusionnone",
     "EntitlementFilter": ".entitlementfilter",
     "EntitlementFilterTypedDict": ".entitlementfilter",
+    "EntitlementInclusionAll": ".entitlementinclusionall",
+    "EntitlementInclusionAllTypedDict": ".entitlementinclusionall",
+    "EntitlementInclusionCriteria": ".entitlementinclusioncriteria",
+    "EntitlementInclusionCriteriaTypedDict": ".entitlementinclusioncriteria",
+    "EntitlementInclusionList": ".entitlementinclusionlist",
+    "EntitlementInclusionListTypedDict": ".entitlementinclusionlist",
     "EntitlementOwnerApproval": ".entitlementownerapproval",
     "EntitlementOwnerApprovalTypedDict": ".entitlementownerapproval",
     "EnumRules": ".enumrules",
@@ -5776,6 +5832,8 @@ _dynamic_imports: dict[str, str] = {
     "WellKnownRegex": ".stringrules",
     "StringSliceField": ".stringslicefield",
     "StringSliceFieldTypedDict": ".stringslicefield",
+    "SyncConfig": ".syncconfig",
+    "SyncConfigTypedDict": ".syncconfig",
     "SortDirection": ".systemlogservicelisteventsrequest",
     "SystemLogServiceListEventsRequest": ".systemlogservicelisteventsrequest",
     "SystemLogServiceListEventsRequestTypedDict": ".systemlogservicelisteventsrequest",

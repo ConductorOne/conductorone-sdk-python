@@ -13,23 +13,19 @@ from typing_extensions import Annotated, NotRequired, TypedDict
 
 
 class C1APIFunctionsV1FunctionsServiceCreateTagRequestTypedDict(TypedDict):
+    functions_service_create_tag_request: shared_functionsservicecreatetagrequest.FunctionsServiceCreateTagRequestTypedDict
     function_id: str
-    functions_service_create_tag_request: NotRequired[
-        shared_functionsservicecreatetagrequest.FunctionsServiceCreateTagRequestTypedDict
-    ]
 
 
 class C1APIFunctionsV1FunctionsServiceCreateTagRequest(BaseModel):
+    functions_service_create_tag_request: Annotated[
+        shared_functionsservicecreatetagrequest.FunctionsServiceCreateTagRequest,
+        FieldMetadata(request=RequestMetadata(media_type="application/json")),
+    ]
+
     function_id: Annotated[
         str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))
     ]
-
-    functions_service_create_tag_request: Annotated[
-        Optional[
-            shared_functionsservicecreatetagrequest.FunctionsServiceCreateTagRequest
-        ],
-        FieldMetadata(request=RequestMetadata(media_type="application/json")),
-    ] = None
 
 
 class C1APIFunctionsV1FunctionsServiceCreateTagResponseTypedDict(TypedDict):

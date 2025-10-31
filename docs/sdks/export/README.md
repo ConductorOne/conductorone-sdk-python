@@ -31,7 +31,7 @@ with SDK(
     ),
 ) as s_client:
 
-    res = s_client.export.create()
+    res = s_client.export.create(request={})
 
     assert res.export_service_create_response is not None
 
@@ -77,6 +77,7 @@ with SDK(
 ) as s_client:
 
     res = s_client.export.delete(request={
+        "export_service_delete_request": {},
         "export_id": "<id>",
     })
 
@@ -216,6 +217,7 @@ with SDK(
 ) as s_client:
 
     res = s_client.export.list_events(request={
+        "export_service_list_events_request": {},
         "export_id": "<id>",
     })
 
@@ -263,6 +265,7 @@ with SDK(
 ) as s_client:
 
     res = s_client.export.update(request={
+        "export_service_update_request": {},
         "export_id": "<id>",
     })
 

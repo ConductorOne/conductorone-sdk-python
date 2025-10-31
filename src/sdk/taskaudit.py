@@ -13,9 +13,9 @@ class TaskAudit(BaseSDK):
     def list(
         self,
         *,
-        request: Optional[
-            Union[shared.TaskAuditListRequest, shared.TaskAuditListRequestTypedDict]
-        ] = None,
+        request: Union[
+            shared.TaskAuditListRequest, shared.TaskAuditListRequestTypedDict
+        ],
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -42,8 +42,8 @@ class TaskAudit(BaseSDK):
             base_url = self._get_url(base_url, url_variables)
 
         if not isinstance(request, BaseModel):
-            request = utils.unmarshal(request, Optional[shared.TaskAuditListRequest])
-        request = cast(Optional[shared.TaskAuditListRequest], request)
+            request = utils.unmarshal(request, shared.TaskAuditListRequest)
+        request = cast(shared.TaskAuditListRequest, request)
 
         req = self._build_request(
             method="POST",
@@ -51,7 +51,7 @@ class TaskAudit(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=False,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -59,7 +59,7 @@ class TaskAudit(BaseSDK):
             http_headers=http_headers,
             security=self.sdk_configuration.security,
             get_serialized_body=lambda: utils.serialize_request_body(
-                request, False, True, "json", Optional[shared.TaskAuditListRequest]
+                request, False, False, "json", shared.TaskAuditListRequest
             ),
             timeout_ms=timeout_ms,
         )
@@ -106,9 +106,9 @@ class TaskAudit(BaseSDK):
     async def list_async(
         self,
         *,
-        request: Optional[
-            Union[shared.TaskAuditListRequest, shared.TaskAuditListRequestTypedDict]
-        ] = None,
+        request: Union[
+            shared.TaskAuditListRequest, shared.TaskAuditListRequestTypedDict
+        ],
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -135,8 +135,8 @@ class TaskAudit(BaseSDK):
             base_url = self._get_url(base_url, url_variables)
 
         if not isinstance(request, BaseModel):
-            request = utils.unmarshal(request, Optional[shared.TaskAuditListRequest])
-        request = cast(Optional[shared.TaskAuditListRequest], request)
+            request = utils.unmarshal(request, shared.TaskAuditListRequest)
+        request = cast(shared.TaskAuditListRequest, request)
 
         req = self._build_request_async(
             method="POST",
@@ -144,7 +144,7 @@ class TaskAudit(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=False,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -152,7 +152,7 @@ class TaskAudit(BaseSDK):
             http_headers=http_headers,
             security=self.sdk_configuration.security,
             get_serialized_body=lambda: utils.serialize_request_body(
-                request, False, True, "json", Optional[shared.TaskAuditListRequest]
+                request, False, False, "json", shared.TaskAuditListRequest
             ),
             timeout_ms=timeout_ms,
         )

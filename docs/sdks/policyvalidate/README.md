@@ -26,7 +26,7 @@ with SDK(
     ),
 ) as s_client:
 
-    res = s_client.policy_validate.validate_cel()
+    res = s_client.policy_validate.validate_cel(request={})
 
     assert res.editor_validate_response is not None
 

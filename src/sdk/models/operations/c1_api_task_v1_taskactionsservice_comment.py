@@ -13,23 +13,19 @@ from typing_extensions import Annotated, NotRequired, TypedDict
 
 
 class C1APITaskV1TaskActionsServiceCommentRequestTypedDict(TypedDict):
+    task_actions_service_comment_request: shared_taskactionsservicecommentrequest.TaskActionsServiceCommentRequestTypedDict
     task_id: str
-    task_actions_service_comment_request: NotRequired[
-        shared_taskactionsservicecommentrequest.TaskActionsServiceCommentRequestTypedDict
-    ]
 
 
 class C1APITaskV1TaskActionsServiceCommentRequest(BaseModel):
+    task_actions_service_comment_request: Annotated[
+        shared_taskactionsservicecommentrequest.TaskActionsServiceCommentRequest,
+        FieldMetadata(request=RequestMetadata(media_type="application/json")),
+    ]
+
     task_id: Annotated[
         str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))
     ]
-
-    task_actions_service_comment_request: Annotated[
-        Optional[
-            shared_taskactionsservicecommentrequest.TaskActionsServiceCommentRequest
-        ],
-        FieldMetadata(request=RequestMetadata(media_type="application/json")),
-    ] = None
 
 
 class C1APITaskV1TaskActionsServiceCommentResponseTypedDict(TypedDict):

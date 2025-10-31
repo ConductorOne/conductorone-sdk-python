@@ -29,7 +29,7 @@ with SDK(
     ),
 ) as s_client:
 
-    res = s_client.system_log.list_events()
+    res = s_client.system_log.list_events(request={})
 
     assert res.system_log_service_list_events_response is not None
 

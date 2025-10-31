@@ -13,23 +13,19 @@ from typing_extensions import Annotated, NotRequired, TypedDict
 
 
 class C1APIIamV1PersonalClientServiceUpdateRequestTypedDict(TypedDict):
+    personal_client_service_update_request: shared_personalclientserviceupdaterequest.PersonalClientServiceUpdateRequestTypedDict
     id: str
-    personal_client_service_update_request: NotRequired[
-        shared_personalclientserviceupdaterequest.PersonalClientServiceUpdateRequestTypedDict
-    ]
 
 
 class C1APIIamV1PersonalClientServiceUpdateRequest(BaseModel):
+    personal_client_service_update_request: Annotated[
+        shared_personalclientserviceupdaterequest.PersonalClientServiceUpdateRequest,
+        FieldMetadata(request=RequestMetadata(media_type="application/json")),
+    ]
+
     id: Annotated[
         str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))
     ]
-
-    personal_client_service_update_request: Annotated[
-        Optional[
-            shared_personalclientserviceupdaterequest.PersonalClientServiceUpdateRequest
-        ],
-        FieldMetadata(request=RequestMetadata(media_type="application/json")),
-    ] = None
 
 
 class C1APIIamV1PersonalClientServiceUpdateResponseTypedDict(TypedDict):

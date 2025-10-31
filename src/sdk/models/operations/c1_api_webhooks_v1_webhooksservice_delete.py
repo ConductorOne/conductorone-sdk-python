@@ -13,21 +13,21 @@ from typing_extensions import Annotated, NotRequired, TypedDict
 
 
 class C1APIWebhooksV1WebhooksServiceDeleteRequestTypedDict(TypedDict):
-    id: str
-    webhooks_service_delete_request: NotRequired[
+    webhooks_service_delete_request: (
         shared_webhooksservicedeleterequest.WebhooksServiceDeleteRequestTypedDict
-    ]
+    )
+    id: str
 
 
 class C1APIWebhooksV1WebhooksServiceDeleteRequest(BaseModel):
+    webhooks_service_delete_request: Annotated[
+        shared_webhooksservicedeleterequest.WebhooksServiceDeleteRequest,
+        FieldMetadata(request=RequestMetadata(media_type="application/json")),
+    ]
+
     id: Annotated[
         str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))
     ]
-
-    webhooks_service_delete_request: Annotated[
-        Optional[shared_webhooksservicedeleterequest.WebhooksServiceDeleteRequest],
-        FieldMetadata(request=RequestMetadata(media_type="application/json")),
-    ] = None
 
 
 class C1APIWebhooksV1WebhooksServiceDeleteResponseTypedDict(TypedDict):

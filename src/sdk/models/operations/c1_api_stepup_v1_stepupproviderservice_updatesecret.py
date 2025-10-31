@@ -13,23 +13,19 @@ from typing_extensions import Annotated, NotRequired, TypedDict
 
 
 class C1APIStepupV1StepUpProviderServiceUpdateSecretRequestTypedDict(TypedDict):
+    update_step_up_provider_secret_request: shared_updatestepupprovidersecretrequest.UpdateStepUpProviderSecretRequestTypedDict
     id: str
-    update_step_up_provider_secret_request: NotRequired[
-        shared_updatestepupprovidersecretrequest.UpdateStepUpProviderSecretRequestTypedDict
-    ]
 
 
 class C1APIStepupV1StepUpProviderServiceUpdateSecretRequest(BaseModel):
+    update_step_up_provider_secret_request: Annotated[
+        shared_updatestepupprovidersecretrequest.UpdateStepUpProviderSecretRequest,
+        FieldMetadata(request=RequestMetadata(media_type="application/json")),
+    ]
+
     id: Annotated[
         str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))
     ]
-
-    update_step_up_provider_secret_request: Annotated[
-        Optional[
-            shared_updatestepupprovidersecretrequest.UpdateStepUpProviderSecretRequest
-        ],
-        FieldMetadata(request=RequestMetadata(media_type="application/json")),
-    ] = None
 
 
 class C1APIStepupV1StepUpProviderServiceUpdateSecretResponseTypedDict(TypedDict):

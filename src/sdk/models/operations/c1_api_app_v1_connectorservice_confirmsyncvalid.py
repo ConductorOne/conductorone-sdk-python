@@ -13,15 +13,20 @@ from typing_extensions import Annotated, NotRequired, TypedDict
 
 
 class C1APIAppV1ConnectorServiceConfirmSyncValidRequestTypedDict(TypedDict):
+    confirm_sync_valid_request: (
+        shared_confirmsyncvalidrequest.ConfirmSyncValidRequestTypedDict
+    )
     app_id: str
     connector_id: str
     sync_lifecycle_id: str
-    confirm_sync_valid_request: NotRequired[
-        shared_confirmsyncvalidrequest.ConfirmSyncValidRequestTypedDict
-    ]
 
 
 class C1APIAppV1ConnectorServiceConfirmSyncValidRequest(BaseModel):
+    confirm_sync_valid_request: Annotated[
+        shared_confirmsyncvalidrequest.ConfirmSyncValidRequest,
+        FieldMetadata(request=RequestMetadata(media_type="application/json")),
+    ]
+
     app_id: Annotated[
         str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))
     ]
@@ -33,11 +38,6 @@ class C1APIAppV1ConnectorServiceConfirmSyncValidRequest(BaseModel):
     sync_lifecycle_id: Annotated[
         str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))
     ]
-
-    confirm_sync_valid_request: Annotated[
-        Optional[shared_confirmsyncvalidrequest.ConfirmSyncValidRequest],
-        FieldMetadata(request=RequestMetadata(media_type="application/json")),
-    ] = None
 
 
 class C1APIAppV1ConnectorServiceConfirmSyncValidResponseTypedDict(TypedDict):

@@ -29,6 +29,7 @@ with SDK(
 ) as s_client:
 
     res = s_client.app_entitlements_proxy.create(request={
+        "create_app_entitlement_proxy_request": {},
         "dst_app_entitlement_id": "<id>",
         "dst_app_id": "<id>",
         "src_app_entitlement_id": "<id>",
@@ -79,6 +80,7 @@ with SDK(
 ) as s_client:
 
     res = s_client.app_entitlements_proxy.delete(request={
+        "delete_app_entitlement_proxy_request": {},
         "dst_app_entitlement_id": "<id>",
         "dst_app_id": "<id>",
         "src_app_entitlement_id": "<id>",

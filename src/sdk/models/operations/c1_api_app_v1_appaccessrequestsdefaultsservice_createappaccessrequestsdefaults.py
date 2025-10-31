@@ -14,23 +14,23 @@ from typing_extensions import Annotated, NotRequired, TypedDict
 class C1APIAppV1AppAccessRequestsDefaultsServiceCreateAppAccessRequestsDefaultsRequestTypedDict(
     TypedDict
 ):
-    app_id: str
-    app_access_request_defaults: NotRequired[
+    app_access_request_defaults: (
         shared_appaccessrequestdefaults.AppAccessRequestDefaults1TypedDict
-    ]
+    )
+    app_id: str
 
 
 class C1APIAppV1AppAccessRequestsDefaultsServiceCreateAppAccessRequestsDefaultsRequest(
     BaseModel
 ):
+    app_access_request_defaults: Annotated[
+        shared_appaccessrequestdefaults.AppAccessRequestDefaults1,
+        FieldMetadata(request=RequestMetadata(media_type="application/json")),
+    ]
+
     app_id: Annotated[
         str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))
     ]
-
-    app_access_request_defaults: Annotated[
-        Optional[shared_appaccessrequestdefaults.AppAccessRequestDefaults1],
-        FieldMetadata(request=RequestMetadata(media_type="application/json")),
-    ] = None
 
 
 class C1APIAppV1AppAccessRequestsDefaultsServiceCreateAppAccessRequestsDefaultsResponseTypedDict(

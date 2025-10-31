@@ -26,7 +26,7 @@ with SDK(
     ),
 ) as s_client:
 
-    res = s_client.automation_execution_search.search_automation_executions()
+    res = s_client.automation_execution_search.search_automation_executions(request={})
 
     assert res.search_automation_executions_response is not None
 

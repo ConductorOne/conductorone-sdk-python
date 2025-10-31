@@ -13,21 +13,21 @@ from typing_extensions import Annotated, NotRequired, TypedDict
 
 
 class C1APIDirectoryV1DirectoryServiceUpdateRequestTypedDict(TypedDict):
-    app_id: str
-    directory_service_update_request: NotRequired[
+    directory_service_update_request: (
         shared_directoryserviceupdaterequest.DirectoryServiceUpdateRequestTypedDict
-    ]
+    )
+    app_id: str
 
 
 class C1APIDirectoryV1DirectoryServiceUpdateRequest(BaseModel):
+    directory_service_update_request: Annotated[
+        shared_directoryserviceupdaterequest.DirectoryServiceUpdateRequest,
+        FieldMetadata(request=RequestMetadata(media_type="application/json")),
+    ]
+
     app_id: Annotated[
         str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))
     ]
-
-    directory_service_update_request: Annotated[
-        Optional[shared_directoryserviceupdaterequest.DirectoryServiceUpdateRequest],
-        FieldMetadata(request=RequestMetadata(media_type="application/json")),
-    ] = None
 
 
 class C1APIDirectoryV1DirectoryServiceUpdateResponseTypedDict(TypedDict):

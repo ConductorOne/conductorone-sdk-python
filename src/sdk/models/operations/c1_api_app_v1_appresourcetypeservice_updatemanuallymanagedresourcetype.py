@@ -15,16 +15,19 @@ from typing_extensions import Annotated, NotRequired, TypedDict
 class C1APIAppV1AppResourceTypeServiceUpdateManuallyManagedResourceTypeRequestTypedDict(
     TypedDict
 ):
+    update_manually_managed_resource_type_request: shared_updatemanuallymanagedresourcetyperequest.UpdateManuallyManagedResourceTypeRequestTypedDict
     app_id: str
     id: str
-    update_manually_managed_resource_type_request: NotRequired[
-        shared_updatemanuallymanagedresourcetyperequest.UpdateManuallyManagedResourceTypeRequestTypedDict
-    ]
 
 
 class C1APIAppV1AppResourceTypeServiceUpdateManuallyManagedResourceTypeRequest(
     BaseModel
 ):
+    update_manually_managed_resource_type_request: Annotated[
+        shared_updatemanuallymanagedresourcetyperequest.UpdateManuallyManagedResourceTypeRequest,
+        FieldMetadata(request=RequestMetadata(media_type="application/json")),
+    ]
+
     app_id: Annotated[
         str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))
     ]
@@ -32,13 +35,6 @@ class C1APIAppV1AppResourceTypeServiceUpdateManuallyManagedResourceTypeRequest(
     id: Annotated[
         str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))
     ]
-
-    update_manually_managed_resource_type_request: Annotated[
-        Optional[
-            shared_updatemanuallymanagedresourcetyperequest.UpdateManuallyManagedResourceTypeRequest
-        ],
-        FieldMetadata(request=RequestMetadata(media_type="application/json")),
-    ] = None
 
 
 class C1APIAppV1AppResourceTypeServiceUpdateManuallyManagedResourceTypeResponseTypedDict(

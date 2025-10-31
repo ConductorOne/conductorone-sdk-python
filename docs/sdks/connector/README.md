@@ -41,6 +41,7 @@ with SDK(
 ) as s_client:
 
     res = s_client.connector.confirm_sync_valid(request={
+        "confirm_sync_valid_request": {},
         "app_id": "<id>",
         "connector_id": "<id>",
         "sync_lifecycle_id": "<id>",
@@ -90,6 +91,7 @@ with SDK(
 ) as s_client:
 
     res = s_client.connector.create(request=operations.C1APIAppV1ConnectorServiceCreateRequest(
+        connector_service_create_request=shared.ConnectorServiceCreateRequest(),
         app_id="<id>",
     ))
 
@@ -137,6 +139,7 @@ with SDK(
 ) as s_client:
 
     res = s_client.connector.create_delegated(request={
+        "connector_service_create_delegated_request": {},
         "app_id": "<id>",
     })
 
@@ -184,6 +187,7 @@ with SDK(
 ) as s_client:
 
     res = s_client.connector.delete(request={
+        "connector_service_delete_request": {},
         "app_id": "<id>",
         "id": "<id>",
     })
@@ -232,6 +236,7 @@ with SDK(
 ) as s_client:
 
     res = s_client.connector.force_sync(request={
+        "force_sync_request": {},
         "app_id": "<id>",
         "connector_id": "<id>",
     })
@@ -424,6 +429,7 @@ with SDK(
 ) as s_client:
 
     res = s_client.connector.pause_sync(request={
+        "pause_sync_request": {},
         "app_id": "<id>",
         "connector_id": "<id>",
     })
@@ -472,6 +478,7 @@ with SDK(
 ) as s_client:
 
     res = s_client.connector.resume_sync(request={
+        "resume_sync_request": {},
         "app_id": "<id>",
         "connector_id": "<id>",
     })
@@ -520,6 +527,7 @@ with SDK(
 ) as s_client:
 
     res = s_client.connector.revoke_credential(request={
+        "connector_service_revoke_credential_request": {},
         "app_id": "<id>",
         "connector_id": "<id>",
         "id": "<id>",
@@ -568,7 +576,7 @@ with SDK(
     ),
 ) as s_client:
 
-    res = s_client.connector.rotate_credential()
+    res = s_client.connector.rotate_credential(request={})
 
     assert res.connector_service_rotate_credential_response is not None
 
@@ -614,6 +622,7 @@ with SDK(
 ) as s_client:
 
     res = s_client.connector.update(request=operations.C1APIAppV1ConnectorServiceUpdateRequest(
+        connector_service_update_request=shared.ConnectorServiceUpdateRequest(),
         app_id="<id>",
         id="<id>",
     ))
@@ -662,6 +671,7 @@ with SDK(
 ) as s_client:
 
     res = s_client.connector.update_delegated(request=operations.C1APIAppV1ConnectorServiceUpdateDelegatedRequest(
+        connector_service_update_delegated_request=shared.ConnectorServiceUpdateDelegatedRequest(),
         connector_app_id="<id>",
         connector_id="<id>",
     ))
@@ -709,7 +719,7 @@ with SDK(
     ),
 ) as s_client:
 
-    res = s_client.connector.validate_http_connector_config()
+    res = s_client.connector.validate_http_connector_config(request={})
 
     assert res.editor_validate_response is not None
 

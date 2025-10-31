@@ -17,6 +17,8 @@ class EntitlementOwnerApprovalTypedDict(TypedDict):
     r"""Configuration to allow a fallback if the entitlement owner cannot be identified."""
     fallback_user_ids: NotRequired[Nullable[List[str]]]
     r"""Configuration to specific which users to fallback to if fallback is enabled and the entitlement owner cannot be identified."""
+    require_distinct_approvers: NotRequired[bool]
+    r"""Configuration to require distinct approvers across approval steps of a rule."""
 
 
 class EntitlementOwnerApproval(BaseModel):
@@ -35,9 +37,19 @@ class EntitlementOwnerApproval(BaseModel):
     ] = UNSET
     r"""Configuration to specific which users to fallback to if fallback is enabled and the entitlement owner cannot be identified."""
 
+    require_distinct_approvers: Annotated[
+        Optional[bool], pydantic.Field(alias="requireDistinctApprovers")
+    ] = None
+    r"""Configuration to require distinct approvers across approval steps of a rule."""
+
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
-        optional_fields = ["allowSelfApproval", "fallback", "fallbackUserIds"]
+        optional_fields = [
+            "allowSelfApproval",
+            "fallback",
+            "fallbackUserIds",
+            "requireDistinctApprovers",
+        ]
         nullable_fields = ["fallbackUserIds"]
         null_default_fields = []
 

@@ -13,6 +13,7 @@ from .connectorcreateaccount import (
 )
 from .createaccessreview import CreateAccessReview, CreateAccessReviewTypedDict
 from .createrevoketasks import CreateRevokeTasks, CreateRevokeTasksTypedDict
+from .createrevoketasksv2 import CreateRevokeTasksV2, CreateRevokeTasksV2TypedDict
 from .grantentitlements import GrantEntitlements, GrantEntitlementsTypedDict
 from .removefromdelegation import RemoveFromDelegation, RemoveFromDelegationTypedDict
 from .runautomation import RunAutomation, RunAutomationTypedDict
@@ -41,6 +42,7 @@ class AutomationStepTypedDict(TypedDict):
     - waitForDuration
     - unenrollFromAllAccessProfiles
     - createRevokeTasks
+    - createRevokeTasksV2
     - sendEmail
     - removeFromDelegation
     - runAutomation
@@ -85,6 +87,27 @@ class AutomationStepTypedDict(TypedDict):
     r"""The CreateAccessReview message."""
     create_revoke_tasks: NotRequired[Nullable[CreateRevokeTasksTypedDict]]
     r"""The CreateRevokeTasks message."""
+    create_revoke_tasks_v2: NotRequired[Nullable[CreateRevokeTasksV2TypedDict]]
+    r"""The CreateRevokeTasksV2 message.
+
+    This message contains a oneof named user. Only a single field of the following list may be set at a time:
+    - userIdCel
+    - userRef
+    - useSubjectUser
+
+
+    This message contains a oneof named inclusion. Only a single field of the following list may be set at a time:
+    - inclusionList
+    - inclusionAll
+    - inclusionCriteria
+
+
+    This message contains a oneof named exclusion. Only a single field of the following list may be set at a time:
+    - exclusionNone
+    - exclusionList
+    - exclusionCriteria
+
+    """
     grant_entitlements: NotRequired[Nullable[GrantEntitlementsTypedDict]]
     r"""The GrantEntitlements message."""
     remove_from_delegation: NotRequired[Nullable[RemoveFromDelegationTypedDict]]
@@ -164,6 +187,7 @@ class AutomationStep(BaseModel):
     - waitForDuration
     - unenrollFromAllAccessProfiles
     - createRevokeTasks
+    - createRevokeTasksV2
     - sendEmail
     - removeFromDelegation
     - runAutomation
@@ -227,6 +251,31 @@ class AutomationStep(BaseModel):
         OptionalNullable[CreateRevokeTasks], pydantic.Field(alias="createRevokeTasks")
     ] = UNSET
     r"""The CreateRevokeTasks message."""
+
+    create_revoke_tasks_v2: Annotated[
+        OptionalNullable[CreateRevokeTasksV2],
+        pydantic.Field(alias="createRevokeTasksV2"),
+    ] = UNSET
+    r"""The CreateRevokeTasksV2 message.
+
+    This message contains a oneof named user. Only a single field of the following list may be set at a time:
+    - userIdCel
+    - userRef
+    - useSubjectUser
+
+
+    This message contains a oneof named inclusion. Only a single field of the following list may be set at a time:
+    - inclusionList
+    - inclusionAll
+    - inclusionCriteria
+
+
+    This message contains a oneof named exclusion. Only a single field of the following list may be set at a time:
+    - exclusionNone
+    - exclusionList
+    - exclusionCriteria
+
+    """
 
     grant_entitlements: Annotated[
         OptionalNullable[GrantEntitlements], pydantic.Field(alias="grantEntitlements")
@@ -341,6 +390,7 @@ class AutomationStep(BaseModel):
             "ConnectorCreateAccount",
             "CreateAccessReview",
             "CreateRevokeTasks",
+            "CreateRevokeTasksV2",
             "GrantEntitlements",
             "RemoveFromDelegation",
             "RunAutomation",
@@ -362,6 +412,7 @@ class AutomationStep(BaseModel):
             "ConnectorCreateAccount",
             "CreateAccessReview",
             "CreateRevokeTasks",
+            "CreateRevokeTasksV2",
             "GrantEntitlements",
             "RemoveFromDelegation",
             "RunAutomation",

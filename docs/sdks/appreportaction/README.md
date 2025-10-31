@@ -27,6 +27,7 @@ with SDK(
 ) as s_client:
 
     res = s_client.app_report_action.generate_report(request={
+        "app_actions_service_generate_report_request": {},
         "app_id": "<id>",
     })
 

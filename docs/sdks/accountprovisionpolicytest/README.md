@@ -26,7 +26,7 @@ with SDK(
     ),
 ) as s_client:
 
-    res = s_client.account_provision_policy_test.test()
+    res = s_client.account_provision_policy_test.test(request={})
 
     assert res.test_account_provision_policy_response is not None
 

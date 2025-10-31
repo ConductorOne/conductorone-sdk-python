@@ -13,21 +13,21 @@ from typing_extensions import Annotated, NotRequired, TypedDict
 
 
 class C1APIFunctionsV1FunctionsServiceInvokeRequestTypedDict(TypedDict):
-    function_id: str
-    functions_service_invoke_request: NotRequired[
+    functions_service_invoke_request: (
         shared_functionsserviceinvokerequest.FunctionsServiceInvokeRequestTypedDict
-    ]
+    )
+    function_id: str
 
 
 class C1APIFunctionsV1FunctionsServiceInvokeRequest(BaseModel):
+    functions_service_invoke_request: Annotated[
+        shared_functionsserviceinvokerequest.FunctionsServiceInvokeRequest,
+        FieldMetadata(request=RequestMetadata(media_type="application/json")),
+    ]
+
     function_id: Annotated[
         str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))
     ]
-
-    functions_service_invoke_request: Annotated[
-        Optional[shared_functionsserviceinvokerequest.FunctionsServiceInvokeRequest],
-        FieldMetadata(request=RequestMetadata(media_type="application/json")),
-    ] = None
 
 
 class C1APIFunctionsV1FunctionsServiceInvokeResponseTypedDict(TypedDict):

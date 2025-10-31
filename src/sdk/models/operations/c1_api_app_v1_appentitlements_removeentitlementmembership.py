@@ -13,14 +13,17 @@ from typing_extensions import Annotated, NotRequired, TypedDict
 
 
 class C1APIAppV1AppEntitlementsRemoveEntitlementMembershipRequestTypedDict(TypedDict):
+    remove_entitlement_membership_request: shared_removeentitlementmembershiprequest.RemoveEntitlementMembershipRequestTypedDict
     app_entitlement_id: str
     app_id: str
-    remove_entitlement_membership_request: NotRequired[
-        shared_removeentitlementmembershiprequest.RemoveEntitlementMembershipRequestTypedDict
-    ]
 
 
 class C1APIAppV1AppEntitlementsRemoveEntitlementMembershipRequest(BaseModel):
+    remove_entitlement_membership_request: Annotated[
+        shared_removeentitlementmembershiprequest.RemoveEntitlementMembershipRequest,
+        FieldMetadata(request=RequestMetadata(media_type="application/json")),
+    ]
+
     app_entitlement_id: Annotated[
         str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))
     ]
@@ -28,13 +31,6 @@ class C1APIAppV1AppEntitlementsRemoveEntitlementMembershipRequest(BaseModel):
     app_id: Annotated[
         str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))
     ]
-
-    remove_entitlement_membership_request: Annotated[
-        Optional[
-            shared_removeentitlementmembershiprequest.RemoveEntitlementMembershipRequest
-        ],
-        FieldMetadata(request=RequestMetadata(media_type="application/json")),
-    ] = None
 
 
 class C1APIAppV1AppEntitlementsRemoveEntitlementMembershipResponseTypedDict(TypedDict):

@@ -13,12 +13,17 @@ from typing_extensions import Annotated, NotRequired, TypedDict
 
 
 class C1APIAppV1ConnectorServiceForceSyncRequestTypedDict(TypedDict):
+    force_sync_request: shared_forcesyncrequest.ForceSyncRequestTypedDict
     app_id: str
     connector_id: str
-    force_sync_request: NotRequired[shared_forcesyncrequest.ForceSyncRequestTypedDict]
 
 
 class C1APIAppV1ConnectorServiceForceSyncRequest(BaseModel):
+    force_sync_request: Annotated[
+        shared_forcesyncrequest.ForceSyncRequest,
+        FieldMetadata(request=RequestMetadata(media_type="application/json")),
+    ]
+
     app_id: Annotated[
         str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))
     ]
@@ -26,11 +31,6 @@ class C1APIAppV1ConnectorServiceForceSyncRequest(BaseModel):
     connector_id: Annotated[
         str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))
     ]
-
-    force_sync_request: Annotated[
-        Optional[shared_forcesyncrequest.ForceSyncRequest],
-        FieldMetadata(request=RequestMetadata(media_type="application/json")),
-    ] = None
 
 
 class C1APIAppV1ConnectorServiceForceSyncResponseTypedDict(TypedDict):

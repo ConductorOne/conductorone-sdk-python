@@ -175,9 +175,7 @@ class SessionSettings(BaseSDK):
     def test_source_ip(
         self,
         *,
-        request: Optional[
-            Union[shared.TestSourceIPRequest, shared.TestSourceIPRequestTypedDict]
-        ] = None,
+        request: Union[shared.TestSourceIPRequest, shared.TestSourceIPRequestTypedDict],
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -204,8 +202,8 @@ class SessionSettings(BaseSDK):
             base_url = self._get_url(base_url, url_variables)
 
         if not isinstance(request, BaseModel):
-            request = utils.unmarshal(request, Optional[shared.TestSourceIPRequest])
-        request = cast(Optional[shared.TestSourceIPRequest], request)
+            request = utils.unmarshal(request, shared.TestSourceIPRequest)
+        request = cast(shared.TestSourceIPRequest, request)
 
         req = self._build_request(
             method="POST",
@@ -213,7 +211,7 @@ class SessionSettings(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=False,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -221,7 +219,7 @@ class SessionSettings(BaseSDK):
             http_headers=http_headers,
             security=self.sdk_configuration.security,
             get_serialized_body=lambda: utils.serialize_request_body(
-                request, False, True, "json", Optional[shared.TestSourceIPRequest]
+                request, False, False, "json", shared.TestSourceIPRequest
             ),
             timeout_ms=timeout_ms,
         )
@@ -268,9 +266,7 @@ class SessionSettings(BaseSDK):
     async def test_source_ip_async(
         self,
         *,
-        request: Optional[
-            Union[shared.TestSourceIPRequest, shared.TestSourceIPRequestTypedDict]
-        ] = None,
+        request: Union[shared.TestSourceIPRequest, shared.TestSourceIPRequestTypedDict],
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -297,8 +293,8 @@ class SessionSettings(BaseSDK):
             base_url = self._get_url(base_url, url_variables)
 
         if not isinstance(request, BaseModel):
-            request = utils.unmarshal(request, Optional[shared.TestSourceIPRequest])
-        request = cast(Optional[shared.TestSourceIPRequest], request)
+            request = utils.unmarshal(request, shared.TestSourceIPRequest)
+        request = cast(shared.TestSourceIPRequest, request)
 
         req = self._build_request_async(
             method="POST",
@@ -306,7 +302,7 @@ class SessionSettings(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=False,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -314,7 +310,7 @@ class SessionSettings(BaseSDK):
             http_headers=http_headers,
             security=self.sdk_configuration.security,
             get_serialized_body=lambda: utils.serialize_request_body(
-                request, False, True, "json", Optional[shared.TestSourceIPRequest]
+                request, False, False, "json", shared.TestSourceIPRequest
             ),
             timeout_ms=timeout_ms,
         )
@@ -361,12 +357,10 @@ class SessionSettings(BaseSDK):
     def update(
         self,
         *,
-        request: Optional[
-            Union[
-                shared.UpdateSessionSettingsRequest,
-                shared.UpdateSessionSettingsRequestTypedDict,
-            ]
-        ] = None,
+        request: Union[
+            shared.UpdateSessionSettingsRequest,
+            shared.UpdateSessionSettingsRequestTypedDict,
+        ],
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -393,10 +387,8 @@ class SessionSettings(BaseSDK):
             base_url = self._get_url(base_url, url_variables)
 
         if not isinstance(request, BaseModel):
-            request = utils.unmarshal(
-                request, Optional[shared.UpdateSessionSettingsRequest]
-            )
-        request = cast(Optional[shared.UpdateSessionSettingsRequest], request)
+            request = utils.unmarshal(request, shared.UpdateSessionSettingsRequest)
+        request = cast(shared.UpdateSessionSettingsRequest, request)
 
         req = self._build_request(
             method="POST",
@@ -404,7 +396,7 @@ class SessionSettings(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=False,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -412,11 +404,7 @@ class SessionSettings(BaseSDK):
             http_headers=http_headers,
             security=self.sdk_configuration.security,
             get_serialized_body=lambda: utils.serialize_request_body(
-                request,
-                False,
-                True,
-                "json",
-                Optional[shared.UpdateSessionSettingsRequest],
+                request, False, False, "json", shared.UpdateSessionSettingsRequest
             ),
             timeout_ms=timeout_ms,
         )
@@ -463,12 +451,10 @@ class SessionSettings(BaseSDK):
     async def update_async(
         self,
         *,
-        request: Optional[
-            Union[
-                shared.UpdateSessionSettingsRequest,
-                shared.UpdateSessionSettingsRequestTypedDict,
-            ]
-        ] = None,
+        request: Union[
+            shared.UpdateSessionSettingsRequest,
+            shared.UpdateSessionSettingsRequestTypedDict,
+        ],
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -495,10 +481,8 @@ class SessionSettings(BaseSDK):
             base_url = self._get_url(base_url, url_variables)
 
         if not isinstance(request, BaseModel):
-            request = utils.unmarshal(
-                request, Optional[shared.UpdateSessionSettingsRequest]
-            )
-        request = cast(Optional[shared.UpdateSessionSettingsRequest], request)
+            request = utils.unmarshal(request, shared.UpdateSessionSettingsRequest)
+        request = cast(shared.UpdateSessionSettingsRequest, request)
 
         req = self._build_request_async(
             method="POST",
@@ -506,7 +490,7 @@ class SessionSettings(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=False,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -514,11 +498,7 @@ class SessionSettings(BaseSDK):
             http_headers=http_headers,
             security=self.sdk_configuration.security,
             get_serialized_body=lambda: utils.serialize_request_body(
-                request,
-                False,
-                True,
-                "json",
-                Optional[shared.UpdateSessionSettingsRequest],
+                request, False, False, "json", shared.UpdateSessionSettingsRequest
             ),
             timeout_ms=timeout_ms,
         )

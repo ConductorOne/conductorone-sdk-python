@@ -13,21 +13,21 @@ from typing_extensions import Annotated, NotRequired, TypedDict
 
 
 class C1APIStepupV1StepUpProviderServiceDeleteRequestTypedDict(TypedDict):
-    id: str
-    delete_step_up_provider_request: NotRequired[
+    delete_step_up_provider_request: (
         shared_deletestepupproviderrequest.DeleteStepUpProviderRequestTypedDict
-    ]
+    )
+    id: str
 
 
 class C1APIStepupV1StepUpProviderServiceDeleteRequest(BaseModel):
+    delete_step_up_provider_request: Annotated[
+        shared_deletestepupproviderrequest.DeleteStepUpProviderRequest,
+        FieldMetadata(request=RequestMetadata(media_type="application/json")),
+    ]
+
     id: Annotated[
         str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))
     ]
-
-    delete_step_up_provider_request: Annotated[
-        Optional[shared_deletestepupproviderrequest.DeleteStepUpProviderRequest],
-        FieldMetadata(request=RequestMetadata(media_type="application/json")),
-    ] = None
 
 
 class C1APIStepupV1StepUpProviderServiceDeleteResponseTypedDict(TypedDict):

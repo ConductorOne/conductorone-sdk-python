@@ -3,8 +3,10 @@
 from __future__ import annotations
 from enum import Enum
 import pydantic
+from pydantic import field_serializer
 from pydantic.functional_validators import PlainValidator
 from sdk import utils
+from sdk.models import shared
 from sdk.types import BaseModel
 from sdk.utils import validate_open_enum
 from typing import Optional
@@ -45,3 +47,12 @@ class ExternalRef(BaseModel):
 
     url: Optional[str] = None
     r"""The URL to the external reference."""
+
+    @field_serializer("external_ref_source")
+    def serialize_external_ref_source(self, value):
+        if isinstance(value, str):
+            try:
+                return shared.ExternalRefSource(value)
+            except ValueError:
+                return value
+        return value

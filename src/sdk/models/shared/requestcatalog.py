@@ -10,9 +10,10 @@ from .appentitlement import (
 from datetime import datetime
 from enum import Enum
 import pydantic
-from pydantic import model_serializer
+from pydantic import field_serializer, model_serializer
 from pydantic.functional_validators import PlainValidator
 from sdk import utils
+from sdk.models import shared
 from sdk.types import BaseModel, Nullable, OptionalNullable, UNSET, UNSET_SENTINEL
 from sdk.utils import validate_open_enum
 from typing import List, Optional
@@ -161,6 +162,33 @@ class RequestCatalog(BaseModel):
     ] = None
     r"""If this is true, the access entitlement requirement is ignored."""
 
+    @field_serializer("enrollment_behavior")
+    def serialize_enrollment_behavior(self, value):
+        if isinstance(value, str):
+            try:
+                return shared.EnrollmentBehavior(value)
+            except ValueError:
+                return value
+        return value
+
+    @field_serializer("unenrollment_behavior")
+    def serialize_unenrollment_behavior(self, value):
+        if isinstance(value, str):
+            try:
+                return shared.UnenrollmentBehavior(value)
+            except ValueError:
+                return value
+        return value
+
+    @field_serializer("unenrollment_entitlement_behavior")
+    def serialize_unenrollment_entitlement_behavior(self, value):
+        if isinstance(value, str):
+            try:
+                return shared.UnenrollmentEntitlementBehavior(value)
+            except ValueError:
+                return value
+        return value
+
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
         optional_fields = [
@@ -294,6 +322,33 @@ class RequestCatalogInput(BaseModel):
         Optional[bool], pydantic.Field(alias="visibleToEveryone")
     ] = None
     r"""If this is true, the access entitlement requirement is ignored."""
+
+    @field_serializer("enrollment_behavior")
+    def serialize_enrollment_behavior(self, value):
+        if isinstance(value, str):
+            try:
+                return shared.EnrollmentBehavior(value)
+            except ValueError:
+                return value
+        return value
+
+    @field_serializer("unenrollment_behavior")
+    def serialize_unenrollment_behavior(self, value):
+        if isinstance(value, str):
+            try:
+                return shared.UnenrollmentBehavior(value)
+            except ValueError:
+                return value
+        return value
+
+    @field_serializer("unenrollment_entitlement_behavior")
+    def serialize_unenrollment_entitlement_behavior(self, value):
+        if isinstance(value, str):
+            try:
+                return shared.UnenrollmentEntitlementBehavior(value)
+            except ValueError:
+                return value
+        return value
 
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):

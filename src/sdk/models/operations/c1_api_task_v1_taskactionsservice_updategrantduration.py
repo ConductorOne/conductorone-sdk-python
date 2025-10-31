@@ -13,23 +13,19 @@ from typing_extensions import Annotated, NotRequired, TypedDict
 
 
 class C1APITaskV1TaskActionsServiceUpdateGrantDurationRequestTypedDict(TypedDict):
+    task_actions_service_update_grant_duration_request: shared_taskactionsserviceupdategrantdurationrequest.TaskActionsServiceUpdateGrantDurationRequestTypedDict
     task_id: str
-    task_actions_service_update_grant_duration_request: NotRequired[
-        shared_taskactionsserviceupdategrantdurationrequest.TaskActionsServiceUpdateGrantDurationRequestTypedDict
-    ]
 
 
 class C1APITaskV1TaskActionsServiceUpdateGrantDurationRequest(BaseModel):
+    task_actions_service_update_grant_duration_request: Annotated[
+        shared_taskactionsserviceupdategrantdurationrequest.TaskActionsServiceUpdateGrantDurationRequest,
+        FieldMetadata(request=RequestMetadata(media_type="application/json")),
+    ]
+
     task_id: Annotated[
         str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))
     ]
-
-    task_actions_service_update_grant_duration_request: Annotated[
-        Optional[
-            shared_taskactionsserviceupdategrantdurationrequest.TaskActionsServiceUpdateGrantDurationRequest
-        ],
-        FieldMetadata(request=RequestMetadata(media_type="application/json")),
-    ] = None
 
 
 class C1APITaskV1TaskActionsServiceUpdateGrantDurationResponseTypedDict(TypedDict):

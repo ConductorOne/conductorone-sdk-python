@@ -29,7 +29,9 @@ with SDK(
     ),
 ) as s_client:
 
-    res = s_client.access_conflict.create_monitor()
+    res = s_client.access_conflict.create_monitor(request={
+        "display_name": "Hermina.Larkin",
+    })
 
     assert res.conflict_monitor is not None
 
@@ -75,6 +77,7 @@ with SDK(
 ) as s_client:
 
     res = s_client.access_conflict.delete_monitor(request={
+        "conflict_monitor_delete_request": {},
         "id": "<id>",
     })
 
@@ -169,6 +172,7 @@ with SDK(
 ) as s_client:
 
     res = s_client.access_conflict.update_monitor(request={
+        "conflict_monitor_update_request": {},
         "id": "<id>",
     })
 

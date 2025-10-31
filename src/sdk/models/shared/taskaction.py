@@ -5,9 +5,10 @@ from .closeaction import CloseAction, CloseActionTypedDict
 from .reassignaction import ReassignAction, ReassignActionTypedDict
 from enum import Enum
 import pydantic
-from pydantic import model_serializer
+from pydantic import field_serializer, model_serializer
 from pydantic.functional_validators import PlainValidator
 from sdk import utils
+from sdk.models import shared
 from sdk.types import BaseModel, Nullable, OptionalNullable, UNSET, UNSET_SENTINEL
 from sdk.utils import validate_open_enum
 from typing import List, Optional
@@ -116,6 +117,15 @@ class TaskAction(BaseModel):
         pydantic.Field(alias="taskUserRelation"),
     ] = None
     r"""The taskUserRelation field."""
+
+    @field_serializer("task_user_relation")
+    def serialize_task_user_relation(self, value):
+        if isinstance(value, str):
+            try:
+                return shared.TaskUserRelation(value)
+            except ValueError:
+                return value
+        return value
 
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):

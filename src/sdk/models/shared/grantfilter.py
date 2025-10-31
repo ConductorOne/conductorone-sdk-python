@@ -3,8 +3,10 @@
 from __future__ import annotations
 from enum import Enum
 import pydantic
+from pydantic import field_serializer
 from pydantic.functional_validators import PlainValidator
 from sdk import utils
+from sdk.models import shared
 from sdk.types import BaseModel
 from sdk.utils import validate_open_enum
 from typing import Optional
@@ -71,3 +73,30 @@ class GrantFilter(BaseModel):
         pydantic.Field(alias="grantSourceFilter"),
     ] = None
     r"""The grantSourceFilter field."""
+
+    @field_serializer("grant_filter_type")
+    def serialize_grant_filter_type(self, value):
+        if isinstance(value, str):
+            try:
+                return shared.GrantFilterType(value)
+            except ValueError:
+                return value
+        return value
+
+    @field_serializer("grant_justification_type")
+    def serialize_grant_justification_type(self, value):
+        if isinstance(value, str):
+            try:
+                return shared.GrantJustificationType(value)
+            except ValueError:
+                return value
+        return value
+
+    @field_serializer("grant_source_filter")
+    def serialize_grant_source_filter(self, value):
+        if isinstance(value, str):
+            try:
+                return shared.GrantSourceFilter(value)
+            except ValueError:
+                return value
+        return value

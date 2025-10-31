@@ -13,12 +13,10 @@ class SystemLog(BaseSDK):
     def list_events(
         self,
         *,
-        request: Optional[
-            Union[
-                shared.SystemLogServiceListEventsRequest,
-                shared.SystemLogServiceListEventsRequestTypedDict,
-            ]
-        ] = None,
+        request: Union[
+            shared.SystemLogServiceListEventsRequest,
+            shared.SystemLogServiceListEventsRequestTypedDict,
+        ],
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -48,10 +46,8 @@ class SystemLog(BaseSDK):
             base_url = self._get_url(base_url, url_variables)
 
         if not isinstance(request, BaseModel):
-            request = utils.unmarshal(
-                request, Optional[shared.SystemLogServiceListEventsRequest]
-            )
-        request = cast(Optional[shared.SystemLogServiceListEventsRequest], request)
+            request = utils.unmarshal(request, shared.SystemLogServiceListEventsRequest)
+        request = cast(shared.SystemLogServiceListEventsRequest, request)
 
         req = self._build_request(
             method="POST",
@@ -59,7 +55,7 @@ class SystemLog(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=False,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -67,11 +63,7 @@ class SystemLog(BaseSDK):
             http_headers=http_headers,
             security=self.sdk_configuration.security,
             get_serialized_body=lambda: utils.serialize_request_body(
-                request,
-                False,
-                True,
-                "json",
-                Optional[shared.SystemLogServiceListEventsRequest],
+                request, False, False, "json", shared.SystemLogServiceListEventsRequest
             ),
             timeout_ms=timeout_ms,
         )
@@ -118,12 +110,10 @@ class SystemLog(BaseSDK):
     async def list_events_async(
         self,
         *,
-        request: Optional[
-            Union[
-                shared.SystemLogServiceListEventsRequest,
-                shared.SystemLogServiceListEventsRequestTypedDict,
-            ]
-        ] = None,
+        request: Union[
+            shared.SystemLogServiceListEventsRequest,
+            shared.SystemLogServiceListEventsRequestTypedDict,
+        ],
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -153,10 +143,8 @@ class SystemLog(BaseSDK):
             base_url = self._get_url(base_url, url_variables)
 
         if not isinstance(request, BaseModel):
-            request = utils.unmarshal(
-                request, Optional[shared.SystemLogServiceListEventsRequest]
-            )
-        request = cast(Optional[shared.SystemLogServiceListEventsRequest], request)
+            request = utils.unmarshal(request, shared.SystemLogServiceListEventsRequest)
+        request = cast(shared.SystemLogServiceListEventsRequest, request)
 
         req = self._build_request_async(
             method="POST",
@@ -164,7 +152,7 @@ class SystemLog(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=False,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -172,11 +160,7 @@ class SystemLog(BaseSDK):
             http_headers=http_headers,
             security=self.sdk_configuration.security,
             get_serialized_body=lambda: utils.serialize_request_body(
-                request,
-                False,
-                True,
-                "json",
-                Optional[shared.SystemLogServiceListEventsRequest],
+                request, False, False, "json", shared.SystemLogServiceListEventsRequest
             ),
             timeout_ms=timeout_ms,
         )

@@ -15,14 +15,17 @@ from typing_extensions import Annotated, NotRequired, TypedDict
 class C1APIAppV1AppResourceServiceCreateManuallyManagedAppResourceRequestTypedDict(
     TypedDict
 ):
+    create_manually_managed_app_resource_request: shared_createmanuallymanagedappresourcerequest.CreateManuallyManagedAppResourceRequestTypedDict
     app_id: str
     app_resource_type_id: str
-    create_manually_managed_app_resource_request: NotRequired[
-        shared_createmanuallymanagedappresourcerequest.CreateManuallyManagedAppResourceRequestTypedDict
-    ]
 
 
 class C1APIAppV1AppResourceServiceCreateManuallyManagedAppResourceRequest(BaseModel):
+    create_manually_managed_app_resource_request: Annotated[
+        shared_createmanuallymanagedappresourcerequest.CreateManuallyManagedAppResourceRequest,
+        FieldMetadata(request=RequestMetadata(media_type="application/json")),
+    ]
+
     app_id: Annotated[
         str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))
     ]
@@ -30,13 +33,6 @@ class C1APIAppV1AppResourceServiceCreateManuallyManagedAppResourceRequest(BaseMo
     app_resource_type_id: Annotated[
         str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))
     ]
-
-    create_manually_managed_app_resource_request: Annotated[
-        Optional[
-            shared_createmanuallymanagedappresourcerequest.CreateManuallyManagedAppResourceRequest
-        ],
-        FieldMetadata(request=RequestMetadata(media_type="application/json")),
-    ] = None
 
 
 class C1APIAppV1AppResourceServiceCreateManuallyManagedAppResourceResponseTypedDict(

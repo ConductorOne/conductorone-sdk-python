@@ -15,25 +15,21 @@ from typing_extensions import Annotated, NotRequired, TypedDict
 class C1APIAttributeV1AttributesDeleteComplianceFrameworkAttributeValueRequestTypedDict(
     TypedDict
 ):
+    delete_compliance_framework_attribute_value_request: shared_deletecomplianceframeworkattributevaluerequest.DeleteComplianceFrameworkAttributeValueRequestTypedDict
     id: str
-    delete_compliance_framework_attribute_value_request: NotRequired[
-        shared_deletecomplianceframeworkattributevaluerequest.DeleteComplianceFrameworkAttributeValueRequestTypedDict
-    ]
 
 
 class C1APIAttributeV1AttributesDeleteComplianceFrameworkAttributeValueRequest(
     BaseModel
 ):
+    delete_compliance_framework_attribute_value_request: Annotated[
+        shared_deletecomplianceframeworkattributevaluerequest.DeleteComplianceFrameworkAttributeValueRequest,
+        FieldMetadata(request=RequestMetadata(media_type="application/json")),
+    ]
+
     id: Annotated[
         str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))
     ]
-
-    delete_compliance_framework_attribute_value_request: Annotated[
-        Optional[
-            shared_deletecomplianceframeworkattributevaluerequest.DeleteComplianceFrameworkAttributeValueRequest
-        ],
-        FieldMetadata(request=RequestMetadata(media_type="application/json")),
-    ] = None
 
 
 class C1APIAttributeV1AttributesDeleteComplianceFrameworkAttributeValueResponseTypedDict(

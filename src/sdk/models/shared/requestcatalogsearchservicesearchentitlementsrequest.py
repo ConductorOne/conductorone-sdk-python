@@ -7,8 +7,10 @@ from .appentitlementexpandmask import (
 )
 from enum import Enum
 import pydantic
+from pydantic import field_serializer
 from pydantic.functional_validators import PlainValidator
 from sdk import utils
+from sdk.models import shared
 from sdk.types import BaseModel
 from sdk.utils import validate_open_enum
 from typing import Optional
@@ -82,3 +84,12 @@ class RequestCatalogSearchServiceSearchEntitlementsRequest(BaseModel):
 
     query: Optional[str] = None
     r"""Fuzzy search the display name of resource types."""
+
+    @field_serializer("granted_status")
+    def serialize_granted_status(self, value):
+        if isinstance(value, str):
+            try:
+                return shared.GrantedStatus(value)
+            except ValueError:
+                return value
+        return value

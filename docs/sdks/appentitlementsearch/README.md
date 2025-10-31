@@ -29,7 +29,7 @@ with SDK(
     ),
 ) as s_client:
 
-    res = s_client.app_entitlement_search.search()
+    res = s_client.app_entitlement_search.search(request={})
 
     while res is not None:
         # Handle items
@@ -170,7 +170,7 @@ with SDK(
     ),
 ) as s_client:
 
-    res = s_client.app_entitlement_search.search_grants()
+    res = s_client.app_entitlement_search.search_grants(request={})
 
     assert res.app_entitlement_search_service_search_grants_response is not None
 

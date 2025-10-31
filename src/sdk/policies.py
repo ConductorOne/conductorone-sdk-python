@@ -13,9 +13,7 @@ class Policies(BaseSDK):
     def create(
         self,
         *,
-        request: Optional[
-            Union[shared.CreatePolicyRequest, shared.CreatePolicyRequestTypedDict]
-        ] = None,
+        request: Union[shared.CreatePolicyRequest, shared.CreatePolicyRequestTypedDict],
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -42,8 +40,8 @@ class Policies(BaseSDK):
             base_url = self._get_url(base_url, url_variables)
 
         if not isinstance(request, BaseModel):
-            request = utils.unmarshal(request, Optional[shared.CreatePolicyRequest])
-        request = cast(Optional[shared.CreatePolicyRequest], request)
+            request = utils.unmarshal(request, shared.CreatePolicyRequest)
+        request = cast(shared.CreatePolicyRequest, request)
 
         req = self._build_request(
             method="POST",
@@ -51,7 +49,7 @@ class Policies(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=False,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -59,7 +57,7 @@ class Policies(BaseSDK):
             http_headers=http_headers,
             security=self.sdk_configuration.security,
             get_serialized_body=lambda: utils.serialize_request_body(
-                request, False, True, "json", Optional[shared.CreatePolicyRequest]
+                request, False, False, "json", shared.CreatePolicyRequest
             ),
             timeout_ms=timeout_ms,
         )
@@ -106,9 +104,7 @@ class Policies(BaseSDK):
     async def create_async(
         self,
         *,
-        request: Optional[
-            Union[shared.CreatePolicyRequest, shared.CreatePolicyRequestTypedDict]
-        ] = None,
+        request: Union[shared.CreatePolicyRequest, shared.CreatePolicyRequestTypedDict],
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -135,8 +131,8 @@ class Policies(BaseSDK):
             base_url = self._get_url(base_url, url_variables)
 
         if not isinstance(request, BaseModel):
-            request = utils.unmarshal(request, Optional[shared.CreatePolicyRequest])
-        request = cast(Optional[shared.CreatePolicyRequest], request)
+            request = utils.unmarshal(request, shared.CreatePolicyRequest)
+        request = cast(shared.CreatePolicyRequest, request)
 
         req = self._build_request_async(
             method="POST",
@@ -144,7 +140,7 @@ class Policies(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=False,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -152,7 +148,7 @@ class Policies(BaseSDK):
             http_headers=http_headers,
             security=self.sdk_configuration.security,
             get_serialized_body=lambda: utils.serialize_request_body(
-                request, False, True, "json", Optional[shared.CreatePolicyRequest]
+                request, False, False, "json", shared.CreatePolicyRequest
             ),
             timeout_ms=timeout_ms,
         )
@@ -240,7 +236,7 @@ class Policies(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=True,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -250,9 +246,9 @@ class Policies(BaseSDK):
             get_serialized_body=lambda: utils.serialize_request_body(
                 request.delete_policy_request,
                 False,
-                True,
+                False,
                 "json",
-                Optional[shared.DeletePolicyRequest],
+                shared.DeletePolicyRequest,
             ),
             timeout_ms=timeout_ms,
         )
@@ -340,7 +336,7 @@ class Policies(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=True,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -350,9 +346,9 @@ class Policies(BaseSDK):
             get_serialized_body=lambda: utils.serialize_request_body(
                 request.delete_policy_request,
                 False,
-                True,
+                False,
                 "json",
-                Optional[shared.DeletePolicyRequest],
+                shared.DeletePolicyRequest,
             ),
             timeout_ms=timeout_ms,
         )
@@ -812,7 +808,7 @@ class Policies(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=True,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -822,9 +818,9 @@ class Policies(BaseSDK):
             get_serialized_body=lambda: utils.serialize_request_body(
                 request.update_policy_request,
                 False,
-                True,
+                False,
                 "json",
-                Optional[shared.UpdatePolicyRequest],
+                shared.UpdatePolicyRequest,
             ),
             timeout_ms=timeout_ms,
         )
@@ -912,7 +908,7 @@ class Policies(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=True,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -922,9 +918,9 @@ class Policies(BaseSDK):
             get_serialized_body=lambda: utils.serialize_request_body(
                 request.update_policy_request,
                 False,
-                True,
+                False,
                 "json",
-                Optional[shared.UpdatePolicyRequest],
+                shared.UpdatePolicyRequest,
             ),
             timeout_ms=timeout_ms,
         )

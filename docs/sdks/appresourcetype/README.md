@@ -31,6 +31,10 @@ with SDK(
 ) as s_client:
 
     res = s_client.app_resource_type.create_manually_managed_resource_type(request={
+        "create_manually_managed_resource_type_request": {
+            "display_name": "Vito_Goyette",
+            "resource_type": shared.ResourceType.PROFILE_TYPE,
+        },
         "app_id": "<id>",
     })
 
@@ -78,6 +82,7 @@ with SDK(
 ) as s_client:
 
     res = s_client.app_resource_type.delete_manually_managed_resource_type(request={
+        "delete_manually_managed_resource_type_request": {},
         "app_id": "<id>",
         "id": "<id>",
     })
@@ -221,6 +226,7 @@ with SDK(
 ) as s_client:
 
     res = s_client.app_resource_type.update_manually_managed_resource_type(request={
+        "update_manually_managed_resource_type_request": {},
         "app_id": "<id>",
         "id": "<id>",
     })

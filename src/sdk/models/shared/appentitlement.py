@@ -6,10 +6,11 @@ from .provisionpolicy_input import ProvisionPolicyInput, ProvisionPolicyInputTyp
 from datetime import datetime
 from enum import Enum
 import pydantic
-from pydantic import model_serializer
+from pydantic import field_serializer, model_serializer
 from pydantic.functional_serializers import PlainSerializer
 from pydantic.functional_validators import BeforeValidator, PlainValidator
 from sdk import utils
+from sdk.models import shared
 from sdk.types import BaseModel, Nullable, OptionalNullable, UNSET, UNSET_SENTINEL
 from sdk.utils import serialize_int, validate_int, validate_open_enum
 from typing import Dict, List, Optional
@@ -312,6 +313,15 @@ class AppEntitlement(BaseModel):
     user_edited_mask: Annotated[
         OptionalNullable[str], pydantic.Field(alias="userEditedMask")
     ] = UNSET
+
+    @field_serializer("purpose")
+    def serialize_purpose(self, value):
+        if isinstance(value, str):
+            try:
+                return shared.Purpose(value)
+            except ValueError:
+                return value
+        return value
 
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
@@ -616,6 +626,15 @@ class AppEntitlementInput(BaseModel):
     user_edited_mask: Annotated[
         OptionalNullable[str], pydantic.Field(alias="userEditedMask")
     ] = UNSET
+
+    @field_serializer("purpose")
+    def serialize_purpose(self, value):
+        if isinstance(value, str):
+            try:
+                return shared.Purpose(value)
+            except ValueError:
+                return value
+        return value
 
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):

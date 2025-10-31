@@ -13,12 +13,10 @@ class ExportsSearch(BaseSDK):
     def search(
         self,
         *,
-        request: Optional[
-            Union[
-                shared.ExportsSearchServiceSearchRequest,
-                shared.ExportsSearchServiceSearchRequestTypedDict,
-            ]
-        ] = None,
+        request: Union[
+            shared.ExportsSearchServiceSearchRequest,
+            shared.ExportsSearchServiceSearchRequestTypedDict,
+        ],
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -45,10 +43,8 @@ class ExportsSearch(BaseSDK):
             base_url = self._get_url(base_url, url_variables)
 
         if not isinstance(request, BaseModel):
-            request = utils.unmarshal(
-                request, Optional[shared.ExportsSearchServiceSearchRequest]
-            )
-        request = cast(Optional[shared.ExportsSearchServiceSearchRequest], request)
+            request = utils.unmarshal(request, shared.ExportsSearchServiceSearchRequest)
+        request = cast(shared.ExportsSearchServiceSearchRequest, request)
 
         req = self._build_request(
             method="POST",
@@ -56,7 +52,7 @@ class ExportsSearch(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=False,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -64,11 +60,7 @@ class ExportsSearch(BaseSDK):
             http_headers=http_headers,
             security=self.sdk_configuration.security,
             get_serialized_body=lambda: utils.serialize_request_body(
-                request,
-                False,
-                True,
-                "json",
-                Optional[shared.ExportsSearchServiceSearchRequest],
+                request, False, False, "json", shared.ExportsSearchServiceSearchRequest
             ),
             timeout_ms=timeout_ms,
         )
@@ -115,12 +107,10 @@ class ExportsSearch(BaseSDK):
     async def search_async(
         self,
         *,
-        request: Optional[
-            Union[
-                shared.ExportsSearchServiceSearchRequest,
-                shared.ExportsSearchServiceSearchRequestTypedDict,
-            ]
-        ] = None,
+        request: Union[
+            shared.ExportsSearchServiceSearchRequest,
+            shared.ExportsSearchServiceSearchRequestTypedDict,
+        ],
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -147,10 +137,8 @@ class ExportsSearch(BaseSDK):
             base_url = self._get_url(base_url, url_variables)
 
         if not isinstance(request, BaseModel):
-            request = utils.unmarshal(
-                request, Optional[shared.ExportsSearchServiceSearchRequest]
-            )
-        request = cast(Optional[shared.ExportsSearchServiceSearchRequest], request)
+            request = utils.unmarshal(request, shared.ExportsSearchServiceSearchRequest)
+        request = cast(shared.ExportsSearchServiceSearchRequest, request)
 
         req = self._build_request_async(
             method="POST",
@@ -158,7 +146,7 @@ class ExportsSearch(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=False,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -166,11 +154,7 @@ class ExportsSearch(BaseSDK):
             http_headers=http_headers,
             security=self.sdk_configuration.security,
             get_serialized_body=lambda: utils.serialize_request_body(
-                request,
-                False,
-                True,
-                "json",
-                Optional[shared.ExportsSearchServiceSearchRequest],
+                request, False, False, "json", shared.ExportsSearchServiceSearchRequest
             ),
             timeout_ms=timeout_ms,
         )

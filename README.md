@@ -574,7 +574,9 @@ with SDK(
     res = None
     try:
 
-        res = s_client.access_conflict.create_monitor()
+        res = s_client.access_conflict.create_monitor(request={
+            "display_name": "Hermina.Larkin",
+        })
 
         assert res.conflict_monitor is not None
 
@@ -640,7 +642,9 @@ with SDK(
     ),
 ) as s_client:
 
-    res = s_client.access_conflict.create_monitor()
+    res = s_client.access_conflict.create_monitor(request={
+        "display_name": "Hermina.Larkin",
+    })
 
     assert res.conflict_monitor is not None
 
@@ -665,7 +669,9 @@ with SDK(
     ),
 ) as s_client:
 
-    res = s_client.access_conflict.create_monitor()
+    res = s_client.access_conflict.create_monitor(request={
+        "display_name": "Hermina.Larkin",
+    })
 
     assert res.conflict_monitor is not None
 
@@ -795,7 +801,9 @@ with SDK(
     ),
 ) as s_client:
 
-    res = s_client.access_conflict.create_monitor()
+    res = s_client.access_conflict.create_monitor(request={
+        "display_name": "Hermina.Larkin",
+    })
 
     assert res.conflict_monitor is not None
 
@@ -825,7 +833,7 @@ with SDK(
     ),
 ) as s_client:
 
-    res = s_client.app_entitlement_search.search()
+    res = s_client.app_entitlement_search.search(request={})
 
     while res is not None:
         # Handle items
@@ -854,7 +862,9 @@ with SDK(
     ),
 ) as s_client:
 
-    res = s_client.access_conflict.create_monitor(,
+    res = s_client.access_conflict.create_monitor(request={
+        "display_name": "Hermina.Larkin",
+    },
         RetryConfig("backoff", BackoffStrategy(1, 50, 1.1, 100), False))
 
     assert res.conflict_monitor is not None
@@ -879,7 +889,9 @@ with SDK(
     ),
 ) as s_client:
 
-    res = s_client.access_conflict.create_monitor()
+    res = s_client.access_conflict.create_monitor(request={
+        "display_name": "Hermina.Larkin",
+    })
 
     assert res.conflict_monitor is not None
 

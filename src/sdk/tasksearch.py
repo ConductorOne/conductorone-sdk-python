@@ -13,9 +13,7 @@ class TaskSearch(BaseSDK):
     def search(
         self,
         *,
-        request: Optional[
-            Union[shared.TaskSearchRequest, shared.TaskSearchRequestTypedDict]
-        ] = None,
+        request: Union[shared.TaskSearchRequest, shared.TaskSearchRequestTypedDict],
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -42,8 +40,8 @@ class TaskSearch(BaseSDK):
             base_url = self._get_url(base_url, url_variables)
 
         if not isinstance(request, BaseModel):
-            request = utils.unmarshal(request, Optional[shared.TaskSearchRequest])
-        request = cast(Optional[shared.TaskSearchRequest], request)
+            request = utils.unmarshal(request, shared.TaskSearchRequest)
+        request = cast(shared.TaskSearchRequest, request)
 
         req = self._build_request(
             method="POST",
@@ -51,7 +49,7 @@ class TaskSearch(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=False,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -59,7 +57,7 @@ class TaskSearch(BaseSDK):
             http_headers=http_headers,
             security=self.sdk_configuration.security,
             get_serialized_body=lambda: utils.serialize_request_body(
-                request, False, True, "json", Optional[shared.TaskSearchRequest]
+                request, False, False, "json", shared.TaskSearchRequest
             ),
             timeout_ms=timeout_ms,
         )
@@ -106,9 +104,7 @@ class TaskSearch(BaseSDK):
     async def search_async(
         self,
         *,
-        request: Optional[
-            Union[shared.TaskSearchRequest, shared.TaskSearchRequestTypedDict]
-        ] = None,
+        request: Union[shared.TaskSearchRequest, shared.TaskSearchRequestTypedDict],
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -135,8 +131,8 @@ class TaskSearch(BaseSDK):
             base_url = self._get_url(base_url, url_variables)
 
         if not isinstance(request, BaseModel):
-            request = utils.unmarshal(request, Optional[shared.TaskSearchRequest])
-        request = cast(Optional[shared.TaskSearchRequest], request)
+            request = utils.unmarshal(request, shared.TaskSearchRequest)
+        request = cast(shared.TaskSearchRequest, request)
 
         req = self._build_request_async(
             method="POST",
@@ -144,7 +140,7 @@ class TaskSearch(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=False,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -152,7 +148,7 @@ class TaskSearch(BaseSDK):
             http_headers=http_headers,
             security=self.sdk_configuration.security,
             get_serialized_body=lambda: utils.serialize_request_body(
-                request, False, True, "json", Optional[shared.TaskSearchRequest]
+                request, False, False, "json", shared.TaskSearchRequest
             ),
             timeout_ms=timeout_ms,
         )

@@ -58,7 +58,7 @@ class RequestCatalogManagement(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=True,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -68,11 +68,9 @@ class RequestCatalogManagement(BaseSDK):
             get_serialized_body=lambda: utils.serialize_request_body(
                 request.request_catalog_management_service_add_access_entitlements_request,
                 False,
-                True,
+                False,
                 "json",
-                Optional[
-                    shared.RequestCatalogManagementServiceAddAccessEntitlementsRequest
-                ],
+                shared.RequestCatalogManagementServiceAddAccessEntitlementsRequest,
             ),
             timeout_ms=timeout_ms,
         )
@@ -167,7 +165,7 @@ class RequestCatalogManagement(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=True,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -177,11 +175,9 @@ class RequestCatalogManagement(BaseSDK):
             get_serialized_body=lambda: utils.serialize_request_body(
                 request.request_catalog_management_service_add_access_entitlements_request,
                 False,
-                True,
+                False,
                 "json",
-                Optional[
-                    shared.RequestCatalogManagementServiceAddAccessEntitlementsRequest
-                ],
+                shared.RequestCatalogManagementServiceAddAccessEntitlementsRequest,
             ),
             timeout_ms=timeout_ms,
         )
@@ -276,7 +272,7 @@ class RequestCatalogManagement(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=True,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -286,11 +282,9 @@ class RequestCatalogManagement(BaseSDK):
             get_serialized_body=lambda: utils.serialize_request_body(
                 request.request_catalog_management_service_add_app_entitlements_request,
                 False,
-                True,
+                False,
                 "json",
-                Optional[
-                    shared.RequestCatalogManagementServiceAddAppEntitlementsRequest
-                ],
+                shared.RequestCatalogManagementServiceAddAppEntitlementsRequest,
             ),
             timeout_ms=timeout_ms,
         )
@@ -385,7 +379,7 @@ class RequestCatalogManagement(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=True,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -395,11 +389,9 @@ class RequestCatalogManagement(BaseSDK):
             get_serialized_body=lambda: utils.serialize_request_body(
                 request.request_catalog_management_service_add_app_entitlements_request,
                 False,
-                True,
+                False,
                 "json",
-                Optional[
-                    shared.RequestCatalogManagementServiceAddAppEntitlementsRequest
-                ],
+                shared.RequestCatalogManagementServiceAddAppEntitlementsRequest,
             ),
             timeout_ms=timeout_ms,
         )
@@ -449,12 +441,10 @@ class RequestCatalogManagement(BaseSDK):
     def create(
         self,
         *,
-        request: Optional[
-            Union[
-                shared.RequestCatalogManagementServiceCreateRequest,
-                shared.RequestCatalogManagementServiceCreateRequestTypedDict,
-            ]
-        ] = None,
+        request: Union[
+            shared.RequestCatalogManagementServiceCreateRequest,
+            shared.RequestCatalogManagementServiceCreateRequestTypedDict,
+        ],
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -482,11 +472,9 @@ class RequestCatalogManagement(BaseSDK):
 
         if not isinstance(request, BaseModel):
             request = utils.unmarshal(
-                request, Optional[shared.RequestCatalogManagementServiceCreateRequest]
+                request, shared.RequestCatalogManagementServiceCreateRequest
             )
-        request = cast(
-            Optional[shared.RequestCatalogManagementServiceCreateRequest], request
-        )
+        request = cast(shared.RequestCatalogManagementServiceCreateRequest, request)
 
         req = self._build_request(
             method="POST",
@@ -494,7 +482,7 @@ class RequestCatalogManagement(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=False,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -504,9 +492,9 @@ class RequestCatalogManagement(BaseSDK):
             get_serialized_body=lambda: utils.serialize_request_body(
                 request,
                 False,
-                True,
+                False,
                 "json",
-                Optional[shared.RequestCatalogManagementServiceCreateRequest],
+                shared.RequestCatalogManagementServiceCreateRequest,
             ),
             timeout_ms=timeout_ms,
         )
@@ -554,12 +542,10 @@ class RequestCatalogManagement(BaseSDK):
     async def create_async(
         self,
         *,
-        request: Optional[
-            Union[
-                shared.RequestCatalogManagementServiceCreateRequest,
-                shared.RequestCatalogManagementServiceCreateRequestTypedDict,
-            ]
-        ] = None,
+        request: Union[
+            shared.RequestCatalogManagementServiceCreateRequest,
+            shared.RequestCatalogManagementServiceCreateRequestTypedDict,
+        ],
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -587,11 +573,9 @@ class RequestCatalogManagement(BaseSDK):
 
         if not isinstance(request, BaseModel):
             request = utils.unmarshal(
-                request, Optional[shared.RequestCatalogManagementServiceCreateRequest]
+                request, shared.RequestCatalogManagementServiceCreateRequest
             )
-        request = cast(
-            Optional[shared.RequestCatalogManagementServiceCreateRequest], request
-        )
+        request = cast(shared.RequestCatalogManagementServiceCreateRequest, request)
 
         req = self._build_request_async(
             method="POST",
@@ -599,7 +583,7 @@ class RequestCatalogManagement(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=False,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -609,9 +593,9 @@ class RequestCatalogManagement(BaseSDK):
             get_serialized_body=lambda: utils.serialize_request_body(
                 request,
                 False,
-                True,
+                False,
                 "json",
-                Optional[shared.RequestCatalogManagementServiceCreateRequest],
+                shared.RequestCatalogManagementServiceCreateRequest,
             ),
             timeout_ms=timeout_ms,
         )
@@ -704,7 +688,7 @@ class RequestCatalogManagement(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=True,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -714,9 +698,9 @@ class RequestCatalogManagement(BaseSDK):
             get_serialized_body=lambda: utils.serialize_request_body(
                 request.create_bundle_automation_request,
                 False,
-                True,
+                False,
                 "json",
-                Optional[shared.CreateBundleAutomationRequest],
+                shared.CreateBundleAutomationRequest,
             ),
             timeout_ms=timeout_ms,
         )
@@ -808,7 +792,7 @@ class RequestCatalogManagement(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=True,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -818,9 +802,9 @@ class RequestCatalogManagement(BaseSDK):
             get_serialized_body=lambda: utils.serialize_request_body(
                 request.create_bundle_automation_request,
                 False,
-                True,
+                False,
                 "json",
-                Optional[shared.CreateBundleAutomationRequest],
+                shared.CreateBundleAutomationRequest,
             ),
             timeout_ms=timeout_ms,
         )
@@ -912,7 +896,7 @@ class RequestCatalogManagement(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=True,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -922,9 +906,9 @@ class RequestCatalogManagement(BaseSDK):
             get_serialized_body=lambda: utils.serialize_request_body(
                 request.request_catalog_management_service_delete_request,
                 False,
-                True,
+                False,
                 "json",
-                Optional[shared.RequestCatalogManagementServiceDeleteRequest],
+                shared.RequestCatalogManagementServiceDeleteRequest,
             ),
             timeout_ms=timeout_ms,
         )
@@ -1017,7 +1001,7 @@ class RequestCatalogManagement(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=True,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -1027,9 +1011,9 @@ class RequestCatalogManagement(BaseSDK):
             get_serialized_body=lambda: utils.serialize_request_body(
                 request.request_catalog_management_service_delete_request,
                 False,
-                True,
+                False,
                 "json",
-                Optional[shared.RequestCatalogManagementServiceDeleteRequest],
+                shared.RequestCatalogManagementServiceDeleteRequest,
             ),
             timeout_ms=timeout_ms,
         )
@@ -1122,7 +1106,7 @@ class RequestCatalogManagement(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=True,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -1132,9 +1116,9 @@ class RequestCatalogManagement(BaseSDK):
             get_serialized_body=lambda: utils.serialize_request_body(
                 request.delete_bundle_automation_request,
                 False,
-                True,
+                False,
                 "json",
-                Optional[shared.DeleteBundleAutomationRequest],
+                shared.DeleteBundleAutomationRequest,
             ),
             timeout_ms=timeout_ms,
         )
@@ -1226,7 +1210,7 @@ class RequestCatalogManagement(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=True,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -1236,9 +1220,9 @@ class RequestCatalogManagement(BaseSDK):
             get_serialized_body=lambda: utils.serialize_request_body(
                 request.delete_bundle_automation_request,
                 False,
-                True,
+                False,
                 "json",
-                Optional[shared.DeleteBundleAutomationRequest],
+                shared.DeleteBundleAutomationRequest,
             ),
             timeout_ms=timeout_ms,
         )
@@ -1330,7 +1314,7 @@ class RequestCatalogManagement(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=True,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -1340,9 +1324,9 @@ class RequestCatalogManagement(BaseSDK):
             get_serialized_body=lambda: utils.serialize_request_body(
                 request.force_run_bundle_automation_request,
                 False,
-                True,
+                False,
                 "json",
-                Optional[shared.ForceRunBundleAutomationRequest],
+                shared.ForceRunBundleAutomationRequest,
             ),
             timeout_ms=timeout_ms,
         )
@@ -1434,7 +1418,7 @@ class RequestCatalogManagement(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=True,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -1444,9 +1428,9 @@ class RequestCatalogManagement(BaseSDK):
             get_serialized_body=lambda: utils.serialize_request_body(
                 request.force_run_bundle_automation_request,
                 False,
-                True,
+                False,
                 "json",
-                Optional[shared.ForceRunBundleAutomationRequest],
+                shared.ForceRunBundleAutomationRequest,
             ),
             timeout_ms=timeout_ms,
         )
@@ -2724,7 +2708,7 @@ class RequestCatalogManagement(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=True,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -2734,11 +2718,9 @@ class RequestCatalogManagement(BaseSDK):
             get_serialized_body=lambda: utils.serialize_request_body(
                 request.request_catalog_management_service_remove_access_entitlements_request,
                 False,
-                True,
+                False,
                 "json",
-                Optional[
-                    shared.RequestCatalogManagementServiceRemoveAccessEntitlementsRequest
-                ],
+                shared.RequestCatalogManagementServiceRemoveAccessEntitlementsRequest,
             ),
             timeout_ms=timeout_ms,
         )
@@ -2833,7 +2815,7 @@ class RequestCatalogManagement(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=True,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -2843,11 +2825,9 @@ class RequestCatalogManagement(BaseSDK):
             get_serialized_body=lambda: utils.serialize_request_body(
                 request.request_catalog_management_service_remove_access_entitlements_request,
                 False,
-                True,
+                False,
                 "json",
-                Optional[
-                    shared.RequestCatalogManagementServiceRemoveAccessEntitlementsRequest
-                ],
+                shared.RequestCatalogManagementServiceRemoveAccessEntitlementsRequest,
             ),
             timeout_ms=timeout_ms,
         )
@@ -2942,7 +2922,7 @@ class RequestCatalogManagement(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=True,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -2952,11 +2932,9 @@ class RequestCatalogManagement(BaseSDK):
             get_serialized_body=lambda: utils.serialize_request_body(
                 request.request_catalog_management_service_remove_app_entitlements_request,
                 False,
-                True,
+                False,
                 "json",
-                Optional[
-                    shared.RequestCatalogManagementServiceRemoveAppEntitlementsRequest
-                ],
+                shared.RequestCatalogManagementServiceRemoveAppEntitlementsRequest,
             ),
             timeout_ms=timeout_ms,
         )
@@ -3051,7 +3029,7 @@ class RequestCatalogManagement(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=True,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -3061,11 +3039,9 @@ class RequestCatalogManagement(BaseSDK):
             get_serialized_body=lambda: utils.serialize_request_body(
                 request.request_catalog_management_service_remove_app_entitlements_request,
                 False,
-                True,
+                False,
                 "json",
-                Optional[
-                    shared.RequestCatalogManagementServiceRemoveAppEntitlementsRequest
-                ],
+                shared.RequestCatalogManagementServiceRemoveAppEntitlementsRequest,
             ),
             timeout_ms=timeout_ms,
         )
@@ -3160,7 +3136,7 @@ class RequestCatalogManagement(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=True,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -3170,9 +3146,9 @@ class RequestCatalogManagement(BaseSDK):
             get_serialized_body=lambda: utils.serialize_request_body(
                 request.resume_paused_bundle_automation_request,
                 False,
-                True,
+                False,
                 "json",
-                Optional[shared.ResumePausedBundleAutomationRequest],
+                shared.ResumePausedBundleAutomationRequest,
             ),
             timeout_ms=timeout_ms,
         )
@@ -3264,7 +3240,7 @@ class RequestCatalogManagement(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=True,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -3274,9 +3250,9 @@ class RequestCatalogManagement(BaseSDK):
             get_serialized_body=lambda: utils.serialize_request_body(
                 request.resume_paused_bundle_automation_request,
                 False,
-                True,
+                False,
                 "json",
-                Optional[shared.ResumePausedBundleAutomationRequest],
+                shared.ResumePausedBundleAutomationRequest,
             ),
             timeout_ms=timeout_ms,
         )
@@ -3368,7 +3344,7 @@ class RequestCatalogManagement(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=True,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -3378,9 +3354,9 @@ class RequestCatalogManagement(BaseSDK):
             get_serialized_body=lambda: utils.serialize_request_body(
                 request.set_bundle_automation_request,
                 False,
-                True,
+                False,
                 "json",
-                Optional[shared.SetBundleAutomationRequest],
+                shared.SetBundleAutomationRequest,
             ),
             timeout_ms=timeout_ms,
         )
@@ -3472,7 +3448,7 @@ class RequestCatalogManagement(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=True,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -3482,9 +3458,9 @@ class RequestCatalogManagement(BaseSDK):
             get_serialized_body=lambda: utils.serialize_request_body(
                 request.set_bundle_automation_request,
                 False,
-                True,
+                False,
                 "json",
-                Optional[shared.SetBundleAutomationRequest],
+                shared.SetBundleAutomationRequest,
             ),
             timeout_ms=timeout_ms,
         )
@@ -3576,7 +3552,7 @@ class RequestCatalogManagement(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=True,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -3586,9 +3562,9 @@ class RequestCatalogManagement(BaseSDK):
             get_serialized_body=lambda: utils.serialize_request_body(
                 request.request_catalog_management_service_update_request,
                 False,
-                True,
+                False,
                 "json",
-                Optional[shared.RequestCatalogManagementServiceUpdateRequest],
+                shared.RequestCatalogManagementServiceUpdateRequest,
             ),
             timeout_ms=timeout_ms,
         )
@@ -3681,7 +3657,7 @@ class RequestCatalogManagement(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=True,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -3691,9 +3667,9 @@ class RequestCatalogManagement(BaseSDK):
             get_serialized_body=lambda: utils.serialize_request_body(
                 request.request_catalog_management_service_update_request,
                 False,
-                True,
+                False,
                 "json",
-                Optional[shared.RequestCatalogManagementServiceUpdateRequest],
+                shared.RequestCatalogManagementServiceUpdateRequest,
             ),
             timeout_ms=timeout_ms,
         )
@@ -3786,7 +3762,7 @@ class RequestCatalogManagement(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=True,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -3796,11 +3772,9 @@ class RequestCatalogManagement(BaseSDK):
             get_serialized_body=lambda: utils.serialize_request_body(
                 request.request_catalog_management_service_update_app_entitlements_request,
                 False,
-                True,
+                False,
                 "json",
-                Optional[
-                    shared.RequestCatalogManagementServiceUpdateAppEntitlementsRequest
-                ],
+                shared.RequestCatalogManagementServiceUpdateAppEntitlementsRequest,
             ),
             timeout_ms=timeout_ms,
         )
@@ -3895,7 +3869,7 @@ class RequestCatalogManagement(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=True,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -3905,11 +3879,9 @@ class RequestCatalogManagement(BaseSDK):
             get_serialized_body=lambda: utils.serialize_request_body(
                 request.request_catalog_management_service_update_app_entitlements_request,
                 False,
-                True,
+                False,
                 "json",
-                Optional[
-                    shared.RequestCatalogManagementServiceUpdateAppEntitlementsRequest
-                ],
+                shared.RequestCatalogManagementServiceUpdateAppEntitlementsRequest,
             ),
             timeout_ms=timeout_ms,
         )

@@ -13,9 +13,9 @@ class FunctionsSearch(BaseSDK):
     def search(
         self,
         *,
-        request: Optional[
-            Union[shared.FunctionsSearchRequest, shared.FunctionsSearchRequestTypedDict]
-        ] = None,
+        request: Union[
+            shared.FunctionsSearchRequest, shared.FunctionsSearchRequestTypedDict
+        ],
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -42,8 +42,8 @@ class FunctionsSearch(BaseSDK):
             base_url = self._get_url(base_url, url_variables)
 
         if not isinstance(request, BaseModel):
-            request = utils.unmarshal(request, Optional[shared.FunctionsSearchRequest])
-        request = cast(Optional[shared.FunctionsSearchRequest], request)
+            request = utils.unmarshal(request, shared.FunctionsSearchRequest)
+        request = cast(shared.FunctionsSearchRequest, request)
 
         req = self._build_request(
             method="POST",
@@ -51,7 +51,7 @@ class FunctionsSearch(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=False,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -59,7 +59,7 @@ class FunctionsSearch(BaseSDK):
             http_headers=http_headers,
             security=self.sdk_configuration.security,
             get_serialized_body=lambda: utils.serialize_request_body(
-                request, False, True, "json", Optional[shared.FunctionsSearchRequest]
+                request, False, False, "json", shared.FunctionsSearchRequest
             ),
             timeout_ms=timeout_ms,
         )
@@ -106,9 +106,9 @@ class FunctionsSearch(BaseSDK):
     async def search_async(
         self,
         *,
-        request: Optional[
-            Union[shared.FunctionsSearchRequest, shared.FunctionsSearchRequestTypedDict]
-        ] = None,
+        request: Union[
+            shared.FunctionsSearchRequest, shared.FunctionsSearchRequestTypedDict
+        ],
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -135,8 +135,8 @@ class FunctionsSearch(BaseSDK):
             base_url = self._get_url(base_url, url_variables)
 
         if not isinstance(request, BaseModel):
-            request = utils.unmarshal(request, Optional[shared.FunctionsSearchRequest])
-        request = cast(Optional[shared.FunctionsSearchRequest], request)
+            request = utils.unmarshal(request, shared.FunctionsSearchRequest)
+        request = cast(shared.FunctionsSearchRequest, request)
 
         req = self._build_request_async(
             method="POST",
@@ -144,7 +144,7 @@ class FunctionsSearch(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=False,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -152,7 +152,7 @@ class FunctionsSearch(BaseSDK):
             http_headers=http_headers,
             security=self.sdk_configuration.security,
             get_serialized_body=lambda: utils.serialize_request_body(
-                request, False, True, "json", Optional[shared.FunctionsSearchRequest]
+                request, False, False, "json", shared.FunctionsSearchRequest
             ),
             timeout_ms=timeout_ms,
         )

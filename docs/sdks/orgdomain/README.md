@@ -72,7 +72,7 @@ with SDK(
     ),
 ) as s_client:
 
-    res = s_client.org_domain.update()
+    res = s_client.org_domain.update(request={})
 
     assert res.update_org_domain_response is not None
 

@@ -13,23 +13,19 @@ from typing_extensions import Annotated, NotRequired, TypedDict
 
 
 class C1APIRequestSchemaV1RequestSchemaServiceDeleteRequestTypedDict(TypedDict):
+    request_schema_service_delete_request: shared_requestschemaservicedeleterequest.RequestSchemaServiceDeleteRequestTypedDict
     request_schema_id: str
-    request_schema_service_delete_request: NotRequired[
-        shared_requestschemaservicedeleterequest.RequestSchemaServiceDeleteRequestTypedDict
-    ]
 
 
 class C1APIRequestSchemaV1RequestSchemaServiceDeleteRequest(BaseModel):
+    request_schema_service_delete_request: Annotated[
+        shared_requestschemaservicedeleterequest.RequestSchemaServiceDeleteRequest,
+        FieldMetadata(request=RequestMetadata(media_type="application/json")),
+    ]
+
     request_schema_id: Annotated[
         str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))
     ]
-
-    request_schema_service_delete_request: Annotated[
-        Optional[
-            shared_requestschemaservicedeleterequest.RequestSchemaServiceDeleteRequest
-        ],
-        FieldMetadata(request=RequestMetadata(media_type="application/json")),
-    ] = None
 
 
 class C1APIRequestSchemaV1RequestSchemaServiceDeleteResponseTypedDict(TypedDict):

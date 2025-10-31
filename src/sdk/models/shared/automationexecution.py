@@ -5,9 +5,11 @@ from .automationcontext import AutomationContext, AutomationContextTypedDict
 from datetime import datetime
 from enum import Enum
 import pydantic
+from pydantic import field_serializer
 from pydantic.functional_serializers import PlainSerializer
 from pydantic.functional_validators import BeforeValidator, PlainValidator
 from sdk import utils
+from sdk.models import shared
 from sdk.types import BaseModel
 from sdk.utils import serialize_int, validate_int, validate_open_enum
 from typing import Optional
@@ -97,3 +99,12 @@ class AutomationExecution(BaseModel):
     r"""The state field."""
 
     updated_at: Annotated[Optional[datetime], pydantic.Field(alias="updatedAt")] = None
+
+    @field_serializer("state")
+    def serialize_state(self, value):
+        if isinstance(value, str):
+            try:
+                return shared.AutomationExecutionState(value)
+            except ValueError:
+                return value
+        return value

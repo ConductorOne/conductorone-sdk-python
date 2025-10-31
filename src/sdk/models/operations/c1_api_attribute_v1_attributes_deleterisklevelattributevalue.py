@@ -15,23 +15,19 @@ from typing_extensions import Annotated, NotRequired, TypedDict
 class C1APIAttributeV1AttributesDeleteRiskLevelAttributeValueRequestTypedDict(
     TypedDict
 ):
+    delete_risk_level_attribute_value_request: shared_deleterisklevelattributevaluerequest.DeleteRiskLevelAttributeValueRequestTypedDict
     id: str
-    delete_risk_level_attribute_value_request: NotRequired[
-        shared_deleterisklevelattributevaluerequest.DeleteRiskLevelAttributeValueRequestTypedDict
-    ]
 
 
 class C1APIAttributeV1AttributesDeleteRiskLevelAttributeValueRequest(BaseModel):
+    delete_risk_level_attribute_value_request: Annotated[
+        shared_deleterisklevelattributevaluerequest.DeleteRiskLevelAttributeValueRequest,
+        FieldMetadata(request=RequestMetadata(media_type="application/json")),
+    ]
+
     id: Annotated[
         str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))
     ]
-
-    delete_risk_level_attribute_value_request: Annotated[
-        Optional[
-            shared_deleterisklevelattributevaluerequest.DeleteRiskLevelAttributeValueRequest
-        ],
-        FieldMetadata(request=RequestMetadata(media_type="application/json")),
-    ] = None
 
 
 class C1APIAttributeV1AttributesDeleteRiskLevelAttributeValueResponseTypedDict(

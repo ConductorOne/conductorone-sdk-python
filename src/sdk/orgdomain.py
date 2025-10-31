@@ -199,9 +199,9 @@ class OrgDomain(BaseSDK):
     def update(
         self,
         *,
-        request: Optional[
-            Union[shared.UpdateOrgDomainRequest, shared.UpdateOrgDomainRequestTypedDict]
-        ] = None,
+        request: Union[
+            shared.UpdateOrgDomainRequest, shared.UpdateOrgDomainRequestTypedDict
+        ],
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -228,8 +228,8 @@ class OrgDomain(BaseSDK):
             base_url = self._get_url(base_url, url_variables)
 
         if not isinstance(request, BaseModel):
-            request = utils.unmarshal(request, Optional[shared.UpdateOrgDomainRequest])
-        request = cast(Optional[shared.UpdateOrgDomainRequest], request)
+            request = utils.unmarshal(request, shared.UpdateOrgDomainRequest)
+        request = cast(shared.UpdateOrgDomainRequest, request)
 
         req = self._build_request(
             method="PUT",
@@ -237,7 +237,7 @@ class OrgDomain(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=False,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -245,7 +245,7 @@ class OrgDomain(BaseSDK):
             http_headers=http_headers,
             security=self.sdk_configuration.security,
             get_serialized_body=lambda: utils.serialize_request_body(
-                request, False, True, "json", Optional[shared.UpdateOrgDomainRequest]
+                request, False, False, "json", shared.UpdateOrgDomainRequest
             ),
             timeout_ms=timeout_ms,
         )
@@ -292,9 +292,9 @@ class OrgDomain(BaseSDK):
     async def update_async(
         self,
         *,
-        request: Optional[
-            Union[shared.UpdateOrgDomainRequest, shared.UpdateOrgDomainRequestTypedDict]
-        ] = None,
+        request: Union[
+            shared.UpdateOrgDomainRequest, shared.UpdateOrgDomainRequestTypedDict
+        ],
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -321,8 +321,8 @@ class OrgDomain(BaseSDK):
             base_url = self._get_url(base_url, url_variables)
 
         if not isinstance(request, BaseModel):
-            request = utils.unmarshal(request, Optional[shared.UpdateOrgDomainRequest])
-        request = cast(Optional[shared.UpdateOrgDomainRequest], request)
+            request = utils.unmarshal(request, shared.UpdateOrgDomainRequest)
+        request = cast(shared.UpdateOrgDomainRequest, request)
 
         req = self._build_request_async(
             method="PUT",
@@ -330,7 +330,7 @@ class OrgDomain(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=False,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -338,7 +338,7 @@ class OrgDomain(BaseSDK):
             http_headers=http_headers,
             security=self.sdk_configuration.security,
             get_serialized_body=lambda: utils.serialize_request_body(
-                request, False, True, "json", Optional[shared.UpdateOrgDomainRequest]
+                request, False, False, "json", shared.UpdateOrgDomainRequest
             ),
             timeout_ms=timeout_ms,
         )

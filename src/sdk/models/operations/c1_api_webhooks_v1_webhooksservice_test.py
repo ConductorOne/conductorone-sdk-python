@@ -13,21 +13,21 @@ from typing_extensions import Annotated, NotRequired, TypedDict
 
 
 class C1APIWebhooksV1WebhooksServiceTestRequestTypedDict(TypedDict):
-    id: str
-    webhooks_service_test_request: NotRequired[
+    webhooks_service_test_request: (
         shared_webhooksservicetestrequest.WebhooksServiceTestRequestTypedDict
-    ]
+    )
+    id: str
 
 
 class C1APIWebhooksV1WebhooksServiceTestRequest(BaseModel):
+    webhooks_service_test_request: Annotated[
+        shared_webhooksservicetestrequest.WebhooksServiceTestRequest,
+        FieldMetadata(request=RequestMetadata(media_type="application/json")),
+    ]
+
     id: Annotated[
         str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))
     ]
-
-    webhooks_service_test_request: Annotated[
-        Optional[shared_webhooksservicetestrequest.WebhooksServiceTestRequest],
-        FieldMetadata(request=RequestMetadata(media_type="application/json")),
-    ] = None
 
 
 class C1APIWebhooksV1WebhooksServiceTestResponseTypedDict(TypedDict):

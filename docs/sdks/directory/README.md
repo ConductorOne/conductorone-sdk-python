@@ -30,7 +30,7 @@ with SDK(
     ),
 ) as s_client:
 
-    res = s_client.directory.create()
+    res = s_client.directory.create(request={})
 
     assert res.directory_service_create_response is not None
 
@@ -76,6 +76,7 @@ with SDK(
 ) as s_client:
 
     res = s_client.directory.delete(request={
+        "directory_service_delete_request": {},
         "app_id": "<id>",
     })
 
@@ -215,6 +216,7 @@ with SDK(
 ) as s_client:
 
     res = s_client.directory.update(request={
+        "directory_service_update_request": {},
         "app_id": "<id>",
     })
 

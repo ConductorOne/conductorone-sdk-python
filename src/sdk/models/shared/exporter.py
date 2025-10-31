@@ -5,9 +5,10 @@ from .exporttodatasource import ExportToDatasource, ExportToDatasourceTypedDict
 from datetime import datetime
 from enum import Enum
 import pydantic
-from pydantic import model_serializer
+from pydantic import field_serializer, model_serializer
 from pydantic.functional_validators import PlainValidator
 from sdk import utils
+from sdk.models import shared
 from sdk.types import BaseModel, Nullable, OptionalNullable, UNSET, UNSET_SENTINEL
 from sdk.utils import validate_open_enum
 from typing import Optional
@@ -80,6 +81,15 @@ class Exporter(BaseModel):
         Optional[str], pydantic.Field(alias="watermarkEventId")
     ] = None
     r"""we've synchorized this far"""
+
+    @field_serializer("state")
+    def serialize_state(self, value):
+        if isinstance(value, str):
+            try:
+                return shared.ExporterState(value)
+            except ValueError:
+                return value
+        return value
 
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):

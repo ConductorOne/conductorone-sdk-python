@@ -7,9 +7,10 @@ from .tasktype_input import TaskTypeInput, TaskTypeInputTypedDict
 from datetime import datetime
 from enum import Enum
 import pydantic
-from pydantic import model_serializer
+from pydantic import field_serializer, model_serializer
 from pydantic.functional_validators import PlainValidator
 from sdk import utils
+from sdk.models import shared
 from sdk.types import BaseModel, Nullable, OptionalNullable, UNSET, UNSET_SENTINEL
 from sdk.utils import validate_open_enum
 from typing import List, Optional
@@ -398,6 +399,33 @@ class TaskSearchRequest(BaseModel):
         OptionalNullable[List[str]], pydantic.Field(alias="userEmploymentStatuses")
     ] = UNSET
     r"""The userEmploymentStatuses field."""
+
+    @field_serializer("current_step")
+    def serialize_current_step(self, value):
+        if isinstance(value, str):
+            try:
+                return shared.CurrentStep(value)
+            except ValueError:
+                return value
+        return value
+
+    @field_serializer("emergency_status")
+    def serialize_emergency_status(self, value):
+        if isinstance(value, str):
+            try:
+                return shared.EmergencyStatus(value)
+            except ValueError:
+                return value
+        return value
+
+    @field_serializer("sort_by")
+    def serialize_sort_by(self, value):
+        if isinstance(value, str):
+            try:
+                return shared.SortBy(value)
+            except ValueError:
+                return value
+        return value
 
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):

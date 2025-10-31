@@ -13,23 +13,19 @@ from typing_extensions import Annotated, NotRequired, TypedDict
 
 
 class C1APIIamV1PersonalClientServiceDeleteRequestTypedDict(TypedDict):
+    personal_client_service_delete_request: shared_personalclientservicedeleterequest.PersonalClientServiceDeleteRequestTypedDict
     id: str
-    personal_client_service_delete_request: NotRequired[
-        shared_personalclientservicedeleterequest.PersonalClientServiceDeleteRequestTypedDict
-    ]
 
 
 class C1APIIamV1PersonalClientServiceDeleteRequest(BaseModel):
+    personal_client_service_delete_request: Annotated[
+        shared_personalclientservicedeleterequest.PersonalClientServiceDeleteRequest,
+        FieldMetadata(request=RequestMetadata(media_type="application/json")),
+    ]
+
     id: Annotated[
         str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))
     ]
-
-    personal_client_service_delete_request: Annotated[
-        Optional[
-            shared_personalclientservicedeleterequest.PersonalClientServiceDeleteRequest
-        ],
-        FieldMetadata(request=RequestMetadata(media_type="application/json")),
-    ] = None
 
 
 class C1APIIamV1PersonalClientServiceDeleteResponseTypedDict(TypedDict):

@@ -31,7 +31,10 @@ with SDK(
     ),
 ) as s_client:
 
-    res = s_client.webhooks.create()
+    res = s_client.webhooks.create(request={
+        "display_name": "Bradley_Maggio",
+        "url": "https://musty-kick.net",
+    })
 
     assert res.webhooks_service_create_response is not None
 
@@ -77,6 +80,7 @@ with SDK(
 ) as s_client:
 
     res = s_client.webhooks.delete(request={
+        "webhooks_service_delete_request": {},
         "id": "<id>",
     })
 
@@ -216,6 +220,7 @@ with SDK(
 ) as s_client:
 
     res = s_client.webhooks.test(request={
+        "webhooks_service_test_request": {},
         "id": "<id>",
     })
 
@@ -263,6 +268,7 @@ with SDK(
 ) as s_client:
 
     res = s_client.webhooks.update(request={
+        "webhooks_service_update_request": {},
         "id": "<id>",
     })
 

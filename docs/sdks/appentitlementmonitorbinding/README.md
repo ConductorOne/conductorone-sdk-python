@@ -28,7 +28,7 @@ with SDK(
     ),
 ) as s_client:
 
-    res = s_client.app_entitlement_monitor_binding.create_app_entitlement_monitor_binding()
+    res = s_client.app_entitlement_monitor_binding.create_app_entitlement_monitor_binding(request={})
 
     assert res.app_entitlement_monitor_binding is not None
 
@@ -73,7 +73,7 @@ with SDK(
     ),
 ) as s_client:
 
-    res = s_client.app_entitlement_monitor_binding.delete_app_entitlement_monitor_binding()
+    res = s_client.app_entitlement_monitor_binding.delete_app_entitlement_monitor_binding(request={})
 
     assert res.delete_app_entitlement_monitor_binding_response is not None
 
@@ -118,7 +118,7 @@ with SDK(
     ),
 ) as s_client:
 
-    res = s_client.app_entitlement_monitor_binding.get_app_entitlement_monitor_binding()
+    res = s_client.app_entitlement_monitor_binding.get_app_entitlement_monitor_binding(request={})
 
     assert res.app_entitlement_monitor_binding is not None
 

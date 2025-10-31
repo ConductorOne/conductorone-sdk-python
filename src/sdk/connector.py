@@ -56,7 +56,7 @@ class Connector(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=True,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -66,9 +66,9 @@ class Connector(BaseSDK):
             get_serialized_body=lambda: utils.serialize_request_body(
                 request.confirm_sync_valid_request,
                 False,
-                True,
+                False,
                 "json",
-                Optional[shared.ConfirmSyncValidRequest],
+                shared.ConfirmSyncValidRequest,
             ),
             timeout_ms=timeout_ms,
         )
@@ -158,7 +158,7 @@ class Connector(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=True,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -168,9 +168,9 @@ class Connector(BaseSDK):
             get_serialized_body=lambda: utils.serialize_request_body(
                 request.confirm_sync_valid_request,
                 False,
-                True,
+                False,
                 "json",
-                Optional[shared.ConfirmSyncValidRequest],
+                shared.ConfirmSyncValidRequest,
             ),
             timeout_ms=timeout_ms,
         )
@@ -258,7 +258,7 @@ class Connector(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=True,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -268,9 +268,9 @@ class Connector(BaseSDK):
             get_serialized_body=lambda: utils.serialize_request_body(
                 request.connector_service_create_request,
                 False,
-                True,
+                False,
                 "json",
-                Optional[shared.ConnectorServiceCreateRequest],
+                shared.ConnectorServiceCreateRequest,
             ),
             timeout_ms=timeout_ms,
         )
@@ -358,7 +358,7 @@ class Connector(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=True,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -368,9 +368,9 @@ class Connector(BaseSDK):
             get_serialized_body=lambda: utils.serialize_request_body(
                 request.connector_service_create_request,
                 False,
-                True,
+                False,
                 "json",
-                Optional[shared.ConnectorServiceCreateRequest],
+                shared.ConnectorServiceCreateRequest,
             ),
             timeout_ms=timeout_ms,
         )
@@ -460,7 +460,7 @@ class Connector(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=True,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -470,9 +470,9 @@ class Connector(BaseSDK):
             get_serialized_body=lambda: utils.serialize_request_body(
                 request.connector_service_create_delegated_request,
                 False,
-                True,
+                False,
                 "json",
-                Optional[shared.ConnectorServiceCreateDelegatedRequest],
+                shared.ConnectorServiceCreateDelegatedRequest,
             ),
             timeout_ms=timeout_ms,
         )
@@ -562,7 +562,7 @@ class Connector(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=True,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -572,9 +572,9 @@ class Connector(BaseSDK):
             get_serialized_body=lambda: utils.serialize_request_body(
                 request.connector_service_create_delegated_request,
                 False,
-                True,
+                False,
                 "json",
-                Optional[shared.ConnectorServiceCreateDelegatedRequest],
+                shared.ConnectorServiceCreateDelegatedRequest,
             ),
             timeout_ms=timeout_ms,
         )
@@ -662,7 +662,7 @@ class Connector(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=True,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -672,9 +672,9 @@ class Connector(BaseSDK):
             get_serialized_body=lambda: utils.serialize_request_body(
                 request.connector_service_delete_request,
                 False,
-                True,
+                False,
                 "json",
-                Optional[shared.ConnectorServiceDeleteRequest],
+                shared.ConnectorServiceDeleteRequest,
             ),
             timeout_ms=timeout_ms,
         )
@@ -762,7 +762,7 @@ class Connector(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=True,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -772,9 +772,9 @@ class Connector(BaseSDK):
             get_serialized_body=lambda: utils.serialize_request_body(
                 request.connector_service_delete_request,
                 False,
-                True,
+                False,
                 "json",
-                Optional[shared.ConnectorServiceDeleteRequest],
+                shared.ConnectorServiceDeleteRequest,
             ),
             timeout_ms=timeout_ms,
         )
@@ -862,7 +862,7 @@ class Connector(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=True,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -872,9 +872,9 @@ class Connector(BaseSDK):
             get_serialized_body=lambda: utils.serialize_request_body(
                 request.force_sync_request,
                 False,
-                True,
+                False,
                 "json",
-                Optional[shared.ForceSyncRequest],
+                shared.ForceSyncRequest,
             ),
             timeout_ms=timeout_ms,
         )
@@ -962,7 +962,7 @@ class Connector(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=True,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -972,9 +972,9 @@ class Connector(BaseSDK):
             get_serialized_body=lambda: utils.serialize_request_body(
                 request.force_sync_request,
                 False,
-                True,
+                False,
                 "json",
-                Optional[shared.ForceSyncRequest],
+                shared.ForceSyncRequest,
             ),
             timeout_ms=timeout_ms,
         )
@@ -1624,7 +1624,7 @@ class Connector(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=True,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -1634,9 +1634,9 @@ class Connector(BaseSDK):
             get_serialized_body=lambda: utils.serialize_request_body(
                 request.pause_sync_request,
                 False,
-                True,
+                False,
                 "json",
-                Optional[shared.PauseSyncRequest],
+                shared.PauseSyncRequest,
             ),
             timeout_ms=timeout_ms,
         )
@@ -1724,7 +1724,7 @@ class Connector(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=True,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -1734,9 +1734,9 @@ class Connector(BaseSDK):
             get_serialized_body=lambda: utils.serialize_request_body(
                 request.pause_sync_request,
                 False,
-                True,
+                False,
                 "json",
-                Optional[shared.PauseSyncRequest],
+                shared.PauseSyncRequest,
             ),
             timeout_ms=timeout_ms,
         )
@@ -1824,7 +1824,7 @@ class Connector(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=True,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -1834,9 +1834,9 @@ class Connector(BaseSDK):
             get_serialized_body=lambda: utils.serialize_request_body(
                 request.resume_sync_request,
                 False,
-                True,
+                False,
                 "json",
-                Optional[shared.ResumeSyncRequest],
+                shared.ResumeSyncRequest,
             ),
             timeout_ms=timeout_ms,
         )
@@ -1924,7 +1924,7 @@ class Connector(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=True,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -1934,9 +1934,9 @@ class Connector(BaseSDK):
             get_serialized_body=lambda: utils.serialize_request_body(
                 request.resume_sync_request,
                 False,
-                True,
+                False,
                 "json",
-                Optional[shared.ResumeSyncRequest],
+                shared.ResumeSyncRequest,
             ),
             timeout_ms=timeout_ms,
         )
@@ -2026,7 +2026,7 @@ class Connector(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=True,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -2036,9 +2036,9 @@ class Connector(BaseSDK):
             get_serialized_body=lambda: utils.serialize_request_body(
                 request.connector_service_revoke_credential_request,
                 False,
-                True,
+                False,
                 "json",
-                Optional[shared.ConnectorServiceRevokeCredentialRequest],
+                shared.ConnectorServiceRevokeCredentialRequest,
             ),
             timeout_ms=timeout_ms,
         )
@@ -2128,7 +2128,7 @@ class Connector(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=True,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -2138,9 +2138,9 @@ class Connector(BaseSDK):
             get_serialized_body=lambda: utils.serialize_request_body(
                 request.connector_service_revoke_credential_request,
                 False,
-                True,
+                False,
                 "json",
-                Optional[shared.ConnectorServiceRevokeCredentialRequest],
+                shared.ConnectorServiceRevokeCredentialRequest,
             ),
             timeout_ms=timeout_ms,
         )
@@ -2187,12 +2187,10 @@ class Connector(BaseSDK):
     def rotate_credential(
         self,
         *,
-        request: Optional[
-            Union[
-                shared.ConnectorServiceRotateCredentialRequest,
-                shared.ConnectorServiceRotateCredentialRequestTypedDict,
-            ]
-        ] = None,
+        request: Union[
+            shared.ConnectorServiceRotateCredentialRequest,
+            shared.ConnectorServiceRotateCredentialRequestTypedDict,
+        ],
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -2220,11 +2218,9 @@ class Connector(BaseSDK):
 
         if not isinstance(request, BaseModel):
             request = utils.unmarshal(
-                request, Optional[shared.ConnectorServiceRotateCredentialRequest]
+                request, shared.ConnectorServiceRotateCredentialRequest
             )
-        request = cast(
-            Optional[shared.ConnectorServiceRotateCredentialRequest], request
-        )
+        request = cast(shared.ConnectorServiceRotateCredentialRequest, request)
 
         req = self._build_request(
             method="POST",
@@ -2232,7 +2228,7 @@ class Connector(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=False,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -2242,9 +2238,9 @@ class Connector(BaseSDK):
             get_serialized_body=lambda: utils.serialize_request_body(
                 request,
                 False,
-                True,
+                False,
                 "json",
-                Optional[shared.ConnectorServiceRotateCredentialRequest],
+                shared.ConnectorServiceRotateCredentialRequest,
             ),
             timeout_ms=timeout_ms,
         )
@@ -2291,12 +2287,10 @@ class Connector(BaseSDK):
     async def rotate_credential_async(
         self,
         *,
-        request: Optional[
-            Union[
-                shared.ConnectorServiceRotateCredentialRequest,
-                shared.ConnectorServiceRotateCredentialRequestTypedDict,
-            ]
-        ] = None,
+        request: Union[
+            shared.ConnectorServiceRotateCredentialRequest,
+            shared.ConnectorServiceRotateCredentialRequestTypedDict,
+        ],
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -2324,11 +2318,9 @@ class Connector(BaseSDK):
 
         if not isinstance(request, BaseModel):
             request = utils.unmarshal(
-                request, Optional[shared.ConnectorServiceRotateCredentialRequest]
+                request, shared.ConnectorServiceRotateCredentialRequest
             )
-        request = cast(
-            Optional[shared.ConnectorServiceRotateCredentialRequest], request
-        )
+        request = cast(shared.ConnectorServiceRotateCredentialRequest, request)
 
         req = self._build_request_async(
             method="POST",
@@ -2336,7 +2328,7 @@ class Connector(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=False,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -2346,9 +2338,9 @@ class Connector(BaseSDK):
             get_serialized_body=lambda: utils.serialize_request_body(
                 request,
                 False,
-                True,
+                False,
                 "json",
-                Optional[shared.ConnectorServiceRotateCredentialRequest],
+                shared.ConnectorServiceRotateCredentialRequest,
             ),
             timeout_ms=timeout_ms,
         )
@@ -2436,7 +2428,7 @@ class Connector(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=True,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -2446,9 +2438,9 @@ class Connector(BaseSDK):
             get_serialized_body=lambda: utils.serialize_request_body(
                 request.connector_service_update_request,
                 False,
-                True,
+                False,
                 "json",
-                Optional[shared.ConnectorServiceUpdateRequest],
+                shared.ConnectorServiceUpdateRequest,
             ),
             timeout_ms=timeout_ms,
         )
@@ -2536,7 +2528,7 @@ class Connector(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=True,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -2546,9 +2538,9 @@ class Connector(BaseSDK):
             get_serialized_body=lambda: utils.serialize_request_body(
                 request.connector_service_update_request,
                 False,
-                True,
+                False,
                 "json",
-                Optional[shared.ConnectorServiceUpdateRequest],
+                shared.ConnectorServiceUpdateRequest,
             ),
             timeout_ms=timeout_ms,
         )
@@ -2638,7 +2630,7 @@ class Connector(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=True,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -2648,9 +2640,9 @@ class Connector(BaseSDK):
             get_serialized_body=lambda: utils.serialize_request_body(
                 request.connector_service_update_delegated_request,
                 False,
-                True,
+                False,
                 "json",
-                Optional[shared.ConnectorServiceUpdateDelegatedRequest],
+                shared.ConnectorServiceUpdateDelegatedRequest,
             ),
             timeout_ms=timeout_ms,
         )
@@ -2740,7 +2732,7 @@ class Connector(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=True,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -2750,9 +2742,9 @@ class Connector(BaseSDK):
             get_serialized_body=lambda: utils.serialize_request_body(
                 request.connector_service_update_delegated_request,
                 False,
-                True,
+                False,
                 "json",
-                Optional[shared.ConnectorServiceUpdateDelegatedRequest],
+                shared.ConnectorServiceUpdateDelegatedRequest,
             ),
             timeout_ms=timeout_ms,
         )
@@ -2799,9 +2791,9 @@ class Connector(BaseSDK):
     def validate_http_connector_config(
         self,
         *,
-        request: Optional[
-            Union[shared.EditorValidateRequest, shared.EditorValidateRequestTypedDict]
-        ] = None,
+        request: Union[
+            shared.EditorValidateRequest, shared.EditorValidateRequestTypedDict
+        ],
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -2828,8 +2820,8 @@ class Connector(BaseSDK):
             base_url = self._get_url(base_url, url_variables)
 
         if not isinstance(request, BaseModel):
-            request = utils.unmarshal(request, Optional[shared.EditorValidateRequest])
-        request = cast(Optional[shared.EditorValidateRequest], request)
+            request = utils.unmarshal(request, shared.EditorValidateRequest)
+        request = cast(shared.EditorValidateRequest, request)
 
         req = self._build_request(
             method="POST",
@@ -2837,7 +2829,7 @@ class Connector(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=False,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -2845,7 +2837,7 @@ class Connector(BaseSDK):
             http_headers=http_headers,
             security=self.sdk_configuration.security,
             get_serialized_body=lambda: utils.serialize_request_body(
-                request, False, True, "json", Optional[shared.EditorValidateRequest]
+                request, False, False, "json", shared.EditorValidateRequest
             ),
             timeout_ms=timeout_ms,
         )
@@ -2892,9 +2884,9 @@ class Connector(BaseSDK):
     async def validate_http_connector_config_async(
         self,
         *,
-        request: Optional[
-            Union[shared.EditorValidateRequest, shared.EditorValidateRequestTypedDict]
-        ] = None,
+        request: Union[
+            shared.EditorValidateRequest, shared.EditorValidateRequestTypedDict
+        ],
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -2921,8 +2913,8 @@ class Connector(BaseSDK):
             base_url = self._get_url(base_url, url_variables)
 
         if not isinstance(request, BaseModel):
-            request = utils.unmarshal(request, Optional[shared.EditorValidateRequest])
-        request = cast(Optional[shared.EditorValidateRequest], request)
+            request = utils.unmarshal(request, shared.EditorValidateRequest)
+        request = cast(shared.EditorValidateRequest, request)
 
         req = self._build_request_async(
             method="POST",
@@ -2930,7 +2922,7 @@ class Connector(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=False,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -2938,7 +2930,7 @@ class Connector(BaseSDK):
             http_headers=http_headers,
             security=self.sdk_configuration.security,
             get_serialized_body=lambda: utils.serialize_request_body(
-                request, False, True, "json", Optional[shared.EditorValidateRequest]
+                request, False, False, "json", shared.EditorValidateRequest
             ),
             timeout_ms=timeout_ms,
         )

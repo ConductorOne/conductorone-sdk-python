@@ -15,25 +15,23 @@ from typing_extensions import Annotated, NotRequired, TypedDict
 class C1APIRequestcatalogV1RequestCatalogManagementServiceForceRunBundleAutomationRequestTypedDict(
     TypedDict
 ):
-    request_catalog_id: str
-    force_run_bundle_automation_request: NotRequired[
+    force_run_bundle_automation_request: (
         shared_forcerunbundleautomationrequest.ForceRunBundleAutomationRequestTypedDict
-    ]
+    )
+    request_catalog_id: str
 
 
 class C1APIRequestcatalogV1RequestCatalogManagementServiceForceRunBundleAutomationRequest(
     BaseModel
 ):
+    force_run_bundle_automation_request: Annotated[
+        shared_forcerunbundleautomationrequest.ForceRunBundleAutomationRequest,
+        FieldMetadata(request=RequestMetadata(media_type="application/json")),
+    ]
+
     request_catalog_id: Annotated[
         str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))
     ]
-
-    force_run_bundle_automation_request: Annotated[
-        Optional[
-            shared_forcerunbundleautomationrequest.ForceRunBundleAutomationRequest
-        ],
-        FieldMetadata(request=RequestMetadata(media_type="application/json")),
-    ] = None
 
 
 class C1APIRequestcatalogV1RequestCatalogManagementServiceForceRunBundleAutomationResponseTypedDict(

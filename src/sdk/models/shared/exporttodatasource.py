@@ -3,8 +3,10 @@
 from __future__ import annotations
 from enum import Enum
 import pydantic
+from pydantic import field_serializer
 from pydantic.functional_validators import PlainValidator
 from sdk import utils
+from sdk.models import shared
 from sdk.types import BaseModel
 from sdk.utils import validate_open_enum
 from typing import Optional
@@ -44,3 +46,12 @@ class ExportToDatasource(BaseModel):
 
     prefix: Optional[str] = None
     r"""The prefix field."""
+
+    @field_serializer("format_")
+    def serialize_format_(self, value):
+        if isinstance(value, str):
+            try:
+                return shared.Format(value)
+            except ValueError:
+                return value
+        return value

@@ -13,15 +13,20 @@ from typing_extensions import Annotated, NotRequired, TypedDict
 
 
 class C1APIAppV1AppResourceServiceUpdateRequestTypedDict(TypedDict):
+    app_resource_service_update_request: (
+        shared_appresourceserviceupdaterequest.AppResourceServiceUpdateRequestTypedDict
+    )
     app_id: str
     app_resource_type_id: str
     id: str
-    app_resource_service_update_request: NotRequired[
-        shared_appresourceserviceupdaterequest.AppResourceServiceUpdateRequestTypedDict
-    ]
 
 
 class C1APIAppV1AppResourceServiceUpdateRequest(BaseModel):
+    app_resource_service_update_request: Annotated[
+        shared_appresourceserviceupdaterequest.AppResourceServiceUpdateRequest,
+        FieldMetadata(request=RequestMetadata(media_type="application/json")),
+    ]
+
     app_id: Annotated[
         str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))
     ]
@@ -33,13 +38,6 @@ class C1APIAppV1AppResourceServiceUpdateRequest(BaseModel):
     id: Annotated[
         str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))
     ]
-
-    app_resource_service_update_request: Annotated[
-        Optional[
-            shared_appresourceserviceupdaterequest.AppResourceServiceUpdateRequest
-        ],
-        FieldMetadata(request=RequestMetadata(media_type="application/json")),
-    ] = None
 
 
 class C1APIAppV1AppResourceServiceUpdateResponseTypedDict(TypedDict):

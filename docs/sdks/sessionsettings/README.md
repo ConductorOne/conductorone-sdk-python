@@ -72,7 +72,7 @@ with SDK(
     ),
 ) as s_client:
 
-    res = s_client.session_settings.test_source_ip()
+    res = s_client.session_settings.test_source_ip(request={})
 
     assert res.test_source_ip_response is not None
 
@@ -117,7 +117,7 @@ with SDK(
     ),
 ) as s_client:
 
-    res = s_client.session_settings.update()
+    res = s_client.session_settings.update(request=shared.UpdateSessionSettingsRequest())
 
     assert res.update_session_settings_response is not None
 

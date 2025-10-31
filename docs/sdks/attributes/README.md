@@ -38,7 +38,7 @@ with SDK(
     ),
 ) as s_client:
 
-    res = s_client.attributes.create_attribute_value()
+    res = s_client.attributes.create_attribute_value(request={})
 
     assert res.create_attribute_value_response is not None
 
@@ -83,7 +83,7 @@ with SDK(
     ),
 ) as s_client:
 
-    res = s_client.attributes.create_compliance_framework_attribute_value()
+    res = s_client.attributes.create_compliance_framework_attribute_value(request={})
 
     assert res.create_compliance_framework_attribute_value_response is not None
 
@@ -128,7 +128,7 @@ with SDK(
     ),
 ) as s_client:
 
-    res = s_client.attributes.create_risk_level_attribute_value()
+    res = s_client.attributes.create_risk_level_attribute_value(request={})
 
     assert res.create_risk_level_attribute_value_response is not None
 
@@ -174,6 +174,7 @@ with SDK(
 ) as s_client:
 
     res = s_client.attributes.delete_attribute_value(request={
+        "delete_attribute_value_request": {},
         "id": "<id>",
     })
 
@@ -221,6 +222,7 @@ with SDK(
 ) as s_client:
 
     res = s_client.attributes.delete_compliance_framework_attribute_value(request={
+        "delete_compliance_framework_attribute_value_request": {},
         "id": "<id>",
     })
 
@@ -268,6 +270,7 @@ with SDK(
 ) as s_client:
 
     res = s_client.attributes.delete_risk_level_attribute_value(request={
+        "delete_risk_level_attribute_value_request": {},
         "id": "<id>",
     })
 

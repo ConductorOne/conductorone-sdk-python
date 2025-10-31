@@ -14,9 +14,7 @@ class AppSearch(BaseSDK):
     def search(
         self,
         *,
-        request: Optional[
-            Union[shared.SearchAppsRequest, shared.SearchAppsRequestTypedDict]
-        ] = None,
+        request: Union[shared.SearchAppsRequest, shared.SearchAppsRequestTypedDict],
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -43,8 +41,8 @@ class AppSearch(BaseSDK):
             base_url = self._get_url(base_url, url_variables)
 
         if not isinstance(request, BaseModel):
-            request = utils.unmarshal(request, Optional[shared.SearchAppsRequest])
-        request = cast(Optional[shared.SearchAppsRequest], request)
+            request = utils.unmarshal(request, shared.SearchAppsRequest)
+        request = cast(shared.SearchAppsRequest, request)
 
         req = self._build_request(
             method="POST",
@@ -52,7 +50,7 @@ class AppSearch(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=False,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -60,7 +58,7 @@ class AppSearch(BaseSDK):
             http_headers=http_headers,
             security=self.sdk_configuration.security,
             get_serialized_body=lambda: utils.serialize_request_body(
-                request, False, True, "json", Optional[shared.SearchAppsRequest]
+                request, False, False, "json", shared.SearchAppsRequest
             ),
             timeout_ms=timeout_ms,
         )
@@ -133,9 +131,7 @@ class AppSearch(BaseSDK):
     async def search_async(
         self,
         *,
-        request: Optional[
-            Union[shared.SearchAppsRequest, shared.SearchAppsRequestTypedDict]
-        ] = None,
+        request: Union[shared.SearchAppsRequest, shared.SearchAppsRequestTypedDict],
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -162,8 +158,8 @@ class AppSearch(BaseSDK):
             base_url = self._get_url(base_url, url_variables)
 
         if not isinstance(request, BaseModel):
-            request = utils.unmarshal(request, Optional[shared.SearchAppsRequest])
-        request = cast(Optional[shared.SearchAppsRequest], request)
+            request = utils.unmarshal(request, shared.SearchAppsRequest)
+        request = cast(shared.SearchAppsRequest, request)
 
         req = self._build_request_async(
             method="POST",
@@ -171,7 +167,7 @@ class AppSearch(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=False,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -179,7 +175,7 @@ class AppSearch(BaseSDK):
             http_headers=http_headers,
             security=self.sdk_configuration.security,
             get_serialized_body=lambda: utils.serialize_request_body(
-                request, False, True, "json", Optional[shared.SearchAppsRequest]
+                request, False, False, "json", shared.SearchAppsRequest
             ),
             timeout_ms=timeout_ms,
         )

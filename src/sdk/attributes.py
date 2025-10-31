@@ -13,12 +13,10 @@ class Attributes(BaseSDK):
     def create_attribute_value(
         self,
         *,
-        request: Optional[
-            Union[
-                shared.CreateAttributeValueRequest,
-                shared.CreateAttributeValueRequestTypedDict,
-            ]
-        ] = None,
+        request: Union[
+            shared.CreateAttributeValueRequest,
+            shared.CreateAttributeValueRequestTypedDict,
+        ],
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -45,10 +43,8 @@ class Attributes(BaseSDK):
             base_url = self._get_url(base_url, url_variables)
 
         if not isinstance(request, BaseModel):
-            request = utils.unmarshal(
-                request, Optional[shared.CreateAttributeValueRequest]
-            )
-        request = cast(Optional[shared.CreateAttributeValueRequest], request)
+            request = utils.unmarshal(request, shared.CreateAttributeValueRequest)
+        request = cast(shared.CreateAttributeValueRequest, request)
 
         req = self._build_request(
             method="POST",
@@ -56,7 +52,7 @@ class Attributes(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=False,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -64,11 +60,7 @@ class Attributes(BaseSDK):
             http_headers=http_headers,
             security=self.sdk_configuration.security,
             get_serialized_body=lambda: utils.serialize_request_body(
-                request,
-                False,
-                True,
-                "json",
-                Optional[shared.CreateAttributeValueRequest],
+                request, False, False, "json", shared.CreateAttributeValueRequest
             ),
             timeout_ms=timeout_ms,
         )
@@ -115,12 +107,10 @@ class Attributes(BaseSDK):
     async def create_attribute_value_async(
         self,
         *,
-        request: Optional[
-            Union[
-                shared.CreateAttributeValueRequest,
-                shared.CreateAttributeValueRequestTypedDict,
-            ]
-        ] = None,
+        request: Union[
+            shared.CreateAttributeValueRequest,
+            shared.CreateAttributeValueRequestTypedDict,
+        ],
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -147,10 +137,8 @@ class Attributes(BaseSDK):
             base_url = self._get_url(base_url, url_variables)
 
         if not isinstance(request, BaseModel):
-            request = utils.unmarshal(
-                request, Optional[shared.CreateAttributeValueRequest]
-            )
-        request = cast(Optional[shared.CreateAttributeValueRequest], request)
+            request = utils.unmarshal(request, shared.CreateAttributeValueRequest)
+        request = cast(shared.CreateAttributeValueRequest, request)
 
         req = self._build_request_async(
             method="POST",
@@ -158,7 +146,7 @@ class Attributes(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=False,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -166,11 +154,7 @@ class Attributes(BaseSDK):
             http_headers=http_headers,
             security=self.sdk_configuration.security,
             get_serialized_body=lambda: utils.serialize_request_body(
-                request,
-                False,
-                True,
-                "json",
-                Optional[shared.CreateAttributeValueRequest],
+                request, False, False, "json", shared.CreateAttributeValueRequest
             ),
             timeout_ms=timeout_ms,
         )
@@ -217,12 +201,10 @@ class Attributes(BaseSDK):
     def create_compliance_framework_attribute_value(
         self,
         *,
-        request: Optional[
-            Union[
-                shared.CreateComplianceFrameworkAttributeValueRequest,
-                shared.CreateComplianceFrameworkAttributeValueRequestTypedDict,
-            ]
-        ] = None,
+        request: Union[
+            shared.CreateComplianceFrameworkAttributeValueRequest,
+            shared.CreateComplianceFrameworkAttributeValueRequestTypedDict,
+        ],
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -250,11 +232,9 @@ class Attributes(BaseSDK):
 
         if not isinstance(request, BaseModel):
             request = utils.unmarshal(
-                request, Optional[shared.CreateComplianceFrameworkAttributeValueRequest]
+                request, shared.CreateComplianceFrameworkAttributeValueRequest
             )
-        request = cast(
-            Optional[shared.CreateComplianceFrameworkAttributeValueRequest], request
-        )
+        request = cast(shared.CreateComplianceFrameworkAttributeValueRequest, request)
 
         req = self._build_request(
             method="POST",
@@ -262,7 +242,7 @@ class Attributes(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=False,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -272,9 +252,9 @@ class Attributes(BaseSDK):
             get_serialized_body=lambda: utils.serialize_request_body(
                 request,
                 False,
-                True,
+                False,
                 "json",
-                Optional[shared.CreateComplianceFrameworkAttributeValueRequest],
+                shared.CreateComplianceFrameworkAttributeValueRequest,
             ),
             timeout_ms=timeout_ms,
         )
@@ -322,12 +302,10 @@ class Attributes(BaseSDK):
     async def create_compliance_framework_attribute_value_async(
         self,
         *,
-        request: Optional[
-            Union[
-                shared.CreateComplianceFrameworkAttributeValueRequest,
-                shared.CreateComplianceFrameworkAttributeValueRequestTypedDict,
-            ]
-        ] = None,
+        request: Union[
+            shared.CreateComplianceFrameworkAttributeValueRequest,
+            shared.CreateComplianceFrameworkAttributeValueRequestTypedDict,
+        ],
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -355,11 +333,9 @@ class Attributes(BaseSDK):
 
         if not isinstance(request, BaseModel):
             request = utils.unmarshal(
-                request, Optional[shared.CreateComplianceFrameworkAttributeValueRequest]
+                request, shared.CreateComplianceFrameworkAttributeValueRequest
             )
-        request = cast(
-            Optional[shared.CreateComplianceFrameworkAttributeValueRequest], request
-        )
+        request = cast(shared.CreateComplianceFrameworkAttributeValueRequest, request)
 
         req = self._build_request_async(
             method="POST",
@@ -367,7 +343,7 @@ class Attributes(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=False,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -377,9 +353,9 @@ class Attributes(BaseSDK):
             get_serialized_body=lambda: utils.serialize_request_body(
                 request,
                 False,
-                True,
+                False,
                 "json",
-                Optional[shared.CreateComplianceFrameworkAttributeValueRequest],
+                shared.CreateComplianceFrameworkAttributeValueRequest,
             ),
             timeout_ms=timeout_ms,
         )
@@ -427,12 +403,10 @@ class Attributes(BaseSDK):
     def create_risk_level_attribute_value(
         self,
         *,
-        request: Optional[
-            Union[
-                shared.CreateRiskLevelAttributeValueRequest,
-                shared.CreateRiskLevelAttributeValueRequestTypedDict,
-            ]
-        ] = None,
+        request: Union[
+            shared.CreateRiskLevelAttributeValueRequest,
+            shared.CreateRiskLevelAttributeValueRequestTypedDict,
+        ],
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -460,9 +434,9 @@ class Attributes(BaseSDK):
 
         if not isinstance(request, BaseModel):
             request = utils.unmarshal(
-                request, Optional[shared.CreateRiskLevelAttributeValueRequest]
+                request, shared.CreateRiskLevelAttributeValueRequest
             )
-        request = cast(Optional[shared.CreateRiskLevelAttributeValueRequest], request)
+        request = cast(shared.CreateRiskLevelAttributeValueRequest, request)
 
         req = self._build_request(
             method="POST",
@@ -470,7 +444,7 @@ class Attributes(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=False,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -480,9 +454,9 @@ class Attributes(BaseSDK):
             get_serialized_body=lambda: utils.serialize_request_body(
                 request,
                 False,
-                True,
+                False,
                 "json",
-                Optional[shared.CreateRiskLevelAttributeValueRequest],
+                shared.CreateRiskLevelAttributeValueRequest,
             ),
             timeout_ms=timeout_ms,
         )
@@ -529,12 +503,10 @@ class Attributes(BaseSDK):
     async def create_risk_level_attribute_value_async(
         self,
         *,
-        request: Optional[
-            Union[
-                shared.CreateRiskLevelAttributeValueRequest,
-                shared.CreateRiskLevelAttributeValueRequestTypedDict,
-            ]
-        ] = None,
+        request: Union[
+            shared.CreateRiskLevelAttributeValueRequest,
+            shared.CreateRiskLevelAttributeValueRequestTypedDict,
+        ],
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -562,9 +534,9 @@ class Attributes(BaseSDK):
 
         if not isinstance(request, BaseModel):
             request = utils.unmarshal(
-                request, Optional[shared.CreateRiskLevelAttributeValueRequest]
+                request, shared.CreateRiskLevelAttributeValueRequest
             )
-        request = cast(Optional[shared.CreateRiskLevelAttributeValueRequest], request)
+        request = cast(shared.CreateRiskLevelAttributeValueRequest, request)
 
         req = self._build_request_async(
             method="POST",
@@ -572,7 +544,7 @@ class Attributes(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=False,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -582,9 +554,9 @@ class Attributes(BaseSDK):
             get_serialized_body=lambda: utils.serialize_request_body(
                 request,
                 False,
-                True,
+                False,
                 "json",
-                Optional[shared.CreateRiskLevelAttributeValueRequest],
+                shared.CreateRiskLevelAttributeValueRequest,
             ),
             timeout_ms=timeout_ms,
         )
@@ -675,7 +647,7 @@ class Attributes(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=True,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -685,9 +657,9 @@ class Attributes(BaseSDK):
             get_serialized_body=lambda: utils.serialize_request_body(
                 request.delete_attribute_value_request,
                 False,
-                True,
+                False,
                 "json",
-                Optional[shared.DeleteAttributeValueRequest],
+                shared.DeleteAttributeValueRequest,
             ),
             timeout_ms=timeout_ms,
         )
@@ -778,7 +750,7 @@ class Attributes(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=True,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -788,9 +760,9 @@ class Attributes(BaseSDK):
             get_serialized_body=lambda: utils.serialize_request_body(
                 request.delete_attribute_value_request,
                 False,
-                True,
+                False,
                 "json",
-                Optional[shared.DeleteAttributeValueRequest],
+                shared.DeleteAttributeValueRequest,
             ),
             timeout_ms=timeout_ms,
         )
@@ -882,7 +854,7 @@ class Attributes(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=True,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -892,9 +864,9 @@ class Attributes(BaseSDK):
             get_serialized_body=lambda: utils.serialize_request_body(
                 request.delete_compliance_framework_attribute_value_request,
                 False,
-                True,
+                False,
                 "json",
-                Optional[shared.DeleteComplianceFrameworkAttributeValueRequest],
+                shared.DeleteComplianceFrameworkAttributeValueRequest,
             ),
             timeout_ms=timeout_ms,
         )
@@ -987,7 +959,7 @@ class Attributes(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=True,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -997,9 +969,9 @@ class Attributes(BaseSDK):
             get_serialized_body=lambda: utils.serialize_request_body(
                 request.delete_compliance_framework_attribute_value_request,
                 False,
-                True,
+                False,
                 "json",
-                Optional[shared.DeleteComplianceFrameworkAttributeValueRequest],
+                shared.DeleteComplianceFrameworkAttributeValueRequest,
             ),
             timeout_ms=timeout_ms,
         )
@@ -1092,7 +1064,7 @@ class Attributes(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=True,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -1102,9 +1074,9 @@ class Attributes(BaseSDK):
             get_serialized_body=lambda: utils.serialize_request_body(
                 request.delete_risk_level_attribute_value_request,
                 False,
-                True,
+                False,
                 "json",
-                Optional[shared.DeleteRiskLevelAttributeValueRequest],
+                shared.DeleteRiskLevelAttributeValueRequest,
             ),
             timeout_ms=timeout_ms,
         )
@@ -1196,7 +1168,7 @@ class Attributes(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=True,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -1206,9 +1178,9 @@ class Attributes(BaseSDK):
             get_serialized_body=lambda: utils.serialize_request_body(
                 request.delete_risk_level_attribute_value_request,
                 False,
-                True,
+                False,
                 "json",
-                Optional[shared.DeleteRiskLevelAttributeValueRequest],
+                shared.DeleteRiskLevelAttributeValueRequest,
             ),
             timeout_ms=timeout_ms,
         )

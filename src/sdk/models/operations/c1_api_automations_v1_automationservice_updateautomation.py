@@ -13,21 +13,21 @@ from typing_extensions import Annotated, NotRequired, TypedDict
 
 
 class C1APIAutomationsV1AutomationServiceUpdateAutomationRequestTypedDict(TypedDict):
-    id: str
-    update_automation_request: NotRequired[
+    update_automation_request: (
         shared_updateautomationrequest.UpdateAutomationRequestTypedDict
-    ]
+    )
+    id: str
 
 
 class C1APIAutomationsV1AutomationServiceUpdateAutomationRequest(BaseModel):
+    update_automation_request: Annotated[
+        shared_updateautomationrequest.UpdateAutomationRequest,
+        FieldMetadata(request=RequestMetadata(media_type="application/json")),
+    ]
+
     id: Annotated[
         str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))
     ]
-
-    update_automation_request: Annotated[
-        Optional[shared_updateautomationrequest.UpdateAutomationRequest],
-        FieldMetadata(request=RequestMetadata(media_type="application/json")),
-    ] = None
 
 
 class C1APIAutomationsV1AutomationServiceUpdateAutomationResponseTypedDict(TypedDict):

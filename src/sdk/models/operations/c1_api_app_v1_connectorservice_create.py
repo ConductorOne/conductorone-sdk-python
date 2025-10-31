@@ -13,21 +13,21 @@ from typing_extensions import Annotated, NotRequired, TypedDict
 
 
 class C1APIAppV1ConnectorServiceCreateRequestTypedDict(TypedDict):
-    app_id: str
-    connector_service_create_request: NotRequired[
+    connector_service_create_request: (
         shared_connectorservicecreaterequest.ConnectorServiceCreateRequestTypedDict
-    ]
+    )
+    app_id: str
 
 
 class C1APIAppV1ConnectorServiceCreateRequest(BaseModel):
+    connector_service_create_request: Annotated[
+        shared_connectorservicecreaterequest.ConnectorServiceCreateRequest,
+        FieldMetadata(request=RequestMetadata(media_type="application/json")),
+    ]
+
     app_id: Annotated[
         str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))
     ]
-
-    connector_service_create_request: Annotated[
-        Optional[shared_connectorservicecreaterequest.ConnectorServiceCreateRequest],
-        FieldMetadata(request=RequestMetadata(media_type="application/json")),
-    ] = None
 
 
 class C1APIAppV1ConnectorServiceCreateResponseTypedDict(TypedDict):

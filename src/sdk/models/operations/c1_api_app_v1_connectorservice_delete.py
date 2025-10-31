@@ -13,14 +13,19 @@ from typing_extensions import Annotated, NotRequired, TypedDict
 
 
 class C1APIAppV1ConnectorServiceDeleteRequestTypedDict(TypedDict):
+    connector_service_delete_request: (
+        shared_connectorservicedeleterequest.ConnectorServiceDeleteRequestTypedDict
+    )
     app_id: str
     id: str
-    connector_service_delete_request: NotRequired[
-        shared_connectorservicedeleterequest.ConnectorServiceDeleteRequestTypedDict
-    ]
 
 
 class C1APIAppV1ConnectorServiceDeleteRequest(BaseModel):
+    connector_service_delete_request: Annotated[
+        shared_connectorservicedeleterequest.ConnectorServiceDeleteRequest,
+        FieldMetadata(request=RequestMetadata(media_type="application/json")),
+    ]
+
     app_id: Annotated[
         str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))
     ]
@@ -28,11 +33,6 @@ class C1APIAppV1ConnectorServiceDeleteRequest(BaseModel):
     id: Annotated[
         str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))
     ]
-
-    connector_service_delete_request: Annotated[
-        Optional[shared_connectorservicedeleterequest.ConnectorServiceDeleteRequest],
-        FieldMetadata(request=RequestMetadata(media_type="application/json")),
-    ] = None
 
 
 class C1APIAppV1ConnectorServiceDeleteResponseTypedDict(TypedDict):

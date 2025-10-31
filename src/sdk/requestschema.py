@@ -13,12 +13,10 @@ class RequestSchema(BaseSDK):
     def create(
         self,
         *,
-        request: Optional[
-            Union[
-                shared.RequestSchemaServiceCreateRequest,
-                shared.RequestSchemaServiceCreateRequestTypedDict,
-            ]
-        ] = None,
+        request: Union[
+            shared.RequestSchemaServiceCreateRequest,
+            shared.RequestSchemaServiceCreateRequestTypedDict,
+        ],
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -45,10 +43,8 @@ class RequestSchema(BaseSDK):
             base_url = self._get_url(base_url, url_variables)
 
         if not isinstance(request, BaseModel):
-            request = utils.unmarshal(
-                request, Optional[shared.RequestSchemaServiceCreateRequest]
-            )
-        request = cast(Optional[shared.RequestSchemaServiceCreateRequest], request)
+            request = utils.unmarshal(request, shared.RequestSchemaServiceCreateRequest)
+        request = cast(shared.RequestSchemaServiceCreateRequest, request)
 
         req = self._build_request(
             method="POST",
@@ -56,7 +52,7 @@ class RequestSchema(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=False,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -64,11 +60,7 @@ class RequestSchema(BaseSDK):
             http_headers=http_headers,
             security=self.sdk_configuration.security,
             get_serialized_body=lambda: utils.serialize_request_body(
-                request,
-                False,
-                True,
-                "json",
-                Optional[shared.RequestSchemaServiceCreateRequest],
+                request, False, False, "json", shared.RequestSchemaServiceCreateRequest
             ),
             timeout_ms=timeout_ms,
         )
@@ -115,12 +107,10 @@ class RequestSchema(BaseSDK):
     async def create_async(
         self,
         *,
-        request: Optional[
-            Union[
-                shared.RequestSchemaServiceCreateRequest,
-                shared.RequestSchemaServiceCreateRequestTypedDict,
-            ]
-        ] = None,
+        request: Union[
+            shared.RequestSchemaServiceCreateRequest,
+            shared.RequestSchemaServiceCreateRequestTypedDict,
+        ],
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -147,10 +137,8 @@ class RequestSchema(BaseSDK):
             base_url = self._get_url(base_url, url_variables)
 
         if not isinstance(request, BaseModel):
-            request = utils.unmarshal(
-                request, Optional[shared.RequestSchemaServiceCreateRequest]
-            )
-        request = cast(Optional[shared.RequestSchemaServiceCreateRequest], request)
+            request = utils.unmarshal(request, shared.RequestSchemaServiceCreateRequest)
+        request = cast(shared.RequestSchemaServiceCreateRequest, request)
 
         req = self._build_request_async(
             method="POST",
@@ -158,7 +146,7 @@ class RequestSchema(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=False,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -166,11 +154,7 @@ class RequestSchema(BaseSDK):
             http_headers=http_headers,
             security=self.sdk_configuration.security,
             get_serialized_body=lambda: utils.serialize_request_body(
-                request,
-                False,
-                True,
-                "json",
-                Optional[shared.RequestSchemaServiceCreateRequest],
+                request, False, False, "json", shared.RequestSchemaServiceCreateRequest
             ),
             timeout_ms=timeout_ms,
         )
@@ -217,12 +201,10 @@ class RequestSchema(BaseSDK):
     def create_entitlement_binding(
         self,
         *,
-        request: Optional[
-            Union[
-                shared.RequestSchemaServiceCreateEntitlementBindingRequest,
-                shared.RequestSchemaServiceCreateEntitlementBindingRequestTypedDict,
-            ]
-        ] = None,
+        request: Union[
+            shared.RequestSchemaServiceCreateEntitlementBindingRequest,
+            shared.RequestSchemaServiceCreateEntitlementBindingRequestTypedDict,
+        ],
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -250,12 +232,10 @@ class RequestSchema(BaseSDK):
 
         if not isinstance(request, BaseModel):
             request = utils.unmarshal(
-                request,
-                Optional[shared.RequestSchemaServiceCreateEntitlementBindingRequest],
+                request, shared.RequestSchemaServiceCreateEntitlementBindingRequest
             )
         request = cast(
-            Optional[shared.RequestSchemaServiceCreateEntitlementBindingRequest],
-            request,
+            shared.RequestSchemaServiceCreateEntitlementBindingRequest, request
         )
 
         req = self._build_request(
@@ -264,7 +244,7 @@ class RequestSchema(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=False,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -274,9 +254,9 @@ class RequestSchema(BaseSDK):
             get_serialized_body=lambda: utils.serialize_request_body(
                 request,
                 False,
-                True,
+                False,
                 "json",
-                Optional[shared.RequestSchemaServiceCreateEntitlementBindingRequest],
+                shared.RequestSchemaServiceCreateEntitlementBindingRequest,
             ),
             timeout_ms=timeout_ms,
         )
@@ -326,12 +306,10 @@ class RequestSchema(BaseSDK):
     async def create_entitlement_binding_async(
         self,
         *,
-        request: Optional[
-            Union[
-                shared.RequestSchemaServiceCreateEntitlementBindingRequest,
-                shared.RequestSchemaServiceCreateEntitlementBindingRequestTypedDict,
-            ]
-        ] = None,
+        request: Union[
+            shared.RequestSchemaServiceCreateEntitlementBindingRequest,
+            shared.RequestSchemaServiceCreateEntitlementBindingRequestTypedDict,
+        ],
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -359,12 +337,10 @@ class RequestSchema(BaseSDK):
 
         if not isinstance(request, BaseModel):
             request = utils.unmarshal(
-                request,
-                Optional[shared.RequestSchemaServiceCreateEntitlementBindingRequest],
+                request, shared.RequestSchemaServiceCreateEntitlementBindingRequest
             )
         request = cast(
-            Optional[shared.RequestSchemaServiceCreateEntitlementBindingRequest],
-            request,
+            shared.RequestSchemaServiceCreateEntitlementBindingRequest, request
         )
 
         req = self._build_request_async(
@@ -373,7 +349,7 @@ class RequestSchema(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=False,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -383,9 +359,9 @@ class RequestSchema(BaseSDK):
             get_serialized_body=lambda: utils.serialize_request_body(
                 request,
                 False,
-                True,
+                False,
                 "json",
-                Optional[shared.RequestSchemaServiceCreateEntitlementBindingRequest],
+                shared.RequestSchemaServiceCreateEntitlementBindingRequest,
             ),
             timeout_ms=timeout_ms,
         )
@@ -479,7 +455,7 @@ class RequestSchema(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=True,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -489,9 +465,9 @@ class RequestSchema(BaseSDK):
             get_serialized_body=lambda: utils.serialize_request_body(
                 request.request_schema_service_delete_request,
                 False,
-                True,
+                False,
                 "json",
-                Optional[shared.RequestSchemaServiceDeleteRequest],
+                shared.RequestSchemaServiceDeleteRequest,
             ),
             timeout_ms=timeout_ms,
         )
@@ -582,7 +558,7 @@ class RequestSchema(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=True,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -592,9 +568,9 @@ class RequestSchema(BaseSDK):
             get_serialized_body=lambda: utils.serialize_request_body(
                 request.request_schema_service_delete_request,
                 False,
-                True,
+                False,
                 "json",
-                Optional[shared.RequestSchemaServiceDeleteRequest],
+                shared.RequestSchemaServiceDeleteRequest,
             ),
             timeout_ms=timeout_ms,
         )
@@ -641,12 +617,10 @@ class RequestSchema(BaseSDK):
     def find_binding_for_app_entitlement(
         self,
         *,
-        request: Optional[
-            Union[
-                shared.RequestSchemaServiceFindBindingForAppEntitlementRequest,
-                shared.RequestSchemaServiceFindBindingForAppEntitlementRequestTypedDict,
-            ]
-        ] = None,
+        request: Union[
+            shared.RequestSchemaServiceFindBindingForAppEntitlementRequest,
+            shared.RequestSchemaServiceFindBindingForAppEntitlementRequestTypedDict,
+        ],
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -674,14 +648,10 @@ class RequestSchema(BaseSDK):
 
         if not isinstance(request, BaseModel):
             request = utils.unmarshal(
-                request,
-                Optional[
-                    shared.RequestSchemaServiceFindBindingForAppEntitlementRequest
-                ],
+                request, shared.RequestSchemaServiceFindBindingForAppEntitlementRequest
             )
         request = cast(
-            Optional[shared.RequestSchemaServiceFindBindingForAppEntitlementRequest],
-            request,
+            shared.RequestSchemaServiceFindBindingForAppEntitlementRequest, request
         )
 
         req = self._build_request(
@@ -690,7 +660,7 @@ class RequestSchema(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=False,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -700,11 +670,9 @@ class RequestSchema(BaseSDK):
             get_serialized_body=lambda: utils.serialize_request_body(
                 request,
                 False,
-                True,
+                False,
                 "json",
-                Optional[
-                    shared.RequestSchemaServiceFindBindingForAppEntitlementRequest
-                ],
+                shared.RequestSchemaServiceFindBindingForAppEntitlementRequest,
             ),
             timeout_ms=timeout_ms,
         )
@@ -754,12 +722,10 @@ class RequestSchema(BaseSDK):
     async def find_binding_for_app_entitlement_async(
         self,
         *,
-        request: Optional[
-            Union[
-                shared.RequestSchemaServiceFindBindingForAppEntitlementRequest,
-                shared.RequestSchemaServiceFindBindingForAppEntitlementRequestTypedDict,
-            ]
-        ] = None,
+        request: Union[
+            shared.RequestSchemaServiceFindBindingForAppEntitlementRequest,
+            shared.RequestSchemaServiceFindBindingForAppEntitlementRequestTypedDict,
+        ],
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -787,14 +753,10 @@ class RequestSchema(BaseSDK):
 
         if not isinstance(request, BaseModel):
             request = utils.unmarshal(
-                request,
-                Optional[
-                    shared.RequestSchemaServiceFindBindingForAppEntitlementRequest
-                ],
+                request, shared.RequestSchemaServiceFindBindingForAppEntitlementRequest
             )
         request = cast(
-            Optional[shared.RequestSchemaServiceFindBindingForAppEntitlementRequest],
-            request,
+            shared.RequestSchemaServiceFindBindingForAppEntitlementRequest, request
         )
 
         req = self._build_request_async(
@@ -803,7 +765,7 @@ class RequestSchema(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=False,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -813,11 +775,9 @@ class RequestSchema(BaseSDK):
             get_serialized_body=lambda: utils.serialize_request_body(
                 request,
                 False,
-                True,
+                False,
                 "json",
-                Optional[
-                    shared.RequestSchemaServiceFindBindingForAppEntitlementRequest
-                ],
+                shared.RequestSchemaServiceFindBindingForAppEntitlementRequest,
             ),
             timeout_ms=timeout_ms,
         )
@@ -1057,12 +1017,10 @@ class RequestSchema(BaseSDK):
     def remove_entitlement_binding(
         self,
         *,
-        request: Optional[
-            Union[
-                shared.RequestSchemaServiceRemoveEntitlementBindingRequest,
-                shared.RequestSchemaServiceRemoveEntitlementBindingRequestTypedDict,
-            ]
-        ] = None,
+        request: Union[
+            shared.RequestSchemaServiceRemoveEntitlementBindingRequest,
+            shared.RequestSchemaServiceRemoveEntitlementBindingRequestTypedDict,
+        ],
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -1090,12 +1048,10 @@ class RequestSchema(BaseSDK):
 
         if not isinstance(request, BaseModel):
             request = utils.unmarshal(
-                request,
-                Optional[shared.RequestSchemaServiceRemoveEntitlementBindingRequest],
+                request, shared.RequestSchemaServiceRemoveEntitlementBindingRequest
             )
         request = cast(
-            Optional[shared.RequestSchemaServiceRemoveEntitlementBindingRequest],
-            request,
+            shared.RequestSchemaServiceRemoveEntitlementBindingRequest, request
         )
 
         req = self._build_request(
@@ -1104,7 +1060,7 @@ class RequestSchema(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=False,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -1114,9 +1070,9 @@ class RequestSchema(BaseSDK):
             get_serialized_body=lambda: utils.serialize_request_body(
                 request,
                 False,
-                True,
+                False,
                 "json",
-                Optional[shared.RequestSchemaServiceRemoveEntitlementBindingRequest],
+                shared.RequestSchemaServiceRemoveEntitlementBindingRequest,
             ),
             timeout_ms=timeout_ms,
         )
@@ -1166,12 +1122,10 @@ class RequestSchema(BaseSDK):
     async def remove_entitlement_binding_async(
         self,
         *,
-        request: Optional[
-            Union[
-                shared.RequestSchemaServiceRemoveEntitlementBindingRequest,
-                shared.RequestSchemaServiceRemoveEntitlementBindingRequestTypedDict,
-            ]
-        ] = None,
+        request: Union[
+            shared.RequestSchemaServiceRemoveEntitlementBindingRequest,
+            shared.RequestSchemaServiceRemoveEntitlementBindingRequestTypedDict,
+        ],
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -1199,12 +1153,10 @@ class RequestSchema(BaseSDK):
 
         if not isinstance(request, BaseModel):
             request = utils.unmarshal(
-                request,
-                Optional[shared.RequestSchemaServiceRemoveEntitlementBindingRequest],
+                request, shared.RequestSchemaServiceRemoveEntitlementBindingRequest
             )
         request = cast(
-            Optional[shared.RequestSchemaServiceRemoveEntitlementBindingRequest],
-            request,
+            shared.RequestSchemaServiceRemoveEntitlementBindingRequest, request
         )
 
         req = self._build_request_async(
@@ -1213,7 +1165,7 @@ class RequestSchema(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=False,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -1223,9 +1175,9 @@ class RequestSchema(BaseSDK):
             get_serialized_body=lambda: utils.serialize_request_body(
                 request,
                 False,
-                True,
+                False,
                 "json",
-                Optional[shared.RequestSchemaServiceRemoveEntitlementBindingRequest],
+                shared.RequestSchemaServiceRemoveEntitlementBindingRequest,
             ),
             timeout_ms=timeout_ms,
         )
@@ -1319,7 +1271,7 @@ class RequestSchema(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=True,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -1329,9 +1281,9 @@ class RequestSchema(BaseSDK):
             get_serialized_body=lambda: utils.serialize_request_body(
                 request.request_schema_service_update_request,
                 False,
-                True,
+                False,
                 "json",
-                Optional[shared.RequestSchemaServiceUpdateRequest],
+                shared.RequestSchemaServiceUpdateRequest,
             ),
             timeout_ms=timeout_ms,
         )
@@ -1422,7 +1374,7 @@ class RequestSchema(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=True,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -1432,9 +1384,9 @@ class RequestSchema(BaseSDK):
             get_serialized_body=lambda: utils.serialize_request_body(
                 request.request_schema_service_update_request,
                 False,
-                True,
+                False,
                 "json",
-                Optional[shared.RequestSchemaServiceUpdateRequest],
+                shared.RequestSchemaServiceUpdateRequest,
             ),
             timeout_ms=timeout_ms,
         )

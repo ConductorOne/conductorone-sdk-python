@@ -13,12 +13,10 @@ class Automation(BaseSDK):
     def create_automation(
         self,
         *,
-        request: Optional[
-            Union[
-                shared.CreateAutomationRequestInput,
-                shared.CreateAutomationRequestInputTypedDict,
-            ]
-        ] = None,
+        request: Union[
+            shared.CreateAutomationRequestInput,
+            shared.CreateAutomationRequestInputTypedDict,
+        ],
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -45,10 +43,8 @@ class Automation(BaseSDK):
             base_url = self._get_url(base_url, url_variables)
 
         if not isinstance(request, BaseModel):
-            request = utils.unmarshal(
-                request, Optional[shared.CreateAutomationRequestInput]
-            )
-        request = cast(Optional[shared.CreateAutomationRequestInput], request)
+            request = utils.unmarshal(request, shared.CreateAutomationRequestInput)
+        request = cast(shared.CreateAutomationRequestInput, request)
 
         req = self._build_request(
             method="POST",
@@ -56,7 +52,7 @@ class Automation(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=False,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -64,11 +60,7 @@ class Automation(BaseSDK):
             http_headers=http_headers,
             security=self.sdk_configuration.security,
             get_serialized_body=lambda: utils.serialize_request_body(
-                request,
-                False,
-                True,
-                "json",
-                Optional[shared.CreateAutomationRequestInput],
+                request, False, False, "json", shared.CreateAutomationRequestInput
             ),
             timeout_ms=timeout_ms,
         )
@@ -117,12 +109,10 @@ class Automation(BaseSDK):
     async def create_automation_async(
         self,
         *,
-        request: Optional[
-            Union[
-                shared.CreateAutomationRequestInput,
-                shared.CreateAutomationRequestInputTypedDict,
-            ]
-        ] = None,
+        request: Union[
+            shared.CreateAutomationRequestInput,
+            shared.CreateAutomationRequestInputTypedDict,
+        ],
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -149,10 +139,8 @@ class Automation(BaseSDK):
             base_url = self._get_url(base_url, url_variables)
 
         if not isinstance(request, BaseModel):
-            request = utils.unmarshal(
-                request, Optional[shared.CreateAutomationRequestInput]
-            )
-        request = cast(Optional[shared.CreateAutomationRequestInput], request)
+            request = utils.unmarshal(request, shared.CreateAutomationRequestInput)
+        request = cast(shared.CreateAutomationRequestInput, request)
 
         req = self._build_request_async(
             method="POST",
@@ -160,7 +148,7 @@ class Automation(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=False,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -168,11 +156,7 @@ class Automation(BaseSDK):
             http_headers=http_headers,
             security=self.sdk_configuration.security,
             get_serialized_body=lambda: utils.serialize_request_body(
-                request,
-                False,
-                True,
-                "json",
-                Optional[shared.CreateAutomationRequestInput],
+                request, False, False, "json", shared.CreateAutomationRequestInput
             ),
             timeout_ms=timeout_ms,
         )
@@ -266,7 +250,7 @@ class Automation(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=True,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -276,9 +260,9 @@ class Automation(BaseSDK):
             get_serialized_body=lambda: utils.serialize_request_body(
                 request.delete_automation_request,
                 False,
-                True,
+                False,
                 "json",
-                Optional[shared.DeleteAutomationRequest],
+                shared.DeleteAutomationRequest,
             ),
             timeout_ms=timeout_ms,
         )
@@ -372,7 +356,7 @@ class Automation(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=True,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -382,9 +366,9 @@ class Automation(BaseSDK):
             get_serialized_body=lambda: utils.serialize_request_body(
                 request.delete_automation_request,
                 False,
-                True,
+                False,
                 "json",
-                Optional[shared.DeleteAutomationRequest],
+                shared.DeleteAutomationRequest,
             ),
             timeout_ms=timeout_ms,
         )
@@ -478,7 +462,7 @@ class Automation(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=True,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -488,9 +472,9 @@ class Automation(BaseSDK):
             get_serialized_body=lambda: utils.serialize_request_body(
                 request.execute_automation_request,
                 False,
-                True,
+                False,
                 "json",
-                Optional[shared.ExecuteAutomationRequest],
+                shared.ExecuteAutomationRequest,
             ),
             timeout_ms=timeout_ms,
         )
@@ -584,7 +568,7 @@ class Automation(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=True,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -594,9 +578,9 @@ class Automation(BaseSDK):
             get_serialized_body=lambda: utils.serialize_request_body(
                 request.execute_automation_request,
                 False,
-                True,
+                False,
                 "json",
-                Optional[shared.ExecuteAutomationRequest],
+                shared.ExecuteAutomationRequest,
             ),
             timeout_ms=timeout_ms,
         )
@@ -1048,7 +1032,7 @@ class Automation(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=True,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -1058,9 +1042,9 @@ class Automation(BaseSDK):
             get_serialized_body=lambda: utils.serialize_request_body(
                 request.update_automation_request,
                 False,
-                True,
+                False,
                 "json",
-                Optional[shared.UpdateAutomationRequest],
+                shared.UpdateAutomationRequest,
             ),
             timeout_ms=timeout_ms,
         )
@@ -1154,7 +1138,7 @@ class Automation(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=True,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -1164,9 +1148,9 @@ class Automation(BaseSDK):
             get_serialized_body=lambda: utils.serialize_request_body(
                 request.update_automation_request,
                 False,
-                True,
+                False,
                 "json",
-                Optional[shared.UpdateAutomationRequest],
+                shared.UpdateAutomationRequest,
             ),
             timeout_ms=timeout_ms,
         )

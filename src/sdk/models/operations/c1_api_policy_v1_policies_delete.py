@@ -13,21 +13,19 @@ from typing_extensions import Annotated, NotRequired, TypedDict
 
 
 class C1APIPolicyV1PoliciesDeleteRequestTypedDict(TypedDict):
+    delete_policy_request: shared_deletepolicyrequest.DeletePolicyRequestTypedDict
     id: str
-    delete_policy_request: NotRequired[
-        shared_deletepolicyrequest.DeletePolicyRequestTypedDict
-    ]
 
 
 class C1APIPolicyV1PoliciesDeleteRequest(BaseModel):
+    delete_policy_request: Annotated[
+        shared_deletepolicyrequest.DeletePolicyRequest,
+        FieldMetadata(request=RequestMetadata(media_type="application/json")),
+    ]
+
     id: Annotated[
         str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))
     ]
-
-    delete_policy_request: Annotated[
-        Optional[shared_deletepolicyrequest.DeletePolicyRequest],
-        FieldMetadata(request=RequestMetadata(media_type="application/json")),
-    ] = None
 
 
 class C1APIPolicyV1PoliciesDeleteResponseTypedDict(TypedDict):

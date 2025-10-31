@@ -14,9 +14,9 @@ class PolicySearch(BaseSDK):
     def search(
         self,
         *,
-        request: Optional[
-            Union[shared.SearchPoliciesRequest, shared.SearchPoliciesRequestTypedDict]
-        ] = None,
+        request: Union[
+            shared.SearchPoliciesRequest, shared.SearchPoliciesRequestTypedDict
+        ],
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -43,8 +43,8 @@ class PolicySearch(BaseSDK):
             base_url = self._get_url(base_url, url_variables)
 
         if not isinstance(request, BaseModel):
-            request = utils.unmarshal(request, Optional[shared.SearchPoliciesRequest])
-        request = cast(Optional[shared.SearchPoliciesRequest], request)
+            request = utils.unmarshal(request, shared.SearchPoliciesRequest)
+        request = cast(shared.SearchPoliciesRequest, request)
 
         req = self._build_request(
             method="POST",
@@ -52,7 +52,7 @@ class PolicySearch(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=False,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -60,7 +60,7 @@ class PolicySearch(BaseSDK):
             http_headers=http_headers,
             security=self.sdk_configuration.security,
             get_serialized_body=lambda: utils.serialize_request_body(
-                request, False, True, "json", Optional[shared.SearchPoliciesRequest]
+                request, False, False, "json", shared.SearchPoliciesRequest
             ),
             timeout_ms=timeout_ms,
         )
@@ -133,9 +133,9 @@ class PolicySearch(BaseSDK):
     async def search_async(
         self,
         *,
-        request: Optional[
-            Union[shared.SearchPoliciesRequest, shared.SearchPoliciesRequestTypedDict]
-        ] = None,
+        request: Union[
+            shared.SearchPoliciesRequest, shared.SearchPoliciesRequestTypedDict
+        ],
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -162,8 +162,8 @@ class PolicySearch(BaseSDK):
             base_url = self._get_url(base_url, url_variables)
 
         if not isinstance(request, BaseModel):
-            request = utils.unmarshal(request, Optional[shared.SearchPoliciesRequest])
-        request = cast(Optional[shared.SearchPoliciesRequest], request)
+            request = utils.unmarshal(request, shared.SearchPoliciesRequest)
+        request = cast(shared.SearchPoliciesRequest, request)
 
         req = self._build_request_async(
             method="POST",
@@ -171,7 +171,7 @@ class PolicySearch(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=False,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -179,7 +179,7 @@ class PolicySearch(BaseSDK):
             http_headers=http_headers,
             security=self.sdk_configuration.security,
             get_serialized_body=lambda: utils.serialize_request_body(
-                request, False, True, "json", Optional[shared.SearchPoliciesRequest]
+                request, False, False, "json", shared.SearchPoliciesRequest
             ),
             timeout_ms=timeout_ms,
         )

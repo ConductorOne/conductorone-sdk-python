@@ -26,7 +26,7 @@ with SDK(
     ),
 ) as s_client:
 
-    res = s_client.exports_search.search()
+    res = s_client.exports_search.search(request={})
 
     assert res.exports_search_service_search_response is not None
 

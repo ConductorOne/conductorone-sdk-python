@@ -12,6 +12,8 @@ class AppOwnerApprovalTypedDict(TypedDict):
 
     allow_self_approval: NotRequired[bool]
     r"""Configuration that allows a user to self approve if they are an app owner during this approval step."""
+    require_distinct_approvers: NotRequired[bool]
+    r"""Configuration to require distinct approvers across approval steps of a rule."""
 
 
 class AppOwnerApproval(BaseModel):
@@ -21,3 +23,8 @@ class AppOwnerApproval(BaseModel):
         Optional[bool], pydantic.Field(alias="allowSelfApproval")
     ] = None
     r"""Configuration that allows a user to self approve if they are an app owner during this approval step."""
+
+    require_distinct_approvers: Annotated[
+        Optional[bool], pydantic.Field(alias="requireDistinctApprovers")
+    ] = None
+    r"""Configuration to require distinct approvers across approval steps of a rule."""

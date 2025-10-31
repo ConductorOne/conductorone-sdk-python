@@ -13,12 +13,10 @@ class StepUpProvider(BaseSDK):
     def create(
         self,
         *,
-        request: Optional[
-            Union[
-                shared.CreateStepUpProviderRequest,
-                shared.CreateStepUpProviderRequestTypedDict,
-            ]
-        ] = None,
+        request: Union[
+            shared.CreateStepUpProviderRequest,
+            shared.CreateStepUpProviderRequestTypedDict,
+        ],
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -45,10 +43,8 @@ class StepUpProvider(BaseSDK):
             base_url = self._get_url(base_url, url_variables)
 
         if not isinstance(request, BaseModel):
-            request = utils.unmarshal(
-                request, Optional[shared.CreateStepUpProviderRequest]
-            )
-        request = cast(Optional[shared.CreateStepUpProviderRequest], request)
+            request = utils.unmarshal(request, shared.CreateStepUpProviderRequest)
+        request = cast(shared.CreateStepUpProviderRequest, request)
 
         req = self._build_request(
             method="POST",
@@ -56,7 +52,7 @@ class StepUpProvider(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=False,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -64,11 +60,7 @@ class StepUpProvider(BaseSDK):
             http_headers=http_headers,
             security=self.sdk_configuration.security,
             get_serialized_body=lambda: utils.serialize_request_body(
-                request,
-                False,
-                True,
-                "json",
-                Optional[shared.CreateStepUpProviderRequest],
+                request, False, False, "json", shared.CreateStepUpProviderRequest
             ),
             timeout_ms=timeout_ms,
         )
@@ -115,12 +107,10 @@ class StepUpProvider(BaseSDK):
     async def create_async(
         self,
         *,
-        request: Optional[
-            Union[
-                shared.CreateStepUpProviderRequest,
-                shared.CreateStepUpProviderRequestTypedDict,
-            ]
-        ] = None,
+        request: Union[
+            shared.CreateStepUpProviderRequest,
+            shared.CreateStepUpProviderRequestTypedDict,
+        ],
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -147,10 +137,8 @@ class StepUpProvider(BaseSDK):
             base_url = self._get_url(base_url, url_variables)
 
         if not isinstance(request, BaseModel):
-            request = utils.unmarshal(
-                request, Optional[shared.CreateStepUpProviderRequest]
-            )
-        request = cast(Optional[shared.CreateStepUpProviderRequest], request)
+            request = utils.unmarshal(request, shared.CreateStepUpProviderRequest)
+        request = cast(shared.CreateStepUpProviderRequest, request)
 
         req = self._build_request_async(
             method="POST",
@@ -158,7 +146,7 @@ class StepUpProvider(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=False,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -166,11 +154,7 @@ class StepUpProvider(BaseSDK):
             http_headers=http_headers,
             security=self.sdk_configuration.security,
             get_serialized_body=lambda: utils.serialize_request_body(
-                request,
-                False,
-                True,
-                "json",
-                Optional[shared.CreateStepUpProviderRequest],
+                request, False, False, "json", shared.CreateStepUpProviderRequest
             ),
             timeout_ms=timeout_ms,
         )
@@ -260,7 +244,7 @@ class StepUpProvider(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=True,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -270,9 +254,9 @@ class StepUpProvider(BaseSDK):
             get_serialized_body=lambda: utils.serialize_request_body(
                 request.delete_step_up_provider_request,
                 False,
-                True,
+                False,
                 "json",
-                Optional[shared.DeleteStepUpProviderRequest],
+                shared.DeleteStepUpProviderRequest,
             ),
             timeout_ms=timeout_ms,
         )
@@ -362,7 +346,7 @@ class StepUpProvider(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=True,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -372,9 +356,9 @@ class StepUpProvider(BaseSDK):
             get_serialized_body=lambda: utils.serialize_request_body(
                 request.delete_step_up_provider_request,
                 False,
-                True,
+                False,
                 "json",
-                Optional[shared.DeleteStepUpProviderRequest],
+                shared.DeleteStepUpProviderRequest,
             ),
             timeout_ms=timeout_ms,
         )
@@ -769,12 +753,10 @@ class StepUpProvider(BaseSDK):
     def search(
         self,
         *,
-        request: Optional[
-            Union[
-                shared.SearchStepUpProvidersRequest,
-                shared.SearchStepUpProvidersRequestTypedDict,
-            ]
-        ] = None,
+        request: Union[
+            shared.SearchStepUpProvidersRequest,
+            shared.SearchStepUpProvidersRequestTypedDict,
+        ],
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -801,10 +783,8 @@ class StepUpProvider(BaseSDK):
             base_url = self._get_url(base_url, url_variables)
 
         if not isinstance(request, BaseModel):
-            request = utils.unmarshal(
-                request, Optional[shared.SearchStepUpProvidersRequest]
-            )
-        request = cast(Optional[shared.SearchStepUpProvidersRequest], request)
+            request = utils.unmarshal(request, shared.SearchStepUpProvidersRequest)
+        request = cast(shared.SearchStepUpProvidersRequest, request)
 
         req = self._build_request(
             method="POST",
@@ -812,7 +792,7 @@ class StepUpProvider(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=False,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -820,11 +800,7 @@ class StepUpProvider(BaseSDK):
             http_headers=http_headers,
             security=self.sdk_configuration.security,
             get_serialized_body=lambda: utils.serialize_request_body(
-                request,
-                False,
-                True,
-                "json",
-                Optional[shared.SearchStepUpProvidersRequest],
+                request, False, False, "json", shared.SearchStepUpProvidersRequest
             ),
             timeout_ms=timeout_ms,
         )
@@ -871,12 +847,10 @@ class StepUpProvider(BaseSDK):
     async def search_async(
         self,
         *,
-        request: Optional[
-            Union[
-                shared.SearchStepUpProvidersRequest,
-                shared.SearchStepUpProvidersRequestTypedDict,
-            ]
-        ] = None,
+        request: Union[
+            shared.SearchStepUpProvidersRequest,
+            shared.SearchStepUpProvidersRequestTypedDict,
+        ],
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -903,10 +877,8 @@ class StepUpProvider(BaseSDK):
             base_url = self._get_url(base_url, url_variables)
 
         if not isinstance(request, BaseModel):
-            request = utils.unmarshal(
-                request, Optional[shared.SearchStepUpProvidersRequest]
-            )
-        request = cast(Optional[shared.SearchStepUpProvidersRequest], request)
+            request = utils.unmarshal(request, shared.SearchStepUpProvidersRequest)
+        request = cast(shared.SearchStepUpProvidersRequest, request)
 
         req = self._build_request_async(
             method="POST",
@@ -914,7 +886,7 @@ class StepUpProvider(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=False,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -922,11 +894,7 @@ class StepUpProvider(BaseSDK):
             http_headers=http_headers,
             security=self.sdk_configuration.security,
             get_serialized_body=lambda: utils.serialize_request_body(
-                request,
-                False,
-                True,
-                "json",
-                Optional[shared.SearchStepUpProvidersRequest],
+                request, False, False, "json", shared.SearchStepUpProvidersRequest
             ),
             timeout_ms=timeout_ms,
         )
@@ -1016,7 +984,7 @@ class StepUpProvider(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=True,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -1026,9 +994,9 @@ class StepUpProvider(BaseSDK):
             get_serialized_body=lambda: utils.serialize_request_body(
                 request.test_step_up_provider_request,
                 False,
-                True,
+                False,
                 "json",
-                Optional[shared.TestStepUpProviderRequest],
+                shared.TestStepUpProviderRequest,
             ),
             timeout_ms=timeout_ms,
         )
@@ -1118,7 +1086,7 @@ class StepUpProvider(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=True,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -1128,9 +1096,9 @@ class StepUpProvider(BaseSDK):
             get_serialized_body=lambda: utils.serialize_request_body(
                 request.test_step_up_provider_request,
                 False,
-                True,
+                False,
                 "json",
-                Optional[shared.TestStepUpProviderRequest],
+                shared.TestStepUpProviderRequest,
             ),
             timeout_ms=timeout_ms,
         )
@@ -1220,7 +1188,7 @@ class StepUpProvider(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=True,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -1230,9 +1198,9 @@ class StepUpProvider(BaseSDK):
             get_serialized_body=lambda: utils.serialize_request_body(
                 request.update_step_up_provider_request,
                 False,
-                True,
+                False,
                 "json",
-                Optional[shared.UpdateStepUpProviderRequest],
+                shared.UpdateStepUpProviderRequest,
             ),
             timeout_ms=timeout_ms,
         )
@@ -1322,7 +1290,7 @@ class StepUpProvider(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=True,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -1332,9 +1300,9 @@ class StepUpProvider(BaseSDK):
             get_serialized_body=lambda: utils.serialize_request_body(
                 request.update_step_up_provider_request,
                 False,
-                True,
+                False,
                 "json",
-                Optional[shared.UpdateStepUpProviderRequest],
+                shared.UpdateStepUpProviderRequest,
             ),
             timeout_ms=timeout_ms,
         )
@@ -1425,7 +1393,7 @@ class StepUpProvider(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=True,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -1435,9 +1403,9 @@ class StepUpProvider(BaseSDK):
             get_serialized_body=lambda: utils.serialize_request_body(
                 request.update_step_up_provider_secret_request,
                 False,
-                True,
+                False,
                 "json",
-                Optional[shared.UpdateStepUpProviderSecretRequest],
+                shared.UpdateStepUpProviderSecretRequest,
             ),
             timeout_ms=timeout_ms,
         )
@@ -1528,7 +1496,7 @@ class StepUpProvider(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=True,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -1538,9 +1506,9 @@ class StepUpProvider(BaseSDK):
             get_serialized_body=lambda: utils.serialize_request_body(
                 request.update_step_up_provider_secret_request,
                 False,
-                True,
+                False,
                 "json",
-                Optional[shared.UpdateStepUpProviderSecretRequest],
+                shared.UpdateStepUpProviderSecretRequest,
             ),
             timeout_ms=timeout_ms,
         )

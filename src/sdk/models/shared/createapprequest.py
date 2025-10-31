@@ -3,9 +3,10 @@
 from __future__ import annotations
 from enum import Enum
 import pydantic
-from pydantic import model_serializer
+from pydantic import field_serializer, model_serializer
 from pydantic.functional_validators import PlainValidator
 from sdk import utils
+from sdk.models import shared
 from sdk.types import BaseModel, Nullable, OptionalNullable, UNSET, UNSET_SENTINEL
 from sdk.utils import validate_open_enum
 from typing import List, Optional
@@ -88,6 +89,15 @@ class CreateAppRequest(BaseModel):
         Optional[bool], pydantic.Field(alias="strictAccessEntitlementProvisioning")
     ] = None
     r"""This flag enforces a provisioning mode where the access entitlement is always included in the provisioning flow, if the app user doesn't exist"""
+
+    @field_serializer("identity_matching")
+    def serialize_identity_matching(self, value):
+        if isinstance(value, str):
+            try:
+                return shared.CreateAppRequestIdentityMatching(value)
+            except ValueError:
+                return value
+        return value
 
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):

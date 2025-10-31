@@ -13,21 +13,21 @@ from typing_extensions import Annotated, NotRequired, TypedDict
 
 
 class C1APITaskV1TaskActionsServiceCloseRequestTypedDict(TypedDict):
-    task_id: str
-    task_actions_service_close_request: NotRequired[
+    task_actions_service_close_request: (
         shared_taskactionsservicecloserequest.TaskActionsServiceCloseRequestTypedDict
-    ]
+    )
+    task_id: str
 
 
 class C1APITaskV1TaskActionsServiceCloseRequest(BaseModel):
+    task_actions_service_close_request: Annotated[
+        shared_taskactionsservicecloserequest.TaskActionsServiceCloseRequest,
+        FieldMetadata(request=RequestMetadata(media_type="application/json")),
+    ]
+
     task_id: Annotated[
         str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))
     ]
-
-    task_actions_service_close_request: Annotated[
-        Optional[shared_taskactionsservicecloserequest.TaskActionsServiceCloseRequest],
-        FieldMetadata(request=RequestMetadata(media_type="application/json")),
-    ] = None
 
 
 class C1APITaskV1TaskActionsServiceCloseResponseTypedDict(TypedDict):

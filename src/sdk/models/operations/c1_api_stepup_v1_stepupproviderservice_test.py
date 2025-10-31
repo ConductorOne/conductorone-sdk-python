@@ -13,21 +13,21 @@ from typing_extensions import Annotated, NotRequired, TypedDict
 
 
 class C1APIStepupV1StepUpProviderServiceTestRequestTypedDict(TypedDict):
-    id: str
-    test_step_up_provider_request: NotRequired[
+    test_step_up_provider_request: (
         shared_teststepupproviderrequest.TestStepUpProviderRequestTypedDict
-    ]
+    )
+    id: str
 
 
 class C1APIStepupV1StepUpProviderServiceTestRequest(BaseModel):
+    test_step_up_provider_request: Annotated[
+        shared_teststepupproviderrequest.TestStepUpProviderRequest,
+        FieldMetadata(request=RequestMetadata(media_type="application/json")),
+    ]
+
     id: Annotated[
         str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))
     ]
-
-    test_step_up_provider_request: Annotated[
-        Optional[shared_teststepupproviderrequest.TestStepUpProviderRequest],
-        FieldMetadata(request=RequestMetadata(media_type="application/json")),
-    ] = None
 
 
 class C1APIStepupV1StepUpProviderServiceTestResponseTypedDict(TypedDict):

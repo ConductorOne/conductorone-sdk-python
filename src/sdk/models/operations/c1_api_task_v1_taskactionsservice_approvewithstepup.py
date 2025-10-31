@@ -13,23 +13,19 @@ from typing_extensions import Annotated, NotRequired, TypedDict
 
 
 class C1APITaskV1TaskActionsServiceApproveWithStepUpRequestTypedDict(TypedDict):
+    task_actions_service_approve_with_step_up_request: shared_taskactionsserviceapprovewithstepuprequest.TaskActionsServiceApproveWithStepUpRequestTypedDict
     task_id: str
-    task_actions_service_approve_with_step_up_request: NotRequired[
-        shared_taskactionsserviceapprovewithstepuprequest.TaskActionsServiceApproveWithStepUpRequestTypedDict
-    ]
 
 
 class C1APITaskV1TaskActionsServiceApproveWithStepUpRequest(BaseModel):
+    task_actions_service_approve_with_step_up_request: Annotated[
+        shared_taskactionsserviceapprovewithstepuprequest.TaskActionsServiceApproveWithStepUpRequest,
+        FieldMetadata(request=RequestMetadata(media_type="application/json")),
+    ]
+
     task_id: Annotated[
         str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))
     ]
-
-    task_actions_service_approve_with_step_up_request: Annotated[
-        Optional[
-            shared_taskactionsserviceapprovewithstepuprequest.TaskActionsServiceApproveWithStepUpRequest
-        ],
-        FieldMetadata(request=RequestMetadata(media_type="application/json")),
-    ] = None
 
 
 class C1APITaskV1TaskActionsServiceApproveWithStepUpResponseTypedDict(TypedDict):

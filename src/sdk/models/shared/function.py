@@ -4,8 +4,10 @@ from __future__ import annotations
 from datetime import datetime
 from enum import Enum
 import pydantic
+from pydantic import field_serializer
 from pydantic.functional_validators import PlainValidator
 from sdk import utils
+from sdk.models import shared
 from sdk.types import BaseModel
 from sdk.utils import validate_open_enum
 from typing import Optional
@@ -76,6 +78,15 @@ class Function(BaseModel):
 
     updated_at: Annotated[Optional[datetime], pydantic.Field(alias="updatedAt")] = None
 
+    @field_serializer("function_type")
+    def serialize_function_type(self, value):
+        if isinstance(value, str):
+            try:
+                return shared.FunctionType(value)
+            except ValueError:
+                return value
+        return value
+
 
 class FunctionInputTypedDict(TypedDict):
     r"""Function represents a customer-provided code extension in the API"""
@@ -124,3 +135,12 @@ class FunctionInput(BaseModel):
         Optional[str], pydantic.Field(alias="publishedCommitId")
     ] = None
     r"""The publishedCommitId field."""
+
+    @field_serializer("function_type")
+    def serialize_function_type(self, value):
+        if isinstance(value, str):
+            try:
+                return shared.FunctionType(value)
+            except ValueError:
+                return value
+        return value

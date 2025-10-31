@@ -19,6 +19,8 @@ class ManagerApprovalTypedDict(TypedDict):
     r"""Configuration to allow a fallback if no manager is found."""
     fallback_user_ids: NotRequired[Nullable[List[str]]]
     r"""Configuration to specific which users to fallback to if fallback is enabled and no manager is found."""
+    require_distinct_approvers: NotRequired[bool]
+    r"""Configuration to require distinct approvers across approval steps of a rule."""
 
 
 class ManagerApproval(BaseModel):
@@ -42,6 +44,11 @@ class ManagerApproval(BaseModel):
     ] = UNSET
     r"""Configuration to specific which users to fallback to if fallback is enabled and no manager is found."""
 
+    require_distinct_approvers: Annotated[
+        Optional[bool], pydantic.Field(alias="requireDistinctApprovers")
+    ] = None
+    r"""Configuration to require distinct approvers across approval steps of a rule."""
+
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
         optional_fields = [
@@ -49,6 +56,7 @@ class ManagerApproval(BaseModel):
             "assignedUserIds",
             "fallback",
             "fallbackUserIds",
+            "requireDistinctApprovers",
         ]
         nullable_fields = ["assignedUserIds", "fallbackUserIds"]
         null_default_fields = []

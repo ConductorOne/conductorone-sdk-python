@@ -13,21 +13,19 @@ from typing_extensions import Annotated, NotRequired, TypedDict
 
 
 class C1APIAppV1AppOwnersSetRequestTypedDict(TypedDict):
+    set_app_owners_request: shared_setappownersrequest.SetAppOwnersRequestTypedDict
     app_id: str
-    set_app_owners_request: NotRequired[
-        shared_setappownersrequest.SetAppOwnersRequestTypedDict
-    ]
 
 
 class C1APIAppV1AppOwnersSetRequest(BaseModel):
+    set_app_owners_request: Annotated[
+        shared_setappownersrequest.SetAppOwnersRequest,
+        FieldMetadata(request=RequestMetadata(media_type="application/json")),
+    ]
+
     app_id: Annotated[
         str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))
     ]
-
-    set_app_owners_request: Annotated[
-        Optional[shared_setappownersrequest.SetAppOwnersRequest],
-        FieldMetadata(request=RequestMetadata(media_type="application/json")),
-    ] = None
 
 
 class C1APIAppV1AppOwnersSetResponseTypedDict(TypedDict):

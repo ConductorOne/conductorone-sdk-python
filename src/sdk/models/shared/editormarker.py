@@ -3,8 +3,10 @@
 from __future__ import annotations
 from enum import Enum
 import pydantic
+from pydantic import field_serializer
 from pydantic.functional_validators import PlainValidator
 from sdk import utils
+from sdk.models import shared
 from sdk.types import BaseModel
 from sdk.utils import validate_open_enum
 from typing import Optional
@@ -64,3 +66,12 @@ class EditorMarker(BaseModel):
         Optional[int], pydantic.Field(alias="startLineNumber")
     ] = None
     r"""The startLineNumber field."""
+
+    @field_serializer("severity")
+    def serialize_severity(self, value):
+        if isinstance(value, str):
+            try:
+                return shared.Severity(value)
+            except ValueError:
+                return value
+        return value

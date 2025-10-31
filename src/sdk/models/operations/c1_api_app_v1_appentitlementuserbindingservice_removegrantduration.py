@@ -15,15 +15,20 @@ from typing_extensions import Annotated, NotRequired, TypedDict
 class C1APIAppV1AppEntitlementUserBindingServiceRemoveGrantDurationRequestTypedDict(
     TypedDict
 ):
+    remove_grant_duration_request: (
+        shared_removegrantdurationrequest.RemoveGrantDurationRequestTypedDict
+    )
     app_entitlement_id: str
     app_id: str
     app_user_id: str
-    remove_grant_duration_request: NotRequired[
-        shared_removegrantdurationrequest.RemoveGrantDurationRequestTypedDict
-    ]
 
 
 class C1APIAppV1AppEntitlementUserBindingServiceRemoveGrantDurationRequest(BaseModel):
+    remove_grant_duration_request: Annotated[
+        shared_removegrantdurationrequest.RemoveGrantDurationRequest,
+        FieldMetadata(request=RequestMetadata(media_type="application/json")),
+    ]
+
     app_entitlement_id: Annotated[
         str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))
     ]
@@ -35,11 +40,6 @@ class C1APIAppV1AppEntitlementUserBindingServiceRemoveGrantDurationRequest(BaseM
     app_user_id: Annotated[
         str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))
     ]
-
-    remove_grant_duration_request: Annotated[
-        Optional[shared_removegrantdurationrequest.RemoveGrantDurationRequest],
-        FieldMetadata(request=RequestMetadata(media_type="application/json")),
-    ] = None
 
 
 class C1APIAppV1AppEntitlementUserBindingServiceRemoveGrantDurationResponseTypedDict(

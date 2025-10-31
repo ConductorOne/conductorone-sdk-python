@@ -13,23 +13,19 @@ from typing_extensions import Annotated, NotRequired, TypedDict
 
 
 class C1APITaskV1TaskActionsServiceProcessNowRequestTypedDict(TypedDict):
+    task_actions_service_process_now_request: shared_taskactionsserviceprocessnowrequest.TaskActionsServiceProcessNowRequestTypedDict
     task_id: str
-    task_actions_service_process_now_request: NotRequired[
-        shared_taskactionsserviceprocessnowrequest.TaskActionsServiceProcessNowRequestTypedDict
-    ]
 
 
 class C1APITaskV1TaskActionsServiceProcessNowRequest(BaseModel):
+    task_actions_service_process_now_request: Annotated[
+        shared_taskactionsserviceprocessnowrequest.TaskActionsServiceProcessNowRequest,
+        FieldMetadata(request=RequestMetadata(media_type="application/json")),
+    ]
+
     task_id: Annotated[
         str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))
     ]
-
-    task_actions_service_process_now_request: Annotated[
-        Optional[
-            shared_taskactionsserviceprocessnowrequest.TaskActionsServiceProcessNowRequest
-        ],
-        FieldMetadata(request=RequestMetadata(media_type="application/json")),
-    ] = None
 
 
 class C1APITaskV1TaskActionsServiceProcessNowResponseTypedDict(TypedDict):

@@ -26,7 +26,7 @@ with SDK(
     ),
 ) as s_client:
 
-    res = s_client.request_catalog_search.search_entitlements()
+    res = s_client.request_catalog_search.search_entitlements(request={})
 
     assert res.request_catalog_search_service_search_entitlements_response is not None
 

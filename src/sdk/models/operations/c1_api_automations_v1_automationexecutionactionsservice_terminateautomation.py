@@ -23,26 +23,26 @@ from typing_extensions import Annotated, NotRequired, TypedDict
 class C1APIAutomationsV1AutomationExecutionActionsServiceTerminateAutomationRequestTypedDict(
     TypedDict
 ):
-    id: int
-    terminate_automation_request: NotRequired[
+    terminate_automation_request: (
         shared_terminateautomationrequest.TerminateAutomationRequestTypedDict
-    ]
+    )
+    id: int
 
 
 class C1APIAutomationsV1AutomationExecutionActionsServiceTerminateAutomationRequest(
     BaseModel
 ):
+    terminate_automation_request: Annotated[
+        shared_terminateautomationrequest.TerminateAutomationRequest,
+        FieldMetadata(request=RequestMetadata(media_type="application/json")),
+    ]
+
     id: Annotated[
         Annotated[
             int, BeforeValidator(validate_int), PlainSerializer(serialize_int(True))
         ],
         FieldMetadata(path=PathParamMetadata(style="simple", explode=False)),
     ]
-
-    terminate_automation_request: Annotated[
-        Optional[shared_terminateautomationrequest.TerminateAutomationRequest],
-        FieldMetadata(request=RequestMetadata(media_type="application/json")),
-    ] = None
 
 
 class C1APIAutomationsV1AutomationExecutionActionsServiceTerminateAutomationResponseTypedDict(

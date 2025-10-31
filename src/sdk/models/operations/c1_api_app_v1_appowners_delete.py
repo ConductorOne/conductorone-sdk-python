@@ -13,21 +13,21 @@ from typing_extensions import Annotated, NotRequired, TypedDict
 
 
 class C1APIAppV1AppOwnersDeleteRequestTypedDict(TypedDict):
-    app_id: str
-    delete_app_owners_request: NotRequired[
+    delete_app_owners_request: (
         shared_deleteappownersrequest.DeleteAppOwnersRequestTypedDict
-    ]
+    )
+    app_id: str
 
 
 class C1APIAppV1AppOwnersDeleteRequest(BaseModel):
+    delete_app_owners_request: Annotated[
+        shared_deleteappownersrequest.DeleteAppOwnersRequest,
+        FieldMetadata(request=RequestMetadata(media_type="application/json")),
+    ]
+
     app_id: Annotated[
         str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))
     ]
-
-    delete_app_owners_request: Annotated[
-        Optional[shared_deleteappownersrequest.DeleteAppOwnersRequest],
-        FieldMetadata(request=RequestMetadata(media_type="application/json")),
-    ] = None
 
 
 class C1APIAppV1AppOwnersDeleteResponseTypedDict(TypedDict):

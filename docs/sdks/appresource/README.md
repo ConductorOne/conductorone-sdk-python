@@ -31,6 +31,9 @@ with SDK(
 ) as s_client:
 
     res = s_client.app_resource.create_manually_managed_app_resource(request={
+        "create_manually_managed_app_resource_request": {
+            "display_name": "Carmella_Marks18",
+        },
         "app_id": "<id>",
         "app_resource_type_id": "<id>",
     })
@@ -79,6 +82,7 @@ with SDK(
 ) as s_client:
 
     res = s_client.app_resource.delete_manually_managed_app_resource(request={
+        "delete_manually_managed_app_resource_request": {},
         "app_id": "<id>",
         "app_resource_type_id": "<id>",
         "id": "<id>",
@@ -225,6 +229,7 @@ with SDK(
 ) as s_client:
 
     res = s_client.app_resource.update(request={
+        "app_resource_service_update_request": {},
         "app_id": "<id>",
         "app_resource_type_id": "<id>",
         "id": "<id>",

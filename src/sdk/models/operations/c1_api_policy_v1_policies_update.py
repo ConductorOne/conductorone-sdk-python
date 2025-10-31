@@ -13,21 +13,19 @@ from typing_extensions import Annotated, NotRequired, TypedDict
 
 
 class C1APIPolicyV1PoliciesUpdateRequestTypedDict(TypedDict):
+    update_policy_request: shared_updatepolicyrequest.UpdatePolicyRequestTypedDict
     id: str
-    update_policy_request: NotRequired[
-        shared_updatepolicyrequest.UpdatePolicyRequestTypedDict
-    ]
 
 
 class C1APIPolicyV1PoliciesUpdateRequest(BaseModel):
+    update_policy_request: Annotated[
+        shared_updatepolicyrequest.UpdatePolicyRequest,
+        FieldMetadata(request=RequestMetadata(media_type="application/json")),
+    ]
+
     id: Annotated[
         str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))
     ]
-
-    update_policy_request: Annotated[
-        Optional[shared_updatepolicyrequest.UpdatePolicyRequest],
-        FieldMetadata(request=RequestMetadata(media_type="application/json")),
-    ] = None
 
 
 class C1APIPolicyV1PoliciesUpdateResponseTypedDict(TypedDict):

@@ -15,16 +15,19 @@ from typing_extensions import Annotated, NotRequired, TypedDict
 class C1APIAppV1AppResourceTypeServiceDeleteManuallyManagedResourceTypeRequestTypedDict(
     TypedDict
 ):
+    delete_manually_managed_resource_type_request: shared_deletemanuallymanagedresourcetyperequest.DeleteManuallyManagedResourceTypeRequestTypedDict
     app_id: str
     id: str
-    delete_manually_managed_resource_type_request: NotRequired[
-        shared_deletemanuallymanagedresourcetyperequest.DeleteManuallyManagedResourceTypeRequestTypedDict
-    ]
 
 
 class C1APIAppV1AppResourceTypeServiceDeleteManuallyManagedResourceTypeRequest(
     BaseModel
 ):
+    delete_manually_managed_resource_type_request: Annotated[
+        shared_deletemanuallymanagedresourcetyperequest.DeleteManuallyManagedResourceTypeRequest,
+        FieldMetadata(request=RequestMetadata(media_type="application/json")),
+    ]
+
     app_id: Annotated[
         str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))
     ]
@@ -32,13 +35,6 @@ class C1APIAppV1AppResourceTypeServiceDeleteManuallyManagedResourceTypeRequest(
     id: Annotated[
         str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))
     ]
-
-    delete_manually_managed_resource_type_request: Annotated[
-        Optional[
-            shared_deletemanuallymanagedresourcetyperequest.DeleteManuallyManagedResourceTypeRequest
-        ],
-        FieldMetadata(request=RequestMetadata(media_type="application/json")),
-    ] = None
 
 
 class C1APIAppV1AppResourceTypeServiceDeleteManuallyManagedResourceTypeResponseTypedDict(

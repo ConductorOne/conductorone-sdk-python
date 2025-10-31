@@ -30,7 +30,9 @@ with SDK(
     ),
 ) as s_client:
 
-    res = s_client.policies.create()
+    res = s_client.policies.create(request={
+        "display_name": "Zita56",
+    })
 
     assert res.create_policy_response is not None
 
@@ -76,6 +78,7 @@ with SDK(
 ) as s_client:
 
     res = s_client.policies.delete(request={
+        "delete_policy_request": {},
         "id": "<id>",
     })
 
@@ -215,6 +218,7 @@ with SDK(
 ) as s_client:
 
     res = s_client.policies.update(request={
+        "update_policy_request": {},
         "id": "<id>",
     })
 

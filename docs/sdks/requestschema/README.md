@@ -32,7 +32,7 @@ with SDK(
     ),
 ) as s_client:
 
-    res = s_client.request_schema.create()
+    res = s_client.request_schema.create(request={})
 
     assert res.request_schema_service_create_response is not None
 
@@ -77,7 +77,7 @@ with SDK(
     ),
 ) as s_client:
 
-    res = s_client.request_schema.create_entitlement_binding()
+    res = s_client.request_schema.create_entitlement_binding(request={})
 
     assert res.request_schema_service_create_entitlement_binding_response is not None
 
@@ -123,6 +123,7 @@ with SDK(
 ) as s_client:
 
     res = s_client.request_schema.delete(request={
+        "request_schema_service_delete_request": {},
         "request_schema_id": "<id>",
     })
 
@@ -169,7 +170,7 @@ with SDK(
     ),
 ) as s_client:
 
-    res = s_client.request_schema.find_binding_for_app_entitlement()
+    res = s_client.request_schema.find_binding_for_app_entitlement(request={})
 
     assert res.request_schema_service_find_binding_for_app_entitlement_response is not None
 
@@ -261,7 +262,7 @@ with SDK(
     ),
 ) as s_client:
 
-    res = s_client.request_schema.remove_entitlement_binding()
+    res = s_client.request_schema.remove_entitlement_binding(request={})
 
     assert res.request_schema_service_remove_entitlement_binding_response is not None
 
@@ -307,6 +308,7 @@ with SDK(
 ) as s_client:
 
     res = s_client.request_schema.update(request={
+        "request_schema_service_update_request": {},
         "request_schema_id": "<id>",
     })
 

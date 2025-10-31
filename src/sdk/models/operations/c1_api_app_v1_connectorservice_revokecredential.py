@@ -13,15 +13,18 @@ from typing_extensions import Annotated, NotRequired, TypedDict
 
 
 class C1APIAppV1ConnectorServiceRevokeCredentialRequestTypedDict(TypedDict):
+    connector_service_revoke_credential_request: shared_connectorservicerevokecredentialrequest.ConnectorServiceRevokeCredentialRequestTypedDict
     app_id: str
     connector_id: str
     id: str
-    connector_service_revoke_credential_request: NotRequired[
-        shared_connectorservicerevokecredentialrequest.ConnectorServiceRevokeCredentialRequestTypedDict
-    ]
 
 
 class C1APIAppV1ConnectorServiceRevokeCredentialRequest(BaseModel):
+    connector_service_revoke_credential_request: Annotated[
+        shared_connectorservicerevokecredentialrequest.ConnectorServiceRevokeCredentialRequest,
+        FieldMetadata(request=RequestMetadata(media_type="application/json")),
+    ]
+
     app_id: Annotated[
         str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))
     ]
@@ -33,13 +36,6 @@ class C1APIAppV1ConnectorServiceRevokeCredentialRequest(BaseModel):
     id: Annotated[
         str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))
     ]
-
-    connector_service_revoke_credential_request: Annotated[
-        Optional[
-            shared_connectorservicerevokecredentialrequest.ConnectorServiceRevokeCredentialRequest
-        ],
-        FieldMetadata(request=RequestMetadata(media_type="application/json")),
-    ] = None
 
 
 class C1APIAppV1ConnectorServiceRevokeCredentialResponseTypedDict(TypedDict):

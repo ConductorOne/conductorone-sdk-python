@@ -13,14 +13,19 @@ from typing_extensions import Annotated, NotRequired, TypedDict
 
 
 class C1APIAppV1AppEntitlementsCreateAutomationRequestTypedDict(TypedDict):
+    create_automation_request: (
+        shared_createautomationrequest.CreateAutomationRequestTypedDict
+    )
     app_entitlement_id: str
     app_id: str
-    create_automation_request: NotRequired[
-        shared_createautomationrequest.CreateAutomationRequestTypedDict
-    ]
 
 
 class C1APIAppV1AppEntitlementsCreateAutomationRequest(BaseModel):
+    create_automation_request: Annotated[
+        shared_createautomationrequest.CreateAutomationRequest,
+        FieldMetadata(request=RequestMetadata(media_type="application/json")),
+    ]
+
     app_entitlement_id: Annotated[
         str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))
     ]
@@ -28,11 +33,6 @@ class C1APIAppV1AppEntitlementsCreateAutomationRequest(BaseModel):
     app_id: Annotated[
         str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))
     ]
-
-    create_automation_request: Annotated[
-        Optional[shared_createautomationrequest.CreateAutomationRequest],
-        FieldMetadata(request=RequestMetadata(media_type="application/json")),
-    ] = None
 
 
 class C1APIAppV1AppEntitlementsCreateAutomationResponseTypedDict(TypedDict):

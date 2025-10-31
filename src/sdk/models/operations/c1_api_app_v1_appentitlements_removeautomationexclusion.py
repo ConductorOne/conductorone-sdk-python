@@ -13,14 +13,17 @@ from typing_extensions import Annotated, NotRequired, TypedDict
 
 
 class C1APIAppV1AppEntitlementsRemoveAutomationExclusionRequestTypedDict(TypedDict):
+    remove_automation_exclusion_request: shared_removeautomationexclusionrequest.RemoveAutomationExclusionRequestTypedDict
     app_entitlement_id: str
     app_id: str
-    remove_automation_exclusion_request: NotRequired[
-        shared_removeautomationexclusionrequest.RemoveAutomationExclusionRequestTypedDict
-    ]
 
 
 class C1APIAppV1AppEntitlementsRemoveAutomationExclusionRequest(BaseModel):
+    remove_automation_exclusion_request: Annotated[
+        shared_removeautomationexclusionrequest.RemoveAutomationExclusionRequest,
+        FieldMetadata(request=RequestMetadata(media_type="application/json")),
+    ]
+
     app_entitlement_id: Annotated[
         str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))
     ]
@@ -28,13 +31,6 @@ class C1APIAppV1AppEntitlementsRemoveAutomationExclusionRequest(BaseModel):
     app_id: Annotated[
         str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))
     ]
-
-    remove_automation_exclusion_request: Annotated[
-        Optional[
-            shared_removeautomationexclusionrequest.RemoveAutomationExclusionRequest
-        ],
-        FieldMetadata(request=RequestMetadata(media_type="application/json")),
-    ] = None
 
 
 class C1APIAppV1AppEntitlementsRemoveAutomationExclusionResponseTypedDict(TypedDict):

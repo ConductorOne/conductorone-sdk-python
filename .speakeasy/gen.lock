@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: caa5cc5d-fe97-4a71-b2f9-77ce0615bbd1
 management:
-  docChecksum: 2eea255d4cf4f841a7a3ede787181539
+  docChecksum: 4363cbf52782e27617b4e20a0772a70b
   docVersion: 0.1.0-alpha
-  speakeasyVersion: 1.642.1
-  generationVersion: 2.731.4
-  releaseVersion: 0.16.0
-  configChecksum: 2bbb7ab1c0ee847138dcd47c7f711e78
+  speakeasyVersion: 1.643.3
+  generationVersion: 2.731.9
+  releaseVersion: 0.16.1
+  configChecksum: 986f09101402f14f0ec45fd2f4940c08
   repoURL: https://github.com/ConductorOne/conductorone-sdk-python.git
   repoSubDirectory: .
   installationURL: https://github.com/ConductorOne/conductorone-sdk-python.git
@@ -14,7 +14,7 @@ features:
   python:
     additionalDependencies: 1.0.0
     additionalProperties: 1.0.1
-    core: 5.23.0
+    core: 5.23.2
     defaultEnabledRetries: 0.2.0
     deprecations: 3.0.2
     enumUnions: 0.1.0
@@ -701,6 +701,7 @@ generatedFiles:
   - docs/models/shared/createpolicyrequest.md
   - docs/models/shared/createpolicyresponse.md
   - docs/models/shared/createrevoketasks.md
+  - docs/models/shared/createrevoketasksv2.md
   - docs/models/shared/createrisklevelattributevaluerequest.md
   - docs/models/shared/createrisklevelattributevalueresponse.md
   - docs/models/shared/createstepupproviderrequest.md
@@ -775,8 +776,14 @@ generatedFiles:
   - docs/models/shared/emergencystatus.md
   - docs/models/shared/encrypteddata.md
   - docs/models/shared/enrollmentbehavior.md
+  - docs/models/shared/entitlementexclusioncriteria.md
+  - docs/models/shared/entitlementexclusionlist.md
+  - docs/models/shared/entitlementexclusionnone.md
   - docs/models/shared/entitlementfilter.md
   - docs/models/shared/entitlementgroup.md
+  - docs/models/shared/entitlementinclusionall.md
+  - docs/models/shared/entitlementinclusioncriteria.md
+  - docs/models/shared/entitlementinclusionlist.md
   - docs/models/shared/entitlementownerapproval.md
   - docs/models/shared/enumrules.md
   - docs/models/shared/erroredaction.md
@@ -1172,6 +1179,7 @@ generatedFiles:
   - docs/models/shared/stringmapfield.md
   - docs/models/shared/stringrules.md
   - docs/models/shared/stringslicefield.md
+  - docs/models/shared/syncconfig.md
   - docs/models/shared/systemlogservicelisteventsrequest.md
   - docs/models/shared/systemlogservicelisteventsresponse.md
   - docs/models/shared/targetedappusertypes.md
@@ -1976,6 +1984,7 @@ generatedFiles:
   - src/sdk/models/shared/createpolicyrequest.py
   - src/sdk/models/shared/createpolicyresponse.py
   - src/sdk/models/shared/createrevoketasks.py
+  - src/sdk/models/shared/createrevoketasksv2.py
   - src/sdk/models/shared/createrisklevelattributevaluerequest.py
   - src/sdk/models/shared/createrisklevelattributevalueresponse.py
   - src/sdk/models/shared/createstepupproviderrequest.py
@@ -2038,7 +2047,13 @@ generatedFiles:
   - src/sdk/models/shared/editorvalidateresponse.py
   - src/sdk/models/shared/emailnotifications.py
   - src/sdk/models/shared/encrypteddata.py
+  - src/sdk/models/shared/entitlementexclusioncriteria.py
+  - src/sdk/models/shared/entitlementexclusionlist.py
+  - src/sdk/models/shared/entitlementexclusionnone.py
   - src/sdk/models/shared/entitlementfilter.py
+  - src/sdk/models/shared/entitlementinclusionall.py
+  - src/sdk/models/shared/entitlementinclusioncriteria.py
+  - src/sdk/models/shared/entitlementinclusionlist.py
   - src/sdk/models/shared/entitlementownerapproval.py
   - src/sdk/models/shared/enumrules.py
   - src/sdk/models/shared/erroredaction.py
@@ -2367,6 +2382,7 @@ generatedFiles:
   - src/sdk/models/shared/stringmapfield.py
   - src/sdk/models/shared/stringrules.py
   - src/sdk/models/shared/stringslicefield.py
+  - src/sdk/models/shared/syncconfig.py
   - src/sdk/models/shared/systemlogservicelisteventsrequest.py
   - src/sdk/models/shared/systemlogservicelisteventsresponse.py
   - src/sdk/models/shared/targettask.py
@@ -2624,6 +2640,8 @@ generatedFiles:
 examples:
   c1.api.accessconflict.v1.AccessConflictService.CreateMonitor:
     speakeasy-default-c1-api-accessconflict-v1-access-conflict-service-create-monitor:
+      requestBody:
+        application/json: {"displayName": "Hermina.Larkin"}
       responses:
         "200":
           application/json: {}
@@ -2632,6 +2650,8 @@ examples:
       parameters:
         path:
           id: "<id>"
+      requestBody:
+        application/json: {}
       responses:
         "200":
           application/json: {}
@@ -2648,26 +2668,36 @@ examples:
       parameters:
         path:
           id: "<id>"
+      requestBody:
+        application/json: {}
       responses:
         "200":
           application/json: {}
   c1.api.accessconflict.v1.AppEntitlementMonitorBindingService.CreateAppEntitlementMonitorBinding:
     speakeasy-default-c1-api-accessconflict-v1-app-entitlement-monitor-binding-service-create-app-entitlement-monitor-binding:
+      requestBody:
+        application/json: {}
       responses:
         "200":
           application/json: {}
   c1.api.accessconflict.v1.AppEntitlementMonitorBindingService.DeleteAppEntitlementMonitorBinding:
     speakeasy-default-c1-api-accessconflict-v1-app-entitlement-monitor-binding-service-delete-app-entitlement-monitor-binding:
+      requestBody:
+        application/json: {}
       responses:
         "200":
           application/json: {}
   c1.api.accessconflict.v1.AppEntitlementMonitorBindingService.GetAppEntitlementMonitorBinding:
     speakeasy-default-c1-api-accessconflict-v1-app-entitlement-monitor-binding-service-get-app-entitlement-monitor-binding:
+      requestBody:
+        application/json: {}
       responses:
         "200":
           application/json: {}
   c1.api.app.v1.Apps.Create:
     speakeasy-default-c1-api-app-v1-apps-create:
+      requestBody:
+        application/json: {"displayName": "Ciara.Goyette89"}
       responses:
         "200":
           application/json: {}
@@ -2676,6 +2706,8 @@ examples:
       parameters:
         path:
           id: "<id>"
+      requestBody:
+        application/json: {}
       responses:
         "200":
           application/json: {}
@@ -2697,6 +2729,8 @@ examples:
       parameters:
         path:
           id: "<id>"
+      requestBody:
+        application/json: {}
       responses:
         "200":
           application/json: {}
@@ -2707,6 +2741,8 @@ examples:
           app_id: "<id>"
           connector_id: "<id>"
           sync_lifecycle_id: "<id>"
+      requestBody:
+        application/json: {}
       responses:
         "200":
           application/json: {}
@@ -2715,6 +2751,8 @@ examples:
       parameters:
         path:
           app_id: "<id>"
+      requestBody:
+        application/json: {}
       responses:
         "200":
           application/json: {}
@@ -2723,6 +2761,8 @@ examples:
       parameters:
         path:
           app_id: "<id>"
+      requestBody:
+        application/json: {}
       responses:
         "200":
           application/json: {}
@@ -2732,6 +2772,8 @@ examples:
         path:
           app_id: "<id>"
           id: "<id>"
+      requestBody:
+        application/json: {}
       responses:
         "200":
           application/json: {}
@@ -2741,6 +2783,8 @@ examples:
         path:
           app_id: "<id>"
           connector_id: "<id>"
+      requestBody:
+        application/json: {}
       responses:
         "200":
           application/json: {}
@@ -2777,6 +2821,8 @@ examples:
         path:
           app_id: "<id>"
           connector_id: "<id>"
+      requestBody:
+        application/json: {}
       responses:
         "200":
           application/json: {}
@@ -2786,6 +2832,8 @@ examples:
         path:
           app_id: "<id>"
           connector_id: "<id>"
+      requestBody:
+        application/json: {}
       responses:
         "200":
           application/json: {}
@@ -2796,11 +2844,15 @@ examples:
           app_id: "<id>"
           connector_id: "<id>"
           id: "<id>"
+      requestBody:
+        application/json: {}
       responses:
         "200":
           application/json: {}
   c1.api.app.v1.ConnectorService.RotateCredential:
     speakeasy-default-c1-api-app-v1-connector-service-rotate-credential:
+      requestBody:
+        application/json: {}
       responses:
         "200":
           application/json: {}
@@ -2810,6 +2862,8 @@ examples:
         path:
           app_id: "<id>"
           id: "<id>"
+      requestBody:
+        application/json: {}
       responses:
         "200":
           application/json: {}
@@ -2819,11 +2873,15 @@ examples:
         path:
           connector_app_id: "<id>"
           connector_id: "<id>"
+      requestBody:
+        application/json: {}
       responses:
         "200":
           application/json: {}
   c1.api.app.v1.ConnectorService.ValidateHTTPConnectorConfig:
     speakeasy-default-c1-api-app-v1-connector-service-validate-HTTP-connector-config:
+      requestBody:
+        application/json: {}
       responses:
         "200":
           application/json: {}
@@ -2832,6 +2890,8 @@ examples:
       parameters:
         path:
           app_id: "<id>"
+      requestBody:
+        application/json: {}
       responses:
         "200":
           application/json: {}
@@ -2840,6 +2900,8 @@ examples:
       parameters:
         path:
           app_id: "<id>"
+      requestBody:
+        application/json: {}
       responses:
         "200":
           application/json: {}
@@ -2879,6 +2941,8 @@ examples:
           application/json: {}
   c1.api.app.v1.AppUserService.Search:
     speakeasy-default-c1-api-app-v1-app-user-service-search:
+      requestBody:
+        application/json: {}
       responses:
         "200":
           application/json: {}
@@ -2888,6 +2952,8 @@ examples:
         path:
           app_user_app_id: "<id>"
           app_user_id: "<id>"
+      requestBody:
+        application/json: {}
       responses:
         "200":
           application/json: {}
@@ -2897,6 +2963,8 @@ examples:
         path:
           app_id: "<id>"
           app_entitlement_id: "<id>"
+      requestBody:
+        application/json: {}
       responses:
         "200":
           application/json: {}
@@ -2906,6 +2974,8 @@ examples:
         path:
           app_id: "<id>"
           app_entitlement_id: "<id>"
+      requestBody:
+        application/json: {}
       responses:
         "200":
           application/json: {}
@@ -2914,6 +2984,8 @@ examples:
       parameters:
         path:
           app_id: "<id>"
+      requestBody:
+        application/json: {"displayName": "Baron.Hayes"}
       responses:
         "200":
           application/json: {}
@@ -2923,6 +2995,8 @@ examples:
         path:
           app_id: "<id>"
           app_entitlement_id: "<id>"
+      requestBody:
+        application/json: {}
       responses:
         "200":
           application/json: {}
@@ -2932,6 +3006,8 @@ examples:
         path:
           app_id: "<id>"
           id: "<id>"
+      requestBody:
+        application/json: {}
       responses:
         "200":
           application/json: {}
@@ -2941,6 +3017,8 @@ examples:
         path:
           app_id: "<id>"
           app_entitlement_id: "<id>"
+      requestBody:
+        application/json: {}
       responses:
         "200":
           application/json: {}
@@ -3013,6 +3091,8 @@ examples:
         path:
           app_id: "<id>"
           app_entitlement_id: "<id>"
+      requestBody:
+        application/json: {}
       responses:
         "200":
           application/json: {}
@@ -3022,6 +3102,8 @@ examples:
         path:
           app_id: "<id>"
           app_entitlement_id: "<id>"
+      requestBody:
+        application/json: {}
       responses:
         "200":
           application/json: {}
@@ -3031,6 +3113,8 @@ examples:
         path:
           app_id: "<id>"
           id: "<id>"
+      requestBody:
+        application/json: {}
       responses:
         "200":
           application/json: {}
@@ -3040,11 +3124,15 @@ examples:
         path:
           app_id: "<id>"
           app_entitlement_id: "<id>"
+      requestBody:
+        application/json: {}
       responses:
         "200":
           application/json: {}
   c1.api.app.v1.AppEntitlementSearchService.Search:
     speakeasy-default-c1-api-app-v1-app-entitlement-search-service-search:
+      requestBody:
+        application/json: {}
       responses:
         "200":
           application/json: {}
@@ -3068,6 +3156,8 @@ examples:
           application/json: {}
   c1.api.app.v1.AppEntitlementSearchService.SearchGrants:
     speakeasy-default-c1-api-app-v1-app-entitlement-search-service-search-grants:
+      requestBody:
+        application/json: {}
       responses:
         "200":
           application/json: {}
@@ -3088,16 +3178,22 @@ examples:
           app_id: "<id>"
           app_entitlement_id: "<id>"
           app_user_id: "<id>"
+      requestBody:
+        application/json: {}
       responses:
         "200":
           application/json: {}
   c1.api.app.v1.AppEntitlementUserBindingService.SearchGrantFeed:
     speakeasy-default-c1-api-app-v1-app-entitlement-user-binding-service-search-grant-feed:
+      requestBody:
+        application/json: {}
       responses:
         "200":
           application/json: {}
   c1.api.app.v1.AppEntitlementUserBindingService.SearchPastGrants:
     speakeasy-default-c1-api-app-v1-app-entitlement-user-binding-service-search-past-grants:
+      requestBody:
+        application/json: {}
       responses:
         "200":
           application/json: {}
@@ -3108,6 +3204,8 @@ examples:
           app_id: "<id>"
           app_entitlement_id: "<id>"
           app_user_id: "<id>"
+      requestBody:
+        application/json: {}
       responses:
         "200":
           application/json: {}
@@ -3117,6 +3215,8 @@ examples:
         path:
           app_id: "<id>"
           entitlement_id: "<id>"
+      requestBody:
+        application/json: {}
       responses:
         "200":
           application/json: {}
@@ -3126,6 +3226,8 @@ examples:
         path:
           app_id: "<id>"
           entitlement_id: "<id>"
+      requestBody:
+        application/json: {}
       responses:
         "200":
           application/json: {}
@@ -3154,6 +3256,8 @@ examples:
           app_id: "<id>"
           entitlement_id: "<id>"
           user_id: "<id>"
+      requestBody:
+        application/json: {}
       responses:
         "200":
           application/json: {}
@@ -3163,6 +3267,8 @@ examples:
         path:
           app_id: "<id>"
           entitlement_id: "<id>"
+      requestBody:
+        application/json: {}
       responses:
         "200":
           application/json: {}
@@ -3172,6 +3278,8 @@ examples:
         path:
           app_id: "<id>"
           user_id: "<id>"
+      requestBody:
+        application/json: {}
       responses:
         "200":
           application/json: {}
@@ -3180,6 +3288,8 @@ examples:
       parameters:
         path:
           app_id: "<id>"
+      requestBody:
+        application/json: {}
       responses:
         "200":
           application/json: {}
@@ -3205,6 +3315,8 @@ examples:
         path:
           app_id: "<id>"
           user_id: "<id>"
+      requestBody:
+        application/json: {}
       responses:
         "200":
           application/json: {}
@@ -3213,6 +3325,8 @@ examples:
       parameters:
         path:
           app_id: "<id>"
+      requestBody:
+        application/json: {}
       responses:
         "200":
           application/json: {}
@@ -3229,6 +3343,8 @@ examples:
       parameters:
         path:
           app_id: "<id>"
+      requestBody:
+        application/json: {}
       responses:
         "200":
           application/json: {}
@@ -3237,6 +3353,8 @@ examples:
       parameters:
         path:
           app_id: "<id>"
+      requestBody:
+        application/json: {"displayName": "Vito_Goyette", "resourceType": "PROFILE_TYPE"}
       responses:
         "200":
           application/json: {}
@@ -3246,6 +3364,8 @@ examples:
         path:
           app_id: "<id>"
           id: "<id>"
+      requestBody:
+        application/json: {}
       responses:
         "200":
           application/json: {}
@@ -3272,6 +3392,8 @@ examples:
         path:
           app_id: "<id>"
           id: "<id>"
+      requestBody:
+        application/json: {}
       responses:
         "200":
           application/json: {}
@@ -3281,6 +3403,8 @@ examples:
         path:
           app_id: "<id>"
           app_resource_type_id: "<id>"
+      requestBody:
+        application/json: {"displayName": "Carmella_Marks18"}
       responses:
         "200":
           application/json: {}
@@ -3291,6 +3415,8 @@ examples:
           app_id: "<id>"
           app_resource_type_id: "<id>"
           id: "<id>"
+      requestBody:
+        application/json: {}
       responses:
         "200":
           application/json: {}
@@ -3320,6 +3446,8 @@ examples:
           app_id: "<id>"
           app_resource_type_id: "<id>"
           id: "<id>"
+      requestBody:
+        application/json: {}
       responses:
         "200":
           application/json: {}
@@ -3330,6 +3458,8 @@ examples:
           app_id: "<id>"
           resource_type_id: "<id>"
           resource_id: "<id>"
+      requestBody:
+        application/json: {}
       responses:
         "200":
           application/json: {}
@@ -3350,6 +3480,8 @@ examples:
           app_id: "<id>"
           resource_type_id: "<id>"
           resource_id: "<id>"
+      requestBody:
+        application/json: {}
       responses:
         "200":
           application/json: {}
@@ -3366,6 +3498,8 @@ examples:
       parameters:
         path:
           app_id: "<id>"
+      requestBody:
+        application/json: {}
       responses:
         "200":
           application/json: {}
@@ -3377,6 +3511,8 @@ examples:
           src_app_entitlement_id: "<id>"
           dst_app_id: "<id>"
           dst_app_entitlement_id: "<id>"
+      requestBody:
+        application/json: {}
       responses:
         "200":
           application/json: {}
@@ -3388,6 +3524,8 @@ examples:
           src_app_entitlement_id: "<id>"
           dst_app_id: "<id>"
           dst_app_entitlement_id: "<id>"
+      requestBody:
+        application/json: {}
       responses:
         "200":
           application/json: {}
@@ -3404,16 +3542,22 @@ examples:
           application/json: {}
   c1.api.attribute.v1.Attributes.CreateAttributeValue:
     speakeasy-default-c1-api-attribute-v1-attributes-create-attribute-value:
+      requestBody:
+        application/json: {}
       responses:
         "200":
           application/json: {}
   c1.api.attribute.v1.Attributes.CreateComplianceFrameworkAttributeValue:
     speakeasy-default-c1-api-attribute-v1-attributes-create-compliance-framework-attribute-value:
+      requestBody:
+        application/json: {}
       responses:
         "200":
           application/json: {}
   c1.api.attribute.v1.Attributes.CreateRiskLevelAttributeValue:
     speakeasy-default-c1-api-attribute-v1-attributes-create-risk-level-attribute-value:
+      requestBody:
+        application/json: {}
       responses:
         "200":
           application/json: {}
@@ -3422,6 +3566,8 @@ examples:
       parameters:
         path:
           id: "<id>"
+      requestBody:
+        application/json: {}
       responses:
         "200":
           application/json: {}
@@ -3430,6 +3576,8 @@ examples:
       parameters:
         path:
           id: "<id>"
+      requestBody:
+        application/json: {}
       responses:
         "200":
           application/json: {}
@@ -3438,6 +3586,8 @@ examples:
       parameters:
         path:
           id: "<id>"
+      requestBody:
+        application/json: {}
       responses:
         "200":
           application/json: {}
@@ -3508,6 +3658,8 @@ examples:
           application/json: {}
   c1.api.automations.v1.AutomationExecutionSearchService.SearchAutomationExecutions:
     speakeasy-default-c1-api-automations-v1-automation-execution-search-service-search-automation-executions:
+      requestBody:
+        application/json: {}
       responses:
         "200":
           application/json: {}
@@ -3516,21 +3668,29 @@ examples:
       parameters:
         path:
           id: "839265"
+      requestBody:
+        application/json: {}
       responses:
         "200":
           application/json: {}
   c1.api.automations.v1.AutomationSearchService.SearchAutomationTemplateVersions:
     speakeasy-default-c1-api-automations-v1-automation-search-service-search-automation-template-versions:
+      requestBody:
+        application/json: {}
       responses:
         "200":
           application/json: {}
   c1.api.automations.v1.AutomationSearchService.SearchAutomations:
     speakeasy-default-c1-api-automations-v1-automation-search-service-search-automations:
+      requestBody:
+        application/json: {}
       responses:
         "200":
           application/json: {}
   c1.api.automations.v1.AutomationService.CreateAutomation:
     speakeasy-default-c1-api-automations-v1-automation-service-create-automation:
+      requestBody:
+        application/json: {}
       responses:
         "200":
           application/json: {}
@@ -3539,6 +3699,8 @@ examples:
       parameters:
         path:
           id: "<id>"
+      requestBody:
+        application/json: {}
       responses:
         "200":
           application/json: {}
@@ -3547,6 +3709,8 @@ examples:
       parameters:
         path:
           id: "<id>"
+      requestBody:
+        application/json: {}
       responses:
         "200":
           application/json: {}
@@ -3568,6 +3732,8 @@ examples:
       parameters:
         path:
           id: "<id>"
+      requestBody:
+        application/json: {}
       responses:
         "200":
           application/json: {}
@@ -3576,6 +3742,8 @@ examples:
       parameters:
         path:
           catalog_id: "<id>"
+      requestBody:
+        application/json: {"accessEntitlements": []}
       responses:
         "200":
           application/json: {}
@@ -3584,11 +3752,15 @@ examples:
       parameters:
         path:
           catalog_id: "<id>"
+      requestBody:
+        application/json: {"appEntitlements": null}
       responses:
         "200":
           application/json: {}
   c1.api.requestcatalog.v1.RequestCatalogManagementService.Create:
     speakeasy-default-c1-api-requestcatalog-v1-request-catalog-management-service-create:
+      requestBody:
+        application/json: {"displayName": "Dejon_Bergnaum"}
       responses:
         "200":
           application/json: {}
@@ -3597,6 +3769,8 @@ examples:
       parameters:
         path:
           request_catalog_id: "<id>"
+      requestBody:
+        application/json: {}
       responses:
         "200":
           application/json: {}
@@ -3605,6 +3779,8 @@ examples:
       parameters:
         path:
           id: "<id>"
+      requestBody:
+        application/json: {}
       responses:
         "200":
           application/json: {}
@@ -3613,6 +3789,8 @@ examples:
       parameters:
         path:
           request_catalog_id: "<id>"
+      requestBody:
+        application/json: {}
       responses:
         "200":
           application/json: {}
@@ -3621,6 +3799,8 @@ examples:
       parameters:
         path:
           request_catalog_id: "<id>"
+      requestBody:
+        application/json: {}
       responses:
         "200":
           application/json: {}
@@ -3674,6 +3854,8 @@ examples:
       parameters:
         path:
           catalog_id: "<id>"
+      requestBody:
+        application/json: {}
       responses:
         "200":
           application/json: {}
@@ -3682,6 +3864,8 @@ examples:
       parameters:
         path:
           catalog_id: "<id>"
+      requestBody:
+        application/json: {}
       responses:
         "200":
           application/json: {}
@@ -3690,6 +3874,8 @@ examples:
       parameters:
         path:
           request_catalog_id: "<id>"
+      requestBody:
+        application/json: {}
       responses:
         "200":
           application/json: {}
@@ -3698,6 +3884,8 @@ examples:
       parameters:
         path:
           request_catalog_id: "<id>"
+      requestBody:
+        application/json: {}
       responses:
         "200":
           application/json: {}
@@ -3706,6 +3894,8 @@ examples:
       parameters:
         path:
           id: "<id>"
+      requestBody:
+        application/json: {}
       responses:
         "200":
           application/json: {}
@@ -3714,16 +3904,22 @@ examples:
       parameters:
         path:
           catalog_id: "<id>"
+      requestBody:
+        application/json: {"appEntitlements": [{}]}
       responses:
         "200":
           application/json: {}
   c1.api.integration.connector.v1.ConnectorCatalogService.ConfigurationSchema:
     speakeasy-default-c1-api-integration-connector-v1-connector-catalog-service-configuration-schema:
+      requestBody:
+        application/json: {}
       responses:
         "200":
           application/json: {}
   c1.api.directory.v1.DirectoryService.Create:
     speakeasy-default-c1-api-directory-v1-directory-service-create:
+      requestBody:
+        application/json: {}
       responses:
         "200":
           application/json: {}
@@ -3732,6 +3928,8 @@ examples:
       parameters:
         path:
           app_id: "<id>"
+      requestBody:
+        application/json: {}
       responses:
         "200":
           application/json: {}
@@ -3753,6 +3951,8 @@ examples:
       parameters:
         path:
           app_id: "<id>"
+      requestBody:
+        application/json: {}
       responses:
         "200":
           application/json: {}
@@ -3761,11 +3961,15 @@ examples:
       parameters:
         path:
           function_id: "<id>"
+      requestBody:
+        application/json: {}
       responses:
         "200":
           application/json: {}
   c1.api.functions.v1.FunctionsService.CreateFunction:
     speakeasy-default-c1-api-functions-v1-functions-service-create-function:
+      requestBody:
+        application/json: {}
       responses:
         "200":
           application/json: {}
@@ -3774,6 +3978,8 @@ examples:
       parameters:
         path:
           function_id: "<id>"
+      requestBody:
+        application/json: {}
       responses:
         "200":
           application/json: {}
@@ -3782,6 +3988,8 @@ examples:
       parameters:
         path:
           id: "<id>"
+      requestBody:
+        application/json: {}
       responses:
         "200":
           application/json: {}
@@ -3807,6 +4015,8 @@ examples:
       parameters:
         path:
           function_id: "<id>"
+      requestBody:
+        application/json: {}
       responses:
         "200":
           application/json: {}
@@ -3833,11 +4043,15 @@ examples:
           application/json: {}
   c1.api.functions.v1.FunctionsService.UpdateFunction:
     speakeasy-default-c1-api-functions-v1-functions-service-update-function:
+      requestBody:
+        application/json: {}
       responses:
         "200":
           application/json: {}
   c1.api.iam.v1.PersonalClientService.Create:
     speakeasy-default-c1-api-iam-v1-personal-client-service-create:
+      requestBody:
+        application/json: {}
       responses:
         "200":
           application/json: {}
@@ -3846,6 +4060,8 @@ examples:
       parameters:
         path:
           id: "<id>"
+      requestBody:
+        application/json: {}
       responses:
         "200":
           application/json: {}
@@ -3867,6 +4083,8 @@ examples:
       parameters:
         path:
           id: "<id>"
+      requestBody:
+        application/json: {}
       responses:
         "200":
           application/json: {}
@@ -3888,11 +4106,15 @@ examples:
       parameters:
         path:
           role_id: "<id>"
+      requestBody:
+        application/json: {}
       responses:
         "200":
           application/json: {}
   c1.api.policy.v1.Policies.Create:
     speakeasy-default-c1-api-policy-v1-policies-create:
+      requestBody:
+        application/json: {"displayName": "Zita56"}
       responses:
         "200":
           application/json: {}
@@ -3901,6 +4123,8 @@ examples:
       parameters:
         path:
           id: "<id>"
+      requestBody:
+        application/json: {}
       responses:
         "200":
           application/json: {}
@@ -3922,61 +4146,85 @@ examples:
       parameters:
         path:
           id: "<id>"
+      requestBody:
+        application/json: {}
       responses:
         "200":
           application/json: {}
   c1.api.policy.v1.AccountProvisionPolicyTest.Test:
     speakeasy-default-c1-api-policy-v1-account-provision-policy-test-test:
+      requestBody:
+        application/json: {}
       responses:
         "200":
           application/json: {}
   c1.api.policy.v1.PolicyValidate.ValidateCEL:
     speakeasy-default-c1-api-policy-v1-policy-validate-validate-CEL:
+      requestBody:
+        application/json: {}
       responses:
         "200":
           application/json: {}
   c1.api.app.v1.AppResourceSearch.SearchAppResourceTypes:
     speakeasy-default-c1-api-app-v1-app-resource-search-search-app-resource-types:
+      requestBody:
+        application/json: {}
       responses:
         "200":
           application/json: {}
   c1.api.app.v1.AppResourceSearch.SearchAppResources:
     speakeasy-default-c1-api-app-v1-app-resource-search-search-app-resources:
+      requestBody:
+        application/json: {}
       responses:
         "200":
           application/json: {}
   c1.api.app.v1.AppSearch.Search:
     speakeasy-default-c1-api-app-v1-app-search-search:
+      requestBody:
+        application/json: {}
       responses:
         "200":
           application/json: {}
   c1.api.attribute.v1.AttributeSearch.SearchAttributeValues:
     speakeasy-default-c1-api-attribute-v1-attribute-search-search-attribute-values:
+      requestBody:
+        application/json: {}
       responses:
         "200":
           application/json: {}
   c1.api.functions.v1.FunctionsSearch.Search:
     speakeasy-default-c1-api-functions-v1-functions-search-search:
+      requestBody:
+        application/json: {}
       responses:
         "200":
           application/json: {}
   c1.api.iam.v1.PersonalClientSearchService.Search:
     speakeasy-default-c1-api-iam-v1-personal-client-search-service-search:
+      requestBody:
+        application/json: {}
       responses:
         "200":
           application/json: {}
   c1.api.policy.v1.PolicySearch.Search:
     speakeasy-default-c1-api-policy-v1-policy-search-search:
+      requestBody:
+        application/json: {}
       responses:
         "200":
           application/json: {}
   c1.api.requestcatalog.v1.RequestCatalogSearchService.SearchEntitlements:
     speakeasy-default-c1-api-requestcatalog-v1-request-catalog-search-service-search-entitlements:
+      requestBody:
+        application/json: {}
       responses:
         "200":
           application/json: {}
   c1.api.stepup.v1.StepUpProviderService.Create:
     speakeasy-default-c1-api-stepup-v1-step-up-provider-service-create:
+      requestBody:
+        application/json: {}
       responses:
         "200":
           application/json: {}
@@ -3985,6 +4233,8 @@ examples:
       parameters:
         path:
           id: "<id>"
+      requestBody:
+        application/json: {}
       responses:
         "200":
           application/json: {}
@@ -4003,6 +4253,8 @@ examples:
           application/json: {}
   c1.api.stepup.v1.StepUpProviderService.Search:
     speakeasy-default-c1-api-stepup-v1-step-up-provider-service-search:
+      requestBody:
+        application/json: {}
       responses:
         "200":
           application/json: {}
@@ -4011,6 +4263,8 @@ examples:
       parameters:
         path:
           id: "<id>"
+      requestBody:
+        application/json: {}
       responses:
         "200":
           application/json: {}
@@ -4019,6 +4273,8 @@ examples:
       parameters:
         path:
           id: "<id>"
+      requestBody:
+        application/json: {}
       responses:
         "200":
           application/json: {}
@@ -4027,6 +4283,8 @@ examples:
       parameters:
         path:
           id: "<id>"
+      requestBody:
+        application/json: {}
       responses:
         "200":
           application/json: {}
@@ -4040,26 +4298,36 @@ examples:
           application/json: {}
   c1.api.stepup.v1.StepUpTransactionService.Search:
     speakeasy-default-c1-api-stepup-v1-step-up-transaction-service-search:
+      requestBody:
+        application/json: {}
       responses:
         "200":
           application/json: {}
   c1.api.systemlog.v1.ExportsSearchService.Search:
     speakeasy-default-c1-api-systemlog-v1-exports-search-service-search:
+      requestBody:
+        application/json: {}
       responses:
         "200":
           application/json: {}
   c1.api.task.v1.TaskSearchService.Search:
     speakeasy-default-c1-api-task-v1-task-search-service-search:
+      requestBody:
+        application/json: {}
       responses:
         "200":
           application/json: {}
   c1.api.user.v1.UserSearch.Search:
     speakeasy-default-c1-api-user-v1-user-search-search:
+      requestBody:
+        application/json: {}
       responses:
         "200":
           application/json: {}
   c1.api.webhooks.v1.WebhooksSearch.Search:
     speakeasy-default-c1-api-webhooks-v1-webhooks-search-search:
+      requestBody:
+        application/json: {}
       responses:
         "200":
           application/json: {}
@@ -4075,6 +4343,8 @@ examples:
           application/json: {}
   c1.api.settings.v1.OrgDomainService.Update:
     speakeasy-default-c1-api-settings-v1-org-domain-service-update:
+      requestBody:
+        application/json: {}
       responses:
         "200":
           application/json: {}
@@ -4085,21 +4355,29 @@ examples:
           application/json: {}
   c1.api.settings.v1.SessionSettingsService.TestSourceIP:
     speakeasy-default-c1-api-settings-v1-session-settings-service-test-source-IP:
+      requestBody:
+        application/json: {}
       responses:
         "200":
           application/json: {}
   c1.api.settings.v1.SessionSettingsService.Update:
     speakeasy-default-c1-api-settings-v1-session-settings-service-update:
+      requestBody:
+        application/json: {}
       responses:
         "200":
           application/json: {}
   c1.api.systemlog.v1.SystemLogService.ListEvents:
     speakeasy-default-c1-api-systemlog-v1-system-log-service-list-events:
+      requestBody:
+        application/json: {}
       responses:
         "200":
           application/json: {}
   c1.api.systemlog.v1.ExportService.Create:
     speakeasy-default-c1-api-systemlog-v1-export-service-create:
+      requestBody:
+        application/json: {}
       responses:
         "200":
           application/json: {}
@@ -4108,6 +4386,8 @@ examples:
       parameters:
         path:
           export_id: "<id>"
+      requestBody:
+        application/json: {}
       responses:
         "200":
           application/json: {}
@@ -4129,6 +4409,8 @@ examples:
       parameters:
         path:
           export_id: "<id>"
+      requestBody:
+        application/json: {}
       responses:
         "200":
           application/json: {}
@@ -4137,26 +4419,36 @@ examples:
       parameters:
         path:
           export_id: "<id>"
+      requestBody:
+        application/json: {}
       responses:
         "200":
           application/json: {}
   c1.api.task.v1.TaskAudit.List:
     speakeasy-default-c1-api-task-v1-task-audit-list:
+      requestBody:
+        application/json: {}
       responses:
         "200":
           application/json: {}
   c1.api.task.v1.TaskService.CreateGrantTask:
     speakeasy-default-c1-api-task-v1-task-service-create-grant-task:
+      requestBody:
+        application/json: {"appEntitlementId": "<id>", "appId": "<id>"}
       responses:
         "200":
           application/json: {}
   c1.api.task.v1.TaskService.CreateOffboardingTask:
     speakeasy-default-c1-api-task-v1-task-service-create-offboarding-task:
+      requestBody:
+        application/json: {}
       responses:
         "200":
           application/json: {}
   c1.api.task.v1.TaskService.CreateRevokeTask:
     speakeasy-default-c1-api-task-v1-task-service-create-revoke-task:
+      requestBody:
+        application/json: {"appEntitlementId": "<id>", "appId": "<id>"}
       responses:
         "200":
           application/json: {}
@@ -4173,6 +4465,8 @@ examples:
       parameters:
         path:
           task_id: "<id>"
+      requestBody:
+        application/json: {"policyStepId": "<id>"}
       responses:
         "200":
           application/json: {}
@@ -4181,6 +4475,8 @@ examples:
       parameters:
         path:
           task_id: "<id>"
+      requestBody:
+        application/json: {"policyStepId": "<id>", "stepUpTransactionId": "<id>"}
       responses:
         "200":
           application/json: {}
@@ -4189,6 +4485,8 @@ examples:
       parameters:
         path:
           task_id: "<id>"
+      requestBody:
+        application/json: {}
       responses:
         "200":
           application/json: {}
@@ -4197,6 +4495,8 @@ examples:
       parameters:
         path:
           task_id: "<id>"
+      requestBody:
+        application/json: {}
       responses:
         "200":
           application/json: {}
@@ -4205,6 +4505,8 @@ examples:
       parameters:
         path:
           task_id: "<id>"
+      requestBody:
+        application/json: {}
       responses:
         "200":
           application/json: {}
@@ -4213,6 +4515,8 @@ examples:
       parameters:
         path:
           task_id: "<id>"
+      requestBody:
+        application/json: {}
       responses:
         "200":
           application/json: {}
@@ -4221,6 +4525,8 @@ examples:
       parameters:
         path:
           task_id: "<id>"
+      requestBody:
+        application/json: {}
       responses:
         "200":
           application/json: {}
@@ -4229,6 +4535,8 @@ examples:
       parameters:
         path:
           task_id: "<id>"
+      requestBody:
+        application/json: {}
       responses:
         "200":
           application/json: {}
@@ -4237,6 +4545,8 @@ examples:
       parameters:
         path:
           task_id: "<id>"
+      requestBody:
+        application/json: {}
       responses:
         "200":
           application/json: {}
@@ -4245,6 +4555,8 @@ examples:
       parameters:
         path:
           task_id: "<id>"
+      requestBody:
+        application/json: {}
       responses:
         "200":
           application/json: {}
@@ -4253,6 +4565,8 @@ examples:
       parameters:
         path:
           task_id: "<id>"
+      requestBody:
+        application/json: {"policyStepId": "<id>"}
       responses:
         "200":
           application/json: {}
@@ -4261,6 +4575,8 @@ examples:
       parameters:
         path:
           task_id: "<id>"
+      requestBody:
+        application/json: {"duration": "<value>"}
       responses:
         "200":
           application/json: {}
@@ -4269,6 +4585,8 @@ examples:
       parameters:
         path:
           task_id: "<id>"
+      requestBody:
+        application/json: {}
       responses:
         "200":
           application/json: {}
@@ -4295,6 +4613,8 @@ examples:
           application/json: {}
   c1.api.webhooks.v1.WebhooksService.Create:
     speakeasy-default-c1-api-webhooks-v1-webhooks-service-create:
+      requestBody:
+        application/json: {"displayName": "Bradley_Maggio", "url": "https://musty-kick.net"}
       responses:
         "200":
           application/json: {}
@@ -4303,6 +4623,8 @@ examples:
       parameters:
         path:
           id: "<id>"
+      requestBody:
+        application/json: {}
       responses:
         "200":
           application/json: {}
@@ -4324,6 +4646,8 @@ examples:
       parameters:
         path:
           id: "<id>"
+      requestBody:
+        application/json: {}
       responses:
         "200":
           application/json: {}
@@ -4332,6 +4656,8 @@ examples:
       parameters:
         path:
           id: "<id>"
+      requestBody:
+        application/json: {}
       responses:
         "200":
           application/json: {}
@@ -4342,6 +4668,8 @@ examples:
           app_id: "<id>"
           resource_type_id: "<id>"
           resource_id: "<id>"
+      requestBody:
+        application/json: {}
       responses:
         "200":
           application/json: {}
@@ -4362,16 +4690,22 @@ examples:
           app_id: "<id>"
           resource_type_id: "<id>"
           resource_id: "<id>"
+      requestBody:
+        application/json: {}
       responses:
         "200":
           application/json: {}
   c1.api.request_schema.v1.RequestSchemaService.Create:
     speakeasy-default-c1-api-request-schema-v1-request-schema-service-create:
+      requestBody:
+        application/json: {}
       responses:
         "200":
           application/json: {}
   c1.api.request_schema.v1.RequestSchemaService.CreateEntitlementBinding:
     speakeasy-default-c1-api-request-schema-v1-request-schema-service-create-entitlement-binding:
+      requestBody:
+        application/json: {}
       responses:
         "200":
           application/json: {}
@@ -4380,11 +4714,15 @@ examples:
       parameters:
         path:
           request_schema_id: "<id>"
+      requestBody:
+        application/json: {}
       responses:
         "200":
           application/json: {}
   c1.api.request_schema.v1.RequestSchemaService.FindBindingForAppEntitlement:
     speakeasy-default-c1-api-request-schema-v1-request-schema-service-find-binding-for-app-entitlement:
+      requestBody:
+        application/json: {}
       responses:
         "200":
           application/json: {}
@@ -4398,6 +4736,8 @@ examples:
           application/json: {}
   c1.api.request_schema.v1.RequestSchemaService.RemoveEntitlementBinding:
     speakeasy-default-c1-api-request-schema-v1-request-schema-service-remove-entitlement-binding:
+      requestBody:
+        application/json: {}
       responses:
         "200":
           application/json: {}
@@ -4406,6 +4746,8 @@ examples:
       parameters:
         path:
           request_schema_id: "<id>"
+      requestBody:
+        application/json: {}
       responses:
         "200":
           application/json: {}
@@ -4414,6 +4756,8 @@ examples:
       parameters:
         path:
           user_id: "<id>"
+      requestBody:
+        application/json: {}
       responses:
         "200":
           application/json: {}

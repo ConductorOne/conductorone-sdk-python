@@ -14,12 +14,10 @@ class AppResourceSearch(BaseSDK):
     def search_app_resource_types(
         self,
         *,
-        request: Optional[
-            Union[
-                shared.SearchAppResourceTypesRequest,
-                shared.SearchAppResourceTypesRequestTypedDict,
-            ]
-        ] = None,
+        request: Union[
+            shared.SearchAppResourceTypesRequest,
+            shared.SearchAppResourceTypesRequestTypedDict,
+        ],
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -46,10 +44,8 @@ class AppResourceSearch(BaseSDK):
             base_url = self._get_url(base_url, url_variables)
 
         if not isinstance(request, BaseModel):
-            request = utils.unmarshal(
-                request, Optional[shared.SearchAppResourceTypesRequest]
-            )
-        request = cast(Optional[shared.SearchAppResourceTypesRequest], request)
+            request = utils.unmarshal(request, shared.SearchAppResourceTypesRequest)
+        request = cast(shared.SearchAppResourceTypesRequest, request)
 
         req = self._build_request(
             method="POST",
@@ -57,7 +53,7 @@ class AppResourceSearch(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=False,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -65,11 +61,7 @@ class AppResourceSearch(BaseSDK):
             http_headers=http_headers,
             security=self.sdk_configuration.security,
             get_serialized_body=lambda: utils.serialize_request_body(
-                request,
-                False,
-                True,
-                "json",
-                Optional[shared.SearchAppResourceTypesRequest],
+                request, False, False, "json", shared.SearchAppResourceTypesRequest
             ),
             timeout_ms=timeout_ms,
         )
@@ -148,12 +140,10 @@ class AppResourceSearch(BaseSDK):
     async def search_app_resource_types_async(
         self,
         *,
-        request: Optional[
-            Union[
-                shared.SearchAppResourceTypesRequest,
-                shared.SearchAppResourceTypesRequestTypedDict,
-            ]
-        ] = None,
+        request: Union[
+            shared.SearchAppResourceTypesRequest,
+            shared.SearchAppResourceTypesRequestTypedDict,
+        ],
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -180,10 +170,8 @@ class AppResourceSearch(BaseSDK):
             base_url = self._get_url(base_url, url_variables)
 
         if not isinstance(request, BaseModel):
-            request = utils.unmarshal(
-                request, Optional[shared.SearchAppResourceTypesRequest]
-            )
-        request = cast(Optional[shared.SearchAppResourceTypesRequest], request)
+            request = utils.unmarshal(request, shared.SearchAppResourceTypesRequest)
+        request = cast(shared.SearchAppResourceTypesRequest, request)
 
         req = self._build_request_async(
             method="POST",
@@ -191,7 +179,7 @@ class AppResourceSearch(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=False,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -199,11 +187,7 @@ class AppResourceSearch(BaseSDK):
             http_headers=http_headers,
             security=self.sdk_configuration.security,
             get_serialized_body=lambda: utils.serialize_request_body(
-                request,
-                False,
-                True,
-                "json",
-                Optional[shared.SearchAppResourceTypesRequest],
+                request, False, False, "json", shared.SearchAppResourceTypesRequest
             ),
             timeout_ms=timeout_ms,
         )
@@ -282,12 +266,9 @@ class AppResourceSearch(BaseSDK):
     def search_app_resources(
         self,
         *,
-        request: Optional[
-            Union[
-                shared.SearchAppResourcesRequest,
-                shared.SearchAppResourcesRequestTypedDict,
-            ]
-        ] = None,
+        request: Union[
+            shared.SearchAppResourcesRequest, shared.SearchAppResourcesRequestTypedDict
+        ],
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -314,10 +295,8 @@ class AppResourceSearch(BaseSDK):
             base_url = self._get_url(base_url, url_variables)
 
         if not isinstance(request, BaseModel):
-            request = utils.unmarshal(
-                request, Optional[shared.SearchAppResourcesRequest]
-            )
-        request = cast(Optional[shared.SearchAppResourcesRequest], request)
+            request = utils.unmarshal(request, shared.SearchAppResourcesRequest)
+        request = cast(shared.SearchAppResourcesRequest, request)
 
         req = self._build_request(
             method="POST",
@@ -325,7 +304,7 @@ class AppResourceSearch(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=False,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -333,7 +312,7 @@ class AppResourceSearch(BaseSDK):
             http_headers=http_headers,
             security=self.sdk_configuration.security,
             get_serialized_body=lambda: utils.serialize_request_body(
-                request, False, True, "json", Optional[shared.SearchAppResourcesRequest]
+                request, False, False, "json", shared.SearchAppResourcesRequest
             ),
             timeout_ms=timeout_ms,
         )
@@ -412,12 +391,9 @@ class AppResourceSearch(BaseSDK):
     async def search_app_resources_async(
         self,
         *,
-        request: Optional[
-            Union[
-                shared.SearchAppResourcesRequest,
-                shared.SearchAppResourcesRequestTypedDict,
-            ]
-        ] = None,
+        request: Union[
+            shared.SearchAppResourcesRequest, shared.SearchAppResourcesRequestTypedDict
+        ],
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -444,10 +420,8 @@ class AppResourceSearch(BaseSDK):
             base_url = self._get_url(base_url, url_variables)
 
         if not isinstance(request, BaseModel):
-            request = utils.unmarshal(
-                request, Optional[shared.SearchAppResourcesRequest]
-            )
-        request = cast(Optional[shared.SearchAppResourcesRequest], request)
+            request = utils.unmarshal(request, shared.SearchAppResourcesRequest)
+        request = cast(shared.SearchAppResourcesRequest, request)
 
         req = self._build_request_async(
             method="POST",
@@ -455,7 +429,7 @@ class AppResourceSearch(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=False,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -463,7 +437,7 @@ class AppResourceSearch(BaseSDK):
             http_headers=http_headers,
             security=self.sdk_configuration.security,
             get_serialized_body=lambda: utils.serialize_request_body(
-                request, False, True, "json", Optional[shared.SearchAppResourcesRequest]
+                request, False, False, "json", shared.SearchAppResourcesRequest
             ),
             timeout_ms=timeout_ms,
         )

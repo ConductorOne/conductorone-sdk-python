@@ -242,7 +242,7 @@ class AppUsageControls(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=True,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -252,9 +252,9 @@ class AppUsageControls(BaseSDK):
             get_serialized_body=lambda: utils.serialize_request_body(
                 request.update_app_usage_controls_request,
                 False,
-                True,
+                False,
                 "json",
-                Optional[shared.UpdateAppUsageControlsRequest],
+                shared.UpdateAppUsageControlsRequest,
             ),
             timeout_ms=timeout_ms,
         )
@@ -344,7 +344,7 @@ class AppUsageControls(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=True,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -354,9 +354,9 @@ class AppUsageControls(BaseSDK):
             get_serialized_body=lambda: utils.serialize_request_body(
                 request.update_app_usage_controls_request,
                 False,
-                True,
+                False,
                 "json",
-                Optional[shared.UpdateAppUsageControlsRequest],
+                shared.UpdateAppUsageControlsRequest,
             ),
             timeout_ms=timeout_ms,
         )

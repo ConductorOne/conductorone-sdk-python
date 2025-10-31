@@ -204,9 +204,10 @@ from .taskauditwebhooktriggered import (
 from datetime import datetime
 from enum import Enum
 import pydantic
-from pydantic import model_serializer
+from pydantic import field_serializer, model_serializer
 from pydantic.functional_validators import PlainValidator
 from sdk import utils
+from sdk.models import shared
 from sdk.types import BaseModel, Nullable, OptionalNullable, UNSET, UNSET_SENTINEL
 from sdk.utils import validate_open_enum
 from typing import Optional
@@ -945,6 +946,33 @@ class TaskAuditView(BaseModel):
 
     workflow_step: Annotated[Optional[int], pydantic.Field(alias="workflowStep")] = None
     r"""The workflowStep field."""
+
+    @field_serializer("current_state")
+    def serialize_current_state(self, value):
+        if isinstance(value, str):
+            try:
+                return shared.CurrentState(value)
+            except ValueError:
+                return value
+        return value
+
+    @field_serializer("event_type")
+    def serialize_event_type(self, value):
+        if isinstance(value, str):
+            try:
+                return shared.TaskAuditViewEventType(value)
+            except ValueError:
+                return value
+        return value
+
+    @field_serializer("source")
+    def serialize_source(self, value):
+        if isinstance(value, str):
+            try:
+                return shared.Source(value)
+            except ValueError:
+                return value
+        return value
 
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):

@@ -13,16 +13,19 @@ from typing_extensions import Annotated, NotRequired, TypedDict
 
 
 class C1APIAppV1AppEntitlementsProxyDeleteRequestTypedDict(TypedDict):
+    delete_app_entitlement_proxy_request: shared_deleteappentitlementproxyrequest.DeleteAppEntitlementProxyRequestTypedDict
     dst_app_entitlement_id: str
     dst_app_id: str
     src_app_entitlement_id: str
     src_app_id: str
-    delete_app_entitlement_proxy_request: NotRequired[
-        shared_deleteappentitlementproxyrequest.DeleteAppEntitlementProxyRequestTypedDict
-    ]
 
 
 class C1APIAppV1AppEntitlementsProxyDeleteRequest(BaseModel):
+    delete_app_entitlement_proxy_request: Annotated[
+        shared_deleteappentitlementproxyrequest.DeleteAppEntitlementProxyRequest,
+        FieldMetadata(request=RequestMetadata(media_type="application/json")),
+    ]
+
     dst_app_entitlement_id: Annotated[
         str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))
     ]
@@ -38,13 +41,6 @@ class C1APIAppV1AppEntitlementsProxyDeleteRequest(BaseModel):
     src_app_id: Annotated[
         str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))
     ]
-
-    delete_app_entitlement_proxy_request: Annotated[
-        Optional[
-            shared_deleteappentitlementproxyrequest.DeleteAppEntitlementProxyRequest
-        ],
-        FieldMetadata(request=RequestMetadata(media_type="application/json")),
-    ] = None
 
 
 class C1APIAppV1AppEntitlementsProxyDeleteResponseTypedDict(TypedDict):
