@@ -1,4 +1,4 @@
-from conftest import sdk_instance
+from conftest import sdk_instance, shared
 
 
 class TestAutomationExecutionSearch:
@@ -6,7 +6,7 @@ class TestAutomationExecutionSearch:
     
     def test_search_automation_executions_should_return_status_200_and_valid_response(self):
         """Test that search_automation_executions returns status 200 and valid response."""
-        res = sdk_instance.automation_execution_search.search_automation_executions()
+        res = sdk_instance.automation_execution_search.search_automation_executions(request=shared.SearchAutomationExecutionsRequest())
         
         assert res is not None
         assert res.status_code == 200
@@ -14,7 +14,7 @@ class TestAutomationExecutionSearch:
     
     def test_search_automation_executions_with_page_size(self):
         """Test automation execution search with specific page size."""
-        res = sdk_instance.automation_execution_search.search_automation_executions()
+        res = sdk_instance.automation_execution_search.search_automation_executions(request=shared.SearchAutomationExecutionsRequest())
         
         assert res is not None
         assert res.status_code == 200

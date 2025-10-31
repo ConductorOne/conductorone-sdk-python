@@ -2,6 +2,7 @@ import pytest
 import os
 from conftest import sdk_instance
 from sdk.models import operations
+from sdk.models import shared
 
 
 class TestAppReportAction:
@@ -13,7 +14,9 @@ class TestAppReportAction:
         if not app_id:
             pytest.skip("C1_APP_ID not set")
         
-        req = operations.C1APIAppV1AppReportActionServiceGenerateReportRequest(app_id=app_id)
+        req = operations.C1APIAppV1AppReportActionServiceGenerateReportRequest(
+            app_id=app_id,
+            app_actions_service_generate_report_request=shared.AppActionsServiceGenerateReportRequest())
         res = sdk_instance.app_report_action.generate_report(request=req)
         
         assert res is not None

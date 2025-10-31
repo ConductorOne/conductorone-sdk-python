@@ -33,7 +33,9 @@ class TestApps:
         
         if app_id:
             # Delete the app
-            delete_req = operations.C1APIAppV1AppsDeleteRequest(id=app_id)
+            delete_req = operations.C1APIAppV1AppsDeleteRequest(
+                id=app_id,
+                delete_app_request=shared.DeleteAppRequest())
             delete_res = sdk_instance.apps.delete(request=delete_req)
             
             assert delete_res is not None

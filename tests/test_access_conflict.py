@@ -25,10 +25,15 @@ class TestAccessConflict:
             
             assert get_res.status_code == 200
             assert get_res.conflict_monitor is not None
-            
+
             # Delete the monitor
-            delete_req = operations.C1APIAccessconflictV1AccessConflictServiceDeleteMonitorRequest(id=monitor_id)
-            delete_res = sdk_instance.access_conflict.delete_monitor(request=delete_req)
-            
+            delete_req = operations.C1APIAccessconflictV1AccessConflictServiceDeleteMonitorRequest(
+                id=monitor_id,
+                conflict_monitor_delete_request=shared.ConflictMonitorDeleteRequest())
+            delete_res = sdk_instance.access_conflict.delete_monitor(
+                request=delete_req,
+            )
+
             assert delete_res.status_code == 200
             assert delete_res.conflict_monitor_delete_response is not None
+
