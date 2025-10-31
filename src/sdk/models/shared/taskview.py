@@ -4,19 +4,21 @@ from __future__ import annotations
 from .task import Task, TaskTypedDict
 import pydantic
 from sdk.types import BaseModel
-from typing import Optional, TypedDict
-from typing_extensions import Annotated, NotRequired
+from typing import Optional
+from typing_extensions import Annotated, NotRequired, TypedDict
 
 
 class TaskViewTypedDict(TypedDict):
     r"""Contains a task and JSONPATH expressions that describe where in the expanded array related objects are located. This view can be used to display a fully-detailed dashboard of task information."""
-    
+
     task: NotRequired[TaskTypedDict]
     r"""A fully-fleged task object. Includes its policy, references to external apps, its type, its processing history, and more."""
     access_review_path: NotRequired[str]
     r"""JSONPATH expression indicating the location of the AccessReview object in the expanded array"""
     app_path: NotRequired[str]
     r"""JSONPATH expression indicating the location of the App object in the expanded array"""
+    app_user_last_usage_path: NotRequired[str]
+    r"""JSONPATH expression indicating the location of the AppUser last usage timestamp in the expanded array"""
     app_user_path: NotRequired[str]
     r"""JSONPATH expression indicating the location of the AppUser object in the expanded array"""
     created_by_user_path: NotRequired[str]
@@ -31,29 +33,52 @@ class TaskViewTypedDict(TypedDict):
     r"""JSONPATH expression indicating the location of the StepApproverUsers objects in the expanded array"""
     user_path: NotRequired[str]
     r"""JSONPATH expression indicating the location of the User object in the expanded array. This is the user that is a direct target of the ticket without a specific relationship to a potentially non-existent app user."""
-    
+
 
 class TaskView(BaseModel):
     r"""Contains a task and JSONPATH expressions that describe where in the expanded array related objects are located. This view can be used to display a fully-detailed dashboard of task information."""
-    
+
     task: Optional[Task] = None
     r"""A fully-fleged task object. Includes its policy, references to external apps, its type, its processing history, and more."""
-    access_review_path: Annotated[Optional[str], pydantic.Field(alias="accessReviewPath")] = None
+
+    access_review_path: Annotated[
+        Optional[str], pydantic.Field(alias="accessReviewPath")
+    ] = None
     r"""JSONPATH expression indicating the location of the AccessReview object in the expanded array"""
+
     app_path: Annotated[Optional[str], pydantic.Field(alias="appPath")] = None
     r"""JSONPATH expression indicating the location of the App object in the expanded array"""
+
+    app_user_last_usage_path: Annotated[
+        Optional[str], pydantic.Field(alias="appUserLastUsagePath")
+    ] = None
+    r"""JSONPATH expression indicating the location of the AppUser last usage timestamp in the expanded array"""
+
     app_user_path: Annotated[Optional[str], pydantic.Field(alias="appUserPath")] = None
     r"""JSONPATH expression indicating the location of the AppUser object in the expanded array"""
-    created_by_user_path: Annotated[Optional[str], pydantic.Field(alias="createdByUserPath")] = None
+
+    created_by_user_path: Annotated[
+        Optional[str], pydantic.Field(alias="createdByUserPath")
+    ] = None
     r"""JSONPATH expression indicating the location of the object of the User that created the ticket in the expanded array"""
-    entitlements_path: Annotated[Optional[str], pydantic.Field(alias="entitlementsPath")] = None
+
+    entitlements_path: Annotated[
+        Optional[str], pydantic.Field(alias="entitlementsPath")
+    ] = None
     r"""JSONPATH expression indicating the location of the Entitlements objects in the expanded array"""
-    identity_user_path: Annotated[Optional[str], pydantic.Field(alias="identityUserPath")] = None
+
+    identity_user_path: Annotated[
+        Optional[str], pydantic.Field(alias="identityUserPath")
+    ] = None
     r"""JSONPATH expression indicating the location of the User object of the User that this task is targeting in the expanded array. This is the user that is the identity when the target of a task is an app user."""
+
     insights_path: Annotated[Optional[str], pydantic.Field(alias="insightsPath")] = None
     r"""JSONPATH expression indicating the location of the Insights objects in the expanded array"""
-    step_approvers_path: Annotated[Optional[str], pydantic.Field(alias="stepApproversPath")] = None
+
+    step_approvers_path: Annotated[
+        Optional[str], pydantic.Field(alias="stepApproversPath")
+    ] = None
     r"""JSONPATH expression indicating the location of the StepApproverUsers objects in the expanded array"""
+
     user_path: Annotated[Optional[str], pydantic.Field(alias="userPath")] = None
     r"""JSONPATH expression indicating the location of the User object in the expanded array. This is the user that is a direct target of the ticket without a specific relationship to a potentially non-existent app user."""
-    

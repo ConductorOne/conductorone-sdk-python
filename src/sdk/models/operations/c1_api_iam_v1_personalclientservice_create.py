@@ -2,10 +2,12 @@
 
 from __future__ import annotations
 import httpx
-from sdk.models.shared import personalclientservicecreateresponse as shared_personalclientservicecreateresponse
+from sdk.models.shared import (
+    personalclientservicecreateresponse as shared_personalclientservicecreateresponse,
+)
 from sdk.types import BaseModel
-from typing import Optional, TypedDict
-from typing_extensions import NotRequired
+from typing import Optional
+from typing_extensions import NotRequired, TypedDict
 
 
 class C1APIIamV1PersonalClientServiceCreateResponseTypedDict(TypedDict):
@@ -15,17 +17,23 @@ class C1APIIamV1PersonalClientServiceCreateResponseTypedDict(TypedDict):
     r"""HTTP response status code for this operation"""
     raw_response: httpx.Response
     r"""Raw HTTP response; suitable for custom response parsing"""
-    personal_client_service_create_response: NotRequired[shared_personalclientservicecreateresponse.PersonalClientServiceCreateResponseTypedDict]
+    personal_client_service_create_response: NotRequired[
+        shared_personalclientservicecreateresponse.PersonalClientServiceCreateResponseTypedDict
+    ]
     r"""The PersonalClientServiceCreateResponse message contains the created personal client and client secret."""
-    
+
 
 class C1APIIamV1PersonalClientServiceCreateResponse(BaseModel):
     content_type: str
     r"""HTTP response content type for this operation"""
+
     status_code: int
     r"""HTTP response status code for this operation"""
+
     raw_response: httpx.Response
     r"""Raw HTTP response; suitable for custom response parsing"""
-    personal_client_service_create_response: Optional[shared_personalclientservicecreateresponse.PersonalClientServiceCreateResponse] = None
+
+    personal_client_service_create_response: Optional[
+        shared_personalclientservicecreateresponse.PersonalClientServiceCreateResponse
+    ] = None
     r"""The PersonalClientServiceCreateResponse message contains the created personal client and client secret."""
-    

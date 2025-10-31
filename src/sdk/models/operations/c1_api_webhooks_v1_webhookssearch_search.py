@@ -4,8 +4,8 @@ from __future__ import annotations
 import httpx
 from sdk.models.shared import webhookssearchresponse as shared_webhookssearchresponse
 from sdk.types import BaseModel
-from typing import Optional, TypedDict
-from typing_extensions import NotRequired
+from typing import Callable, Optional
+from typing_extensions import NotRequired, TypedDict
 
 
 class C1APIWebhooksV1WebhooksSearchSearchResponseTypedDict(TypedDict):
@@ -15,17 +15,25 @@ class C1APIWebhooksV1WebhooksSearchSearchResponseTypedDict(TypedDict):
     r"""HTTP response status code for this operation"""
     raw_response: httpx.Response
     r"""Raw HTTP response; suitable for custom response parsing"""
-    webhooks_search_response: NotRequired[shared_webhookssearchresponse.WebhooksSearchResponseTypedDict]
+    webhooks_search_response: NotRequired[
+        shared_webhookssearchresponse.WebhooksSearchResponseTypedDict
+    ]
     r"""Successful response"""
-    
+
 
 class C1APIWebhooksV1WebhooksSearchSearchResponse(BaseModel):
+    next: Callable[[], Optional[C1APIWebhooksV1WebhooksSearchSearchResponse]]
+
     content_type: str
     r"""HTTP response content type for this operation"""
+
     status_code: int
     r"""HTTP response status code for this operation"""
+
     raw_response: httpx.Response
     r"""Raw HTTP response; suitable for custom response parsing"""
-    webhooks_search_response: Optional[shared_webhookssearchresponse.WebhooksSearchResponse] = None
+
+    webhooks_search_response: Optional[
+        shared_webhookssearchresponse.WebhooksSearchResponse
+    ] = None
     r"""Successful response"""
-    

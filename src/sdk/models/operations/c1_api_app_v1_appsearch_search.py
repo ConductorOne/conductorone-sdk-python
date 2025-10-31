@@ -4,8 +4,8 @@ from __future__ import annotations
 import httpx
 from sdk.models.shared import searchappsresponse as shared_searchappsresponse
 from sdk.types import BaseModel
-from typing import Optional, TypedDict
-from typing_extensions import NotRequired
+from typing import Callable, Optional
+from typing_extensions import NotRequired, TypedDict
 
 
 class C1APIAppV1AppSearchSearchResponseTypedDict(TypedDict):
@@ -15,17 +15,23 @@ class C1APIAppV1AppSearchSearchResponseTypedDict(TypedDict):
     r"""HTTP response status code for this operation"""
     raw_response: httpx.Response
     r"""Raw HTTP response; suitable for custom response parsing"""
-    search_apps_response: NotRequired[shared_searchappsresponse.SearchAppsResponseTypedDict]
+    search_apps_response: NotRequired[
+        shared_searchappsresponse.SearchAppsResponseTypedDict
+    ]
     r"""The SearchAppsResponse message contains a list of results and a nextPageToken if applicable."""
-    
+
 
 class C1APIAppV1AppSearchSearchResponse(BaseModel):
+    next: Callable[[], Optional[C1APIAppV1AppSearchSearchResponse]]
+
     content_type: str
     r"""HTTP response content type for this operation"""
+
     status_code: int
     r"""HTTP response status code for this operation"""
+
     raw_response: httpx.Response
     r"""Raw HTTP response; suitable for custom response parsing"""
+
     search_apps_response: Optional[shared_searchappsresponse.SearchAppsResponse] = None
     r"""The SearchAppsResponse message contains a list of results and a nextPageToken if applicable."""
-    

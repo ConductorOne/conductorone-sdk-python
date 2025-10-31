@@ -1,18 +1,20 @@
-speakeasyVersion: 1.352.2
+speakeasyVersion: 1.642.1
 sources:
     my-source:
         sourceNamespace: my-source
-        sourceRevisionDigest: sha256:e51a55f101202d27625caa056aceb8344a37fed3854f18ae0057664a28a89c75
-        sourceBlobDigest: sha256:577c2e57f5087193ba5b814463e40347885ee978db7d38cdfeb1de17d95017f0
+        sourceRevisionDigest: sha256:8fdf387d820c5c6c13e60a5a3dc4d77ed9ee83b8cbfa9d7b5f4583f4097151de
+        sourceBlobDigest: sha256:056d8fd2488341bc6213cbb1ebc31c8c043635aaf5c0672046ff4baa14a5c450
         tags:
             - latest
+            - 0.1.0-alpha
 targets:
     conductorone-python:
         source: my-source
         sourceNamespace: my-source
-        sourceRevisionDigest: sha256:e51a55f101202d27625caa056aceb8344a37fed3854f18ae0057664a28a89c75
-        sourceBlobDigest: sha256:577c2e57f5087193ba5b814463e40347885ee978db7d38cdfeb1de17d95017f0
-        outLocation: /Users/logan/Dev/work/conductorone-sdk-python
+        sourceRevisionDigest: sha256:8fdf387d820c5c6c13e60a5a3dc4d77ed9ee83b8cbfa9d7b5f4583f4097151de
+        sourceBlobDigest: sha256:056d8fd2488341bc6213cbb1ebc31c8c043635aaf5c0672046ff4baa14a5c450
+        codeSamplesNamespace: my-source-python-code-samples
+        codeSamplesRevisionDigest: sha256:ac3178b7b556972d919e132d9768e38ffdf49989f682d9dd26fd4c86744db715
 workflow:
     workflowVersion: 1.0.0
     speakeasyVersion: latest
@@ -26,3 +28,9 @@ workflow:
         conductorone-python:
             target: python
             source: my-source
+            codeSamples:
+                registry:
+                    location: registry.speakeasyapi.dev/conductor-one/conductorone/my-source-python-code-samples
+                labelOverride:
+                    fixedValue: Python (SDK)
+                blocking: false

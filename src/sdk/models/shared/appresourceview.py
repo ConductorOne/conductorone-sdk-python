@@ -4,15 +4,20 @@ from __future__ import annotations
 from .appresource import AppResource, AppResourceTypedDict
 import pydantic
 from sdk.types import BaseModel
-from typing import Optional, TypedDict
-from typing_extensions import Annotated, NotRequired
+from typing import Optional
+from typing_extensions import Annotated, NotRequired, TypedDict
 
 
 class AppResourceViewTypedDict(TypedDict):
     r"""The app resource view returns an app resource with paths for items in the expand mask filled in when this response is returned and a request expand mask has \"*\" or \"app_id\" or \"resource_type_id\"."""
-    
+
     app_resource: NotRequired[AppResourceTypedDict]
-    r"""The app resource message is a single resource that can have entitlements."""
+    r"""The app resource message is a single resource that can have entitlements.
+
+    This message contains a oneof named metadata. Only a single field of the following list may be set at a time:
+    - secretTrait
+
+    """
     app_path: NotRequired[str]
     r"""JSONPATH expression indicating the location of the App object in the array"""
     parent_resource_path: NotRequired[str]
@@ -21,19 +26,35 @@ class AppResourceViewTypedDict(TypedDict):
     r"""JSONPATH expression indicating the location of the Parent Resource Type object in the array"""
     resource_type_path: NotRequired[str]
     r"""JSONPATH expression indicating the location of the Resource Type object in the array"""
-    
+
 
 class AppResourceView(BaseModel):
     r"""The app resource view returns an app resource with paths for items in the expand mask filled in when this response is returned and a request expand mask has \"*\" or \"app_id\" or \"resource_type_id\"."""
-    
-    app_resource: Annotated[Optional[AppResource], pydantic.Field(alias="appResource")] = None
-    r"""The app resource message is a single resource that can have entitlements."""
+
+    app_resource: Annotated[
+        Optional[AppResource], pydantic.Field(alias="appResource")
+    ] = None
+    r"""The app resource message is a single resource that can have entitlements.
+
+    This message contains a oneof named metadata. Only a single field of the following list may be set at a time:
+    - secretTrait
+
+    """
+
     app_path: Annotated[Optional[str], pydantic.Field(alias="appPath")] = None
     r"""JSONPATH expression indicating the location of the App object in the array"""
-    parent_resource_path: Annotated[Optional[str], pydantic.Field(alias="parentResourcePath")] = None
+
+    parent_resource_path: Annotated[
+        Optional[str], pydantic.Field(alias="parentResourcePath")
+    ] = None
     r"""JSONPATH expression indicating the location of the Parent Resource object in the array"""
-    parent_resource_type_path: Annotated[Optional[str], pydantic.Field(alias="parentResourceTypePath")] = None
+
+    parent_resource_type_path: Annotated[
+        Optional[str], pydantic.Field(alias="parentResourceTypePath")
+    ] = None
     r"""JSONPATH expression indicating the location of the Parent Resource Type object in the array"""
-    resource_type_path: Annotated[Optional[str], pydantic.Field(alias="resourceTypePath")] = None
+
+    resource_type_path: Annotated[
+        Optional[str], pydantic.Field(alias="resourceTypePath")
+    ] = None
     r"""JSONPATH expression indicating the location of the Resource Type object in the array"""
-    

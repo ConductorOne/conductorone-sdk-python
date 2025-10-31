@@ -1,12 +1,15 @@
 # Export
 (*export*)
 
+## Overview
+
 ### Available Operations
 
 * [create](#create) - Create
 * [delete](#delete) - Delete
 * [get](#get) - Get
 * [list](#list) - List
+* [list_events](#list_events) - List Events
 * [update](#update) - Update
 
 ## create
@@ -15,23 +18,25 @@ Create a system log export.
 
 ### Example Usage
 
+<!-- UsageSnippet language="python" operationID="c1.api.systemlog.v1.ExportService.Create" method="post" path="/api/v1/systemlog/exports" -->
 ```python
 from sdk import SDK
 from sdk.models import shared
 
-s = SDK(
+
+with SDK(
     security=shared.Security(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-)
+) as s_client:
 
+    res = s_client.export.create()
 
-res = s.export.create()
+    assert res.export_service_create_response is not None
 
-if res.export_service_create_response is not None:
-    # handle response
-    pass
+    # Handle response
+    print(res.export_service_create_response)
 
 ```
 
@@ -42,15 +47,15 @@ if res.export_service_create_response is not None:
 | `request`                                                                              | [shared.ExportServiceCreateRequest](../../models/shared/exportservicecreaterequest.md) | :heavy_check_mark:                                                                     | The request object to use for the request.                                             |
 | `retries`                                                                              | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)                       | :heavy_minus_sign:                                                                     | Configuration to override the default retry behavior of the client.                    |
 
-
 ### Response
 
 **[operations.C1APISystemlogV1ExportServiceCreateResponse](../../models/operations/c1apisystemlogv1exportservicecreateresponse.md)**
+
 ### Errors
 
-| Error Object    | Status Code     | Content Type    |
+| Error Type      | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 4xx-5xx         | */*             |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
 
 ## delete
 
@@ -58,25 +63,27 @@ Delete a policy by ID.
 
 ### Example Usage
 
+<!-- UsageSnippet language="python" operationID="c1.api.systemlog.v1.ExportService.Delete" method="delete" path="/api/v1/systemlog/exports/{export_id}" -->
 ```python
 from sdk import SDK
 from sdk.models import shared
 
-s = SDK(
+
+with SDK(
     security=shared.Security(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-)
+) as s_client:
 
+    res = s_client.export.delete(request={
+        "export_id": "<id>",
+    })
 
-res = s.export.delete(request={
-    "export_id": "<value>",
-})
+    assert res.export_service_delete_response is not None
 
-if res.export_service_delete_response is not None:
-    # handle response
-    pass
+    # Handle response
+    print(res.export_service_delete_response)
 
 ```
 
@@ -87,15 +94,15 @@ if res.export_service_delete_response is not None:
 | `request`                                                                                                                      | [operations.C1APISystemlogV1ExportServiceDeleteRequest](../../models/operations/c1apisystemlogv1exportservicedeleterequest.md) | :heavy_check_mark:                                                                                                             | The request object to use for the request.                                                                                     |
 | `retries`                                                                                                                      | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)                                                               | :heavy_minus_sign:                                                                                                             | Configuration to override the default retry behavior of the client.                                                            |
 
-
 ### Response
 
 **[operations.C1APISystemlogV1ExportServiceDeleteResponse](../../models/operations/c1apisystemlogv1exportservicedeleteresponse.md)**
+
 ### Errors
 
-| Error Object    | Status Code     | Content Type    |
+| Error Type      | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 4xx-5xx         | */*             |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
 
 ## get
 
@@ -103,25 +110,27 @@ Get a system log export by ID
 
 ### Example Usage
 
+<!-- UsageSnippet language="python" operationID="c1.api.systemlog.v1.ExportService.Get" method="get" path="/api/v1/systemlog/exports/{export_id}" -->
 ```python
 from sdk import SDK
 from sdk.models import shared
 
-s = SDK(
+
+with SDK(
     security=shared.Security(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-)
+) as s_client:
 
+    res = s_client.export.get(request={
+        "export_id": "<id>",
+    })
 
-res = s.export.get(request={
-    "export_id": "<value>",
-})
+    assert res.export_service_get_response is not None
 
-if res.export_service_get_response is not None:
-    # handle response
-    pass
+    # Handle response
+    print(res.export_service_get_response)
 
 ```
 
@@ -132,15 +141,15 @@ if res.export_service_get_response is not None:
 | `request`                                                                                                                | [operations.C1APISystemlogV1ExportServiceGetRequest](../../models/operations/c1apisystemlogv1exportservicegetrequest.md) | :heavy_check_mark:                                                                                                       | The request object to use for the request.                                                                               |
 | `retries`                                                                                                                | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)                                                         | :heavy_minus_sign:                                                                                                       | Configuration to override the default retry behavior of the client.                                                      |
 
-
 ### Response
 
 **[operations.C1APISystemlogV1ExportServiceGetResponse](../../models/operations/c1apisystemlogv1exportservicegetresponse.md)**
+
 ### Errors
 
-| Error Object    | Status Code     | Content Type    |
+| Error Type      | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 4xx-5xx         | */*             |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
 
 ## list
 
@@ -148,23 +157,25 @@ List Exports.
 
 ### Example Usage
 
+<!-- UsageSnippet language="python" operationID="c1.api.systemlog.v1.ExportService.List" method="get" path="/api/v1/systemlog/exports" -->
 ```python
 from sdk import SDK
 from sdk.models import shared
 
-s = SDK(
+
+with SDK(
     security=shared.Security(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-)
+) as s_client:
 
+    res = s_client.export.list()
 
-res = s.export.list()
+    assert res.export_service_list_response is not None
 
-if res.export_service_list_response is not None:
-    # handle response
-    pass
+    # Handle response
+    print(res.export_service_list_response)
 
 ```
 
@@ -175,15 +186,62 @@ if res.export_service_list_response is not None:
 | `request`                                                                                                                  | [operations.C1APISystemlogV1ExportServiceListRequest](../../models/operations/c1apisystemlogv1exportservicelistrequest.md) | :heavy_check_mark:                                                                                                         | The request object to use for the request.                                                                                 |
 | `retries`                                                                                                                  | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)                                                           | :heavy_minus_sign:                                                                                                         | Configuration to override the default retry behavior of the client.                                                        |
 
-
 ### Response
 
 **[operations.C1APISystemlogV1ExportServiceListResponse](../../models/operations/c1apisystemlogv1exportservicelistresponse.md)**
+
 ### Errors
 
-| Error Object    | Status Code     | Content Type    |
+| Error Type      | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 4xx-5xx         | */*             |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
+
+## list_events
+
+Invokes the c1.api.systemlog.v1.ExportService.ListEvents method.
+
+### Example Usage
+
+<!-- UsageSnippet language="python" operationID="c1.api.systemlog.v1.ExportService.ListEvents" method="post" path="/api/v1/systemlog/exports/{export_id}/events" -->
+```python
+from sdk import SDK
+from sdk.models import shared
+
+
+with SDK(
+    security=shared.Security(
+        bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
+        oauth="<YOUR_OAUTH_HERE>",
+    ),
+) as s_client:
+
+    res = s_client.export.list_events(request={
+        "export_id": "<id>",
+    })
+
+    assert res.export_service_list_events_response is not None
+
+    # Handle response
+    print(res.export_service_list_events_response)
+
+```
+
+### Parameters
+
+| Parameter                                                                                                                              | Type                                                                                                                                   | Required                                                                                                                               | Description                                                                                                                            |
+| -------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
+| `request`                                                                                                                              | [operations.C1APISystemlogV1ExportServiceListEventsRequest](../../models/operations/c1apisystemlogv1exportservicelisteventsrequest.md) | :heavy_check_mark:                                                                                                                     | The request object to use for the request.                                                                                             |
+| `retries`                                                                                                                              | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)                                                                       | :heavy_minus_sign:                                                                                                                     | Configuration to override the default retry behavior of the client.                                                                    |
+
+### Response
+
+**[operations.C1APISystemlogV1ExportServiceListEventsResponse](../../models/operations/c1apisystemlogv1exportservicelisteventsresponse.md)**
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
 
 ## update
 
@@ -191,25 +249,27 @@ Update a system log export by providing a policy object and an update mask.
 
 ### Example Usage
 
+<!-- UsageSnippet language="python" operationID="c1.api.systemlog.v1.ExportService.Update" method="post" path="/api/v1/systemlog/exports/{export_id}" -->
 ```python
 from sdk import SDK
 from sdk.models import shared
 
-s = SDK(
+
+with SDK(
     security=shared.Security(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-)
+) as s_client:
 
+    res = s_client.export.update(request={
+        "export_id": "<id>",
+    })
 
-res = s.export.update(request={
-    "export_id": "<value>",
-})
+    assert res.export_service_update_response is not None
 
-if res.export_service_update_response is not None:
-    # handle response
-    pass
+    # Handle response
+    print(res.export_service_update_response)
 
 ```
 
@@ -220,12 +280,12 @@ if res.export_service_update_response is not None:
 | `request`                                                                                                                      | [operations.C1APISystemlogV1ExportServiceUpdateRequest](../../models/operations/c1apisystemlogv1exportserviceupdaterequest.md) | :heavy_check_mark:                                                                                                             | The request object to use for the request.                                                                                     |
 | `retries`                                                                                                                      | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)                                                               | :heavy_minus_sign:                                                                                                             | Configuration to override the default retry behavior of the client.                                                            |
 
-
 ### Response
 
 **[operations.C1APISystemlogV1ExportServiceUpdateResponse](../../models/operations/c1apisystemlogv1exportserviceupdateresponse.md)**
+
 ### Errors
 
-| Error Object    | Status Code     | Content Type    |
+| Error Type      | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 4xx-5xx         | */*             |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |

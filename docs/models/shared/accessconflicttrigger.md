@@ -1,0 +1,16 @@
+# AccessConflictTrigger
+
+The AccessConflictTrigger message.
+
+This message contains a oneof named conflict_monitor_selector. Only a single field of the following list may be set at a time:
+  - conflictMonitorRefs
+  - allConflictMonitors
+
+
+
+## Fields
+
+| Field                                                                                                                                                                                 | Type                                                                                                                                                                                  | Required                                                                                                                                                                              | Description                                                                                                                                                                           |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `conflict_monitor_refs`                                                                                                                                                               | [OptionalNullable[shared.ConflictMonitorRefs]](../../models/shared/conflictmonitorrefs.md)                                                                                            | :heavy_minus_sign:                                                                                                                                                                    | The ConflictMonitorRefs message.                                                                                                                                                      |
+| `all_conflict_monitors`                                                                                                                                                               | *OptionalNullable[bool]*                                                                                                                                                              | :heavy_minus_sign:                                                                                                                                                                    | The allConflictMonitors field.<br/>This field is part of the `conflict_monitor_selector` oneof.<br/>See the documentation for `c1.api.automations.v1.AccessConflictTrigger` for more details. |

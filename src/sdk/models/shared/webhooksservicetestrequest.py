@@ -2,15 +2,12 @@
 
 from __future__ import annotations
 from sdk.types import BaseModel
-from typing import TypedDict
+from typing_extensions import TypedDict
 
 
 class WebhooksServiceTestRequestTypedDict(TypedDict):
     r"""The WebhooksServiceTestRequest message."""
-    
-    
+
 
 class WebhooksServiceTestRequest(BaseModel):
     r"""The WebhooksServiceTestRequest message."""
-    
-    

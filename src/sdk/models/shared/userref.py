@@ -2,20 +2,19 @@
 
 from __future__ import annotations
 from sdk.types import BaseModel
-from typing import Optional, TypedDict
-from typing_extensions import NotRequired
+from typing import Optional
+from typing_extensions import NotRequired, TypedDict
 
 
 class UserRefTypedDict(TypedDict):
     r"""A reference to a user."""
-    
+
     id: NotRequired[str]
     r"""The id of the user."""
-    
+
 
 class UserRef(BaseModel):
     r"""A reference to a user."""
-    
+
     id: Optional[str] = None
     r"""The id of the user."""
-    

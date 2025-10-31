@@ -1,0 +1,21 @@
+# SearchAppResourcesRequest
+
+The SearchAppResourcesRequest message.
+
+
+## Fields
+
+| Field                                                                | Type                                                                 | Required                                                             | Description                                                          |
+| -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- |
+| `app_id`                                                             | *Optional[str]*                                                      | :heavy_minus_sign:                                                   | The appId field.                                                     |
+| `app_user_ids`                                                       | List[*str*]                                                          | :heavy_minus_sign:                                                   | The appUserIds field.                                                |
+| `exclude_deleted_resource_bindings`                                  | *Optional[bool]*                                                     | :heavy_minus_sign:                                                   | The excludeDeletedResourceBindings field.                            |
+| `exclude_resource_ids`                                               | List[*str*]                                                          | :heavy_minus_sign:                                                   | The excludeResourceIds field.                                        |
+| `exclude_resource_type_trait_ids`                                    | List[*str*]                                                          | :heavy_minus_sign:                                                   | The excludeResourceTypeTraitIds field.                               |
+| `page_size`                                                          | *Optional[int]*                                                      | :heavy_minus_sign:                                                   | The pageSize field.                                                  |
+| `page_token`                                                         | *Optional[str]*                                                      | :heavy_minus_sign:                                                   | The pageToken field.                                                 |
+| `query`                                                              | *Optional[str]*                                                      | :heavy_minus_sign:                                                   | The query field.                                                     |
+| `refs`                                                               | List[[shared.AppResourceRef](../../models/shared/appresourceref.md)] | :heavy_minus_sign:                                                   | The refs field.                                                      |
+| `resource_ids`                                                       | List[*str*]                                                          | :heavy_minus_sign:                                                   | The resourceIds field.                                               |
+| `resource_type_ids`                                                  | List[*str*]                                                          | :heavy_minus_sign:                                                   | The resourceTypeIds field.                                           |
+| `resource_type_trait_ids`                                            | List[*str*]                                                          | :heavy_minus_sign:                                                   | The resourceTypeTraitIds field.                                      |

@@ -5,55 +5,64 @@ from .taskview import TaskView, TaskViewTypedDict
 import pydantic
 from pydantic import ConfigDict, model_serializer
 from sdk.types import BaseModel, Nullable, OptionalNullable, UNSET, UNSET_SENTINEL
-from typing import Any, Dict, List, Optional, TypedDict
-from typing_extensions import Annotated, NotRequired
+from typing import Any, Dict, List, Optional
+from typing_extensions import Annotated, NotRequired, TypedDict
 
 
 class TaskActionsServiceReassignResponseExpandedTypedDict(TypedDict):
     r"""Contains an arbitrary serialized message along with a @type that describes the type of the serialized message."""
-    
+
     at_type: NotRequired[str]
     r"""The type of the serialized message."""
-    
+
 
 class TaskActionsServiceReassignResponseExpanded(BaseModel):
     r"""Contains an arbitrary serialized message along with a @type that describes the type of the serialized message."""
-    model_config = ConfigDict(populate_by_name=True, arbitrary_types_allowed=True, extra="allow")
-    __pydantic_extra__:  Dict[str, Any] = pydantic.Field(init=False)
-    
+
+    model_config = ConfigDict(
+        populate_by_name=True, arbitrary_types_allowed=True, extra="allow"
+    )
+    __pydantic_extra__: Dict[str, Any] = pydantic.Field(init=False)
+
     at_type: Annotated[Optional[str], pydantic.Field(alias="@type")] = None
     r"""The type of the serialized message."""
-    
+
     @property
     def additional_properties(self):
         return self.__pydantic_extra__
 
     @additional_properties.setter
     def additional_properties(self, value):
-        self.__pydantic_extra__ = value # pyright: ignore[reportIncompatibleVariableOverride]
-    
+        self.__pydantic_extra__ = value  # pyright: ignore[reportIncompatibleVariableOverride]
+
 
 class TaskActionsServiceReassignResponseTypedDict(TypedDict):
     r"""The TaskActionsServiceReassignResponse returns a task view with paths indicating the location of expanded items in the array."""
-    
+
     task_view: NotRequired[TaskViewTypedDict]
     r"""Contains a task and JSONPATH expressions that describe where in the expanded array related objects are located. This view can be used to display a fully-detailed dashboard of task information."""
-    expanded: NotRequired[Nullable[List[TaskActionsServiceReassignResponseExpandedTypedDict]]]
+    expanded: NotRequired[
+        Nullable[List[TaskActionsServiceReassignResponseExpandedTypedDict]]
+    ]
     r"""List of serialized related objects."""
     ticket_action_id: NotRequired[str]
     r"""The ID of the ticket (task) deny action created by this request."""
-    
+
 
 class TaskActionsServiceReassignResponse(BaseModel):
     r"""The TaskActionsServiceReassignResponse returns a task view with paths indicating the location of expanded items in the array."""
-    
+
     task_view: Annotated[Optional[TaskView], pydantic.Field(alias="taskView")] = None
     r"""Contains a task and JSONPATH expressions that describe where in the expanded array related objects are located. This view can be used to display a fully-detailed dashboard of task information."""
+
     expanded: OptionalNullable[List[TaskActionsServiceReassignResponseExpanded]] = UNSET
     r"""List of serialized related objects."""
-    ticket_action_id: Annotated[Optional[str], pydantic.Field(alias="ticketActionId")] = None
+
+    ticket_action_id: Annotated[
+        Optional[str], pydantic.Field(alias="ticketActionId")
+    ] = None
     r"""The ID of the ticket (task) deny action created by this request."""
-    
+
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
         optional_fields = ["TaskView", "expanded", "ticketActionId"]
@@ -64,24 +73,22 @@ class TaskActionsServiceReassignResponse(BaseModel):
 
         m = {}
 
-        for n, f in self.model_fields.items():
+        for n, f in type(self).model_fields.items():
             k = f.alias or n
             val = serialized.get(k)
+            serialized.pop(k, None)
+
+            optional_nullable = k in optional_fields and k in nullable_fields
+            is_set = (
+                self.__pydantic_fields_set__.intersection({n})
+                or k in null_default_fields
+            )  # pylint: disable=no-member
 
             if val is not None and val != UNSET_SENTINEL:
                 m[k] = val
             elif val != UNSET_SENTINEL and (
-                not k in optional_fields
-                or (
-                    k in optional_fields
-                    and k in nullable_fields
-                    and (
-                        self.__pydantic_fields_set__.intersection({n})
-                        or k in null_default_fields
-                    )  # pylint: disable=no-member
-                )
+                not k in optional_fields or (optional_nullable and is_set)
             ):
                 m[k] = val
 
         return m
-        

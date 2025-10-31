@@ -1,0 +1,15 @@
+# SearchAutomationsRequest
+
+The SearchAutomationsRequest message.
+
+
+## Fields
+
+| Field                                                                                        | Type                                                                                         | Required                                                                                     | Description                                                                                  |
+| -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
+| `app_id`                                                                                     | *Optional[str]*                                                                              | :heavy_minus_sign:                                                                           | The appId field.                                                                             |
+| `page_size`                                                                                  | *Optional[int]*                                                                              | :heavy_minus_sign:                                                                           | The pageSize field.                                                                          |
+| `page_token`                                                                                 | *Optional[str]*                                                                              | :heavy_minus_sign:                                                                           | The pageToken field.                                                                         |
+| `query`                                                                                      | *Optional[str]*                                                                              | :heavy_minus_sign:                                                                           | The query field.                                                                             |
+| `refs`                                                                                       | List[[Nullable[shared.AutomationTemplateRef]](../../models/shared/automationtemplateref.md)] | :heavy_minus_sign:                                                                           | The refs field.                                                                              |
+| `trigger_types`                                                                              | List[[shared.TriggerTypes](../../models/shared/triggertypes.md)]                             | :heavy_minus_sign:                                                                           | The triggerTypes field.                                                                      |

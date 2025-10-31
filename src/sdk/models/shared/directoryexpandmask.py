@@ -3,23 +3,23 @@
 from __future__ import annotations
 from pydantic import model_serializer
 from sdk.types import BaseModel, Nullable, OptionalNullable, UNSET, UNSET_SENTINEL
-from typing import List, TypedDict
-from typing_extensions import NotRequired
+from typing import List
+from typing_extensions import NotRequired, TypedDict
 
 
 class DirectoryExpandMaskTypedDict(TypedDict):
     r"""The fields to be included in the directory response."""
-    
+
     paths: NotRequired[Nullable[List[str]]]
     r"""An array of fields to be included in the directory response."""
-    
+
 
 class DirectoryExpandMask(BaseModel):
     r"""The fields to be included in the directory response."""
-    
+
     paths: OptionalNullable[List[str]] = UNSET
     r"""An array of fields to be included in the directory response."""
-    
+
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
         optional_fields = ["paths"]
@@ -30,24 +30,22 @@ class DirectoryExpandMask(BaseModel):
 
         m = {}
 
-        for n, f in self.model_fields.items():
+        for n, f in type(self).model_fields.items():
             k = f.alias or n
             val = serialized.get(k)
+            serialized.pop(k, None)
+
+            optional_nullable = k in optional_fields and k in nullable_fields
+            is_set = (
+                self.__pydantic_fields_set__.intersection({n})
+                or k in null_default_fields
+            )  # pylint: disable=no-member
 
             if val is not None and val != UNSET_SENTINEL:
                 m[k] = val
             elif val != UNSET_SENTINEL and (
-                not k in optional_fields
-                or (
-                    k in optional_fields
-                    and k in nullable_fields
-                    and (
-                        self.__pydantic_fields_set__.intersection({n})
-                        or k in null_default_fields
-                    )  # pylint: disable=no-member
-                )
+                not k in optional_fields or (optional_nullable and is_set)
             ):
                 m[k] = val
 
         return m
-        

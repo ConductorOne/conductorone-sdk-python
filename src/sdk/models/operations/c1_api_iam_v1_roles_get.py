@@ -5,17 +5,19 @@ import httpx
 from sdk.models.shared import getrolesresponse as shared_getrolesresponse
 from sdk.types import BaseModel
 from sdk.utils import FieldMetadata, PathParamMetadata
-from typing import Optional, TypedDict
-from typing_extensions import Annotated, NotRequired
+from typing import Optional
+from typing_extensions import Annotated, NotRequired, TypedDict
 
 
 class C1APIIamV1RolesGetRequestTypedDict(TypedDict):
     role_id: str
-    
+
 
 class C1APIIamV1RolesGetRequest(BaseModel):
-    role_id: Annotated[str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))]
-    
+    role_id: Annotated[
+        str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))
+    ]
+
 
 class C1APIIamV1RolesGetResponseTypedDict(TypedDict):
     content_type: str
@@ -26,15 +28,17 @@ class C1APIIamV1RolesGetResponseTypedDict(TypedDict):
     r"""Raw HTTP response; suitable for custom response parsing"""
     get_roles_response: NotRequired[shared_getrolesresponse.GetRolesResponseTypedDict]
     r"""The GetRolesResponse message contains the retrieved role."""
-    
+
 
 class C1APIIamV1RolesGetResponse(BaseModel):
     content_type: str
     r"""HTTP response content type for this operation"""
+
     status_code: int
     r"""HTTP response status code for this operation"""
+
     raw_response: httpx.Response
     r"""Raw HTTP response; suitable for custom response parsing"""
+
     get_roles_response: Optional[shared_getrolesresponse.GetRolesResponse] = None
     r"""The GetRolesResponse message contains the retrieved role."""
-    

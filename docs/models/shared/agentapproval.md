@@ -1,0 +1,15 @@
+# AgentApproval
+
+The agent to assign the task to.
+
+
+## Fields
+
+| Field                                                                               | Type                                                                                | Required                                                                            | Description                                                                         |
+| ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
+| `agent_failure_action`                                                              | [Optional[shared.AgentFailureAction]](../../models/shared/agentfailureaction.md)    | :heavy_minus_sign:                                                                  | The action to take if the agent fails to approve, deny, or reassign the task.       |
+| `agent_mode`                                                                        | [Optional[shared.AgentMode]](../../models/shared/agentmode.md)                      | :heavy_minus_sign:                                                                  | The mode of the agent, full control, change policy only, or comment only.           |
+| `agent_user_id`                                                                     | *Optional[str]*                                                                     | :heavy_minus_sign:                                                                  | The agent user ID to assign the task to.                                            |
+| `instructions`                                                                      | *Optional[str]*                                                                     | :heavy_minus_sign:                                                                  | Instructions for the agent.                                                         |
+| `policy_ids`                                                                        | List[*str*]                                                                         | :heavy_minus_sign:                                                                  | The allow list of policy IDs to re-route the task to.                               |
+| `reassign_to_user_ids`                                                              | List[*str*]                                                                         | :heavy_minus_sign:                                                                  | The users to reassign the task to if the agent failure action is reassign to users. |

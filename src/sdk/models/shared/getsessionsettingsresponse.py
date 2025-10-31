@@ -4,20 +4,21 @@ from __future__ import annotations
 from .sessionsettings import SessionSettings, SessionSettingsTypedDict
 import pydantic
 from sdk.types import BaseModel
-from typing import Optional, TypedDict
-from typing_extensions import Annotated, NotRequired
+from typing import Optional
+from typing_extensions import Annotated, NotRequired, TypedDict
 
 
 class GetSessionSettingsResponseTypedDict(TypedDict):
     r"""The GetSessionSettingsResponse message."""
-    
+
     session_settings: NotRequired[SessionSettingsTypedDict]
     r"""The SessionSettings message."""
-    
+
 
 class GetSessionSettingsResponse(BaseModel):
     r"""The GetSessionSettingsResponse message."""
-    
-    session_settings: Annotated[Optional[SessionSettings], pydantic.Field(alias="sessionSettings")] = None
+
+    session_settings: Annotated[
+        Optional[SessionSettings], pydantic.Field(alias="sessionSettings")
+    ] = None
     r"""The SessionSettings message."""
-    

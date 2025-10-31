@@ -2,10 +2,12 @@
 
 from __future__ import annotations
 import httpx
-from sdk.models.shared import createattributevalueresponse as shared_createattributevalueresponse
+from sdk.models.shared import (
+    createattributevalueresponse as shared_createattributevalueresponse,
+)
 from sdk.types import BaseModel
-from typing import Optional, TypedDict
-from typing_extensions import NotRequired
+from typing import Optional
+from typing_extensions import NotRequired, TypedDict
 
 
 class C1APIAttributeV1AttributesCreateAttributeValueResponseTypedDict(TypedDict):
@@ -15,17 +17,23 @@ class C1APIAttributeV1AttributesCreateAttributeValueResponseTypedDict(TypedDict)
     r"""HTTP response status code for this operation"""
     raw_response: httpx.Response
     r"""Raw HTTP response; suitable for custom response parsing"""
-    create_attribute_value_response: NotRequired[shared_createattributevalueresponse.CreateAttributeValueResponseTypedDict]
+    create_attribute_value_response: NotRequired[
+        shared_createattributevalueresponse.CreateAttributeValueResponseTypedDict
+    ]
     r"""CreateAttributeValueResponse is the response for creating an attribute value."""
-    
+
 
 class C1APIAttributeV1AttributesCreateAttributeValueResponse(BaseModel):
     content_type: str
     r"""HTTP response content type for this operation"""
+
     status_code: int
     r"""HTTP response status code for this operation"""
+
     raw_response: httpx.Response
     r"""Raw HTTP response; suitable for custom response parsing"""
-    create_attribute_value_response: Optional[shared_createattributevalueresponse.CreateAttributeValueResponse] = None
+
+    create_attribute_value_response: Optional[
+        shared_createattributevalueresponse.CreateAttributeValueResponse
+    ] = None
     r"""CreateAttributeValueResponse is the response for creating an attribute value."""
-    

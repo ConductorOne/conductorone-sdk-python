@@ -4,18 +4,17 @@ from __future__ import annotations
 from datetime import datetime
 import pydantic
 from sdk.types import BaseModel
-from typing import Optional, TypedDict
-from typing_extensions import Annotated, NotRequired
+from typing import Optional
+from typing_extensions import Annotated, NotRequired, TypedDict
 
 
 class TaskRevokeSourceExpiredTypedDict(TypedDict):
     r"""The TaskRevokeSourceExpired message indicates that the source of the revoke task is due to a grant expiring."""
-    
+
     expired_at: NotRequired[datetime]
-    
+
 
 class TaskRevokeSourceExpired(BaseModel):
     r"""The TaskRevokeSourceExpired message indicates that the source of the revoke task is due to a grant expiring."""
-    
+
     expired_at: Annotated[Optional[datetime], pydantic.Field(alias="expiredAt")] = None
-    

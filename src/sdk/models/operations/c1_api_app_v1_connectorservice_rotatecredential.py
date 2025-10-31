@@ -2,24 +2,13 @@
 
 from __future__ import annotations
 import httpx
-from sdk.models.shared import connectorservicerotatecredentialrequest as shared_connectorservicerotatecredentialrequest, connectorservicerotatecredentialresponse as shared_connectorservicerotatecredentialresponse
+from sdk.models.shared import (
+    connectorservicerotatecredentialresponse as shared_connectorservicerotatecredentialresponse,
+)
 from sdk.types import BaseModel
-from sdk.utils import FieldMetadata, PathParamMetadata, RequestMetadata
-from typing import Optional, TypedDict
-from typing_extensions import Annotated, NotRequired
+from typing import Optional
+from typing_extensions import NotRequired, TypedDict
 
-
-class C1APIAppV1ConnectorServiceRotateCredentialRequestTypedDict(TypedDict):
-    app_id: str
-    connector_id: str
-    connector_service_rotate_credential_request: NotRequired[shared_connectorservicerotatecredentialrequest.ConnectorServiceRotateCredentialRequestTypedDict]
-    
-
-class C1APIAppV1ConnectorServiceRotateCredentialRequest(BaseModel):
-    app_id: Annotated[str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))]
-    connector_id: Annotated[str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))]
-    connector_service_rotate_credential_request: Annotated[Optional[shared_connectorservicerotatecredentialrequest.ConnectorServiceRotateCredentialRequest], FieldMetadata(request=RequestMetadata(media_type="application/json"))] = None
-    
 
 class C1APIAppV1ConnectorServiceRotateCredentialResponseTypedDict(TypedDict):
     content_type: str
@@ -28,17 +17,23 @@ class C1APIAppV1ConnectorServiceRotateCredentialResponseTypedDict(TypedDict):
     r"""HTTP response status code for this operation"""
     raw_response: httpx.Response
     r"""Raw HTTP response; suitable for custom response parsing"""
-    connector_service_rotate_credential_response: NotRequired[shared_connectorservicerotatecredentialresponse.ConnectorServiceRotateCredentialResponseTypedDict]
+    connector_service_rotate_credential_response: NotRequired[
+        shared_connectorservicerotatecredentialresponse.ConnectorServiceRotateCredentialResponseTypedDict
+    ]
     r"""ConnectorServiceRotateCredentialResponse is the response returned by the rotate method."""
-    
+
 
 class C1APIAppV1ConnectorServiceRotateCredentialResponse(BaseModel):
     content_type: str
     r"""HTTP response content type for this operation"""
+
     status_code: int
     r"""HTTP response status code for this operation"""
+
     raw_response: httpx.Response
     r"""Raw HTTP response; suitable for custom response parsing"""
-    connector_service_rotate_credential_response: Optional[shared_connectorservicerotatecredentialresponse.ConnectorServiceRotateCredentialResponse] = None
+
+    connector_service_rotate_credential_response: Optional[
+        shared_connectorservicerotatecredentialresponse.ConnectorServiceRotateCredentialResponse
+    ] = None
     r"""ConnectorServiceRotateCredentialResponse is the response returned by the rotate method."""
-    

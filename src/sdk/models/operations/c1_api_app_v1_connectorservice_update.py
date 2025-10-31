@@ -2,24 +2,38 @@
 
 from __future__ import annotations
 import httpx
-from sdk.models.shared import connectorserviceupdaterequest as shared_connectorserviceupdaterequest, connectorserviceupdateresponse as shared_connectorserviceupdateresponse
+from sdk.models.shared import (
+    connectorserviceupdaterequest as shared_connectorserviceupdaterequest,
+    connectorserviceupdateresponse as shared_connectorserviceupdateresponse,
+)
 from sdk.types import BaseModel
 from sdk.utils import FieldMetadata, PathParamMetadata, RequestMetadata
-from typing import Optional, TypedDict
-from typing_extensions import Annotated, NotRequired
+from typing import Optional
+from typing_extensions import Annotated, NotRequired, TypedDict
 
 
 class C1APIAppV1ConnectorServiceUpdateRequestTypedDict(TypedDict):
     app_id: str
     id: str
-    connector_service_update_request: NotRequired[shared_connectorserviceupdaterequest.ConnectorServiceUpdateRequestTypedDict]
-    
+    connector_service_update_request: NotRequired[
+        shared_connectorserviceupdaterequest.ConnectorServiceUpdateRequestTypedDict
+    ]
+
 
 class C1APIAppV1ConnectorServiceUpdateRequest(BaseModel):
-    app_id: Annotated[str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))]
-    id: Annotated[str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))]
-    connector_service_update_request: Annotated[Optional[shared_connectorserviceupdaterequest.ConnectorServiceUpdateRequest], FieldMetadata(request=RequestMetadata(media_type="application/json"))] = None
-    
+    app_id: Annotated[
+        str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))
+    ]
+
+    id: Annotated[
+        str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))
+    ]
+
+    connector_service_update_request: Annotated[
+        Optional[shared_connectorserviceupdaterequest.ConnectorServiceUpdateRequest],
+        FieldMetadata(request=RequestMetadata(media_type="application/json")),
+    ] = None
+
 
 class C1APIAppV1ConnectorServiceUpdateResponseTypedDict(TypedDict):
     content_type: str
@@ -28,17 +42,23 @@ class C1APIAppV1ConnectorServiceUpdateResponseTypedDict(TypedDict):
     r"""HTTP response status code for this operation"""
     raw_response: httpx.Response
     r"""Raw HTTP response; suitable for custom response parsing"""
-    connector_service_update_response: NotRequired[shared_connectorserviceupdateresponse.ConnectorServiceUpdateResponseTypedDict]
+    connector_service_update_response: NotRequired[
+        shared_connectorserviceupdateresponse.ConnectorServiceUpdateResponseTypedDict
+    ]
     r"""ConnectorServiceUpdateResponse is the response returned by the update method."""
-    
+
 
 class C1APIAppV1ConnectorServiceUpdateResponse(BaseModel):
     content_type: str
     r"""HTTP response content type for this operation"""
+
     status_code: int
     r"""HTTP response status code for this operation"""
+
     raw_response: httpx.Response
     r"""Raw HTTP response; suitable for custom response parsing"""
-    connector_service_update_response: Optional[shared_connectorserviceupdateresponse.ConnectorServiceUpdateResponse] = None
+
+    connector_service_update_response: Optional[
+        shared_connectorserviceupdateresponse.ConnectorServiceUpdateResponse
+    ] = None
     r"""ConnectorServiceUpdateResponse is the response returned by the update method."""
-    

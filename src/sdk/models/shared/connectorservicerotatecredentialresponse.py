@@ -4,24 +4,21 @@ from __future__ import annotations
 from .connectorcredential import ConnectorCredential, ConnectorCredentialTypedDict
 import pydantic
 from sdk.types import BaseModel
-from typing import Optional, TypedDict
-from typing_extensions import Annotated, NotRequired
+from typing import Optional
+from typing_extensions import Annotated, NotRequired, TypedDict
 
 
 class ConnectorServiceRotateCredentialResponseTypedDict(TypedDict):
     r"""ConnectorServiceRotateCredentialResponse is the response returned by the rotate method."""
-    
+
     connector_credential: NotRequired[ConnectorCredentialTypedDict]
     r"""ConnectorCredential is used by a connector to authenticate with conductor one."""
-    client_secret: NotRequired[str]
-    r"""The new clientSecret returned after rotating the connector credential."""
-    
+
 
 class ConnectorServiceRotateCredentialResponse(BaseModel):
     r"""ConnectorServiceRotateCredentialResponse is the response returned by the rotate method."""
-    
-    connector_credential: Annotated[Optional[ConnectorCredential], pydantic.Field(alias="credential")] = None
+
+    connector_credential: Annotated[
+        Optional[ConnectorCredential], pydantic.Field(alias="credential")
+    ] = None
     r"""ConnectorCredential is used by a connector to authenticate with conductor one."""
-    client_secret: Annotated[Optional[str], pydantic.Field(alias="clientSecret")] = None
-    r"""The new clientSecret returned after rotating the connector credential."""
-    

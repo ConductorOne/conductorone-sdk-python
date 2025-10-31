@@ -1,0 +1,9 @@
+# C1APIStepupV1StepUpProviderServiceUpdateRequest
+
+
+## Fields
+
+| Field                                                                                              | Type                                                                                               | Required                                                                                           | Description                                                                                        |
+| -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
+| `update_step_up_provider_request`                                                                  | [Optional[shared.UpdateStepUpProviderRequest]](../../models/shared/updatestepupproviderrequest.md) | :heavy_minus_sign:                                                                                 | N/A                                                                                                |
+| `id`                                                                                               | *str*                                                                                              | :heavy_check_mark:                                                                                 | N/A                                                                                                |

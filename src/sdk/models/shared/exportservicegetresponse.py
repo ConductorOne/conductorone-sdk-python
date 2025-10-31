@@ -3,13 +3,13 @@
 from __future__ import annotations
 from .exporter import Exporter, ExporterTypedDict
 from sdk.types import BaseModel
-from typing import Optional, TypedDict
-from typing_extensions import NotRequired
+from typing import Optional
+from typing_extensions import NotRequired, TypedDict
 
 
 class ExportServiceGetResponseTypedDict(TypedDict):
     r"""The ExportServiceGetResponse message contains the system log exporter object."""
-    
+
     exporter: NotRequired[ExporterTypedDict]
     r"""The Exporter message.
 
@@ -17,11 +17,11 @@ class ExportServiceGetResponseTypedDict(TypedDict):
     - datasource
 
     """
-    
+
 
 class ExportServiceGetResponse(BaseModel):
     r"""The ExportServiceGetResponse message contains the system log exporter object."""
-    
+
     exporter: Optional[Exporter] = None
     r"""The Exporter message.
 
@@ -29,4 +29,3 @@ class ExportServiceGetResponse(BaseModel):
     - datasource
 
     """
-    

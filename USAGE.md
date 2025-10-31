@@ -4,24 +4,26 @@
 from sdk import SDK
 from sdk.models import shared
 
-s = SDK(
+
+with SDK(
     security=shared.Security(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-)
+) as s_client:
 
+    res = s_client.access_conflict.create_monitor()
 
-res = s.apps.create()
+    assert res.conflict_monitor is not None
 
-if res.create_app_response is not None:
-    # handle response
-    pass
+    # Handle response
+    print(res.conflict_monitor)
 ```
 
 </br>
 
-The same SDK client can also be used to make asychronous requests by importing asyncio.
+The same SDK client can also be used to make asynchronous requests by importing asyncio.
+
 ```python
 # Asynchronous Example
 import asyncio
@@ -29,16 +31,20 @@ from sdk import SDK
 from sdk.models import shared
 
 async def main():
-    s = SDK(
+
+    async with SDK(
         security=shared.Security(
             bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
             oauth="<YOUR_OAUTH_HERE>",
         ),
-    )
-    res = await s.apps.create_async()
-    if res.create_app_response is not None:
-        # handle response
-        pass
+    ) as s_client:
+
+        res = await s_client.access_conflict.create_monitor_async()
+
+        assert res.conflict_monitor is not None
+
+        # Handle response
+        print(res.conflict_monitor)
 
 asyncio.run(main())
 ```

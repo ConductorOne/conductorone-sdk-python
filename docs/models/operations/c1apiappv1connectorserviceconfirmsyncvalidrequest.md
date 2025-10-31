@@ -1,0 +1,11 @@
+# C1APIAppV1ConnectorServiceConfirmSyncValidRequest
+
+
+## Fields
+
+| Field                                                                                      | Type                                                                                       | Required                                                                                   | Description                                                                                |
+| ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ |
+| `confirm_sync_valid_request`                                                               | [Optional[shared.ConfirmSyncValidRequest]](../../models/shared/confirmsyncvalidrequest.md) | :heavy_minus_sign:                                                                         | N/A                                                                                        |
+| `app_id`                                                                                   | *str*                                                                                      | :heavy_check_mark:                                                                         | N/A                                                                                        |
+| `connector_id`                                                                             | *str*                                                                                      | :heavy_check_mark:                                                                         | N/A                                                                                        |
+| `sync_lifecycle_id`                                                                        | *str*                                                                                      | :heavy_check_mark:                                                                         | N/A                                                                                        |

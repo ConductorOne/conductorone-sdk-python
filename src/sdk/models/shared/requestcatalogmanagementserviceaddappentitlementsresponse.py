@@ -2,15 +2,12 @@
 
 from __future__ import annotations
 from sdk.types import BaseModel
-from typing import TypedDict
+from typing_extensions import TypedDict
 
 
 class RequestCatalogManagementServiceAddAppEntitlementsResponseTypedDict(TypedDict):
     r"""Empty response with a status code indicating success."""
-    
-    
+
 
 class RequestCatalogManagementServiceAddAppEntitlementsResponse(BaseModel):
     r"""Empty response with a status code indicating success."""
-    
-    

@@ -2,22 +2,33 @@
 
 from __future__ import annotations
 import httpx
-from sdk.models.shared import exportservicedeleterequest as shared_exportservicedeleterequest, exportservicedeleteresponse as shared_exportservicedeleteresponse
+from sdk.models.shared import (
+    exportservicedeleterequest as shared_exportservicedeleterequest,
+    exportservicedeleteresponse as shared_exportservicedeleteresponse,
+)
 from sdk.types import BaseModel
 from sdk.utils import FieldMetadata, PathParamMetadata, RequestMetadata
-from typing import Optional, TypedDict
-from typing_extensions import Annotated, NotRequired
+from typing import Optional
+from typing_extensions import Annotated, NotRequired, TypedDict
 
 
 class C1APISystemlogV1ExportServiceDeleteRequestTypedDict(TypedDict):
     export_id: str
-    export_service_delete_request: NotRequired[shared_exportservicedeleterequest.ExportServiceDeleteRequestTypedDict]
-    
+    export_service_delete_request: NotRequired[
+        shared_exportservicedeleterequest.ExportServiceDeleteRequestTypedDict
+    ]
+
 
 class C1APISystemlogV1ExportServiceDeleteRequest(BaseModel):
-    export_id: Annotated[str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))]
-    export_service_delete_request: Annotated[Optional[shared_exportservicedeleterequest.ExportServiceDeleteRequest], FieldMetadata(request=RequestMetadata(media_type="application/json"))] = None
-    
+    export_id: Annotated[
+        str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))
+    ]
+
+    export_service_delete_request: Annotated[
+        Optional[shared_exportservicedeleterequest.ExportServiceDeleteRequest],
+        FieldMetadata(request=RequestMetadata(media_type="application/json")),
+    ] = None
+
 
 class C1APISystemlogV1ExportServiceDeleteResponseTypedDict(TypedDict):
     content_type: str
@@ -26,17 +37,23 @@ class C1APISystemlogV1ExportServiceDeleteResponseTypedDict(TypedDict):
     r"""HTTP response status code for this operation"""
     raw_response: httpx.Response
     r"""Raw HTTP response; suitable for custom response parsing"""
-    export_service_delete_response: NotRequired[shared_exportservicedeleteresponse.ExportServiceDeleteResponseTypedDict]
+    export_service_delete_response: NotRequired[
+        shared_exportservicedeleteresponse.ExportServiceDeleteResponseTypedDict
+    ]
     r"""Successful response"""
-    
+
 
 class C1APISystemlogV1ExportServiceDeleteResponse(BaseModel):
     content_type: str
     r"""HTTP response content type for this operation"""
+
     status_code: int
     r"""HTTP response status code for this operation"""
+
     raw_response: httpx.Response
     r"""Raw HTTP response; suitable for custom response parsing"""
-    export_service_delete_response: Optional[shared_exportservicedeleteresponse.ExportServiceDeleteResponse] = None
+
+    export_service_delete_response: Optional[
+        shared_exportservicedeleteresponse.ExportServiceDeleteResponse
+    ] = None
     r"""Successful response"""
-    

@@ -4,13 +4,13 @@ from __future__ import annotations
 from .taskrevokesource import TaskRevokeSource, TaskRevokeSourceTypedDict
 import pydantic
 from sdk.types import BaseModel
-from typing import Optional, TypedDict
-from typing_extensions import Annotated, NotRequired
+from typing import Optional
+from typing_extensions import Annotated, NotRequired, TypedDict
 
 
 class TaskTypeRevokeInputTypedDict(TypedDict):
     r"""The TaskTypeRevoke message indicates that a task is a revoke task and all related details."""
-    
+
     task_revoke_source: NotRequired[TaskRevokeSourceTypedDict]
     r"""The TaskRevokeSource message indicates the source of the revoke task is one of expired, nonUsage, request, or review.
 
@@ -21,12 +21,14 @@ class TaskTypeRevokeInputTypedDict(TypedDict):
     - nonUsage
 
     """
-    
+
 
 class TaskTypeRevokeInput(BaseModel):
     r"""The TaskTypeRevoke message indicates that a task is a revoke task and all related details."""
-    
-    task_revoke_source: Annotated[Optional[TaskRevokeSource], pydantic.Field(alias="source")] = None
+
+    task_revoke_source: Annotated[
+        Optional[TaskRevokeSource], pydantic.Field(alias="source")
+    ] = None
     r"""The TaskRevokeSource message indicates the source of the revoke task is one of expired, nonUsage, request, or review.
 
     This message contains a oneof named origin. Only a single field of the following list may be set at a time:
@@ -36,4 +38,3 @@ class TaskTypeRevokeInput(BaseModel):
     - nonUsage
 
     """
-    

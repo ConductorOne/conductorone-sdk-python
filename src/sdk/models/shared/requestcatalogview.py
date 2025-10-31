@@ -3,33 +3,51 @@
 from __future__ import annotations
 from .requestcatalog import RequestCatalog, RequestCatalogTypedDict
 import pydantic
+from pydantic.functional_serializers import PlainSerializer
+from pydantic.functional_validators import BeforeValidator
 from sdk.types import BaseModel
-from typing import Optional, TypedDict
-from typing_extensions import Annotated, NotRequired
+from sdk.utils import serialize_int, validate_int
+from typing import Optional
+from typing_extensions import Annotated, NotRequired, TypedDict
 
 
 class RequestCatalogViewTypedDict(TypedDict):
     r"""The request catalog view contains the serialized request catalog and paths to objects referenced by the request catalog."""
-    
+
     request_catalog: NotRequired[RequestCatalogTypedDict]
     r"""The RequestCatalog is used for managing which entitlements are requestable, and who can request them."""
     access_entitlements_path: NotRequired[str]
     r"""JSONPATH expression indicating the location of the access entitlement objects, that the request catalog allows users to request, in the array."""
-    app_paths: NotRequired[str]
-    r"""JSONPATH expression indicating the location of the App object in the array."""
     created_by_user_path: NotRequired[str]
     r"""JSONPATH expression indicating the location of the User object, that created the request catalog, in the array."""
-    
+    member_count: NotRequired[int]
+    r"""Total number of the members of the catalog"""
+
 
 class RequestCatalogView(BaseModel):
     r"""The request catalog view contains the serialized request catalog and paths to objects referenced by the request catalog."""
-    
-    request_catalog: Annotated[Optional[RequestCatalog], pydantic.Field(alias="requestCatalog")] = None
+
+    request_catalog: Annotated[
+        Optional[RequestCatalog], pydantic.Field(alias="requestCatalog")
+    ] = None
     r"""The RequestCatalog is used for managing which entitlements are requestable, and who can request them."""
-    access_entitlements_path: Annotated[Optional[str], pydantic.Field(alias="accessEntitlementsPath")] = None
+
+    access_entitlements_path: Annotated[
+        Optional[str], pydantic.Field(alias="accessEntitlementsPath")
+    ] = None
     r"""JSONPATH expression indicating the location of the access entitlement objects, that the request catalog allows users to request, in the array."""
-    app_paths: Annotated[Optional[str], pydantic.Field(alias="appPaths")] = None
-    r"""JSONPATH expression indicating the location of the App object in the array."""
-    created_by_user_path: Annotated[Optional[str], pydantic.Field(alias="createdByUserPath")] = None
+
+    created_by_user_path: Annotated[
+        Optional[str], pydantic.Field(alias="createdByUserPath")
+    ] = None
     r"""JSONPATH expression indicating the location of the User object, that created the request catalog, in the array."""
-    
+
+    member_count: Annotated[
+        Annotated[
+            Optional[int],
+            BeforeValidator(validate_int),
+            PlainSerializer(serialize_int(True)),
+        ],
+        pydantic.Field(alias="memberCount"),
+    ] = None
+    r"""Total number of the members of the catalog"""

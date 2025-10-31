@@ -10,3 +10,9 @@ __pycache__/
 /build/
 /dist/
 openapi.egg-info/
+.env
+.env.local
+.env.*.local
+uv.lock
+**/.speakeasy/temp/
+**/.speakeasy/logs/

@@ -1,0 +1,9 @@
+# C1APIStepupV1StepUpProviderServiceTestRequest
+
+
+## Fields
+
+| Field                                                                                          | Type                                                                                           | Required                                                                                       | Description                                                                                    |
+| ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
+| `test_step_up_provider_request`                                                                | [Optional[shared.TestStepUpProviderRequest]](../../models/shared/teststepupproviderrequest.md) | :heavy_minus_sign:                                                                             | N/A                                                                                            |
+| `id`                                                                                           | *str*                                                                                          | :heavy_check_mark:                                                                             | N/A                                                                                            |

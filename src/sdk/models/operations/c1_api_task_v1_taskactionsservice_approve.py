@@ -2,22 +2,35 @@
 
 from __future__ import annotations
 import httpx
-from sdk.models.shared import taskactionsserviceapproverequest as shared_taskactionsserviceapproverequest, taskactionsserviceapproveresponse as shared_taskactionsserviceapproveresponse
+from sdk.models.shared import (
+    taskactionsserviceapproverequest as shared_taskactionsserviceapproverequest,
+    taskactionsserviceapproveresponse as shared_taskactionsserviceapproveresponse,
+)
 from sdk.types import BaseModel
 from sdk.utils import FieldMetadata, PathParamMetadata, RequestMetadata
-from typing import Optional, TypedDict
-from typing_extensions import Annotated, NotRequired
+from typing import Optional
+from typing_extensions import Annotated, NotRequired, TypedDict
 
 
 class C1APITaskV1TaskActionsServiceApproveRequestTypedDict(TypedDict):
     task_id: str
-    task_actions_service_approve_request: NotRequired[shared_taskactionsserviceapproverequest.TaskActionsServiceApproveRequestTypedDict]
-    
+    task_actions_service_approve_request: NotRequired[
+        shared_taskactionsserviceapproverequest.TaskActionsServiceApproveRequestTypedDict
+    ]
+
 
 class C1APITaskV1TaskActionsServiceApproveRequest(BaseModel):
-    task_id: Annotated[str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))]
-    task_actions_service_approve_request: Annotated[Optional[shared_taskactionsserviceapproverequest.TaskActionsServiceApproveRequest], FieldMetadata(request=RequestMetadata(media_type="application/json"))] = None
-    
+    task_id: Annotated[
+        str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))
+    ]
+
+    task_actions_service_approve_request: Annotated[
+        Optional[
+            shared_taskactionsserviceapproverequest.TaskActionsServiceApproveRequest
+        ],
+        FieldMetadata(request=RequestMetadata(media_type="application/json")),
+    ] = None
+
 
 class C1APITaskV1TaskActionsServiceApproveResponseTypedDict(TypedDict):
     content_type: str
@@ -26,17 +39,23 @@ class C1APITaskV1TaskActionsServiceApproveResponseTypedDict(TypedDict):
     r"""HTTP response status code for this operation"""
     raw_response: httpx.Response
     r"""Raw HTTP response; suitable for custom response parsing"""
-    task_actions_service_approve_response: NotRequired[shared_taskactionsserviceapproveresponse.TaskActionsServiceApproveResponseTypedDict]
+    task_actions_service_approve_response: NotRequired[
+        shared_taskactionsserviceapproveresponse.TaskActionsServiceApproveResponseTypedDict
+    ]
     r"""The TaskActionsServiceApproveResponse returns a task view with paths indicating the location of expanded items in the array."""
-    
+
 
 class C1APITaskV1TaskActionsServiceApproveResponse(BaseModel):
     content_type: str
     r"""HTTP response content type for this operation"""
+
     status_code: int
     r"""HTTP response status code for this operation"""
+
     raw_response: httpx.Response
     r"""Raw HTTP response; suitable for custom response parsing"""
-    task_actions_service_approve_response: Optional[shared_taskactionsserviceapproveresponse.TaskActionsServiceApproveResponse] = None
+
+    task_actions_service_approve_response: Optional[
+        shared_taskactionsserviceapproveresponse.TaskActionsServiceApproveResponse
+    ] = None
     r"""The TaskActionsServiceApproveResponse returns a task view with paths indicating the location of expanded items in the array."""
-    

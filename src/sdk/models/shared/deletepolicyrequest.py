@@ -2,15 +2,12 @@
 
 from __future__ import annotations
 from sdk.types import BaseModel
-from typing import TypedDict
+from typing_extensions import TypedDict
 
 
 class DeletePolicyRequestTypedDict(TypedDict):
     r"""The DeletePolicyRequest message contains the ID of the policy to delete. It uses URL value for input."""
-    
-    
+
 
 class DeletePolicyRequest(BaseModel):
     r"""The DeletePolicyRequest message contains the ID of the policy to delete. It uses URL value for input."""
-    
-    

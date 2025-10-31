@@ -1,0 +1,25 @@
+# StepUpTransaction
+
+StepUpTransaction represents a record of a step-up authentication attempt
+
+This message contains a oneof named target. Only a single field of the following list may be set at a time:
+  - approveTask
+  - test
+
+
+
+## Fields
+
+| Field                                                                                    | Type                                                                                     | Required                                                                                 | Description                                                                              |
+| ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
+| `target_task`                                                                            | [OptionalNullable[shared.TargetTask]](../../models/shared/targettask.md)                 | :heavy_minus_sign:                                                                       | Target for approving a task                                                              |
+| `target_test`                                                                            | [OptionalNullable[shared.TargetTest]](../../models/shared/targettest.md)                 | :heavy_minus_sign:                                                                       | Target for testing a provider                                                            |
+| `claims`                                                                                 | Dict[str, *Any*]                                                                         | :heavy_minus_sign:                                                                       | N/A                                                                                      |
+| `created_at`                                                                             | [date](https://docs.python.org/3/library/datetime.html#date-objects)                     | :heavy_minus_sign:                                                                       | N/A                                                                                      |
+| `error_message`                                                                          | *Optional[str]*                                                                          | :heavy_minus_sign:                                                                       | Error message if the transaction failed                                                  |
+| `expires_at`                                                                             | [date](https://docs.python.org/3/library/datetime.html#date-objects)                     | :heavy_minus_sign:                                                                       | N/A                                                                                      |
+| `id`                                                                                     | *Optional[str]*                                                                          | :heavy_minus_sign:                                                                       | Unique identifier for the transaction                                                    |
+| `provider_id`                                                                            | *Optional[str]*                                                                          | :heavy_minus_sign:                                                                       | ID of the provider used for this step-up authentication                                  |
+| `state`                                                                                  | [Optional[shared.StepUpTransactionState]](../../models/shared/stepuptransactionstate.md) | :heavy_minus_sign:                                                                       | Current state of the transaction                                                         |
+| `updated_at`                                                                             | [date](https://docs.python.org/3/library/datetime.html#date-objects)                     | :heavy_minus_sign:                                                                       | N/A                                                                                      |
+| `user_id`                                                                                | *Optional[str]*                                                                          | :heavy_minus_sign:                                                                       | ID of the user who performed the step-up authentication                                  |

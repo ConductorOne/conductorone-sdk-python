@@ -4,20 +4,21 @@ from __future__ import annotations
 from .awsexternalid import AWSExternalID, AWSExternalIDTypedDict
 import pydantic
 from sdk.types import BaseModel
-from typing import Optional, TypedDict
-from typing_extensions import Annotated, NotRequired
+from typing import Optional
+from typing_extensions import Annotated, NotRequired, TypedDict
 
 
 class GetAWSExternalIDResponseTypedDict(TypedDict):
     r"""The GetAWSExternalIDResponse message."""
-    
+
     aws_external_id: NotRequired[AWSExternalIDTypedDict]
     r"""The AWSExternalID message."""
-    
+
 
 class GetAWSExternalIDResponse(BaseModel):
     r"""The GetAWSExternalIDResponse message."""
-    
-    aws_external_id: Annotated[Optional[AWSExternalID], pydantic.Field(alias="awsExternalId")] = None
+
+    aws_external_id: Annotated[
+        Optional[AWSExternalID], pydantic.Field(alias="awsExternalId")
+    ] = None
     r"""The AWSExternalID message."""
-    

@@ -2,11 +2,13 @@
 
 from __future__ import annotations
 from .waitcondition import WaitCondition, WaitConditionTypedDict
+from .waitduration import WaitDuration, WaitDurationTypedDict
+from .waituntiltime import WaitUntilTime, WaitUntilTimeTypedDict
 import pydantic
 from pydantic import model_serializer
 from sdk.types import BaseModel, Nullable, OptionalNullable, UNSET, UNSET_SENTINEL
-from typing import Optional, TypedDict
-from typing_extensions import Annotated, NotRequired
+from typing import Optional
+from typing_extensions import Annotated, NotRequired, TypedDict
 
 
 class WaitTypedDict(TypedDict):
@@ -14,11 +16,17 @@ class WaitTypedDict(TypedDict):
 
     This message contains a oneof named until. Only a single field of the following list may be set at a time:
     - condition
+    - duration
+    - untilTime
 
     """
-    
+
     wait_condition: NotRequired[Nullable[WaitConditionTypedDict]]
     r"""The WaitCondition message."""
+    wait_duration: NotRequired[Nullable[WaitDurationTypedDict]]
+    r"""The WaitDuration message."""
+    wait_until_time: NotRequired[Nullable[WaitUntilTimeTypedDict]]
+    r"""Waits until a specific time of the day (UTC)"""
     comment_on_first_wait: NotRequired[str]
     r"""The comment to post on first failed check."""
     comment_on_timeout: NotRequired[str]
@@ -26,54 +34,84 @@ class WaitTypedDict(TypedDict):
     name: NotRequired[str]
     r"""The name of our condition to show on the task details page"""
     timeout_duration: NotRequired[str]
-    
+
 
 class Wait(BaseModel):
     r"""Define a Wait step for a policy to wait on a condition to be met.
 
     This message contains a oneof named until. Only a single field of the following list may be set at a time:
     - condition
+    - duration
+    - untilTime
 
     """
-    
-    wait_condition: Annotated[OptionalNullable[WaitCondition], pydantic.Field(alias="condition")] = UNSET
+
+    wait_condition: Annotated[
+        OptionalNullable[WaitCondition], pydantic.Field(alias="condition")
+    ] = UNSET
     r"""The WaitCondition message."""
-    comment_on_first_wait: Annotated[Optional[str], pydantic.Field(alias="commentOnFirstWait")] = None
+
+    wait_duration: Annotated[
+        OptionalNullable[WaitDuration], pydantic.Field(alias="duration")
+    ] = UNSET
+    r"""The WaitDuration message."""
+
+    wait_until_time: Annotated[
+        OptionalNullable[WaitUntilTime], pydantic.Field(alias="untilTime")
+    ] = UNSET
+    r"""Waits until a specific time of the day (UTC)"""
+
+    comment_on_first_wait: Annotated[
+        Optional[str], pydantic.Field(alias="commentOnFirstWait")
+    ] = None
     r"""The comment to post on first failed check."""
-    comment_on_timeout: Annotated[Optional[str], pydantic.Field(alias="commentOnTimeout")] = None
+
+    comment_on_timeout: Annotated[
+        Optional[str], pydantic.Field(alias="commentOnTimeout")
+    ] = None
     r"""The comment to post if we timeout."""
+
     name: Optional[str] = None
     r"""The name of our condition to show on the task details page"""
-    timeout_duration: Annotated[Optional[str], pydantic.Field(alias="timeoutDuration")] = None
-    
+
+    timeout_duration: Annotated[
+        Optional[str], pydantic.Field(alias="timeoutDuration")
+    ] = None
+
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
-        optional_fields = ["WaitCondition", "commentOnFirstWait", "commentOnTimeout", "name", "timeoutDuration"]
-        nullable_fields = ["WaitCondition"]
+        optional_fields = [
+            "WaitCondition",
+            "WaitDuration",
+            "WaitUntilTime",
+            "commentOnFirstWait",
+            "commentOnTimeout",
+            "name",
+            "timeoutDuration",
+        ]
+        nullable_fields = ["WaitCondition", "WaitDuration", "WaitUntilTime"]
         null_default_fields = []
 
         serialized = handler(self)
 
         m = {}
 
-        for n, f in self.model_fields.items():
+        for n, f in type(self).model_fields.items():
             k = f.alias or n
             val = serialized.get(k)
+            serialized.pop(k, None)
+
+            optional_nullable = k in optional_fields and k in nullable_fields
+            is_set = (
+                self.__pydantic_fields_set__.intersection({n})
+                or k in null_default_fields
+            )  # pylint: disable=no-member
 
             if val is not None and val != UNSET_SENTINEL:
                 m[k] = val
             elif val != UNSET_SENTINEL and (
-                not k in optional_fields
-                or (
-                    k in optional_fields
-                    and k in nullable_fields
-                    and (
-                        self.__pydantic_fields_set__.intersection({n})
-                        or k in null_default_fields
-                    )  # pylint: disable=no-member
-                )
+                not k in optional_fields or (optional_nullable and is_set)
             ):
                 m[k] = val
 
         return m
-        

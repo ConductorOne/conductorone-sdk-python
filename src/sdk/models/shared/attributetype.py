@@ -2,24 +2,24 @@
 
 from __future__ import annotations
 from sdk.types import BaseModel
-from typing import Optional, TypedDict
-from typing_extensions import NotRequired
+from typing import Optional
+from typing_extensions import NotRequired, TypedDict
 
 
 class AttributeTypeTypedDict(TypedDict):
     r"""AttributeType defines the type of an attribute."""
-    
+
     id: NotRequired[str]
     r"""The ID of the AttributeType."""
     name: NotRequired[str]
     r"""The name of the AttributeType."""
-    
+
 
 class AttributeType(BaseModel):
     r"""AttributeType defines the type of an attribute."""
-    
+
     id: Optional[str] = None
     r"""The ID of the AttributeType."""
+
     name: Optional[str] = None
     r"""The name of the AttributeType."""
-    

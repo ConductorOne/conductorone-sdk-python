@@ -5,10 +5,14 @@ Sort tasks in a specific order.
 
 ## Values
 
-| Name                                    | Value                                   |
-| --------------------------------------- | --------------------------------------- |
-| `TASK_SEARCH_SORT_BY_UNSPECIFIED`       | TASK_SEARCH_SORT_BY_UNSPECIFIED         |
-| `TASK_SEARCH_SORT_BY_ACCOUNT`           | TASK_SEARCH_SORT_BY_ACCOUNT             |
-| `TASK_SEARCH_SORT_BY_RESOURCE`          | TASK_SEARCH_SORT_BY_RESOURCE            |
-| `TASK_SEARCH_SORT_BY_ACCOUNT_OWNER`     | TASK_SEARCH_SORT_BY_ACCOUNT_OWNER       |
-| `TASK_SEARCH_SORT_BY_REVERSE_TICKET_ID` | TASK_SEARCH_SORT_BY_REVERSE_TICKET_ID   |
+| Name                                                      | Value                                                     |
+| --------------------------------------------------------- | --------------------------------------------------------- |
+| `TASK_SEARCH_SORT_BY_UNSPECIFIED`                         | TASK_SEARCH_SORT_BY_UNSPECIFIED                           |
+| `TASK_SEARCH_SORT_BY_ACCOUNT`                             | TASK_SEARCH_SORT_BY_ACCOUNT                               |
+| `TASK_SEARCH_SORT_BY_RESOURCE`                            | TASK_SEARCH_SORT_BY_RESOURCE                              |
+| `TASK_SEARCH_SORT_BY_ACCOUNT_OWNER`                       | TASK_SEARCH_SORT_BY_ACCOUNT_OWNER                         |
+| `TASK_SEARCH_SORT_BY_REVERSE_TICKET_ID`                   | TASK_SEARCH_SORT_BY_REVERSE_TICKET_ID                     |
+| `TASK_SEARCH_SORT_BY_TICKET_ID`                           | TASK_SEARCH_SORT_BY_TICKET_ID                             |
+| `TASK_SEARCH_SORT_BY_CREATED_AT`                          | TASK_SEARCH_SORT_BY_CREATED_AT                            |
+| `TASK_SEARCH_SORT_BY_REVERSE_CREATED_AT`                  | TASK_SEARCH_SORT_BY_REVERSE_CREATED_AT                    |
+| `TASK_SEARCH_SORT_BY_APP_RESOURCE_ID_AND_APP_ENTITLEMENT` | TASK_SEARCH_SORT_BY_APP_RESOURCE_ID_AND_APP_ENTITLEMENT   |

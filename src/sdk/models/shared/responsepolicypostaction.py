@@ -2,24 +2,23 @@
 
 from __future__ import annotations
 from sdk.types import BaseModel
-from typing import Optional, TypedDict
-from typing_extensions import NotRequired
+from typing import Optional
+from typing_extensions import NotRequired, TypedDict
 
 
 class ResponsePolicyPostActionTypedDict(TypedDict):
     r"""The ResponsePolicyPostAction message."""
-    
+
     version: NotRequired[str]
     r"""version contains the constant value \"v1\". Future versions of the Webhook Response
     will use a different string.
     """
-    
+
 
 class ResponsePolicyPostAction(BaseModel):
     r"""The ResponsePolicyPostAction message."""
-    
+
     version: Optional[str] = None
     r"""version contains the constant value \"v1\". Future versions of the Webhook Response
     will use a different string.
     """
-    

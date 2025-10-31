@@ -4,22 +4,22 @@ from __future__ import annotations
 from datetime import datetime
 import pydantic
 from sdk.types import BaseModel
-from typing import Optional, TypedDict
-from typing_extensions import Annotated, NotRequired
+from typing import Optional
+from typing_extensions import Annotated, NotRequired, TypedDict
 
 
 class DeniedActionTypedDict(TypedDict):
     r"""The denied action indicates that the c1.api.policy.v1.ApprovalInstance had an outcome of denied."""
-    
+
     denied_at: NotRequired[datetime]
     user_id: NotRequired[str]
     r"""The UserID that denied this step."""
-    
+
 
 class DeniedAction(BaseModel):
     r"""The denied action indicates that the c1.api.policy.v1.ApprovalInstance had an outcome of denied."""
-    
+
     denied_at: Annotated[Optional[datetime], pydantic.Field(alias="deniedAt")] = None
+
     user_id: Annotated[Optional[str], pydantic.Field(alias="userId")] = None
     r"""The UserID that denied this step."""
-    

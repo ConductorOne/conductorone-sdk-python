@@ -2,15 +2,12 @@
 
 from __future__ import annotations
 from sdk.types import BaseModel
-from typing import TypedDict
+from typing_extensions import TypedDict
 
 
 class DirectoryServiceDeleteRequestTypedDict(TypedDict):
     r"""DirectoryServiceDeleteRequest is the request message for deleting a directory. It uses URL values for input."""
-    
-    
+
 
 class DirectoryServiceDeleteRequest(BaseModel):
     r"""DirectoryServiceDeleteRequest is the request message for deleting a directory. It uses URL values for input."""
-    
-    

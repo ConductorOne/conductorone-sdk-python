@@ -2,10 +2,10 @@
 
 from __future__ import annotations
 import httpx
-from sdk.models.shared import validatepolicycelresponse as shared_validatepolicycelresponse
+from sdk.models.shared import editorvalidateresponse as shared_editorvalidateresponse
 from sdk.types import BaseModel
-from typing import Optional, TypedDict
-from typing_extensions import NotRequired
+from typing import Optional
+from typing_extensions import NotRequired, TypedDict
 
 
 class C1APIPolicyV1PolicyValidateValidateCELResponseTypedDict(TypedDict):
@@ -15,17 +15,23 @@ class C1APIPolicyV1PolicyValidateValidateCELResponseTypedDict(TypedDict):
     r"""HTTP response status code for this operation"""
     raw_response: httpx.Response
     r"""Raw HTTP response; suitable for custom response parsing"""
-    validate_policy_cel_response: NotRequired[shared_validatepolicycelresponse.ValidatePolicyCELResponseTypedDict]
+    editor_validate_response: NotRequired[
+        shared_editorvalidateresponse.EditorValidateResponseTypedDict
+    ]
     r"""Successful response"""
-    
+
 
 class C1APIPolicyV1PolicyValidateValidateCELResponse(BaseModel):
     content_type: str
     r"""HTTP response content type for this operation"""
+
     status_code: int
     r"""HTTP response status code for this operation"""
+
     raw_response: httpx.Response
     r"""Raw HTTP response; suitable for custom response parsing"""
-    validate_policy_cel_response: Optional[shared_validatepolicycelresponse.ValidatePolicyCELResponse] = None
+
+    editor_validate_response: Optional[
+        shared_editorvalidateresponse.EditorValidateResponse
+    ] = None
     r"""Successful response"""
-    

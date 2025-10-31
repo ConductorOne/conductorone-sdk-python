@@ -3,13 +3,13 @@
 from __future__ import annotations
 import pydantic
 from sdk.types import BaseModel
-from typing import Optional, TypedDict
-from typing_extensions import Annotated, NotRequired
+from typing import Optional
+from typing_extensions import Annotated, NotRequired, TypedDict
 
 
 class WebhookInputTypedDict(TypedDict):
     r"""The Webhook message."""
-    
+
     description: NotRequired[str]
     r"""The description field."""
     display_name: NotRequired[str]
@@ -18,17 +18,19 @@ class WebhookInputTypedDict(TypedDict):
     r"""The id field."""
     url: NotRequired[str]
     r"""The url field."""
-    
+
 
 class WebhookInput(BaseModel):
     r"""The Webhook message."""
-    
+
     description: Optional[str] = None
     r"""The description field."""
+
     display_name: Annotated[Optional[str], pydantic.Field(alias="displayName")] = None
     r"""The displayName field."""
+
     id: Optional[str] = None
     r"""The id field."""
+
     url: Optional[str] = None
     r"""The url field."""
-    

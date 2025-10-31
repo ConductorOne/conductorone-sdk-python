@@ -2,15 +2,12 @@
 
 from __future__ import annotations
 from sdk.types import BaseModel
-from typing import TypedDict
+from typing_extensions import TypedDict
 
 
 class ConnectorServiceRevokeCredentialResponseTypedDict(TypedDict):
     r"""Empty response body. Status code indicates success."""
-    
-    
+
 
 class ConnectorServiceRevokeCredentialResponse(BaseModel):
     r"""Empty response body. Status code indicates success."""
-    
-    

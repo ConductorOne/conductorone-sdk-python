@@ -2,10 +2,12 @@
 
 from __future__ import annotations
 import httpx
-from sdk.models.shared import searchattributevaluesresponse as shared_searchattributevaluesresponse
+from sdk.models.shared import (
+    searchattributevaluesresponse as shared_searchattributevaluesresponse,
+)
 from sdk.types import BaseModel
-from typing import Optional, TypedDict
-from typing_extensions import NotRequired
+from typing import Optional
+from typing_extensions import NotRequired, TypedDict
 
 
 class C1APIAttributeV1AttributeSearchSearchAttributeValuesResponseTypedDict(TypedDict):
@@ -15,17 +17,23 @@ class C1APIAttributeV1AttributeSearchSearchAttributeValuesResponseTypedDict(Type
     r"""HTTP response status code for this operation"""
     raw_response: httpx.Response
     r"""Raw HTTP response; suitable for custom response parsing"""
-    search_attribute_values_response: NotRequired[shared_searchattributevaluesresponse.SearchAttributeValuesResponseTypedDict]
+    search_attribute_values_response: NotRequired[
+        shared_searchattributevaluesresponse.SearchAttributeValuesResponseTypedDict
+    ]
     r"""SearchAttributeValuesResponse is the response for searching AttributeValues."""
-    
+
 
 class C1APIAttributeV1AttributeSearchSearchAttributeValuesResponse(BaseModel):
     content_type: str
     r"""HTTP response content type for this operation"""
+
     status_code: int
     r"""HTTP response status code for this operation"""
+
     raw_response: httpx.Response
     r"""Raw HTTP response; suitable for custom response parsing"""
-    search_attribute_values_response: Optional[shared_searchattributevaluesresponse.SearchAttributeValuesResponse] = None
+
+    search_attribute_values_response: Optional[
+        shared_searchattributevaluesresponse.SearchAttributeValuesResponse
+    ] = None
     r"""SearchAttributeValuesResponse is the response for searching AttributeValues."""
-    

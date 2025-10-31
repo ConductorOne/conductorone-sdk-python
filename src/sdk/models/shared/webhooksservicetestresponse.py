@@ -4,20 +4,21 @@ from __future__ import annotations
 from .webhookinstance import WebhookInstance, WebhookInstanceTypedDict
 import pydantic
 from sdk.types import BaseModel
-from typing import Optional, TypedDict
-from typing_extensions import Annotated, NotRequired
+from typing import Optional
+from typing_extensions import Annotated, NotRequired, TypedDict
 
 
 class WebhooksServiceTestResponseTypedDict(TypedDict):
     r"""The WebhooksServiceTestResponse message."""
-    
+
     webhook_instance: NotRequired[WebhookInstanceTypedDict]
     r"""The WebhookInstance message."""
-    
+
 
 class WebhooksServiceTestResponse(BaseModel):
     r"""The WebhooksServiceTestResponse message."""
-    
-    webhook_instance: Annotated[Optional[WebhookInstance], pydantic.Field(alias="webhook")] = None
+
+    webhook_instance: Annotated[
+        Optional[WebhookInstance], pydantic.Field(alias="webhook")
+    ] = None
     r"""The WebhookInstance message."""
-    

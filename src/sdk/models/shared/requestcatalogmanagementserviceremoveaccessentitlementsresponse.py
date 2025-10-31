@@ -2,15 +2,14 @@
 
 from __future__ import annotations
 from sdk.types import BaseModel
-from typing import TypedDict
+from typing_extensions import TypedDict
 
 
-class RequestCatalogManagementServiceRemoveAccessEntitlementsResponseTypedDict(TypedDict):
+class RequestCatalogManagementServiceRemoveAccessEntitlementsResponseTypedDict(
+    TypedDict
+):
     r"""Empty response with a status code indicating success."""
-    
-    
+
 
 class RequestCatalogManagementServiceRemoveAccessEntitlementsResponse(BaseModel):
     r"""Empty response with a status code indicating success."""
-    
-    

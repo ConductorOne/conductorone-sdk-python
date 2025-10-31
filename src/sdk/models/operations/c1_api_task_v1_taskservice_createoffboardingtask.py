@@ -2,10 +2,12 @@
 
 from __future__ import annotations
 import httpx
-from sdk.models.shared import taskservicecreateoffboardingresponse as shared_taskservicecreateoffboardingresponse
+from sdk.models.shared import (
+    taskservicecreateoffboardingresponse as shared_taskservicecreateoffboardingresponse,
+)
 from sdk.types import BaseModel
-from typing import Optional, TypedDict
-from typing_extensions import NotRequired
+from typing import Optional
+from typing_extensions import NotRequired, TypedDict
 
 
 class C1APITaskV1TaskServiceCreateOffboardingTaskResponseTypedDict(TypedDict):
@@ -15,17 +17,23 @@ class C1APITaskV1TaskServiceCreateOffboardingTaskResponseTypedDict(TypedDict):
     r"""HTTP response status code for this operation"""
     raw_response: httpx.Response
     r"""Raw HTTP response; suitable for custom response parsing"""
-    task_service_create_offboarding_response: NotRequired[shared_taskservicecreateoffboardingresponse.TaskServiceCreateOffboardingResponseTypedDict]
+    task_service_create_offboarding_response: NotRequired[
+        shared_taskservicecreateoffboardingresponse.TaskServiceCreateOffboardingResponseTypedDict
+    ]
     r"""Successful response"""
-    
+
 
 class C1APITaskV1TaskServiceCreateOffboardingTaskResponse(BaseModel):
     content_type: str
     r"""HTTP response content type for this operation"""
+
     status_code: int
     r"""HTTP response status code for this operation"""
+
     raw_response: httpx.Response
     r"""Raw HTTP response; suitable for custom response parsing"""
-    task_service_create_offboarding_response: Optional[shared_taskservicecreateoffboardingresponse.TaskServiceCreateOffboardingResponse] = None
+
+    task_service_create_offboarding_response: Optional[
+        shared_taskservicecreateoffboardingresponse.TaskServiceCreateOffboardingResponse
+    ] = None
     r"""Successful response"""
-    

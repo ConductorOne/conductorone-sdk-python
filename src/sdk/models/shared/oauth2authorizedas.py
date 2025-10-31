@@ -4,22 +4,24 @@ from __future__ import annotations
 from datetime import datetime
 import pydantic
 from sdk.types import BaseModel
-from typing import Optional, TypedDict
-from typing_extensions import Annotated, NotRequired
+from typing import Optional
+from typing_extensions import Annotated, NotRequired, TypedDict
 
 
 class OAuth2AuthorizedAsTypedDict(TypedDict):
     r"""OAuth2AuthorizedAs tracks the user that OAuthed with the connector."""
-    
+
     auth_email: NotRequired[str]
     r"""authEmail is the email of the user that authorized the connector using OAuth."""
     authorized_at: NotRequired[datetime]
-    
+
 
 class OAuth2AuthorizedAs(BaseModel):
     r"""OAuth2AuthorizedAs tracks the user that OAuthed with the connector."""
-    
+
     auth_email: Annotated[Optional[str], pydantic.Field(alias="authEmail")] = None
     r"""authEmail is the email of the user that authorized the connector using OAuth."""
-    authorized_at: Annotated[Optional[datetime], pydantic.Field(alias="authorizedAt")] = None
-    
+
+    authorized_at: Annotated[
+        Optional[datetime], pydantic.Field(alias="authorizedAt")
+    ] = None

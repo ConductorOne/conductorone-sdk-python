@@ -2,20 +2,19 @@
 
 from __future__ import annotations
 from sdk.types import BaseModel
-from typing import Optional, TypedDict
-from typing_extensions import NotRequired
+from typing import Optional
+from typing_extensions import NotRequired, TypedDict
 
 
 class PolicyRefTypedDict(TypedDict):
     r"""The PolicyRef message."""
-    
+
     id: NotRequired[str]
     r"""The id field."""
-    
+
 
 class PolicyRef(BaseModel):
     r"""The PolicyRef message."""
-    
+
     id: Optional[str] = None
     r"""The id field."""
-    

@@ -2,20 +2,24 @@
 
 from __future__ import annotations
 import httpx
-from sdk.models.shared import getattributevalueresponse as shared_getattributevalueresponse
+from sdk.models.shared import (
+    getattributevalueresponse as shared_getattributevalueresponse,
+)
 from sdk.types import BaseModel
 from sdk.utils import FieldMetadata, PathParamMetadata
-from typing import Optional, TypedDict
-from typing_extensions import Annotated, NotRequired
+from typing import Optional
+from typing_extensions import Annotated, NotRequired, TypedDict
 
 
 class C1APIAttributeV1AttributesGetAttributeValueRequestTypedDict(TypedDict):
     id: str
-    
+
 
 class C1APIAttributeV1AttributesGetAttributeValueRequest(BaseModel):
-    id: Annotated[str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))]
-    
+    id: Annotated[
+        str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))
+    ]
+
 
 class C1APIAttributeV1AttributesGetAttributeValueResponseTypedDict(TypedDict):
     content_type: str
@@ -24,17 +28,23 @@ class C1APIAttributeV1AttributesGetAttributeValueResponseTypedDict(TypedDict):
     r"""HTTP response status code for this operation"""
     raw_response: httpx.Response
     r"""Raw HTTP response; suitable for custom response parsing"""
-    get_attribute_value_response: NotRequired[shared_getattributevalueresponse.GetAttributeValueResponseTypedDict]
+    get_attribute_value_response: NotRequired[
+        shared_getattributevalueresponse.GetAttributeValueResponseTypedDict
+    ]
     r"""GetAttributeValueResponse is the response for getting an attribute value by id."""
-    
+
 
 class C1APIAttributeV1AttributesGetAttributeValueResponse(BaseModel):
     content_type: str
     r"""HTTP response content type for this operation"""
+
     status_code: int
     r"""HTTP response status code for this operation"""
+
     raw_response: httpx.Response
     r"""Raw HTTP response; suitable for custom response parsing"""
-    get_attribute_value_response: Optional[shared_getattributevalueresponse.GetAttributeValueResponse] = None
+
+    get_attribute_value_response: Optional[
+        shared_getattributevalueresponse.GetAttributeValueResponse
+    ] = None
     r"""GetAttributeValueResponse is the response for getting an attribute value by id."""
-    
