@@ -8,9 +8,10 @@ from .rule import Rule, RuleTypedDict
 from datetime import datetime
 from enum import Enum
 import pydantic
-from pydantic import model_serializer
+from pydantic import field_serializer, model_serializer
 from pydantic.functional_validators import PlainValidator
 from sdk import utils
+from sdk.models import shared
 from sdk.types import BaseModel, Nullable, OptionalNullable, UNSET, UNSET_SENTINEL
 from sdk.utils import validate_open_enum
 from typing import Dict, List, Optional
@@ -106,6 +107,15 @@ class Policy(BaseModel):
     r"""Whether this policy is a builtin system policy. Builtin system policies cannot be edited."""
 
     updated_at: Annotated[Optional[datetime], pydantic.Field(alias="updatedAt")] = None
+
+    @field_serializer("policy_type")
+    def serialize_policy_type(self, value):
+        if isinstance(value, str):
+            try:
+                return shared.PolicyPolicyType(value)
+            except ValueError:
+                return value
+        return value
 
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
@@ -208,6 +218,15 @@ class PolicyInput(BaseModel):
 
     rules: OptionalNullable[List[Rule]] = UNSET
     r"""The rules field."""
+
+    @field_serializer("policy_type")
+    def serialize_policy_type(self, value):
+        if isinstance(value, str):
+            try:
+                return shared.PolicyPolicyType(value)
+            except ValueError:
+                return value
+        return value
 
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):

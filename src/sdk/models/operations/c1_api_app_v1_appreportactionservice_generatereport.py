@@ -13,23 +13,19 @@ from typing_extensions import Annotated, NotRequired, TypedDict
 
 
 class C1APIAppV1AppReportActionServiceGenerateReportRequestTypedDict(TypedDict):
+    app_actions_service_generate_report_request: shared_appactionsservicegeneratereportrequest.AppActionsServiceGenerateReportRequestTypedDict
     app_id: str
-    app_actions_service_generate_report_request: NotRequired[
-        shared_appactionsservicegeneratereportrequest.AppActionsServiceGenerateReportRequestTypedDict
-    ]
 
 
 class C1APIAppV1AppReportActionServiceGenerateReportRequest(BaseModel):
+    app_actions_service_generate_report_request: Annotated[
+        shared_appactionsservicegeneratereportrequest.AppActionsServiceGenerateReportRequest,
+        FieldMetadata(request=RequestMetadata(media_type="application/json")),
+    ]
+
     app_id: Annotated[
         str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))
     ]
-
-    app_actions_service_generate_report_request: Annotated[
-        Optional[
-            shared_appactionsservicegeneratereportrequest.AppActionsServiceGenerateReportRequest
-        ],
-        FieldMetadata(request=RequestMetadata(media_type="application/json")),
-    ] = None
 
 
 class C1APIAppV1AppReportActionServiceGenerateReportResponseTypedDict(TypedDict):

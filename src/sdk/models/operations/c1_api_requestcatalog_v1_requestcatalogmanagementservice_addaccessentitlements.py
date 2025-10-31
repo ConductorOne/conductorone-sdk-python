@@ -15,25 +15,21 @@ from typing_extensions import Annotated, NotRequired, TypedDict
 class C1APIRequestcatalogV1RequestCatalogManagementServiceAddAccessEntitlementsRequestTypedDict(
     TypedDict
 ):
+    request_catalog_management_service_add_access_entitlements_request: shared_requestcatalogmanagementserviceaddaccessentitlementsrequest.RequestCatalogManagementServiceAddAccessEntitlementsRequestTypedDict
     catalog_id: str
-    request_catalog_management_service_add_access_entitlements_request: NotRequired[
-        shared_requestcatalogmanagementserviceaddaccessentitlementsrequest.RequestCatalogManagementServiceAddAccessEntitlementsRequestTypedDict
-    ]
 
 
 class C1APIRequestcatalogV1RequestCatalogManagementServiceAddAccessEntitlementsRequest(
     BaseModel
 ):
+    request_catalog_management_service_add_access_entitlements_request: Annotated[
+        shared_requestcatalogmanagementserviceaddaccessentitlementsrequest.RequestCatalogManagementServiceAddAccessEntitlementsRequest,
+        FieldMetadata(request=RequestMetadata(media_type="application/json")),
+    ]
+
     catalog_id: Annotated[
         str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))
     ]
-
-    request_catalog_management_service_add_access_entitlements_request: Annotated[
-        Optional[
-            shared_requestcatalogmanagementserviceaddaccessentitlementsrequest.RequestCatalogManagementServiceAddAccessEntitlementsRequest
-        ],
-        FieldMetadata(request=RequestMetadata(media_type="application/json")),
-    ] = None
 
 
 class C1APIRequestcatalogV1RequestCatalogManagementServiceAddAccessEntitlementsResponseTypedDict(

@@ -13,14 +13,19 @@ from typing_extensions import Annotated, NotRequired, TypedDict
 
 
 class C1APIAppV1AppUserServiceUpdateRequestTypedDict(TypedDict):
+    app_user_service_update_request: (
+        shared_appuserserviceupdaterequest.AppUserServiceUpdateRequestTypedDict
+    )
     app_user_app_id: str
     app_user_id: str
-    app_user_service_update_request: NotRequired[
-        shared_appuserserviceupdaterequest.AppUserServiceUpdateRequestTypedDict
-    ]
 
 
 class C1APIAppV1AppUserServiceUpdateRequest(BaseModel):
+    app_user_service_update_request: Annotated[
+        shared_appuserserviceupdaterequest.AppUserServiceUpdateRequest,
+        FieldMetadata(request=RequestMetadata(media_type="application/json")),
+    ]
+
     app_user_app_id: Annotated[
         str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))
     ]
@@ -28,11 +33,6 @@ class C1APIAppV1AppUserServiceUpdateRequest(BaseModel):
     app_user_id: Annotated[
         str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))
     ]
-
-    app_user_service_update_request: Annotated[
-        Optional[shared_appuserserviceupdaterequest.AppUserServiceUpdateRequest],
-        FieldMetadata(request=RequestMetadata(media_type="application/json")),
-    ] = None
 
 
 class C1APIAppV1AppUserServiceUpdateResponseTypedDict(TypedDict):

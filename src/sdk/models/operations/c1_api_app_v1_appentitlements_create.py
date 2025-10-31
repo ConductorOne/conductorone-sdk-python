@@ -13,21 +13,21 @@ from typing_extensions import Annotated, NotRequired, TypedDict
 
 
 class C1APIAppV1AppEntitlementsCreateRequestTypedDict(TypedDict):
-    app_id: str
-    create_app_entitlement_request: NotRequired[
+    create_app_entitlement_request: (
         shared_createappentitlementrequest.CreateAppEntitlementRequestTypedDict
-    ]
+    )
+    app_id: str
 
 
 class C1APIAppV1AppEntitlementsCreateRequest(BaseModel):
+    create_app_entitlement_request: Annotated[
+        shared_createappentitlementrequest.CreateAppEntitlementRequest,
+        FieldMetadata(request=RequestMetadata(media_type="application/json")),
+    ]
+
     app_id: Annotated[
         str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))
     ]
-
-    create_app_entitlement_request: Annotated[
-        Optional[shared_createappentitlementrequest.CreateAppEntitlementRequest],
-        FieldMetadata(request=RequestMetadata(media_type="application/json")),
-    ] = None
 
 
 class C1APIAppV1AppEntitlementsCreateResponseTypedDict(TypedDict):

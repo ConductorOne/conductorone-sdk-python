@@ -33,7 +33,7 @@ with SDK(
     ),
 ) as s_client:
 
-    res = s_client.step_up_provider.create()
+    res = s_client.step_up_provider.create(request={})
 
     assert res.create_step_up_provider_response is not None
 
@@ -79,6 +79,7 @@ with SDK(
 ) as s_client:
 
     res = s_client.step_up_provider.delete(request={
+        "delete_step_up_provider_request": {},
         "id": "<id>",
     })
 
@@ -216,7 +217,7 @@ with SDK(
     ),
 ) as s_client:
 
-    res = s_client.step_up_provider.search()
+    res = s_client.step_up_provider.search(request={})
 
     assert res.search_step_up_providers_response is not None
 
@@ -262,6 +263,7 @@ with SDK(
 ) as s_client:
 
     res = s_client.step_up_provider.test(request={
+        "test_step_up_provider_request": {},
         "id": "<id>",
     })
 
@@ -309,6 +311,7 @@ with SDK(
 ) as s_client:
 
     res = s_client.step_up_provider.update(request={
+        "update_step_up_provider_request": {},
         "id": "<id>",
     })
 
@@ -356,6 +359,7 @@ with SDK(
 ) as s_client:
 
     res = s_client.step_up_provider.update_secret(request={
+        "update_step_up_provider_secret_request": {},
         "id": "<id>",
     })
 

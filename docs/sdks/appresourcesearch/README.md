@@ -27,7 +27,7 @@ with SDK(
     ),
 ) as s_client:
 
-    res = s_client.app_resource_search.search_app_resource_types()
+    res = s_client.app_resource_search.search_app_resource_types(request={})
 
     while res is not None:
         # Handle items
@@ -72,7 +72,7 @@ with SDK(
     ),
 ) as s_client:
 
-    res = s_client.app_resource_search.search_app_resources()
+    res = s_client.app_resource_search.search_app_resources(request={})
 
     while res is not None:
         # Handle items

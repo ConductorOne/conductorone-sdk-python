@@ -121,6 +121,7 @@ with SDK(
 ) as s_client:
 
     res = s_client.roles.update(request={
+        "update_role_request": {},
         "role_id": "<id>",
     })
 

@@ -13,21 +13,21 @@ from typing_extensions import Annotated, NotRequired, TypedDict
 
 
 class C1APIDirectoryV1DirectoryServiceDeleteRequestTypedDict(TypedDict):
-    app_id: str
-    directory_service_delete_request: NotRequired[
+    directory_service_delete_request: (
         shared_directoryservicedeleterequest.DirectoryServiceDeleteRequestTypedDict
-    ]
+    )
+    app_id: str
 
 
 class C1APIDirectoryV1DirectoryServiceDeleteRequest(BaseModel):
+    directory_service_delete_request: Annotated[
+        shared_directoryservicedeleterequest.DirectoryServiceDeleteRequest,
+        FieldMetadata(request=RequestMetadata(media_type="application/json")),
+    ]
+
     app_id: Annotated[
         str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))
     ]
-
-    directory_service_delete_request: Annotated[
-        Optional[shared_directoryservicedeleterequest.DirectoryServiceDeleteRequest],
-        FieldMetadata(request=RequestMetadata(media_type="application/json")),
-    ] = None
 
 
 class C1APIDirectoryV1DirectoryServiceDeleteResponseTypedDict(TypedDict):

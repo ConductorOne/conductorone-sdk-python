@@ -39,6 +39,9 @@ with SDK(
 ) as s_client:
 
     res = s_client.task_actions.approve(request={
+        "task_actions_service_approve_request": {
+            "policy_step_id": "<id>",
+        },
         "task_id": "<id>",
     })
 
@@ -86,6 +89,10 @@ with SDK(
 ) as s_client:
 
     res = s_client.task_actions.approve_with_step_up(request={
+        "task_actions_service_approve_with_step_up_request": {
+            "policy_step_id": "<id>",
+            "step_up_transaction_id": "<id>",
+        },
         "task_id": "<id>",
     })
 
@@ -133,6 +140,7 @@ with SDK(
 ) as s_client:
 
     res = s_client.task_actions.close(request={
+        "task_actions_service_close_request": {},
         "task_id": "<id>",
     })
 
@@ -180,6 +188,7 @@ with SDK(
 ) as s_client:
 
     res = s_client.task_actions.comment(request={
+        "task_actions_service_comment_request": {},
         "task_id": "<id>",
     })
 
@@ -227,6 +236,7 @@ with SDK(
 ) as s_client:
 
     res = s_client.task_actions.deny(request={
+        "task_actions_service_deny_request": {},
         "task_id": "<id>",
     })
 
@@ -274,6 +284,7 @@ with SDK(
 ) as s_client:
 
     res = s_client.task_actions.escalate_to_emergency_access(request={
+        "task_actions_service_escalate_to_emergency_access_request": {},
         "task_id": "<id>",
     })
 
@@ -321,6 +332,7 @@ with SDK(
 ) as s_client:
 
     res = s_client.task_actions.hard_reset(request={
+        "task_actions_service_hard_reset_request": {},
         "task_id": "<id>",
     })
 
@@ -368,6 +380,7 @@ with SDK(
 ) as s_client:
 
     res = s_client.task_actions.process_now(request={
+        "task_actions_service_process_now_request": {},
         "task_id": "<id>",
     })
 
@@ -415,6 +428,7 @@ with SDK(
 ) as s_client:
 
     res = s_client.task_actions.reassign(request={
+        "task_actions_service_reassign_request": {},
         "task_id": "<id>",
     })
 
@@ -462,6 +476,7 @@ with SDK(
 ) as s_client:
 
     res = s_client.task_actions.restart(request={
+        "task_actions_service_restart_request": {},
         "task_id": "<id>",
     })
 
@@ -509,6 +524,9 @@ with SDK(
 ) as s_client:
 
     res = s_client.task_actions.skip_step(request={
+        "task_actions_service_skip_step_request": {
+            "policy_step_id": "<id>",
+        },
         "task_id": "<id>",
     })
 
@@ -556,6 +574,9 @@ with SDK(
 ) as s_client:
 
     res = s_client.task_actions.update_grant_duration(request={
+        "task_actions_service_update_grant_duration_request": {
+            "duration": "<value>",
+        },
         "task_id": "<id>",
     })
 
@@ -603,6 +624,7 @@ with SDK(
 ) as s_client:
 
     res = s_client.task_actions.update_request_data(request={
+        "task_actions_service_update_request_data_request": {},
         "task_id": "<id>",
     })
 

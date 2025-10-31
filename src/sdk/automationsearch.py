@@ -13,12 +13,10 @@ class AutomationSearch(BaseSDK):
     def search_automation_template_versions(
         self,
         *,
-        request: Optional[
-            Union[
-                shared.SearchAutomationTemplateVersionsRequest,
-                shared.SearchAutomationTemplateVersionsRequestTypedDict,
-            ]
-        ] = None,
+        request: Union[
+            shared.SearchAutomationTemplateVersionsRequest,
+            shared.SearchAutomationTemplateVersionsRequestTypedDict,
+        ],
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -46,11 +44,9 @@ class AutomationSearch(BaseSDK):
 
         if not isinstance(request, BaseModel):
             request = utils.unmarshal(
-                request, Optional[shared.SearchAutomationTemplateVersionsRequest]
+                request, shared.SearchAutomationTemplateVersionsRequest
             )
-        request = cast(
-            Optional[shared.SearchAutomationTemplateVersionsRequest], request
-        )
+        request = cast(shared.SearchAutomationTemplateVersionsRequest, request)
 
         req = self._build_request(
             method="POST",
@@ -58,7 +54,7 @@ class AutomationSearch(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=False,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -68,9 +64,9 @@ class AutomationSearch(BaseSDK):
             get_serialized_body=lambda: utils.serialize_request_body(
                 request,
                 False,
-                True,
+                False,
                 "json",
-                Optional[shared.SearchAutomationTemplateVersionsRequest],
+                shared.SearchAutomationTemplateVersionsRequest,
             ),
             timeout_ms=timeout_ms,
         )
@@ -117,12 +113,10 @@ class AutomationSearch(BaseSDK):
     async def search_automation_template_versions_async(
         self,
         *,
-        request: Optional[
-            Union[
-                shared.SearchAutomationTemplateVersionsRequest,
-                shared.SearchAutomationTemplateVersionsRequestTypedDict,
-            ]
-        ] = None,
+        request: Union[
+            shared.SearchAutomationTemplateVersionsRequest,
+            shared.SearchAutomationTemplateVersionsRequestTypedDict,
+        ],
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -150,11 +144,9 @@ class AutomationSearch(BaseSDK):
 
         if not isinstance(request, BaseModel):
             request = utils.unmarshal(
-                request, Optional[shared.SearchAutomationTemplateVersionsRequest]
+                request, shared.SearchAutomationTemplateVersionsRequest
             )
-        request = cast(
-            Optional[shared.SearchAutomationTemplateVersionsRequest], request
-        )
+        request = cast(shared.SearchAutomationTemplateVersionsRequest, request)
 
         req = self._build_request_async(
             method="POST",
@@ -162,7 +154,7 @@ class AutomationSearch(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=False,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -172,9 +164,9 @@ class AutomationSearch(BaseSDK):
             get_serialized_body=lambda: utils.serialize_request_body(
                 request,
                 False,
-                True,
+                False,
                 "json",
-                Optional[shared.SearchAutomationTemplateVersionsRequest],
+                shared.SearchAutomationTemplateVersionsRequest,
             ),
             timeout_ms=timeout_ms,
         )
@@ -221,12 +213,9 @@ class AutomationSearch(BaseSDK):
     def search_automations(
         self,
         *,
-        request: Optional[
-            Union[
-                shared.SearchAutomationsRequest,
-                shared.SearchAutomationsRequestTypedDict,
-            ]
-        ] = None,
+        request: Union[
+            shared.SearchAutomationsRequest, shared.SearchAutomationsRequestTypedDict
+        ],
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -253,10 +242,8 @@ class AutomationSearch(BaseSDK):
             base_url = self._get_url(base_url, url_variables)
 
         if not isinstance(request, BaseModel):
-            request = utils.unmarshal(
-                request, Optional[shared.SearchAutomationsRequest]
-            )
-        request = cast(Optional[shared.SearchAutomationsRequest], request)
+            request = utils.unmarshal(request, shared.SearchAutomationsRequest)
+        request = cast(shared.SearchAutomationsRequest, request)
 
         req = self._build_request(
             method="POST",
@@ -264,7 +251,7 @@ class AutomationSearch(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=False,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -272,7 +259,7 @@ class AutomationSearch(BaseSDK):
             http_headers=http_headers,
             security=self.sdk_configuration.security,
             get_serialized_body=lambda: utils.serialize_request_body(
-                request, False, True, "json", Optional[shared.SearchAutomationsRequest]
+                request, False, False, "json", shared.SearchAutomationsRequest
             ),
             timeout_ms=timeout_ms,
         )
@@ -319,12 +306,9 @@ class AutomationSearch(BaseSDK):
     async def search_automations_async(
         self,
         *,
-        request: Optional[
-            Union[
-                shared.SearchAutomationsRequest,
-                shared.SearchAutomationsRequestTypedDict,
-            ]
-        ] = None,
+        request: Union[
+            shared.SearchAutomationsRequest, shared.SearchAutomationsRequestTypedDict
+        ],
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -351,10 +335,8 @@ class AutomationSearch(BaseSDK):
             base_url = self._get_url(base_url, url_variables)
 
         if not isinstance(request, BaseModel):
-            request = utils.unmarshal(
-                request, Optional[shared.SearchAutomationsRequest]
-            )
-        request = cast(Optional[shared.SearchAutomationsRequest], request)
+            request = utils.unmarshal(request, shared.SearchAutomationsRequest)
+        request = cast(shared.SearchAutomationsRequest, request)
 
         req = self._build_request_async(
             method="POST",
@@ -362,7 +344,7 @@ class AutomationSearch(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=False,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -370,7 +352,7 @@ class AutomationSearch(BaseSDK):
             http_headers=http_headers,
             security=self.sdk_configuration.security,
             get_serialized_body=lambda: utils.serialize_request_body(
-                request, False, True, "json", Optional[shared.SearchAutomationsRequest]
+                request, False, False, "json", shared.SearchAutomationsRequest
             ),
             timeout_ms=timeout_ms,
         )

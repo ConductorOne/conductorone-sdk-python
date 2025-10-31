@@ -15,23 +15,19 @@ from typing_extensions import Annotated, NotRequired, TypedDict
 class C1APIRequestcatalogV1RequestCatalogManagementServiceUpdateRequestTypedDict(
     TypedDict
 ):
+    request_catalog_management_service_update_request: shared_requestcatalogmanagementserviceupdaterequest.RequestCatalogManagementServiceUpdateRequestTypedDict
     id: str
-    request_catalog_management_service_update_request: NotRequired[
-        shared_requestcatalogmanagementserviceupdaterequest.RequestCatalogManagementServiceUpdateRequestTypedDict
-    ]
 
 
 class C1APIRequestcatalogV1RequestCatalogManagementServiceUpdateRequest(BaseModel):
+    request_catalog_management_service_update_request: Annotated[
+        shared_requestcatalogmanagementserviceupdaterequest.RequestCatalogManagementServiceUpdateRequest,
+        FieldMetadata(request=RequestMetadata(media_type="application/json")),
+    ]
+
     id: Annotated[
         str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))
     ]
-
-    request_catalog_management_service_update_request: Annotated[
-        Optional[
-            shared_requestcatalogmanagementserviceupdaterequest.RequestCatalogManagementServiceUpdateRequest
-        ],
-        FieldMetadata(request=RequestMetadata(media_type="application/json")),
-    ] = None
 
 
 class C1APIRequestcatalogV1RequestCatalogManagementServiceUpdateResponseTypedDict(

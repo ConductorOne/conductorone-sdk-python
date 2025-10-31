@@ -26,7 +26,7 @@ with SDK(
     ),
 ) as s_client:
 
-    res = s_client.attribute_search.search_attribute_values()
+    res = s_client.attribute_search.search_attribute_values(request={})
 
     assert res.search_attribute_values_response is not None
 

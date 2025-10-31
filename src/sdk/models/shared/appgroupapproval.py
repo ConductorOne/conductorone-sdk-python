@@ -29,6 +29,8 @@ class AppGroupApprovalTypedDict(TypedDict):
     r"""Configuration to specific which users to fallback to if fallback is enabled and the group is empty."""
     is_group_fallback_enabled: NotRequired[bool]
     r"""Configuration to enable fallback for group fallback."""
+    require_distinct_approvers: NotRequired[bool]
+    r"""Configuration to require distinct approvers across approval steps of a rule."""
 
 
 class AppGroupApproval(BaseModel):
@@ -64,6 +66,11 @@ class AppGroupApproval(BaseModel):
     ] = None
     r"""Configuration to enable fallback for group fallback."""
 
+    require_distinct_approvers: Annotated[
+        Optional[bool], pydantic.Field(alias="requireDistinctApprovers")
+    ] = None
+    r"""Configuration to require distinct approvers across approval steps of a rule."""
+
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
         optional_fields = [
@@ -74,6 +81,7 @@ class AppGroupApproval(BaseModel):
             "fallbackGroupIds",
             "fallbackUserIds",
             "isGroupFallbackEnabled",
+            "requireDistinctApprovers",
         ]
         nullable_fields = ["fallbackGroupIds", "fallbackUserIds"]
         null_default_fields = []

@@ -27,7 +27,7 @@ with SDK(
     ),
 ) as s_client:
 
-    res = s_client.automation_search.search_automation_template_versions()
+    res = s_client.automation_search.search_automation_template_versions(request={})
 
     assert res.search_automation_template_versions_response is not None
 
@@ -72,7 +72,7 @@ with SDK(
     ),
 ) as s_client:
 
-    res = s_client.automation_search.search_automations()
+    res = s_client.automation_search.search_automations(request={})
 
     assert res.search_automations_response is not None
 

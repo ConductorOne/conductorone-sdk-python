@@ -13,23 +13,19 @@ from typing_extensions import Annotated, NotRequired, TypedDict
 
 
 class C1APITaskV1TaskActionsServiceHardResetRequestTypedDict(TypedDict):
+    task_actions_service_hard_reset_request: shared_taskactionsservicehardresetrequest.TaskActionsServiceHardResetRequestTypedDict
     task_id: str
-    task_actions_service_hard_reset_request: NotRequired[
-        shared_taskactionsservicehardresetrequest.TaskActionsServiceHardResetRequestTypedDict
-    ]
 
 
 class C1APITaskV1TaskActionsServiceHardResetRequest(BaseModel):
+    task_actions_service_hard_reset_request: Annotated[
+        shared_taskactionsservicehardresetrequest.TaskActionsServiceHardResetRequest,
+        FieldMetadata(request=RequestMetadata(media_type="application/json")),
+    ]
+
     task_id: Annotated[
         str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))
     ]
-
-    task_actions_service_hard_reset_request: Annotated[
-        Optional[
-            shared_taskactionsservicehardresetrequest.TaskActionsServiceHardResetRequest
-        ],
-        FieldMetadata(request=RequestMetadata(media_type="application/json")),
-    ] = None
 
 
 class C1APITaskV1TaskActionsServiceHardResetResponseTypedDict(TypedDict):

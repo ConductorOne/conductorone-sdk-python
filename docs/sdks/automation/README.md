@@ -31,7 +31,7 @@ with SDK(
     ),
 ) as s_client:
 
-    res = s_client.automation.create_automation()
+    res = s_client.automation.create_automation(request={})
 
     assert res.create_automation_response is not None
 
@@ -77,6 +77,7 @@ with SDK(
 ) as s_client:
 
     res = s_client.automation.delete_automation(request={
+        "delete_automation_request": {},
         "id": "<id>",
     })
 
@@ -124,6 +125,7 @@ with SDK(
 ) as s_client:
 
     res = s_client.automation.execute_automation(request={
+        "execute_automation_request": {},
         "id": "<id>",
     })
 
@@ -262,6 +264,7 @@ with SDK(
 ) as s_client:
 
     res = s_client.automation.update_automation(request={
+        "update_automation_request": {},
         "id": "<id>",
     })
 

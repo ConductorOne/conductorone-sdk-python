@@ -7,8 +7,10 @@ from .requestcatalogexpandmask import (
 )
 from enum import Enum
 import pydantic
+from pydantic import field_serializer
 from pydantic.functional_validators import PlainValidator
 from sdk import utils
+from sdk.models import shared
 from sdk.types import BaseModel
 from sdk.utils import validate_open_enum
 from typing import Optional
@@ -150,3 +152,36 @@ class RequestCatalogManagementServiceCreateRequest(BaseModel):
         Optional[bool], pydantic.Field(alias="visibleToEveryone")
     ] = None
     r"""Whether or not the new catalog is visible to everyone by default."""
+
+    @field_serializer("enrollment_behavior")
+    def serialize_enrollment_behavior(self, value):
+        if isinstance(value, str):
+            try:
+                return shared.RequestCatalogManagementServiceCreateRequestEnrollmentBehavior(
+                    value
+                )
+            except ValueError:
+                return value
+        return value
+
+    @field_serializer("unenrollment_behavior")
+    def serialize_unenrollment_behavior(self, value):
+        if isinstance(value, str):
+            try:
+                return shared.RequestCatalogManagementServiceCreateRequestUnenrollmentBehavior(
+                    value
+                )
+            except ValueError:
+                return value
+        return value
+
+    @field_serializer("unenrollment_entitlement_behavior")
+    def serialize_unenrollment_entitlement_behavior(self, value):
+        if isinstance(value, str):
+            try:
+                return shared.RequestCatalogManagementServiceCreateRequestUnenrollmentEntitlementBehavior(
+                    value
+                )
+            except ValueError:
+                return value
+        return value

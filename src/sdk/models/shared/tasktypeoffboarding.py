@@ -4,8 +4,10 @@ from __future__ import annotations
 from datetime import datetime
 from enum import Enum
 import pydantic
+from pydantic import field_serializer
 from pydantic.functional_validators import PlainValidator
 from sdk import utils
+from sdk.models import shared
 from sdk.types import BaseModel
 from sdk.utils import validate_open_enum
 from typing import Optional
@@ -48,3 +50,12 @@ class TaskTypeOffboarding(BaseModel):
         None
     )
     r"""The subjectUserId field."""
+
+    @field_serializer("outcome")
+    def serialize_outcome(self, value):
+        if isinstance(value, str):
+            try:
+                return shared.TaskTypeOffboardingOutcome(value)
+            except ValueError:
+                return value
+        return value

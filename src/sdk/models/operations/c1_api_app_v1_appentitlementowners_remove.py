@@ -13,15 +13,18 @@ from typing_extensions import Annotated, NotRequired, TypedDict
 
 
 class C1APIAppV1AppEntitlementOwnersRemoveRequestTypedDict(TypedDict):
+    remove_app_entitlement_owner_request: shared_removeappentitlementownerrequest.RemoveAppEntitlementOwnerRequestTypedDict
     app_id: str
     entitlement_id: str
     user_id: str
-    remove_app_entitlement_owner_request: NotRequired[
-        shared_removeappentitlementownerrequest.RemoveAppEntitlementOwnerRequestTypedDict
-    ]
 
 
 class C1APIAppV1AppEntitlementOwnersRemoveRequest(BaseModel):
+    remove_app_entitlement_owner_request: Annotated[
+        shared_removeappentitlementownerrequest.RemoveAppEntitlementOwnerRequest,
+        FieldMetadata(request=RequestMetadata(media_type="application/json")),
+    ]
+
     app_id: Annotated[
         str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))
     ]
@@ -33,13 +36,6 @@ class C1APIAppV1AppEntitlementOwnersRemoveRequest(BaseModel):
     user_id: Annotated[
         str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))
     ]
-
-    remove_app_entitlement_owner_request: Annotated[
-        Optional[
-            shared_removeappentitlementownerrequest.RemoveAppEntitlementOwnerRequest
-        ],
-        FieldMetadata(request=RequestMetadata(media_type="application/json")),
-    ] = None
 
 
 class C1APIAppV1AppEntitlementOwnersRemoveResponseTypedDict(TypedDict):

@@ -30,7 +30,9 @@ with SDK(
     ),
 ) as s_client:
 
-    res = s_client.apps.create()
+    res = s_client.apps.create(request={
+        "display_name": "Ciara.Goyette89",
+    })
 
     assert res.create_app_response is not None
 
@@ -76,6 +78,7 @@ with SDK(
 ) as s_client:
 
     res = s_client.apps.delete(request={
+        "delete_app_request": {},
         "id": "<id>",
     })
 
@@ -215,6 +218,7 @@ with SDK(
 ) as s_client:
 
     res = s_client.apps.update(request={
+        "update_app_request": {},
         "id": "<id>",
     })
 

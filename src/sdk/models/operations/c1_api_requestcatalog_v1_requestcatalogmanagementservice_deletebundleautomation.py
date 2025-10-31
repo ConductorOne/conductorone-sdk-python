@@ -15,23 +15,23 @@ from typing_extensions import Annotated, NotRequired, TypedDict
 class C1APIRequestcatalogV1RequestCatalogManagementServiceDeleteBundleAutomationRequestTypedDict(
     TypedDict
 ):
-    request_catalog_id: str
-    delete_bundle_automation_request: NotRequired[
+    delete_bundle_automation_request: (
         shared_deletebundleautomationrequest.DeleteBundleAutomationRequestTypedDict
-    ]
+    )
+    request_catalog_id: str
 
 
 class C1APIRequestcatalogV1RequestCatalogManagementServiceDeleteBundleAutomationRequest(
     BaseModel
 ):
+    delete_bundle_automation_request: Annotated[
+        shared_deletebundleautomationrequest.DeleteBundleAutomationRequest,
+        FieldMetadata(request=RequestMetadata(media_type="application/json")),
+    ]
+
     request_catalog_id: Annotated[
         str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))
     ]
-
-    delete_bundle_automation_request: Annotated[
-        Optional[shared_deletebundleautomationrequest.DeleteBundleAutomationRequest],
-        FieldMetadata(request=RequestMetadata(media_type="application/json")),
-    ] = None
 
 
 class C1APIRequestcatalogV1RequestCatalogManagementServiceDeleteBundleAutomationResponseTypedDict(

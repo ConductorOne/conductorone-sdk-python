@@ -13,6 +13,8 @@ class UserApprovalTypedDict(TypedDict):
 
     allow_self_approval: NotRequired[bool]
     r"""Configuration to allow self approval of if the user is specified and also the target of the ticket."""
+    require_distinct_approvers: NotRequired[bool]
+    r"""Configuration to require distinct approvers across approval steps of a rule."""
     user_ids: NotRequired[Nullable[List[str]]]
     r"""Array of users configured for approval."""
 
@@ -25,6 +27,11 @@ class UserApproval(BaseModel):
     ] = None
     r"""Configuration to allow self approval of if the user is specified and also the target of the ticket."""
 
+    require_distinct_approvers: Annotated[
+        Optional[bool], pydantic.Field(alias="requireDistinctApprovers")
+    ] = None
+    r"""Configuration to require distinct approvers across approval steps of a rule."""
+
     user_ids: Annotated[
         OptionalNullable[List[str]], pydantic.Field(alias="userIds")
     ] = UNSET
@@ -32,7 +39,7 @@ class UserApproval(BaseModel):
 
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
-        optional_fields = ["allowSelfApproval", "userIds"]
+        optional_fields = ["allowSelfApproval", "requireDistinctApprovers", "userIds"]
         nullable_fields = ["userIds"]
         null_default_fields = []
 

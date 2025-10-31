@@ -15,15 +15,20 @@ from typing_extensions import Annotated, NotRequired, TypedDict
 class C1APIAppV1AppEntitlementUserBindingServiceUpdateGrantDurationRequestTypedDict(
     TypedDict
 ):
+    update_grant_duration_request: (
+        shared_updategrantdurationrequest.UpdateGrantDurationRequestTypedDict
+    )
     app_entitlement_id: str
     app_id: str
     app_user_id: str
-    update_grant_duration_request: NotRequired[
-        shared_updategrantdurationrequest.UpdateGrantDurationRequestTypedDict
-    ]
 
 
 class C1APIAppV1AppEntitlementUserBindingServiceUpdateGrantDurationRequest(BaseModel):
+    update_grant_duration_request: Annotated[
+        shared_updategrantdurationrequest.UpdateGrantDurationRequest,
+        FieldMetadata(request=RequestMetadata(media_type="application/json")),
+    ]
+
     app_entitlement_id: Annotated[
         str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))
     ]
@@ -35,11 +40,6 @@ class C1APIAppV1AppEntitlementUserBindingServiceUpdateGrantDurationRequest(BaseM
     app_user_id: Annotated[
         str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))
     ]
-
-    update_grant_duration_request: Annotated[
-        Optional[shared_updategrantdurationrequest.UpdateGrantDurationRequest],
-        FieldMetadata(request=RequestMetadata(media_type="application/json")),
-    ] = None
 
 
 class C1APIAppV1AppEntitlementUserBindingServiceUpdateGrantDurationResponseTypedDict(

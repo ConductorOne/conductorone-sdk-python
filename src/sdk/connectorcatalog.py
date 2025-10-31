@@ -13,12 +13,10 @@ class ConnectorCatalog(BaseSDK):
     def configuration_schema(
         self,
         *,
-        request: Optional[
-            Union[
-                shared.ConnectorCatalogServiceConfigurationSchemaRequest,
-                shared.ConnectorCatalogServiceConfigurationSchemaRequestTypedDict,
-            ]
-        ] = None,
+        request: Union[
+            shared.ConnectorCatalogServiceConfigurationSchemaRequest,
+            shared.ConnectorCatalogServiceConfigurationSchemaRequestTypedDict,
+        ],
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -46,11 +44,10 @@ class ConnectorCatalog(BaseSDK):
 
         if not isinstance(request, BaseModel):
             request = utils.unmarshal(
-                request,
-                Optional[shared.ConnectorCatalogServiceConfigurationSchemaRequest],
+                request, shared.ConnectorCatalogServiceConfigurationSchemaRequest
             )
         request = cast(
-            Optional[shared.ConnectorCatalogServiceConfigurationSchemaRequest], request
+            shared.ConnectorCatalogServiceConfigurationSchemaRequest, request
         )
 
         req = self._build_request(
@@ -59,7 +56,7 @@ class ConnectorCatalog(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=False,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -69,9 +66,9 @@ class ConnectorCatalog(BaseSDK):
             get_serialized_body=lambda: utils.serialize_request_body(
                 request,
                 False,
-                True,
+                False,
                 "json",
-                Optional[shared.ConnectorCatalogServiceConfigurationSchemaRequest],
+                shared.ConnectorCatalogServiceConfigurationSchemaRequest,
             ),
             timeout_ms=timeout_ms,
         )
@@ -119,12 +116,10 @@ class ConnectorCatalog(BaseSDK):
     async def configuration_schema_async(
         self,
         *,
-        request: Optional[
-            Union[
-                shared.ConnectorCatalogServiceConfigurationSchemaRequest,
-                shared.ConnectorCatalogServiceConfigurationSchemaRequestTypedDict,
-            ]
-        ] = None,
+        request: Union[
+            shared.ConnectorCatalogServiceConfigurationSchemaRequest,
+            shared.ConnectorCatalogServiceConfigurationSchemaRequestTypedDict,
+        ],
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -152,11 +147,10 @@ class ConnectorCatalog(BaseSDK):
 
         if not isinstance(request, BaseModel):
             request = utils.unmarshal(
-                request,
-                Optional[shared.ConnectorCatalogServiceConfigurationSchemaRequest],
+                request, shared.ConnectorCatalogServiceConfigurationSchemaRequest
             )
         request = cast(
-            Optional[shared.ConnectorCatalogServiceConfigurationSchemaRequest], request
+            shared.ConnectorCatalogServiceConfigurationSchemaRequest, request
         )
 
         req = self._build_request_async(
@@ -165,7 +159,7 @@ class ConnectorCatalog(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=False,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -175,9 +169,9 @@ class ConnectorCatalog(BaseSDK):
             get_serialized_body=lambda: utils.serialize_request_body(
                 request,
                 False,
-                True,
+                False,
                 "json",
-                Optional[shared.ConnectorCatalogServiceConfigurationSchemaRequest],
+                shared.ConnectorCatalogServiceConfigurationSchemaRequest,
             ),
             timeout_ms=timeout_ms,
         )

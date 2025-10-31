@@ -6,9 +6,10 @@ from .appuserstatus_input import AppUserStatusInput, AppUserStatusInputTypedDict
 from datetime import datetime
 from enum import Enum
 import pydantic
-from pydantic import model_serializer
+from pydantic import field_serializer, model_serializer
 from pydantic.functional_validators import PlainValidator
 from sdk import utils
+from sdk.models import shared
 from sdk.types import BaseModel, Nullable, OptionalNullable, UNSET, UNSET_SENTINEL
 from sdk.utils import validate_open_enum
 from typing import Any, Dict, List, Optional
@@ -113,6 +114,15 @@ class AppUser(BaseModel):
     usernames: OptionalNullable[List[str]] = UNSET
     r"""The usernames field of the application user."""
 
+    @field_serializer("app_user_type")
+    def serialize_app_user_type(self, value):
+        if isinstance(value, str):
+            try:
+                return shared.AppUserType(value)
+            except ValueError:
+                return value
+        return value
+
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
         optional_fields = [
@@ -183,3 +193,12 @@ class AppUserInput(BaseModel):
         pydantic.Field(alias="appUserType"),
     ] = None
     r"""The appplication user type. Type can be user, system or service."""
+
+    @field_serializer("app_user_type")
+    def serialize_app_user_type(self, value):
+        if isinstance(value, str):
+            try:
+                return shared.AppUserType(value)
+            except ValueError:
+                return value
+        return value

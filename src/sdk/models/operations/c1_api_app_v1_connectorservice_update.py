@@ -13,14 +13,19 @@ from typing_extensions import Annotated, NotRequired, TypedDict
 
 
 class C1APIAppV1ConnectorServiceUpdateRequestTypedDict(TypedDict):
+    connector_service_update_request: (
+        shared_connectorserviceupdaterequest.ConnectorServiceUpdateRequestTypedDict
+    )
     app_id: str
     id: str
-    connector_service_update_request: NotRequired[
-        shared_connectorserviceupdaterequest.ConnectorServiceUpdateRequestTypedDict
-    ]
 
 
 class C1APIAppV1ConnectorServiceUpdateRequest(BaseModel):
+    connector_service_update_request: Annotated[
+        shared_connectorserviceupdaterequest.ConnectorServiceUpdateRequest,
+        FieldMetadata(request=RequestMetadata(media_type="application/json")),
+    ]
+
     app_id: Annotated[
         str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))
     ]
@@ -28,11 +33,6 @@ class C1APIAppV1ConnectorServiceUpdateRequest(BaseModel):
     id: Annotated[
         str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))
     ]
-
-    connector_service_update_request: Annotated[
-        Optional[shared_connectorserviceupdaterequest.ConnectorServiceUpdateRequest],
-        FieldMetadata(request=RequestMetadata(media_type="application/json")),
-    ] = None
 
 
 class C1APIAppV1ConnectorServiceUpdateResponseTypedDict(TypedDict):

@@ -13,9 +13,7 @@ class Apps(BaseSDK):
     def create(
         self,
         *,
-        request: Optional[
-            Union[shared.CreateAppRequest, shared.CreateAppRequestTypedDict]
-        ] = None,
+        request: Union[shared.CreateAppRequest, shared.CreateAppRequestTypedDict],
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -42,8 +40,8 @@ class Apps(BaseSDK):
             base_url = self._get_url(base_url, url_variables)
 
         if not isinstance(request, BaseModel):
-            request = utils.unmarshal(request, Optional[shared.CreateAppRequest])
-        request = cast(Optional[shared.CreateAppRequest], request)
+            request = utils.unmarshal(request, shared.CreateAppRequest)
+        request = cast(shared.CreateAppRequest, request)
 
         req = self._build_request(
             method="POST",
@@ -51,7 +49,7 @@ class Apps(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=False,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -59,7 +57,7 @@ class Apps(BaseSDK):
             http_headers=http_headers,
             security=self.sdk_configuration.security,
             get_serialized_body=lambda: utils.serialize_request_body(
-                request, False, True, "json", Optional[shared.CreateAppRequest]
+                request, False, False, "json", shared.CreateAppRequest
             ),
             timeout_ms=timeout_ms,
         )
@@ -106,9 +104,7 @@ class Apps(BaseSDK):
     async def create_async(
         self,
         *,
-        request: Optional[
-            Union[shared.CreateAppRequest, shared.CreateAppRequestTypedDict]
-        ] = None,
+        request: Union[shared.CreateAppRequest, shared.CreateAppRequestTypedDict],
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -135,8 +131,8 @@ class Apps(BaseSDK):
             base_url = self._get_url(base_url, url_variables)
 
         if not isinstance(request, BaseModel):
-            request = utils.unmarshal(request, Optional[shared.CreateAppRequest])
-        request = cast(Optional[shared.CreateAppRequest], request)
+            request = utils.unmarshal(request, shared.CreateAppRequest)
+        request = cast(shared.CreateAppRequest, request)
 
         req = self._build_request_async(
             method="POST",
@@ -144,7 +140,7 @@ class Apps(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=False,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -152,7 +148,7 @@ class Apps(BaseSDK):
             http_headers=http_headers,
             security=self.sdk_configuration.security,
             get_serialized_body=lambda: utils.serialize_request_body(
-                request, False, True, "json", Optional[shared.CreateAppRequest]
+                request, False, False, "json", shared.CreateAppRequest
             ),
             timeout_ms=timeout_ms,
         )
@@ -238,7 +234,7 @@ class Apps(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=True,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -248,9 +244,9 @@ class Apps(BaseSDK):
             get_serialized_body=lambda: utils.serialize_request_body(
                 request.delete_app_request,
                 False,
-                True,
+                False,
                 "json",
-                Optional[shared.DeleteAppRequest],
+                shared.DeleteAppRequest,
             ),
             timeout_ms=timeout_ms,
         )
@@ -336,7 +332,7 @@ class Apps(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=True,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -346,9 +342,9 @@ class Apps(BaseSDK):
             get_serialized_body=lambda: utils.serialize_request_body(
                 request.delete_app_request,
                 False,
-                True,
+                False,
                 "json",
-                Optional[shared.DeleteAppRequest],
+                shared.DeleteAppRequest,
             ),
             timeout_ms=timeout_ms,
         )
@@ -798,7 +794,7 @@ class Apps(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=True,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -808,9 +804,9 @@ class Apps(BaseSDK):
             get_serialized_body=lambda: utils.serialize_request_body(
                 request.update_app_request,
                 False,
-                True,
+                False,
                 "json",
-                Optional[shared.UpdateAppRequest],
+                shared.UpdateAppRequest,
             ),
             timeout_ms=timeout_ms,
         )
@@ -896,7 +892,7 @@ class Apps(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=True,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -906,9 +902,9 @@ class Apps(BaseSDK):
             get_serialized_body=lambda: utils.serialize_request_body(
                 request.update_app_request,
                 False,
-                True,
+                False,
                 "json",
-                Optional[shared.UpdateAppRequest],
+                shared.UpdateAppRequest,
             ),
             timeout_ms=timeout_ms,
         )

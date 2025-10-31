@@ -15,23 +15,19 @@ from typing_extensions import Annotated, NotRequired, TypedDict
 class C1APIRequestcatalogV1RequestCatalogManagementServiceDeleteRequestTypedDict(
     TypedDict
 ):
+    request_catalog_management_service_delete_request: shared_requestcatalogmanagementservicedeleterequest.RequestCatalogManagementServiceDeleteRequestTypedDict
     id: str
-    request_catalog_management_service_delete_request: NotRequired[
-        shared_requestcatalogmanagementservicedeleterequest.RequestCatalogManagementServiceDeleteRequestTypedDict
-    ]
 
 
 class C1APIRequestcatalogV1RequestCatalogManagementServiceDeleteRequest(BaseModel):
+    request_catalog_management_service_delete_request: Annotated[
+        shared_requestcatalogmanagementservicedeleterequest.RequestCatalogManagementServiceDeleteRequest,
+        FieldMetadata(request=RequestMetadata(media_type="application/json")),
+    ]
+
     id: Annotated[
         str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))
     ]
-
-    request_catalog_management_service_delete_request: Annotated[
-        Optional[
-            shared_requestcatalogmanagementservicedeleterequest.RequestCatalogManagementServiceDeleteRequest
-        ],
-        FieldMetadata(request=RequestMetadata(media_type="application/json")),
-    ] = None
 
 
 class C1APIRequestcatalogV1RequestCatalogManagementServiceDeleteResponseTypedDict(

@@ -13,14 +13,19 @@ from typing_extensions import Annotated, NotRequired, TypedDict
 
 
 class C1APIAppV1AppEntitlementOwnersSetRequestTypedDict(TypedDict):
+    set_app_entitlement_owners_request: (
+        shared_setappentitlementownersrequest.SetAppEntitlementOwnersRequestTypedDict
+    )
     app_id: str
     entitlement_id: str
-    set_app_entitlement_owners_request: NotRequired[
-        shared_setappentitlementownersrequest.SetAppEntitlementOwnersRequestTypedDict
-    ]
 
 
 class C1APIAppV1AppEntitlementOwnersSetRequest(BaseModel):
+    set_app_entitlement_owners_request: Annotated[
+        shared_setappentitlementownersrequest.SetAppEntitlementOwnersRequest,
+        FieldMetadata(request=RequestMetadata(media_type="application/json")),
+    ]
+
     app_id: Annotated[
         str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))
     ]
@@ -28,11 +33,6 @@ class C1APIAppV1AppEntitlementOwnersSetRequest(BaseModel):
     entitlement_id: Annotated[
         str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))
     ]
-
-    set_app_entitlement_owners_request: Annotated[
-        Optional[shared_setappentitlementownersrequest.SetAppEntitlementOwnersRequest],
-        FieldMetadata(request=RequestMetadata(media_type="application/json")),
-    ] = None
 
 
 class C1APIAppV1AppEntitlementOwnersSetResponseTypedDict(TypedDict):

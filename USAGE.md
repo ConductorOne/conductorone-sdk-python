@@ -12,7 +12,9 @@ with SDK(
     ),
 ) as s_client:
 
-    res = s_client.access_conflict.create_monitor()
+    res = s_client.access_conflict.create_monitor(request={
+        "display_name": "Hermina.Larkin",
+    })
 
     assert res.conflict_monitor is not None
 
@@ -39,7 +41,9 @@ async def main():
         ),
     ) as s_client:
 
-        res = await s_client.access_conflict.create_monitor_async()
+        res = await s_client.access_conflict.create_monitor_async(request={
+            "display_name": "Hermina.Larkin",
+        })
 
         assert res.conflict_monitor is not None
 

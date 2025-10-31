@@ -13,12 +13,10 @@ class AppEntitlementMonitorBinding(BaseSDK):
     def create_app_entitlement_monitor_binding(
         self,
         *,
-        request: Optional[
-            Union[
-                shared.CreateAppEntitlementMonitorBindingRequest,
-                shared.CreateAppEntitlementMonitorBindingRequestTypedDict,
-            ]
-        ] = None,
+        request: Union[
+            shared.CreateAppEntitlementMonitorBindingRequest,
+            shared.CreateAppEntitlementMonitorBindingRequestTypedDict,
+        ],
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -46,11 +44,9 @@ class AppEntitlementMonitorBinding(BaseSDK):
 
         if not isinstance(request, BaseModel):
             request = utils.unmarshal(
-                request, Optional[shared.CreateAppEntitlementMonitorBindingRequest]
+                request, shared.CreateAppEntitlementMonitorBindingRequest
             )
-        request = cast(
-            Optional[shared.CreateAppEntitlementMonitorBindingRequest], request
-        )
+        request = cast(shared.CreateAppEntitlementMonitorBindingRequest, request)
 
         req = self._build_request(
             method="POST",
@@ -58,7 +54,7 @@ class AppEntitlementMonitorBinding(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=False,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -68,9 +64,9 @@ class AppEntitlementMonitorBinding(BaseSDK):
             get_serialized_body=lambda: utils.serialize_request_body(
                 request,
                 False,
-                True,
+                False,
                 "json",
-                Optional[shared.CreateAppEntitlementMonitorBindingRequest],
+                shared.CreateAppEntitlementMonitorBindingRequest,
             ),
             timeout_ms=timeout_ms,
         )
@@ -117,12 +113,10 @@ class AppEntitlementMonitorBinding(BaseSDK):
     async def create_app_entitlement_monitor_binding_async(
         self,
         *,
-        request: Optional[
-            Union[
-                shared.CreateAppEntitlementMonitorBindingRequest,
-                shared.CreateAppEntitlementMonitorBindingRequestTypedDict,
-            ]
-        ] = None,
+        request: Union[
+            shared.CreateAppEntitlementMonitorBindingRequest,
+            shared.CreateAppEntitlementMonitorBindingRequestTypedDict,
+        ],
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -150,11 +144,9 @@ class AppEntitlementMonitorBinding(BaseSDK):
 
         if not isinstance(request, BaseModel):
             request = utils.unmarshal(
-                request, Optional[shared.CreateAppEntitlementMonitorBindingRequest]
+                request, shared.CreateAppEntitlementMonitorBindingRequest
             )
-        request = cast(
-            Optional[shared.CreateAppEntitlementMonitorBindingRequest], request
-        )
+        request = cast(shared.CreateAppEntitlementMonitorBindingRequest, request)
 
         req = self._build_request_async(
             method="POST",
@@ -162,7 +154,7 @@ class AppEntitlementMonitorBinding(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=False,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -172,9 +164,9 @@ class AppEntitlementMonitorBinding(BaseSDK):
             get_serialized_body=lambda: utils.serialize_request_body(
                 request,
                 False,
-                True,
+                False,
                 "json",
-                Optional[shared.CreateAppEntitlementMonitorBindingRequest],
+                shared.CreateAppEntitlementMonitorBindingRequest,
             ),
             timeout_ms=timeout_ms,
         )
@@ -221,12 +213,10 @@ class AppEntitlementMonitorBinding(BaseSDK):
     def delete_app_entitlement_monitor_binding(
         self,
         *,
-        request: Optional[
-            Union[
-                shared.DeleteAppEntitlementMonitorBindingRequest,
-                shared.DeleteAppEntitlementMonitorBindingRequestTypedDict,
-            ]
-        ] = None,
+        request: Union[
+            shared.DeleteAppEntitlementMonitorBindingRequest,
+            shared.DeleteAppEntitlementMonitorBindingRequestTypedDict,
+        ],
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -254,11 +244,9 @@ class AppEntitlementMonitorBinding(BaseSDK):
 
         if not isinstance(request, BaseModel):
             request = utils.unmarshal(
-                request, Optional[shared.DeleteAppEntitlementMonitorBindingRequest]
+                request, shared.DeleteAppEntitlementMonitorBindingRequest
             )
-        request = cast(
-            Optional[shared.DeleteAppEntitlementMonitorBindingRequest], request
-        )
+        request = cast(shared.DeleteAppEntitlementMonitorBindingRequest, request)
 
         req = self._build_request(
             method="DELETE",
@@ -266,7 +254,7 @@ class AppEntitlementMonitorBinding(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=False,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -276,9 +264,9 @@ class AppEntitlementMonitorBinding(BaseSDK):
             get_serialized_body=lambda: utils.serialize_request_body(
                 request,
                 False,
-                True,
+                False,
                 "json",
-                Optional[shared.DeleteAppEntitlementMonitorBindingRequest],
+                shared.DeleteAppEntitlementMonitorBindingRequest,
             ),
             timeout_ms=timeout_ms,
         )
@@ -326,12 +314,10 @@ class AppEntitlementMonitorBinding(BaseSDK):
     async def delete_app_entitlement_monitor_binding_async(
         self,
         *,
-        request: Optional[
-            Union[
-                shared.DeleteAppEntitlementMonitorBindingRequest,
-                shared.DeleteAppEntitlementMonitorBindingRequestTypedDict,
-            ]
-        ] = None,
+        request: Union[
+            shared.DeleteAppEntitlementMonitorBindingRequest,
+            shared.DeleteAppEntitlementMonitorBindingRequestTypedDict,
+        ],
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -359,11 +345,9 @@ class AppEntitlementMonitorBinding(BaseSDK):
 
         if not isinstance(request, BaseModel):
             request = utils.unmarshal(
-                request, Optional[shared.DeleteAppEntitlementMonitorBindingRequest]
+                request, shared.DeleteAppEntitlementMonitorBindingRequest
             )
-        request = cast(
-            Optional[shared.DeleteAppEntitlementMonitorBindingRequest], request
-        )
+        request = cast(shared.DeleteAppEntitlementMonitorBindingRequest, request)
 
         req = self._build_request_async(
             method="DELETE",
@@ -371,7 +355,7 @@ class AppEntitlementMonitorBinding(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=False,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -381,9 +365,9 @@ class AppEntitlementMonitorBinding(BaseSDK):
             get_serialized_body=lambda: utils.serialize_request_body(
                 request,
                 False,
-                True,
+                False,
                 "json",
-                Optional[shared.DeleteAppEntitlementMonitorBindingRequest],
+                shared.DeleteAppEntitlementMonitorBindingRequest,
             ),
             timeout_ms=timeout_ms,
         )
@@ -431,12 +415,10 @@ class AppEntitlementMonitorBinding(BaseSDK):
     def get_app_entitlement_monitor_binding(
         self,
         *,
-        request: Optional[
-            Union[
-                shared.GetAppEntitlementMonitorBindingRequest,
-                shared.GetAppEntitlementMonitorBindingRequestTypedDict,
-            ]
-        ] = None,
+        request: Union[
+            shared.GetAppEntitlementMonitorBindingRequest,
+            shared.GetAppEntitlementMonitorBindingRequestTypedDict,
+        ],
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -464,9 +446,9 @@ class AppEntitlementMonitorBinding(BaseSDK):
 
         if not isinstance(request, BaseModel):
             request = utils.unmarshal(
-                request, Optional[shared.GetAppEntitlementMonitorBindingRequest]
+                request, shared.GetAppEntitlementMonitorBindingRequest
             )
-        request = cast(Optional[shared.GetAppEntitlementMonitorBindingRequest], request)
+        request = cast(shared.GetAppEntitlementMonitorBindingRequest, request)
 
         req = self._build_request(
             method="POST",
@@ -474,7 +456,7 @@ class AppEntitlementMonitorBinding(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=False,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -484,9 +466,9 @@ class AppEntitlementMonitorBinding(BaseSDK):
             get_serialized_body=lambda: utils.serialize_request_body(
                 request,
                 False,
-                True,
+                False,
                 "json",
-                Optional[shared.GetAppEntitlementMonitorBindingRequest],
+                shared.GetAppEntitlementMonitorBindingRequest,
             ),
             timeout_ms=timeout_ms,
         )
@@ -533,12 +515,10 @@ class AppEntitlementMonitorBinding(BaseSDK):
     async def get_app_entitlement_monitor_binding_async(
         self,
         *,
-        request: Optional[
-            Union[
-                shared.GetAppEntitlementMonitorBindingRequest,
-                shared.GetAppEntitlementMonitorBindingRequestTypedDict,
-            ]
-        ] = None,
+        request: Union[
+            shared.GetAppEntitlementMonitorBindingRequest,
+            shared.GetAppEntitlementMonitorBindingRequestTypedDict,
+        ],
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -566,9 +546,9 @@ class AppEntitlementMonitorBinding(BaseSDK):
 
         if not isinstance(request, BaseModel):
             request = utils.unmarshal(
-                request, Optional[shared.GetAppEntitlementMonitorBindingRequest]
+                request, shared.GetAppEntitlementMonitorBindingRequest
             )
-        request = cast(Optional[shared.GetAppEntitlementMonitorBindingRequest], request)
+        request = cast(shared.GetAppEntitlementMonitorBindingRequest, request)
 
         req = self._build_request_async(
             method="POST",
@@ -576,7 +556,7 @@ class AppEntitlementMonitorBinding(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=False,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -586,9 +566,9 @@ class AppEntitlementMonitorBinding(BaseSDK):
             get_serialized_body=lambda: utils.serialize_request_body(
                 request,
                 False,
-                True,
+                False,
                 "json",
-                Optional[shared.GetAppEntitlementMonitorBindingRequest],
+                shared.GetAppEntitlementMonitorBindingRequest,
             ),
             timeout_ms=timeout_ms,
         )

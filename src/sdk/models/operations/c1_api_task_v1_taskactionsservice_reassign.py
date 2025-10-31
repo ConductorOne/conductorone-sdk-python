@@ -13,23 +13,19 @@ from typing_extensions import Annotated, NotRequired, TypedDict
 
 
 class C1APITaskV1TaskActionsServiceReassignRequestTypedDict(TypedDict):
+    task_actions_service_reassign_request: shared_taskactionsservicereassignrequest.TaskActionsServiceReassignRequestTypedDict
     task_id: str
-    task_actions_service_reassign_request: NotRequired[
-        shared_taskactionsservicereassignrequest.TaskActionsServiceReassignRequestTypedDict
-    ]
 
 
 class C1APITaskV1TaskActionsServiceReassignRequest(BaseModel):
+    task_actions_service_reassign_request: Annotated[
+        shared_taskactionsservicereassignrequest.TaskActionsServiceReassignRequest,
+        FieldMetadata(request=RequestMetadata(media_type="application/json")),
+    ]
+
     task_id: Annotated[
         str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))
     ]
-
-    task_actions_service_reassign_request: Annotated[
-        Optional[
-            shared_taskactionsservicereassignrequest.TaskActionsServiceReassignRequest
-        ],
-        FieldMetadata(request=RequestMetadata(media_type="application/json")),
-    ] = None
 
 
 class C1APITaskV1TaskActionsServiceReassignResponseTypedDict(TypedDict):

@@ -15,25 +15,21 @@ from typing_extensions import Annotated, NotRequired, TypedDict
 class C1APIAppV1AppAccessRequestsDefaultsServiceCancelAppAccessRequestsDefaultsRequestTypedDict(
     TypedDict
 ):
+    cancel_access_request_defaults_request: shared_cancelaccessrequestdefaultsrequest.CancelAccessRequestDefaultsRequestTypedDict
     app_id: str
-    cancel_access_request_defaults_request: NotRequired[
-        shared_cancelaccessrequestdefaultsrequest.CancelAccessRequestDefaultsRequestTypedDict
-    ]
 
 
 class C1APIAppV1AppAccessRequestsDefaultsServiceCancelAppAccessRequestsDefaultsRequest(
     BaseModel
 ):
+    cancel_access_request_defaults_request: Annotated[
+        shared_cancelaccessrequestdefaultsrequest.CancelAccessRequestDefaultsRequest,
+        FieldMetadata(request=RequestMetadata(media_type="application/json")),
+    ]
+
     app_id: Annotated[
         str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))
     ]
-
-    cancel_access_request_defaults_request: Annotated[
-        Optional[
-            shared_cancelaccessrequestdefaultsrequest.CancelAccessRequestDefaultsRequest
-        ],
-        FieldMetadata(request=RequestMetadata(media_type="application/json")),
-    ] = None
 
 
 class C1APIAppV1AppAccessRequestsDefaultsServiceCancelAppAccessRequestsDefaultsResponseTypedDict(

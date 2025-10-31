@@ -29,6 +29,7 @@ with SDK(
 ) as s_client:
 
     res = s_client.app_access_requests_defaults.cancel_app_access_requests_defaults(request={
+        "cancel_access_request_defaults_request": {},
         "app_id": "<id>",
     })
 
@@ -76,6 +77,7 @@ with SDK(
 ) as s_client:
 
     res = s_client.app_access_requests_defaults.create_app_access_requests_defaults(request={
+        "app_access_request_defaults": {},
         "app_id": "<id>",
     })
 

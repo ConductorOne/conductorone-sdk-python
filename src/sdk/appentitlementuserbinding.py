@@ -254,7 +254,7 @@ class AppEntitlementUserBinding(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=True,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -264,9 +264,9 @@ class AppEntitlementUserBinding(BaseSDK):
             get_serialized_body=lambda: utils.serialize_request_body(
                 request.remove_grant_duration_request,
                 False,
-                True,
+                False,
                 "json",
-                Optional[shared.RemoveGrantDurationRequest],
+                shared.RemoveGrantDurationRequest,
             ),
             timeout_ms=timeout_ms,
         )
@@ -360,7 +360,7 @@ class AppEntitlementUserBinding(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=True,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -370,9 +370,9 @@ class AppEntitlementUserBinding(BaseSDK):
             get_serialized_body=lambda: utils.serialize_request_body(
                 request.remove_grant_duration_request,
                 False,
-                True,
+                False,
                 "json",
-                Optional[shared.RemoveGrantDurationRequest],
+                shared.RemoveGrantDurationRequest,
             ),
             timeout_ms=timeout_ms,
         )
@@ -419,9 +419,9 @@ class AppEntitlementUserBinding(BaseSDK):
     def search_grant_feed(
         self,
         *,
-        request: Optional[
-            Union[shared.SearchGrantFeedRequest, shared.SearchGrantFeedRequestTypedDict]
-        ] = None,
+        request: Union[
+            shared.SearchGrantFeedRequest, shared.SearchGrantFeedRequestTypedDict
+        ],
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -448,8 +448,8 @@ class AppEntitlementUserBinding(BaseSDK):
             base_url = self._get_url(base_url, url_variables)
 
         if not isinstance(request, BaseModel):
-            request = utils.unmarshal(request, Optional[shared.SearchGrantFeedRequest])
-        request = cast(Optional[shared.SearchGrantFeedRequest], request)
+            request = utils.unmarshal(request, shared.SearchGrantFeedRequest)
+        request = cast(shared.SearchGrantFeedRequest, request)
 
         req = self._build_request(
             method="POST",
@@ -457,7 +457,7 @@ class AppEntitlementUserBinding(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=False,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -465,7 +465,7 @@ class AppEntitlementUserBinding(BaseSDK):
             http_headers=http_headers,
             security=self.sdk_configuration.security,
             get_serialized_body=lambda: utils.serialize_request_body(
-                request, False, True, "json", Optional[shared.SearchGrantFeedRequest]
+                request, False, False, "json", shared.SearchGrantFeedRequest
             ),
             timeout_ms=timeout_ms,
         )
@@ -512,9 +512,9 @@ class AppEntitlementUserBinding(BaseSDK):
     async def search_grant_feed_async(
         self,
         *,
-        request: Optional[
-            Union[shared.SearchGrantFeedRequest, shared.SearchGrantFeedRequestTypedDict]
-        ] = None,
+        request: Union[
+            shared.SearchGrantFeedRequest, shared.SearchGrantFeedRequestTypedDict
+        ],
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -541,8 +541,8 @@ class AppEntitlementUserBinding(BaseSDK):
             base_url = self._get_url(base_url, url_variables)
 
         if not isinstance(request, BaseModel):
-            request = utils.unmarshal(request, Optional[shared.SearchGrantFeedRequest])
-        request = cast(Optional[shared.SearchGrantFeedRequest], request)
+            request = utils.unmarshal(request, shared.SearchGrantFeedRequest)
+        request = cast(shared.SearchGrantFeedRequest, request)
 
         req = self._build_request_async(
             method="POST",
@@ -550,7 +550,7 @@ class AppEntitlementUserBinding(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=False,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -558,7 +558,7 @@ class AppEntitlementUserBinding(BaseSDK):
             http_headers=http_headers,
             security=self.sdk_configuration.security,
             get_serialized_body=lambda: utils.serialize_request_body(
-                request, False, True, "json", Optional[shared.SearchGrantFeedRequest]
+                request, False, False, "json", shared.SearchGrantFeedRequest
             ),
             timeout_ms=timeout_ms,
         )
@@ -605,11 +605,9 @@ class AppEntitlementUserBinding(BaseSDK):
     def search_past_grants(
         self,
         *,
-        request: Optional[
-            Union[
-                shared.SearchPastGrantsRequest, shared.SearchPastGrantsRequestTypedDict
-            ]
-        ] = None,
+        request: Union[
+            shared.SearchPastGrantsRequest, shared.SearchPastGrantsRequestTypedDict
+        ],
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -636,8 +634,8 @@ class AppEntitlementUserBinding(BaseSDK):
             base_url = self._get_url(base_url, url_variables)
 
         if not isinstance(request, BaseModel):
-            request = utils.unmarshal(request, Optional[shared.SearchPastGrantsRequest])
-        request = cast(Optional[shared.SearchPastGrantsRequest], request)
+            request = utils.unmarshal(request, shared.SearchPastGrantsRequest)
+        request = cast(shared.SearchPastGrantsRequest, request)
 
         req = self._build_request(
             method="POST",
@@ -645,7 +643,7 @@ class AppEntitlementUserBinding(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=False,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -653,7 +651,7 @@ class AppEntitlementUserBinding(BaseSDK):
             http_headers=http_headers,
             security=self.sdk_configuration.security,
             get_serialized_body=lambda: utils.serialize_request_body(
-                request, False, True, "json", Optional[shared.SearchPastGrantsRequest]
+                request, False, False, "json", shared.SearchPastGrantsRequest
             ),
             timeout_ms=timeout_ms,
         )
@@ -700,11 +698,9 @@ class AppEntitlementUserBinding(BaseSDK):
     async def search_past_grants_async(
         self,
         *,
-        request: Optional[
-            Union[
-                shared.SearchPastGrantsRequest, shared.SearchPastGrantsRequestTypedDict
-            ]
-        ] = None,
+        request: Union[
+            shared.SearchPastGrantsRequest, shared.SearchPastGrantsRequestTypedDict
+        ],
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -731,8 +727,8 @@ class AppEntitlementUserBinding(BaseSDK):
             base_url = self._get_url(base_url, url_variables)
 
         if not isinstance(request, BaseModel):
-            request = utils.unmarshal(request, Optional[shared.SearchPastGrantsRequest])
-        request = cast(Optional[shared.SearchPastGrantsRequest], request)
+            request = utils.unmarshal(request, shared.SearchPastGrantsRequest)
+        request = cast(shared.SearchPastGrantsRequest, request)
 
         req = self._build_request_async(
             method="POST",
@@ -740,7 +736,7 @@ class AppEntitlementUserBinding(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=False,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -748,7 +744,7 @@ class AppEntitlementUserBinding(BaseSDK):
             http_headers=http_headers,
             security=self.sdk_configuration.security,
             get_serialized_body=lambda: utils.serialize_request_body(
-                request, False, True, "json", Optional[shared.SearchPastGrantsRequest]
+                request, False, False, "json", shared.SearchPastGrantsRequest
             ),
             timeout_ms=timeout_ms,
         )
@@ -842,7 +838,7 @@ class AppEntitlementUserBinding(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=True,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -852,9 +848,9 @@ class AppEntitlementUserBinding(BaseSDK):
             get_serialized_body=lambda: utils.serialize_request_body(
                 request.update_grant_duration_request,
                 False,
-                True,
+                False,
                 "json",
-                Optional[shared.UpdateGrantDurationRequest],
+                shared.UpdateGrantDurationRequest,
             ),
             timeout_ms=timeout_ms,
         )
@@ -948,7 +944,7 @@ class AppEntitlementUserBinding(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=True,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -958,9 +954,9 @@ class AppEntitlementUserBinding(BaseSDK):
             get_serialized_body=lambda: utils.serialize_request_body(
                 request.update_grant_duration_request,
                 False,
-                True,
+                False,
                 "json",
-                Optional[shared.UpdateGrantDurationRequest],
+                shared.UpdateGrantDurationRequest,
             ),
             timeout_ms=timeout_ms,
         )

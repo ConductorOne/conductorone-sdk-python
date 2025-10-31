@@ -13,12 +13,10 @@ class AccessConflict(BaseSDK):
     def create_monitor(
         self,
         *,
-        request: Optional[
-            Union[
-                shared.ConflictMonitorCreateRequest,
-                shared.ConflictMonitorCreateRequestTypedDict,
-            ]
-        ] = None,
+        request: Union[
+            shared.ConflictMonitorCreateRequest,
+            shared.ConflictMonitorCreateRequestTypedDict,
+        ],
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -45,10 +43,8 @@ class AccessConflict(BaseSDK):
             base_url = self._get_url(base_url, url_variables)
 
         if not isinstance(request, BaseModel):
-            request = utils.unmarshal(
-                request, Optional[shared.ConflictMonitorCreateRequest]
-            )
-        request = cast(Optional[shared.ConflictMonitorCreateRequest], request)
+            request = utils.unmarshal(request, shared.ConflictMonitorCreateRequest)
+        request = cast(shared.ConflictMonitorCreateRequest, request)
 
         req = self._build_request(
             method="POST",
@@ -56,7 +52,7 @@ class AccessConflict(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=False,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -64,11 +60,7 @@ class AccessConflict(BaseSDK):
             http_headers=http_headers,
             security=self.sdk_configuration.security,
             get_serialized_body=lambda: utils.serialize_request_body(
-                request,
-                False,
-                True,
-                "json",
-                Optional[shared.ConflictMonitorCreateRequest],
+                request, False, False, "json", shared.ConflictMonitorCreateRequest
             ),
             timeout_ms=timeout_ms,
         )
@@ -115,12 +107,10 @@ class AccessConflict(BaseSDK):
     async def create_monitor_async(
         self,
         *,
-        request: Optional[
-            Union[
-                shared.ConflictMonitorCreateRequest,
-                shared.ConflictMonitorCreateRequestTypedDict,
-            ]
-        ] = None,
+        request: Union[
+            shared.ConflictMonitorCreateRequest,
+            shared.ConflictMonitorCreateRequestTypedDict,
+        ],
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -147,10 +137,8 @@ class AccessConflict(BaseSDK):
             base_url = self._get_url(base_url, url_variables)
 
         if not isinstance(request, BaseModel):
-            request = utils.unmarshal(
-                request, Optional[shared.ConflictMonitorCreateRequest]
-            )
-        request = cast(Optional[shared.ConflictMonitorCreateRequest], request)
+            request = utils.unmarshal(request, shared.ConflictMonitorCreateRequest)
+        request = cast(shared.ConflictMonitorCreateRequest, request)
 
         req = self._build_request_async(
             method="POST",
@@ -158,7 +146,7 @@ class AccessConflict(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=False,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -166,11 +154,7 @@ class AccessConflict(BaseSDK):
             http_headers=http_headers,
             security=self.sdk_configuration.security,
             get_serialized_body=lambda: utils.serialize_request_body(
-                request,
-                False,
-                True,
-                "json",
-                Optional[shared.ConflictMonitorCreateRequest],
+                request, False, False, "json", shared.ConflictMonitorCreateRequest
             ),
             timeout_ms=timeout_ms,
         )
@@ -262,7 +246,7 @@ class AccessConflict(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=True,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -272,9 +256,9 @@ class AccessConflict(BaseSDK):
             get_serialized_body=lambda: utils.serialize_request_body(
                 request.conflict_monitor_delete_request,
                 False,
-                True,
+                False,
                 "json",
-                Optional[shared.ConflictMonitorDeleteRequest],
+                shared.ConflictMonitorDeleteRequest,
             ),
             timeout_ms=timeout_ms,
         )
@@ -366,7 +350,7 @@ class AccessConflict(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=True,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -376,9 +360,9 @@ class AccessConflict(BaseSDK):
             get_serialized_body=lambda: utils.serialize_request_body(
                 request.conflict_monitor_delete_request,
                 False,
-                True,
+                False,
                 "json",
-                Optional[shared.ConflictMonitorDeleteRequest],
+                shared.ConflictMonitorDeleteRequest,
             ),
             timeout_ms=timeout_ms,
         )
@@ -668,7 +652,7 @@ class AccessConflict(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=True,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -678,9 +662,9 @@ class AccessConflict(BaseSDK):
             get_serialized_body=lambda: utils.serialize_request_body(
                 request.conflict_monitor_update_request,
                 False,
-                True,
+                False,
                 "json",
-                Optional[shared.ConflictMonitorUpdateRequest],
+                shared.ConflictMonitorUpdateRequest,
             ),
             timeout_ms=timeout_ms,
         )
@@ -772,7 +756,7 @@ class AccessConflict(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=True,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -782,9 +766,9 @@ class AccessConflict(BaseSDK):
             get_serialized_body=lambda: utils.serialize_request_body(
                 request.conflict_monitor_update_request,
                 False,
-                True,
+                False,
                 "json",
-                Optional[shared.ConflictMonitorUpdateRequest],
+                shared.ConflictMonitorUpdateRequest,
             ),
             timeout_ms=timeout_ms,
         )

@@ -4,8 +4,10 @@ from __future__ import annotations
 from datetime import datetime
 from enum import Enum
 import pydantic
+from pydantic import field_serializer
 from pydantic.functional_validators import PlainValidator
 from sdk import utils
+from sdk.models import shared
 from sdk.types import BaseModel
 from sdk.utils import validate_open_enum
 from typing import Optional
@@ -102,3 +104,12 @@ class TaskAction1(BaseModel):
 
     user_id: Annotated[Optional[str], pydantic.Field(alias="userId")] = None
     r"""The userId field."""
+
+    @field_serializer("action_type")
+    def serialize_action_type(self, value):
+        if isinstance(value, str):
+            try:
+                return shared.ActionType(value)
+            except ValueError:
+                return value
+        return value

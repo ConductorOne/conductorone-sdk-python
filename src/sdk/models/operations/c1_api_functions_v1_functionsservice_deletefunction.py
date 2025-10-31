@@ -13,23 +13,19 @@ from typing_extensions import Annotated, NotRequired, TypedDict
 
 
 class C1APIFunctionsV1FunctionsServiceDeleteFunctionRequestTypedDict(TypedDict):
+    functions_service_delete_function_request: shared_functionsservicedeletefunctionrequest.FunctionsServiceDeleteFunctionRequestTypedDict
     id: str
-    functions_service_delete_function_request: NotRequired[
-        shared_functionsservicedeletefunctionrequest.FunctionsServiceDeleteFunctionRequestTypedDict
-    ]
 
 
 class C1APIFunctionsV1FunctionsServiceDeleteFunctionRequest(BaseModel):
+    functions_service_delete_function_request: Annotated[
+        shared_functionsservicedeletefunctionrequest.FunctionsServiceDeleteFunctionRequest,
+        FieldMetadata(request=RequestMetadata(media_type="application/json")),
+    ]
+
     id: Annotated[
         str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))
     ]
-
-    functions_service_delete_function_request: Annotated[
-        Optional[
-            shared_functionsservicedeletefunctionrequest.FunctionsServiceDeleteFunctionRequest
-        ],
-        FieldMetadata(request=RequestMetadata(media_type="application/json")),
-    ] = None
 
 
 class C1APIFunctionsV1FunctionsServiceDeleteFunctionResponseTypedDict(TypedDict):

@@ -13,19 +13,19 @@ from typing_extensions import Annotated, NotRequired, TypedDict
 
 
 class C1APIAppV1AppsUpdateRequestTypedDict(TypedDict):
+    update_app_request: shared_updateapprequest.UpdateAppRequestTypedDict
     id: str
-    update_app_request: NotRequired[shared_updateapprequest.UpdateAppRequestTypedDict]
 
 
 class C1APIAppV1AppsUpdateRequest(BaseModel):
+    update_app_request: Annotated[
+        shared_updateapprequest.UpdateAppRequest,
+        FieldMetadata(request=RequestMetadata(media_type="application/json")),
+    ]
+
     id: Annotated[
         str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))
     ]
-
-    update_app_request: Annotated[
-        Optional[shared_updateapprequest.UpdateAppRequest],
-        FieldMetadata(request=RequestMetadata(media_type="application/json")),
-    ] = None
 
 
 class C1APIAppV1AppsUpdateResponseTypedDict(TypedDict):

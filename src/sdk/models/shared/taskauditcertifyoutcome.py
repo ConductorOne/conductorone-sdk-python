@@ -2,8 +2,10 @@
 
 from __future__ import annotations
 from enum import Enum
+from pydantic import field_serializer
 from pydantic.functional_validators import PlainValidator
 from sdk import utils
+from sdk.models import shared
 from sdk.types import BaseModel
 from sdk.utils import validate_open_enum
 from typing import Optional
@@ -36,3 +38,12 @@ class TaskAuditCertifyOutcome(BaseModel):
         PlainValidator(validate_open_enum(False)),
     ] = None
     r"""The outcome field."""
+
+    @field_serializer("outcome")
+    def serialize_outcome(self, value):
+        if isinstance(value, str):
+            try:
+                return shared.TaskAuditCertifyOutcomeOutcome(value)
+            except ValueError:
+                return value
+        return value

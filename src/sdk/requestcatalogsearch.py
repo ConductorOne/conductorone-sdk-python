@@ -13,12 +13,10 @@ class RequestCatalogSearch(BaseSDK):
     def search_entitlements(
         self,
         *,
-        request: Optional[
-            Union[
-                shared.RequestCatalogSearchServiceSearchEntitlementsRequest,
-                shared.RequestCatalogSearchServiceSearchEntitlementsRequestTypedDict,
-            ]
-        ] = None,
+        request: Union[
+            shared.RequestCatalogSearchServiceSearchEntitlementsRequest,
+            shared.RequestCatalogSearchServiceSearchEntitlementsRequestTypedDict,
+        ],
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -46,12 +44,10 @@ class RequestCatalogSearch(BaseSDK):
 
         if not isinstance(request, BaseModel):
             request = utils.unmarshal(
-                request,
-                Optional[shared.RequestCatalogSearchServiceSearchEntitlementsRequest],
+                request, shared.RequestCatalogSearchServiceSearchEntitlementsRequest
             )
         request = cast(
-            Optional[shared.RequestCatalogSearchServiceSearchEntitlementsRequest],
-            request,
+            shared.RequestCatalogSearchServiceSearchEntitlementsRequest, request
         )
 
         req = self._build_request(
@@ -60,7 +56,7 @@ class RequestCatalogSearch(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=False,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -70,9 +66,9 @@ class RequestCatalogSearch(BaseSDK):
             get_serialized_body=lambda: utils.serialize_request_body(
                 request,
                 False,
-                True,
+                False,
                 "json",
-                Optional[shared.RequestCatalogSearchServiceSearchEntitlementsRequest],
+                shared.RequestCatalogSearchServiceSearchEntitlementsRequest,
             ),
             timeout_ms=timeout_ms,
         )
@@ -122,12 +118,10 @@ class RequestCatalogSearch(BaseSDK):
     async def search_entitlements_async(
         self,
         *,
-        request: Optional[
-            Union[
-                shared.RequestCatalogSearchServiceSearchEntitlementsRequest,
-                shared.RequestCatalogSearchServiceSearchEntitlementsRequestTypedDict,
-            ]
-        ] = None,
+        request: Union[
+            shared.RequestCatalogSearchServiceSearchEntitlementsRequest,
+            shared.RequestCatalogSearchServiceSearchEntitlementsRequestTypedDict,
+        ],
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -155,12 +149,10 @@ class RequestCatalogSearch(BaseSDK):
 
         if not isinstance(request, BaseModel):
             request = utils.unmarshal(
-                request,
-                Optional[shared.RequestCatalogSearchServiceSearchEntitlementsRequest],
+                request, shared.RequestCatalogSearchServiceSearchEntitlementsRequest
             )
         request = cast(
-            Optional[shared.RequestCatalogSearchServiceSearchEntitlementsRequest],
-            request,
+            shared.RequestCatalogSearchServiceSearchEntitlementsRequest, request
         )
 
         req = self._build_request_async(
@@ -169,7 +161,7 @@ class RequestCatalogSearch(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=False,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -179,9 +171,9 @@ class RequestCatalogSearch(BaseSDK):
             get_serialized_body=lambda: utils.serialize_request_body(
                 request,
                 False,
-                True,
+                False,
                 "json",
-                Optional[shared.RequestCatalogSearchServiceSearchEntitlementsRequest],
+                shared.RequestCatalogSearchServiceSearchEntitlementsRequest,
             ),
             timeout_ms=timeout_ms,
         )

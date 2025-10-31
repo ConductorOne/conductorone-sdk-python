@@ -13,23 +13,19 @@ from typing_extensions import Annotated, NotRequired, TypedDict
 
 
 class C1APITaskV1TaskActionsServiceSkipStepRequestTypedDict(TypedDict):
+    task_actions_service_skip_step_request: shared_taskactionsserviceskipsteprequest.TaskActionsServiceSkipStepRequestTypedDict
     task_id: str
-    task_actions_service_skip_step_request: NotRequired[
-        shared_taskactionsserviceskipsteprequest.TaskActionsServiceSkipStepRequestTypedDict
-    ]
 
 
 class C1APITaskV1TaskActionsServiceSkipStepRequest(BaseModel):
+    task_actions_service_skip_step_request: Annotated[
+        shared_taskactionsserviceskipsteprequest.TaskActionsServiceSkipStepRequest,
+        FieldMetadata(request=RequestMetadata(media_type="application/json")),
+    ]
+
     task_id: Annotated[
         str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))
     ]
-
-    task_actions_service_skip_step_request: Annotated[
-        Optional[
-            shared_taskactionsserviceskipsteprequest.TaskActionsServiceSkipStepRequest
-        ],
-        FieldMetadata(request=RequestMetadata(media_type="application/json")),
-    ] = None
 
 
 class C1APITaskV1TaskActionsServiceSkipStepResponseTypedDict(TypedDict):

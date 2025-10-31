@@ -13,21 +13,21 @@ from typing_extensions import Annotated, NotRequired, TypedDict
 
 
 class C1APISystemlogV1ExportServiceListEventsRequestTypedDict(TypedDict):
-    export_id: str
-    export_service_list_events_request: NotRequired[
+    export_service_list_events_request: (
         shared_exportservicelisteventsrequest.ExportServiceListEventsRequestTypedDict
-    ]
+    )
+    export_id: str
 
 
 class C1APISystemlogV1ExportServiceListEventsRequest(BaseModel):
+    export_service_list_events_request: Annotated[
+        shared_exportservicelisteventsrequest.ExportServiceListEventsRequest,
+        FieldMetadata(request=RequestMetadata(media_type="application/json")),
+    ]
+
     export_id: Annotated[
         str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))
     ]
-
-    export_service_list_events_request: Annotated[
-        Optional[shared_exportservicelisteventsrequest.ExportServiceListEventsRequest],
-        FieldMetadata(request=RequestMetadata(media_type="application/json")),
-    ] = None
 
 
 class C1APISystemlogV1ExportServiceListEventsResponseTypedDict(TypedDict):

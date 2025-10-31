@@ -30,7 +30,7 @@ with SDK(
     ),
 ) as s_client:
 
-    res = s_client.personal_client.create()
+    res = s_client.personal_client.create(request={})
 
     assert res.personal_client_service_create_response is not None
 
@@ -76,6 +76,7 @@ with SDK(
 ) as s_client:
 
     res = s_client.personal_client.delete(request={
+        "personal_client_service_delete_request": {},
         "id": "<id>",
     })
 
@@ -214,6 +215,7 @@ with SDK(
 ) as s_client:
 
     res = s_client.personal_client.update(request={
+        "personal_client_service_update_request": {},
         "id": "<id>",
     })
 

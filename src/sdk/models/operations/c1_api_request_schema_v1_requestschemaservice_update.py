@@ -13,23 +13,19 @@ from typing_extensions import Annotated, NotRequired, TypedDict
 
 
 class C1APIRequestSchemaV1RequestSchemaServiceUpdateRequestTypedDict(TypedDict):
+    request_schema_service_update_request: shared_requestschemaserviceupdaterequest.RequestSchemaServiceUpdateRequestTypedDict
     request_schema_id: str
-    request_schema_service_update_request: NotRequired[
-        shared_requestschemaserviceupdaterequest.RequestSchemaServiceUpdateRequestTypedDict
-    ]
 
 
 class C1APIRequestSchemaV1RequestSchemaServiceUpdateRequest(BaseModel):
+    request_schema_service_update_request: Annotated[
+        shared_requestschemaserviceupdaterequest.RequestSchemaServiceUpdateRequest,
+        FieldMetadata(request=RequestMetadata(media_type="application/json")),
+    ]
+
     request_schema_id: Annotated[
         str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))
     ]
-
-    request_schema_service_update_request: Annotated[
-        Optional[
-            shared_requestschemaserviceupdaterequest.RequestSchemaServiceUpdateRequest
-        ],
-        FieldMetadata(request=RequestMetadata(media_type="application/json")),
-    ] = None
 
 
 class C1APIRequestSchemaV1RequestSchemaServiceUpdateResponseTypedDict(TypedDict):

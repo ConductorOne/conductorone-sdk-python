@@ -4,8 +4,10 @@ from __future__ import annotations
 from datetime import datetime
 from enum import Enum
 import pydantic
+from pydantic import field_serializer
 from pydantic.functional_validators import PlainValidator
 from sdk import utils
+from sdk.models import shared
 from sdk.types import BaseModel
 from sdk.utils import validate_open_enum
 from typing import Dict, Optional
@@ -58,3 +60,12 @@ class AppPopulationReport(BaseModel):
         Optional[AppPopulationReportState], PlainValidator(validate_open_enum(False))
     ] = None
     r"""The state field tracks the state of the AppPopulationReport. This state field can be one of REPORT_STATE_PENDING, REPORT_STATE_UNSPECIFIED, REPORT_STATE_OK, REPORT_STATE_ERROR."""
+
+    @field_serializer("state")
+    def serialize_state(self, value):
+        if isinstance(value, str):
+            try:
+                return shared.AppPopulationReportState(value)
+            except ValueError:
+                return value
+        return value

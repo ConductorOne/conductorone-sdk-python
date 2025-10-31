@@ -26,7 +26,7 @@ with SDK(
     ),
 ) as s_client:
 
-    res = s_client.connector_catalog.configuration_schema()
+    res = s_client.connector_catalog.configuration_schema(request={})
 
     assert res.connector_catalog_service_configuration_schema_response is not None
 

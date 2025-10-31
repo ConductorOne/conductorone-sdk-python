@@ -13,12 +13,10 @@ class Task(BaseSDK):
     def create_grant_task(
         self,
         *,
-        request: Optional[
-            Union[
-                shared.TaskServiceCreateGrantRequest,
-                shared.TaskServiceCreateGrantRequestTypedDict,
-            ]
-        ] = None,
+        request: Union[
+            shared.TaskServiceCreateGrantRequest,
+            shared.TaskServiceCreateGrantRequestTypedDict,
+        ],
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -45,10 +43,8 @@ class Task(BaseSDK):
             base_url = self._get_url(base_url, url_variables)
 
         if not isinstance(request, BaseModel):
-            request = utils.unmarshal(
-                request, Optional[shared.TaskServiceCreateGrantRequest]
-            )
-        request = cast(Optional[shared.TaskServiceCreateGrantRequest], request)
+            request = utils.unmarshal(request, shared.TaskServiceCreateGrantRequest)
+        request = cast(shared.TaskServiceCreateGrantRequest, request)
 
         req = self._build_request(
             method="POST",
@@ -56,7 +52,7 @@ class Task(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=False,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -64,11 +60,7 @@ class Task(BaseSDK):
             http_headers=http_headers,
             security=self.sdk_configuration.security,
             get_serialized_body=lambda: utils.serialize_request_body(
-                request,
-                False,
-                True,
-                "json",
-                Optional[shared.TaskServiceCreateGrantRequest],
+                request, False, False, "json", shared.TaskServiceCreateGrantRequest
             ),
             timeout_ms=timeout_ms,
         )
@@ -115,12 +107,10 @@ class Task(BaseSDK):
     async def create_grant_task_async(
         self,
         *,
-        request: Optional[
-            Union[
-                shared.TaskServiceCreateGrantRequest,
-                shared.TaskServiceCreateGrantRequestTypedDict,
-            ]
-        ] = None,
+        request: Union[
+            shared.TaskServiceCreateGrantRequest,
+            shared.TaskServiceCreateGrantRequestTypedDict,
+        ],
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -147,10 +137,8 @@ class Task(BaseSDK):
             base_url = self._get_url(base_url, url_variables)
 
         if not isinstance(request, BaseModel):
-            request = utils.unmarshal(
-                request, Optional[shared.TaskServiceCreateGrantRequest]
-            )
-        request = cast(Optional[shared.TaskServiceCreateGrantRequest], request)
+            request = utils.unmarshal(request, shared.TaskServiceCreateGrantRequest)
+        request = cast(shared.TaskServiceCreateGrantRequest, request)
 
         req = self._build_request_async(
             method="POST",
@@ -158,7 +146,7 @@ class Task(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=False,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -166,11 +154,7 @@ class Task(BaseSDK):
             http_headers=http_headers,
             security=self.sdk_configuration.security,
             get_serialized_body=lambda: utils.serialize_request_body(
-                request,
-                False,
-                True,
-                "json",
-                Optional[shared.TaskServiceCreateGrantRequest],
+                request, False, False, "json", shared.TaskServiceCreateGrantRequest
             ),
             timeout_ms=timeout_ms,
         )
@@ -217,12 +201,10 @@ class Task(BaseSDK):
     def create_offboarding_task(
         self,
         *,
-        request: Optional[
-            Union[
-                shared.TaskServiceCreateOffboardingRequest,
-                shared.TaskServiceCreateOffboardingRequestTypedDict,
-            ]
-        ] = None,
+        request: Union[
+            shared.TaskServiceCreateOffboardingRequest,
+            shared.TaskServiceCreateOffboardingRequestTypedDict,
+        ],
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -250,9 +232,9 @@ class Task(BaseSDK):
 
         if not isinstance(request, BaseModel):
             request = utils.unmarshal(
-                request, Optional[shared.TaskServiceCreateOffboardingRequest]
+                request, shared.TaskServiceCreateOffboardingRequest
             )
-        request = cast(Optional[shared.TaskServiceCreateOffboardingRequest], request)
+        request = cast(shared.TaskServiceCreateOffboardingRequest, request)
 
         req = self._build_request(
             method="POST",
@@ -260,7 +242,7 @@ class Task(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=False,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -270,9 +252,9 @@ class Task(BaseSDK):
             get_serialized_body=lambda: utils.serialize_request_body(
                 request,
                 False,
-                True,
+                False,
                 "json",
-                Optional[shared.TaskServiceCreateOffboardingRequest],
+                shared.TaskServiceCreateOffboardingRequest,
             ),
             timeout_ms=timeout_ms,
         )
@@ -319,12 +301,10 @@ class Task(BaseSDK):
     async def create_offboarding_task_async(
         self,
         *,
-        request: Optional[
-            Union[
-                shared.TaskServiceCreateOffboardingRequest,
-                shared.TaskServiceCreateOffboardingRequestTypedDict,
-            ]
-        ] = None,
+        request: Union[
+            shared.TaskServiceCreateOffboardingRequest,
+            shared.TaskServiceCreateOffboardingRequestTypedDict,
+        ],
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -352,9 +332,9 @@ class Task(BaseSDK):
 
         if not isinstance(request, BaseModel):
             request = utils.unmarshal(
-                request, Optional[shared.TaskServiceCreateOffboardingRequest]
+                request, shared.TaskServiceCreateOffboardingRequest
             )
-        request = cast(Optional[shared.TaskServiceCreateOffboardingRequest], request)
+        request = cast(shared.TaskServiceCreateOffboardingRequest, request)
 
         req = self._build_request_async(
             method="POST",
@@ -362,7 +342,7 @@ class Task(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=False,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -372,9 +352,9 @@ class Task(BaseSDK):
             get_serialized_body=lambda: utils.serialize_request_body(
                 request,
                 False,
-                True,
+                False,
                 "json",
-                Optional[shared.TaskServiceCreateOffboardingRequest],
+                shared.TaskServiceCreateOffboardingRequest,
             ),
             timeout_ms=timeout_ms,
         )
@@ -421,12 +401,10 @@ class Task(BaseSDK):
     def create_revoke_task(
         self,
         *,
-        request: Optional[
-            Union[
-                shared.TaskServiceCreateRevokeRequest,
-                shared.TaskServiceCreateRevokeRequestTypedDict,
-            ]
-        ] = None,
+        request: Union[
+            shared.TaskServiceCreateRevokeRequest,
+            shared.TaskServiceCreateRevokeRequestTypedDict,
+        ],
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -453,10 +431,8 @@ class Task(BaseSDK):
             base_url = self._get_url(base_url, url_variables)
 
         if not isinstance(request, BaseModel):
-            request = utils.unmarshal(
-                request, Optional[shared.TaskServiceCreateRevokeRequest]
-            )
-        request = cast(Optional[shared.TaskServiceCreateRevokeRequest], request)
+            request = utils.unmarshal(request, shared.TaskServiceCreateRevokeRequest)
+        request = cast(shared.TaskServiceCreateRevokeRequest, request)
 
         req = self._build_request(
             method="POST",
@@ -464,7 +440,7 @@ class Task(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=False,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -472,11 +448,7 @@ class Task(BaseSDK):
             http_headers=http_headers,
             security=self.sdk_configuration.security,
             get_serialized_body=lambda: utils.serialize_request_body(
-                request,
-                False,
-                True,
-                "json",
-                Optional[shared.TaskServiceCreateRevokeRequest],
+                request, False, False, "json", shared.TaskServiceCreateRevokeRequest
             ),
             timeout_ms=timeout_ms,
         )
@@ -523,12 +495,10 @@ class Task(BaseSDK):
     async def create_revoke_task_async(
         self,
         *,
-        request: Optional[
-            Union[
-                shared.TaskServiceCreateRevokeRequest,
-                shared.TaskServiceCreateRevokeRequestTypedDict,
-            ]
-        ] = None,
+        request: Union[
+            shared.TaskServiceCreateRevokeRequest,
+            shared.TaskServiceCreateRevokeRequestTypedDict,
+        ],
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -555,10 +525,8 @@ class Task(BaseSDK):
             base_url = self._get_url(base_url, url_variables)
 
         if not isinstance(request, BaseModel):
-            request = utils.unmarshal(
-                request, Optional[shared.TaskServiceCreateRevokeRequest]
-            )
-        request = cast(Optional[shared.TaskServiceCreateRevokeRequest], request)
+            request = utils.unmarshal(request, shared.TaskServiceCreateRevokeRequest)
+        request = cast(shared.TaskServiceCreateRevokeRequest, request)
 
         req = self._build_request_async(
             method="POST",
@@ -566,7 +534,7 @@ class Task(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=False,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -574,11 +542,7 @@ class Task(BaseSDK):
             http_headers=http_headers,
             security=self.sdk_configuration.security,
             get_serialized_body=lambda: utils.serialize_request_body(
-                request,
-                False,
-                True,
-                "json",
-                Optional[shared.TaskServiceCreateRevokeRequest],
+                request, False, False, "json", shared.TaskServiceCreateRevokeRequest
             ),
             timeout_ms=timeout_ms,
         )

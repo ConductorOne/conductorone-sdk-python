@@ -45,6 +45,9 @@ with SDK(
 ) as s_client:
 
     res = s_client.request_catalog_management.add_access_entitlements(request={
+        "request_catalog_management_service_add_access_entitlements_request": {
+            "access_entitlements": [],
+        },
         "catalog_id": "<id>",
     })
 
@@ -92,6 +95,9 @@ with SDK(
 ) as s_client:
 
     res = s_client.request_catalog_management.add_app_entitlements(request={
+        "request_catalog_management_service_add_app_entitlements_request": {
+            "app_entitlements": None,
+        },
         "catalog_id": "<id>",
     })
 
@@ -138,7 +144,9 @@ with SDK(
     ),
 ) as s_client:
 
-    res = s_client.request_catalog_management.create()
+    res = s_client.request_catalog_management.create(request={
+        "display_name": "Dejon_Bergnaum",
+    })
 
     assert res.request_catalog_management_service_get_response is not None
 
@@ -184,6 +192,7 @@ with SDK(
 ) as s_client:
 
     res = s_client.request_catalog_management.create_bundle_automation(request={
+        "create_bundle_automation_request": {},
         "request_catalog_id": "<id>",
     })
 
@@ -231,6 +240,7 @@ with SDK(
 ) as s_client:
 
     res = s_client.request_catalog_management.delete(request={
+        "request_catalog_management_service_delete_request": {},
         "id": "<id>",
     })
 
@@ -278,6 +288,7 @@ with SDK(
 ) as s_client:
 
     res = s_client.request_catalog_management.delete_bundle_automation(request={
+        "delete_bundle_automation_request": {},
         "request_catalog_id": "<id>",
     })
 
@@ -325,6 +336,7 @@ with SDK(
 ) as s_client:
 
     res = s_client.request_catalog_management.force_run_bundle_automation(request={
+        "force_run_bundle_automation_request": {},
         "request_catalog_id": "<id>",
     })
 
@@ -652,6 +664,7 @@ with SDK(
 ) as s_client:
 
     res = s_client.request_catalog_management.remove_access_entitlements(request={
+        "request_catalog_management_service_remove_access_entitlements_request": {},
         "catalog_id": "<id>",
     })
 
@@ -699,6 +712,7 @@ with SDK(
 ) as s_client:
 
     res = s_client.request_catalog_management.remove_app_entitlements(request={
+        "request_catalog_management_service_remove_app_entitlements_request": {},
         "catalog_id": "<id>",
     })
 
@@ -746,6 +760,7 @@ with SDK(
 ) as s_client:
 
     res = s_client.request_catalog_management.resume_paused_bundle_automation(request={
+        "resume_paused_bundle_automation_request": {},
         "request_catalog_id": "<id>",
     })
 
@@ -793,6 +808,7 @@ with SDK(
 ) as s_client:
 
     res = s_client.request_catalog_management.set_bundle_automation(request={
+        "set_bundle_automation_request": {},
         "request_catalog_id": "<id>",
     })
 
@@ -840,6 +856,7 @@ with SDK(
 ) as s_client:
 
     res = s_client.request_catalog_management.update(request={
+        "request_catalog_management_service_update_request": {},
         "id": "<id>",
     })
 
@@ -887,6 +904,11 @@ with SDK(
 ) as s_client:
 
     res = s_client.request_catalog_management.update_app_entitlements(request={
+        "request_catalog_management_service_update_app_entitlements_request": {
+            "app_entitlements": [
+                {},
+            ],
+        },
         "catalog_id": "<id>",
     })
 

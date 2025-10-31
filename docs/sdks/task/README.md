@@ -29,7 +29,10 @@ with SDK(
     ),
 ) as s_client:
 
-    res = s_client.task.create_grant_task()
+    res = s_client.task.create_grant_task(request={
+        "app_entitlement_id": "<id>",
+        "app_id": "<id>",
+    })
 
     assert res.task_service_create_grant_response is not None
 
@@ -74,7 +77,7 @@ with SDK(
     ),
 ) as s_client:
 
-    res = s_client.task.create_offboarding_task()
+    res = s_client.task.create_offboarding_task(request={})
 
     assert res.task_service_create_offboarding_response is not None
 
@@ -119,7 +122,10 @@ with SDK(
     ),
 ) as s_client:
 
-    res = s_client.task.create_revoke_task()
+    res = s_client.task.create_revoke_task(request={
+        "app_entitlement_id": "<id>",
+        "app_id": "<id>",
+    })
 
     assert res.task_service_create_revoke_response is not None
 

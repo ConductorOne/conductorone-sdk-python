@@ -56,7 +56,7 @@ class Functions(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=True,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -66,9 +66,9 @@ class Functions(BaseSDK):
             get_serialized_body=lambda: utils.serialize_request_body(
                 request.functions_service_commit_request,
                 False,
-                True,
+                False,
                 "json",
-                Optional[shared.FunctionsServiceCommitRequest],
+                shared.FunctionsServiceCommitRequest,
             ),
             timeout_ms=timeout_ms,
         )
@@ -158,7 +158,7 @@ class Functions(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=True,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -168,9 +168,9 @@ class Functions(BaseSDK):
             get_serialized_body=lambda: utils.serialize_request_body(
                 request.functions_service_commit_request,
                 False,
-                True,
+                False,
                 "json",
-                Optional[shared.FunctionsServiceCommitRequest],
+                shared.FunctionsServiceCommitRequest,
             ),
             timeout_ms=timeout_ms,
         )
@@ -217,12 +217,10 @@ class Functions(BaseSDK):
     def create_function(
         self,
         *,
-        request: Optional[
-            Union[
-                shared.FunctionsServiceCreateFunctionRequest,
-                shared.FunctionsServiceCreateFunctionRequestTypedDict,
-            ]
-        ] = None,
+        request: Union[
+            shared.FunctionsServiceCreateFunctionRequest,
+            shared.FunctionsServiceCreateFunctionRequestTypedDict,
+        ],
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -250,9 +248,9 @@ class Functions(BaseSDK):
 
         if not isinstance(request, BaseModel):
             request = utils.unmarshal(
-                request, Optional[shared.FunctionsServiceCreateFunctionRequest]
+                request, shared.FunctionsServiceCreateFunctionRequest
             )
-        request = cast(Optional[shared.FunctionsServiceCreateFunctionRequest], request)
+        request = cast(shared.FunctionsServiceCreateFunctionRequest, request)
 
         req = self._build_request(
             method="POST",
@@ -260,7 +258,7 @@ class Functions(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=False,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -270,9 +268,9 @@ class Functions(BaseSDK):
             get_serialized_body=lambda: utils.serialize_request_body(
                 request,
                 False,
-                True,
+                False,
                 "json",
-                Optional[shared.FunctionsServiceCreateFunctionRequest],
+                shared.FunctionsServiceCreateFunctionRequest,
             ),
             timeout_ms=timeout_ms,
         )
@@ -319,12 +317,10 @@ class Functions(BaseSDK):
     async def create_function_async(
         self,
         *,
-        request: Optional[
-            Union[
-                shared.FunctionsServiceCreateFunctionRequest,
-                shared.FunctionsServiceCreateFunctionRequestTypedDict,
-            ]
-        ] = None,
+        request: Union[
+            shared.FunctionsServiceCreateFunctionRequest,
+            shared.FunctionsServiceCreateFunctionRequestTypedDict,
+        ],
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -352,9 +348,9 @@ class Functions(BaseSDK):
 
         if not isinstance(request, BaseModel):
             request = utils.unmarshal(
-                request, Optional[shared.FunctionsServiceCreateFunctionRequest]
+                request, shared.FunctionsServiceCreateFunctionRequest
             )
-        request = cast(Optional[shared.FunctionsServiceCreateFunctionRequest], request)
+        request = cast(shared.FunctionsServiceCreateFunctionRequest, request)
 
         req = self._build_request_async(
             method="POST",
@@ -362,7 +358,7 @@ class Functions(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=False,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -372,9 +368,9 @@ class Functions(BaseSDK):
             get_serialized_body=lambda: utils.serialize_request_body(
                 request,
                 False,
-                True,
+                False,
                 "json",
-                Optional[shared.FunctionsServiceCreateFunctionRequest],
+                shared.FunctionsServiceCreateFunctionRequest,
             ),
             timeout_ms=timeout_ms,
         )
@@ -464,7 +460,7 @@ class Functions(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=True,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -474,9 +470,9 @@ class Functions(BaseSDK):
             get_serialized_body=lambda: utils.serialize_request_body(
                 request.functions_service_create_tag_request,
                 False,
-                True,
+                False,
                 "json",
-                Optional[shared.FunctionsServiceCreateTagRequest],
+                shared.FunctionsServiceCreateTagRequest,
             ),
             timeout_ms=timeout_ms,
         )
@@ -566,7 +562,7 @@ class Functions(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=True,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -576,9 +572,9 @@ class Functions(BaseSDK):
             get_serialized_body=lambda: utils.serialize_request_body(
                 request.functions_service_create_tag_request,
                 False,
-                True,
+                False,
                 "json",
-                Optional[shared.FunctionsServiceCreateTagRequest],
+                shared.FunctionsServiceCreateTagRequest,
             ),
             timeout_ms=timeout_ms,
         )
@@ -669,7 +665,7 @@ class Functions(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=True,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -679,9 +675,9 @@ class Functions(BaseSDK):
             get_serialized_body=lambda: utils.serialize_request_body(
                 request.functions_service_delete_function_request,
                 False,
-                True,
+                False,
                 "json",
-                Optional[shared.FunctionsServiceDeleteFunctionRequest],
+                shared.FunctionsServiceDeleteFunctionRequest,
             ),
             timeout_ms=timeout_ms,
         )
@@ -772,7 +768,7 @@ class Functions(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=True,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -782,9 +778,9 @@ class Functions(BaseSDK):
             get_serialized_body=lambda: utils.serialize_request_body(
                 request.functions_service_delete_function_request,
                 False,
-                True,
+                False,
                 "json",
-                Optional[shared.FunctionsServiceDeleteFunctionRequest],
+                shared.FunctionsServiceDeleteFunctionRequest,
             ),
             timeout_ms=timeout_ms,
         )
@@ -1254,7 +1250,7 @@ class Functions(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=True,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -1264,9 +1260,9 @@ class Functions(BaseSDK):
             get_serialized_body=lambda: utils.serialize_request_body(
                 request.functions_service_invoke_request,
                 False,
-                True,
+                False,
                 "json",
-                Optional[shared.FunctionsServiceInvokeRequest],
+                shared.FunctionsServiceInvokeRequest,
             ),
             timeout_ms=timeout_ms,
         )
@@ -1356,7 +1352,7 @@ class Functions(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=True,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -1366,9 +1362,9 @@ class Functions(BaseSDK):
             get_serialized_body=lambda: utils.serialize_request_body(
                 request.functions_service_invoke_request,
                 False,
-                True,
+                False,
                 "json",
-                Optional[shared.FunctionsServiceInvokeRequest],
+                shared.FunctionsServiceInvokeRequest,
             ),
             timeout_ms=timeout_ms,
         )
@@ -1957,12 +1953,10 @@ class Functions(BaseSDK):
     def update_function(
         self,
         *,
-        request: Optional[
-            Union[
-                shared.FunctionsServiceUpdateFunctionRequest,
-                shared.FunctionsServiceUpdateFunctionRequestTypedDict,
-            ]
-        ] = None,
+        request: Union[
+            shared.FunctionsServiceUpdateFunctionRequest,
+            shared.FunctionsServiceUpdateFunctionRequestTypedDict,
+        ],
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -1990,9 +1984,9 @@ class Functions(BaseSDK):
 
         if not isinstance(request, BaseModel):
             request = utils.unmarshal(
-                request, Optional[shared.FunctionsServiceUpdateFunctionRequest]
+                request, shared.FunctionsServiceUpdateFunctionRequest
             )
-        request = cast(Optional[shared.FunctionsServiceUpdateFunctionRequest], request)
+        request = cast(shared.FunctionsServiceUpdateFunctionRequest, request)
 
         req = self._build_request(
             method="POST",
@@ -2000,7 +1994,7 @@ class Functions(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=False,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -2010,9 +2004,9 @@ class Functions(BaseSDK):
             get_serialized_body=lambda: utils.serialize_request_body(
                 request,
                 False,
-                True,
+                False,
                 "json",
-                Optional[shared.FunctionsServiceUpdateFunctionRequest],
+                shared.FunctionsServiceUpdateFunctionRequest,
             ),
             timeout_ms=timeout_ms,
         )
@@ -2059,12 +2053,10 @@ class Functions(BaseSDK):
     async def update_function_async(
         self,
         *,
-        request: Optional[
-            Union[
-                shared.FunctionsServiceUpdateFunctionRequest,
-                shared.FunctionsServiceUpdateFunctionRequestTypedDict,
-            ]
-        ] = None,
+        request: Union[
+            shared.FunctionsServiceUpdateFunctionRequest,
+            shared.FunctionsServiceUpdateFunctionRequestTypedDict,
+        ],
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -2092,9 +2084,9 @@ class Functions(BaseSDK):
 
         if not isinstance(request, BaseModel):
             request = utils.unmarshal(
-                request, Optional[shared.FunctionsServiceUpdateFunctionRequest]
+                request, shared.FunctionsServiceUpdateFunctionRequest
             )
-        request = cast(Optional[shared.FunctionsServiceUpdateFunctionRequest], request)
+        request = cast(shared.FunctionsServiceUpdateFunctionRequest, request)
 
         req = self._build_request_async(
             method="POST",
@@ -2102,7 +2094,7 @@ class Functions(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=False,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -2112,9 +2104,9 @@ class Functions(BaseSDK):
             get_serialized_body=lambda: utils.serialize_request_body(
                 request,
                 False,
-                True,
+                False,
                 "json",
-                Optional[shared.FunctionsServiceUpdateFunctionRequest],
+                shared.FunctionsServiceUpdateFunctionRequest,
             ),
             timeout_ms=timeout_ms,
         )

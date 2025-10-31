@@ -37,6 +37,7 @@ with SDK(
 ) as s_client:
 
     res = s_client.functions.commit(request={
+        "functions_service_commit_request": {},
         "function_id": "<id>",
     })
 
@@ -83,7 +84,7 @@ with SDK(
     ),
 ) as s_client:
 
-    res = s_client.functions.create_function()
+    res = s_client.functions.create_function(request={})
 
     assert res.functions_service_create_function_response is not None
 
@@ -129,6 +130,7 @@ with SDK(
 ) as s_client:
 
     res = s_client.functions.create_tag(request={
+        "functions_service_create_tag_request": {},
         "function_id": "<id>",
     })
 
@@ -176,6 +178,7 @@ with SDK(
 ) as s_client:
 
     res = s_client.functions.delete_function(request={
+        "functions_service_delete_function_request": {},
         "id": "<id>",
     })
 
@@ -318,6 +321,7 @@ with SDK(
 ) as s_client:
 
     res = s_client.functions.invoke(request={
+        "functions_service_invoke_request": {},
         "function_id": "<id>",
     })
 
@@ -502,7 +506,7 @@ with SDK(
     ),
 ) as s_client:
 
-    res = s_client.functions.update_function()
+    res = s_client.functions.update_function(request={})
 
     assert res.functions_service_update_function_response is not None
 

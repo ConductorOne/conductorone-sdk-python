@@ -416,7 +416,7 @@ class Roles(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=True,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -426,9 +426,9 @@ class Roles(BaseSDK):
             get_serialized_body=lambda: utils.serialize_request_body(
                 request.update_role_request,
                 False,
-                True,
+                False,
                 "json",
-                Optional[shared.UpdateRoleRequest],
+                shared.UpdateRoleRequest,
             ),
             timeout_ms=timeout_ms,
         )
@@ -514,7 +514,7 @@ class Roles(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=True,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -524,9 +524,9 @@ class Roles(BaseSDK):
             get_serialized_body=lambda: utils.serialize_request_body(
                 request.update_role_request,
                 False,
-                True,
+                False,
                 "json",
-                Optional[shared.UpdateRoleRequest],
+                shared.UpdateRoleRequest,
             ),
             timeout_ms=timeout_ms,
         )

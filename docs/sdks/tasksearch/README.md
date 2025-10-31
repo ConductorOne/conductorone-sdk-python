@@ -26,7 +26,7 @@ with SDK(
     ),
 ) as s_client:
 
-    res = s_client.task_search.search()
+    res = s_client.task_search.search(request={})
 
     assert res.task_search_response is not None
 

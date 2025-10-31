@@ -3,9 +3,10 @@
 from __future__ import annotations
 from enum import Enum
 import pydantic
-from pydantic import model_serializer
+from pydantic import field_serializer, model_serializer
 from pydantic.functional_validators import PlainValidator
 from sdk import utils
+from sdk.models import shared
 from sdk.types import BaseModel, Nullable, OptionalNullable, UNSET, UNSET_SENTINEL
 from sdk.utils import validate_open_enum
 from typing import List, Optional
@@ -87,6 +88,24 @@ class AgentApproval(BaseModel):
         OptionalNullable[List[str]], pydantic.Field(alias="reassignToUserIds")
     ] = UNSET
     r"""The users to reassign the task to if the agent failure action is reassign to users."""
+
+    @field_serializer("agent_failure_action")
+    def serialize_agent_failure_action(self, value):
+        if isinstance(value, str):
+            try:
+                return shared.AgentFailureAction(value)
+            except ValueError:
+                return value
+        return value
+
+    @field_serializer("agent_mode")
+    def serialize_agent_mode(self, value):
+        if isinstance(value, str):
+            try:
+                return shared.AgentMode(value)
+            except ValueError:
+                return value
+        return value
 
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):

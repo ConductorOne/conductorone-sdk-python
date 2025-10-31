@@ -13,16 +13,19 @@ from typing_extensions import Annotated, NotRequired, TypedDict
 
 
 class C1APIAppV1AppEntitlementsProxyCreateRequestTypedDict(TypedDict):
+    create_app_entitlement_proxy_request: shared_createappentitlementproxyrequest.CreateAppEntitlementProxyRequestTypedDict
     dst_app_entitlement_id: str
     dst_app_id: str
     src_app_entitlement_id: str
     src_app_id: str
-    create_app_entitlement_proxy_request: NotRequired[
-        shared_createappentitlementproxyrequest.CreateAppEntitlementProxyRequestTypedDict
-    ]
 
 
 class C1APIAppV1AppEntitlementsProxyCreateRequest(BaseModel):
+    create_app_entitlement_proxy_request: Annotated[
+        shared_createappentitlementproxyrequest.CreateAppEntitlementProxyRequest,
+        FieldMetadata(request=RequestMetadata(media_type="application/json")),
+    ]
+
     dst_app_entitlement_id: Annotated[
         str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))
     ]
@@ -38,13 +41,6 @@ class C1APIAppV1AppEntitlementsProxyCreateRequest(BaseModel):
     src_app_id: Annotated[
         str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))
     ]
-
-    create_app_entitlement_proxy_request: Annotated[
-        Optional[
-            shared_createappentitlementproxyrequest.CreateAppEntitlementProxyRequest
-        ],
-        FieldMetadata(request=RequestMetadata(media_type="application/json")),
-    ] = None
 
 
 class C1APIAppV1AppEntitlementsProxyCreateResponseTypedDict(TypedDict):

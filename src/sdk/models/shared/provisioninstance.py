@@ -12,9 +12,10 @@ from .reassignedbyerroraction import (
 from .skippedaction import SkippedAction, SkippedActionTypedDict
 from enum import Enum
 import pydantic
-from pydantic import model_serializer
+from pydantic import field_serializer, model_serializer
 from pydantic.functional_validators import PlainValidator
 from sdk import utils
+from sdk.models import shared
 from sdk.types import BaseModel, Nullable, OptionalNullable, UNSET, UNSET_SENTINEL
 from sdk.utils import validate_open_enum
 from typing import Optional
@@ -165,6 +166,15 @@ class ProvisionInstance(BaseModel):
         Optional[str], pydantic.Field(alias="webhookInstanceId")
     ] = None
     r"""This indicates the webhook instance id for this step."""
+
+    @field_serializer("state")
+    def serialize_state(self, value):
+        if isinstance(value, str):
+            try:
+                return shared.ProvisionInstanceState(value)
+            except ValueError:
+                return value
+        return value
 
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):

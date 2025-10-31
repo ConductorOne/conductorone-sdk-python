@@ -27,6 +27,7 @@ with SDK(
 ) as s_client:
 
     res = s_client.automation_execution_actions.terminate_automation(request={
+        "terminate_automation_request": {},
         "id": 839265,
     })
 

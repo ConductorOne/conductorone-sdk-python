@@ -13,15 +13,20 @@ from typing_extensions import Annotated, NotRequired, TypedDict
 
 
 class C1APIAppV1AppResourceOwnersRemoveRequestTypedDict(TypedDict):
+    remove_app_resource_owner_request: (
+        shared_removeappresourceownerrequest.RemoveAppResourceOwnerRequestTypedDict
+    )
     app_id: str
     resource_id: str
     resource_type_id: str
-    remove_app_resource_owner_request: NotRequired[
-        shared_removeappresourceownerrequest.RemoveAppResourceOwnerRequestTypedDict
-    ]
 
 
 class C1APIAppV1AppResourceOwnersRemoveRequest(BaseModel):
+    remove_app_resource_owner_request: Annotated[
+        shared_removeappresourceownerrequest.RemoveAppResourceOwnerRequest,
+        FieldMetadata(request=RequestMetadata(media_type="application/json")),
+    ]
+
     app_id: Annotated[
         str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))
     ]
@@ -33,11 +38,6 @@ class C1APIAppV1AppResourceOwnersRemoveRequest(BaseModel):
     resource_type_id: Annotated[
         str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))
     ]
-
-    remove_app_resource_owner_request: Annotated[
-        Optional[shared_removeappresourceownerrequest.RemoveAppResourceOwnerRequest],
-        FieldMetadata(request=RequestMetadata(media_type="application/json")),
-    ] = None
 
 
 class C1APIAppV1AppResourceOwnersRemoveResponseTypedDict(TypedDict):

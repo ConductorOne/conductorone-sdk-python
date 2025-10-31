@@ -8,10 +8,11 @@ from .tasktype import TaskType, TaskTypeTypedDict
 from datetime import datetime
 from enum import Enum
 import pydantic
-from pydantic import ConfigDict, model_serializer
+from pydantic import ConfigDict, field_serializer, model_serializer
 from pydantic.functional_serializers import PlainSerializer
 from pydantic.functional_validators import BeforeValidator, PlainValidator
 from sdk import utils
+from sdk.models import shared
 from sdk.types import BaseModel, Nullable, OptionalNullable, UNSET, UNSET_SENTINEL
 from sdk.utils import serialize_int, validate_int, validate_open_enum
 from typing import Any, Dict, List, Optional
@@ -307,6 +308,42 @@ class Task(BaseModel):
 
     user_id: Annotated[Optional[str], pydantic.Field(alias="userId")] = None
     r"""The ID of the user that is the target of this task. This may be empty if we're targeting a specific app user that has no known identity user."""
+
+    @field_serializer("origin")
+    def serialize_origin(self, value):
+        if isinstance(value, str):
+            try:
+                return shared.Origin(value)
+            except ValueError:
+                return value
+        return value
+
+    @field_serializer("processing")
+    def serialize_processing(self, value):
+        if isinstance(value, str):
+            try:
+                return shared.Processing(value)
+            except ValueError:
+                return value
+        return value
+
+    @field_serializer("recommendation")
+    def serialize_recommendation(self, value):
+        if isinstance(value, str):
+            try:
+                return shared.Recommendation(value)
+            except ValueError:
+                return value
+        return value
+
+    @field_serializer("state")
+    def serialize_state(self, value):
+        if isinstance(value, str):
+            try:
+                return shared.TaskState(value)
+            except ValueError:
+                return value
+        return value
 
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):

@@ -43,6 +43,7 @@ with SDK(
 ) as s_client:
 
     res = s_client.app_entitlements.add_automation_exclusion(request={
+        "add_automation_exclusion_request": {},
         "app_entitlement_id": "<id>",
         "app_id": "<id>",
     })
@@ -91,6 +92,7 @@ with SDK(
 ) as s_client:
 
     res = s_client.app_entitlements.add_manually_managed_members(request={
+        "add_manually_managed_users_request": {},
         "app_entitlement_id": "<id>",
         "app_id": "<id>",
     })
@@ -139,6 +141,9 @@ with SDK(
 ) as s_client:
 
     res = s_client.app_entitlements.create(request={
+        "create_app_entitlement_request": {
+            "display_name": "Baron.Hayes",
+        },
         "app_id": "<id>",
     })
 
@@ -186,6 +191,7 @@ with SDK(
 ) as s_client:
 
     res = s_client.app_entitlements.create_automation(request={
+        "create_automation_request": {},
         "app_entitlement_id": "<id>",
         "app_id": "<id>",
     })
@@ -234,6 +240,7 @@ with SDK(
 ) as s_client:
 
     res = s_client.app_entitlements.delete(request={
+        "delete_app_entitlement_request": {},
         "app_id": "<id>",
         "id": "<id>",
     })
@@ -282,6 +289,7 @@ with SDK(
 ) as s_client:
 
     res = s_client.app_entitlements.delete_automation(request={
+        "delete_automation_request": {},
         "app_entitlement_id": "<id>",
         "app_id": "<id>",
     })
@@ -668,6 +676,7 @@ with SDK(
 ) as s_client:
 
     res = s_client.app_entitlements.remove_automation_exclusion(request={
+        "remove_automation_exclusion_request": {},
         "app_entitlement_id": "<id>",
         "app_id": "<id>",
     })
@@ -716,6 +725,7 @@ with SDK(
 ) as s_client:
 
     res = s_client.app_entitlements.remove_entitlement_membership(request={
+        "remove_entitlement_membership_request": {},
         "app_entitlement_id": "<id>",
         "app_id": "<id>",
     })
@@ -764,6 +774,7 @@ with SDK(
 ) as s_client:
 
     res = s_client.app_entitlements.update(request=operations.C1APIAppV1AppEntitlementsUpdateRequest(
+        update_app_entitlement_request=shared.UpdateAppEntitlementRequest(),
         app_id="<id>",
         id="<id>",
     ))
@@ -812,6 +823,7 @@ with SDK(
 ) as s_client:
 
     res = s_client.app_entitlements.update_automation(request={
+        "app_entitlement_service_update_automation_request": {},
         "app_entitlement_id": "<id>",
         "app_id": "<id>",
     })

@@ -13,15 +13,20 @@ from typing_extensions import Annotated, NotRequired, TypedDict
 
 
 class C1APIAppV1AppResourceOwnersSetRequestTypedDict(TypedDict):
+    set_app_resource_owners_request: (
+        shared_setappresourceownersrequest.SetAppResourceOwnersRequestTypedDict
+    )
     app_id: str
     resource_id: str
     resource_type_id: str
-    set_app_resource_owners_request: NotRequired[
-        shared_setappresourceownersrequest.SetAppResourceOwnersRequestTypedDict
-    ]
 
 
 class C1APIAppV1AppResourceOwnersSetRequest(BaseModel):
+    set_app_resource_owners_request: Annotated[
+        shared_setappresourceownersrequest.SetAppResourceOwnersRequest,
+        FieldMetadata(request=RequestMetadata(media_type="application/json")),
+    ]
+
     app_id: Annotated[
         str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))
     ]
@@ -33,11 +38,6 @@ class C1APIAppV1AppResourceOwnersSetRequest(BaseModel):
     resource_type_id: Annotated[
         str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))
     ]
-
-    set_app_resource_owners_request: Annotated[
-        Optional[shared_setappresourceownersrequest.SetAppResourceOwnersRequest],
-        FieldMetadata(request=RequestMetadata(media_type="application/json")),
-    ] = None
 
 
 class C1APIAppV1AppResourceOwnersSetResponseTypedDict(TypedDict):

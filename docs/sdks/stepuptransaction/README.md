@@ -74,7 +74,7 @@ with SDK(
     ),
 ) as s_client:
 
-    res = s_client.step_up_transaction.search()
+    res = s_client.step_up_transaction.search(request={})
 
     assert res.search_step_up_transactions_response is not None
 

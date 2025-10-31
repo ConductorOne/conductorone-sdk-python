@@ -15,23 +15,19 @@ from typing_extensions import Annotated, NotRequired, TypedDict
 class C1APIUserV1UserServiceSetExpiringUserDelegationBindingByAdminRequestTypedDict(
     TypedDict
 ):
+    set_expiring_user_delegation_binding_by_admin_request: shared_setexpiringuserdelegationbindingbyadminrequest.SetExpiringUserDelegationBindingByAdminRequestTypedDict
     user_id: str
-    set_expiring_user_delegation_binding_by_admin_request: NotRequired[
-        shared_setexpiringuserdelegationbindingbyadminrequest.SetExpiringUserDelegationBindingByAdminRequestTypedDict
-    ]
 
 
 class C1APIUserV1UserServiceSetExpiringUserDelegationBindingByAdminRequest(BaseModel):
+    set_expiring_user_delegation_binding_by_admin_request: Annotated[
+        shared_setexpiringuserdelegationbindingbyadminrequest.SetExpiringUserDelegationBindingByAdminRequest,
+        FieldMetadata(request=RequestMetadata(media_type="application/json")),
+    ]
+
     user_id: Annotated[
         str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))
     ]
-
-    set_expiring_user_delegation_binding_by_admin_request: Annotated[
-        Optional[
-            shared_setexpiringuserdelegationbindingbyadminrequest.SetExpiringUserDelegationBindingByAdminRequest
-        ],
-        FieldMetadata(request=RequestMetadata(media_type="application/json")),
-    ] = None
 
 
 class C1APIUserV1UserServiceSetExpiringUserDelegationBindingByAdminResponseTypedDict(

@@ -13,21 +13,19 @@ from typing_extensions import Annotated, NotRequired, TypedDict
 
 
 class C1APIIamV1RolesUpdateRequestTypedDict(TypedDict):
+    update_role_request: shared_updaterolerequest.UpdateRoleRequestTypedDict
     role_id: str
-    update_role_request: NotRequired[
-        shared_updaterolerequest.UpdateRoleRequestTypedDict
-    ]
 
 
 class C1APIIamV1RolesUpdateRequest(BaseModel):
+    update_role_request: Annotated[
+        shared_updaterolerequest.UpdateRoleRequest,
+        FieldMetadata(request=RequestMetadata(media_type="application/json")),
+    ]
+
     role_id: Annotated[
         str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))
     ]
-
-    update_role_request: Annotated[
-        Optional[shared_updaterolerequest.UpdateRoleRequest],
-        FieldMetadata(request=RequestMetadata(media_type="application/json")),
-    ] = None
 
 
 class C1APIIamV1RolesUpdateResponseTypedDict(TypedDict):

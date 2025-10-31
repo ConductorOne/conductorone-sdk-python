@@ -15,21 +15,21 @@ from typing_extensions import Annotated, NotRequired, TypedDict
 class C1APIAccessconflictV1AccessConflictServiceUpdateMonitorRequestTypedDict(
     TypedDict
 ):
-    id: str
-    conflict_monitor_update_request: NotRequired[
+    conflict_monitor_update_request: (
         shared_conflictmonitorupdaterequest.ConflictMonitorUpdateRequestTypedDict
-    ]
+    )
+    id: str
 
 
 class C1APIAccessconflictV1AccessConflictServiceUpdateMonitorRequest(BaseModel):
+    conflict_monitor_update_request: Annotated[
+        shared_conflictmonitorupdaterequest.ConflictMonitorUpdateRequest,
+        FieldMetadata(request=RequestMetadata(media_type="application/json")),
+    ]
+
     id: Annotated[
         str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))
     ]
-
-    conflict_monitor_update_request: Annotated[
-        Optional[shared_conflictmonitorupdaterequest.ConflictMonitorUpdateRequest],
-        FieldMetadata(request=RequestMetadata(media_type="application/json")),
-    ] = None
 
 
 class C1APIAccessconflictV1AccessConflictServiceUpdateMonitorResponseTypedDict(

@@ -26,7 +26,7 @@ with SDK(
     ),
 ) as s_client:
 
-    res = s_client.user_search.search()
+    res = s_client.user_search.search(request={})
 
     while res is not None:
         # Handle items

@@ -32,6 +32,7 @@ with SDK(
 ) as s_client:
 
     res = s_client.app_owners.add(request={
+        "add_app_owner_request": {},
         "app_id": "<id>",
         "user_id": "<id>",
     })
@@ -80,6 +81,7 @@ with SDK(
 ) as s_client:
 
     res = s_client.app_owners.delete(request={
+        "delete_app_owners_request": {},
         "app_id": "<id>",
     })
 
@@ -221,6 +223,7 @@ with SDK(
 ) as s_client:
 
     res = s_client.app_owners.remove(request={
+        "remove_app_owner_request": {},
         "app_id": "<id>",
         "user_id": "<id>",
     })
@@ -269,6 +272,7 @@ with SDK(
 ) as s_client:
 
     res = s_client.app_owners.set(request={
+        "set_app_owners_request": {},
         "app_id": "<id>",
     })
 

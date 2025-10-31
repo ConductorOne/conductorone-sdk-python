@@ -13,23 +13,19 @@ from typing_extensions import Annotated, NotRequired, TypedDict
 
 
 class C1APITaskV1TaskActionsServiceApproveRequestTypedDict(TypedDict):
+    task_actions_service_approve_request: shared_taskactionsserviceapproverequest.TaskActionsServiceApproveRequestTypedDict
     task_id: str
-    task_actions_service_approve_request: NotRequired[
-        shared_taskactionsserviceapproverequest.TaskActionsServiceApproveRequestTypedDict
-    ]
 
 
 class C1APITaskV1TaskActionsServiceApproveRequest(BaseModel):
+    task_actions_service_approve_request: Annotated[
+        shared_taskactionsserviceapproverequest.TaskActionsServiceApproveRequest,
+        FieldMetadata(request=RequestMetadata(media_type="application/json")),
+    ]
+
     task_id: Annotated[
         str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))
     ]
-
-    task_actions_service_approve_request: Annotated[
-        Optional[
-            shared_taskactionsserviceapproverequest.TaskActionsServiceApproveRequest
-        ],
-        FieldMetadata(request=RequestMetadata(media_type="application/json")),
-    ] = None
 
 
 class C1APITaskV1TaskActionsServiceApproveResponseTypedDict(TypedDict):

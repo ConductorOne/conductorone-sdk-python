@@ -13,21 +13,21 @@ from typing_extensions import Annotated, NotRequired, TypedDict
 
 
 class C1APIAttributeV1AttributesDeleteAttributeValueRequestTypedDict(TypedDict):
-    id: str
-    delete_attribute_value_request: NotRequired[
+    delete_attribute_value_request: (
         shared_deleteattributevaluerequest.DeleteAttributeValueRequestTypedDict
-    ]
+    )
+    id: str
 
 
 class C1APIAttributeV1AttributesDeleteAttributeValueRequest(BaseModel):
+    delete_attribute_value_request: Annotated[
+        shared_deleteattributevaluerequest.DeleteAttributeValueRequest,
+        FieldMetadata(request=RequestMetadata(media_type="application/json")),
+    ]
+
     id: Annotated[
         str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))
     ]
-
-    delete_attribute_value_request: Annotated[
-        Optional[shared_deleteattributevaluerequest.DeleteAttributeValueRequest],
-        FieldMetadata(request=RequestMetadata(media_type="application/json")),
-    ] = None
 
 
 class C1APIAttributeV1AttributesDeleteAttributeValueResponseTypedDict(TypedDict):

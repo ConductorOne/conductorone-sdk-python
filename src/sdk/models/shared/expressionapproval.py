@@ -21,6 +21,8 @@ class ExpressionApprovalTypedDict(TypedDict):
     r"""Configuration to allow a fallback if the expression does not return a valid list of users."""
     fallback_user_ids: NotRequired[Nullable[List[str]]]
     r"""Configuration to specific which users to fallback to if and the expression does not return a valid list of users."""
+    require_distinct_approvers: NotRequired[bool]
+    r"""Configuration to require distinct approvers across approval steps of a rule."""
 
 
 class ExpressionApproval(BaseModel):
@@ -47,6 +49,11 @@ class ExpressionApproval(BaseModel):
     ] = UNSET
     r"""Configuration to specific which users to fallback to if and the expression does not return a valid list of users."""
 
+    require_distinct_approvers: Annotated[
+        Optional[bool], pydantic.Field(alias="requireDistinctApprovers")
+    ] = None
+    r"""Configuration to require distinct approvers across approval steps of a rule."""
+
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
         optional_fields = [
@@ -55,6 +62,7 @@ class ExpressionApproval(BaseModel):
             "expressions",
             "fallback",
             "fallbackUserIds",
+            "requireDistinctApprovers",
         ]
         nullable_fields = ["assignedUserIds", "expressions", "fallbackUserIds"]
         null_default_fields = []

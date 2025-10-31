@@ -26,7 +26,7 @@ with SDK(
     ),
 ) as s_client:
 
-    res = s_client.personal_client_search.search()
+    res = s_client.personal_client_search.search(request={})
 
     assert res.personal_client_search_service_search_response is not None
 

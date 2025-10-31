@@ -32,6 +32,7 @@ with SDK(
 ) as s_client:
 
     res = s_client.app_resource_owners.add(request={
+        "add_app_resource_owner_request": {},
         "app_id": "<id>",
         "resource_id": "<id>",
         "resource_type_id": "<id>",
@@ -81,6 +82,7 @@ with SDK(
 ) as s_client:
 
     res = s_client.app_resource_owners.delete(request={
+        "delete_app_resource_owners_request": {},
         "app_id": "<id>",
         "resource_id": "<id>",
         "resource_type_id": "<id>",
@@ -228,6 +230,7 @@ with SDK(
 ) as s_client:
 
     res = s_client.app_resource_owners.remove(request={
+        "remove_app_resource_owner_request": {},
         "app_id": "<id>",
         "resource_id": "<id>",
         "resource_type_id": "<id>",
@@ -277,6 +280,7 @@ with SDK(
 ) as s_client:
 
     res = s_client.app_resource_owners.set(request={
+        "set_app_resource_owners_request": {},
         "app_id": "<id>",
         "resource_id": "<id>",
         "resource_type_id": "<id>",

@@ -581,12 +581,10 @@ class AppUser(BaseSDK):
     def search(
         self,
         *,
-        request: Optional[
-            Union[
-                shared.AppUserServiceSearchRequest,
-                shared.AppUserServiceSearchRequestTypedDict,
-            ]
-        ] = None,
+        request: Union[
+            shared.AppUserServiceSearchRequest,
+            shared.AppUserServiceSearchRequestTypedDict,
+        ],
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -613,10 +611,8 @@ class AppUser(BaseSDK):
             base_url = self._get_url(base_url, url_variables)
 
         if not isinstance(request, BaseModel):
-            request = utils.unmarshal(
-                request, Optional[shared.AppUserServiceSearchRequest]
-            )
-        request = cast(Optional[shared.AppUserServiceSearchRequest], request)
+            request = utils.unmarshal(request, shared.AppUserServiceSearchRequest)
+        request = cast(shared.AppUserServiceSearchRequest, request)
 
         req = self._build_request(
             method="POST",
@@ -624,7 +620,7 @@ class AppUser(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=False,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -632,11 +628,7 @@ class AppUser(BaseSDK):
             http_headers=http_headers,
             security=self.sdk_configuration.security,
             get_serialized_body=lambda: utils.serialize_request_body(
-                request,
-                False,
-                True,
-                "json",
-                Optional[shared.AppUserServiceSearchRequest],
+                request, False, False, "json", shared.AppUserServiceSearchRequest
             ),
             timeout_ms=timeout_ms,
         )
@@ -683,12 +675,10 @@ class AppUser(BaseSDK):
     async def search_async(
         self,
         *,
-        request: Optional[
-            Union[
-                shared.AppUserServiceSearchRequest,
-                shared.AppUserServiceSearchRequestTypedDict,
-            ]
-        ] = None,
+        request: Union[
+            shared.AppUserServiceSearchRequest,
+            shared.AppUserServiceSearchRequestTypedDict,
+        ],
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -715,10 +705,8 @@ class AppUser(BaseSDK):
             base_url = self._get_url(base_url, url_variables)
 
         if not isinstance(request, BaseModel):
-            request = utils.unmarshal(
-                request, Optional[shared.AppUserServiceSearchRequest]
-            )
-        request = cast(Optional[shared.AppUserServiceSearchRequest], request)
+            request = utils.unmarshal(request, shared.AppUserServiceSearchRequest)
+        request = cast(shared.AppUserServiceSearchRequest, request)
 
         req = self._build_request_async(
             method="POST",
@@ -726,7 +714,7 @@ class AppUser(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=False,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -734,11 +722,7 @@ class AppUser(BaseSDK):
             http_headers=http_headers,
             security=self.sdk_configuration.security,
             get_serialized_body=lambda: utils.serialize_request_body(
-                request,
-                False,
-                True,
-                "json",
-                Optional[shared.AppUserServiceSearchRequest],
+                request, False, False, "json", shared.AppUserServiceSearchRequest
             ),
             timeout_ms=timeout_ms,
         )
@@ -827,7 +811,7 @@ class AppUser(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=True,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -837,9 +821,9 @@ class AppUser(BaseSDK):
             get_serialized_body=lambda: utils.serialize_request_body(
                 request.app_user_service_update_request,
                 False,
-                True,
+                False,
                 "json",
-                Optional[shared.AppUserServiceUpdateRequest],
+                shared.AppUserServiceUpdateRequest,
             ),
             timeout_ms=timeout_ms,
         )
@@ -928,7 +912,7 @@ class AppUser(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=True,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -938,9 +922,9 @@ class AppUser(BaseSDK):
             get_serialized_body=lambda: utils.serialize_request_body(
                 request.app_user_service_update_request,
                 False,
-                True,
+                False,
                 "json",
-                Optional[shared.AppUserServiceUpdateRequest],
+                shared.AppUserServiceUpdateRequest,
             ),
             timeout_ms=timeout_ms,
         )

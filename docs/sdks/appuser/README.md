@@ -173,7 +173,7 @@ with SDK(
     ),
 ) as s_client:
 
-    res = s_client.app_user.search()
+    res = s_client.app_user.search(request={})
 
     assert res.app_user_service_search_response is not None
 
@@ -220,6 +220,7 @@ with SDK(
 ) as s_client:
 
     res = s_client.app_user.update(request={
+        "app_user_service_update_request": {},
         "app_user_app_id": "<id>",
         "app_user_id": "<id>",
     })

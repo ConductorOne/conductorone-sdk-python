@@ -3,8 +3,10 @@
 from __future__ import annotations
 from enum import Enum
 import pydantic
+from pydantic import field_serializer
 from pydantic.functional_validators import PlainValidator
 from sdk import utils
+from sdk.models import shared
 from sdk.types import BaseModel
 from sdk.utils import validate_open_enum
 from typing import Optional
@@ -34,3 +36,12 @@ class TaskAuditStateChange(BaseModel):
         pydantic.Field(alias="previousState"),
     ] = None
     r"""The previousState field."""
+
+    @field_serializer("previous_state")
+    def serialize_previous_state(self, value):
+        if isinstance(value, str):
+            try:
+                return shared.PreviousState(value)
+            except ValueError:
+                return value
+        return value

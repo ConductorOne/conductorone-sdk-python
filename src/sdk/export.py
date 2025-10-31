@@ -13,12 +13,10 @@ class Export(BaseSDK):
     def create(
         self,
         *,
-        request: Optional[
-            Union[
-                shared.ExportServiceCreateRequest,
-                shared.ExportServiceCreateRequestTypedDict,
-            ]
-        ] = None,
+        request: Union[
+            shared.ExportServiceCreateRequest,
+            shared.ExportServiceCreateRequestTypedDict,
+        ],
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -45,10 +43,8 @@ class Export(BaseSDK):
             base_url = self._get_url(base_url, url_variables)
 
         if not isinstance(request, BaseModel):
-            request = utils.unmarshal(
-                request, Optional[shared.ExportServiceCreateRequest]
-            )
-        request = cast(Optional[shared.ExportServiceCreateRequest], request)
+            request = utils.unmarshal(request, shared.ExportServiceCreateRequest)
+        request = cast(shared.ExportServiceCreateRequest, request)
 
         req = self._build_request(
             method="POST",
@@ -56,7 +52,7 @@ class Export(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=False,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -64,11 +60,7 @@ class Export(BaseSDK):
             http_headers=http_headers,
             security=self.sdk_configuration.security,
             get_serialized_body=lambda: utils.serialize_request_body(
-                request,
-                False,
-                True,
-                "json",
-                Optional[shared.ExportServiceCreateRequest],
+                request, False, False, "json", shared.ExportServiceCreateRequest
             ),
             timeout_ms=timeout_ms,
         )
@@ -115,12 +107,10 @@ class Export(BaseSDK):
     async def create_async(
         self,
         *,
-        request: Optional[
-            Union[
-                shared.ExportServiceCreateRequest,
-                shared.ExportServiceCreateRequestTypedDict,
-            ]
-        ] = None,
+        request: Union[
+            shared.ExportServiceCreateRequest,
+            shared.ExportServiceCreateRequestTypedDict,
+        ],
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -147,10 +137,8 @@ class Export(BaseSDK):
             base_url = self._get_url(base_url, url_variables)
 
         if not isinstance(request, BaseModel):
-            request = utils.unmarshal(
-                request, Optional[shared.ExportServiceCreateRequest]
-            )
-        request = cast(Optional[shared.ExportServiceCreateRequest], request)
+            request = utils.unmarshal(request, shared.ExportServiceCreateRequest)
+        request = cast(shared.ExportServiceCreateRequest, request)
 
         req = self._build_request_async(
             method="POST",
@@ -158,7 +146,7 @@ class Export(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=False,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -166,11 +154,7 @@ class Export(BaseSDK):
             http_headers=http_headers,
             security=self.sdk_configuration.security,
             get_serialized_body=lambda: utils.serialize_request_body(
-                request,
-                False,
-                True,
-                "json",
-                Optional[shared.ExportServiceCreateRequest],
+                request, False, False, "json", shared.ExportServiceCreateRequest
             ),
             timeout_ms=timeout_ms,
         )
@@ -258,7 +242,7 @@ class Export(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=True,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -268,9 +252,9 @@ class Export(BaseSDK):
             get_serialized_body=lambda: utils.serialize_request_body(
                 request.export_service_delete_request,
                 False,
-                True,
+                False,
                 "json",
-                Optional[shared.ExportServiceDeleteRequest],
+                shared.ExportServiceDeleteRequest,
             ),
             timeout_ms=timeout_ms,
         )
@@ -358,7 +342,7 @@ class Export(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=True,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -368,9 +352,9 @@ class Export(BaseSDK):
             get_serialized_body=lambda: utils.serialize_request_body(
                 request.export_service_delete_request,
                 False,
-                True,
+                False,
                 "json",
-                Optional[shared.ExportServiceDeleteRequest],
+                shared.ExportServiceDeleteRequest,
             ),
             timeout_ms=timeout_ms,
         )
@@ -832,7 +816,7 @@ class Export(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=True,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -842,9 +826,9 @@ class Export(BaseSDK):
             get_serialized_body=lambda: utils.serialize_request_body(
                 request.export_service_list_events_request,
                 False,
-                True,
+                False,
                 "json",
-                Optional[shared.ExportServiceListEventsRequest],
+                shared.ExportServiceListEventsRequest,
             ),
             timeout_ms=timeout_ms,
         )
@@ -934,7 +918,7 @@ class Export(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=True,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -944,9 +928,9 @@ class Export(BaseSDK):
             get_serialized_body=lambda: utils.serialize_request_body(
                 request.export_service_list_events_request,
                 False,
-                True,
+                False,
                 "json",
-                Optional[shared.ExportServiceListEventsRequest],
+                shared.ExportServiceListEventsRequest,
             ),
             timeout_ms=timeout_ms,
         )
@@ -1034,7 +1018,7 @@ class Export(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=True,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -1044,9 +1028,9 @@ class Export(BaseSDK):
             get_serialized_body=lambda: utils.serialize_request_body(
                 request.export_service_update_request,
                 False,
-                True,
+                False,
                 "json",
-                Optional[shared.ExportServiceUpdateRequest],
+                shared.ExportServiceUpdateRequest,
             ),
             timeout_ms=timeout_ms,
         )
@@ -1134,7 +1118,7 @@ class Export(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=True,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -1144,9 +1128,9 @@ class Export(BaseSDK):
             get_serialized_body=lambda: utils.serialize_request_body(
                 request.export_service_update_request,
                 False,
-                True,
+                False,
                 "json",
-                Optional[shared.ExportServiceUpdateRequest],
+                shared.ExportServiceUpdateRequest,
             ),
             timeout_ms=timeout_ms,
         )

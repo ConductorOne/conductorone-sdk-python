@@ -13,21 +13,21 @@ from typing_extensions import Annotated, NotRequired, TypedDict
 
 
 class C1APITaskV1TaskActionsServiceDenyRequestTypedDict(TypedDict):
-    task_id: str
-    task_actions_service_deny_request: NotRequired[
+    task_actions_service_deny_request: (
         shared_taskactionsservicedenyrequest.TaskActionsServiceDenyRequestTypedDict
-    ]
+    )
+    task_id: str
 
 
 class C1APITaskV1TaskActionsServiceDenyRequest(BaseModel):
+    task_actions_service_deny_request: Annotated[
+        shared_taskactionsservicedenyrequest.TaskActionsServiceDenyRequest,
+        FieldMetadata(request=RequestMetadata(media_type="application/json")),
+    ]
+
     task_id: Annotated[
         str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))
     ]
-
-    task_actions_service_deny_request: Annotated[
-        Optional[shared_taskactionsservicedenyrequest.TaskActionsServiceDenyRequest],
-        FieldMetadata(request=RequestMetadata(media_type="application/json")),
-    ] = None
 
 
 class C1APITaskV1TaskActionsServiceDenyResponseTypedDict(TypedDict):

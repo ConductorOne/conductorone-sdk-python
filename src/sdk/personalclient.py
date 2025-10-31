@@ -13,12 +13,10 @@ class PersonalClient(BaseSDK):
     def create(
         self,
         *,
-        request: Optional[
-            Union[
-                shared.PersonalClientServiceCreateRequest,
-                shared.PersonalClientServiceCreateRequestTypedDict,
-            ]
-        ] = None,
+        request: Union[
+            shared.PersonalClientServiceCreateRequest,
+            shared.PersonalClientServiceCreateRequestTypedDict,
+        ],
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -46,9 +44,9 @@ class PersonalClient(BaseSDK):
 
         if not isinstance(request, BaseModel):
             request = utils.unmarshal(
-                request, Optional[shared.PersonalClientServiceCreateRequest]
+                request, shared.PersonalClientServiceCreateRequest
             )
-        request = cast(Optional[shared.PersonalClientServiceCreateRequest], request)
+        request = cast(shared.PersonalClientServiceCreateRequest, request)
 
         req = self._build_request(
             method="POST",
@@ -56,7 +54,7 @@ class PersonalClient(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=False,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -64,11 +62,7 @@ class PersonalClient(BaseSDK):
             http_headers=http_headers,
             security=self.sdk_configuration.security,
             get_serialized_body=lambda: utils.serialize_request_body(
-                request,
-                False,
-                True,
-                "json",
-                Optional[shared.PersonalClientServiceCreateRequest],
+                request, False, False, "json", shared.PersonalClientServiceCreateRequest
             ),
             timeout_ms=timeout_ms,
         )
@@ -115,12 +109,10 @@ class PersonalClient(BaseSDK):
     async def create_async(
         self,
         *,
-        request: Optional[
-            Union[
-                shared.PersonalClientServiceCreateRequest,
-                shared.PersonalClientServiceCreateRequestTypedDict,
-            ]
-        ] = None,
+        request: Union[
+            shared.PersonalClientServiceCreateRequest,
+            shared.PersonalClientServiceCreateRequestTypedDict,
+        ],
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -148,9 +140,9 @@ class PersonalClient(BaseSDK):
 
         if not isinstance(request, BaseModel):
             request = utils.unmarshal(
-                request, Optional[shared.PersonalClientServiceCreateRequest]
+                request, shared.PersonalClientServiceCreateRequest
             )
-        request = cast(Optional[shared.PersonalClientServiceCreateRequest], request)
+        request = cast(shared.PersonalClientServiceCreateRequest, request)
 
         req = self._build_request_async(
             method="POST",
@@ -158,7 +150,7 @@ class PersonalClient(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=False,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -166,11 +158,7 @@ class PersonalClient(BaseSDK):
             http_headers=http_headers,
             security=self.sdk_configuration.security,
             get_serialized_body=lambda: utils.serialize_request_body(
-                request,
-                False,
-                True,
-                "json",
-                Optional[shared.PersonalClientServiceCreateRequest],
+                request, False, False, "json", shared.PersonalClientServiceCreateRequest
             ),
             timeout_ms=timeout_ms,
         )
@@ -258,7 +246,7 @@ class PersonalClient(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=True,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -268,9 +256,9 @@ class PersonalClient(BaseSDK):
             get_serialized_body=lambda: utils.serialize_request_body(
                 request.personal_client_service_delete_request,
                 False,
-                True,
+                False,
                 "json",
-                Optional[shared.PersonalClientServiceDeleteRequest],
+                shared.PersonalClientServiceDeleteRequest,
             ),
             timeout_ms=timeout_ms,
         )
@@ -358,7 +346,7 @@ class PersonalClient(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=True,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -368,9 +356,9 @@ class PersonalClient(BaseSDK):
             get_serialized_body=lambda: utils.serialize_request_body(
                 request.personal_client_service_delete_request,
                 False,
-                True,
+                False,
                 "json",
-                Optional[shared.PersonalClientServiceDeleteRequest],
+                shared.PersonalClientServiceDeleteRequest,
             ),
             timeout_ms=timeout_ms,
         )
@@ -806,7 +794,7 @@ class PersonalClient(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=True,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -816,9 +804,9 @@ class PersonalClient(BaseSDK):
             get_serialized_body=lambda: utils.serialize_request_body(
                 request.personal_client_service_update_request,
                 False,
-                True,
+                False,
                 "json",
-                Optional[shared.PersonalClientServiceUpdateRequest],
+                shared.PersonalClientServiceUpdateRequest,
             ),
             timeout_ms=timeout_ms,
         )
@@ -906,7 +894,7 @@ class PersonalClient(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=True,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -916,9 +904,9 @@ class PersonalClient(BaseSDK):
             get_serialized_body=lambda: utils.serialize_request_body(
                 request.personal_client_service_update_request,
                 False,
-                True,
+                False,
                 "json",
-                Optional[shared.PersonalClientServiceUpdateRequest],
+                shared.PersonalClientServiceUpdateRequest,
             ),
             timeout_ms=timeout_ms,
         )

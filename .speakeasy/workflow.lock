@@ -1,9 +1,9 @@
-speakeasyVersion: 1.642.1
+speakeasyVersion: 1.643.3
 sources:
     my-source:
         sourceNamespace: my-source
-        sourceRevisionDigest: sha256:8fdf387d820c5c6c13e60a5a3dc4d77ed9ee83b8cbfa9d7b5f4583f4097151de
-        sourceBlobDigest: sha256:056d8fd2488341bc6213cbb1ebc31c8c043635aaf5c0672046ff4baa14a5c450
+        sourceRevisionDigest: sha256:55d4562ba760a637efc6efcc292bc0120900d05035c9f2075e3b8776b756c8bf
+        sourceBlobDigest: sha256:15b1d6915d59bb2fd4d851f8fded3d3b409954424e6ed6a0da03279ee2211a99
         tags:
             - latest
             - 0.1.0-alpha
@@ -11,10 +11,10 @@ targets:
     conductorone-python:
         source: my-source
         sourceNamespace: my-source
-        sourceRevisionDigest: sha256:8fdf387d820c5c6c13e60a5a3dc4d77ed9ee83b8cbfa9d7b5f4583f4097151de
-        sourceBlobDigest: sha256:056d8fd2488341bc6213cbb1ebc31c8c043635aaf5c0672046ff4baa14a5c450
+        sourceRevisionDigest: sha256:55d4562ba760a637efc6efcc292bc0120900d05035c9f2075e3b8776b756c8bf
+        sourceBlobDigest: sha256:15b1d6915d59bb2fd4d851f8fded3d3b409954424e6ed6a0da03279ee2211a99
         codeSamplesNamespace: my-source-python-code-samples
-        codeSamplesRevisionDigest: sha256:ac3178b7b556972d919e132d9768e38ffdf49989f682d9dd26fd4c86744db715
+        codeSamplesRevisionDigest: sha256:37e6be77bd38369f03cb68d81d407854828aa2a19dfdf02058452f0ce2befa1c
 workflow:
     workflowVersion: 1.0.0
     speakeasyVersion: latest
@@ -22,6 +22,8 @@ workflow:
         my-source:
             inputs:
                 - location: https://insulator.conductor.one/api/v1/openapi.yaml
+            overlays:
+                - location: ./overlay.yaml
             registry:
                 location: registry.speakeasyapi.dev/conductor-one/conductorone/my-source
     targets:

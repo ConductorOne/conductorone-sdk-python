@@ -80,6 +80,7 @@ with SDK(
 ) as s_client:
 
     res = s_client.app_entitlement_user_binding.remove_grant_duration(request={
+        "remove_grant_duration_request": {},
         "app_entitlement_id": "<id>",
         "app_id": "<id>",
         "app_user_id": "<id>",
@@ -128,7 +129,7 @@ with SDK(
     ),
 ) as s_client:
 
-    res = s_client.app_entitlement_user_binding.search_grant_feed()
+    res = s_client.app_entitlement_user_binding.search_grant_feed(request={})
 
     assert res.search_grant_feed_response is not None
 
@@ -173,7 +174,7 @@ with SDK(
     ),
 ) as s_client:
 
-    res = s_client.app_entitlement_user_binding.search_past_grants()
+    res = s_client.app_entitlement_user_binding.search_past_grants(request={})
 
     assert res.search_past_grants_response is not None
 
@@ -219,6 +220,7 @@ with SDK(
 ) as s_client:
 
     res = s_client.app_entitlement_user_binding.update_grant_duration(request={
+        "update_grant_duration_request": {},
         "app_entitlement_id": "<id>",
         "app_id": "<id>",
         "app_user_id": "<id>",

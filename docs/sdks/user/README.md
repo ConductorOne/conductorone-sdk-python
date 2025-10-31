@@ -169,6 +169,7 @@ with SDK(
 ) as s_client:
 
     res = s_client.user.set_expiring_user_delegation_binding_by_admin(request={
+        "set_expiring_user_delegation_binding_by_admin_request": {},
         "user_id": "<id>",
     })
 

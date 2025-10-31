@@ -75,6 +75,7 @@ with SDK(
 ) as s_client:
 
     res = s_client.app_usage_controls.update(request={
+        "update_app_usage_controls_request": {},
         "app_id": "<id>",
     })
 

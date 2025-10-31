@@ -5,10 +5,11 @@ from .user import User, UserTypedDict
 from datetime import datetime
 from enum import Enum
 import pydantic
-from pydantic import model_serializer
+from pydantic import field_serializer, model_serializer
 from pydantic.functional_serializers import PlainSerializer
 from pydantic.functional_validators import BeforeValidator, PlainValidator
 from sdk import utils
+from sdk.models import shared
 from sdk.types import BaseModel, Nullable, OptionalNullable, UNSET, UNSET_SENTINEL
 from sdk.utils import serialize_int, validate_int, validate_open_enum
 from typing import List, Optional
@@ -184,6 +185,15 @@ class App(BaseModel):
     ] = None
     r"""The number of users with grants to this app."""
 
+    @field_serializer("identity_matching")
+    def serialize_identity_matching(self, value):
+        if isinstance(value, str):
+            try:
+                return shared.IdentityMatching(value)
+            except ValueError:
+                return value
+        return value
+
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
         optional_fields = [
@@ -334,3 +344,12 @@ class AppInput(BaseModel):
         Optional[bool], pydantic.Field(alias="strictAccessEntitlementProvisioning")
     ] = None
     r"""The strictAccessEntitlementProvisioning field."""
+
+    @field_serializer("identity_matching")
+    def serialize_identity_matching(self, value):
+        if isinstance(value, str):
+            try:
+                return shared.IdentityMatching(value)
+            except ValueError:
+                return value
+        return value

@@ -7,6 +7,7 @@ from .oauth2authorizedas_input import (
     OAuth2AuthorizedAsInput,
     OAuth2AuthorizedAsInputTypedDict,
 )
+from .syncconfig import SyncConfig, SyncConfigTypedDict
 from datetime import datetime
 import pydantic
 from pydantic import ConfigDict, model_serializer
@@ -49,6 +50,8 @@ class ConnectorTypedDict(TypedDict):
     r"""The status field on the connector is used to track the status of the connectors sync, and when syncing last started, completed, or caused the connector to update."""
     o_auth2_authorized_as: NotRequired[OAuth2AuthorizedAsTypedDict]
     r"""OAuth2AuthorizedAs tracks the user that OAuthed with the connector."""
+    sync_config: NotRequired[SyncConfigTypedDict]
+    r"""The SyncConfig message."""
     app_id: NotRequired[str]
     r"""The id of the app the connector is associated with."""
     can_resume_sync: NotRequired[bool]
@@ -95,6 +98,11 @@ class Connector(BaseModel):
         Optional[OAuth2AuthorizedAs], pydantic.Field(alias="oauthAuthorizedAs")
     ] = None
     r"""OAuth2AuthorizedAs tracks the user that OAuthed with the connector."""
+
+    sync_config: Annotated[Optional[SyncConfig], pydantic.Field(alias="syncConfig")] = (
+        None
+    )
+    r"""The SyncConfig message."""
 
     app_id: Annotated[Optional[str], pydantic.Field(alias="appId")] = None
     r"""The id of the app the connector is associated with."""
@@ -167,6 +175,7 @@ class Connector(BaseModel):
         optional_fields = [
             "ConnectorStatus",
             "OAuth2AuthorizedAs",
+            "SyncConfig",
             "appId",
             "canResumeSync",
             "catalogId",
@@ -221,6 +230,8 @@ class ConnectorInputTypedDict(TypedDict):
     r"""The status field on the connector is used to track the status of the connectors sync, and when syncing last started, completed, or caused the connector to update."""
     o_auth2_authorized_as: NotRequired[OAuth2AuthorizedAsInputTypedDict]
     r"""OAuth2AuthorizedAs tracks the user that OAuthed with the connector."""
+    sync_config: NotRequired[SyncConfigTypedDict]
+    r"""The SyncConfig message."""
     app_id: NotRequired[str]
     r"""The id of the app the connector is associated with."""
     can_resume_sync: NotRequired[bool]
@@ -261,6 +272,11 @@ class ConnectorInput(BaseModel):
         Optional[OAuth2AuthorizedAsInput], pydantic.Field(alias="oauthAuthorizedAs")
     ] = None
     r"""OAuth2AuthorizedAs tracks the user that OAuthed with the connector."""
+
+    sync_config: Annotated[Optional[SyncConfig], pydantic.Field(alias="syncConfig")] = (
+        None
+    )
+    r"""The SyncConfig message."""
 
     app_id: Annotated[Optional[str], pydantic.Field(alias="appId")] = None
     r"""The id of the app the connector is associated with."""
@@ -320,6 +336,7 @@ class ConnectorInput(BaseModel):
         optional_fields = [
             "ConnectorStatus",
             "OAuth2AuthorizedAs",
+            "SyncConfig",
             "appId",
             "canResumeSync",
             "catalogId",

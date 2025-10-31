@@ -13,14 +13,19 @@ from typing_extensions import Annotated, NotRequired, TypedDict
 
 
 class C1APIAppV1AppEntitlementsAddManuallyManagedMembersRequestTypedDict(TypedDict):
+    add_manually_managed_users_request: (
+        shared_addmanuallymanagedusersrequest.AddManuallyManagedUsersRequestTypedDict
+    )
     app_entitlement_id: str
     app_id: str
-    add_manually_managed_users_request: NotRequired[
-        shared_addmanuallymanagedusersrequest.AddManuallyManagedUsersRequestTypedDict
-    ]
 
 
 class C1APIAppV1AppEntitlementsAddManuallyManagedMembersRequest(BaseModel):
+    add_manually_managed_users_request: Annotated[
+        shared_addmanuallymanagedusersrequest.AddManuallyManagedUsersRequest,
+        FieldMetadata(request=RequestMetadata(media_type="application/json")),
+    ]
+
     app_entitlement_id: Annotated[
         str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))
     ]
@@ -28,11 +33,6 @@ class C1APIAppV1AppEntitlementsAddManuallyManagedMembersRequest(BaseModel):
     app_id: Annotated[
         str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))
     ]
-
-    add_manually_managed_users_request: Annotated[
-        Optional[shared_addmanuallymanagedusersrequest.AddManuallyManagedUsersRequest],
-        FieldMetadata(request=RequestMetadata(media_type="application/json")),
-    ] = None
 
 
 class C1APIAppV1AppEntitlementsAddManuallyManagedMembersResponseTypedDict(TypedDict):

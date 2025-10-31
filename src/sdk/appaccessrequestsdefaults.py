@@ -58,7 +58,7 @@ class AppAccessRequestsDefaults(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=True,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -68,9 +68,9 @@ class AppAccessRequestsDefaults(BaseSDK):
             get_serialized_body=lambda: utils.serialize_request_body(
                 request.cancel_access_request_defaults_request,
                 False,
-                True,
+                False,
                 "json",
-                Optional[shared.CancelAccessRequestDefaultsRequest],
+                shared.CancelAccessRequestDefaultsRequest,
             ),
             timeout_ms=timeout_ms,
         )
@@ -162,7 +162,7 @@ class AppAccessRequestsDefaults(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=True,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -172,9 +172,9 @@ class AppAccessRequestsDefaults(BaseSDK):
             get_serialized_body=lambda: utils.serialize_request_body(
                 request.cancel_access_request_defaults_request,
                 False,
-                True,
+                False,
                 "json",
-                Optional[shared.CancelAccessRequestDefaultsRequest],
+                shared.CancelAccessRequestDefaultsRequest,
             ),
             timeout_ms=timeout_ms,
         )
@@ -266,7 +266,7 @@ class AppAccessRequestsDefaults(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=True,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -276,9 +276,9 @@ class AppAccessRequestsDefaults(BaseSDK):
             get_serialized_body=lambda: utils.serialize_request_body(
                 request.app_access_request_defaults,
                 False,
-                True,
+                False,
                 "json",
-                Optional[shared.AppAccessRequestDefaults1],
+                shared.AppAccessRequestDefaults1,
             ),
             timeout_ms=timeout_ms,
         )
@@ -370,7 +370,7 @@ class AppAccessRequestsDefaults(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=True,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -380,9 +380,9 @@ class AppAccessRequestsDefaults(BaseSDK):
             get_serialized_body=lambda: utils.serialize_request_body(
                 request.app_access_request_defaults,
                 False,
-                True,
+                False,
                 "json",
-                Optional[shared.AppAccessRequestDefaults1],
+                shared.AppAccessRequestDefaults1,
             ),
             timeout_ms=timeout_ms,
         )

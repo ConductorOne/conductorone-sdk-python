@@ -13,12 +13,10 @@ class Directory(BaseSDK):
     def create(
         self,
         *,
-        request: Optional[
-            Union[
-                shared.DirectoryServiceCreateRequest,
-                shared.DirectoryServiceCreateRequestTypedDict,
-            ]
-        ] = None,
+        request: Union[
+            shared.DirectoryServiceCreateRequest,
+            shared.DirectoryServiceCreateRequestTypedDict,
+        ],
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -45,10 +43,8 @@ class Directory(BaseSDK):
             base_url = self._get_url(base_url, url_variables)
 
         if not isinstance(request, BaseModel):
-            request = utils.unmarshal(
-                request, Optional[shared.DirectoryServiceCreateRequest]
-            )
-        request = cast(Optional[shared.DirectoryServiceCreateRequest], request)
+            request = utils.unmarshal(request, shared.DirectoryServiceCreateRequest)
+        request = cast(shared.DirectoryServiceCreateRequest, request)
 
         req = self._build_request(
             method="POST",
@@ -56,7 +52,7 @@ class Directory(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=False,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -64,11 +60,7 @@ class Directory(BaseSDK):
             http_headers=http_headers,
             security=self.sdk_configuration.security,
             get_serialized_body=lambda: utils.serialize_request_body(
-                request,
-                False,
-                True,
-                "json",
-                Optional[shared.DirectoryServiceCreateRequest],
+                request, False, False, "json", shared.DirectoryServiceCreateRequest
             ),
             timeout_ms=timeout_ms,
         )
@@ -115,12 +107,10 @@ class Directory(BaseSDK):
     async def create_async(
         self,
         *,
-        request: Optional[
-            Union[
-                shared.DirectoryServiceCreateRequest,
-                shared.DirectoryServiceCreateRequestTypedDict,
-            ]
-        ] = None,
+        request: Union[
+            shared.DirectoryServiceCreateRequest,
+            shared.DirectoryServiceCreateRequestTypedDict,
+        ],
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -147,10 +137,8 @@ class Directory(BaseSDK):
             base_url = self._get_url(base_url, url_variables)
 
         if not isinstance(request, BaseModel):
-            request = utils.unmarshal(
-                request, Optional[shared.DirectoryServiceCreateRequest]
-            )
-        request = cast(Optional[shared.DirectoryServiceCreateRequest], request)
+            request = utils.unmarshal(request, shared.DirectoryServiceCreateRequest)
+        request = cast(shared.DirectoryServiceCreateRequest, request)
 
         req = self._build_request_async(
             method="POST",
@@ -158,7 +146,7 @@ class Directory(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=False,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -166,11 +154,7 @@ class Directory(BaseSDK):
             http_headers=http_headers,
             security=self.sdk_configuration.security,
             get_serialized_body=lambda: utils.serialize_request_body(
-                request,
-                False,
-                True,
-                "json",
-                Optional[shared.DirectoryServiceCreateRequest],
+                request, False, False, "json", shared.DirectoryServiceCreateRequest
             ),
             timeout_ms=timeout_ms,
         )
@@ -260,7 +244,7 @@ class Directory(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=True,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -270,9 +254,9 @@ class Directory(BaseSDK):
             get_serialized_body=lambda: utils.serialize_request_body(
                 request.directory_service_delete_request,
                 False,
-                True,
+                False,
                 "json",
-                Optional[shared.DirectoryServiceDeleteRequest],
+                shared.DirectoryServiceDeleteRequest,
             ),
             timeout_ms=timeout_ms,
         )
@@ -362,7 +346,7 @@ class Directory(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=True,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -372,9 +356,9 @@ class Directory(BaseSDK):
             get_serialized_body=lambda: utils.serialize_request_body(
                 request.directory_service_delete_request,
                 False,
-                True,
+                False,
                 "json",
-                Optional[shared.DirectoryServiceDeleteRequest],
+                shared.DirectoryServiceDeleteRequest,
             ),
             timeout_ms=timeout_ms,
         )
@@ -836,7 +820,7 @@ class Directory(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=True,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -846,9 +830,9 @@ class Directory(BaseSDK):
             get_serialized_body=lambda: utils.serialize_request_body(
                 request.directory_service_update_request,
                 False,
-                True,
+                False,
                 "json",
-                Optional[shared.DirectoryServiceUpdateRequest],
+                shared.DirectoryServiceUpdateRequest,
             ),
             timeout_ms=timeout_ms,
         )
@@ -938,7 +922,7 @@ class Directory(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=True,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -948,9 +932,9 @@ class Directory(BaseSDK):
             get_serialized_body=lambda: utils.serialize_request_body(
                 request.directory_service_update_request,
                 False,
-                True,
+                False,
                 "json",
-                Optional[shared.DirectoryServiceUpdateRequest],
+                shared.DirectoryServiceUpdateRequest,
             ),
             timeout_ms=timeout_ms,
         )

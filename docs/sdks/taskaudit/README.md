@@ -26,7 +26,7 @@ with SDK(
     ),
 ) as s_client:
 
-    res = s_client.task_audit.list()
+    res = s_client.task_audit.list(request={})
 
     assert res.task_audit_list_response is not None
 

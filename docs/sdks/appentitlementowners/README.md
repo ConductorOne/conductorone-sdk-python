@@ -32,6 +32,7 @@ with SDK(
 ) as s_client:
 
     res = s_client.app_entitlement_owners.add(request={
+        "add_app_entitlement_owner_request": {},
         "app_id": "<id>",
         "entitlement_id": "<id>",
     })
@@ -80,6 +81,7 @@ with SDK(
 ) as s_client:
 
     res = s_client.app_entitlement_owners.delete(request={
+        "delete_app_entitlement_owners_request": {},
         "app_id": "<id>",
         "entitlement_id": "<id>",
     })
@@ -224,6 +226,7 @@ with SDK(
 ) as s_client:
 
     res = s_client.app_entitlement_owners.remove(request={
+        "remove_app_entitlement_owner_request": {},
         "app_id": "<id>",
         "entitlement_id": "<id>",
         "user_id": "<id>",
@@ -273,6 +276,7 @@ with SDK(
 ) as s_client:
 
     res = s_client.app_entitlement_owners.set(request={
+        "set_app_entitlement_owners_request": {},
         "app_id": "<id>",
         "entitlement_id": "<id>",
     })

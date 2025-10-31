@@ -13,23 +13,19 @@ from typing_extensions import Annotated, NotRequired, TypedDict
 
 
 class C1APITaskV1TaskActionsServiceEscalateToEmergencyAccessRequestTypedDict(TypedDict):
+    task_actions_service_escalate_to_emergency_access_request: shared_taskactionsserviceescalatetoemergencyaccessrequest.TaskActionsServiceEscalateToEmergencyAccessRequestTypedDict
     task_id: str
-    task_actions_service_escalate_to_emergency_access_request: NotRequired[
-        shared_taskactionsserviceescalatetoemergencyaccessrequest.TaskActionsServiceEscalateToEmergencyAccessRequestTypedDict
-    ]
 
 
 class C1APITaskV1TaskActionsServiceEscalateToEmergencyAccessRequest(BaseModel):
+    task_actions_service_escalate_to_emergency_access_request: Annotated[
+        shared_taskactionsserviceescalatetoemergencyaccessrequest.TaskActionsServiceEscalateToEmergencyAccessRequest,
+        FieldMetadata(request=RequestMetadata(media_type="application/json")),
+    ]
+
     task_id: Annotated[
         str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))
     ]
-
-    task_actions_service_escalate_to_emergency_access_request: Annotated[
-        Optional[
-            shared_taskactionsserviceescalatetoemergencyaccessrequest.TaskActionsServiceEscalateToEmergencyAccessRequest
-        ],
-        FieldMetadata(request=RequestMetadata(media_type="application/json")),
-    ] = None
 
 
 class C1APITaskV1TaskActionsServiceEscalateToEmergencyAccessResponseTypedDict(
