@@ -6,6 +6,7 @@ sources:
         sourceBlobDigest: sha256:15b1d6915d59bb2fd4d851f8fded3d3b409954424e6ed6a0da03279ee2211a99
         tags:
             - latest
+            - speakeasy-sdk-regen-luisinasantos-fix-generate-1761927240
             - 0.1.0-alpha
 targets:
     conductorone-python:
@@ -14,7 +15,7 @@ targets:
         sourceRevisionDigest: sha256:55d4562ba760a637efc6efcc292bc0120900d05035c9f2075e3b8776b756c8bf
         sourceBlobDigest: sha256:15b1d6915d59bb2fd4d851f8fded3d3b409954424e6ed6a0da03279ee2211a99
         codeSamplesNamespace: my-source-python-code-samples
-        codeSamplesRevisionDigest: sha256:37e6be77bd38369f03cb68d81d407854828aa2a19dfdf02058452f0ce2befa1c
+        codeSamplesRevisionDigest: sha256:495c81d673d88ceeed4c65f796160345866d889c0d0b404c0bd55a1e56b5d278
 workflow:
     workflowVersion: 1.0.0
     speakeasyVersion: latest
