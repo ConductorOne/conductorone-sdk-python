@@ -16,3 +16,4 @@ openapi.egg-info/
 uv.lock
 **/.speakeasy/temp/
 **/.speakeasy/logs/
+.pypirc
