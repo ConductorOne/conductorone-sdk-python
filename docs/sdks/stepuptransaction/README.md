@@ -16,8 +16,8 @@ Get retrieves a specific step-up transaction by ID
 
 <!-- UsageSnippet language="python" operationID="c1.api.stepup.v1.StepUpTransactionService.Get" method="get" path="/api/v1/step-up/transactions/{id}" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -25,9 +25,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.step_up_transaction.get(request={
+    res = sdk.step_up_transaction.get(request={
         "id": "<id>",
     })
 
@@ -63,8 +63,8 @@ Search allows searching for step-up transactions with various filters
 
 <!-- UsageSnippet language="python" operationID="c1.api.stepup.v1.StepUpTransactionService.Search" method="post" path="/api/v1/search/step-up/transactions" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -72,9 +72,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.step_up_transaction.search()
+    res = sdk.step_up_transaction.search()
 
     assert res.search_step_up_transactions_response is not None
 

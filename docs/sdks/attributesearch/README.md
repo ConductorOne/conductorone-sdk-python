@@ -15,8 +15,8 @@ Search attributes based on filters specified in the request body.
 
 <!-- UsageSnippet language="python" operationID="c1.api.attribute.v1.AttributeSearch.SearchAttributeValues" method="post" path="/api/v1/search/attributes" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -24,9 +24,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.attribute_search.search_attribute_values()
+    res = sdk.attribute_search.search_attribute_values()
 
     assert res.search_attribute_values_response is not None
 

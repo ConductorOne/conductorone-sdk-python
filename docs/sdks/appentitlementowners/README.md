@@ -20,8 +20,8 @@ Add an owner to a given app entitlement.
 
 <!-- UsageSnippet language="python" operationID="c1.api.app.v1.AppEntitlementOwners.Add" method="post" path="/api/v1/apps/{app_id}/entitlements/{entitlement_id}/owners" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -29,9 +29,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.app_entitlement_owners.add(request={
+    res = sdk.app_entitlement_owners.add(request={
         "app_id": "<id>",
         "entitlement_id": "<id>",
     })
@@ -68,8 +68,8 @@ Delete deletes the owners from a given app entitlement.
 
 <!-- UsageSnippet language="python" operationID="c1.api.app.v1.AppEntitlementOwners.Delete" method="delete" path="/api/v1/apps/{app_id}/entitlements/{entitlement_id}/owners" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -77,9 +77,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.app_entitlement_owners.delete(request={
+    res = sdk.app_entitlement_owners.delete(request={
         "app_id": "<id>",
         "entitlement_id": "<id>",
     })
@@ -116,8 +116,8 @@ List owners for a given app entitlement.
 
 <!-- UsageSnippet language="python" operationID="c1.api.app.v1.AppEntitlementOwners.List" method="get" path="/api/v1/apps/{app_id}/entitlements/{entitlement_id}/owners" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -125,9 +125,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.app_entitlement_owners.list(request={
+    res = sdk.app_entitlement_owners.list(request={
         "app_id": "<id>",
         "entitlement_id": "<id>",
     })
@@ -164,8 +164,8 @@ ListUserIDs lists owner IDs for a given app entitlement.
 
 <!-- UsageSnippet language="python" operationID="c1.api.app.v1.AppEntitlementOwners.ListOwnerIDs" method="get" path="/api/v1/apps/{app_id}/entitlements/{entitlement_id}/ownerids" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -173,9 +173,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.app_entitlement_owners.list_owner_i_ds(request={
+    res = sdk.app_entitlement_owners.list_owner_i_ds(request={
         "app_id": "<id>",
         "entitlement_id": "<id>",
     })
@@ -212,8 +212,8 @@ Remove an owner from a given app entitlement.
 
 <!-- UsageSnippet language="python" operationID="c1.api.app.v1.AppEntitlementOwners.Remove" method="delete" path="/api/v1/apps/{app_id}/entitlements/{entitlement_id}/owners/{user_id}" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -221,9 +221,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.app_entitlement_owners.remove(request={
+    res = sdk.app_entitlement_owners.remove(request={
         "app_id": "<id>",
         "entitlement_id": "<id>",
         "user_id": "<id>",
@@ -261,8 +261,8 @@ Sets the owners for a given app entitlement to the specified list of users.
 
 <!-- UsageSnippet language="python" operationID="c1.api.app.v1.AppEntitlementOwners.Set" method="put" path="/api/v1/apps/{app_id}/entitlements/{entitlement_id}/owners" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -270,9 +270,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.app_entitlement_owners.set(request={
+    res = sdk.app_entitlement_owners.set(request={
         "app_id": "<id>",
         "entitlement_id": "<id>",
     })

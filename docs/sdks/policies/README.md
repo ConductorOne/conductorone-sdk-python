@@ -19,8 +19,8 @@ Create a policy.
 
 <!-- UsageSnippet language="python" operationID="c1.api.policy.v1.Policies.Create" method="post" path="/api/v1/policies" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -28,9 +28,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.policies.create()
+    res = sdk.policies.create()
 
     assert res.create_policy_response is not None
 
@@ -64,8 +64,8 @@ Delete a policy by ID.
 
 <!-- UsageSnippet language="python" operationID="c1.api.policy.v1.Policies.Delete" method="delete" path="/api/v1/policies/{id}" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -73,9 +73,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.policies.delete(request={
+    res = sdk.policies.delete(request={
         "id": "<id>",
     })
 
@@ -111,8 +111,8 @@ Get a policy by ID.
 
 <!-- UsageSnippet language="python" operationID="c1.api.policy.v1.Policies.Get" method="get" path="/api/v1/policies/{id}" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -120,9 +120,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.policies.get(request={
+    res = sdk.policies.get(request={
         "id": "<id>",
     })
 
@@ -158,8 +158,8 @@ List policies.
 
 <!-- UsageSnippet language="python" operationID="c1.api.policy.v1.Policies.List" method="get" path="/api/v1/policies" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -167,9 +167,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.policies.list()
+    res = sdk.policies.list()
 
     assert res.list_policy_response is not None
 
@@ -203,8 +203,8 @@ Update a policy by providing a policy object and an update mask.
 
 <!-- UsageSnippet language="python" operationID="c1.api.policy.v1.Policies.Update" method="post" path="/api/v1/policies/{id}" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -212,9 +212,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.policies.update(request={
+    res = sdk.policies.update(request={
         "id": "<id>",
     })
 

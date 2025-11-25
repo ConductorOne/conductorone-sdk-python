@@ -19,8 +19,8 @@ Create creates a new PersonalClient object for the current User.
 
 <!-- UsageSnippet language="python" operationID="c1.api.iam.v1.PersonalClientService.Create" method="post" path="/api/v1/iam/personal_clients" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -28,9 +28,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.personal_client.create()
+    res = sdk.personal_client.create()
 
     assert res.personal_client_service_create_response is not None
 
@@ -64,8 +64,8 @@ Invokes the c1.api.iam.v1.PersonalClientService.Delete method.
 
 <!-- UsageSnippet language="python" operationID="c1.api.iam.v1.PersonalClientService.Delete" method="delete" path="/api/v1/iam/personal_clients/{id}" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -73,9 +73,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.personal_client.delete(request={
+    res = sdk.personal_client.delete(request={
         "id": "<id>",
     })
 
@@ -111,8 +111,8 @@ Invokes the c1.api.iam.v1.PersonalClientService.Get method.
 
 <!-- UsageSnippet language="python" operationID="c1.api.iam.v1.PersonalClientService.Get" method="get" path="/api/v1/iam/personal_clients/{id}" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -120,9 +120,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.personal_client.get(request={
+    res = sdk.personal_client.get(request={
         "id": "<id>",
     })
 
@@ -158,8 +158,8 @@ Invokes the c1.api.iam.v1.PersonalClientService.List method.
 
 <!-- UsageSnippet language="python" operationID="c1.api.iam.v1.PersonalClientService.List" method="get" path="/api/v1/iam/personal_clients" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -167,9 +167,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.personal_client.list()
+    res = sdk.personal_client.list()
 
     assert res.personal_client_service_list_response is not None
 
@@ -202,8 +202,8 @@ Invokes the c1.api.iam.v1.PersonalClientService.Update method.
 
 <!-- UsageSnippet language="python" operationID="c1.api.iam.v1.PersonalClientService.Update" method="post" path="/api/v1/iam/personal_clients/{id}" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -211,9 +211,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.personal_client.update(request={
+    res = sdk.personal_client.update(request={
         "id": "<id>",
     })
 

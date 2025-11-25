@@ -17,8 +17,8 @@ Invokes the c1.api.accessconflict.v1.AppEntitlementMonitorBindingService.CreateA
 
 <!-- UsageSnippet language="python" operationID="c1.api.accessconflict.v1.AppEntitlementMonitorBindingService.CreateAppEntitlementMonitorBinding" method="post" path="/api/v1/appentitlementmonitorbinding" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -26,9 +26,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.app_entitlement_monitor_binding.create_app_entitlement_monitor_binding()
+    res = sdk.app_entitlement_monitor_binding.create_app_entitlement_monitor_binding()
 
     assert res.app_entitlement_monitor_binding is not None
 
@@ -62,8 +62,8 @@ Invokes the c1.api.accessconflict.v1.AppEntitlementMonitorBindingService.DeleteA
 
 <!-- UsageSnippet language="python" operationID="c1.api.accessconflict.v1.AppEntitlementMonitorBindingService.DeleteAppEntitlementMonitorBinding" method="delete" path="/api/v1/appentitlementmonitorbinding" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -71,9 +71,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.app_entitlement_monitor_binding.delete_app_entitlement_monitor_binding()
+    res = sdk.app_entitlement_monitor_binding.delete_app_entitlement_monitor_binding()
 
     assert res.delete_app_entitlement_monitor_binding_response is not None
 
@@ -107,8 +107,8 @@ Invokes the c1.api.accessconflict.v1.AppEntitlementMonitorBindingService.GetAppE
 
 <!-- UsageSnippet language="python" operationID="c1.api.accessconflict.v1.AppEntitlementMonitorBindingService.GetAppEntitlementMonitorBinding" method="post" path="/api/v1/appentitlementmonitorbinding/get" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -116,9 +116,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.app_entitlement_monitor_binding.get_app_entitlement_monitor_binding()
+    res = sdk.app_entitlement_monitor_binding.get_app_entitlement_monitor_binding()
 
     assert res.app_entitlement_monitor_binding is not None
 

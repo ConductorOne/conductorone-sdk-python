@@ -18,8 +18,8 @@ Search app entitlements based on filters specified in the request body.
 
 <!-- UsageSnippet language="python" operationID="c1.api.app.v1.AppEntitlementSearchService.Search" method="post" path="/api/v1/search/entitlements" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -27,9 +27,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.app_entitlement_search.search()
+    res = sdk.app_entitlement_search.search()
 
     while res is not None:
         # Handle items
@@ -63,8 +63,8 @@ Invokes the c1.api.app.v1.AppEntitlementSearchService.SearchAppEntitlementsForAp
 
 <!-- UsageSnippet language="python" operationID="c1.api.app.v1.AppEntitlementSearchService.SearchAppEntitlementsForAppUser" method="get" path="/api/v1/search/apps/{app_id}/entitlements/users/{app_user_id}" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -72,9 +72,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.app_entitlement_search.search_app_entitlements_for_app_user(request={
+    res = sdk.app_entitlement_search.search_app_entitlements_for_app_user(request={
         "app_id": "<id>",
         "app_user_id": "<id>",
     })
@@ -111,8 +111,8 @@ Search app entitlements, include app users, users, expires, discovered.
 
 <!-- UsageSnippet language="python" operationID="c1.api.app.v1.AppEntitlementSearchService.SearchAppEntitlementsWithExpired" method="get" path="/api/v1/apps/{app_id}/entitlements/{app_entitlement_id}/grants" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -120,9 +120,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.app_entitlement_search.search_app_entitlements_with_expired(request={
+    res = sdk.app_entitlement_search.search_app_entitlements_with_expired(request={
         "app_entitlement_id": "<id>",
         "app_id": "<id>",
     })
@@ -159,8 +159,8 @@ Invokes the c1.api.app.v1.AppEntitlementSearchService.SearchGrants method.
 
 <!-- UsageSnippet language="python" operationID="c1.api.app.v1.AppEntitlementSearchService.SearchGrants" method="post" path="/api/v1/search/grants" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -168,9 +168,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.app_entitlement_search.search_grants()
+    res = sdk.app_entitlement_search.search_grants()
 
     assert res.app_entitlement_search_service_search_grants_response is not None
 

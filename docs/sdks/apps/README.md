@@ -19,8 +19,8 @@ Create a new manual app without a connector.
 
 <!-- UsageSnippet language="python" operationID="c1.api.app.v1.Apps.Create" method="post" path="/api/v1/apps" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -28,9 +28,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.apps.create()
+    res = sdk.apps.create()
 
     assert res.create_app_response is not None
 
@@ -64,8 +64,8 @@ Delete an app.
 
 <!-- UsageSnippet language="python" operationID="c1.api.app.v1.Apps.Delete" method="delete" path="/api/v1/apps/{id}" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -73,9 +73,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.apps.delete(request={
+    res = sdk.apps.delete(request={
         "id": "<id>",
     })
 
@@ -111,8 +111,8 @@ Get an app by ID.
 
 <!-- UsageSnippet language="python" operationID="c1.api.app.v1.Apps.Get" method="get" path="/api/v1/apps/{id}" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -120,9 +120,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.apps.get(request={
+    res = sdk.apps.get(request={
         "id": "<id>",
     })
 
@@ -158,8 +158,8 @@ List all apps.
 
 <!-- UsageSnippet language="python" operationID="c1.api.app.v1.Apps.List" method="get" path="/api/v1/apps" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -167,9 +167,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.apps.list()
+    res = sdk.apps.list()
 
     assert res.list_apps_response is not None
 
@@ -203,8 +203,8 @@ Update an existing app.
 
 <!-- UsageSnippet language="python" operationID="c1.api.app.v1.Apps.Update" method="post" path="/api/v1/apps/{id}" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -212,9 +212,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.apps.update(request={
+    res = sdk.apps.update(request={
         "id": "<id>",
     })
 

@@ -20,8 +20,8 @@ Invokes the c1.api.app.v1.AppResourceOwners.Add method.
 
 <!-- UsageSnippet language="python" operationID="c1.api.app.v1.AppResourceOwners.Add" method="post" path="/api/v1/apps/{app_id}/resource_types/{resource_type_id}/resource/{resource_id}/owners" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -29,9 +29,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.app_resource_owners.add(request={
+    res = sdk.app_resource_owners.add(request={
         "app_id": "<id>",
         "resource_id": "<id>",
         "resource_type_id": "<id>",
@@ -69,8 +69,8 @@ Delete deletes the owners from a given app resource.
 
 <!-- UsageSnippet language="python" operationID="c1.api.app.v1.AppResourceOwners.Delete" method="delete" path="/api/v1/apps/{app_id}/resource_types/{resource_type_id}/resource/{resource_id}/ownerids" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -78,9 +78,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.app_resource_owners.delete(request={
+    res = sdk.app_resource_owners.delete(request={
         "app_id": "<id>",
         "resource_id": "<id>",
         "resource_type_id": "<id>",
@@ -118,8 +118,8 @@ List all owners of an app resource.
 
 <!-- UsageSnippet language="python" operationID="c1.api.app.v1.AppResourceOwners.List" method="get" path="/api/v1/apps/{app_id}/resource_types/{resource_type_id}/resource/{resource_id}/owners" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -127,9 +127,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.app_resource_owners.list(request={
+    res = sdk.app_resource_owners.list(request={
         "app_id": "<id>",
         "resource_id": "<id>",
         "resource_type_id": "<id>",
@@ -167,8 +167,8 @@ ListOwnerIDs lists owner IDs for a given app resource.
 
 <!-- UsageSnippet language="python" operationID="c1.api.app.v1.AppResourceOwners.ListOwnerIDs" method="get" path="/api/v1/apps/{app_id}/resource_types/{resource_type_id}/resource/{resource_id}/ownerids" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -176,9 +176,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.app_resource_owners.list_owner_i_ds(request={
+    res = sdk.app_resource_owners.list_owner_i_ds(request={
         "app_id": "<id>",
         "resource_id": "<id>",
         "resource_type_id": "<id>",
@@ -216,8 +216,8 @@ Invokes the c1.api.app.v1.AppResourceOwners.Remove method.
 
 <!-- UsageSnippet language="python" operationID="c1.api.app.v1.AppResourceOwners.Remove" method="delete" path="/api/v1/apps/{app_id}/resource_types/{resource_type_id}/resource/{resource_id}/owners" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -225,9 +225,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.app_resource_owners.remove(request={
+    res = sdk.app_resource_owners.remove(request={
         "app_id": "<id>",
         "resource_id": "<id>",
         "resource_type_id": "<id>",
@@ -265,8 +265,8 @@ Sets the owners for a given app resource to the specified list of users.
 
 <!-- UsageSnippet language="python" operationID="c1.api.app.v1.AppResourceOwners.Set" method="put" path="/api/v1/apps/{app_id}/resource_types/{resource_type_id}/resource/{resource_id}/owners" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -274,9 +274,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.app_resource_owners.set(request={
+    res = sdk.app_resource_owners.set(request={
         "app_id": "<id>",
         "resource_id": "<id>",
         "resource_type_id": "<id>",

@@ -15,8 +15,8 @@ Invokes the c1.api.task.v1.TaskAudit.List method.
 
 <!-- UsageSnippet language="python" operationID="c1.api.task.v1.TaskAudit.List" method="post" path="/api/v1/task/audits" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -24,9 +24,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.task_audit.list()
+    res = sdk.task_audit.list()
 
     assert res.task_audit_list_response is not None
 

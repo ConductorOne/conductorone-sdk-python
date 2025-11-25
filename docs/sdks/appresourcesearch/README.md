@@ -16,8 +16,8 @@ Search app resources based on filters specified in the request body.
 
 <!-- UsageSnippet language="python" operationID="c1.api.app.v1.AppResourceSearch.SearchAppResourceTypes" method="post" path="/api/v1/search/app_resource_types" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -25,9 +25,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.app_resource_search.search_app_resource_types()
+    res = sdk.app_resource_search.search_app_resource_types()
 
     while res is not None:
         # Handle items
@@ -61,8 +61,8 @@ Invokes the c1.api.app.v1.AppResourceSearch.SearchAppResources method.
 
 <!-- UsageSnippet language="python" operationID="c1.api.app.v1.AppResourceSearch.SearchAppResources" method="post" path="/api/v1/search/app_resources" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -70,9 +70,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.app_resource_search.search_app_resources()
+    res = sdk.app_resource_search.search_app_resources()
 
     while res is not None:
         # Handle items

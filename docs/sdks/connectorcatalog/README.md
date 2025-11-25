@@ -15,8 +15,8 @@ Invokes the c1.api.integration.connector.v1.ConnectorCatalogService.Configuratio
 
 <!-- UsageSnippet language="python" operationID="c1.api.integration.connector.v1.ConnectorCatalogService.ConfigurationSchema" method="post" path="/api/v1/connectorcatalog" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -24,9 +24,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.connector_catalog.configuration_schema()
+    res = sdk.connector_catalog.configuration_schema()
 
     assert res.connector_catalog_service_configuration_schema_response is not None
 

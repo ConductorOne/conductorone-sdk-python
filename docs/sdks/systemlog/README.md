@@ -18,8 +18,8 @@ ListEvents pulls Events from the ConductorOne system.
 
 <!-- UsageSnippet language="python" operationID="c1.api.systemlog.v1.SystemLogService.ListEvents" method="post" path="/api/v1/systemlog/events" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -27,9 +27,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.system_log.list_events()
+    res = sdk.system_log.list_events()
 
     assert res.system_log_service_list_events_response is not None
 

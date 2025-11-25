@@ -15,8 +15,8 @@ Introspect returns the current user's principle_id, user_id and a list of roles,
 
 <!-- UsageSnippet language="python" operationID="c1.api.auth.v1.Auth.Introspect" method="get" path="/api/v1/auth/introspect" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -24,9 +24,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.auth.introspect()
+    res = sdk.auth.introspect()
 
     assert res.introspect_response is not None
 

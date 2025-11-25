@@ -15,8 +15,8 @@ Search request catalogs based on filters specified in the request body.
 
 <!-- UsageSnippet language="python" operationID="c1.api.requestcatalog.v1.RequestCatalogSearchService.SearchEntitlements" method="post" path="/api/v1/search/request_catalog/entitlements" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -24,9 +24,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.request_catalog_search.search_entitlements()
+    res = sdk.request_catalog_search.search_entitlements()
 
     assert res.request_catalog_search_service_search_entitlements_response is not None
 

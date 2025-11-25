@@ -19,8 +19,8 @@ Create a directory.
 
 <!-- UsageSnippet language="python" operationID="c1.api.directory.v1.DirectoryService.Create" method="post" path="/api/v1/directories" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -28,9 +28,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.directory.create()
+    res = sdk.directory.create()
 
     assert res.directory_service_create_response is not None
 
@@ -64,8 +64,8 @@ Delete a directory by app_id.
 
 <!-- UsageSnippet language="python" operationID="c1.api.directory.v1.DirectoryService.Delete" method="delete" path="/api/v1/directories/{app_id}" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -73,9 +73,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.directory.delete(request={
+    res = sdk.directory.delete(request={
         "app_id": "<id>",
     })
 
@@ -111,8 +111,8 @@ Get a directory by app_id.
 
 <!-- UsageSnippet language="python" operationID="c1.api.directory.v1.DirectoryService.Get" method="get" path="/api/v1/directories/{app_id}" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -120,9 +120,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.directory.get(request={
+    res = sdk.directory.get(request={
         "app_id": "<id>",
     })
 
@@ -158,8 +158,8 @@ List directories.
 
 <!-- UsageSnippet language="python" operationID="c1.api.directory.v1.DirectoryService.List" method="get" path="/api/v1/directories" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -167,9 +167,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.directory.list()
+    res = sdk.directory.list()
 
     assert res.directory_service_list_response is not None
 
@@ -203,8 +203,8 @@ Update a directory by app_id.
 
 <!-- UsageSnippet language="python" operationID="c1.api.directory.v1.DirectoryService.Update" method="put" path="/api/v1/directories/{app_id}" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -212,9 +212,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.directory.update(request={
+    res = sdk.directory.update(request={
         "app_id": "<id>",
     })
 

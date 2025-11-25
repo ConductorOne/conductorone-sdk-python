@@ -27,8 +27,8 @@ Invokes the c1.api.task.v1.TaskActionsService.Approve method.
 
 <!-- UsageSnippet language="python" operationID="c1.api.task.v1.TaskActionsService.Approve" method="post" path="/api/v1/tasks/{task_id}/action/approve" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -36,9 +36,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.task_actions.approve(request={
+    res = sdk.task_actions.approve(request={
         "task_id": "<id>",
     })
 
@@ -74,8 +74,8 @@ Invokes the c1.api.task.v1.TaskActionsService.ApproveWithStepUp method.
 
 <!-- UsageSnippet language="python" operationID="c1.api.task.v1.TaskActionsService.ApproveWithStepUp" method="post" path="/api/v1/tasks/{task_id}/action/approve-with-step-up" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -83,9 +83,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.task_actions.approve_with_step_up(request={
+    res = sdk.task_actions.approve_with_step_up(request={
         "task_id": "<id>",
     })
 
@@ -121,8 +121,8 @@ Invokes the c1.api.task.v1.TaskActionsService.Close method.
 
 <!-- UsageSnippet language="python" operationID="c1.api.task.v1.TaskActionsService.Close" method="post" path="/api/v1/tasks/{task_id}/action/close" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -130,9 +130,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.task_actions.close(request={
+    res = sdk.task_actions.close(request={
         "task_id": "<id>",
     })
 
@@ -168,8 +168,8 @@ Invokes the c1.api.task.v1.TaskActionsService.Comment method.
 
 <!-- UsageSnippet language="python" operationID="c1.api.task.v1.TaskActionsService.Comment" method="post" path="/api/v1/tasks/{task_id}/action/comment" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -177,9 +177,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.task_actions.comment(request={
+    res = sdk.task_actions.comment(request={
         "task_id": "<id>",
     })
 
@@ -215,8 +215,8 @@ Invokes the c1.api.task.v1.TaskActionsService.Deny method.
 
 <!-- UsageSnippet language="python" operationID="c1.api.task.v1.TaskActionsService.Deny" method="post" path="/api/v1/tasks/{task_id}/action/deny" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -224,9 +224,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.task_actions.deny(request={
+    res = sdk.task_actions.deny(request={
         "task_id": "<id>",
     })
 
@@ -262,8 +262,8 @@ Invokes the c1.api.task.v1.TaskActionsService.EscalateToEmergencyAccess method.
 
 <!-- UsageSnippet language="python" operationID="c1.api.task.v1.TaskActionsService.EscalateToEmergencyAccess" method="post" path="/api/v1/tasks/{task_id}/action/escalate" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -271,9 +271,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.task_actions.escalate_to_emergency_access(request={
+    res = sdk.task_actions.escalate_to_emergency_access(request={
         "task_id": "<id>",
     })
 
@@ -309,8 +309,8 @@ Invokes the c1.api.task.v1.TaskActionsService.HardReset method.
 
 <!-- UsageSnippet language="python" operationID="c1.api.task.v1.TaskActionsService.HardReset" method="post" path="/api/v1/tasks/{task_id}/action/reset" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -318,9 +318,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.task_actions.hard_reset(request={
+    res = sdk.task_actions.hard_reset(request={
         "task_id": "<id>",
     })
 
@@ -356,8 +356,8 @@ Invokes the c1.api.task.v1.TaskActionsService.ProcessNow method.
 
 <!-- UsageSnippet language="python" operationID="c1.api.task.v1.TaskActionsService.ProcessNow" method="post" path="/api/v1/tasks/{task_id}/action/process" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -365,9 +365,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.task_actions.process_now(request={
+    res = sdk.task_actions.process_now(request={
         "task_id": "<id>",
     })
 
@@ -403,8 +403,8 @@ Invokes the c1.api.task.v1.TaskActionsService.Reassign method.
 
 <!-- UsageSnippet language="python" operationID="c1.api.task.v1.TaskActionsService.Reassign" method="post" path="/api/v1/tasks/{task_id}/action/reassign" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -412,9 +412,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.task_actions.reassign(request={
+    res = sdk.task_actions.reassign(request={
         "task_id": "<id>",
     })
 
@@ -450,8 +450,8 @@ Invokes the c1.api.task.v1.TaskActionsService.Restart method.
 
 <!-- UsageSnippet language="python" operationID="c1.api.task.v1.TaskActionsService.Restart" method="post" path="/api/v1/tasks/{task_id}/action/restart" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -459,9 +459,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.task_actions.restart(request={
+    res = sdk.task_actions.restart(request={
         "task_id": "<id>",
     })
 
@@ -497,8 +497,8 @@ Invokes the c1.api.task.v1.TaskActionsService.SkipStep method.
 
 <!-- UsageSnippet language="python" operationID="c1.api.task.v1.TaskActionsService.SkipStep" method="post" path="/api/v1/tasks/{task_id}/action/skip-step" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -506,9 +506,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.task_actions.skip_step(request={
+    res = sdk.task_actions.skip_step(request={
         "task_id": "<id>",
     })
 
@@ -544,8 +544,8 @@ Invokes the c1.api.task.v1.TaskActionsService.UpdateGrantDuration method.
 
 <!-- UsageSnippet language="python" operationID="c1.api.task.v1.TaskActionsService.UpdateGrantDuration" method="post" path="/api/v1/tasks/{task_id}/action/update-grant-duration" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -553,9 +553,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.task_actions.update_grant_duration(request={
+    res = sdk.task_actions.update_grant_duration(request={
         "task_id": "<id>",
     })
 
@@ -591,8 +591,8 @@ Invokes the c1.api.task.v1.TaskActionsService.UpdateRequestData method.
 
 <!-- UsageSnippet language="python" operationID="c1.api.task.v1.TaskActionsService.UpdateRequestData" method="post" path="/api/v1/tasks/{task_id}/action/update-request-data" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -600,9 +600,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.task_actions.update_request_data(request={
+    res = sdk.task_actions.update_request_data(request={
         "task_id": "<id>",
     })
 

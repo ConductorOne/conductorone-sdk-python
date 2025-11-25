@@ -15,8 +15,8 @@ Invokes the c1.api.policy.v1.AccountProvisionPolicyTest.Test method.
 
 <!-- UsageSnippet language="python" operationID="c1.api.policy.v1.AccountProvisionPolicyTest.Test" method="post" path="/api/v1/policies/test-account-provision-policy" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -24,9 +24,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.account_provision_policy_test.test()
+    res = sdk.account_provision_policy_test.test()
 
     assert res.test_account_provision_policy_response is not None
 

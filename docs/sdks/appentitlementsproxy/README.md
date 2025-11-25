@@ -17,8 +17,8 @@ Invokes the c1.api.app.v1.AppEntitlementsProxy.Create method.
 
 <!-- UsageSnippet language="python" operationID="c1.api.app.v1.AppEntitlementsProxy.Create" method="post" path="/api/v1/apps/{src_app_id}/{src_app_entitlement_id}/bindings/{dst_app_id}/{dst_app_entitlement_id}" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -26,9 +26,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.app_entitlements_proxy.create(request={
+    res = sdk.app_entitlements_proxy.create(request={
         "dst_app_entitlement_id": "<id>",
         "dst_app_id": "<id>",
         "src_app_entitlement_id": "<id>",
@@ -67,8 +67,8 @@ Invokes the c1.api.app.v1.AppEntitlementsProxy.Delete method.
 
 <!-- UsageSnippet language="python" operationID="c1.api.app.v1.AppEntitlementsProxy.Delete" method="delete" path="/api/v1/apps/{src_app_id}/{src_app_entitlement_id}/bindings/{dst_app_id}/{dst_app_entitlement_id}" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -76,9 +76,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.app_entitlements_proxy.delete(request={
+    res = sdk.app_entitlements_proxy.delete(request={
         "dst_app_entitlement_id": "<id>",
         "dst_app_id": "<id>",
         "src_app_entitlement_id": "<id>",
@@ -117,8 +117,8 @@ Invokes the c1.api.app.v1.AppEntitlementsProxy.Get method.
 
 <!-- UsageSnippet language="python" operationID="c1.api.app.v1.AppEntitlementsProxy.Get" method="get" path="/api/v1/apps/{src_app_id}/{src_app_entitlement_id}/bindings/{dst_app_id}/{dst_app_entitlement_id}" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -126,9 +126,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.app_entitlements_proxy.get(request={
+    res = sdk.app_entitlements_proxy.get(request={
         "dst_app_entitlement_id": "<id>",
         "dst_app_id": "<id>",
         "src_app_entitlement_id": "<id>",

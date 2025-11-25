@@ -22,8 +22,8 @@ Invokes the c1.api.stepup.v1.StepUpProviderService.Create method.
 
 <!-- UsageSnippet language="python" operationID="c1.api.stepup.v1.StepUpProviderService.Create" method="post" path="/api/v1/step-up/providers" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -31,9 +31,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.step_up_provider.create()
+    res = sdk.step_up_provider.create()
 
     assert res.create_step_up_provider_response is not None
 
@@ -67,8 +67,8 @@ Invokes the c1.api.stepup.v1.StepUpProviderService.Delete method.
 
 <!-- UsageSnippet language="python" operationID="c1.api.stepup.v1.StepUpProviderService.Delete" method="delete" path="/api/v1/step-up/providers/{id}" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -76,9 +76,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.step_up_provider.delete(request={
+    res = sdk.step_up_provider.delete(request={
         "id": "<id>",
     })
 
@@ -114,8 +114,8 @@ Invokes the c1.api.stepup.v1.StepUpProviderService.Get method.
 
 <!-- UsageSnippet language="python" operationID="c1.api.stepup.v1.StepUpProviderService.Get" method="get" path="/api/v1/step-up/providers/{id}" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -123,9 +123,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.step_up_provider.get(request={
+    res = sdk.step_up_provider.get(request={
         "id": "<id>",
     })
 
@@ -161,8 +161,8 @@ Invokes the c1.api.stepup.v1.StepUpProviderService.List method.
 
 <!-- UsageSnippet language="python" operationID="c1.api.stepup.v1.StepUpProviderService.List" method="get" path="/api/v1/step-up/providers" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -170,9 +170,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.step_up_provider.list()
+    res = sdk.step_up_provider.list()
 
     assert res.list_step_up_providers_response is not None
 
@@ -205,8 +205,8 @@ Search allows searching for step-up providers with various filters
 
 <!-- UsageSnippet language="python" operationID="c1.api.stepup.v1.StepUpProviderService.Search" method="post" path="/api/v1/search/step-up/providers" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -214,9 +214,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.step_up_provider.search()
+    res = sdk.step_up_provider.search()
 
     assert res.search_step_up_providers_response is not None
 
@@ -250,8 +250,8 @@ Invokes the c1.api.stepup.v1.StepUpProviderService.Test method.
 
 <!-- UsageSnippet language="python" operationID="c1.api.stepup.v1.StepUpProviderService.Test" method="post" path="/api/v1/step-up/providers/{id}/test" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -259,9 +259,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.step_up_provider.test(request={
+    res = sdk.step_up_provider.test(request={
         "id": "<id>",
     })
 
@@ -297,8 +297,8 @@ Invokes the c1.api.stepup.v1.StepUpProviderService.Update method.
 
 <!-- UsageSnippet language="python" operationID="c1.api.stepup.v1.StepUpProviderService.Update" method="post" path="/api/v1/step-up/providers/{id}" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -306,9 +306,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.step_up_provider.update(request={
+    res = sdk.step_up_provider.update(request={
         "id": "<id>",
     })
 
@@ -344,8 +344,8 @@ Invokes the c1.api.stepup.v1.StepUpProviderService.UpdateSecret method.
 
 <!-- UsageSnippet language="python" operationID="c1.api.stepup.v1.StepUpProviderService.UpdateSecret" method="post" path="/api/v1/step-up/providers/{id}/secret" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -353,9 +353,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.step_up_provider.update_secret(request={
+    res = sdk.step_up_provider.update_secret(request={
         "id": "<id>",
     })
 

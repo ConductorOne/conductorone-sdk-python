@@ -20,8 +20,8 @@ Invokes the c1.api.webhooks.v1.WebhooksService.Create method.
 
 <!-- UsageSnippet language="python" operationID="c1.api.webhooks.v1.WebhooksService.Create" method="post" path="/api/v1/webhooks" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -29,9 +29,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.webhooks.create()
+    res = sdk.webhooks.create()
 
     assert res.webhooks_service_create_response is not None
 
@@ -65,8 +65,8 @@ Invokes the c1.api.webhooks.v1.WebhooksService.Delete method.
 
 <!-- UsageSnippet language="python" operationID="c1.api.webhooks.v1.WebhooksService.Delete" method="delete" path="/api/v1/webhooks/{id}" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -74,9 +74,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.webhooks.delete(request={
+    res = sdk.webhooks.delete(request={
         "id": "<id>",
     })
 
@@ -112,8 +112,8 @@ Invokes the c1.api.webhooks.v1.WebhooksService.Get method.
 
 <!-- UsageSnippet language="python" operationID="c1.api.webhooks.v1.WebhooksService.Get" method="get" path="/api/v1/webhooks/{id}" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -121,9 +121,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.webhooks.get(request={
+    res = sdk.webhooks.get(request={
         "id": "<id>",
     })
 
@@ -159,8 +159,8 @@ Invokes the c1.api.webhooks.v1.WebhooksService.List method.
 
 <!-- UsageSnippet language="python" operationID="c1.api.webhooks.v1.WebhooksService.List" method="get" path="/api/v1/webhooks" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -168,9 +168,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.webhooks.list()
+    res = sdk.webhooks.list()
 
     assert res.webhooks_service_list_response is not None
 
@@ -204,8 +204,8 @@ Invokes the c1.api.webhooks.v1.WebhooksService.Test method.
 
 <!-- UsageSnippet language="python" operationID="c1.api.webhooks.v1.WebhooksService.Test" method="post" path="/api/v1/webhooks/{id}/test" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -213,9 +213,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.webhooks.test(request={
+    res = sdk.webhooks.test(request={
         "id": "<id>",
     })
 
@@ -251,8 +251,8 @@ Invokes the c1.api.webhooks.v1.WebhooksService.Update method.
 
 <!-- UsageSnippet language="python" operationID="c1.api.webhooks.v1.WebhooksService.Update" method="post" path="/api/v1/webhooks/{id}" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -260,9 +260,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.webhooks.update(request={
+    res = sdk.webhooks.update(request={
         "id": "<id>",
     })
 

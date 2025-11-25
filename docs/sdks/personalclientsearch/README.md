@@ -15,8 +15,8 @@ Invokes the c1.api.iam.v1.PersonalClientSearchService.Search method.
 
 <!-- UsageSnippet language="python" operationID="c1.api.iam.v1.PersonalClientSearchService.Search" method="post" path="/api/v1/search/iam/personal_clients" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -24,9 +24,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.personal_client_search.search()
+    res = sdk.personal_client_search.search()
 
     assert res.personal_client_search_service_search_response is not None
 

@@ -20,8 +20,8 @@ Adds an owner to an app.
 
 <!-- UsageSnippet language="python" operationID="c1.api.app.v1.AppOwners.Add" method="post" path="/api/v1/apps/{app_id}/owners/{user_id}" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -29,9 +29,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.app_owners.add(request={
+    res = sdk.app_owners.add(request={
         "app_id": "<id>",
         "user_id": "<id>",
     })
@@ -68,8 +68,8 @@ Delete deletes the owners from a given app.
 
 <!-- UsageSnippet language="python" operationID="c1.api.app.v1.AppOwners.Delete" method="delete" path="/api/v1/apps/{app_id}/owners" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -77,9 +77,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.app_owners.delete(request={
+    res = sdk.app_owners.delete(request={
         "app_id": "<id>",
     })
 
@@ -115,8 +115,8 @@ List owners of an app.
 
 <!-- UsageSnippet language="python" operationID="c1.api.app.v1.AppOwners.List" method="get" path="/api/v1/apps/{app_id}/owners" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -124,9 +124,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.app_owners.list(request={
+    res = sdk.app_owners.list(request={
         "app_id": "<id>",
     })
 
@@ -162,8 +162,8 @@ ListOwnerIDs lists owner IDs for a given app.
 
 <!-- UsageSnippet language="python" operationID="c1.api.app.v1.AppOwners.ListOwnerIDs" method="get" path="/api/v1/apps/{app_id}/ownerids" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -171,9 +171,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.app_owners.list_owner_i_ds(request={
+    res = sdk.app_owners.list_owner_i_ds(request={
         "app_id": "<id>",
     })
 
@@ -209,8 +209,8 @@ Removes an owner from an app.
 
 <!-- UsageSnippet language="python" operationID="c1.api.app.v1.AppOwners.Remove" method="delete" path="/api/v1/apps/{app_id}/owners/{user_id}" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -218,9 +218,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.app_owners.remove(request={
+    res = sdk.app_owners.remove(request={
         "app_id": "<id>",
         "user_id": "<id>",
     })
@@ -257,8 +257,8 @@ Sets the owners for a given app to the specified list of users.
 
 <!-- UsageSnippet language="python" operationID="c1.api.app.v1.AppOwners.Set" method="put" path="/api/v1/apps/{app_id}/owners" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -266,9 +266,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.app_owners.set(request={
+    res = sdk.app_owners.set(request={
         "app_id": "<id>",
     })
 

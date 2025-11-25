@@ -20,8 +20,8 @@ Invokes the c1.api.automations.v1.AutomationService.CreateAutomation method.
 
 <!-- UsageSnippet language="python" operationID="c1.api.automations.v1.AutomationService.CreateAutomation" method="post" path="/api/v1/automations" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -29,9 +29,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.automation.create_automation()
+    res = sdk.automation.create_automation()
 
     assert res.create_automation_response is not None
 
@@ -65,8 +65,8 @@ Invokes the c1.api.automations.v1.AutomationService.DeleteAutomation method.
 
 <!-- UsageSnippet language="python" operationID="c1.api.automations.v1.AutomationService.DeleteAutomation" method="delete" path="/api/v1/automations/{id}" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -74,9 +74,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.automation.delete_automation(request={
+    res = sdk.automation.delete_automation(request={
         "id": "<id>",
     })
 
@@ -112,8 +112,8 @@ Invokes the c1.api.automations.v1.AutomationService.ExecuteAutomation method.
 
 <!-- UsageSnippet language="python" operationID="c1.api.automations.v1.AutomationService.ExecuteAutomation" method="post" path="/api/v1/automations/{id}/execute" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -121,9 +121,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.automation.execute_automation(request={
+    res = sdk.automation.execute_automation(request={
         "id": "<id>",
     })
 
@@ -159,8 +159,8 @@ Invokes the c1.api.automations.v1.AutomationService.GetAutomation method.
 
 <!-- UsageSnippet language="python" operationID="c1.api.automations.v1.AutomationService.GetAutomation" method="get" path="/api/v1/automations/{id}" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -168,9 +168,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.automation.get_automation(request={
+    res = sdk.automation.get_automation(request={
         "id": "<id>",
     })
 
@@ -206,8 +206,8 @@ Invokes the c1.api.automations.v1.AutomationService.ListAutomations method.
 
 <!-- UsageSnippet language="python" operationID="c1.api.automations.v1.AutomationService.ListAutomations" method="get" path="/api/v1/automations" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -215,9 +215,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.automation.list_automations()
+    res = sdk.automation.list_automations()
 
     assert res.list_automations_response is not None
 
@@ -250,8 +250,8 @@ Invokes the c1.api.automations.v1.AutomationService.UpdateAutomation method.
 
 <!-- UsageSnippet language="python" operationID="c1.api.automations.v1.AutomationService.UpdateAutomation" method="post" path="/api/v1/automations/{id}" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -259,9 +259,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.automation.update_automation(request={
+    res = sdk.automation.update_automation(request={
         "id": "<id>",
     })
 

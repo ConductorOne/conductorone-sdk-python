@@ -18,8 +18,8 @@ Invokes the c1.api.accessconflict.v1.AccessConflictService.CreateMonitor method.
 
 <!-- UsageSnippet language="python" operationID="c1.api.accessconflict.v1.AccessConflictService.CreateMonitor" method="post" path="/api/v1/accessconflict" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -27,9 +27,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.access_conflict.create_monitor()
+    res = sdk.access_conflict.create_monitor()
 
     assert res.conflict_monitor is not None
 
@@ -63,8 +63,8 @@ Invokes the c1.api.accessconflict.v1.AccessConflictService.DeleteMonitor method.
 
 <!-- UsageSnippet language="python" operationID="c1.api.accessconflict.v1.AccessConflictService.DeleteMonitor" method="delete" path="/api/v1/accessconflict/{id}" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -72,9 +72,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.access_conflict.delete_monitor(request={
+    res = sdk.access_conflict.delete_monitor(request={
         "id": "<id>",
     })
 
@@ -110,8 +110,8 @@ Invokes the c1.api.accessconflict.v1.AccessConflictService.GetMonitor method.
 
 <!-- UsageSnippet language="python" operationID="c1.api.accessconflict.v1.AccessConflictService.GetMonitor" method="get" path="/api/v1/accessconflict/{id}" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -119,9 +119,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.access_conflict.get_monitor(request={
+    res = sdk.access_conflict.get_monitor(request={
         "id": "<id>",
     })
 
@@ -157,8 +157,8 @@ Invokes the c1.api.accessconflict.v1.AccessConflictService.UpdateMonitor method.
 
 <!-- UsageSnippet language="python" operationID="c1.api.accessconflict.v1.AccessConflictService.UpdateMonitor" method="post" path="/api/v1/accessconflict/{id}" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -166,9 +166,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.access_conflict.update_monitor(request={
+    res = sdk.access_conflict.update_monitor(request={
         "id": "<id>",
     })
 

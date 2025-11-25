@@ -9,11 +9,14 @@
 * [add_app_entitlements](#add_app_entitlements) - Add App Entitlements
 * [create](#create) - Create
 * [create_bundle_automation](#create_bundle_automation) - Create Bundle Automation
+* [create_requestable_entry](#create_requestable_entry) - Create Requestable Entry
 * [delete](#delete) - Delete
 * [delete_bundle_automation](#delete_bundle_automation) - Delete Bundle Automation
+* [delete_requestable_entry](#delete_requestable_entry) - Delete Requestable Entry
 * [force_run_bundle_automation](#force_run_bundle_automation) - Force Run Bundle Automation
 * [get](#get) - Get
 * [get_bundle_automation](#get_bundle_automation) - Get Bundle Automation
+* [get_requestable_entry](#get_requestable_entry) - Get Requestable Entry
 * [list](#list) - List
 * [list_all_entitlement_ids_per_app](#list_all_entitlement_ids_per_app) - List All Entitlement Ids Per App
 * [list_entitlements_for_access](#list_entitlements_for_access) - List Entitlements For Access
@@ -33,8 +36,8 @@ Add visibility bindings (access entitlements) to a catalog.
 
 <!-- UsageSnippet language="python" operationID="c1.api.requestcatalog.v1.RequestCatalogManagementService.AddAccessEntitlements" method="post" path="/api/v1/catalogs/{catalog_id}/visibility_bindings" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -42,9 +45,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.request_catalog_management.add_access_entitlements(request={
+    res = sdk.request_catalog_management.add_access_entitlements(request={
         "catalog_id": "<id>",
     })
 
@@ -80,8 +83,8 @@ Add requestable entitlements to a catalog.
 
 <!-- UsageSnippet language="python" operationID="c1.api.requestcatalog.v1.RequestCatalogManagementService.AddAppEntitlements" method="post" path="/api/v1/catalogs/{catalog_id}/requestable_entries" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -89,9 +92,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.request_catalog_management.add_app_entitlements(request={
+    res = sdk.request_catalog_management.add_app_entitlements(request={
         "catalog_id": "<id>",
     })
 
@@ -127,8 +130,8 @@ Creates a new request catalog.
 
 <!-- UsageSnippet language="python" operationID="c1.api.requestcatalog.v1.RequestCatalogManagementService.Create" method="post" path="/api/v1/catalogs" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -136,9 +139,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.request_catalog_management.create()
+    res = sdk.request_catalog_management.create()
 
     assert res.request_catalog_management_service_get_response is not None
 
@@ -172,8 +175,8 @@ Invokes the c1.api.requestcatalog.v1.RequestCatalogManagementService.CreateBundl
 
 <!-- UsageSnippet language="python" operationID="c1.api.requestcatalog.v1.RequestCatalogManagementService.CreateBundleAutomation" method="post" path="/api/v1/catalogs/{request_catalog_id}/bundle_automation/create" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -181,9 +184,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.request_catalog_management.create_bundle_automation(request={
+    res = sdk.request_catalog_management.create_bundle_automation(request={
         "request_catalog_id": "<id>",
     })
 
@@ -211,6 +214,55 @@ with SDK(
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
+## create_requestable_entry
+
+Create a single requestable entry
+
+### Example Usage
+
+<!-- UsageSnippet language="python" operationID="c1.api.requestcatalog.v1.RequestCatalogManagementService.CreateRequestableEntry" method="put" path="/api/v1/catalogs/{catalog_id}/requestable_entries/{app_id}/{entitlement_id}" -->
+```python
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
+
+
+with SDK(
+    security=shared.Security(
+        bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
+        oauth="<YOUR_OAUTH_HERE>",
+    ),
+) as sdk:
+
+    res = sdk.request_catalog_management.create_requestable_entry(request={
+        "app_id": "<id>",
+        "catalog_id": "<id>",
+        "entitlement_id": "<id>",
+    })
+
+    assert res.request_catalog_management_service_create_requestable_entry_response is not None
+
+    # Handle response
+    print(res.request_catalog_management_service_create_requestable_entry_response)
+
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                                                    | Type                                                                                                                                                                                                         | Required                                                                                                                                                                                                     | Description                                                                                                                                                                                                  |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                                                    | [operations.C1APIRequestcatalogV1RequestCatalogManagementServiceCreateRequestableEntryRequest](../../models/operations/c1apirequestcatalogv1requestcatalogmanagementservicecreaterequestableentryrequest.md) | :heavy_check_mark:                                                                                                                                                                                           | The request object to use for the request.                                                                                                                                                                   |
+| `retries`                                                                                                                                                                                                    | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)                                                                                                                                             | :heavy_minus_sign:                                                                                                                                                                                           | Configuration to override the default retry behavior of the client.                                                                                                                                          |
+
+### Response
+
+**[operations.C1APIRequestcatalogV1RequestCatalogManagementServiceCreateRequestableEntryResponse](../../models/operations/c1apirequestcatalogv1requestcatalogmanagementservicecreaterequestableentryresponse.md)**
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
+
 ## delete
 
 Delete a catalog.
@@ -219,8 +271,8 @@ Delete a catalog.
 
 <!-- UsageSnippet language="python" operationID="c1.api.requestcatalog.v1.RequestCatalogManagementService.Delete" method="delete" path="/api/v1/catalogs/{id}" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -228,9 +280,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.request_catalog_management.delete(request={
+    res = sdk.request_catalog_management.delete(request={
         "id": "<id>",
     })
 
@@ -266,8 +318,8 @@ Invokes the c1.api.requestcatalog.v1.RequestCatalogManagementService.DeleteBundl
 
 <!-- UsageSnippet language="python" operationID="c1.api.requestcatalog.v1.RequestCatalogManagementService.DeleteBundleAutomation" method="delete" path="/api/v1/catalogs/{request_catalog_id}/bundle_automation" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -275,9 +327,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.request_catalog_management.delete_bundle_automation(request={
+    res = sdk.request_catalog_management.delete_bundle_automation(request={
         "request_catalog_id": "<id>",
     })
 
@@ -305,6 +357,55 @@ with SDK(
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
+## delete_requestable_entry
+
+Delete a single requestable entry
+
+### Example Usage
+
+<!-- UsageSnippet language="python" operationID="c1.api.requestcatalog.v1.RequestCatalogManagementService.DeleteRequestableEntry" method="delete" path="/api/v1/catalogs/{catalog_id}/requestable_entries/{app_id}/{entitlement_id}" -->
+```python
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
+
+
+with SDK(
+    security=shared.Security(
+        bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
+        oauth="<YOUR_OAUTH_HERE>",
+    ),
+) as sdk:
+
+    res = sdk.request_catalog_management.delete_requestable_entry(request={
+        "app_id": "<id>",
+        "catalog_id": "<id>",
+        "entitlement_id": "<id>",
+    })
+
+    assert res.request_catalog_management_service_delete_requestable_entry_response is not None
+
+    # Handle response
+    print(res.request_catalog_management_service_delete_requestable_entry_response)
+
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                                                    | Type                                                                                                                                                                                                         | Required                                                                                                                                                                                                     | Description                                                                                                                                                                                                  |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                                                    | [operations.C1APIRequestcatalogV1RequestCatalogManagementServiceDeleteRequestableEntryRequest](../../models/operations/c1apirequestcatalogv1requestcatalogmanagementservicedeleterequestableentryrequest.md) | :heavy_check_mark:                                                                                                                                                                                           | The request object to use for the request.                                                                                                                                                                   |
+| `retries`                                                                                                                                                                                                    | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)                                                                                                                                             | :heavy_minus_sign:                                                                                                                                                                                           | Configuration to override the default retry behavior of the client.                                                                                                                                          |
+
+### Response
+
+**[operations.C1APIRequestcatalogV1RequestCatalogManagementServiceDeleteRequestableEntryResponse](../../models/operations/c1apirequestcatalogv1requestcatalogmanagementservicedeleterequestableentryresponse.md)**
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
+
 ## force_run_bundle_automation
 
 Invokes the c1.api.requestcatalog.v1.RequestCatalogManagementService.ForceRunBundleAutomation method.
@@ -313,8 +414,8 @@ Invokes the c1.api.requestcatalog.v1.RequestCatalogManagementService.ForceRunBun
 
 <!-- UsageSnippet language="python" operationID="c1.api.requestcatalog.v1.RequestCatalogManagementService.ForceRunBundleAutomation" method="post" path="/api/v1/catalogs/{request_catalog_id}/bundle_automation/run" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -322,9 +423,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.request_catalog_management.force_run_bundle_automation(request={
+    res = sdk.request_catalog_management.force_run_bundle_automation(request={
         "request_catalog_id": "<id>",
     })
 
@@ -360,8 +461,8 @@ Get a catalog.
 
 <!-- UsageSnippet language="python" operationID="c1.api.requestcatalog.v1.RequestCatalogManagementService.Get" method="get" path="/api/v1/catalogs/{id}" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -369,9 +470,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.request_catalog_management.get(request={
+    res = sdk.request_catalog_management.get(request={
         "id": "<id>",
     })
 
@@ -407,8 +508,8 @@ Get bundle automation
 
 <!-- UsageSnippet language="python" operationID="c1.api.requestcatalog.v1.RequestCatalogManagementService.GetBundleAutomation" method="get" path="/api/v1/catalogs/{request_catalog_id}/bundle_automation" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -416,9 +517,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.request_catalog_management.get_bundle_automation(request={
+    res = sdk.request_catalog_management.get_bundle_automation(request={
         "request_catalog_id": "<id>",
     })
 
@@ -446,6 +547,55 @@ with SDK(
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
+## get_requestable_entry
+
+Get a single requestable entry
+
+### Example Usage
+
+<!-- UsageSnippet language="python" operationID="c1.api.requestcatalog.v1.RequestCatalogManagementService.GetRequestableEntry" method="get" path="/api/v1/catalogs/{catalog_id}/requestable_entries/{app_id}/{entitlement_id}" -->
+```python
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
+
+
+with SDK(
+    security=shared.Security(
+        bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
+        oauth="<YOUR_OAUTH_HERE>",
+    ),
+) as sdk:
+
+    res = sdk.request_catalog_management.get_requestable_entry(request={
+        "app_id": "<id>",
+        "catalog_id": "<id>",
+        "entitlement_id": "<id>",
+    })
+
+    assert res.request_catalog_management_service_get_requestable_entry_response is not None
+
+    # Handle response
+    print(res.request_catalog_management_service_get_requestable_entry_response)
+
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                                              | Type                                                                                                                                                                                                   | Required                                                                                                                                                                                               | Description                                                                                                                                                                                            |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                                              | [operations.C1APIRequestcatalogV1RequestCatalogManagementServiceGetRequestableEntryRequest](../../models/operations/c1apirequestcatalogv1requestcatalogmanagementservicegetrequestableentryrequest.md) | :heavy_check_mark:                                                                                                                                                                                     | The request object to use for the request.                                                                                                                                                             |
+| `retries`                                                                                                                                                                                              | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)                                                                                                                                       | :heavy_minus_sign:                                                                                                                                                                                     | Configuration to override the default retry behavior of the client.                                                                                                                                    |
+
+### Response
+
+**[operations.C1APIRequestcatalogV1RequestCatalogManagementServiceGetRequestableEntryResponse](../../models/operations/c1apirequestcatalogv1requestcatalogmanagementservicegetrequestableentryresponse.md)**
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
+
 ## list
 
 Get a list of request catalogs.
@@ -454,8 +604,8 @@ Get a list of request catalogs.
 
 <!-- UsageSnippet language="python" operationID="c1.api.requestcatalog.v1.RequestCatalogManagementService.List" method="get" path="/api/v1/catalogs" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -463,9 +613,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.request_catalog_management.list()
+    res = sdk.request_catalog_management.list()
 
     assert res.request_catalog_management_service_list_response is not None
 
@@ -499,8 +649,8 @@ Invokes the c1.api.requestcatalog.v1.RequestCatalogManagementService.ListAllEnti
 
 <!-- UsageSnippet language="python" operationID="c1.api.requestcatalog.v1.RequestCatalogManagementService.ListAllEntitlementIdsPerApp" method="get" path="/api/v1/catalogs/{catalog_id}/requestable_entitlementIDs" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -508,9 +658,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.request_catalog_management.list_all_entitlement_ids_per_app(request={
+    res = sdk.request_catalog_management.list_all_entitlement_ids_per_app(request={
         "catalog_id": "<id>",
     })
 
@@ -546,8 +696,8 @@ List visibility bindings (access entitlements) for a catalog.
 
 <!-- UsageSnippet language="python" operationID="c1.api.requestcatalog.v1.RequestCatalogManagementService.ListEntitlementsForAccess" method="get" path="/api/v1/catalogs/{catalog_id}/visibility_entitlements" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -555,9 +705,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.request_catalog_management.list_entitlements_for_access(request={
+    res = sdk.request_catalog_management.list_entitlements_for_access(request={
         "catalog_id": "<id>",
     })
 
@@ -593,8 +743,8 @@ List entitlements in a catalog that are requestable.
 
 <!-- UsageSnippet language="python" operationID="c1.api.requestcatalog.v1.RequestCatalogManagementService.ListEntitlementsPerCatalog" method="get" path="/api/v1/catalogs/{catalog_id}/requestable_entitlements" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -602,9 +752,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.request_catalog_management.list_entitlements_per_catalog(request={
+    res = sdk.request_catalog_management.list_entitlements_per_catalog(request={
         "catalog_id": "<id>",
     })
 
@@ -640,8 +790,8 @@ Remove visibility bindings (access entitlements) to a catalog.
 
 <!-- UsageSnippet language="python" operationID="c1.api.requestcatalog.v1.RequestCatalogManagementService.RemoveAccessEntitlements" method="delete" path="/api/v1/catalogs/{catalog_id}/visibility_bindings" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -649,9 +799,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.request_catalog_management.remove_access_entitlements(request={
+    res = sdk.request_catalog_management.remove_access_entitlements(request={
         "catalog_id": "<id>",
     })
 
@@ -687,8 +837,8 @@ Remove requestable entitlements from a catalog.
 
 <!-- UsageSnippet language="python" operationID="c1.api.requestcatalog.v1.RequestCatalogManagementService.RemoveAppEntitlements" method="delete" path="/api/v1/catalogs/{catalog_id}/requestable_entries" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -696,9 +846,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.request_catalog_management.remove_app_entitlements(request={
+    res = sdk.request_catalog_management.remove_app_entitlements(request={
         "catalog_id": "<id>",
     })
 
@@ -734,8 +884,8 @@ Invokes the c1.api.requestcatalog.v1.RequestCatalogManagementService.ResumePause
 
 <!-- UsageSnippet language="python" operationID="c1.api.requestcatalog.v1.RequestCatalogManagementService.ResumePausedBundleAutomation" method="post" path="/api/v1/catalogs/{request_catalog_id}/bundle_automation/resume" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -743,9 +893,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.request_catalog_management.resume_paused_bundle_automation(request={
+    res = sdk.request_catalog_management.resume_paused_bundle_automation(request={
         "request_catalog_id": "<id>",
     })
 
@@ -781,8 +931,8 @@ Invokes the c1.api.requestcatalog.v1.RequestCatalogManagementService.SetBundleAu
 
 <!-- UsageSnippet language="python" operationID="c1.api.requestcatalog.v1.RequestCatalogManagementService.SetBundleAutomation" method="post" path="/api/v1/catalogs/{request_catalog_id}/bundle_automation" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -790,9 +940,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.request_catalog_management.set_bundle_automation(request={
+    res = sdk.request_catalog_management.set_bundle_automation(request={
         "request_catalog_id": "<id>",
     })
 
@@ -828,8 +978,8 @@ Update a catalog.
 
 <!-- UsageSnippet language="python" operationID="c1.api.requestcatalog.v1.RequestCatalogManagementService.Update" method="post" path="/api/v1/catalogs/{id}" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -837,9 +987,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.request_catalog_management.update(request={
+    res = sdk.request_catalog_management.update(request={
         "id": "<id>",
     })
 
@@ -875,8 +1025,8 @@ Invokes the c1.api.requestcatalog.v1.RequestCatalogManagementService.UpdateAppEn
 
 <!-- UsageSnippet language="python" operationID="c1.api.requestcatalog.v1.RequestCatalogManagementService.UpdateAppEntitlements" method="post" path="/api/v1/catalogs/{catalog_id}/requestable_entitlements/update" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -884,9 +1034,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.request_catalog_management.update_app_entitlements(request={
+    res = sdk.request_catalog_management.update_app_entitlements(request={
         "catalog_id": "<id>",
     })
 

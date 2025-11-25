@@ -15,8 +15,8 @@ Get a list of reports for the given app.
 
 <!-- UsageSnippet language="python" operationID="c1.api.app.v1.AppReportService.List" method="get" path="/api/v1/apps/{app_id}/report" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -24,9 +24,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.app_report.list(request={
+    res = sdk.app_report.list(request={
         "app_id": "<id>",
     })
 

@@ -19,8 +19,8 @@ Invokes the c1.api.app.v1.AppUserService.List method.
 
 <!-- UsageSnippet language="python" operationID="c1.api.app.v1.AppUserService.List" method="get" path="/api/v1/apps/{app_id}/app_users" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -28,9 +28,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.app_user.list(request={
+    res = sdk.app_user.list(request={
         "app_id": "<id>",
     })
 
@@ -66,8 +66,8 @@ Invokes the c1.api.app.v1.AppUserService.ListAppUserCredentials method.
 
 <!-- UsageSnippet language="python" operationID="c1.api.app.v1.AppUserService.ListAppUserCredentials" method="get" path="/api/v1/apps/{app_id}/app_users/{app_user_id}/credentials" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -75,9 +75,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.app_user.list_app_user_credentials(request={
+    res = sdk.app_user.list_app_user_credentials(request={
         "app_id": "<id>",
         "app_user_id": "<id>",
     })
@@ -114,8 +114,8 @@ Invokes the c1.api.app.v1.AppUserService.ListAppUsersForUser method.
 
 <!-- UsageSnippet language="python" operationID="c1.api.app.v1.AppUserService.ListAppUsersForUser" method="get" path="/api/v1/apps/{app_id}/users/{user_id}/app_users" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -123,9 +123,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.app_user.list_app_users_for_user(request={
+    res = sdk.app_user.list_app_users_for_user(request={
         "app_id": "<id>",
         "user_id": "<id>",
     })
@@ -162,8 +162,8 @@ Search app users based on filters specified in the request body.
 
 <!-- UsageSnippet language="python" operationID="c1.api.app.v1.AppUserService.Search" method="post" path="/api/v1/search/app_users" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -171,9 +171,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.app_user.search()
+    res = sdk.app_user.search()
 
     assert res.app_user_service_search_response is not None
 
@@ -208,8 +208,8 @@ Update an app user by ID. Only the fields specified in the update mask are updat
 
 <!-- UsageSnippet language="python" operationID="c1.api.app.v1.AppUserService.Update" method="post" path="/api/v1/apps/{app_user_app_id}/app_users/{app_user_id}" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -217,9 +217,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.app_user.update(request={
+    res = sdk.app_user.update(request={
         "app_user_app_id": "<id>",
         "app_user_id": "<id>",
     })

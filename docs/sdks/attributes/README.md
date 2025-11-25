@@ -27,8 +27,8 @@ Create a new attribute value.
 
 <!-- UsageSnippet language="python" operationID="c1.api.attribute.v1.Attributes.CreateAttributeValue" method="post" path="/api/v1/attributes" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -36,9 +36,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.attributes.create_attribute_value()
+    res = sdk.attributes.create_attribute_value()
 
     assert res.create_attribute_value_response is not None
 
@@ -72,8 +72,8 @@ Create a compliance framework value.
 
 <!-- UsageSnippet language="python" operationID="c1.api.attribute.v1.Attributes.CreateComplianceFrameworkAttributeValue" method="post" path="/api/v1/attributes/compliance_frameworks" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -81,9 +81,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.attributes.create_compliance_framework_attribute_value()
+    res = sdk.attributes.create_compliance_framework_attribute_value()
 
     assert res.create_compliance_framework_attribute_value_response is not None
 
@@ -117,8 +117,8 @@ Create a risk level attribute.
 
 <!-- UsageSnippet language="python" operationID="c1.api.attribute.v1.Attributes.CreateRiskLevelAttributeValue" method="post" path="/api/v1/attributes/risk_levels" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -126,9 +126,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.attributes.create_risk_level_attribute_value()
+    res = sdk.attributes.create_risk_level_attribute_value()
 
     assert res.create_risk_level_attribute_value_response is not None
 
@@ -162,8 +162,8 @@ Delete an attribute value by id.
 
 <!-- UsageSnippet language="python" operationID="c1.api.attribute.v1.Attributes.DeleteAttributeValue" method="delete" path="/api/v1/attribute/{id}" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -171,9 +171,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.attributes.delete_attribute_value(request={
+    res = sdk.attributes.delete_attribute_value(request={
         "id": "<id>",
     })
 
@@ -209,8 +209,8 @@ Delete an attribute value by id.
 
 <!-- UsageSnippet language="python" operationID="c1.api.attribute.v1.Attributes.DeleteComplianceFrameworkAttributeValue" method="delete" path="/api/v1/attributes/compliance_frameworks/{id}" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -218,9 +218,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.attributes.delete_compliance_framework_attribute_value(request={
+    res = sdk.attributes.delete_compliance_framework_attribute_value(request={
         "id": "<id>",
     })
 
@@ -256,8 +256,8 @@ Delete a risk level attribute value by id.
 
 <!-- UsageSnippet language="python" operationID="c1.api.attribute.v1.Attributes.DeleteRiskLevelAttributeValue" method="delete" path="/api/v1/attributes/risk_levels/{id}" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -265,9 +265,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.attributes.delete_risk_level_attribute_value(request={
+    res = sdk.attributes.delete_risk_level_attribute_value(request={
         "id": "<id>",
     })
 
@@ -303,8 +303,8 @@ Get an attribute value by id.
 
 <!-- UsageSnippet language="python" operationID="c1.api.attribute.v1.Attributes.GetAttributeValue" method="get" path="/api/v1/attributes/{id}" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -312,9 +312,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.attributes.get_attribute_value(request={
+    res = sdk.attributes.get_attribute_value(request={
         "id": "<id>",
     })
 
@@ -350,8 +350,8 @@ Get an attribute value by id.
 
 <!-- UsageSnippet language="python" operationID="c1.api.attribute.v1.Attributes.GetComplianceFrameworkAttributeValue" method="get" path="/api/v1/attributes/compliance_frameworks/{id}" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -359,9 +359,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.attributes.get_compliance_framework_attribute_value(request={
+    res = sdk.attributes.get_compliance_framework_attribute_value(request={
         "id": "<id>",
     })
 
@@ -397,8 +397,8 @@ Get a risk level attribute value by id.
 
 <!-- UsageSnippet language="python" operationID="c1.api.attribute.v1.Attributes.GetRiskLevelAttributeValue" method="get" path="/api/v1/attributes/risk_levels/{id}" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -406,9 +406,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.attributes.get_risk_level_attribute_value(request={
+    res = sdk.attributes.get_risk_level_attribute_value(request={
         "id": "<id>",
     })
 
@@ -444,8 +444,8 @@ List all attribute types.
 
 <!-- UsageSnippet language="python" operationID="c1.api.attribute.v1.Attributes.ListAttributeTypes" method="get" path="/api/v1/attributes/types" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -453,9 +453,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.attributes.list_attribute_types()
+    res = sdk.attributes.list_attribute_types()
 
     assert res.list_attribute_types_response is not None
 
@@ -489,8 +489,8 @@ List all attribute values for a given attribute type.
 
 <!-- UsageSnippet language="python" operationID="c1.api.attribute.v1.Attributes.ListAttributeValues" method="get" path="/api/v1/attributes/types/{attribute_type_id}/values" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -498,9 +498,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.attributes.list_attribute_values(request={
+    res = sdk.attributes.list_attribute_values(request={
         "attribute_type_id": "<id>",
     })
 
@@ -536,8 +536,8 @@ Invokes the c1.api.attribute.v1.Attributes.ListComplianceFrameworks method.
 
 <!-- UsageSnippet language="python" operationID="c1.api.attribute.v1.Attributes.ListComplianceFrameworks" method="get" path="/api/v1/attributes/compliance_frameworks" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -545,9 +545,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.attributes.list_compliance_frameworks()
+    res = sdk.attributes.list_compliance_frameworks()
 
     assert res.list_compliance_frameworks_response is not None
 
@@ -581,8 +581,8 @@ Invokes the c1.api.attribute.v1.Attributes.ListRiskLevels method.
 
 <!-- UsageSnippet language="python" operationID="c1.api.attribute.v1.Attributes.ListRiskLevels" method="get" path="/api/v1/attributes/risk_levels" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -590,9 +590,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.attributes.list_risk_levels()
+    res = sdk.attributes.list_risk_levels()
 
     assert res.list_risk_levels_response is not None
 

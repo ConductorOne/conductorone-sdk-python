@@ -17,8 +17,8 @@ Invokes the c1.api.app.v1.AppAccessRequestsDefaultsService.CancelAppAccessReques
 
 <!-- UsageSnippet language="python" operationID="c1.api.app.v1.AppAccessRequestsDefaultsService.CancelAppAccessRequestsDefaults" method="post" path="/api/v1/apps/{app_id}/access_request_defaults/cancel" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -26,9 +26,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.app_access_requests_defaults.cancel_app_access_requests_defaults(request={
+    res = sdk.app_access_requests_defaults.cancel_app_access_requests_defaults(request={
         "app_id": "<id>",
     })
 
@@ -64,8 +64,8 @@ Invokes the c1.api.app.v1.AppAccessRequestsDefaultsService.CreateAppAccessReques
 
 <!-- UsageSnippet language="python" operationID="c1.api.app.v1.AppAccessRequestsDefaultsService.CreateAppAccessRequestsDefaults" method="post" path="/api/v1/apps/{app_id}/access_request_defaults" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -73,9 +73,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.app_access_requests_defaults.create_app_access_requests_defaults(request={
+    res = sdk.app_access_requests_defaults.create_app_access_requests_defaults(request={
         "app_id": "<id>",
     })
 
@@ -111,8 +111,8 @@ Invokes the c1.api.app.v1.AppAccessRequestsDefaultsService.GetAppAccessRequestsD
 
 <!-- UsageSnippet language="python" operationID="c1.api.app.v1.AppAccessRequestsDefaultsService.GetAppAccessRequestsDefaults" method="get" path="/api/v1/apps/{app_id}/access_request_defaults" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -120,9 +120,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.app_access_requests_defaults.get_app_access_requests_defaults(request={
+    res = sdk.app_access_requests_defaults.get_app_access_requests_defaults(request={
         "app_id": "<id>",
     })
 
