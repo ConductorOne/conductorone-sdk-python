@@ -1,8 +1,8 @@
 <!-- Start SDK Example Usage [usage] -->
 ```python
 # Synchronous Example
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -10,9 +10,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.access_conflict.create_monitor()
+    res = sdk.access_conflict.create_monitor()
 
     assert res.conflict_monitor is not None
 
@@ -27,8 +27,8 @@ The same SDK client can also be used to make asynchronous requests by importing 
 ```python
 # Asynchronous Example
 import asyncio
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 async def main():
 
@@ -37,9 +37,9 @@ async def main():
             bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
             oauth="<YOUR_OAUTH_HERE>",
         ),
-    ) as s_client:
+    ) as sdk:
 
-        res = await s_client.access_conflict.create_monitor_async()
+        res = await sdk.access_conflict.create_monitor_async()
 
         assert res.conflict_monitor is not None
 

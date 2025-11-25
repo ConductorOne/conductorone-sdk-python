@@ -15,8 +15,8 @@ Invokes the c1.api.automations.v1.AutomationExecutionActionsService.TerminateAut
 
 <!-- UsageSnippet language="python" operationID="c1.api.automations.v1.AutomationExecutionActionsService.TerminateAutomation" method="post" path="/api/v1/automation_executions/{id}/actions/terminate" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -24,9 +24,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.automation_execution_actions.terminate_automation(request={
+    res = sdk.automation_execution_actions.terminate_automation(request={
         "id": 839265,
     })
 

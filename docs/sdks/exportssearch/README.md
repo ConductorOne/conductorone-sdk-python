@@ -15,8 +15,8 @@ Invokes the c1.api.systemlog.v1.ExportsSearchService.Search method.
 
 <!-- UsageSnippet language="python" operationID="c1.api.systemlog.v1.ExportsSearchService.Search" method="post" path="/api/v1/search/systemlog/exports" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -24,9 +24,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.exports_search.search()
+    res = sdk.exports_search.search()
 
     assert res.exports_search_service_search_response is not None
 

@@ -21,8 +21,8 @@ Invokes the c1.api.request_schema.v1.RequestSchemaService.Create method.
 
 <!-- UsageSnippet language="python" operationID="c1.api.request_schema.v1.RequestSchemaService.Create" method="post" path="/api/v1/request_schemas" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -30,9 +30,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.request_schema.create()
+    res = sdk.request_schema.create()
 
     assert res.request_schema_service_create_response is not None
 
@@ -66,8 +66,8 @@ Invokes the c1.api.request_schema.v1.RequestSchemaService.CreateEntitlementBindi
 
 <!-- UsageSnippet language="python" operationID="c1.api.request_schema.v1.RequestSchemaService.CreateEntitlementBinding" method="post" path="/api/v1/request_schema_entitlement_binding" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -75,9 +75,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.request_schema.create_entitlement_binding()
+    res = sdk.request_schema.create_entitlement_binding()
 
     assert res.request_schema_service_create_entitlement_binding_response is not None
 
@@ -111,8 +111,8 @@ Invokes the c1.api.request_schema.v1.RequestSchemaService.Delete method.
 
 <!-- UsageSnippet language="python" operationID="c1.api.request_schema.v1.RequestSchemaService.Delete" method="delete" path="/api/v1/request_schemas/{request_schema_id}" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -120,9 +120,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.request_schema.delete(request={
+    res = sdk.request_schema.delete(request={
         "request_schema_id": "<id>",
     })
 
@@ -158,8 +158,8 @@ Invokes the c1.api.request_schema.v1.RequestSchemaService.FindBindingForAppEntit
 
 <!-- UsageSnippet language="python" operationID="c1.api.request_schema.v1.RequestSchemaService.FindBindingForAppEntitlement" method="put" path="/api/v1/request_schema_entitlement_binding" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -167,9 +167,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.request_schema.find_binding_for_app_entitlement()
+    res = sdk.request_schema.find_binding_for_app_entitlement()
 
     assert res.request_schema_service_find_binding_for_app_entitlement_response is not None
 
@@ -203,8 +203,8 @@ Invokes the c1.api.request_schema.v1.RequestSchemaService.Get method.
 
 <!-- UsageSnippet language="python" operationID="c1.api.request_schema.v1.RequestSchemaService.Get" method="get" path="/api/v1/request_schemas/{request_schema_id}" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -212,9 +212,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.request_schema.get(request={
+    res = sdk.request_schema.get(request={
         "request_schema_id": "<id>",
     })
 
@@ -250,8 +250,8 @@ Invokes the c1.api.request_schema.v1.RequestSchemaService.RemoveEntitlementBindi
 
 <!-- UsageSnippet language="python" operationID="c1.api.request_schema.v1.RequestSchemaService.RemoveEntitlementBinding" method="delete" path="/api/v1/request_schema_entitlement_binding" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -259,9 +259,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.request_schema.remove_entitlement_binding()
+    res = sdk.request_schema.remove_entitlement_binding()
 
     assert res.request_schema_service_remove_entitlement_binding_response is not None
 
@@ -295,8 +295,8 @@ Invokes the c1.api.request_schema.v1.RequestSchemaService.Update method.
 
 <!-- UsageSnippet language="python" operationID="c1.api.request_schema.v1.RequestSchemaService.Update" method="post" path="/api/v1/request_schemas/{request_schema_id}" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -304,9 +304,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.request_schema.update(request={
+    res = sdk.request_schema.update(request={
         "request_schema_id": "<id>",
     })
 

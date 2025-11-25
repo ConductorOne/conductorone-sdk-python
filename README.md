@@ -67,7 +67,7 @@ poetry add git+https://github.com/ConductorOne/conductorone-sdk-python.git
 You can use this SDK in a Python shell with [uv](https://docs.astral.sh/uv/) and the `uvx` command that comes with it like so:
 
 ```shell
-uvx --from sdk python
+uvx --from conductorone-sdk python
 ```
 
 It's also possible to write a standalone Python script without needing to set up a whole project like so:
@@ -77,11 +77,11 @@ It's also possible to write a standalone Python script without needing to set up
 # /// script
 # requires-python = ">=3.9"
 # dependencies = [
-#     "sdk",
+#     "conductorone-sdk",
 # ]
 # ///
 
-from sdk import SDK
+from conductorone_sdk import SDK
 
 sdk = SDK(
   # SDK arguments
@@ -327,6 +327,7 @@ if res.app_entitlement_search_service_search_response is not None:
 * [delete](docs/sdks/connector/README.md#delete) - Delete
 * [force_sync](docs/sdks/connector/README.md#force_sync) - Force Sync
 * [get](docs/sdks/connector/README.md#get) - Get
+* [get_connector_sync_download_url](docs/sdks/connector/README.md#get_connector_sync_download_url) - Get Connector Sync Download Url
 * [get_credentials](docs/sdks/connector/README.md#get_credentials) - Get Credentials
 * [list](docs/sdks/connector/README.md#list) - List
 * [pause_sync](docs/sdks/connector/README.md#pause_sync) - Pause Sync
@@ -364,17 +365,21 @@ if res.app_entitlement_search_service_search_response is not None:
 
 ### [functions](docs/sdks/functions/README.md)
 
-* [commit](docs/sdks/functions/README.md#commit) - Commit
 * [create_function](docs/sdks/functions/README.md#create_function) - Create Function
 * [create_tag](docs/sdks/functions/README.md#create_tag) - Create Tag
 * [delete_function](docs/sdks/functions/README.md#delete_function) - Delete Function
-* [get_commit](docs/sdks/functions/README.md#get_commit) - Get Commit
 * [get_function](docs/sdks/functions/README.md#get_function) - Get Function
+* [get_function_secret_encryption_key](docs/sdks/functions/README.md#get_function_secret_encryption_key) - Get Function Secret Encryption Key
 * [invoke](docs/sdks/functions/README.md#invoke) - Invoke
 * [list_commits](docs/sdks/functions/README.md#list_commits) - List Commits
 * [list_functions](docs/sdks/functions/README.md#list_functions) - List Functions
 * [list_tags](docs/sdks/functions/README.md#list_tags) - List Tags
 * [update_function](docs/sdks/functions/README.md#update_function) - Update Function
+
+### [functions_invocation](docs/sdks/functionsinvocation/README.md)
+
+* [get](docs/sdks/functionsinvocation/README.md#get) - Get
+* [list](docs/sdks/functionsinvocation/README.md#list) - List
 
 ### [functions_search](docs/sdks/functionssearch/README.md)
 
@@ -419,11 +424,14 @@ if res.app_entitlement_search_service_search_response is not None:
 * [add_app_entitlements](docs/sdks/requestcatalogmanagement/README.md#add_app_entitlements) - Add App Entitlements
 * [create](docs/sdks/requestcatalogmanagement/README.md#create) - Create
 * [create_bundle_automation](docs/sdks/requestcatalogmanagement/README.md#create_bundle_automation) - Create Bundle Automation
+* [create_requestable_entry](docs/sdks/requestcatalogmanagement/README.md#create_requestable_entry) - Create Requestable Entry
 * [delete](docs/sdks/requestcatalogmanagement/README.md#delete) - Delete
 * [delete_bundle_automation](docs/sdks/requestcatalogmanagement/README.md#delete_bundle_automation) - Delete Bundle Automation
+* [delete_requestable_entry](docs/sdks/requestcatalogmanagement/README.md#delete_requestable_entry) - Delete Requestable Entry
 * [force_run_bundle_automation](docs/sdks/requestcatalogmanagement/README.md#force_run_bundle_automation) - Force Run Bundle Automation
 * [get](docs/sdks/requestcatalogmanagement/README.md#get) - Get
 * [get_bundle_automation](docs/sdks/requestcatalogmanagement/README.md#get_bundle_automation) - Get Bundle Automation
+* [get_requestable_entry](docs/sdks/requestcatalogmanagement/README.md#get_requestable_entry) - Get Requestable Entry
 * [list](docs/sdks/requestcatalogmanagement/README.md#list) - List
 * [list_all_entitlement_ids_per_app](docs/sdks/requestcatalogmanagement/README.md#list_all_entitlement_ids_per_app) - List All Entitlement Ids Per App
 * [list_entitlements_for_access](docs/sdks/requestcatalogmanagement/README.md#list_entitlements_for_access) - List Entitlements For Access
@@ -523,6 +531,13 @@ if res.app_entitlement_search_service_search_response is not None:
 
 * [search](docs/sdks/usersearch/README.md#search) - Search
 
+### [vault](docs/sdks/vault/README.md)
+
+* [create](docs/sdks/vault/README.md#create) - Create
+* [delete](docs/sdks/vault/README.md#delete) - Delete
+* [get](docs/sdks/vault/README.md#get) - Get
+* [update](docs/sdks/vault/README.md#update) - Update
+
 ### [webhooks](docs/sdks/webhooks/README.md)
 
 * [create](docs/sdks/webhooks/README.md#create) - Create
@@ -549,7 +564,7 @@ if res.app_entitlement_search_service_search_response is not None:
 <!-- Start Error Handling [errors] -->
 ## Error Handling
 
-[`SDKBaseError`](./src/sdk/models/errors/sdkbaseerror.py) is the base class for all HTTP error responses. It has the following properties:
+[`SDKBaseError`](./src/conductorone_sdk/models/errors/sdkbaseerror.py) is the base class for all HTTP error responses. It has the following properties:
 
 | Property           | Type             | Description                                            |
 | ------------------ | ---------------- | ------------------------------------------------------ |
@@ -561,8 +576,8 @@ if res.app_entitlement_search_service_search_response is not None:
 
 ### Example
 ```python
-from sdk import SDK
-from sdk.models import errors, shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import errors, shared
 
 
 with SDK(
@@ -570,11 +585,11 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
     res = None
     try:
 
-        res = s_client.access_conflict.create_monitor()
+        res = sdk.access_conflict.create_monitor()
 
         assert res.conflict_monitor is not None
 
@@ -594,7 +609,7 @@ with SDK(
 
 ### Error Classes
 **Primary error:**
-* [`SDKBaseError`](./src/sdk/models/errors/sdkbaseerror.py): The base class for HTTP error responses.
+* [`SDKBaseError`](./src/conductorone_sdk/models/errors/sdkbaseerror.py): The base class for HTTP error responses.
 
 <details><summary>Less common errors (5)</summary>
 
@@ -606,8 +621,8 @@ with SDK(
     * [`httpx.TimeoutException`](https://www.python-httpx.org/exceptions/#httpx.TimeoutException): HTTP request timed out.
 
 
-**Inherit from [`SDKBaseError`](./src/sdk/models/errors/sdkbaseerror.py)**:
-* [`ResponseValidationError`](./src/sdk/models/errors/responsevalidationerror.py): Type mismatch between the response data and the expected Pydantic model. Provides access to the Pydantic validation error via the `cause` attribute.
+**Inherit from [`SDKBaseError`](./src/conductorone_sdk/models/errors/sdkbaseerror.py)**:
+* [`ResponseValidationError`](./src/conductorone_sdk/models/errors/responsevalidationerror.py): Type mismatch between the response data and the expected Pydantic model. Provides access to the Pydantic validation error via the `cause` attribute.
 
 </details>
 <!-- End Error Handling [errors] -->
@@ -628,19 +643,20 @@ The default server `https://{tenantDomain}.conductor.one` contains variables and
 #### Example
 
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
-    tenant_domain="<value>"
+    server_idx=0,
+    tenant_domain="example",
     security=shared.Security(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.access_conflict.create_monitor()
+    res = sdk.access_conflict.create_monitor()
 
     assert res.conflict_monitor is not None
 
@@ -653,8 +669,8 @@ with SDK(
 
 The default server can be overridden globally by passing a URL to the `server_url: str` optional parameter when initializing the SDK client instance. For example:
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -663,9 +679,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.access_conflict.create_monitor()
+    res = sdk.access_conflict.create_monitor()
 
     assert res.conflict_monitor is not None
 
@@ -686,7 +702,7 @@ This allows you to wrap the client with your own custom logic, such as adding cu
 
 For example, you could specify a header for every request that this sdk makes as follows:
 ```python
-from sdk import SDK
+from conductorone_sdk import SDK
 import httpx
 
 http_client = httpx.Client(headers={"x-custom-header": "someValue"})
@@ -695,8 +711,8 @@ s = SDK(client=http_client)
 
 or you could wrap the client with your own custom logic:
 ```python
-from sdk import SDK
-from sdk.httpclient import AsyncHttpClient
+from conductorone_sdk import SDK
+from conductorone_sdk.httpclient import AsyncHttpClient
 import httpx
 
 class CustomClient(AsyncHttpClient):
@@ -784,8 +800,8 @@ This SDK supports the following security schemes globally:
 
 You can set the security parameters through the `security` optional parameter when initializing the SDK client instance. The selected scheme will be used by default to authenticate with the API for all operations that support it. For example:
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -793,9 +809,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.access_conflict.create_monitor()
+    res = sdk.access_conflict.create_monitor()
 
     assert res.conflict_monitor is not None
 
@@ -814,8 +830,8 @@ return value of `Next` is `None`, then there are no more pages to be fetched.
 
 Here's an example of one such pagination call:
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -823,9 +839,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.app_entitlement_search.search()
+    res = sdk.app_entitlement_search.search()
 
     while res is not None:
         # Handle items
@@ -842,9 +858,9 @@ Some of the endpoints in this SDK support retries. If you use the SDK without an
 
 To change the default retry strategy for a single API call, simply provide a `RetryConfig` object to the call:
 ```python
-from sdk import SDK
-from sdk.models import shared
-from sdk.utils import BackoffStrategy, RetryConfig
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
+from conductorone_sdk.utils import BackoffStrategy, RetryConfig
 
 
 with SDK(
@@ -852,9 +868,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.access_conflict.create_monitor(,
+    res = sdk.access_conflict.create_monitor(,
         RetryConfig("backoff", BackoffStrategy(1, 50, 1.1, 100), False))
 
     assert res.conflict_monitor is not None
@@ -866,9 +882,9 @@ with SDK(
 
 If you'd like to override the default retry strategy for all operations that support retries, you can use the `retry_config` optional parameter when initializing the SDK:
 ```python
-from sdk import SDK
-from sdk.models import shared
-from sdk.utils import BackoffStrategy, RetryConfig
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
+from conductorone_sdk.utils import BackoffStrategy, RetryConfig
 
 
 with SDK(
@@ -877,9 +893,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.access_conflict.create_monitor()
+    res = sdk.access_conflict.create_monitor()
 
     assert res.conflict_monitor is not None
 
@@ -897,8 +913,8 @@ The `SDK` class implements the context manager protocol and registers a finalize
 [context-manager]: https://docs.python.org/3/reference/datamodel.html#context-managers
 
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 def main():
 
     with SDK(
@@ -906,7 +922,7 @@ def main():
             bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
             oauth="<YOUR_OAUTH_HERE>",
         ),
-    ) as s_client:
+    ) as sdk:
         # Rest of application here...
 
 
@@ -918,7 +934,7 @@ async def amain():
             bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
             oauth="<YOUR_OAUTH_HERE>",
         ),
-    ) as s_client:
+    ) as sdk:
         # Rest of application here...
 ```
 <!-- End Resource Management [resource-management] -->
@@ -930,11 +946,11 @@ You can setup your SDK to emit debug logs for SDK requests and responses.
 
 You can pass your own logger class directly into your SDK.
 ```python
-from sdk import SDK
+from conductorone_sdk import SDK
 import logging
 
 logging.basicConfig(level=logging.DEBUG)
-s = SDK(debug_logger=logging.getLogger("sdk"))
+s = SDK(debug_logger=logging.getLogger("conductorone_sdk"))
 ```
 <!-- End Debugging [debug] -->
 

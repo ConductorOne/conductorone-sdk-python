@@ -11,6 +11,7 @@
 * [delete](#delete) - Delete
 * [force_sync](#force_sync) - Force Sync
 * [get](#get) - Get
+* [get_connector_sync_download_url](#get_connector_sync_download_url) - Get Connector Sync Download Url
 * [get_credentials](#get_credentials) - Get Credentials
 * [list](#list) - List
 * [pause_sync](#pause_sync) - Pause Sync
@@ -29,8 +30,8 @@ Invokes the c1.api.app.v1.ConnectorService.ConfirmSyncValid method.
 
 <!-- UsageSnippet language="python" operationID="c1.api.app.v1.ConnectorService.ConfirmSyncValid" method="post" path="/api/v1/apps/{app_id}/connectors/{connector_id}/confirm_sync_valid/{sync_lifecycle_id}" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -38,9 +39,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.connector.confirm_sync_valid(request={
+    res = sdk.connector.confirm_sync_valid(request={
         "app_id": "<id>",
         "connector_id": "<id>",
         "sync_lifecycle_id": "<id>",
@@ -78,8 +79,8 @@ Create a configured connector.
 
 <!-- UsageSnippet language="python" operationID="c1.api.app.v1.ConnectorService.Create" method="post" path="/api/v1/apps/{app_id}/connectors/create" -->
 ```python
-from sdk import SDK
-from sdk.models import operations, shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import operations, shared
 
 
 with SDK(
@@ -87,9 +88,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.connector.create(request=operations.C1APIAppV1ConnectorServiceCreateRequest(
+    res = sdk.connector.create(request=operations.C1APIAppV1ConnectorServiceCreateRequest(
         app_id="<id>",
     ))
 
@@ -125,8 +126,8 @@ Create a connector that is pending a connector config.
 
 <!-- UsageSnippet language="python" operationID="c1.api.app.v1.ConnectorService.CreateDelegated" method="post" path="/api/v1/apps/{app_id}/connectors" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -134,9 +135,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.connector.create_delegated(request={
+    res = sdk.connector.create_delegated(request={
         "app_id": "<id>",
     })
 
@@ -172,8 +173,8 @@ Delete a connector.
 
 <!-- UsageSnippet language="python" operationID="c1.api.app.v1.ConnectorService.Delete" method="delete" path="/api/v1/apps/{app_id}/connectors/{id}" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -181,9 +182,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.connector.delete(request={
+    res = sdk.connector.delete(request={
         "app_id": "<id>",
         "id": "<id>",
     })
@@ -220,8 +221,8 @@ Invokes the c1.api.app.v1.ConnectorService.ForceSync method.
 
 <!-- UsageSnippet language="python" operationID="c1.api.app.v1.ConnectorService.ForceSync" method="post" path="/api/v1/apps/{app_id}/connectors/{connector_id}/force_sync" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -229,9 +230,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.connector.force_sync(request={
+    res = sdk.connector.force_sync(request={
         "app_id": "<id>",
         "connector_id": "<id>",
     })
@@ -268,8 +269,8 @@ Get a connector.
 
 <!-- UsageSnippet language="python" operationID="c1.api.app.v1.ConnectorService.Get" method="get" path="/api/v1/apps/{app_id}/connectors/{id}" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -277,9 +278,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.connector.get(request={
+    res = sdk.connector.get(request={
         "app_id": "<id>",
         "id": "<id>",
     })
@@ -308,6 +309,55 @@ with SDK(
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
+## get_connector_sync_download_url
+
+GetConnectorSyncDownloadURL generates a short-lived download URL for a completed connector sync artifact.
+
+### Example Usage
+
+<!-- UsageSnippet language="python" operationID="c1.api.app.v1.ConnectorService.GetConnectorSyncDownloadURL" method="get" path="/api/v1/apps/{app_id}/connectors/{connector_id}/syncs/{sync_id}/download_url" -->
+```python
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
+
+
+with SDK(
+    security=shared.Security(
+        bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
+        oauth="<YOUR_OAUTH_HERE>",
+    ),
+) as sdk:
+
+    res = sdk.connector.get_connector_sync_download_url(request={
+        "app_id": "<id>",
+        "connector_id": "<id>",
+        "sync_id": "<id>",
+    })
+
+    assert res.get_connector_sync_download_url_response is not None
+
+    # Handle response
+    print(res.get_connector_sync_download_url_response)
+
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                          | Type                                                                                                                                                               | Required                                                                                                                                                           | Description                                                                                                                                                        |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                          | [operations.C1APIAppV1ConnectorServiceGetConnectorSyncDownloadURLRequest](../../models/operations/c1apiappv1connectorservicegetconnectorsyncdownloadurlrequest.md) | :heavy_check_mark:                                                                                                                                                 | The request object to use for the request.                                                                                                                         |
+| `retries`                                                                                                                                                          | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)                                                                                                   | :heavy_minus_sign:                                                                                                                                                 | Configuration to override the default retry behavior of the client.                                                                                                |
+
+### Response
+
+**[operations.C1APIAppV1ConnectorServiceGetConnectorSyncDownloadURLResponse](../../models/operations/c1apiappv1connectorservicegetconnectorsyncdownloadurlresponse.md)**
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
+
 ## get_credentials
 
 Get credentials for a connector.
@@ -316,8 +366,8 @@ Get credentials for a connector.
 
 <!-- UsageSnippet language="python" operationID="c1.api.app.v1.ConnectorService.GetCredentials" method="get" path="/api/v1/apps/{app_id}/connectors/{connector_id}/credentials/{id}" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -325,9 +375,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.connector.get_credentials(request={
+    res = sdk.connector.get_credentials(request={
         "app_id": "<id>",
         "connector_id": "<id>",
         "id": "<id>",
@@ -365,8 +415,8 @@ List connectors for an app.
 
 <!-- UsageSnippet language="python" operationID="c1.api.app.v1.ConnectorService.List" method="get" path="/api/v1/apps/{app_id}/connectors" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -374,9 +424,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.connector.list(request={
+    res = sdk.connector.list(request={
         "app_id": "<id>",
     })
 
@@ -412,8 +462,8 @@ Invokes the c1.api.app.v1.ConnectorService.PauseSync method.
 
 <!-- UsageSnippet language="python" operationID="c1.api.app.v1.ConnectorService.PauseSync" method="post" path="/api/v1/apps/{app_id}/connectors/{connector_id}/pause" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -421,9 +471,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.connector.pause_sync(request={
+    res = sdk.connector.pause_sync(request={
         "app_id": "<id>",
         "connector_id": "<id>",
     })
@@ -460,8 +510,8 @@ Invokes the c1.api.app.v1.ConnectorService.ResumeSync method.
 
 <!-- UsageSnippet language="python" operationID="c1.api.app.v1.ConnectorService.ResumeSync" method="post" path="/api/v1/apps/{app_id}/connectors/{connector_id}/resume" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -469,9 +519,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.connector.resume_sync(request={
+    res = sdk.connector.resume_sync(request={
         "app_id": "<id>",
         "connector_id": "<id>",
     })
@@ -508,8 +558,8 @@ Revoke credentials for a connector.
 
 <!-- UsageSnippet language="python" operationID="c1.api.app.v1.ConnectorService.RevokeCredential" method="post" path="/api/v1/apps/{app_id}/connectors/{connector_id}/credentials/{id}" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -517,9 +567,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.connector.revoke_credential(request={
+    res = sdk.connector.revoke_credential(request={
         "app_id": "<id>",
         "connector_id": "<id>",
         "id": "<id>",
@@ -557,8 +607,8 @@ Rotate credentials for a connector.
 
 <!-- UsageSnippet language="python" operationID="c1.api.app.v1.ConnectorService.RotateCredential" method="post" path="/api/v1/apps/connectors/credentials" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -566,9 +616,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.connector.rotate_credential()
+    res = sdk.connector.rotate_credential()
 
     assert res.connector_service_rotate_credential_response is not None
 
@@ -602,8 +652,8 @@ Update a connector.
 
 <!-- UsageSnippet language="python" operationID="c1.api.app.v1.ConnectorService.Update" method="post" path="/api/v1/apps/{app_id}/connectors/{id}" -->
 ```python
-from sdk import SDK
-from sdk.models import operations, shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import operations, shared
 
 
 with SDK(
@@ -611,9 +661,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.connector.update(request=operations.C1APIAppV1ConnectorServiceUpdateRequest(
+    res = sdk.connector.update(request=operations.C1APIAppV1ConnectorServiceUpdateRequest(
         app_id="<id>",
         id="<id>",
     ))
@@ -650,8 +700,8 @@ Update a delegated connector.
 
 <!-- UsageSnippet language="python" operationID="c1.api.app.v1.ConnectorService.UpdateDelegated" method="post" path="/api/v1/apps/{connector_app_id}/connectors/{connector_id}/delegated" -->
 ```python
-from sdk import SDK
-from sdk.models import operations, shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import operations, shared
 
 
 with SDK(
@@ -659,9 +709,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.connector.update_delegated(request=operations.C1APIAppV1ConnectorServiceUpdateDelegatedRequest(
+    res = sdk.connector.update_delegated(request=operations.C1APIAppV1ConnectorServiceUpdateDelegatedRequest(
         connector_app_id="<id>",
         connector_id="<id>",
     ))
@@ -698,8 +748,8 @@ Invokes the c1.api.app.v1.ConnectorService.ValidateHTTPConnectorConfig method.
 
 <!-- UsageSnippet language="python" operationID="c1.api.app.v1.ConnectorService.ValidateHTTPConnectorConfig" method="post" path="/api/v1/apps/connectors/validate_config/http" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -707,9 +757,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.connector.validate_http_connector_config()
+    res = sdk.connector.validate_http_connector_config()
 
     assert res.editor_validate_response is not None
 

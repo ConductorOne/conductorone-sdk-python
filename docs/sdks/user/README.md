@@ -18,8 +18,8 @@ Get a user by ID.
 
 <!-- UsageSnippet language="python" operationID="c1.api.user.v1.UserService.Get" method="get" path="/api/v1/users/{id}" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -27,9 +27,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.user.get(request={
+    res = sdk.user.get(request={
         "id": "<id>",
     })
 
@@ -65,8 +65,8 @@ Invokes the c1.api.user.v1.UserService.GetUserProfileTypes method.
 
 <!-- UsageSnippet language="python" operationID="c1.api.user.v1.UserService.GetUserProfileTypes" method="get" path="/api/v1/users/{user_id}/profile-types" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -74,9 +74,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.user.get_user_profile_types(request={
+    res = sdk.user.get_user_profile_types(request={
         "user_id": "<id>",
     })
 
@@ -112,8 +112,8 @@ List users.
 
 <!-- UsageSnippet language="python" operationID="c1.api.user.v1.UserService.List" method="get" path="/api/v1/users" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -121,9 +121,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.user.list()
+    res = sdk.user.list()
 
     assert res.user_service_list_response is not None
 
@@ -157,8 +157,8 @@ Invokes the c1.api.user.v1.UserService.SetExpiringUserDelegationBindingByAdmin m
 
 <!-- UsageSnippet language="python" operationID="c1.api.user.v1.UserService.SetExpiringUserDelegationBindingByAdmin" method="post" path="/api/v1/users/{user_id}/set-delegation-by-admin" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -166,9 +166,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.user.set_expiring_user_delegation_binding_by_admin(request={
+    res = sdk.user.set_expiring_user_delegation_binding_by_admin(request={
         "user_id": "<id>",
     })
 

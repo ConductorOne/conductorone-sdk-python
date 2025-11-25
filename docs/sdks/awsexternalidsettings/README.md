@@ -15,8 +15,8 @@ Invokes the c1.api.settings.v1.AWSExternalIDSettings.Get method.
 
 <!-- UsageSnippet language="python" operationID="c1.api.settings.v1.AWSExternalIDSettings.Get" method="get" path="/api/v1/settings/aws-external-id" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -24,9 +24,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.aws_external_id_settings.get()
+    res = sdk.aws_external_id_settings.get()
 
     assert res.get_aws_external_id_response is not None
 

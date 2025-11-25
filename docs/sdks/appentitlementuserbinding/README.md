@@ -19,8 +19,8 @@ Returns a list of app users for the identity in the app. If that app user also h
 
 <!-- UsageSnippet language="python" operationID="c1.api.app.v1.AppEntitlementUserBindingService.ListAppUsersForIdentityWithGrant" method="get" path="/api/v1/apps/{app_id}/entitlements/{app_entitlement_id}/users/{identity_user_id}/grants" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -28,9 +28,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.app_entitlement_user_binding.list_app_users_for_identity_with_grant(request={
+    res = sdk.app_entitlement_user_binding.list_app_users_for_identity_with_grant(request={
         "app_entitlement_id": "<id>",
         "app_id": "<id>",
         "identity_user_id": "<id>",
@@ -68,8 +68,8 @@ Invokes the c1.api.app.v1.AppEntitlementUserBindingService.RemoveGrantDuration m
 
 <!-- UsageSnippet language="python" operationID="c1.api.app.v1.AppEntitlementUserBindingService.RemoveGrantDuration" method="post" path="/api/v1/apps/{app_id}/entitlements/{app_entitlement_id}/users/{app_user_id}/remove-grant-duration" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -77,9 +77,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.app_entitlement_user_binding.remove_grant_duration(request={
+    res = sdk.app_entitlement_user_binding.remove_grant_duration(request={
         "app_entitlement_id": "<id>",
         "app_id": "<id>",
         "app_user_id": "<id>",
@@ -117,8 +117,8 @@ Invokes the c1.api.app.v1.AppEntitlementUserBindingService.SearchGrantFeed metho
 
 <!-- UsageSnippet language="python" operationID="c1.api.app.v1.AppEntitlementUserBindingService.SearchGrantFeed" method="post" path="/api/v1/grants/feed" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -126,9 +126,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.app_entitlement_user_binding.search_grant_feed()
+    res = sdk.app_entitlement_user_binding.search_grant_feed()
 
     assert res.search_grant_feed_response is not None
 
@@ -162,8 +162,8 @@ Invokes the c1.api.app.v1.AppEntitlementUserBindingService.SearchPastGrants meth
 
 <!-- UsageSnippet language="python" operationID="c1.api.app.v1.AppEntitlementUserBindingService.SearchPastGrants" method="post" path="/api/v1/search/past-grants" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -171,9 +171,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.app_entitlement_user_binding.search_past_grants()
+    res = sdk.app_entitlement_user_binding.search_past_grants()
 
     assert res.search_past_grants_response is not None
 
@@ -207,8 +207,8 @@ Invokes the c1.api.app.v1.AppEntitlementUserBindingService.UpdateGrantDuration m
 
 <!-- UsageSnippet language="python" operationID="c1.api.app.v1.AppEntitlementUserBindingService.UpdateGrantDuration" method="post" path="/api/v1/apps/{app_id}/entitlements/{app_entitlement_id}/users/{app_user_id}/update-grant-duration" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -216,9 +216,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.app_entitlement_user_binding.update_grant_duration(request={
+    res = sdk.app_entitlement_user_binding.update_grant_duration(request={
         "app_entitlement_id": "<id>",
         "app_id": "<id>",
         "app_user_id": "<id>",

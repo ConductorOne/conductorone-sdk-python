@@ -16,8 +16,8 @@ Invokes the c1.api.automations.v1.AutomationSearchService.SearchAutomationTempla
 
 <!-- UsageSnippet language="python" operationID="c1.api.automations.v1.AutomationSearchService.SearchAutomationTemplateVersions" method="post" path="/api/v1/automation_versions/search" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -25,9 +25,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.automation_search.search_automation_template_versions()
+    res = sdk.automation_search.search_automation_template_versions()
 
     assert res.search_automation_template_versions_response is not None
 
@@ -61,8 +61,8 @@ Invokes the c1.api.automations.v1.AutomationSearchService.SearchAutomations meth
 
 <!-- UsageSnippet language="python" operationID="c1.api.automations.v1.AutomationSearchService.SearchAutomations" method="post" path="/api/v1/automations/search" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -70,9 +70,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.automation_search.search_automations()
+    res = sdk.automation_search.search_automations()
 
     assert res.search_automations_response is not None
 

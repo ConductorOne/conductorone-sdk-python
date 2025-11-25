@@ -1,0 +1,9 @@
+# C1APIVaultV1VaultServiceDeleteRequest
+
+
+## Fields
+
+| Field                                                                                          | Type                                                                                           | Required                                                                                       | Description                                                                                    |
+| ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
+| `vault_service_delete_request`                                                                 | [Optional[shared.VaultServiceDeleteRequest]](../../models/shared/vaultservicedeleterequest.md) | :heavy_minus_sign:                                                                             | N/A                                                                                            |
+| `id`                                                                                           | *str*                                                                                          | :heavy_check_mark:                                                                             | N/A                                                                                            |

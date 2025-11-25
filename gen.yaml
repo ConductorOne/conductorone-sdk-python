@@ -16,12 +16,13 @@ generation:
     hoistGlobalSecurity: true
   schemas:
     allOfMergeStrategy: shallowMerge
+  requestBodyFieldName: ""
   tests:
     generateTests: true
     generateNewTests: false
     skipResponseBodyAssertions: false
 python:
-  version: 0.16.0
+  version: 0.17.2
   additionalDependencies:
     dev: {}
     main:
@@ -59,12 +60,13 @@ python:
       webhooks: models/webhooks
   inputModelSuffix: input
   legacyPyright: true
+  license: ""
   maxMethodParams: 0
   methodArguments: infer-optional-args
   moduleName: ""
   outputModelSuffix: output
   packageManager: poetry
-  packageName: sdk
+  packageName: conductorone-sdk
   pytestFilterWarnings: []
   pytestTimeout: 0
   responseFormat: envelope

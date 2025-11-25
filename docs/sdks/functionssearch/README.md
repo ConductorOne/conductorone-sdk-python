@@ -15,8 +15,8 @@ Search searches for functions based on criteria
 
 <!-- UsageSnippet language="python" operationID="c1.api.functions.v1.FunctionsSearch.Search" method="post" path="/api/v1/search/functions" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -24,9 +24,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.functions_search.search()
+    res = sdk.functions_search.search()
 
     assert res.functions_search_response is not None
 

@@ -19,8 +19,8 @@ Invokes the c1.api.app.v1.AppResourceTypeService.CreateManuallyManagedResourceTy
 
 <!-- UsageSnippet language="python" operationID="c1.api.app.v1.AppResourceTypeService.CreateManuallyManagedResourceType" method="post" path="/api/v1/apps/{app_id}/resource_types" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -28,9 +28,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.app_resource_type.create_manually_managed_resource_type(request={
+    res = sdk.app_resource_type.create_manually_managed_resource_type(request={
         "app_id": "<id>",
     })
 
@@ -66,8 +66,8 @@ Invokes the c1.api.app.v1.AppResourceTypeService.DeleteManuallyManagedResourceTy
 
 <!-- UsageSnippet language="python" operationID="c1.api.app.v1.AppResourceTypeService.DeleteManuallyManagedResourceType" method="delete" path="/api/v1/apps/{app_id}/resource_types/{id}" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -75,9 +75,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.app_resource_type.delete_manually_managed_resource_type(request={
+    res = sdk.app_resource_type.delete_manually_managed_resource_type(request={
         "app_id": "<id>",
         "id": "<id>",
     })
@@ -114,8 +114,8 @@ Get an app resource type.
 
 <!-- UsageSnippet language="python" operationID="c1.api.app.v1.AppResourceTypeService.Get" method="get" path="/api/v1/apps/{app_id}/resource_types/{id}" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -123,9 +123,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.app_resource_type.get(request={
+    res = sdk.app_resource_type.get(request={
         "app_id": "<id>",
         "id": "<id>",
     })
@@ -162,8 +162,8 @@ List app resource types.
 
 <!-- UsageSnippet language="python" operationID="c1.api.app.v1.AppResourceTypeService.List" method="get" path="/api/v1/apps/{app_id}/resource_types" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -171,9 +171,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.app_resource_type.list(request={
+    res = sdk.app_resource_type.list(request={
         "app_id": "<id>",
     })
 
@@ -209,8 +209,8 @@ Invokes the c1.api.app.v1.AppResourceTypeService.UpdateManuallyManagedResourceTy
 
 <!-- UsageSnippet language="python" operationID="c1.api.app.v1.AppResourceTypeService.UpdateManuallyManagedResourceType" method="post" path="/api/v1/apps/{app_id}/resource_types/{id}" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -218,9 +218,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.app_resource_type.update_manually_managed_resource_type(request={
+    res = sdk.app_resource_type.update_manually_managed_resource_type(request={
         "app_id": "<id>",
         "id": "<id>",
     })

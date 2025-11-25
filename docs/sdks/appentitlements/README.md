@@ -31,8 +31,8 @@ Invokes the c1.api.app.v1.AppEntitlements.AddAutomationExclusion method.
 
 <!-- UsageSnippet language="python" operationID="c1.api.app.v1.AppEntitlements.AddAutomationExclusion" method="post" path="/api/v1/apps/{app_id}/entitlements/{app_entitlement_id}/automation/exclusions" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -40,9 +40,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.app_entitlements.add_automation_exclusion(request={
+    res = sdk.app_entitlements.add_automation_exclusion(request={
         "app_entitlement_id": "<id>",
         "app_id": "<id>",
     })
@@ -79,8 +79,8 @@ Invokes the c1.api.app.v1.AppEntitlements.AddManuallyManagedMembers method.
 
 <!-- UsageSnippet language="python" operationID="c1.api.app.v1.AppEntitlements.AddManuallyManagedMembers" method="post" path="/api/v1/apps/{app_id}/entitlements/{app_entitlement_id}/add-manual-user" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -88,9 +88,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.app_entitlements.add_manually_managed_members(request={
+    res = sdk.app_entitlements.add_manually_managed_members(request={
         "app_entitlement_id": "<id>",
         "app_id": "<id>",
     })
@@ -127,8 +127,8 @@ Invokes the c1.api.app.v1.AppEntitlements.Create method.
 
 <!-- UsageSnippet language="python" operationID="c1.api.app.v1.AppEntitlements.Create" method="post" path="/api/v1/apps/{app_id}/entitlements" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -136,9 +136,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.app_entitlements.create(request={
+    res = sdk.app_entitlements.create(request={
         "app_id": "<id>",
     })
 
@@ -174,8 +174,8 @@ Invokes the c1.api.app.v1.AppEntitlements.CreateAutomation method.
 
 <!-- UsageSnippet language="python" operationID="c1.api.app.v1.AppEntitlements.CreateAutomation" method="post" path="/api/v1/apps/{app_id}/entitlements/{app_entitlement_id}/automation/create" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -183,9 +183,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.app_entitlements.create_automation(request={
+    res = sdk.app_entitlements.create_automation(request={
         "app_entitlement_id": "<id>",
         "app_id": "<id>",
     })
@@ -222,8 +222,8 @@ Invokes the c1.api.app.v1.AppEntitlements.Delete method.
 
 <!-- UsageSnippet language="python" operationID="c1.api.app.v1.AppEntitlements.Delete" method="delete" path="/api/v1/apps/{app_id}/entitlements/{id}" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -231,9 +231,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.app_entitlements.delete(request={
+    res = sdk.app_entitlements.delete(request={
         "app_id": "<id>",
         "id": "<id>",
     })
@@ -270,8 +270,8 @@ Invokes the c1.api.app.v1.AppEntitlements.DeleteAutomation method.
 
 <!-- UsageSnippet language="python" operationID="c1.api.app.v1.AppEntitlements.DeleteAutomation" method="delete" path="/api/v1/apps/{app_id}/entitlements/{app_entitlement_id}/automation" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -279,9 +279,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.app_entitlements.delete_automation(request={
+    res = sdk.app_entitlements.delete_automation(request={
         "app_entitlement_id": "<id>",
         "app_id": "<id>",
     })
@@ -318,8 +318,8 @@ Get an app entitlement by ID.
 
 <!-- UsageSnippet language="python" operationID="c1.api.app.v1.AppEntitlements.Get" method="get" path="/api/v1/apps/{app_id}/entitlements/{id}" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -327,9 +327,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.app_entitlements.get(request={
+    res = sdk.app_entitlements.get(request={
         "app_id": "<id>",
         "id": "<id>",
     })
@@ -366,8 +366,8 @@ Invokes the c1.api.app.v1.AppEntitlements.GetAutomation method.
 
 <!-- UsageSnippet language="python" operationID="c1.api.app.v1.AppEntitlements.GetAutomation" method="get" path="/api/v1/apps/{app_id}/entitlements/{app_entitlement_id}/automation" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -375,9 +375,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.app_entitlements.get_automation(request={
+    res = sdk.app_entitlements.get_automation(request={
         "app_entitlement_id": "<id>",
         "app_id": "<id>",
     })
@@ -414,8 +414,8 @@ List app entitlements associated with an app.
 
 <!-- UsageSnippet language="python" operationID="c1.api.app.v1.AppEntitlements.List" method="get" path="/api/v1/apps/{app_id}/entitlements" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -423,9 +423,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.app_entitlements.list(request={
+    res = sdk.app_entitlements.list(request={
         "app_id": "<id>",
     })
 
@@ -461,8 +461,8 @@ Invokes the c1.api.app.v1.AppEntitlements.ListAutomationExclusions method.
 
 <!-- UsageSnippet language="python" operationID="c1.api.app.v1.AppEntitlements.ListAutomationExclusions" method="get" path="/api/v1/apps/{app_id}/entitlements/{app_entitlement_id}/automation/exclusions" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -470,9 +470,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.app_entitlements.list_automation_exclusions(request={
+    res = sdk.app_entitlements.list_automation_exclusions(request={
         "app_entitlement_id": "<id>",
         "app_id": "<id>",
     })
@@ -509,8 +509,8 @@ List app entitlements associated with an app resource.
 
 <!-- UsageSnippet language="python" operationID="c1.api.app.v1.AppEntitlements.ListForAppResource" method="get" path="/api/v1/apps/{app_id}/entitlements/resource_types/{app_resource_type_id}/resources/{app_resource_id}" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -518,9 +518,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.app_entitlements.list_for_app_resource(request={
+    res = sdk.app_entitlements.list_for_app_resource(request={
         "app_id": "<id>",
         "app_resource_id": "<id>",
         "app_resource_type_id": "<id>",
@@ -558,8 +558,8 @@ List app entitlements associated with an app user.
 
 <!-- UsageSnippet language="python" operationID="c1.api.app.v1.AppEntitlements.ListForAppUser" method="get" path="/api/v1/apps/{app_id}/entitlements/users/{app_user_id}" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -567,9 +567,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.app_entitlements.list_for_app_user(request={
+    res = sdk.app_entitlements.list_for_app_user(request={
         "app_id": "<id>",
         "app_user_id": "<id>",
     })
@@ -608,8 +608,8 @@ List the users, as AppEntitlementUsers objects, of an app entitlement.
 
 <!-- UsageSnippet language="python" operationID="c1.api.app.v1.AppEntitlements.ListUsers" method="get" path="/api/v1/apps/{app_id}/entitlements/{app_entitlement_id}/users" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -617,9 +617,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.app_entitlements.list_users(request={
+    res = sdk.app_entitlements.list_users(request={
         "app_entitlement_id": "<id>",
         "app_id": "<id>",
     })
@@ -656,8 +656,8 @@ Invokes the c1.api.app.v1.AppEntitlements.RemoveAutomationExclusion method.
 
 <!-- UsageSnippet language="python" operationID="c1.api.app.v1.AppEntitlements.RemoveAutomationExclusion" method="delete" path="/api/v1/apps/{app_id}/entitlements/{app_entitlement_id}/automation/exclusions" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -665,9 +665,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.app_entitlements.remove_automation_exclusion(request={
+    res = sdk.app_entitlements.remove_automation_exclusion(request={
         "app_entitlement_id": "<id>",
         "app_id": "<id>",
     })
@@ -704,8 +704,8 @@ Invokes the c1.api.app.v1.AppEntitlements.RemoveEntitlementMembership method.
 
 <!-- UsageSnippet language="python" operationID="c1.api.app.v1.AppEntitlements.RemoveEntitlementMembership" method="delete" path="/api/v1/apps/{app_id}/entitlements/{app_entitlement_id}/remove-membership" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -713,9 +713,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.app_entitlements.remove_entitlement_membership(request={
+    res = sdk.app_entitlements.remove_entitlement_membership(request={
         "app_entitlement_id": "<id>",
         "app_id": "<id>",
     })
@@ -752,8 +752,8 @@ Update an app entitlement by ID.
 
 <!-- UsageSnippet language="python" operationID="c1.api.app.v1.AppEntitlements.Update" method="post" path="/api/v1/apps/{app_id}/entitlements/{id}" -->
 ```python
-from sdk import SDK
-from sdk.models import operations, shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import operations, shared
 
 
 with SDK(
@@ -761,9 +761,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.app_entitlements.update(request=operations.C1APIAppV1AppEntitlementsUpdateRequest(
+    res = sdk.app_entitlements.update(request=operations.C1APIAppV1AppEntitlementsUpdateRequest(
         app_id="<id>",
         id="<id>",
     ))
@@ -800,8 +800,8 @@ Invokes the c1.api.app.v1.AppEntitlements.UpdateAutomation method.
 
 <!-- UsageSnippet language="python" operationID="c1.api.app.v1.AppEntitlements.UpdateAutomation" method="post" path="/api/v1/apps/{app_id}/entitlements/{app_entitlement_id}/automation/update" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -809,9 +809,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.app_entitlements.update_automation(request={
+    res = sdk.app_entitlements.update_automation(request={
         "app_entitlement_id": "<id>",
         "app_id": "<id>",
     })

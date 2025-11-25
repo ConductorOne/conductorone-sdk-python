@@ -1,0 +1,9 @@
+# C1APIVaultV1VaultServiceUpdateRequest
+
+
+## Fields
+
+| Field                                                                                          | Type                                                                                           | Required                                                                                       | Description                                                                                    |
+| ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
+| `vault_service_update_request`                                                                 | [Optional[shared.VaultServiceUpdateRequest]](../../models/shared/vaultserviceupdaterequest.md) | :heavy_minus_sign:                                                                             | N/A                                                                                            |
+| `id`                                                                                           | *str*                                                                                          | :heavy_check_mark:                                                                             | N/A                                                                                            |

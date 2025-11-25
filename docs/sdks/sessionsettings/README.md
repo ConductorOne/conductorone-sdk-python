@@ -17,8 +17,8 @@ Invokes the c1.api.settings.v1.SessionSettingsService.Get method.
 
 <!-- UsageSnippet language="python" operationID="c1.api.settings.v1.SessionSettingsService.Get" method="get" path="/api/v1/settings/session" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -26,9 +26,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.session_settings.get()
+    res = sdk.session_settings.get()
 
     assert res.get_session_settings_response is not None
 
@@ -61,8 +61,8 @@ Invokes the c1.api.settings.v1.SessionSettingsService.TestSourceIP method.
 
 <!-- UsageSnippet language="python" operationID="c1.api.settings.v1.SessionSettingsService.TestSourceIP" method="post" path="/api/v1/settings/session/test-source-ip" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -70,9 +70,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.session_settings.test_source_ip()
+    res = sdk.session_settings.test_source_ip()
 
     assert res.test_source_ip_response is not None
 
@@ -106,8 +106,8 @@ Invokes the c1.api.settings.v1.SessionSettingsService.Update method.
 
 <!-- UsageSnippet language="python" operationID="c1.api.settings.v1.SessionSettingsService.Update" method="post" path="/api/v1/settings/session" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -115,9 +115,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.session_settings.update()
+    res = sdk.session_settings.update()
 
     assert res.update_session_settings_response is not None
 

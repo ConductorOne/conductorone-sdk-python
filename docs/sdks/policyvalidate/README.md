@@ -15,8 +15,8 @@ Validate policies
 
 <!-- UsageSnippet language="python" operationID="c1.api.policy.v1.PolicyValidate.ValidateCEL" method="post" path="/api/v1/policies/validate/cel" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -24,9 +24,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.policy_validate.validate_cel()
+    res = sdk.policy_validate.validate_cel()
 
     assert res.editor_validate_response is not None
 

@@ -16,8 +16,8 @@ Invokes the c1.api.automations.v1.AutomationExecutionService.GetAutomationExecut
 
 <!-- UsageSnippet language="python" operationID="c1.api.automations.v1.AutomationExecutionService.GetAutomationExecution" method="get" path="/api/v1/automation_executions/{id}" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -25,9 +25,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.automation_execution.get_automation_execution(request={
+    res = sdk.automation_execution.get_automation_execution(request={
         "id": 728203,
     })
 
@@ -63,8 +63,8 @@ Invokes the c1.api.automations.v1.AutomationExecutionService.ListAutomationExecu
 
 <!-- UsageSnippet language="python" operationID="c1.api.automations.v1.AutomationExecutionService.ListAutomationExecutions" method="get" path="/api/v1/automation_executions" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -72,9 +72,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.automation_execution.list_automation_executions()
+    res = sdk.automation_execution.list_automation_executions()
 
     assert res.list_automation_executions_response is not None
 

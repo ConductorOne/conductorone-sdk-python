@@ -5,64 +5,16 @@
 
 ### Available Operations
 
-* [commit](#commit) - Commit
 * [create_function](#create_function) - Create Function
 * [create_tag](#create_tag) - Create Tag
 * [delete_function](#delete_function) - Delete Function
-* [get_commit](#get_commit) - Get Commit
 * [get_function](#get_function) - Get Function
+* [get_function_secret_encryption_key](#get_function_secret_encryption_key) - Get Function Secret Encryption Key
 * [invoke](#invoke) - Invoke
 * [list_commits](#list_commits) - List Commits
 * [list_functions](#list_functions) - List Functions
 * [list_tags](#list_tags) - List Tags
 * [update_function](#update_function) - Update Function
-
-## commit
-
-Commit saves a new version of the function code
-
-### Example Usage
-
-<!-- UsageSnippet language="python" operationID="c1.api.functions.v1.FunctionsService.Commit" method="post" path="/api/v1/functions/{function_id}/commits" -->
-```python
-from sdk import SDK
-from sdk.models import shared
-
-
-with SDK(
-    security=shared.Security(
-        bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-        oauth="<YOUR_OAUTH_HERE>",
-    ),
-) as s_client:
-
-    res = s_client.functions.commit(request={
-        "function_id": "<id>",
-    })
-
-    assert res.functions_service_commit_response is not None
-
-    # Handle response
-    print(res.functions_service_commit_response)
-
-```
-
-### Parameters
-
-| Parameter                                                                                                                            | Type                                                                                                                                 | Required                                                                                                                             | Description                                                                                                                          |
-| ------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                            | [operations.C1APIFunctionsV1FunctionsServiceCommitRequest](../../models/operations/c1apifunctionsv1functionsservicecommitrequest.md) | :heavy_check_mark:                                                                                                                   | The request object to use for the request.                                                                                           |
-| `retries`                                                                                                                            | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)                                                                     | :heavy_minus_sign:                                                                                                                   | Configuration to override the default retry behavior of the client.                                                                  |
-
-### Response
-
-**[operations.C1APIFunctionsV1FunctionsServiceCommitResponse](../../models/operations/c1apifunctionsv1functionsservicecommitresponse.md)**
-
-### Errors
-
-| Error Type      | Status Code     | Content Type    |
-| --------------- | --------------- | --------------- |
-| errors.SDKError | 4XX, 5XX        | \*/\*           |
 
 ## create_function
 
@@ -72,8 +24,8 @@ Invokes the c1.api.functions.v1.FunctionsService.CreateFunction method.
 
 <!-- UsageSnippet language="python" operationID="c1.api.functions.v1.FunctionsService.CreateFunction" method="post" path="/api/v1/functions" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -81,9 +33,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.functions.create_function()
+    res = sdk.functions.create_function()
 
     assert res.functions_service_create_function_response is not None
 
@@ -117,8 +69,8 @@ CreateTag creates a named reference to a specific commit
 
 <!-- UsageSnippet language="python" operationID="c1.api.functions.v1.FunctionsService.CreateTag" method="post" path="/api/v1/functions/{function_id}/tags" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -126,9 +78,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.functions.create_tag(request={
+    res = sdk.functions.create_tag(request={
         "function_id": "<id>",
     })
 
@@ -164,8 +116,8 @@ Delete removes a function
 
 <!-- UsageSnippet language="python" operationID="c1.api.functions.v1.FunctionsService.DeleteFunction" method="delete" path="/api/v1/functions/{id}" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -173,9 +125,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.functions.delete_function(request={
+    res = sdk.functions.delete_function(request={
         "id": "<id>",
     })
 
@@ -203,54 +155,6 @@ with SDK(
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## get_commit
-
-GetCommit retrieves the commit and its code content for a specific version
-
-### Example Usage
-
-<!-- UsageSnippet language="python" operationID="c1.api.functions.v1.FunctionsService.GetCommit" method="get" path="/api/v1/functions/{function_id}/commits/{id}" -->
-```python
-from sdk import SDK
-from sdk.models import shared
-
-
-with SDK(
-    security=shared.Security(
-        bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-        oauth="<YOUR_OAUTH_HERE>",
-    ),
-) as s_client:
-
-    res = s_client.functions.get_commit(request={
-        "function_id": "<id>",
-        "id": "<id>",
-    })
-
-    assert res.functions_service_get_commit_response is not None
-
-    # Handle response
-    print(res.functions_service_get_commit_response)
-
-```
-
-### Parameters
-
-| Parameter                                                                                                                                  | Type                                                                                                                                       | Required                                                                                                                                   | Description                                                                                                                                |
-| ------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                  | [operations.C1APIFunctionsV1FunctionsServiceGetCommitRequest](../../models/operations/c1apifunctionsv1functionsservicegetcommitrequest.md) | :heavy_check_mark:                                                                                                                         | The request object to use for the request.                                                                                                 |
-| `retries`                                                                                                                                  | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)                                                                           | :heavy_minus_sign:                                                                                                                         | Configuration to override the default retry behavior of the client.                                                                        |
-
-### Response
-
-**[operations.C1APIFunctionsV1FunctionsServiceGetCommitResponse](../../models/operations/c1apifunctionsv1functionsservicegetcommitresponse.md)**
-
-### Errors
-
-| Error Type      | Status Code     | Content Type    |
-| --------------- | --------------- | --------------- |
-| errors.SDKError | 4XX, 5XX        | \*/\*           |
-
 ## get_function
 
 Get retrieves a specific function by ID
@@ -259,8 +163,8 @@ Get retrieves a specific function by ID
 
 <!-- UsageSnippet language="python" operationID="c1.api.functions.v1.FunctionsService.GetFunction" method="get" path="/api/v1/functions/{id}" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -268,9 +172,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.functions.get_function(request={
+    res = sdk.functions.get_function(request={
         "id": "<id>",
     })
 
@@ -298,6 +202,53 @@ with SDK(
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
+## get_function_secret_encryption_key
+
+GetFunctionSecretEncryptionKey retrieves or generates the public key for encrypting function secrets
+
+### Example Usage
+
+<!-- UsageSnippet language="python" operationID="c1.api.functions.v1.FunctionsService.GetFunctionSecretEncryptionKey" method="get" path="/api/v1/functions/{function_id}/secret-encryption-key" -->
+```python
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
+
+
+with SDK(
+    security=shared.Security(
+        bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
+        oauth="<YOUR_OAUTH_HERE>",
+    ),
+) as sdk:
+
+    res = sdk.functions.get_function_secret_encryption_key(request={
+        "function_id": "<id>",
+    })
+
+    assert res.functions_service_get_function_secret_encryption_key_response is not None
+
+    # Handle response
+    print(res.functions_service_get_function_secret_encryption_key_response)
+
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                            | Type                                                                                                                                                                                 | Required                                                                                                                                                                             | Description                                                                                                                                                                          |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                            | [operations.C1APIFunctionsV1FunctionsServiceGetFunctionSecretEncryptionKeyRequest](../../models/operations/c1apifunctionsv1functionsservicegetfunctionsecretencryptionkeyrequest.md) | :heavy_check_mark:                                                                                                                                                                   | The request object to use for the request.                                                                                                                                           |
+| `retries`                                                                                                                                                                            | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)                                                                                                                     | :heavy_minus_sign:                                                                                                                                                                   | Configuration to override the default retry behavior of the client.                                                                                                                  |
+
+### Response
+
+**[operations.C1APIFunctionsV1FunctionsServiceGetFunctionSecretEncryptionKeyResponse](../../models/operations/c1apifunctionsv1functionsservicegetfunctionsecretencryptionkeyresponse.md)**
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
+
 ## invoke
 
 Invokes the c1.api.functions.v1.FunctionsService.Invoke method.
@@ -306,8 +257,8 @@ Invokes the c1.api.functions.v1.FunctionsService.Invoke method.
 
 <!-- UsageSnippet language="python" operationID="c1.api.functions.v1.FunctionsService.Invoke" method="post" path="/api/v1/functions/{function_id}/invoke" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -315,9 +266,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.functions.invoke(request={
+    res = sdk.functions.invoke(request={
         "function_id": "<id>",
     })
 
@@ -353,8 +304,8 @@ ListCommits retrieves the commit history
 
 <!-- UsageSnippet language="python" operationID="c1.api.functions.v1.FunctionsService.ListCommits" method="get" path="/api/v1/functions/{function_id}/commits" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -362,9 +313,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.functions.list_commits(request={
+    res = sdk.functions.list_commits(request={
         "function_id": "<id>",
     })
 
@@ -400,8 +351,8 @@ List retrieves all functions with pagination
 
 <!-- UsageSnippet language="python" operationID="c1.api.functions.v1.FunctionsService.ListFunctions" method="get" path="/api/v1/functions" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -409,9 +360,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.functions.list_functions()
+    res = sdk.functions.list_functions()
 
     assert res.functions_service_list_functions_response is not None
 
@@ -444,8 +395,8 @@ ListTags lists all tags for a function
 
 <!-- UsageSnippet language="python" operationID="c1.api.functions.v1.FunctionsService.ListTags" method="get" path="/api/v1/functions/{function_id}/tags" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -453,9 +404,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.functions.list_tags(request={
+    res = sdk.functions.list_tags(request={
         "function_id": "<id>",
     })
 
@@ -491,8 +442,8 @@ Update updates an existing function's metadata
 
 <!-- UsageSnippet language="python" operationID="c1.api.functions.v1.FunctionsService.UpdateFunction" method="post" path="/api/v1/functions/update" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -500,9 +451,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.functions.update_function()
+    res = sdk.functions.update_function()
 
     assert res.functions_service_update_function_response is not None
 

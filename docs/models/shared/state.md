@@ -1,16 +1,14 @@
 # State
 
-The last applied state of the app access request defaults.
+The current state of the action execution.
 
 
 ## Values
 
-| Name                                                          | Value                                                         |
-| ------------------------------------------------------------- | ------------------------------------------------------------- |
-| `APP_ACCESS_REQUEST_DEFAULTS_LAST_APPLY_STATE_UNSPECIFIED`    | APP_ACCESS_REQUEST_DEFAULTS_LAST_APPLY_STATE_UNSPECIFIED      |
-| `APP_ACCESS_REQUEST_DEFAULTS_LAST_APPLY_STATE_RUNNING`        | APP_ACCESS_REQUEST_DEFAULTS_LAST_APPLY_STATE_RUNNING          |
-| `APP_ACCESS_REQUEST_DEFAULTS_LAST_APPLY_STATE_SUCCESS`        | APP_ACCESS_REQUEST_DEFAULTS_LAST_APPLY_STATE_SUCCESS          |
-| `APP_ACCESS_REQUEST_DEFAULTS_LAST_APPLY_STATE_FAILED`         | APP_ACCESS_REQUEST_DEFAULTS_LAST_APPLY_STATE_FAILED           |
-| `APP_ACCESS_REQUEST_DEFAULTS_LAST_APPLY_STATE_CANCELING`      | APP_ACCESS_REQUEST_DEFAULTS_LAST_APPLY_STATE_CANCELING        |
-| `APP_ACCESS_REQUEST_DEFAULTS_LAST_APPLY_STATE_CANCEL_SUCCESS` | APP_ACCESS_REQUEST_DEFAULTS_LAST_APPLY_STATE_CANCEL_SUCCESS   |
-| `APP_ACCESS_REQUEST_DEFAULTS_LAST_APPLY_STATE_CANCEL_ERROR`   | APP_ACCESS_REQUEST_DEFAULTS_LAST_APPLY_STATE_CANCEL_ERROR     |
+| Name                                | Value                               |
+| ----------------------------------- | ----------------------------------- |
+| `ACTION_INSTANCE_STATE_UNSPECIFIED` | ACTION_INSTANCE_STATE_UNSPECIFIED   |
+| `ACTION_INSTANCE_STATE_INIT`        | ACTION_INSTANCE_STATE_INIT          |
+| `ACTION_INSTANCE_STATE_RUNNING`     | ACTION_INSTANCE_STATE_RUNNING       |
+| `ACTION_INSTANCE_STATE_DONE`        | ACTION_INSTANCE_STATE_DONE          |
+| `ACTION_INSTANCE_STATE_ERROR`       | ACTION_INSTANCE_STATE_ERROR         |

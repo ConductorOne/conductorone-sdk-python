@@ -16,8 +16,8 @@ Get usage controls, as an AppUsageControls object which describes some periphera
 
 <!-- UsageSnippet language="python" operationID="c1.api.app.v1.AppUsageControlsService.Get" method="get" path="/api/v1/apps/{app_id}/usage_controls" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -25,9 +25,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.app_usage_controls.get(request={
+    res = sdk.app_usage_controls.get(request={
         "app_id": "<id>",
     })
 
@@ -63,8 +63,8 @@ Update usage controls for an app.
 
 <!-- UsageSnippet language="python" operationID="c1.api.app.v1.AppUsageControlsService.Update" method="post" path="/api/v1/apps/{app_id}/usage_controls" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -72,9 +72,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.app_usage_controls.update(request={
+    res = sdk.app_usage_controls.update(request={
         "app_id": "<id>",
     })
 

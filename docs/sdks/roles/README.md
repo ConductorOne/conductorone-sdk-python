@@ -17,8 +17,8 @@ Get a role by id.
 
 <!-- UsageSnippet language="python" operationID="c1.api.iam.v1.Roles.Get" method="get" path="/api/v1/iam/roles/{role_id}" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -26,9 +26,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.roles.get(request={
+    res = sdk.roles.get(request={
         "role_id": "<id>",
     })
 
@@ -64,8 +64,8 @@ List all roles for the current user.
 
 <!-- UsageSnippet language="python" operationID="c1.api.iam.v1.Roles.List" method="get" path="/api/v1/iam/roles" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -73,9 +73,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.roles.list()
+    res = sdk.roles.list()
 
     assert res.list_roles_response is not None
 
@@ -109,8 +109,8 @@ Update a role by passing a Role object.
 
 <!-- UsageSnippet language="python" operationID="c1.api.iam.v1.Roles.Update" method="post" path="/api/v1/iam/roles/{role_id}" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -118,9 +118,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.roles.update(request={
+    res = sdk.roles.update(request={
         "role_id": "<id>",
     })
 

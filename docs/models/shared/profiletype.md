@@ -13,3 +13,4 @@ ProfileType represents a type of profile in the system
 | `name`                 | *Optional[str]*        | :heavy_minus_sign:     | The name field.        |
 | `priority`             | *Optional[int]*        | :heavy_minus_sign:     | The priority field.    |
 | `sizes`                | List[*int*]            | :heavy_minus_sign:     | icon sizes             |
+| `slug`                 | *Optional[str]*        | :heavy_minus_sign:     | The slug field.        |

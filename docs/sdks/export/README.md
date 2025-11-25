@@ -20,8 +20,8 @@ Create a system log export.
 
 <!-- UsageSnippet language="python" operationID="c1.api.systemlog.v1.ExportService.Create" method="post" path="/api/v1/systemlog/exports" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -29,9 +29,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.export.create()
+    res = sdk.export.create()
 
     assert res.export_service_create_response is not None
 
@@ -65,8 +65,8 @@ Delete a policy by ID.
 
 <!-- UsageSnippet language="python" operationID="c1.api.systemlog.v1.ExportService.Delete" method="delete" path="/api/v1/systemlog/exports/{export_id}" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -74,9 +74,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.export.delete(request={
+    res = sdk.export.delete(request={
         "export_id": "<id>",
     })
 
@@ -112,8 +112,8 @@ Get a system log export by ID
 
 <!-- UsageSnippet language="python" operationID="c1.api.systemlog.v1.ExportService.Get" method="get" path="/api/v1/systemlog/exports/{export_id}" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -121,9 +121,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.export.get(request={
+    res = sdk.export.get(request={
         "export_id": "<id>",
     })
 
@@ -159,8 +159,8 @@ List Exports.
 
 <!-- UsageSnippet language="python" operationID="c1.api.systemlog.v1.ExportService.List" method="get" path="/api/v1/systemlog/exports" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -168,9 +168,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.export.list()
+    res = sdk.export.list()
 
     assert res.export_service_list_response is not None
 
@@ -204,8 +204,8 @@ Invokes the c1.api.systemlog.v1.ExportService.ListEvents method.
 
 <!-- UsageSnippet language="python" operationID="c1.api.systemlog.v1.ExportService.ListEvents" method="post" path="/api/v1/systemlog/exports/{export_id}/events" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -213,9 +213,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.export.list_events(request={
+    res = sdk.export.list_events(request={
         "export_id": "<id>",
     })
 
@@ -251,8 +251,8 @@ Update a system log export by providing a policy object and an update mask.
 
 <!-- UsageSnippet language="python" operationID="c1.api.systemlog.v1.ExportService.Update" method="post" path="/api/v1/systemlog/exports/{export_id}" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -260,9 +260,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.export.update(request={
+    res = sdk.export.update(request={
         "export_id": "<id>",
     })
 

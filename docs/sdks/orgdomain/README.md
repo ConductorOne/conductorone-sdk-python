@@ -16,8 +16,8 @@ Invokes the c1.api.settings.v1.OrgDomainService.List method.
 
 <!-- UsageSnippet language="python" operationID="c1.api.settings.v1.OrgDomainService.List" method="get" path="/api/v1/settings/domains" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -25,9 +25,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.org_domain.list()
+    res = sdk.org_domain.list()
 
     assert res.list_org_domains_response is not None
 
@@ -61,8 +61,8 @@ Invokes the c1.api.settings.v1.OrgDomainService.Update method.
 
 <!-- UsageSnippet language="python" operationID="c1.api.settings.v1.OrgDomainService.Update" method="put" path="/api/v1/settings/domains" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -70,9 +70,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.org_domain.update()
+    res = sdk.org_domain.update()
 
     assert res.update_org_domain_response is not None
 

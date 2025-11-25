@@ -18,8 +18,8 @@ Create a grant task
 
 <!-- UsageSnippet language="python" operationID="c1.api.task.v1.TaskService.CreateGrantTask" method="post" path="/api/v1/task/grant" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -27,9 +27,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.task.create_grant_task()
+    res = sdk.task.create_grant_task()
 
     assert res.task_service_create_grant_response is not None
 
@@ -63,8 +63,8 @@ Invokes the c1.api.task.v1.TaskService.CreateOffboardingTask method.
 
 <!-- UsageSnippet language="python" operationID="c1.api.task.v1.TaskService.CreateOffboardingTask" method="post" path="/api/v1/task/offboarding" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -72,9 +72,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.task.create_offboarding_task()
+    res = sdk.task.create_offboarding_task()
 
     assert res.task_service_create_offboarding_response is not None
 
@@ -108,8 +108,8 @@ Create a revoke task
 
 <!-- UsageSnippet language="python" operationID="c1.api.task.v1.TaskService.CreateRevokeTask" method="post" path="/api/v1/task/revoke" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -117,9 +117,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.task.create_revoke_task()
+    res = sdk.task.create_revoke_task()
 
     assert res.task_service_create_revoke_response is not None
 
@@ -153,8 +153,8 @@ Get a task by ID
 
 <!-- UsageSnippet language="python" operationID="c1.api.task.v1.TaskService.Get" method="get" path="/api/v1/tasks/{id}" -->
 ```python
-from sdk import SDK
-from sdk.models import shared
+from conductorone_sdk import SDK
+from conductorone_sdk.models import shared
 
 
 with SDK(
@@ -162,9 +162,9 @@ with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
         oauth="<YOUR_OAUTH_HERE>",
     ),
-) as s_client:
+) as sdk:
 
-    res = s_client.task.get(request={
+    res = sdk.task.get(request={
         "id": "<id>",
     })
 
