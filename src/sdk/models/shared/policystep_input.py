@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 from .accept import Accept, AcceptTypedDict
+from .action import Action, ActionTypedDict
 from .approval_input import ApprovalInput, ApprovalInputTypedDict
 from .form_input1 import FormInput1, FormInput1TypedDict
 from .provision import Provision, ProvisionTypedDict
@@ -22,11 +23,19 @@ class PolicyStepInputTypedDict(TypedDict):
     - reject
     - wait
     - form
+    - action
 
     """
 
     accept: NotRequired[Nullable[AcceptTypedDict]]
     r"""This policy step indicates that a ticket should have an approved outcome. This is a terminal approval state and is used to explicitly define the end of approval steps."""
+    action: NotRequired[Nullable[ActionTypedDict]]
+    r"""The Action message.
+
+    This message contains a oneof named target. Only a single field of the following list may be set at a time:
+    - automation
+
+    """
     approval: NotRequired[Nullable[ApprovalInputTypedDict]]
     r"""The Approval message.
 
@@ -70,11 +79,20 @@ class PolicyStepInput(BaseModel):
     - reject
     - wait
     - form
+    - action
 
     """
 
     accept: OptionalNullable[Accept] = UNSET
     r"""This policy step indicates that a ticket should have an approved outcome. This is a terminal approval state and is used to explicitly define the end of approval steps."""
+
+    action: OptionalNullable[Action] = UNSET
+    r"""The Action message.
+
+    This message contains a oneof named target. Only a single field of the following list may be set at a time:
+    - automation
+
+    """
 
     approval: OptionalNullable[ApprovalInput] = UNSET
     r"""The Approval message.
@@ -114,8 +132,24 @@ class PolicyStepInput(BaseModel):
 
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
-        optional_fields = ["Accept", "Approval", "Form", "Provision", "Reject", "Wait"]
-        nullable_fields = ["Accept", "Approval", "Form", "Provision", "Reject", "Wait"]
+        optional_fields = [
+            "Accept",
+            "Action",
+            "Approval",
+            "Form",
+            "Provision",
+            "Reject",
+            "Wait",
+        ]
+        nullable_fields = [
+            "Accept",
+            "Action",
+            "Approval",
+            "Form",
+            "Provision",
+            "Reject",
+            "Wait",
+        ]
         null_default_fields = []
 
         serialized = handler(self)

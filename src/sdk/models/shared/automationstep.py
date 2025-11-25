@@ -100,12 +100,14 @@ class AutomationStepTypedDict(TypedDict):
     - inclusionList
     - inclusionAll
     - inclusionCriteria
+    - inclusionListCel
 
 
     This message contains a oneof named exclusion. Only a single field of the following list may be set at a time:
     - exclusionNone
     - exclusionList
     - exclusionCriteria
+    - exclusionListCel
 
     """
     grant_entitlements: NotRequired[Nullable[GrantEntitlementsTypedDict]]
@@ -268,12 +270,14 @@ class AutomationStep(BaseModel):
     - inclusionList
     - inclusionAll
     - inclusionCriteria
+    - inclusionListCel
 
 
     This message contains a oneof named exclusion. Only a single field of the following list may be set at a time:
     - exclusionNone
     - exclusionList
     - exclusionCriteria
+    - exclusionListCel
 
     """
 

@@ -26,6 +26,7 @@ class PolicyInstanceTypedDict(TypedDict):
     - reject
     - wait
     - form
+    - action
 
     """
     history: NotRequired[Nullable[List[PolicyStepInstanceTypedDict]]]
@@ -52,6 +53,7 @@ class PolicyInstance(BaseModel):
     - reject
     - wait
     - form
+    - action
 
     """
 

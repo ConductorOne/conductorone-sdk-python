@@ -147,6 +147,7 @@ class TaskTypedDict(TypedDict):
     - revoke
     - certify
     - offboarding
+    - action
 
     """
     actions: NotRequired[Nullable[List[Actions]]]
@@ -212,6 +213,7 @@ class Task(BaseModel):
     - revoke
     - certify
     - offboarding
+    - action
 
     """
 

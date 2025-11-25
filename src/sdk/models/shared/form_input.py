@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 from .field_input import FieldInput, FieldInputTypedDict
+from .fieldgroup import FieldGroup, FieldGroupTypedDict
 from .fieldrelationship import FieldRelationship, FieldRelationshipTypedDict
 import pydantic
 from pydantic import model_serializer
@@ -17,6 +18,8 @@ class FormInputTypedDict(TypedDict):
     r"""The description field."""
     display_name: NotRequired[str]
     r"""The displayName field."""
+    field_groups: NotRequired[Nullable[List[FieldGroupTypedDict]]]
+    r"""The fieldGroups field."""
     field_relationships: NotRequired[Nullable[List[FieldRelationshipTypedDict]]]
     r"""The fieldRelationships field."""
     fields: NotRequired[Nullable[List[FieldInputTypedDict]]]
@@ -33,6 +36,11 @@ class FormInput(BaseModel):
 
     display_name: Annotated[Optional[str], pydantic.Field(alias="displayName")] = None
     r"""The displayName field."""
+
+    field_groups: Annotated[
+        OptionalNullable[List[FieldGroup]], pydantic.Field(alias="fieldGroups")
+    ] = UNSET
+    r"""The fieldGroups field."""
 
     field_relationships: Annotated[
         OptionalNullable[List[FieldRelationship]],
@@ -51,11 +59,12 @@ class FormInput(BaseModel):
         optional_fields = [
             "description",
             "displayName",
+            "fieldGroups",
             "fieldRelationships",
             "fields",
             "id",
         ]
-        nullable_fields = ["fieldRelationships", "fields"]
+        nullable_fields = ["fieldGroups", "fieldRelationships", "fields"]
         null_default_fields = []
 
         serialized = handler(self)

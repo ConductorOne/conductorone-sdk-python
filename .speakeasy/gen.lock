@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: caa5cc5d-fe97-4a71-b2f9-77ce0615bbd1
 management:
-  docChecksum: 4363cbf52782e27617b4e20a0772a70b
+  docChecksum: 7b50bc70e6432dd888a3793295c83d7d
   docVersion: 0.1.0-alpha
-  speakeasyVersion: 1.643.3
-  generationVersion: 2.731.9
-  releaseVersion: 0.16.1
-  configChecksum: 986f09101402f14f0ec45fd2f4940c08
+  speakeasyVersion: 1.660.0
+  generationVersion: 2.760.2
+  releaseVersion: 0.17.0
+  configChecksum: 4f5e3d667b5fe99f4bd923e3970708c5
   repoURL: https://github.com/ConductorOne/conductorone-sdk-python.git
   repoSubDirectory: .
   installationURL: https://github.com/ConductorOne/conductorone-sdk-python.git
@@ -14,14 +14,14 @@ features:
   python:
     additionalDependencies: 1.0.0
     additionalProperties: 1.0.1
-    core: 5.23.2
+    core: 5.23.10
     defaultEnabledRetries: 0.2.0
     deprecations: 3.0.2
     enumUnions: 0.1.0
     envVarSecurityUsage: 0.3.2
     globalSecurity: 3.0.4
     globalSecurityCallbacks: 1.0.0
-    globalServerURLs: 3.1.1
+    globalServerURLs: 3.2.0
     groups: 3.0.1
     includes: 3.0.0
     inputOutputModels: 3.0.0
@@ -203,6 +203,8 @@ generatedFiles:
   - docs/models/operations/c1apiappv1connectorservicedeleteresponse.md
   - docs/models/operations/c1apiappv1connectorserviceforcesyncrequest.md
   - docs/models/operations/c1apiappv1connectorserviceforcesyncresponse.md
+  - docs/models/operations/c1apiappv1connectorservicegetconnectorsyncdownloadurlrequest.md
+  - docs/models/operations/c1apiappv1connectorservicegetconnectorsyncdownloadurlresponse.md
   - docs/models/operations/c1apiappv1connectorservicegetcredentialsrequest.md
   - docs/models/operations/c1apiappv1connectorservicegetcredentialsresponse.md
   - docs/models/operations/c1apiappv1connectorservicegetrequest.md
@@ -273,18 +275,20 @@ generatedFiles:
   - docs/models/operations/c1apidirectoryv1directoryservicelistresponse.md
   - docs/models/operations/c1apidirectoryv1directoryserviceupdaterequest.md
   - docs/models/operations/c1apidirectoryv1directoryserviceupdateresponse.md
+  - docs/models/operations/c1apifunctionsv1functionsinvocationservicegetrequest.md
+  - docs/models/operations/c1apifunctionsv1functionsinvocationservicegetresponse.md
+  - docs/models/operations/c1apifunctionsv1functionsinvocationservicelistrequest.md
+  - docs/models/operations/c1apifunctionsv1functionsinvocationservicelistresponse.md
   - docs/models/operations/c1apifunctionsv1functionssearchsearchresponse.md
-  - docs/models/operations/c1apifunctionsv1functionsservicecommitrequest.md
-  - docs/models/operations/c1apifunctionsv1functionsservicecommitresponse.md
   - docs/models/operations/c1apifunctionsv1functionsservicecreatefunctionresponse.md
   - docs/models/operations/c1apifunctionsv1functionsservicecreatetagrequest.md
   - docs/models/operations/c1apifunctionsv1functionsservicecreatetagresponse.md
   - docs/models/operations/c1apifunctionsv1functionsservicedeletefunctionrequest.md
   - docs/models/operations/c1apifunctionsv1functionsservicedeletefunctionresponse.md
-  - docs/models/operations/c1apifunctionsv1functionsservicegetcommitrequest.md
-  - docs/models/operations/c1apifunctionsv1functionsservicegetcommitresponse.md
   - docs/models/operations/c1apifunctionsv1functionsservicegetfunctionrequest.md
   - docs/models/operations/c1apifunctionsv1functionsservicegetfunctionresponse.md
+  - docs/models/operations/c1apifunctionsv1functionsservicegetfunctionsecretencryptionkeyrequest.md
+  - docs/models/operations/c1apifunctionsv1functionsservicegetfunctionsecretencryptionkeyresponse.md
   - docs/models/operations/c1apifunctionsv1functionsserviceinvokerequest.md
   - docs/models/operations/c1apifunctionsv1functionsserviceinvokeresponse.md
   - docs/models/operations/c1apifunctionsv1functionsservicelistcommitsrequest.md
@@ -327,16 +331,22 @@ generatedFiles:
   - docs/models/operations/c1apirequestcatalogv1requestcatalogmanagementserviceaddappentitlementsresponse.md
   - docs/models/operations/c1apirequestcatalogv1requestcatalogmanagementservicecreatebundleautomationrequest.md
   - docs/models/operations/c1apirequestcatalogv1requestcatalogmanagementservicecreatebundleautomationresponse.md
+  - docs/models/operations/c1apirequestcatalogv1requestcatalogmanagementservicecreaterequestableentryrequest.md
+  - docs/models/operations/c1apirequestcatalogv1requestcatalogmanagementservicecreaterequestableentryresponse.md
   - docs/models/operations/c1apirequestcatalogv1requestcatalogmanagementservicecreateresponse.md
   - docs/models/operations/c1apirequestcatalogv1requestcatalogmanagementservicedeletebundleautomationrequest.md
   - docs/models/operations/c1apirequestcatalogv1requestcatalogmanagementservicedeletebundleautomationresponse.md
   - docs/models/operations/c1apirequestcatalogv1requestcatalogmanagementservicedeleterequest.md
+  - docs/models/operations/c1apirequestcatalogv1requestcatalogmanagementservicedeleterequestableentryrequest.md
+  - docs/models/operations/c1apirequestcatalogv1requestcatalogmanagementservicedeleterequestableentryresponse.md
   - docs/models/operations/c1apirequestcatalogv1requestcatalogmanagementservicedeleteresponse.md
   - docs/models/operations/c1apirequestcatalogv1requestcatalogmanagementserviceforcerunbundleautomationrequest.md
   - docs/models/operations/c1apirequestcatalogv1requestcatalogmanagementserviceforcerunbundleautomationresponse.md
   - docs/models/operations/c1apirequestcatalogv1requestcatalogmanagementservicegetbundleautomationrequest.md
   - docs/models/operations/c1apirequestcatalogv1requestcatalogmanagementservicegetbundleautomationresponse.md
   - docs/models/operations/c1apirequestcatalogv1requestcatalogmanagementservicegetrequest.md
+  - docs/models/operations/c1apirequestcatalogv1requestcatalogmanagementservicegetrequestableentryrequest.md
+  - docs/models/operations/c1apirequestcatalogv1requestcatalogmanagementservicegetrequestableentryresponse.md
   - docs/models/operations/c1apirequestcatalogv1requestcatalogmanagementservicegetresponse.md
   - docs/models/operations/c1apirequestcatalogv1requestcatalogmanagementservicelistallentitlementidsperapprequest.md
   - docs/models/operations/c1apirequestcatalogv1requestcatalogmanagementservicelistallentitlementidsperappresponse.md
@@ -447,6 +457,13 @@ generatedFiles:
   - docs/models/operations/c1apiuserv1userservicelistresponse.md
   - docs/models/operations/c1apiuserv1userservicesetexpiringuserdelegationbindingbyadminrequest.md
   - docs/models/operations/c1apiuserv1userservicesetexpiringuserdelegationbindingbyadminresponse.md
+  - docs/models/operations/c1apivaultv1vaultservicecreateresponse.md
+  - docs/models/operations/c1apivaultv1vaultservicedeleterequest.md
+  - docs/models/operations/c1apivaultv1vaultservicedeleteresponse.md
+  - docs/models/operations/c1apivaultv1vaultservicegetrequest.md
+  - docs/models/operations/c1apivaultv1vaultservicegetresponse.md
+  - docs/models/operations/c1apivaultv1vaultserviceupdaterequest.md
+  - docs/models/operations/c1apivaultv1vaultserviceupdateresponse.md
   - docs/models/operations/c1apiwebhooksv1webhookssearchsearchresponse.md
   - docs/models/operations/c1apiwebhooksv1webhooksservicecreateresponse.md
   - docs/models/operations/c1apiwebhooksv1webhooksservicedeleterequest.md
@@ -469,8 +486,16 @@ generatedFiles:
   - docs/models/shared/accountref.md
   - docs/models/shared/accounttype.md
   - docs/models/shared/accounttypes.md
+  - docs/models/shared/action.md
+  - docs/models/shared/actioninstance.md
+  - docs/models/shared/actionoutcomecancelled.md
+  - docs/models/shared/actionoutcomedenied.md
+  - docs/models/shared/actionoutcomeerror.md
+  - docs/models/shared/actionoutcomesuccess.md
   - docs/models/shared/actionprovision.md
   - docs/models/shared/actions.md
+  - docs/models/shared/actiontargetautomation.md
+  - docs/models/shared/actiontargetautomationinstance.md
   - docs/models/shared/actiontype.md
   - docs/models/shared/addappentitlementownerrequest.md
   - docs/models/shared/addappentitlementownerresponse.md
@@ -489,6 +514,7 @@ generatedFiles:
   - docs/models/shared/app.md
   - docs/models/shared/appaccessrequestdefaults.md
   - docs/models/shared/appaccessrequestdefaults1.md
+  - docs/models/shared/appaccessrequestdefaultsstate.md
   - docs/models/shared/appactionsservicegeneratereportrequest.md
   - docs/models/shared/appactionsservicegeneratereportresponse.md
   - docs/models/shared/appentitlement.md
@@ -778,12 +804,14 @@ generatedFiles:
   - docs/models/shared/enrollmentbehavior.md
   - docs/models/shared/entitlementexclusioncriteria.md
   - docs/models/shared/entitlementexclusionlist.md
+  - docs/models/shared/entitlementexclusionlistcel.md
   - docs/models/shared/entitlementexclusionnone.md
   - docs/models/shared/entitlementfilter.md
   - docs/models/shared/entitlementgroup.md
   - docs/models/shared/entitlementinclusionall.md
   - docs/models/shared/entitlementinclusioncriteria.md
   - docs/models/shared/entitlementinclusionlist.md
+  - docs/models/shared/entitlementinclusionlistcel.md
   - docs/models/shared/entitlementownerapproval.md
   - docs/models/shared/enumrules.md
   - docs/models/shared/erroredaction.md
@@ -849,10 +877,12 @@ generatedFiles:
   - docs/models/shared/function.md
   - docs/models/shared/functioncommit.md
   - docs/models/shared/functioninput.md
+  - docs/models/shared/functioninvocation.md
+  - docs/models/shared/functioninvocationstatus.md
+  - docs/models/shared/functionsinvocationservicegetresponse.md
+  - docs/models/shared/functionsinvocationservicelistresponse.md
   - docs/models/shared/functionssearchrequest.md
   - docs/models/shared/functionssearchresponse.md
-  - docs/models/shared/functionsservicecommitrequest.md
-  - docs/models/shared/functionsservicecommitresponse.md
   - docs/models/shared/functionsservicecreatefunctionrequest.md
   - docs/models/shared/functionsservicecreatefunctionrequestfunctiontype.md
   - docs/models/shared/functionsservicecreatefunctionresponse.md
@@ -860,8 +890,8 @@ generatedFiles:
   - docs/models/shared/functionsservicecreatetagresponse.md
   - docs/models/shared/functionsservicedeletefunctionrequest.md
   - docs/models/shared/functionsservicedeletefunctionresponse.md
-  - docs/models/shared/functionsservicegetcommitresponse.md
   - docs/models/shared/functionsservicegetfunctionresponse.md
+  - docs/models/shared/functionsservicegetfunctionsecretencryptionkeyresponse.md
   - docs/models/shared/functionsserviceinvokerequest.md
   - docs/models/shared/functionsserviceinvokeresponse.md
   - docs/models/shared/functionsservicelistcommitsresponse.md
@@ -881,9 +911,11 @@ generatedFiles:
   - docs/models/shared/getappusagecontrolsresponse.md
   - docs/models/shared/getattributevalueresponse.md
   - docs/models/shared/getautomationexecutionresponse.md
+  - docs/models/shared/getautomationexecutionresponseexpanded.md
   - docs/models/shared/getautomationresponse.md
   - docs/models/shared/getawsexternalidresponse.md
   - docs/models/shared/getcomplianceframeworkattributevalueresponse.md
+  - docs/models/shared/getconnectorsyncdownloadurlresponse.md
   - docs/models/shared/getpolicyresponse.md
   - docs/models/shared/getrisklevelattributevalueresponse.md
   - docs/models/shared/getrolesresponse.md
@@ -902,6 +934,7 @@ generatedFiles:
   - docs/models/shared/grantreason.md
   - docs/models/shared/grantsourcefilter.md
   - docs/models/shared/granttriggerfilter.md
+  - docs/models/shared/groupauthzvault.md
   - docs/models/shared/identitymatching.md
   - docs/models/shared/importfield.md
   - docs/models/shared/int32rules.md
@@ -932,6 +965,7 @@ generatedFiles:
   - docs/models/shared/listrisklevelsresponse.md
   - docs/models/shared/listrolesresponse.md
   - docs/models/shared/liststepupprovidersresponse.md
+  - docs/models/shared/magicvault.md
   - docs/models/shared/managerapproval.md
   - docs/models/shared/managerapprovalinput.md
   - docs/models/shared/manualautomationtrigger.md
@@ -947,6 +981,8 @@ generatedFiles:
   - docs/models/shared/oauth2authorizedas.md
   - docs/models/shared/oauth2authorizedasinput.md
   - docs/models/shared/oauth2field.md
+  - docs/models/shared/oauth2field1.md
+  - docs/models/shared/oauth2fieldview.md
   - docs/models/shared/optionsfield.md
   - docs/models/shared/orgdomain.md
   - docs/models/shared/origin.md
@@ -1026,6 +1062,7 @@ generatedFiles:
   - docs/models/shared/removegrantdurationresponse.md
   - docs/models/shared/repeatedrules.md
   - docs/models/shared/replacepolicy.md
+  - docs/models/shared/requestableentry.md
   - docs/models/shared/requestcatalog.md
   - docs/models/shared/requestcatalogexpandmask.md
   - docs/models/shared/requestcataloginput.md
@@ -1034,11 +1071,16 @@ generatedFiles:
   - docs/models/shared/requestcatalogmanagementserviceaddappentitlementsrequest.md
   - docs/models/shared/requestcatalogmanagementserviceaddappentitlementsresponse.md
   - docs/models/shared/requestcatalogmanagementservicecreaterequest.md
+  - docs/models/shared/requestcatalogmanagementservicecreaterequestableentryrequest.md
+  - docs/models/shared/requestcatalogmanagementservicecreaterequestableentryresponse.md
   - docs/models/shared/requestcatalogmanagementservicecreaterequestenrollmentbehavior.md
   - docs/models/shared/requestcatalogmanagementservicecreaterequestunenrollmentbehavior.md
   - docs/models/shared/requestcatalogmanagementservicecreaterequestunenrollmententitlementbehavior.md
   - docs/models/shared/requestcatalogmanagementservicedeleterequest.md
+  - docs/models/shared/requestcatalogmanagementservicedeleterequestableentryrequest.md
+  - docs/models/shared/requestcatalogmanagementservicedeleterequestableentryresponse.md
   - docs/models/shared/requestcatalogmanagementservicedeleteresponse.md
+  - docs/models/shared/requestcatalogmanagementservicegetrequestableentryresponse.md
   - docs/models/shared/requestcatalogmanagementservicegetresponse.md
   - docs/models/shared/requestcatalogmanagementservicegetresponseexpanded.md
   - docs/models/shared/requestcatalogmanagementservicelistallentitlementidspercatalogresponse.md
@@ -1315,6 +1357,9 @@ generatedFiles:
   - docs/models/shared/taskstate.md
   - docs/models/shared/taskstates.md
   - docs/models/shared/tasktype.md
+  - docs/models/shared/tasktypeaction.md
+  - docs/models/shared/tasktypeactioninput.md
+  - docs/models/shared/tasktypeactionoutcome.md
   - docs/models/shared/tasktypecertify.md
   - docs/models/shared/tasktypecertifyinput.md
   - docs/models/shared/tasktypecertifyoutcome.md
@@ -1394,6 +1439,15 @@ generatedFiles:
   - docs/models/shared/userstatuses.md
   - docs/models/shared/userview.md
   - docs/models/shared/userwithappentitlementuserbindingview.md
+  - docs/models/shared/vault.md
+  - docs/models/shared/vaultinput.md
+  - docs/models/shared/vaultservicecreaterequest.md
+  - docs/models/shared/vaultservicecreateresponse.md
+  - docs/models/shared/vaultservicedeleterequest.md
+  - docs/models/shared/vaultservicedeleteresponse.md
+  - docs/models/shared/vaultservicegetresponse.md
+  - docs/models/shared/vaultserviceupdaterequest.md
+  - docs/models/shared/vaultserviceupdateresponse.md
   - docs/models/shared/wait.md
   - docs/models/shared/waitcondition.md
   - docs/models/shared/waitconditioninstance.md
@@ -1470,6 +1524,7 @@ generatedFiles:
   - docs/sdks/export/README.md
   - docs/sdks/exportssearch/README.md
   - docs/sdks/functions/README.md
+  - docs/sdks/functionsinvocation/README.md
   - docs/sdks/functionssearch/README.md
   - docs/sdks/orgdomain/README.md
   - docs/sdks/personalclient/README.md
@@ -1491,6 +1546,7 @@ generatedFiles:
   - docs/sdks/tasksearch/README.md
   - docs/sdks/user/README.md
   - docs/sdks/usersearch/README.md
+  - docs/sdks/vault/README.md
   - docs/sdks/webhooks/README.md
   - docs/sdks/webhookssearch/README.md
   - poetry.toml
@@ -1539,6 +1595,7 @@ generatedFiles:
   - src/sdk/export.py
   - src/sdk/exportssearch.py
   - src/sdk/functions.py
+  - src/sdk/functionsinvocation.py
   - src/sdk/functionssearch.py
   - src/sdk/httpclient.py
   - src/sdk/models/__init__.py
@@ -1638,6 +1695,7 @@ generatedFiles:
   - src/sdk/models/operations/c1_api_app_v1_connectorservice_delete.py
   - src/sdk/models/operations/c1_api_app_v1_connectorservice_forcesync.py
   - src/sdk/models/operations/c1_api_app_v1_connectorservice_get.py
+  - src/sdk/models/operations/c1_api_app_v1_connectorservice_getconnectorsyncdownloadurl.py
   - src/sdk/models/operations/c1_api_app_v1_connectorservice_getcredentials.py
   - src/sdk/models/operations/c1_api_app_v1_connectorservice_list.py
   - src/sdk/models/operations/c1_api_app_v1_connectorservice_pausesync.py
@@ -1679,13 +1737,14 @@ generatedFiles:
   - src/sdk/models/operations/c1_api_directory_v1_directoryservice_get.py
   - src/sdk/models/operations/c1_api_directory_v1_directoryservice_list.py
   - src/sdk/models/operations/c1_api_directory_v1_directoryservice_update.py
+  - src/sdk/models/operations/c1_api_functions_v1_functionsinvocationservice_get.py
+  - src/sdk/models/operations/c1_api_functions_v1_functionsinvocationservice_list.py
   - src/sdk/models/operations/c1_api_functions_v1_functionssearch_search.py
-  - src/sdk/models/operations/c1_api_functions_v1_functionsservice_commit.py
   - src/sdk/models/operations/c1_api_functions_v1_functionsservice_createfunction.py
   - src/sdk/models/operations/c1_api_functions_v1_functionsservice_createtag.py
   - src/sdk/models/operations/c1_api_functions_v1_functionsservice_deletefunction.py
-  - src/sdk/models/operations/c1_api_functions_v1_functionsservice_getcommit.py
   - src/sdk/models/operations/c1_api_functions_v1_functionsservice_getfunction.py
+  - src/sdk/models/operations/c1_api_functions_v1_functionsservice_getfunctionsecretencryptionkey.py
   - src/sdk/models/operations/c1_api_functions_v1_functionsservice_invoke.py
   - src/sdk/models/operations/c1_api_functions_v1_functionsservice_listcommits.py
   - src/sdk/models/operations/c1_api_functions_v1_functionsservice_listfunctions.py
@@ -1720,11 +1779,14 @@ generatedFiles:
   - src/sdk/models/operations/c1_api_requestcatalog_v1_requestcatalogmanagementservice_addappentitlements.py
   - src/sdk/models/operations/c1_api_requestcatalog_v1_requestcatalogmanagementservice_create.py
   - src/sdk/models/operations/c1_api_requestcatalog_v1_requestcatalogmanagementservice_createbundleautomation.py
+  - src/sdk/models/operations/c1_api_requestcatalog_v1_requestcatalogmanagementservice_createrequestableentry.py
   - src/sdk/models/operations/c1_api_requestcatalog_v1_requestcatalogmanagementservice_delete.py
   - src/sdk/models/operations/c1_api_requestcatalog_v1_requestcatalogmanagementservice_deletebundleautomation.py
+  - src/sdk/models/operations/c1_api_requestcatalog_v1_requestcatalogmanagementservice_deleterequestableentry.py
   - src/sdk/models/operations/c1_api_requestcatalog_v1_requestcatalogmanagementservice_forcerunbundleautomation.py
   - src/sdk/models/operations/c1_api_requestcatalog_v1_requestcatalogmanagementservice_get.py
   - src/sdk/models/operations/c1_api_requestcatalog_v1_requestcatalogmanagementservice_getbundleautomation.py
+  - src/sdk/models/operations/c1_api_requestcatalog_v1_requestcatalogmanagementservice_getrequestableentry.py
   - src/sdk/models/operations/c1_api_requestcatalog_v1_requestcatalogmanagementservice_list.py
   - src/sdk/models/operations/c1_api_requestcatalog_v1_requestcatalogmanagementservice_listallentitlementidsperapp.py
   - src/sdk/models/operations/c1_api_requestcatalog_v1_requestcatalogmanagementservice_listentitlementsforaccess.py
@@ -1784,6 +1846,10 @@ generatedFiles:
   - src/sdk/models/operations/c1_api_user_v1_userservice_getuserprofiletypes.py
   - src/sdk/models/operations/c1_api_user_v1_userservice_list.py
   - src/sdk/models/operations/c1_api_user_v1_userservice_setexpiringuserdelegationbindingbyadmin.py
+  - src/sdk/models/operations/c1_api_vault_v1_vaultservice_create.py
+  - src/sdk/models/operations/c1_api_vault_v1_vaultservice_delete.py
+  - src/sdk/models/operations/c1_api_vault_v1_vaultservice_get.py
+  - src/sdk/models/operations/c1_api_vault_v1_vaultservice_update.py
   - src/sdk/models/operations/c1_api_webhooks_v1_webhookssearch_search.py
   - src/sdk/models/operations/c1_api_webhooks_v1_webhooksservice_create.py
   - src/sdk/models/operations/c1_api_webhooks_v1_webhooksservice_delete.py
@@ -1800,7 +1866,15 @@ generatedFiles:
   - src/sdk/models/shared/accountlifecycleaction.py
   - src/sdk/models/shared/accountprovision.py
   - src/sdk/models/shared/accountref.py
+  - src/sdk/models/shared/action.py
+  - src/sdk/models/shared/actioninstance.py
+  - src/sdk/models/shared/actionoutcomecancelled.py
+  - src/sdk/models/shared/actionoutcomedenied.py
+  - src/sdk/models/shared/actionoutcomeerror.py
+  - src/sdk/models/shared/actionoutcomesuccess.py
   - src/sdk/models/shared/actionprovision.py
+  - src/sdk/models/shared/actiontargetautomation.py
+  - src/sdk/models/shared/actiontargetautomationinstance.py
   - src/sdk/models/shared/addappentitlementownerrequest.py
   - src/sdk/models/shared/addappentitlementownerresponse.py
   - src/sdk/models/shared/addappownerrequest.py
@@ -2049,11 +2123,13 @@ generatedFiles:
   - src/sdk/models/shared/encrypteddata.py
   - src/sdk/models/shared/entitlementexclusioncriteria.py
   - src/sdk/models/shared/entitlementexclusionlist.py
+  - src/sdk/models/shared/entitlementexclusionlistcel.py
   - src/sdk/models/shared/entitlementexclusionnone.py
   - src/sdk/models/shared/entitlementfilter.py
   - src/sdk/models/shared/entitlementinclusionall.py
   - src/sdk/models/shared/entitlementinclusioncriteria.py
   - src/sdk/models/shared/entitlementinclusionlist.py
+  - src/sdk/models/shared/entitlementinclusionlistcel.py
   - src/sdk/models/shared/entitlementownerapproval.py
   - src/sdk/models/shared/enumrules.py
   - src/sdk/models/shared/erroredaction.py
@@ -2110,18 +2186,19 @@ generatedFiles:
   - src/sdk/models/shared/formtrigger.py
   - src/sdk/models/shared/function.py
   - src/sdk/models/shared/functioncommit.py
+  - src/sdk/models/shared/functioninvocation.py
+  - src/sdk/models/shared/functionsinvocationservicegetresponse.py
+  - src/sdk/models/shared/functionsinvocationservicelistresponse.py
   - src/sdk/models/shared/functionssearchrequest.py
   - src/sdk/models/shared/functionssearchresponse.py
-  - src/sdk/models/shared/functionsservicecommitrequest.py
-  - src/sdk/models/shared/functionsservicecommitresponse.py
   - src/sdk/models/shared/functionsservicecreatefunctionrequest.py
   - src/sdk/models/shared/functionsservicecreatefunctionresponse.py
   - src/sdk/models/shared/functionsservicecreatetagrequest.py
   - src/sdk/models/shared/functionsservicecreatetagresponse.py
   - src/sdk/models/shared/functionsservicedeletefunctionrequest.py
   - src/sdk/models/shared/functionsservicedeletefunctionresponse.py
-  - src/sdk/models/shared/functionsservicegetcommitresponse.py
   - src/sdk/models/shared/functionsservicegetfunctionresponse.py
+  - src/sdk/models/shared/functionsservicegetfunctionsecretencryptionkeyresponse.py
   - src/sdk/models/shared/functionsserviceinvokerequest.py
   - src/sdk/models/shared/functionsserviceinvokeresponse.py
   - src/sdk/models/shared/functionsservicelistcommitsresponse.py
@@ -2139,6 +2216,7 @@ generatedFiles:
   - src/sdk/models/shared/getautomationresponse.py
   - src/sdk/models/shared/getawsexternalidresponse.py
   - src/sdk/models/shared/getcomplianceframeworkattributevalueresponse.py
+  - src/sdk/models/shared/getconnectorsyncdownloadurlresponse.py
   - src/sdk/models/shared/getpolicyresponse.py
   - src/sdk/models/shared/getrisklevelattributevalueresponse.py
   - src/sdk/models/shared/getrolesresponse.py
@@ -2152,6 +2230,7 @@ generatedFiles:
   - src/sdk/models/shared/grantfoundtrigger.py
   - src/sdk/models/shared/grantreason.py
   - src/sdk/models/shared/granttriggerfilter.py
+  - src/sdk/models/shared/groupauthzvault.py
   - src/sdk/models/shared/importfield.py
   - src/sdk/models/shared/int32rules.py
   - src/sdk/models/shared/int64field.py
@@ -2179,6 +2258,7 @@ generatedFiles:
   - src/sdk/models/shared/listrisklevelsresponse.py
   - src/sdk/models/shared/listrolesresponse.py
   - src/sdk/models/shared/liststepupprovidersresponse.py
+  - src/sdk/models/shared/magicvault.py
   - src/sdk/models/shared/managerapproval.py
   - src/sdk/models/shared/managerapproval_input.py
   - src/sdk/models/shared/manualautomationtrigger.py
@@ -2193,6 +2273,8 @@ generatedFiles:
   - src/sdk/models/shared/oauth2authorizedas.py
   - src/sdk/models/shared/oauth2authorizedas_input.py
   - src/sdk/models/shared/oauth2field.py
+  - src/sdk/models/shared/oauth2field1.py
+  - src/sdk/models/shared/oauth2fieldview.py
   - src/sdk/models/shared/optionsfield.py
   - src/sdk/models/shared/orgdomain.py
   - src/sdk/models/shared/passwordfield.py
@@ -2253,6 +2335,7 @@ generatedFiles:
   - src/sdk/models/shared/removegrantdurationresponse.py
   - src/sdk/models/shared/repeatedrules.py
   - src/sdk/models/shared/replacepolicy.py
+  - src/sdk/models/shared/requestableentry.py
   - src/sdk/models/shared/requestcatalog.py
   - src/sdk/models/shared/requestcatalogexpandmask.py
   - src/sdk/models/shared/requestcatalogmanagementserviceaddaccessentitlementsrequest.py
@@ -2260,8 +2343,13 @@ generatedFiles:
   - src/sdk/models/shared/requestcatalogmanagementserviceaddappentitlementsrequest.py
   - src/sdk/models/shared/requestcatalogmanagementserviceaddappentitlementsresponse.py
   - src/sdk/models/shared/requestcatalogmanagementservicecreaterequest.py
+  - src/sdk/models/shared/requestcatalogmanagementservicecreaterequestableentryrequest.py
+  - src/sdk/models/shared/requestcatalogmanagementservicecreaterequestableentryresponse.py
   - src/sdk/models/shared/requestcatalogmanagementservicedeleterequest.py
+  - src/sdk/models/shared/requestcatalogmanagementservicedeleterequestableentryrequest.py
+  - src/sdk/models/shared/requestcatalogmanagementservicedeleterequestableentryresponse.py
   - src/sdk/models/shared/requestcatalogmanagementservicedeleteresponse.py
+  - src/sdk/models/shared/requestcatalogmanagementservicegetrequestableentryresponse.py
   - src/sdk/models/shared/requestcatalogmanagementservicegetresponse.py
   - src/sdk/models/shared/requestcatalogmanagementservicelistallentitlementidspercatalogresponse.py
   - src/sdk/models/shared/requestcatalogmanagementservicelistentitlementsforaccessresponse.py
@@ -2495,6 +2583,8 @@ generatedFiles:
   - src/sdk/models/shared/taskservicegetresponse.py
   - src/sdk/models/shared/tasktype.py
   - src/sdk/models/shared/tasktype_input.py
+  - src/sdk/models/shared/tasktypeaction.py
+  - src/sdk/models/shared/tasktypeaction_input.py
   - src/sdk/models/shared/tasktypecertify.py
   - src/sdk/models/shared/tasktypecertify_input.py
   - src/sdk/models/shared/tasktypegrant.py
@@ -2556,6 +2646,15 @@ generatedFiles:
   - src/sdk/models/shared/userservicelistresponse.py
   - src/sdk/models/shared/userview.py
   - src/sdk/models/shared/userwithappentitlementuserbindingview.py
+  - src/sdk/models/shared/vault.py
+  - src/sdk/models/shared/vault_input.py
+  - src/sdk/models/shared/vaultservicecreaterequest.py
+  - src/sdk/models/shared/vaultservicecreateresponse.py
+  - src/sdk/models/shared/vaultservicedeleterequest.py
+  - src/sdk/models/shared/vaultservicedeleteresponse.py
+  - src/sdk/models/shared/vaultservicegetresponse.py
+  - src/sdk/models/shared/vaultserviceupdaterequest.py
+  - src/sdk/models/shared/vaultserviceupdateresponse.py
   - src/sdk/models/shared/wait.py
   - src/sdk/models/shared/waitcondition.py
   - src/sdk/models/shared/waitconditioninstance.py
@@ -2635,6 +2734,7 @@ generatedFiles:
   - src/sdk/utils/unmarshal_json_response.py
   - src/sdk/utils/url.py
   - src/sdk/utils/values.py
+  - src/sdk/vault.py
   - src/sdk/webhooks.py
   - src/sdk/webhookssearch.py
 examples:
@@ -4761,5 +4861,110 @@ examples:
       responses:
         "200":
           application/json: {}
+  c1.api.app.v1.ConnectorService.GetConnectorSyncDownloadURL:
+    speakeasy-default-c1-api-app-v1-connector-service-get-connector-sync-download-URL:
+      parameters:
+        path:
+          app_id: "<id>"
+          connector_id: "<id>"
+          sync_id: "<id>"
+      responses:
+        "200":
+          application/json: {}
+  c1.api.requestcatalog.v1.RequestCatalogManagementService.CreateRequestableEntry:
+    speakeasy-default-c1-api-requestcatalog-v1-request-catalog-management-service-create-requestable-entry:
+      parameters:
+        path:
+          catalog_id: "<id>"
+          app_id: "<id>"
+          entitlement_id: "<id>"
+      requestBody:
+        application/json: {}
+      responses:
+        "200":
+          application/json: {}
+  c1.api.requestcatalog.v1.RequestCatalogManagementService.DeleteRequestableEntry:
+    speakeasy-default-c1-api-requestcatalog-v1-request-catalog-management-service-delete-requestable-entry:
+      parameters:
+        path:
+          catalog_id: "<id>"
+          app_id: "<id>"
+          entitlement_id: "<id>"
+      requestBody:
+        application/json: {}
+      responses:
+        "200":
+          application/json: {}
+  c1.api.requestcatalog.v1.RequestCatalogManagementService.GetRequestableEntry:
+    speakeasy-default-c1-api-requestcatalog-v1-request-catalog-management-service-get-requestable-entry:
+      parameters:
+        path:
+          catalog_id: "<id>"
+          app_id: "<id>"
+          entitlement_id: "<id>"
+      responses:
+        "200":
+          application/json: {}
+  c1.api.functions.v1.FunctionsService.GetFunctionSecretEncryptionKey:
+    speakeasy-default-c1-api-functions-v1-functions-service-get-function-secret-encryption-key:
+      parameters:
+        path:
+          function_id: "<id>"
+      responses:
+        "200":
+          application/json: {}
+  c1.api.functions.v1.FunctionsInvocationService.Get:
+    speakeasy-default-c1-api-functions-v1-functions-invocation-service-get:
+      parameters:
+        path:
+          function_id: "<id>"
+          id: "<id>"
+      responses:
+        "200":
+          application/json: {}
+  c1.api.functions.v1.FunctionsInvocationService.List:
+    speakeasy-default-c1-api-functions-v1-functions-invocation-service-list:
+      parameters:
+        path:
+          function_id: "<id>"
+      responses:
+        "200":
+          application/json: {}
+  c1.api.vault.v1.VaultService.Create:
+    speakeasy-default-c1-api-vault-v1-vault-service-create:
+      requestBody:
+        application/json: {"displayName": "Nola.Fahey"}
+      responses:
+        "200":
+          application/json: {}
+  c1.api.vault.v1.VaultService.Delete:
+    speakeasy-default-c1-api-vault-v1-vault-service-delete:
+      parameters:
+        path:
+          id: "<id>"
+      requestBody:
+        application/json: {}
+      responses:
+        "200":
+          application/json: {}
+  c1.api.vault.v1.VaultService.Get:
+    speakeasy-default-c1-api-vault-v1-vault-service-get:
+      parameters:
+        path:
+          id: "<id>"
+      responses:
+        "200":
+          application/json: {}
+  c1.api.vault.v1.VaultService.Update:
+    speakeasy-default-c1-api-vault-v1-vault-service-update:
+      parameters:
+        path:
+          id: "<id>"
+      requestBody:
+        application/json: {}
+      responses:
+        "200":
+          application/json: {}
 examplesVersion: 1.0.2
 generatedTests: {}
+releaseNotes: "## Python SDK Changes Detected:\n* `sdk.connector_catalog.configuration_schema()`:  `response` **Changed** **Breaking** :warning:\n* `sdk.connector.get_connector_sync_download_url()`: **Added**\n* `sdk.request_catalog_management.create_requestable_entry()`: **Added**\n* `sdk.request_catalog_management.delete_requestable_entry()`: **Added**\n* `sdk.request_catalog_management.get_requestable_entry()`: **Added**\n* `sdk.functions.get_function_secret_encryption_key()`: **Added**\n* `sdk.functions_invocation.get()`: **Added**\n* `sdk.functions_invocation.list()`: **Added**\n* `sdk.vault.create()`: **Added**\n* `sdk.vault.delete()`: **Added**\n* `sdk.vault.get()`: **Added**\n* `sdk.vault.update()`: **Added**\n* `sdk.functions.commit()`: **Deleted** **Breaking** :warning:\n* `sdk.functions.get_commit()`: **Deleted** **Breaking** :warning:\n* `sdk.app_entitlements_proxy.create()`:  `response.app_entitlement_proxy_view.app_entitlement_proxy.disabled_at` **Added**\n* `sdk.app_entitlements_proxy.get()`:  `response.app_entitlement_proxy_view.app_entitlement_proxy.disabled_at` **Added**\n* `sdk.automation_execution.get_automation_execution()`:  `response` **Changed**\n* `sdk.automation_search.search_automation_template_versions()`:  `response.list.[]` **Changed**\n* `sdk.automation_search.search_automations()`:  `response.list.[]` **Changed**\n* `sdk.automation.create_automation()`: \n  *  `request` **Changed**\n  *  `response.automation` **Changed**\n* `sdk.automation.get_automation()`:  `response.automation` **Changed**\n* `sdk.automation.list_automations()`:  `response.list.[]` **Changed**\n* `sdk.automation.update_automation()`: \n  *  `request.update_automation_request.automation` **Changed**\n  *  `response.automation` **Changed**\n* `sdk.functions.create_function()`:  `response.function` **Changed**\n* `sdk.functions.get_function()`:  `response.function` **Changed**\n* `sdk.functions.invoke()`:  `response.invocation_id` **Added**\n* `sdk.functions.list_functions()`:  `response.list.[]` **Changed**\n* `sdk.functions.update_function()`: \n  *  `request.function` **Changed**\n  *  `response.function` **Changed**\n* `sdk.policies.create()`: \n  *  `request.policy_steps.{}.steps.[]` **Changed**\n  *  `response.policy.policy_steps.{}.steps.[]` **Changed**\n* `sdk.policies.get()`:  `response.policy.policy_steps.{}.steps.[]` **Changed**\n* `sdk.policies.list()`:  `response.list.[].policy_steps.{}.steps.[]` **Changed**\n* `sdk.policies.update()`: \n  *  `request.update_policy_request.policy.policy_steps.{}.steps.[]` **Changed**\n  *  `response.policy.policy_steps.{}.steps.[]` **Changed**\n* `sdk.request_schema.create()`: \n  *  `request.fields.[].oauth2field` **Added**\n  *  `response.request_schema.form` **Changed**\n* `sdk.request_schema.get()`:  `response.request_schema.form` **Changed**\n* `sdk.request_schema.update()`: \n  *  `request.request_schema_service_update_request.request_schema.form` **Changed**\n  *  `response.request_schema.form` **Changed**\n* `sdk.functions_search.search()`:  `response.list.[]` **Changed**\n* `sdk.policy_search.search()`:  `response.list.[].policy_steps.{}.steps.[]` **Changed**\n* `sdk.task_search.search()`: \n  *  `request.task_types.[].task_type_action` **Added**\n  *  `response.list.[].task` **Changed**\n* `sdk.task.create_grant_task()`:  `response.task_view.task` **Changed**\n* `sdk.task.create_offboarding_task()`:  `response.task_view.task` **Changed**\n* `sdk.task.create_revoke_task()`:  `response.task_view.task` **Changed**\n* `sdk.task.get()`:  `response.task_view.task` **Changed**\n* `sdk.task_actions.approve()`:  `response.task_view.task` **Changed**\n* `sdk.task_actions.approve_with_step_up()`:  `response.task_view.task` **Changed**\n* `sdk.task_actions.close()`:  `response.task_view.task` **Changed**\n* `sdk.task_actions.comment()`:  `response.task_view.task` **Changed**\n* `sdk.task_actions.deny()`:  `response.task_view.task` **Changed**\n* `sdk.task_actions.escalate_to_emergency_access()`:  `response.task_view.task` **Changed**\n* `sdk.task_actions.hard_reset()`:  `response.task_view.task` **Changed**\n* `sdk.task_actions.process_now()`:  `response.task_view.task` **Changed**\n* `sdk.task_actions.reassign()`:  `response.task_view.task` **Changed**\n* `sdk.task_actions.restart()`:  `response.task_view.task` **Changed**\n* `sdk.task_actions.skip_step()`:  `response.task_view.task` **Changed**\n* `sdk.task_actions.update_grant_duration()`:  `response.task_view.task` **Changed**\n* `sdk.task_actions.update_request_data()`:  `response.task_view.task` **Changed**\n* `sdk.user.get_user_profile_types()`:  `response.profile_types.[].slug` **Added**\n"

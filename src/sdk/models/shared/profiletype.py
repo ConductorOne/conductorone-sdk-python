@@ -23,6 +23,8 @@ class ProfileTypeTypedDict(TypedDict):
     r"""The priority field."""
     sizes: NotRequired[Nullable[List[int]]]
     r"""icon sizes"""
+    slug: NotRequired[str]
+    r"""The slug field."""
 
 
 class ProfileType(BaseModel):
@@ -46,9 +48,20 @@ class ProfileType(BaseModel):
     sizes: OptionalNullable[List[int]] = UNSET
     r"""icon sizes"""
 
+    slug: Optional[str] = None
+    r"""The slug field."""
+
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
-        optional_fields = ["description", "iconUrl", "id", "name", "priority", "sizes"]
+        optional_fields = [
+            "description",
+            "iconUrl",
+            "id",
+            "name",
+            "priority",
+            "sizes",
+            "slug",
+        ]
         nullable_fields = ["sizes"]
         null_default_fields = []
 

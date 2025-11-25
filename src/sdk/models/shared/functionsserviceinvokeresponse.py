@@ -4,6 +4,7 @@ from __future__ import annotations
 import pydantic
 from pydantic import model_serializer
 from sdk.types import BaseModel, Nullable, OptionalNullable, UNSET, UNSET_SENTINEL
+from typing import Optional
 from typing_extensions import Annotated, NotRequired, TypedDict
 
 
@@ -15,6 +16,8 @@ class FunctionsServiceInvokeResponseTypedDict(TypedDict):
 
     """
 
+    invocation_id: NotRequired[str]
+    r"""The invocationId field."""
     json_: NotRequired[Nullable[str]]
     r"""The json field.
     This field is part of the `resp` oneof.
@@ -30,7 +33,16 @@ class FunctionsServiceInvokeResponse(BaseModel):
 
     """
 
-    json_: Annotated[OptionalNullable[str], pydantic.Field(alias="json")] = UNSET
+    invocation_id: Annotated[Optional[str], pydantic.Field(alias="invocationId")] = None
+    r"""The invocationId field."""
+
+    json_: Annotated[
+        OptionalNullable[str],
+        pydantic.Field(
+            deprecated="warning: ** DEPRECATED ** - This will be removed in a future release, please migrate away from it as soon as possible.",
+            alias="json",
+        ),
+    ] = UNSET
     r"""The json field.
     This field is part of the `resp` oneof.
     See the documentation for `c1.api.functions.v1.FunctionsServiceInvokeResponse` for more details.
@@ -38,7 +50,7 @@ class FunctionsServiceInvokeResponse(BaseModel):
 
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
-        optional_fields = ["json"]
+        optional_fields = ["invocationId", "json"]
         nullable_fields = ["json"]
         null_default_fields = []
 

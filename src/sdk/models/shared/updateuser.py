@@ -114,7 +114,7 @@ class UpdateUser(BaseModel):
     def serialize_user_status_enum(self, value):
         if isinstance(value, str):
             try:
-                return Nullable[shared.UserStatusEnum](value)
+                return shared.UserStatusEnum(value)
             except ValueError:
                 return value
         return value

@@ -25,7 +25,27 @@ if TYPE_CHECKING:
     )
     from .accountprovision import AccountProvision, AccountProvisionTypedDict
     from .accountref import AccountRef, AccountRefTypedDict
+    from .action import Action, ActionTypedDict
+    from .actioninstance import ActionInstance, ActionInstanceTypedDict, State
+    from .actionoutcomecancelled import (
+        ActionOutcomeCancelled,
+        ActionOutcomeCancelledTypedDict,
+    )
+    from .actionoutcomedenied import ActionOutcomeDenied, ActionOutcomeDeniedTypedDict
+    from .actionoutcomeerror import ActionOutcomeError, ActionOutcomeErrorTypedDict
+    from .actionoutcomesuccess import (
+        ActionOutcomeSuccess,
+        ActionOutcomeSuccessTypedDict,
+    )
     from .actionprovision import ActionProvision, ActionProvisionTypedDict
+    from .actiontargetautomation import (
+        ActionTargetAutomation,
+        ActionTargetAutomationTypedDict,
+    )
+    from .actiontargetautomationinstance import (
+        ActionTargetAutomationInstance,
+        ActionTargetAutomationInstanceTypedDict,
+    )
     from .addappentitlementownerrequest import (
         AddAppEntitlementOwnerRequest,
         AddAppEntitlementOwnerRequestTypedDict,
@@ -68,10 +88,10 @@ if TYPE_CHECKING:
         AppAccessRequestDefaults,
         AppAccessRequestDefaults1,
         AppAccessRequestDefaults1TypedDict,
+        AppAccessRequestDefaultsState,
         AppAccessRequestDefaultsTypedDict,
         DurationUnset,
         DurationUnsetTypedDict,
-        State,
     )
     from .appactionsservicegeneratereportrequest import (
         AppActionsServiceGenerateReportRequest,
@@ -877,6 +897,10 @@ if TYPE_CHECKING:
         EntitlementExclusionList,
         EntitlementExclusionListTypedDict,
     )
+    from .entitlementexclusionlistcel import (
+        EntitlementExclusionListCel,
+        EntitlementExclusionListCelTypedDict,
+    )
     from .entitlementexclusionnone import (
         EntitlementExclusionNone,
         EntitlementExclusionNoneTypedDict,
@@ -893,6 +917,10 @@ if TYPE_CHECKING:
     from .entitlementinclusionlist import (
         EntitlementInclusionList,
         EntitlementInclusionListTypedDict,
+    )
+    from .entitlementinclusionlistcel import (
+        EntitlementInclusionListCel,
+        EntitlementInclusionListCelTypedDict,
     )
     from .entitlementownerapproval import (
         EntitlementOwnerApproval,
@@ -1019,6 +1047,19 @@ if TYPE_CHECKING:
         FunctionTypedDict,
     )
     from .functioncommit import FunctionCommit, FunctionCommitTypedDict
+    from .functioninvocation import (
+        FunctionInvocation,
+        FunctionInvocationStatus,
+        FunctionInvocationTypedDict,
+    )
+    from .functionsinvocationservicegetresponse import (
+        FunctionsInvocationServiceGetResponse,
+        FunctionsInvocationServiceGetResponseTypedDict,
+    )
+    from .functionsinvocationservicelistresponse import (
+        FunctionsInvocationServiceListResponse,
+        FunctionsInvocationServiceListResponseTypedDict,
+    )
     from .functionssearchrequest import (
         FunctionTypes,
         FunctionsSearchRequest,
@@ -1027,14 +1068,6 @@ if TYPE_CHECKING:
     from .functionssearchresponse import (
         FunctionsSearchResponse,
         FunctionsSearchResponseTypedDict,
-    )
-    from .functionsservicecommitrequest import (
-        FunctionsServiceCommitRequest,
-        FunctionsServiceCommitRequestTypedDict,
-    )
-    from .functionsservicecommitresponse import (
-        FunctionsServiceCommitResponse,
-        FunctionsServiceCommitResponseTypedDict,
     )
     from .functionsservicecreatefunctionrequest import (
         FunctionsServiceCreateFunctionRequest,
@@ -1061,13 +1094,13 @@ if TYPE_CHECKING:
         FunctionsServiceDeleteFunctionResponse,
         FunctionsServiceDeleteFunctionResponseTypedDict,
     )
-    from .functionsservicegetcommitresponse import (
-        FunctionsServiceGetCommitResponse,
-        FunctionsServiceGetCommitResponseTypedDict,
-    )
     from .functionsservicegetfunctionresponse import (
         FunctionsServiceGetFunctionResponse,
         FunctionsServiceGetFunctionResponseTypedDict,
+    )
+    from .functionsservicegetfunctionsecretencryptionkeyresponse import (
+        FunctionsServiceGetFunctionSecretEncryptionKeyResponse,
+        FunctionsServiceGetFunctionSecretEncryptionKeyResponseTypedDict,
     )
     from .functionsserviceinvokerequest import (
         FunctionsServiceInvokeRequest,
@@ -1125,6 +1158,8 @@ if TYPE_CHECKING:
     )
     from .getautomationexecutionresponse import (
         GetAutomationExecutionResponse,
+        GetAutomationExecutionResponseExpanded,
+        GetAutomationExecutionResponseExpandedTypedDict,
         GetAutomationExecutionResponseTypedDict,
     )
     from .getautomationresponse import (
@@ -1138,6 +1173,10 @@ if TYPE_CHECKING:
     from .getcomplianceframeworkattributevalueresponse import (
         GetComplianceFrameworkAttributeValueResponse,
         GetComplianceFrameworkAttributeValueResponseTypedDict,
+    )
+    from .getconnectorsyncdownloadurlresponse import (
+        GetConnectorSyncDownloadURLResponse,
+        GetConnectorSyncDownloadURLResponseTypedDict,
     )
     from .getpolicyresponse import GetPolicyResponse, GetPolicyResponseTypedDict
     from .getrisklevelattributevalueresponse import (
@@ -1173,6 +1212,7 @@ if TYPE_CHECKING:
     from .grantfoundtrigger import GrantFoundTrigger, GrantFoundTriggerTypedDict
     from .grantreason import GrantReason, GrantReasonTypedDict, ReferenceStrength
     from .granttriggerfilter import GrantTriggerFilter, GrantTriggerFilterTypedDict
+    from .groupauthzvault import GroupAuthzVault, GroupAuthzVaultTypedDict
     from .importfield import ImportField, ImportFieldTypedDict
     from .int32rules import Int32Rules, Int32RulesTypedDict
     from .int64field import Int64Field, Int64FieldTypedDict
@@ -1258,6 +1298,7 @@ if TYPE_CHECKING:
         ListStepUpProvidersResponse,
         ListStepUpProvidersResponseTypedDict,
     )
+    from .magicvault import MagicVault, MagicVaultTypedDict
     from .managerapproval import ManagerApproval, ManagerApprovalTypedDict
     from .managerapproval_input import (
         ManagerApprovalInput,
@@ -1282,6 +1323,8 @@ if TYPE_CHECKING:
         OAuth2AuthorizedAsInputTypedDict,
     )
     from .oauth2field import OAuth2Field, OAuth2FieldTypedDict
+    from .oauth2field1 import Oauth2Field1, Oauth2Field1TypedDict
+    from .oauth2fieldview import Oauth2FieldView, Oauth2FieldViewTypedDict
     from .optionsfield import OptionsField, OptionsFieldTypedDict
     from .orgdomain import OrgDomain, OrgDomainTypedDict
     from .passwordfield import PasswordField, PasswordFieldTypedDict
@@ -1444,6 +1487,7 @@ if TYPE_CHECKING:
         RemoveGrantDurationResponseTypedDict,
     )
     from .replacepolicy import ReplacePolicy, ReplacePolicyTypedDict
+    from .requestableentry import RequestableEntry, RequestableEntryTypedDict
     from .requestcatalog import (
         EnrollmentBehavior,
         RequestCatalog,
@@ -1480,13 +1524,33 @@ if TYPE_CHECKING:
         RequestCatalogManagementServiceCreateRequestUnenrollmentBehavior,
         RequestCatalogManagementServiceCreateRequestUnenrollmentEntitlementBehavior,
     )
+    from .requestcatalogmanagementservicecreaterequestableentryrequest import (
+        RequestCatalogManagementServiceCreateRequestableEntryRequest,
+        RequestCatalogManagementServiceCreateRequestableEntryRequestTypedDict,
+    )
+    from .requestcatalogmanagementservicecreaterequestableentryresponse import (
+        RequestCatalogManagementServiceCreateRequestableEntryResponse,
+        RequestCatalogManagementServiceCreateRequestableEntryResponseTypedDict,
+    )
     from .requestcatalogmanagementservicedeleterequest import (
         RequestCatalogManagementServiceDeleteRequest,
         RequestCatalogManagementServiceDeleteRequestTypedDict,
     )
+    from .requestcatalogmanagementservicedeleterequestableentryrequest import (
+        RequestCatalogManagementServiceDeleteRequestableEntryRequest,
+        RequestCatalogManagementServiceDeleteRequestableEntryRequestTypedDict,
+    )
+    from .requestcatalogmanagementservicedeleterequestableentryresponse import (
+        RequestCatalogManagementServiceDeleteRequestableEntryResponse,
+        RequestCatalogManagementServiceDeleteRequestableEntryResponseTypedDict,
+    )
     from .requestcatalogmanagementservicedeleteresponse import (
         RequestCatalogManagementServiceDeleteResponse,
         RequestCatalogManagementServiceDeleteResponseTypedDict,
+    )
+    from .requestcatalogmanagementservicegetrequestableentryresponse import (
+        RequestCatalogManagementServiceGetRequestableEntryResponse,
+        RequestCatalogManagementServiceGetRequestableEntryResponseTypedDict,
     )
     from .requestcatalogmanagementservicegetresponse import (
         RequestCatalogManagementServiceGetResponse,
@@ -2330,6 +2394,12 @@ if TYPE_CHECKING:
     )
     from .tasktype import TaskType, TaskTypeTypedDict
     from .tasktype_input import TaskTypeInput, TaskTypeInputTypedDict
+    from .tasktypeaction import (
+        TaskTypeAction,
+        TaskTypeActionOutcome,
+        TaskTypeActionTypedDict,
+    )
+    from .tasktypeaction_input import TaskTypeActionInput, TaskTypeActionInputTypedDict
     from .tasktypecertify import (
         TaskTypeCertify,
         TaskTypeCertifyOutcome,
@@ -2524,6 +2594,36 @@ if TYPE_CHECKING:
         UserWithAppEntitlementUserBindingView,
         UserWithAppEntitlementUserBindingViewTypedDict,
     )
+    from .vault import Vault, VaultTypedDict
+    from .vault_input import VaultInput, VaultInputTypedDict
+    from .vaultservicecreaterequest import (
+        VaultServiceCreateRequest,
+        VaultServiceCreateRequestTypedDict,
+    )
+    from .vaultservicecreateresponse import (
+        VaultServiceCreateResponse,
+        VaultServiceCreateResponseTypedDict,
+    )
+    from .vaultservicedeleterequest import (
+        VaultServiceDeleteRequest,
+        VaultServiceDeleteRequestTypedDict,
+    )
+    from .vaultservicedeleteresponse import (
+        VaultServiceDeleteResponse,
+        VaultServiceDeleteResponseTypedDict,
+    )
+    from .vaultservicegetresponse import (
+        VaultServiceGetResponse,
+        VaultServiceGetResponseTypedDict,
+    )
+    from .vaultserviceupdaterequest import (
+        VaultServiceUpdateRequest,
+        VaultServiceUpdateRequestTypedDict,
+    )
+    from .vaultserviceupdateresponse import (
+        VaultServiceUpdateResponse,
+        VaultServiceUpdateResponseTypedDict,
+    )
     from .wait import Wait, WaitTypedDict
     from .waitcondition import WaitCondition, WaitConditionTypedDict
     from .waitconditioninstance import (
@@ -2656,9 +2756,25 @@ __all__ = [
     "AccountRefTypedDict",
     "AccountType",
     "AccountTypes",
+    "Action",
+    "ActionInstance",
+    "ActionInstanceTypedDict",
+    "ActionOutcomeCancelled",
+    "ActionOutcomeCancelledTypedDict",
+    "ActionOutcomeDenied",
+    "ActionOutcomeDeniedTypedDict",
+    "ActionOutcomeError",
+    "ActionOutcomeErrorTypedDict",
+    "ActionOutcomeSuccess",
+    "ActionOutcomeSuccessTypedDict",
     "ActionProvision",
     "ActionProvisionTypedDict",
+    "ActionTargetAutomation",
+    "ActionTargetAutomationInstance",
+    "ActionTargetAutomationInstanceTypedDict",
+    "ActionTargetAutomationTypedDict",
     "ActionType",
+    "ActionTypedDict",
     "Actions",
     "AddAppEntitlementOwnerRequest",
     "AddAppEntitlementOwnerRequestTypedDict",
@@ -2690,6 +2806,7 @@ __all__ = [
     "AppAccessRequestDefaults",
     "AppAccessRequestDefaults1",
     "AppAccessRequestDefaults1TypedDict",
+    "AppAccessRequestDefaultsState",
     "AppAccessRequestDefaultsTypedDict",
     "AppActionsServiceGenerateReportRequest",
     "AppActionsServiceGenerateReportRequestTypedDict",
@@ -3245,6 +3362,8 @@ __all__ = [
     "EntitlementExclusionCriteria",
     "EntitlementExclusionCriteriaTypedDict",
     "EntitlementExclusionList",
+    "EntitlementExclusionListCel",
+    "EntitlementExclusionListCelTypedDict",
     "EntitlementExclusionListTypedDict",
     "EntitlementExclusionNone",
     "EntitlementExclusionNoneTypedDict",
@@ -3256,6 +3375,8 @@ __all__ = [
     "EntitlementInclusionCriteria",
     "EntitlementInclusionCriteriaTypedDict",
     "EntitlementInclusionList",
+    "EntitlementInclusionListCel",
+    "EntitlementInclusionListCelTypedDict",
     "EntitlementInclusionListTypedDict",
     "EntitlementOwnerApproval",
     "EntitlementOwnerApprovalTypedDict",
@@ -3379,17 +3500,20 @@ __all__ = [
     "FunctionCommitTypedDict",
     "FunctionInput",
     "FunctionInputTypedDict",
+    "FunctionInvocation",
+    "FunctionInvocationStatus",
+    "FunctionInvocationTypedDict",
     "FunctionType",
     "FunctionTypedDict",
     "FunctionTypes",
+    "FunctionsInvocationServiceGetResponse",
+    "FunctionsInvocationServiceGetResponseTypedDict",
+    "FunctionsInvocationServiceListResponse",
+    "FunctionsInvocationServiceListResponseTypedDict",
     "FunctionsSearchRequest",
     "FunctionsSearchRequestTypedDict",
     "FunctionsSearchResponse",
     "FunctionsSearchResponseTypedDict",
-    "FunctionsServiceCommitRequest",
-    "FunctionsServiceCommitRequestTypedDict",
-    "FunctionsServiceCommitResponse",
-    "FunctionsServiceCommitResponseTypedDict",
     "FunctionsServiceCreateFunctionRequest",
     "FunctionsServiceCreateFunctionRequestFunctionType",
     "FunctionsServiceCreateFunctionRequestTypedDict",
@@ -3403,10 +3527,10 @@ __all__ = [
     "FunctionsServiceDeleteFunctionRequestTypedDict",
     "FunctionsServiceDeleteFunctionResponse",
     "FunctionsServiceDeleteFunctionResponseTypedDict",
-    "FunctionsServiceGetCommitResponse",
-    "FunctionsServiceGetCommitResponseTypedDict",
     "FunctionsServiceGetFunctionResponse",
     "FunctionsServiceGetFunctionResponseTypedDict",
+    "FunctionsServiceGetFunctionSecretEncryptionKeyResponse",
+    "FunctionsServiceGetFunctionSecretEncryptionKeyResponseTypedDict",
     "FunctionsServiceInvokeRequest",
     "FunctionsServiceInvokeRequestTypedDict",
     "FunctionsServiceInvokeResponse",
@@ -3441,11 +3565,15 @@ __all__ = [
     "GetAttributeValueResponse",
     "GetAttributeValueResponseTypedDict",
     "GetAutomationExecutionResponse",
+    "GetAutomationExecutionResponseExpanded",
+    "GetAutomationExecutionResponseExpandedTypedDict",
     "GetAutomationExecutionResponseTypedDict",
     "GetAutomationResponse",
     "GetAutomationResponseTypedDict",
     "GetComplianceFrameworkAttributeValueResponse",
     "GetComplianceFrameworkAttributeValueResponseTypedDict",
+    "GetConnectorSyncDownloadURLResponse",
+    "GetConnectorSyncDownloadURLResponseTypedDict",
     "GetPolicyResponse",
     "GetPolicyResponseTypedDict",
     "GetRiskLevelAttributeValueResponse",
@@ -3477,6 +3605,8 @@ __all__ = [
     "GrantTriggerFilter",
     "GrantTriggerFilterTypedDict",
     "GrantedStatus",
+    "GroupAuthzVault",
+    "GroupAuthzVaultTypedDict",
     "IdentityMatching",
     "ImportField",
     "ImportFieldTypedDict",
@@ -3536,6 +3666,8 @@ __all__ = [
     "ListRolesResponseTypedDict",
     "ListStepUpProvidersResponse",
     "ListStepUpProvidersResponseTypedDict",
+    "MagicVault",
+    "MagicVaultTypedDict",
     "ManagerApproval",
     "ManagerApprovalInput",
     "ManagerApprovalInputTypedDict",
@@ -3565,6 +3697,10 @@ __all__ = [
     "OAuth2AuthorizedAsTypedDict",
     "OAuth2Field",
     "OAuth2FieldTypedDict",
+    "Oauth2Field1",
+    "Oauth2Field1TypedDict",
+    "Oauth2FieldView",
+    "Oauth2FieldViewTypedDict",
     "OptionsField",
     "OptionsFieldTypedDict",
     "OrgDomain",
@@ -3727,10 +3863,20 @@ __all__ = [
     "RequestCatalogManagementServiceCreateRequestTypedDict",
     "RequestCatalogManagementServiceCreateRequestUnenrollmentBehavior",
     "RequestCatalogManagementServiceCreateRequestUnenrollmentEntitlementBehavior",
+    "RequestCatalogManagementServiceCreateRequestableEntryRequest",
+    "RequestCatalogManagementServiceCreateRequestableEntryRequestTypedDict",
+    "RequestCatalogManagementServiceCreateRequestableEntryResponse",
+    "RequestCatalogManagementServiceCreateRequestableEntryResponseTypedDict",
     "RequestCatalogManagementServiceDeleteRequest",
     "RequestCatalogManagementServiceDeleteRequestTypedDict",
+    "RequestCatalogManagementServiceDeleteRequestableEntryRequest",
+    "RequestCatalogManagementServiceDeleteRequestableEntryRequestTypedDict",
+    "RequestCatalogManagementServiceDeleteRequestableEntryResponse",
+    "RequestCatalogManagementServiceDeleteRequestableEntryResponseTypedDict",
     "RequestCatalogManagementServiceDeleteResponse",
     "RequestCatalogManagementServiceDeleteResponseTypedDict",
+    "RequestCatalogManagementServiceGetRequestableEntryResponse",
+    "RequestCatalogManagementServiceGetRequestableEntryResponseTypedDict",
     "RequestCatalogManagementServiceGetResponse",
     "RequestCatalogManagementServiceGetResponseExpanded",
     "RequestCatalogManagementServiceGetResponseExpandedTypedDict",
@@ -3800,6 +3946,8 @@ __all__ = [
     "RequestSchemaServiceUpdateResponse",
     "RequestSchemaServiceUpdateResponseTypedDict",
     "RequestSchemaTypedDict",
+    "RequestableEntry",
+    "RequestableEntryTypedDict",
     "RequiredTogether",
     "RequiredTogetherTypedDict",
     "ResourceOwnerApproval",
@@ -4264,6 +4412,11 @@ __all__ = [
     "TaskState",
     "TaskStates",
     "TaskType",
+    "TaskTypeAction",
+    "TaskTypeActionInput",
+    "TaskTypeActionInputTypedDict",
+    "TaskTypeActionOutcome",
+    "TaskTypeActionTypedDict",
     "TaskTypeCertify",
     "TaskTypeCertifyInput",
     "TaskTypeCertifyInputTypedDict",
@@ -4411,6 +4564,24 @@ __all__ = [
     "UserViewTypedDict",
     "UserWithAppEntitlementUserBindingView",
     "UserWithAppEntitlementUserBindingViewTypedDict",
+    "Vault",
+    "VaultInput",
+    "VaultInputTypedDict",
+    "VaultServiceCreateRequest",
+    "VaultServiceCreateRequestTypedDict",
+    "VaultServiceCreateResponse",
+    "VaultServiceCreateResponseTypedDict",
+    "VaultServiceDeleteRequest",
+    "VaultServiceDeleteRequestTypedDict",
+    "VaultServiceDeleteResponse",
+    "VaultServiceDeleteResponseTypedDict",
+    "VaultServiceGetResponse",
+    "VaultServiceGetResponseTypedDict",
+    "VaultServiceUpdateRequest",
+    "VaultServiceUpdateRequestTypedDict",
+    "VaultServiceUpdateResponse",
+    "VaultServiceUpdateResponseTypedDict",
+    "VaultTypedDict",
     "Wait",
     "WaitCondition",
     "WaitConditionInstance",
@@ -4508,8 +4679,25 @@ _dynamic_imports: dict[str, str] = {
     "AccountProvisionTypedDict": ".accountprovision",
     "AccountRef": ".accountref",
     "AccountRefTypedDict": ".accountref",
+    "Action": ".action",
+    "ActionTypedDict": ".action",
+    "ActionInstance": ".actioninstance",
+    "ActionInstanceTypedDict": ".actioninstance",
+    "State": ".actioninstance",
+    "ActionOutcomeCancelled": ".actionoutcomecancelled",
+    "ActionOutcomeCancelledTypedDict": ".actionoutcomecancelled",
+    "ActionOutcomeDenied": ".actionoutcomedenied",
+    "ActionOutcomeDeniedTypedDict": ".actionoutcomedenied",
+    "ActionOutcomeError": ".actionoutcomeerror",
+    "ActionOutcomeErrorTypedDict": ".actionoutcomeerror",
+    "ActionOutcomeSuccess": ".actionoutcomesuccess",
+    "ActionOutcomeSuccessTypedDict": ".actionoutcomesuccess",
     "ActionProvision": ".actionprovision",
     "ActionProvisionTypedDict": ".actionprovision",
+    "ActionTargetAutomation": ".actiontargetautomation",
+    "ActionTargetAutomationTypedDict": ".actiontargetautomation",
+    "ActionTargetAutomationInstance": ".actiontargetautomationinstance",
+    "ActionTargetAutomationInstanceTypedDict": ".actiontargetautomationinstance",
     "AddAppEntitlementOwnerRequest": ".addappentitlementownerrequest",
     "AddAppEntitlementOwnerRequestTypedDict": ".addappentitlementownerrequest",
     "AddAppEntitlementOwnerResponse": ".addappentitlementownerresponse",
@@ -4542,10 +4730,10 @@ _dynamic_imports: dict[str, str] = {
     "AppAccessRequestDefaults": ".appaccessrequestdefaults",
     "AppAccessRequestDefaults1": ".appaccessrequestdefaults",
     "AppAccessRequestDefaults1TypedDict": ".appaccessrequestdefaults",
+    "AppAccessRequestDefaultsState": ".appaccessrequestdefaults",
     "AppAccessRequestDefaultsTypedDict": ".appaccessrequestdefaults",
     "DurationUnset": ".appaccessrequestdefaults",
     "DurationUnsetTypedDict": ".appaccessrequestdefaults",
-    "State": ".appaccessrequestdefaults",
     "AppActionsServiceGenerateReportRequest": ".appactionsservicegeneratereportrequest",
     "AppActionsServiceGenerateReportRequestTypedDict": ".appactionsservicegeneratereportrequest",
     "AppActionsServiceGenerateReportResponse": ".appactionsservicegeneratereportresponse",
@@ -5102,6 +5290,8 @@ _dynamic_imports: dict[str, str] = {
     "EntitlementExclusionCriteriaTypedDict": ".entitlementexclusioncriteria",
     "EntitlementExclusionList": ".entitlementexclusionlist",
     "EntitlementExclusionListTypedDict": ".entitlementexclusionlist",
+    "EntitlementExclusionListCel": ".entitlementexclusionlistcel",
+    "EntitlementExclusionListCelTypedDict": ".entitlementexclusionlistcel",
     "EntitlementExclusionNone": ".entitlementexclusionnone",
     "EntitlementExclusionNoneTypedDict": ".entitlementexclusionnone",
     "EntitlementFilter": ".entitlementfilter",
@@ -5112,6 +5302,8 @@ _dynamic_imports: dict[str, str] = {
     "EntitlementInclusionCriteriaTypedDict": ".entitlementinclusioncriteria",
     "EntitlementInclusionList": ".entitlementinclusionlist",
     "EntitlementInclusionListTypedDict": ".entitlementinclusionlist",
+    "EntitlementInclusionListCel": ".entitlementinclusionlistcel",
+    "EntitlementInclusionListCelTypedDict": ".entitlementinclusionlistcel",
     "EntitlementOwnerApproval": ".entitlementownerapproval",
     "EntitlementOwnerApprovalTypedDict": ".entitlementownerapproval",
     "EnumRules": ".enumrules",
@@ -5229,15 +5421,18 @@ _dynamic_imports: dict[str, str] = {
     "FunctionTypedDict": ".function",
     "FunctionCommit": ".functioncommit",
     "FunctionCommitTypedDict": ".functioncommit",
+    "FunctionInvocation": ".functioninvocation",
+    "FunctionInvocationStatus": ".functioninvocation",
+    "FunctionInvocationTypedDict": ".functioninvocation",
+    "FunctionsInvocationServiceGetResponse": ".functionsinvocationservicegetresponse",
+    "FunctionsInvocationServiceGetResponseTypedDict": ".functionsinvocationservicegetresponse",
+    "FunctionsInvocationServiceListResponse": ".functionsinvocationservicelistresponse",
+    "FunctionsInvocationServiceListResponseTypedDict": ".functionsinvocationservicelistresponse",
     "FunctionTypes": ".functionssearchrequest",
     "FunctionsSearchRequest": ".functionssearchrequest",
     "FunctionsSearchRequestTypedDict": ".functionssearchrequest",
     "FunctionsSearchResponse": ".functionssearchresponse",
     "FunctionsSearchResponseTypedDict": ".functionssearchresponse",
-    "FunctionsServiceCommitRequest": ".functionsservicecommitrequest",
-    "FunctionsServiceCommitRequestTypedDict": ".functionsservicecommitrequest",
-    "FunctionsServiceCommitResponse": ".functionsservicecommitresponse",
-    "FunctionsServiceCommitResponseTypedDict": ".functionsservicecommitresponse",
     "FunctionsServiceCreateFunctionRequest": ".functionsservicecreatefunctionrequest",
     "FunctionsServiceCreateFunctionRequestFunctionType": ".functionsservicecreatefunctionrequest",
     "FunctionsServiceCreateFunctionRequestTypedDict": ".functionsservicecreatefunctionrequest",
@@ -5251,10 +5446,10 @@ _dynamic_imports: dict[str, str] = {
     "FunctionsServiceDeleteFunctionRequestTypedDict": ".functionsservicedeletefunctionrequest",
     "FunctionsServiceDeleteFunctionResponse": ".functionsservicedeletefunctionresponse",
     "FunctionsServiceDeleteFunctionResponseTypedDict": ".functionsservicedeletefunctionresponse",
-    "FunctionsServiceGetCommitResponse": ".functionsservicegetcommitresponse",
-    "FunctionsServiceGetCommitResponseTypedDict": ".functionsservicegetcommitresponse",
     "FunctionsServiceGetFunctionResponse": ".functionsservicegetfunctionresponse",
     "FunctionsServiceGetFunctionResponseTypedDict": ".functionsservicegetfunctionresponse",
+    "FunctionsServiceGetFunctionSecretEncryptionKeyResponse": ".functionsservicegetfunctionsecretencryptionkeyresponse",
+    "FunctionsServiceGetFunctionSecretEncryptionKeyResponseTypedDict": ".functionsservicegetfunctionsecretencryptionkeyresponse",
     "FunctionsServiceInvokeRequest": ".functionsserviceinvokerequest",
     "FunctionsServiceInvokeRequestTypedDict": ".functionsserviceinvokerequest",
     "FunctionsServiceInvokeResponse": ".functionsserviceinvokeresponse",
@@ -5287,6 +5482,8 @@ _dynamic_imports: dict[str, str] = {
     "GetAttributeValueResponse": ".getattributevalueresponse",
     "GetAttributeValueResponseTypedDict": ".getattributevalueresponse",
     "GetAutomationExecutionResponse": ".getautomationexecutionresponse",
+    "GetAutomationExecutionResponseExpanded": ".getautomationexecutionresponse",
+    "GetAutomationExecutionResponseExpandedTypedDict": ".getautomationexecutionresponse",
     "GetAutomationExecutionResponseTypedDict": ".getautomationexecutionresponse",
     "GetAutomationResponse": ".getautomationresponse",
     "GetAutomationResponseTypedDict": ".getautomationresponse",
@@ -5294,6 +5491,8 @@ _dynamic_imports: dict[str, str] = {
     "GetAWSExternalIDResponseTypedDict": ".getawsexternalidresponse",
     "GetComplianceFrameworkAttributeValueResponse": ".getcomplianceframeworkattributevalueresponse",
     "GetComplianceFrameworkAttributeValueResponseTypedDict": ".getcomplianceframeworkattributevalueresponse",
+    "GetConnectorSyncDownloadURLResponse": ".getconnectorsyncdownloadurlresponse",
+    "GetConnectorSyncDownloadURLResponseTypedDict": ".getconnectorsyncdownloadurlresponse",
     "GetPolicyResponse": ".getpolicyresponse",
     "GetPolicyResponseTypedDict": ".getpolicyresponse",
     "GetRiskLevelAttributeValueResponse": ".getrisklevelattributevalueresponse",
@@ -5324,6 +5523,8 @@ _dynamic_imports: dict[str, str] = {
     "ReferenceStrength": ".grantreason",
     "GrantTriggerFilter": ".granttriggerfilter",
     "GrantTriggerFilterTypedDict": ".granttriggerfilter",
+    "GroupAuthzVault": ".groupauthzvault",
+    "GroupAuthzVaultTypedDict": ".groupauthzvault",
     "ImportField": ".importfield",
     "ImportFieldTypedDict": ".importfield",
     "Int32Rules": ".int32rules",
@@ -5382,6 +5583,8 @@ _dynamic_imports: dict[str, str] = {
     "ListRolesResponseTypedDict": ".listrolesresponse",
     "ListStepUpProvidersResponse": ".liststepupprovidersresponse",
     "ListStepUpProvidersResponseTypedDict": ".liststepupprovidersresponse",
+    "MagicVault": ".magicvault",
+    "MagicVaultTypedDict": ".magicvault",
     "ManagerApproval": ".managerapproval",
     "ManagerApprovalTypedDict": ".managerapproval",
     "ManagerApprovalInput": ".managerapproval_input",
@@ -5406,6 +5609,10 @@ _dynamic_imports: dict[str, str] = {
     "OAuth2AuthorizedAsInputTypedDict": ".oauth2authorizedas_input",
     "OAuth2Field": ".oauth2field",
     "OAuth2FieldTypedDict": ".oauth2field",
+    "Oauth2Field1": ".oauth2field1",
+    "Oauth2Field1TypedDict": ".oauth2field1",
+    "Oauth2FieldView": ".oauth2fieldview",
+    "Oauth2FieldViewTypedDict": ".oauth2fieldview",
     "OptionsField": ".optionsfield",
     "OptionsFieldTypedDict": ".optionsfield",
     "OrgDomain": ".orgdomain",
@@ -5533,6 +5740,8 @@ _dynamic_imports: dict[str, str] = {
     "RemoveGrantDurationResponseTypedDict": ".removegrantdurationresponse",
     "ReplacePolicy": ".replacepolicy",
     "ReplacePolicyTypedDict": ".replacepolicy",
+    "RequestableEntry": ".requestableentry",
+    "RequestableEntryTypedDict": ".requestableentry",
     "EnrollmentBehavior": ".requestcatalog",
     "RequestCatalog": ".requestcatalog",
     "RequestCatalogInput": ".requestcatalog",
@@ -5555,10 +5764,20 @@ _dynamic_imports: dict[str, str] = {
     "RequestCatalogManagementServiceCreateRequestTypedDict": ".requestcatalogmanagementservicecreaterequest",
     "RequestCatalogManagementServiceCreateRequestUnenrollmentBehavior": ".requestcatalogmanagementservicecreaterequest",
     "RequestCatalogManagementServiceCreateRequestUnenrollmentEntitlementBehavior": ".requestcatalogmanagementservicecreaterequest",
+    "RequestCatalogManagementServiceCreateRequestableEntryRequest": ".requestcatalogmanagementservicecreaterequestableentryrequest",
+    "RequestCatalogManagementServiceCreateRequestableEntryRequestTypedDict": ".requestcatalogmanagementservicecreaterequestableentryrequest",
+    "RequestCatalogManagementServiceCreateRequestableEntryResponse": ".requestcatalogmanagementservicecreaterequestableentryresponse",
+    "RequestCatalogManagementServiceCreateRequestableEntryResponseTypedDict": ".requestcatalogmanagementservicecreaterequestableentryresponse",
     "RequestCatalogManagementServiceDeleteRequest": ".requestcatalogmanagementservicedeleterequest",
     "RequestCatalogManagementServiceDeleteRequestTypedDict": ".requestcatalogmanagementservicedeleterequest",
+    "RequestCatalogManagementServiceDeleteRequestableEntryRequest": ".requestcatalogmanagementservicedeleterequestableentryrequest",
+    "RequestCatalogManagementServiceDeleteRequestableEntryRequestTypedDict": ".requestcatalogmanagementservicedeleterequestableentryrequest",
+    "RequestCatalogManagementServiceDeleteRequestableEntryResponse": ".requestcatalogmanagementservicedeleterequestableentryresponse",
+    "RequestCatalogManagementServiceDeleteRequestableEntryResponseTypedDict": ".requestcatalogmanagementservicedeleterequestableentryresponse",
     "RequestCatalogManagementServiceDeleteResponse": ".requestcatalogmanagementservicedeleteresponse",
     "RequestCatalogManagementServiceDeleteResponseTypedDict": ".requestcatalogmanagementservicedeleteresponse",
+    "RequestCatalogManagementServiceGetRequestableEntryResponse": ".requestcatalogmanagementservicegetrequestableentryresponse",
+    "RequestCatalogManagementServiceGetRequestableEntryResponseTypedDict": ".requestcatalogmanagementservicegetrequestableentryresponse",
     "RequestCatalogManagementServiceGetResponse": ".requestcatalogmanagementservicegetresponse",
     "RequestCatalogManagementServiceGetResponseExpanded": ".requestcatalogmanagementservicegetresponse",
     "RequestCatalogManagementServiceGetResponseExpandedTypedDict": ".requestcatalogmanagementservicegetresponse",
@@ -6118,6 +6337,11 @@ _dynamic_imports: dict[str, str] = {
     "TaskTypeTypedDict": ".tasktype",
     "TaskTypeInput": ".tasktype_input",
     "TaskTypeInputTypedDict": ".tasktype_input",
+    "TaskTypeAction": ".tasktypeaction",
+    "TaskTypeActionOutcome": ".tasktypeaction",
+    "TaskTypeActionTypedDict": ".tasktypeaction",
+    "TaskTypeActionInput": ".tasktypeaction_input",
+    "TaskTypeActionInputTypedDict": ".tasktypeaction_input",
     "TaskTypeCertify": ".tasktypecertify",
     "TaskTypeCertifyOutcome": ".tasktypecertify",
     "TaskTypeCertifyTypedDict": ".tasktypecertify",
@@ -6257,6 +6481,24 @@ _dynamic_imports: dict[str, str] = {
     "UserViewTypedDict": ".userview",
     "UserWithAppEntitlementUserBindingView": ".userwithappentitlementuserbindingview",
     "UserWithAppEntitlementUserBindingViewTypedDict": ".userwithappentitlementuserbindingview",
+    "Vault": ".vault",
+    "VaultTypedDict": ".vault",
+    "VaultInput": ".vault_input",
+    "VaultInputTypedDict": ".vault_input",
+    "VaultServiceCreateRequest": ".vaultservicecreaterequest",
+    "VaultServiceCreateRequestTypedDict": ".vaultservicecreaterequest",
+    "VaultServiceCreateResponse": ".vaultservicecreateresponse",
+    "VaultServiceCreateResponseTypedDict": ".vaultservicecreateresponse",
+    "VaultServiceDeleteRequest": ".vaultservicedeleterequest",
+    "VaultServiceDeleteRequestTypedDict": ".vaultservicedeleterequest",
+    "VaultServiceDeleteResponse": ".vaultservicedeleteresponse",
+    "VaultServiceDeleteResponseTypedDict": ".vaultservicedeleteresponse",
+    "VaultServiceGetResponse": ".vaultservicegetresponse",
+    "VaultServiceGetResponseTypedDict": ".vaultservicegetresponse",
+    "VaultServiceUpdateRequest": ".vaultserviceupdaterequest",
+    "VaultServiceUpdateRequestTypedDict": ".vaultserviceupdaterequest",
+    "VaultServiceUpdateResponse": ".vaultserviceupdateresponse",
+    "VaultServiceUpdateResponseTypedDict": ".vaultserviceupdateresponse",
     "Wait": ".wait",
     "WaitTypedDict": ".wait",
     "WaitCondition": ".waitcondition",

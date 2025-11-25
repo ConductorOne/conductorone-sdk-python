@@ -21,7 +21,7 @@ class DurationUnset(BaseModel):
     pass
 
 
-class State(str, Enum, metaclass=utils.OpenEnumMeta):
+class AppAccessRequestDefaultsState(str, Enum, metaclass=utils.OpenEnumMeta):
     r"""The last applied state of the app access request defaults."""
 
     APP_ACCESS_REQUEST_DEFAULTS_LAST_APPLY_STATE_UNSPECIFIED = (
@@ -72,7 +72,7 @@ class AppAccessRequestDefaultsTypedDict(TypedDict):
     r"""The requestPolicyId field."""
     resource_type_ids: NotRequired[Nullable[List[str]]]
     r"""The app resource type ids for which the app access request defaults are applied."""
-    state: NotRequired[State]
+    state: NotRequired[AppAccessRequestDefaultsState]
     r"""The last applied state of the app access request defaults."""
 
 
@@ -126,14 +126,17 @@ class AppAccessRequestDefaults(BaseModel):
     ] = UNSET
     r"""The app resource type ids for which the app access request defaults are applied."""
 
-    state: Annotated[Optional[State], PlainValidator(validate_open_enum(False))] = None
+    state: Annotated[
+        Optional[AppAccessRequestDefaultsState],
+        PlainValidator(validate_open_enum(False)),
+    ] = None
     r"""The last applied state of the app access request defaults."""
 
     @field_serializer("state")
     def serialize_state(self, value):
         if isinstance(value, str):
             try:
-                return shared.State(value)
+                return shared.AppAccessRequestDefaultsState(value)
             except ValueError:
                 return value
         return value
@@ -203,7 +206,7 @@ class AppAccessRequestDefaults1TypedDict(TypedDict):
     r"""The requestPolicyId field."""
     resource_type_ids: NotRequired[Nullable[List[str]]]
     r"""The app resource type ids for which the app access request defaults are applied."""
-    state: NotRequired[State]
+    state: NotRequired[AppAccessRequestDefaultsState]
     r"""The last applied state of the app access request defaults."""
 
 
@@ -254,14 +257,17 @@ class AppAccessRequestDefaults1(BaseModel):
     ] = UNSET
     r"""The app resource type ids for which the app access request defaults are applied."""
 
-    state: Annotated[Optional[State], PlainValidator(validate_open_enum(False))] = None
+    state: Annotated[
+        Optional[AppAccessRequestDefaultsState],
+        PlainValidator(validate_open_enum(False)),
+    ] = None
     r"""The last applied state of the app access request defaults."""
 
     @field_serializer("state")
     def serialize_state(self, value):
         if isinstance(value, str):
             try:
-                return shared.State(value)
+                return shared.AppAccessRequestDefaultsState(value)
             except ValueError:
                 return value
         return value

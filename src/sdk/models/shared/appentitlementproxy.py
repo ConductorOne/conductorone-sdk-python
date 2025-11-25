@@ -19,6 +19,7 @@ class AppEntitlementProxyTypedDict(TypedDict):
 
     created_at: NotRequired[datetime]
     deleted_at: NotRequired[datetime]
+    disabled_at: NotRequired[datetime]
     dst_app_entitlement_id: NotRequired[str]
     r"""The dstAppEntitlementId field."""
     dst_app_id: NotRequired[str]
@@ -49,6 +50,10 @@ class AppEntitlementProxy(BaseModel):
     created_at: Annotated[Optional[datetime], pydantic.Field(alias="createdAt")] = None
 
     deleted_at: Annotated[Optional[datetime], pydantic.Field(alias="deletedAt")] = None
+
+    disabled_at: Annotated[Optional[datetime], pydantic.Field(alias="disabledAt")] = (
+        None
+    )
 
     dst_app_entitlement_id: Annotated[
         Optional[str], pydantic.Field(alias="dstAppEntitlementId")
@@ -85,6 +90,7 @@ class AppEntitlementProxy(BaseModel):
         optional_fields = [
             "createdAt",
             "deletedAt",
+            "disabledAt",
             "dstAppEntitlementId",
             "dstAppId",
             "implicit",

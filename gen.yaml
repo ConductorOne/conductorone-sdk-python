@@ -16,12 +16,13 @@ generation:
     hoistGlobalSecurity: true
   schemas:
     allOfMergeStrategy: shallowMerge
+  requestBodyFieldName: ""
   tests:
     generateTests: true
     generateNewTests: false
     skipResponseBodyAssertions: false
 python:
-  version: 0.16.1
+  version: 0.17.0
   additionalDependencies:
     dev: {}
     main:
@@ -59,6 +60,7 @@ python:
       webhooks: models/webhooks
   inputModelSuffix: input
   legacyPyright: true
+  license: ""
   maxMethodParams: 0
   methodArguments: infer-optional-args
   moduleName: ""

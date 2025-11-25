@@ -4,6 +4,7 @@ from __future__ import annotations
 from .boolfield import BoolField, BoolFieldTypedDict
 from .filefield import FileField, FileFieldTypedDict
 from .int64field import Int64Field, Int64FieldTypedDict
+from .oauth2field1 import Oauth2Field1, Oauth2Field1TypedDict
 from .stringfield import StringField, StringFieldTypedDict
 from .stringslicefield import StringSliceField, StringSliceFieldTypedDict
 import pydantic
@@ -22,6 +23,7 @@ class FieldInputTypedDict(TypedDict):
     - stringSliceField
     - int64Field
     - fileField
+    - oauth2Field
 
     """
 
@@ -60,6 +62,13 @@ class FieldInputTypedDict(TypedDict):
 
     This message contains a oneof named _rules. Only a single field of the following list may be set at a time:
     - rules
+
+    """
+    oauth2_field: NotRequired[Nullable[Oauth2Field1TypedDict]]
+    r"""The Oauth2Field message.
+
+    This message contains a oneof named view. Only a single field of the following list may be set at a time:
+    - oauth2FieldView
 
     """
     string_field: NotRequired[Nullable[StringFieldTypedDict]]
@@ -103,6 +112,7 @@ class FieldInput(BaseModel):
     - stringSliceField
     - int64Field
     - fileField
+    - oauth2Field
 
     """
 
@@ -152,6 +162,16 @@ class FieldInput(BaseModel):
 
     """
 
+    oauth2_field: Annotated[
+        OptionalNullable[Oauth2Field1], pydantic.Field(alias="oauth2Field")
+    ] = UNSET
+    r"""The Oauth2Field message.
+
+    This message contains a oneof named view. Only a single field of the following list may be set at a time:
+    - oauth2FieldView
+
+    """
+
     string_field: Annotated[
         OptionalNullable[StringField], pydantic.Field(alias="stringField")
     ] = UNSET
@@ -197,6 +217,7 @@ class FieldInput(BaseModel):
             "BoolField",
             "FileField",
             "Int64Field",
+            "Oauth2Field",
             "StringField",
             "StringSliceField",
             "description",
@@ -207,6 +228,7 @@ class FieldInput(BaseModel):
             "BoolField",
             "FileField",
             "Int64Field",
+            "Oauth2Field",
             "StringField",
             "StringSliceField",
         ]

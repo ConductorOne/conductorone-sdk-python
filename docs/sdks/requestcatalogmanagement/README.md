@@ -9,11 +9,14 @@
 * [add_app_entitlements](#add_app_entitlements) - Add App Entitlements
 * [create](#create) - Create
 * [create_bundle_automation](#create_bundle_automation) - Create Bundle Automation
+* [create_requestable_entry](#create_requestable_entry) - Create Requestable Entry
 * [delete](#delete) - Delete
 * [delete_bundle_automation](#delete_bundle_automation) - Delete Bundle Automation
+* [delete_requestable_entry](#delete_requestable_entry) - Delete Requestable Entry
 * [force_run_bundle_automation](#force_run_bundle_automation) - Force Run Bundle Automation
 * [get](#get) - Get
 * [get_bundle_automation](#get_bundle_automation) - Get Bundle Automation
+* [get_requestable_entry](#get_requestable_entry) - Get Requestable Entry
 * [list](#list) - List
 * [list_all_entitlement_ids_per_app](#list_all_entitlement_ids_per_app) - List All Entitlement Ids Per App
 * [list_entitlements_for_access](#list_entitlements_for_access) - List Entitlements For Access
@@ -220,6 +223,56 @@ with SDK(
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
+## create_requestable_entry
+
+Create a single requestable entry
+
+### Example Usage
+
+<!-- UsageSnippet language="python" operationID="c1.api.requestcatalog.v1.RequestCatalogManagementService.CreateRequestableEntry" method="put" path="/api/v1/catalogs/{catalog_id}/requestable_entries/{app_id}/{entitlement_id}" -->
+```python
+from sdk import SDK
+from sdk.models import shared
+
+
+with SDK(
+    security=shared.Security(
+        bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
+        oauth="<YOUR_OAUTH_HERE>",
+    ),
+) as s_client:
+
+    res = s_client.request_catalog_management.create_requestable_entry(request={
+        "request_catalog_management_service_create_requestable_entry_request": {},
+        "app_id": "<id>",
+        "catalog_id": "<id>",
+        "entitlement_id": "<id>",
+    })
+
+    assert res.request_catalog_management_service_create_requestable_entry_response is not None
+
+    # Handle response
+    print(res.request_catalog_management_service_create_requestable_entry_response)
+
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                                                    | Type                                                                                                                                                                                                         | Required                                                                                                                                                                                                     | Description                                                                                                                                                                                                  |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                                                    | [operations.C1APIRequestcatalogV1RequestCatalogManagementServiceCreateRequestableEntryRequest](../../models/operations/c1apirequestcatalogv1requestcatalogmanagementservicecreaterequestableentryrequest.md) | :heavy_check_mark:                                                                                                                                                                                           | The request object to use for the request.                                                                                                                                                                   |
+| `retries`                                                                                                                                                                                                    | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)                                                                                                                                             | :heavy_minus_sign:                                                                                                                                                                                           | Configuration to override the default retry behavior of the client.                                                                                                                                          |
+
+### Response
+
+**[operations.C1APIRequestcatalogV1RequestCatalogManagementServiceCreateRequestableEntryResponse](../../models/operations/c1apirequestcatalogv1requestcatalogmanagementservicecreaterequestableentryresponse.md)**
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
+
 ## delete
 
 Delete a catalog.
@@ -309,6 +362,56 @@ with SDK(
 ### Response
 
 **[operations.C1APIRequestcatalogV1RequestCatalogManagementServiceDeleteBundleAutomationResponse](../../models/operations/c1apirequestcatalogv1requestcatalogmanagementservicedeletebundleautomationresponse.md)**
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
+
+## delete_requestable_entry
+
+Delete a single requestable entry
+
+### Example Usage
+
+<!-- UsageSnippet language="python" operationID="c1.api.requestcatalog.v1.RequestCatalogManagementService.DeleteRequestableEntry" method="delete" path="/api/v1/catalogs/{catalog_id}/requestable_entries/{app_id}/{entitlement_id}" -->
+```python
+from sdk import SDK
+from sdk.models import shared
+
+
+with SDK(
+    security=shared.Security(
+        bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
+        oauth="<YOUR_OAUTH_HERE>",
+    ),
+) as s_client:
+
+    res = s_client.request_catalog_management.delete_requestable_entry(request={
+        "request_catalog_management_service_delete_requestable_entry_request": {},
+        "app_id": "<id>",
+        "catalog_id": "<id>",
+        "entitlement_id": "<id>",
+    })
+
+    assert res.request_catalog_management_service_delete_requestable_entry_response is not None
+
+    # Handle response
+    print(res.request_catalog_management_service_delete_requestable_entry_response)
+
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                                                    | Type                                                                                                                                                                                                         | Required                                                                                                                                                                                                     | Description                                                                                                                                                                                                  |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                                                    | [operations.C1APIRequestcatalogV1RequestCatalogManagementServiceDeleteRequestableEntryRequest](../../models/operations/c1apirequestcatalogv1requestcatalogmanagementservicedeleterequestableentryrequest.md) | :heavy_check_mark:                                                                                                                                                                                           | The request object to use for the request.                                                                                                                                                                   |
+| `retries`                                                                                                                                                                                                    | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)                                                                                                                                             | :heavy_minus_sign:                                                                                                                                                                                           | Configuration to override the default retry behavior of the client.                                                                                                                                          |
+
+### Response
+
+**[operations.C1APIRequestcatalogV1RequestCatalogManagementServiceDeleteRequestableEntryResponse](../../models/operations/c1apirequestcatalogv1requestcatalogmanagementservicedeleterequestableentryresponse.md)**
 
 ### Errors
 
@@ -451,6 +554,55 @@ with SDK(
 ### Response
 
 **[operations.C1APIRequestcatalogV1RequestCatalogManagementServiceGetBundleAutomationResponse](../../models/operations/c1apirequestcatalogv1requestcatalogmanagementservicegetbundleautomationresponse.md)**
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
+
+## get_requestable_entry
+
+Get a single requestable entry
+
+### Example Usage
+
+<!-- UsageSnippet language="python" operationID="c1.api.requestcatalog.v1.RequestCatalogManagementService.GetRequestableEntry" method="get" path="/api/v1/catalogs/{catalog_id}/requestable_entries/{app_id}/{entitlement_id}" -->
+```python
+from sdk import SDK
+from sdk.models import shared
+
+
+with SDK(
+    security=shared.Security(
+        bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
+        oauth="<YOUR_OAUTH_HERE>",
+    ),
+) as s_client:
+
+    res = s_client.request_catalog_management.get_requestable_entry(request={
+        "app_id": "<id>",
+        "catalog_id": "<id>",
+        "entitlement_id": "<id>",
+    })
+
+    assert res.request_catalog_management_service_get_requestable_entry_response is not None
+
+    # Handle response
+    print(res.request_catalog_management_service_get_requestable_entry_response)
+
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                                              | Type                                                                                                                                                                                                   | Required                                                                                                                                                                                               | Description                                                                                                                                                                                            |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                                              | [operations.C1APIRequestcatalogV1RequestCatalogManagementServiceGetRequestableEntryRequest](../../models/operations/c1apirequestcatalogv1requestcatalogmanagementservicegetrequestableentryrequest.md) | :heavy_check_mark:                                                                                                                                                                                     | The request object to use for the request.                                                                                                                                                             |
+| `retries`                                                                                                                                                                                              | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)                                                                                                                                       | :heavy_minus_sign:                                                                                                                                                                                     | Configuration to override the default retry behavior of the client.                                                                                                                                    |
+
+### Response
+
+**[operations.C1APIRequestcatalogV1RequestCatalogManagementServiceGetRequestableEntryResponse](../../models/operations/c1apirequestcatalogv1requestcatalogmanagementservicegetrequestableentryresponse.md)**
 
 ### Errors
 

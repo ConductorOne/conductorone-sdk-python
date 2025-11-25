@@ -355,7 +355,7 @@ class StringRules(BaseModel):
     def serialize_well_known_regex(self, value):
         if isinstance(value, str):
             try:
-                return Nullable[shared.WellKnownRegex](value)
+                return shared.WellKnownRegex(value)
             except ValueError:
                 return value
         return value

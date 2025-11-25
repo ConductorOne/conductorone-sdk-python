@@ -9,6 +9,10 @@ from .entitlementexclusionlist import (
     EntitlementExclusionList,
     EntitlementExclusionListTypedDict,
 )
+from .entitlementexclusionlistcel import (
+    EntitlementExclusionListCel,
+    EntitlementExclusionListCelTypedDict,
+)
 from .entitlementexclusionnone import (
     EntitlementExclusionNone,
     EntitlementExclusionNoneTypedDict,
@@ -24,6 +28,10 @@ from .entitlementinclusioncriteria import (
 from .entitlementinclusionlist import (
     EntitlementInclusionList,
     EntitlementInclusionListTypedDict,
+)
+from .entitlementinclusionlistcel import (
+    EntitlementInclusionListCel,
+    EntitlementInclusionListCelTypedDict,
 )
 from .userref import UserRef, UserRefTypedDict
 import pydantic
@@ -46,12 +54,14 @@ class CreateRevokeTasksV2TypedDict(TypedDict):
     - inclusionList
     - inclusionAll
     - inclusionCriteria
+    - inclusionListCel
 
 
     This message contains a oneof named exclusion. Only a single field of the following list may be set at a time:
     - exclusionNone
     - exclusionList
     - exclusionCriteria
+    - exclusionListCel
 
     """
 
@@ -61,6 +71,10 @@ class CreateRevokeTasksV2TypedDict(TypedDict):
     r"""The EntitlementExclusionCriteria message."""
     entitlement_exclusion_list: NotRequired[Nullable[EntitlementExclusionListTypedDict]]
     r"""The EntitlementExclusionList message."""
+    entitlement_exclusion_list_cel: NotRequired[
+        Nullable[EntitlementExclusionListCelTypedDict]
+    ]
+    r"""The EntitlementExclusionListCel message."""
     entitlement_exclusion_none: NotRequired[Nullable[EntitlementExclusionNoneTypedDict]]
     r"""The EntitlementExclusionNone message."""
     entitlement_inclusion_all: NotRequired[Nullable[EntitlementInclusionAllTypedDict]]
@@ -71,6 +85,10 @@ class CreateRevokeTasksV2TypedDict(TypedDict):
     r"""The EntitlementInclusionCriteria message."""
     entitlement_inclusion_list: NotRequired[Nullable[EntitlementInclusionListTypedDict]]
     r"""The EntitlementInclusionList message."""
+    entitlement_inclusion_list_cel: NotRequired[
+        Nullable[EntitlementInclusionListCelTypedDict]
+    ]
+    r"""The EntitlementInclusionListCel message."""
     user_ref: NotRequired[UserRefTypedDict]
     r"""A reference to a user."""
     use_subject_user: NotRequired[Nullable[bool]]
@@ -98,12 +116,14 @@ class CreateRevokeTasksV2(BaseModel):
     - inclusionList
     - inclusionAll
     - inclusionCriteria
+    - inclusionListCel
 
 
     This message contains a oneof named exclusion. Only a single field of the following list may be set at a time:
     - exclusionNone
     - exclusionList
     - exclusionCriteria
+    - exclusionListCel
 
     """
 
@@ -118,6 +138,12 @@ class CreateRevokeTasksV2(BaseModel):
         pydantic.Field(alias="exclusionList"),
     ] = UNSET
     r"""The EntitlementExclusionList message."""
+
+    entitlement_exclusion_list_cel: Annotated[
+        OptionalNullable[EntitlementExclusionListCel],
+        pydantic.Field(alias="exclusionListCel"),
+    ] = UNSET
+    r"""The EntitlementExclusionListCel message."""
 
     entitlement_exclusion_none: Annotated[
         OptionalNullable[EntitlementExclusionNone],
@@ -141,6 +167,12 @@ class CreateRevokeTasksV2(BaseModel):
         pydantic.Field(alias="inclusionList"),
     ] = UNSET
     r"""The EntitlementInclusionList message."""
+
+    entitlement_inclusion_list_cel: Annotated[
+        OptionalNullable[EntitlementInclusionListCel],
+        pydantic.Field(alias="inclusionListCel"),
+    ] = UNSET
+    r"""The EntitlementInclusionListCel message."""
 
     user_ref: Annotated[Optional[UserRef], pydantic.Field(alias="userRef")] = None
     r"""A reference to a user."""
@@ -166,10 +198,12 @@ class CreateRevokeTasksV2(BaseModel):
         optional_fields = [
             "EntitlementExclusionCriteria",
             "EntitlementExclusionList",
+            "EntitlementExclusionListCel",
             "EntitlementExclusionNone",
             "EntitlementInclusionAll",
             "EntitlementInclusionCriteria",
             "EntitlementInclusionList",
+            "EntitlementInclusionListCel",
             "UserRef",
             "useSubjectUser",
             "userIdCel",
@@ -177,10 +211,12 @@ class CreateRevokeTasksV2(BaseModel):
         nullable_fields = [
             "EntitlementExclusionCriteria",
             "EntitlementExclusionList",
+            "EntitlementExclusionListCel",
             "EntitlementExclusionNone",
             "EntitlementInclusionAll",
             "EntitlementInclusionCriteria",
             "EntitlementInclusionList",
+            "EntitlementInclusionListCel",
             "useSubjectUser",
             "userIdCel",
         ]

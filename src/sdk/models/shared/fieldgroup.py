@@ -12,36 +12,34 @@ class FieldGroupTypedDict(TypedDict):
     r"""The FieldGroup message."""
 
     display_name: NotRequired[str]
-    r"""Nice name this group (e.g. renders as a Tab label)"""
-    field_names: NotRequired[Nullable[List[str]]]
-    r"""Field names are \"guaranteed\" to be unique, but can be repeated in and between lists."""
+    r"""The displayName field."""
+    fields: NotRequired[Nullable[List[str]]]
+    r"""The fields field."""
     help_text: NotRequired[str]
-    r"""Optional. User-facing help text."""
+    r"""The helpText field."""
     name: NotRequired[str]
-    r"""Unique ID."""
+    r"""The name field."""
 
 
 class FieldGroup(BaseModel):
     r"""The FieldGroup message."""
 
     display_name: Annotated[Optional[str], pydantic.Field(alias="displayName")] = None
-    r"""Nice name this group (e.g. renders as a Tab label)"""
+    r"""The displayName field."""
 
-    field_names: Annotated[
-        OptionalNullable[List[str]], pydantic.Field(alias="fieldNames")
-    ] = UNSET
-    r"""Field names are \"guaranteed\" to be unique, but can be repeated in and between lists."""
+    fields: OptionalNullable[List[str]] = UNSET
+    r"""The fields field."""
 
     help_text: Annotated[Optional[str], pydantic.Field(alias="helpText")] = None
-    r"""Optional. User-facing help text."""
+    r"""The helpText field."""
 
     name: Optional[str] = None
-    r"""Unique ID."""
+    r"""The name field."""
 
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
-        optional_fields = ["displayName", "fieldNames", "helpText", "name"]
-        nullable_fields = ["fieldNames"]
+        optional_fields = ["displayName", "fields", "helpText", "name"]
+        nullable_fields = ["fields"]
         null_default_fields = []
 
         serialized = handler(self)

@@ -4,13 +4,13 @@ from __future__ import annotations
 from datetime import datetime
 from enum import Enum
 import pydantic
-from pydantic import field_serializer
+from pydantic import field_serializer, model_serializer
 from pydantic.functional_validators import PlainValidator
 from sdk import utils
 from sdk.models import shared
-from sdk.types import BaseModel
+from sdk.types import BaseModel, Nullable, OptionalNullable, UNSET, UNSET_SENTINEL
 from sdk.utils import validate_open_enum
-from typing import Optional
+from typing import Dict, List, Optional
 from typing_extensions import Annotated, NotRequired, TypedDict
 
 
@@ -30,6 +30,8 @@ class FunctionTypedDict(TypedDict):
     r"""The description field."""
     display_name: NotRequired[str]
     r"""The displayName field."""
+    encrypted_values: NotRequired[Dict[str, str]]
+    r"""The encryptedValues field."""
     function_type: NotRequired[FunctionType]
     r"""The functionType field."""
     head: NotRequired[str]
@@ -38,6 +40,8 @@ class FunctionTypedDict(TypedDict):
     r"""The id field."""
     is_draft: NotRequired[bool]
     r"""The isDraft field."""
+    outbound_network_allowlist: NotRequired[Nullable[List[str]]]
+    r"""The outboundNetworkAllowlist field."""
     published_commit_id: NotRequired[str]
     r"""The publishedCommitId field."""
     updated_at: NotRequired[datetime]
@@ -56,6 +60,11 @@ class Function(BaseModel):
     display_name: Annotated[Optional[str], pydantic.Field(alias="displayName")] = None
     r"""The displayName field."""
 
+    encrypted_values: Annotated[
+        Optional[Dict[str, str]], pydantic.Field(alias="encryptedValues")
+    ] = None
+    r"""The encryptedValues field."""
+
     function_type: Annotated[
         Annotated[Optional[FunctionType], PlainValidator(validate_open_enum(False))],
         pydantic.Field(alias="functionType"),
@@ -70,6 +79,11 @@ class Function(BaseModel):
 
     is_draft: Annotated[Optional[bool], pydantic.Field(alias="isDraft")] = None
     r"""The isDraft field."""
+
+    outbound_network_allowlist: Annotated[
+        OptionalNullable[List[str]], pydantic.Field(alias="outboundNetworkAllowlist")
+    ] = UNSET
+    r"""The outboundNetworkAllowlist field."""
 
     published_commit_id: Annotated[
         Optional[str], pydantic.Field(alias="publishedCommitId")
@@ -87,6 +101,49 @@ class Function(BaseModel):
                 return value
         return value
 
+    @model_serializer(mode="wrap")
+    def serialize_model(self, handler):
+        optional_fields = [
+            "createdAt",
+            "deletedAt",
+            "description",
+            "displayName",
+            "encryptedValues",
+            "functionType",
+            "head",
+            "id",
+            "isDraft",
+            "outboundNetworkAllowlist",
+            "publishedCommitId",
+            "updatedAt",
+        ]
+        nullable_fields = ["outboundNetworkAllowlist"]
+        null_default_fields = []
+
+        serialized = handler(self)
+
+        m = {}
+
+        for n, f in type(self).model_fields.items():
+            k = f.alias or n
+            val = serialized.get(k)
+            serialized.pop(k, None)
+
+            optional_nullable = k in optional_fields and k in nullable_fields
+            is_set = (
+                self.__pydantic_fields_set__.intersection({n})
+                or k in null_default_fields
+            )  # pylint: disable=no-member
+
+            if val is not None and val != UNSET_SENTINEL:
+                m[k] = val
+            elif val != UNSET_SENTINEL and (
+                not k in optional_fields or (optional_nullable and is_set)
+            ):
+                m[k] = val
+
+        return m
+
 
 class FunctionInputTypedDict(TypedDict):
     r"""Function represents a customer-provided code extension in the API"""
@@ -95,6 +152,8 @@ class FunctionInputTypedDict(TypedDict):
     r"""The description field."""
     display_name: NotRequired[str]
     r"""The displayName field."""
+    encrypted_values: NotRequired[Dict[str, str]]
+    r"""The encryptedValues field."""
     function_type: NotRequired[FunctionType]
     r"""The functionType field."""
     head: NotRequired[str]
@@ -103,6 +162,8 @@ class FunctionInputTypedDict(TypedDict):
     r"""The id field."""
     is_draft: NotRequired[bool]
     r"""The isDraft field."""
+    outbound_network_allowlist: NotRequired[Nullable[List[str]]]
+    r"""The outboundNetworkAllowlist field."""
     published_commit_id: NotRequired[str]
     r"""The publishedCommitId field."""
 
@@ -115,6 +176,11 @@ class FunctionInput(BaseModel):
 
     display_name: Annotated[Optional[str], pydantic.Field(alias="displayName")] = None
     r"""The displayName field."""
+
+    encrypted_values: Annotated[
+        Optional[Dict[str, str]], pydantic.Field(alias="encryptedValues")
+    ] = None
+    r"""The encryptedValues field."""
 
     function_type: Annotated[
         Annotated[Optional[FunctionType], PlainValidator(validate_open_enum(False))],
@@ -131,6 +197,11 @@ class FunctionInput(BaseModel):
     is_draft: Annotated[Optional[bool], pydantic.Field(alias="isDraft")] = None
     r"""The isDraft field."""
 
+    outbound_network_allowlist: Annotated[
+        OptionalNullable[List[str]], pydantic.Field(alias="outboundNetworkAllowlist")
+    ] = UNSET
+    r"""The outboundNetworkAllowlist field."""
+
     published_commit_id: Annotated[
         Optional[str], pydantic.Field(alias="publishedCommitId")
     ] = None
@@ -144,3 +215,43 @@ class FunctionInput(BaseModel):
             except ValueError:
                 return value
         return value
+
+    @model_serializer(mode="wrap")
+    def serialize_model(self, handler):
+        optional_fields = [
+            "description",
+            "displayName",
+            "encryptedValues",
+            "functionType",
+            "head",
+            "id",
+            "isDraft",
+            "outboundNetworkAllowlist",
+            "publishedCommitId",
+        ]
+        nullable_fields = ["outboundNetworkAllowlist"]
+        null_default_fields = []
+
+        serialized = handler(self)
+
+        m = {}
+
+        for n, f in type(self).model_fields.items():
+            k = f.alias or n
+            val = serialized.get(k)
+            serialized.pop(k, None)
+
+            optional_nullable = k in optional_fields and k in nullable_fields
+            is_set = (
+                self.__pydantic_fields_set__.intersection({n})
+                or k in null_default_fields
+            )  # pylint: disable=no-member
+
+            if val is not None and val != UNSET_SENTINEL:
+                m[k] = val
+            elif val != UNSET_SENTINEL and (
+                not k in optional_fields or (optional_nullable and is_set)
+            ):
+                m[k] = val
+
+        return m

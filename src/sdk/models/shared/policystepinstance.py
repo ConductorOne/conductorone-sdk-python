@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 from .acceptinstance import AcceptInstance, AcceptInstanceTypedDict
+from .actioninstance import ActionInstance, ActionInstanceTypedDict
 from .approvalinstance import ApprovalInstance, ApprovalInstanceTypedDict
 from .forminstance import FormInstance, FormInstanceTypedDict
 from .provisioninstance import ProvisionInstance, ProvisionInstanceTypedDict
@@ -37,12 +38,27 @@ class PolicyStepInstanceTypedDict(TypedDict):
     - reject
     - wait
     - form
+    - action
 
     """
 
     accept_instance: NotRequired[Nullable[AcceptInstanceTypedDict]]
     r"""This policy step indicates that a ticket should have an approved outcome. This is a terminal approval state and is used to explicitly define the end of approval steps.
     The instance is just a marker for it being copied into an active policy.
+    """
+    action_instance: NotRequired[Nullable[ActionInstanceTypedDict]]
+    r"""The ActionInstance message.
+
+    This message contains a oneof named target_instance. Only a single field of the following list may be set at a time:
+    - automation
+
+
+    This message contains a oneof named outcome. Only a single field of the following list may be set at a time:
+    - success
+    - denied
+    - error
+    - cancelled
+
     """
     approval_instance: NotRequired[Nullable[ApprovalInstanceTypedDict]]
     r"""The approval instance object describes the way a policy step should be approved as well as its outcomes and state.
@@ -113,6 +129,7 @@ class PolicyStepInstance(BaseModel):
     - reject
     - wait
     - form
+    - action
 
     """
 
@@ -121,6 +138,23 @@ class PolicyStepInstance(BaseModel):
     ] = UNSET
     r"""This policy step indicates that a ticket should have an approved outcome. This is a terminal approval state and is used to explicitly define the end of approval steps.
     The instance is just a marker for it being copied into an active policy.
+    """
+
+    action_instance: Annotated[
+        OptionalNullable[ActionInstance], pydantic.Field(alias="action")
+    ] = UNSET
+    r"""The ActionInstance message.
+
+    This message contains a oneof named target_instance. Only a single field of the following list may be set at a time:
+    - automation
+
+
+    This message contains a oneof named outcome. Only a single field of the following list may be set at a time:
+    - success
+    - denied
+    - error
+    - cancelled
+
     """
 
     approval_instance: Annotated[
@@ -215,6 +249,7 @@ class PolicyStepInstance(BaseModel):
     def serialize_model(self, handler):
         optional_fields = [
             "AcceptInstance",
+            "ActionInstance",
             "ApprovalInstance",
             "FormInstance",
             "ProvisionInstance",
@@ -226,6 +261,7 @@ class PolicyStepInstance(BaseModel):
         ]
         nullable_fields = [
             "AcceptInstance",
+            "ActionInstance",
             "ApprovalInstance",
             "FormInstance",
             "ProvisionInstance",

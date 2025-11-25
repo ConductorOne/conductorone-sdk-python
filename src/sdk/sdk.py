@@ -51,6 +51,7 @@ if TYPE_CHECKING:
     from sdk.export import Export
     from sdk.exportssearch import ExportsSearch
     from sdk.functions import Functions
+    from sdk.functionsinvocation import FunctionsInvocation
     from sdk.functionssearch import FunctionsSearch
     from sdk.orgdomain import OrgDomain
     from sdk.personalclient import PersonalClient
@@ -72,6 +73,7 @@ if TYPE_CHECKING:
     from sdk.tasksearch import TaskSearch
     from sdk.user import User
     from sdk.usersearch import UserSearch
+    from sdk.vault import Vault
     from sdk.webhooks import Webhooks
     from sdk.webhookssearch import WebhooksSearch
 
@@ -108,6 +110,7 @@ class SDK(BaseSDK):
     connector_catalog: "ConnectorCatalog"
     directory: "Directory"
     functions: "Functions"
+    functions_invocation: "FunctionsInvocation"
     personal_client: "PersonalClient"
     roles: "Roles"
     policies: "Policies"
@@ -136,6 +139,7 @@ class SDK(BaseSDK):
     task: "Task"
     task_actions: "TaskActions"
     user: "User"
+    vault: "Vault"
     webhooks: "Webhooks"
     _sub_sdk_map = {
         "access_conflict": ("sdk.accessconflict", "AccessConflict"),
@@ -185,6 +189,7 @@ class SDK(BaseSDK):
         "connector_catalog": ("sdk.connectorcatalog", "ConnectorCatalog"),
         "directory": ("sdk.directory", "Directory"),
         "functions": ("sdk.functions", "Functions"),
+        "functions_invocation": ("sdk.functionsinvocation", "FunctionsInvocation"),
         "personal_client": ("sdk.personalclient", "PersonalClient"),
         "roles": ("sdk.roles", "Roles"),
         "policies": ("sdk.policies", "Policies"),
@@ -219,6 +224,7 @@ class SDK(BaseSDK):
         "task": ("sdk.task", "Task"),
         "task_actions": ("sdk.taskactions", "TaskActions"),
         "user": ("sdk.user", "User"),
+        "vault": ("sdk.vault", "Vault"),
         "webhooks": ("sdk.webhooks", "Webhooks"),
     }
 
